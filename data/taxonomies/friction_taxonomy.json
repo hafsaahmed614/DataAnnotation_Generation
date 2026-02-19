@@ -1,0 +1,40 @@
+{
+  "Friction_Taxonomy": [
+    {
+      "category": "Bureaucratic",
+      "signal_barrier": "Medicaid CHC Waiver",
+      "expected_delay": "+30–45 Days",
+      "logical_dna_rule": "The process is historically slow because the caseworker is required to obtain three separate contractor estimates to determine the company for installation (e.g., wheelchair ramps)."
+    },
+    {
+      "category": "Administrative",
+      "signal_barrier": "Managed Medicare Auth",
+      "expected_delay": "+3–7 Days",
+      "logical_dna_rule": "Requires detailed 'face-to-face' documentation that straight Medicare does not mandate; successful appeals typically add a fixed 3-day processing window."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "The 'Black Hole'",
+      "expected_delay": "7–14 Days (Lost Intervention Time)",
+      "logical_dna_rule": "The lag between SNF admission and PN assignment in the hub reduces the window available to build trust and educate the family before a sudden discharge occurs."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Provider Illness",
+      "expected_delay": "+3–5 Days",
+      "logical_dna_rule": "In regions with only one specialist, illness triggers a care gap; the PN must coordinate with HHA generalist nurses to bridge dressing changes until a specialist is available."
+    },
+    {
+      "category": "Financial",
+      "signal_barrier": "The 100-Day Cliff",
+      "expected_delay": "Hard Stop (LTC Transition)",
+      "logical_dna_rule": "Medicare benefits typically exhaust at Day 100; if the patient isn't ready for home, the facility forces a shift to private pay or a Long-Term Care Medicaid application."
+    },
+    {
+      "category": "Eligibility",
+      "signal_barrier": "Loss of Skilled Need",
+      "expected_delay": "Hard Stop (Ineligibility)",
+      "logical_dna_rule": "To qualify for specialized home wound care, the patient must require at least one other skilled service (RN or PT); losing these services renders them ineligible even if the wound is open."
+    }
+  ]
+}

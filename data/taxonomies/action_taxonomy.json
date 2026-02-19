@@ -1,0 +1,140 @@
+{
+  "PN_Action_Taxonomy": [
+    {
+      "stage": "Stage 1: Patient Intake (Referral & Admission)",
+      "goal": "Close the 'Black Hole' delay and establish early alignment",
+      "categories": [
+        {
+          "category": "Eligibility Verification",
+          "action_items": [
+            "Confirm insurance eligibility (Straight Medicare vs. Advantage)",
+            "Verify diagnosis meets home care criteria"
+          ],
+          "primary_intents": [
+            "Ensure qualification before introducing services"
+          ]
+        },
+        {
+          "category": "Data Harvesting",
+          "action_items": [
+            "Gather DOB, phone, address, and POA details",
+            "Check distance for Medical Assistant (MA) travel"
+          ],
+          "primary_intents": [
+            "Readiness for immediate family communication"
+          ]
+        },
+        {
+          "category": "Early Engagement",
+          "action_items": [
+            "Meet patient in-person within first 48 hours",
+            "Shadow the Traditional Provider (TP) to get facility entry"
+          ],
+          "primary_intents": [
+            "Gain trust and prepare patient for transition"
+          ]
+        },
+        {
+          "category": "Strategic Outreach",
+          "action_items": [
+            "Contact Social Worker (SW) and TP immediately upon assignment",
+            "Review clinical notes in DocNow/Atlantis"
+          ],
+          "primary_intents": [
+            "Maintain relationship for early discharge info"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 2: Patient Maintenance (Inpatient Stay)",
+      "goal": "Track progress and mitigate 'Timeline Drift' or stakeholder 'Steering'",
+      "categories": [
+        {
+          "category": "Clinical Monitoring",
+          "action_items": [
+            "Monitor progress via SNF updates and NP round notes",
+            "Take part in wound rounds with providers"
+          ],
+          "primary_intents": [
+            "Ensure awareness of barriers or changes in progress"
+          ]
+        },
+        {
+          "category": "Stakeholder Alignment",
+          "action_items": [
+            "Maintain weekly communication with staff/SW",
+            "Attend facility care conferences"
+          ],
+          "primary_intents": [
+            "Ensure immediate updates if discharge plans shift"
+          ]
+        },
+        {
+          "category": "Patient Education",
+          "action_items": [
+            "Educate patient/family on program benefits",
+            "Discuss POA awareness of home services"
+          ],
+          "primary_intents": [
+            "Prevent 'missed' discharge or refusal"
+          ]
+        },
+        {
+          "category": "Resource Planning",
+          "action_items": [
+            "Learn PCP and HHA preferences well in advance",
+            "Identify family support/training needs"
+          ],
+          "primary_intents": [
+            "Proactive transition planning"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 3: Patient Discharge (Transition)",
+      "goal": "Deliver a 'Maximum Reward' handoff and secure service adoption",
+      "categories": [
+        {
+          "category": "Final Coordination",
+          "action_items": [
+            "Talk with SW to confirm D/C date and HHA selection",
+            "Confirm no address/contact changes"
+          ],
+          "primary_intents": [
+            "Ensure alignment with all transition providers"
+          ]
+        },
+        {
+          "category": "HHA/Team Handoff",
+          "action_items": [
+            "Pass contact/address info and first appointment availability to home team"
+          ],
+          "primary_intents": [
+            "Prepare home team for continuity of care"
+          ]
+        },
+        {
+          "category": "Patient Confirmation",
+          "action_items": [
+            "Provide physical appointment card with Care Coordinator info",
+            "Confirm time works for patient/DM"
+          ],
+          "primary_intents": [
+            "Ensure patient feels informed and comfortable"
+          ]
+        },
+        {
+          "category": "Schedule De-conflict",
+          "action_items": [
+            "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'"
+          ],
+          "primary_intents": [
+            "Ensure service payment and coverage safety"
+          ]
+        }
+      ]
+    }
+  ]
+}

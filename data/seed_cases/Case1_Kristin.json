@@ -1,0 +1,96 @@
+{
+  "case_header": {
+    "case_id": "Case_1",
+    "pn_id": "PN_Kristin",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "65",
+      "gender": "Male",
+      "race": "White",
+      "diagnosis": "Leg amputation (post-surgical PT) and contralateral leg wound care",
+      "region": "Pennsylvania (likely Suburban/Urban given provider density)"
+    },
+    "outcome": "Successful Discharge to Home",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Completion of Physical Therapy (PT) goals and wound healing stabilization",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "High infection risk (post-amputation status)",
+      "Extensive wound size (approx. 350 sq cm)",
+      "Specialized dressing change requirements"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Inaccessible home entry (stair barrier) requiring a wheelchair ramp for safe mobility",
+    "modification_type": "CHC (Community Health Choices) Waiver / Medicaid",
+    "bureaucratic_steps": [
+      "CHC Waiver application/approval for home modification",
+      "Obtaining three separate contractor estimates (Medicaid requirement)",
+      "Comparison and approval of specific contractor by CHC caseworker",
+      "Ramp installation/construction",
+      "Final inspection/approval for safe discharge"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "CHC Waiver Administrative Process",
+      "days_added": "45",
+      "context": "Requirement for three estimates and bureaucratic approval cycles extended the stay significantly beyond clinical readiness."
+    },
+    {
+      "trigger_event": "Specialist Provider Illness (Force Majeure)",
+      "days_added": "3",
+      "context": "Primary wound care provider contracted COVID-19, requiring coordination of a backup provider from a different region (Erie)."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient/Family unwilling to pay $200+ out-of-pocket for rental ramp",
+      "action_taken": "Assisted in managing the CHC waiver timeline and expectations",
+      "intent": "Resource Navigation / Financial Stewardship",
+      "result": "Patient remained in SNF for 90+ days to ensure 100% cost coverage by waiver"
+    },
+    {
+      "situation": "Wound Care Specialist unavailable due to COVID-19",
+      "action_taken": "Coordinated with established HHA (OSTPA) to cover dressing changes",
+      "intent": "Gap Coverage / Clinical Continuity",
+      "result": "Patient safely discharged despite specialist delay; HHA saw patient within 24 hours"
+    },
+    {
+      "situation": "Initial SNF/Social Worker estimate of '2 weeks' was unrealistic",
+      "action_taken": "Updated home team/HHA with '45-day+' projection",
+      "intent": "Expectation Management / Operational Forecasting",
+      "result": "Avoided premature HHA activation and preserved stakeholder trust"
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Specialist provider illness right before discharge",
+        "action": "Leveraged existing relationship with HHA to bridge the clinical gap",
+        "rationale": "Ensures wound integrity and patient comfort without delaying the hard-won discharge date."
+      },
+      {
+        "context": "Slow bureaucratic progress with CHC caseworker",
+        "action": "Prioritized patient as the primary information source over the Social Worker",
+        "rationale": "The patient had direct daily contact with the supports coordinator, providing higher fidelity data."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Initial home barrier assessment",
+        "action": "Assumed step-count and ramp needs were solely the domain of PT/Social Work",
+        "error_type": "Passive",
+        "note": "Navigator later realized this should be part of their own intake to prevent timeline surprises."
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Provider COVID-19 illness",
+    "Regional specialist shortage (only one provider in the region)",
+    "Medicaid 'Three Estimate' mandate",
+    "Patient refusal of private-pay temporary solutions"
+  ]
+}

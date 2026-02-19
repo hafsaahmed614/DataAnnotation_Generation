@@ -1,0 +1,19 @@
+# ChromaDB persistent storage (local only)
+chroma_db/
+
+# Generated synthetic output (optional - remove if you want to track outputs)
+data/synthetic_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store

@@ -1,0 +1,29 @@
+{
+  "Outcome_Taxonomy": [
+    {
+      "state": "Clinically Ready",
+      "primary_exit_trigger": "Surgeon sign-off and identification of skilled need (RN/PT)",
+      "leading_indicator_of_failure": "Patient stabilizes clinically but has no support system or reliable caregiver at home"
+    },
+    {
+      "state": "Env. Blocked",
+      "primary_exit_trigger": "Completion of home modification (e.g., wheelchair ramp or chair lift installation)",
+      "leading_indicator_of_failure": "Waiver estimates are rejected, or the Medicaid approval process is delayed indefinitely"
+    },
+    {
+      "state": "LTC Transition",
+      "primary_exit_trigger": "Day 101 Medicare benefit exhaustion or Social Worker safety pivot",
+      "leading_indicator_of_failure": "Family verbalizes an 'inability to help at home' or demonstrates unwillingness to assist"
+    },
+    {
+      "state": "Hospital Return",
+      "primary_exit_trigger": "Acute medical emergency (e.g., acute CHF or respiratory failure)",
+      "leading_indicator_of_failure": "Evidence of O2 tank mismanagement, cellulitis flare-up, or missed HHA monitoring visits"
+    },
+    {
+      "state": "Service Conversion",
+      "primary_exit_trigger": "First Healing Partners visit completed within 24–48 hours of discharge",
+      "leading_indicator_of_failure": "Competitive steering by Social Worker or failure to establish trust during the intake phase"
+    }
+  ]
+}
