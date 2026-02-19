@@ -1,0 +1,83 @@
+{
+  "case_header": {
+    "case_id": "Case_2",
+    "pn_id": "PN_Kristin",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "91",
+      "diagnosis": "Post-Hip Replacement Surgery / Chronic Back Pain",
+      "region": "Pennsylvania"
+    },
+    "outcome": "Discharged Home with Services",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Resumption of PT following back injections",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Severe chronic back pain stalling PT progress",
+      "Dependency on pain management specialist (injections)",
+      "Slow physical therapy progression due to age/pain"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Family-verified safe home environment",
+    "modification_type": "None mentioned (Existing HHA setup)",
+    "bureaucratic_steps": [
+      "Scheduling pain management specialist",
+      "SNF recommendation for Long-Term Care (LTC) transition",
+      "Securing HHA commitment for high-frequency PT"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Severe back pain stalling PT",
+      "days_added": "30",
+      "context": "Original 30-day estimate shifted toward 60 days because pain management took time to schedule."
+    },
+    {
+      "trigger_event": "Clinical/Administrative coordination for 90-day stay",
+      "days_added": "30",
+      "context": "Final stay reached 90 days due to slow PT progression and alignment delays between SNF/Family."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "SNF recommended LTC due to stalled progress",
+      "action_taken": "Communicated with daughter to verify pain history",
+      "intent": "Empower family preference for home discharge",
+      "result": "Maintained home-discharge plan despite SNF pressure"
+    },
+    {
+      "situation": "Daughter inquired if wound care was still viable after PT stall",
+      "action_taken": "Contacted wound care team/Medical Director same day",
+      "intent": "Re-verify service eligibility to reassure family",
+      "result": "Confirmed coordination, facilitating the final discharge push"
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "SNF pushed for LTC transition",
+        "action": "Leveraged established HHA relationship (OSTPA) and family support",
+        "rationale": "Proving a robust home-support system (Wound Care + PT) neutralized the SNF's clinical objection."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Initial intake and 30-day estimation",
+        "action": "Failed to screen for chronic pain history/previous interventions",
+        "error_type": "Intake Gap"
+      },
+      {
+        "context": "Facility struggled to schedule pain specialist",
+        "action": "No direct involvement or suggestion of mobile/outside consults",
+        "error_type": "Passive"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Recurring chronic back pain requiring injections",
+    "SNF internal push for LTC conversion vs. Family preference"
+  ]
+}
