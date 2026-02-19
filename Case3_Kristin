@@ -1,0 +1,86 @@
+{
+  "case_header": {
+    "case_id": "Case_3",
+    "pn_id": "PN_Kristin",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "82",
+      "diagnosis": "Double knee replacement surgery; advanced wound care",
+      "region": "Rural (Inferred: Provider traveled 2 hours, through snowstorm)"
+    },
+    "outcome": "Successful Discharge Home",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Final surgical clearance from plastic surgeon (4-5 weeks after previous follow-up)",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Extensive wound size (~200 square centimeters)",
+      "Requirement for specialized skin substitutes (placed in-facility for 4 weeks)",
+      "Need for clearance from multiple specialty providers (Orthopedics and Plastic Surgery)"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Patient anxiety regarding home safety/medical stability after 6-month institutionalization",
+    "modification_type": "Private Pay (Short-term stay extension)",
+    "bureaucratic_steps": [
+      "Long-term care Medicaid application (proposed by SNF, declined by patient)",
+      "Coordination of HHA (Anew) for same-day discharge meeting",
+      "Re-coordinating wound care provider due to holiday vacation schedules"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Specialty Appointment Spacing",
+      "days_added": "60",
+      "context": "Initial estimate was 30-45 days; final stay reached 105+ days due to 4-week intervals between plastic surgery follow-ups."
+    },
+    {
+      "trigger_event": "Insurance Benefit Exhaustion",
+      "days_added": "5",
+      "context": "Skilled care days ended 5 days before the final surgical clearance; patient chose to private pay to stay in SNF."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient not visible on the Hub (digital referral platform).",
+      "action_taken": "Direct provider outreach and physical rounding with the SNF doctor.",
+      "intent": "Case Discovery & Relationship Building",
+      "result": "Patient identified and enrolled in services before discharge was even planned."
+    },
+    {
+      "situation": "SNF Social Worker steering patient toward long-term care due to 'anxiety'.",
+      "action_taken": "Questioned the SW on the shift in goals and validated the patient's vocalized desire to go home.",
+      "intent": "Patient Advocacy / Barrier Deconstruction",
+      "result": "Maintained the 'Home' trajectory despite SNF pressure for LTC placement."
+    },
+    {
+      "situation": "Primary wound provider on vacation during Christmas week discharge.",
+      "action_taken": "Coordinated a regional provider from Erie to travel and stay in a hotel to ensure Saturday post-discharge visit.",
+      "intent": "Operational Continuity / Contingency Planning",
+      "result": "Successful transition despite a snowstorm and holiday staffing shortages."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Patient highly anxious about medical stability at home.",
+        "action": "Coordinated HHA (Anew) to arrive at the home within 2 hours of the patient’s arrival (3:00 PM).",
+        "rationale": "Immediate clinical presence at home reduces the 're-hospitalization risk' driven by psychological distress."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Patient entering private pay status due to appointment delays.",
+        "action": "Passive stance on coordinating the surgeon's schedule directly.",
+        "error_type": "Passive - PN deferred specialty scheduling to the SNF/Patient, missing an opportunity to expedite via 'cancellation lists'."
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Snowstorm during holiday discharge week",
+    "Provider vacation/staffing gap",
+    "Hub technical omission (patient didn't show in the system)",
+    "SNF Social Worker 'Angle' (attempting LTC conversion vs. home discharge)"
+  ]
+}
