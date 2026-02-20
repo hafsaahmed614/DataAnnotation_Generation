@@ -62,6 +62,8 @@ CREATE TABLE evaluation_sessions (
 CREATE TABLE eval_format_1_timeline (
     id                              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     session_id                      UUID NOT NULL REFERENCES evaluation_sessions(id) ON DELETE CASCADE,
+    case_label                      TEXT,
+    navigator_name                  TEXT,
     event_index                     INT NOT NULL,
     clinical_impact                 TEXT NOT NULL,
     environmental_impact            TEXT NOT NULL,
@@ -74,14 +76,18 @@ CREATE TABLE eval_format_1_timeline (
 CREATE TABLE eval_format_2_tactics (
     id                          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     session_id                  UUID NOT NULL REFERENCES evaluation_sessions(id) ON DELETE CASCADE,
+    case_label                  TEXT,
+    navigator_name              TEXT,
     triple_index                INT NOT NULL,
-    intent_feasibility_score    INT NOT NULL CHECK (intent_feasibility_score BETWEEN 1 AND 5)
+    tactical_viability_score    INT NOT NULL CHECK (tactical_viability_score BETWEEN 1 AND 5)
 );
 
 -- ── 6. eval_format_3_boundaries ─────────────────────────────────────────────
 CREATE TABLE eval_format_3_boundaries (
     id                      UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     session_id              UUID NOT NULL REFERENCES evaluation_sessions(id) ON DELETE CASCADE,
+    case_label              TEXT,
+    navigator_name          TEXT,
     option_index            INT NOT NULL,
     pn_category             TEXT NOT NULL,
     ai_intended_category    TEXT NOT NULL

@@ -71,24 +71,27 @@ def _load_saved_answers(client, session_id):
     return f1_saved, f2_saved, f3_saved
 
 
-def _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs):
+def _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+                   case_label="", navigator_name=""):
     """Save current answers to eval tables (delete old rows first)."""
     # Clear existing rows for this session
     client.table("eval_format_1_timeline").delete().eq("session_id", session_id).execute()
     client.table("eval_format_2_tactics").delete().eq("session_id", session_id).execute()
     client.table("eval_format_3_boundaries").delete().eq("session_id", session_id).execute()
 
+    common = {"session_id": session_id, "case_label": case_label, "navigator_name": navigator_name}
+
     # Insert current answers
     if f1_inputs:
-        f1_rows = [{"session_id": session_id, **inp} for inp in f1_inputs]
+        f1_rows = [{**common, **inp} for inp in f1_inputs]
         client.table("eval_format_1_timeline").insert(f1_rows).execute()
 
     if f2_inputs:
-        f2_rows = [{"session_id": session_id, **inp} for inp in f2_inputs]
+        f2_rows = [{**common, **inp} for inp in f2_inputs]
         client.table("eval_format_2_tactics").insert(f2_rows).execute()
 
     if f3_inputs:
-        f3_rows = [{"session_id": session_id, **inp} for inp in f3_inputs]
+        f3_rows = [{**common, **inp} for inp in f3_inputs]
         client.table("eval_format_3_boundaries").insert(f3_rows).execute()
 
 
@@ -117,6 +120,10 @@ def render():
         .execute()
     )
     case = case_resp.data
+
+    # ── Get case_label and navigator_name from the session ───────────────────
+    case_label = case.get("label", "")
+    navigator_name = st.session_state.get("full_name", "")
 
     # ── Load any previously saved answers ─────────────────────────────────────
     f1_saved, f2_saved, f3_saved = _load_saved_answers(client, session_id)
@@ -218,9 +225,9 @@ def render():
             st.markdown(f"**Tactical Field Intent:** {triple.get('tactical_field_intent', triple.get('intent', ''))}")
 
             st.divider()
-            score_default = saved.get("intent_feasibility_score", 3)
+            score_default = saved.get("tactical_viability_score", 3)
             score = st.slider(
-                "Intent Feasibility Score (1 = Causes Issues, 5 = Highly Feasible)",
+                "Tactical Viability Score (1 = Politically Reckless, 5 = Masterful Field Move)",
                 min_value=1,
                 max_value=5,
                 value=int(score_default),
@@ -228,7 +235,7 @@ def render():
             )
             f2_inputs.append({
                 "triple_index": i,
-                "intent_feasibility_score": score,
+                "tactical_viability_score": score,
             })
 
     # ── FORMAT 3: RL Scenario ────────────────────────────────────────────────
@@ -293,7 +300,8 @@ def render():
 
     with col_save:
         if st.button("Save Progress", use_container_width=True):
-            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs)
+            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+                          case_label, navigator_name)
             client.table("evaluation_sessions").update({
                 "overall_field_authenticity": overall_score,
             }).eq("id", session_id).execute()
@@ -301,7 +309,8 @@ def render():
 
     with col_submit:
         if st.button("Submit Evaluation", type="primary", use_container_width=True):
-            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs)
+            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+                          case_label, navigator_name)
 
             # Mark session completed with overall score
             client.table("evaluation_sessions").update({
