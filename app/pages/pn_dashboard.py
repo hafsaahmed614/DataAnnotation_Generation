@@ -4,9 +4,16 @@ Page C: Patient Navigator Dashboard
 Shows In-Progress (Resume), Pending (Start), and Completed evaluations.
 """
 
+import re
 import streamlit as st
 from app.supabase_client import get_authenticated_client
 from app.auth import get_user_id
+
+
+def _label_sort_key(label: str) -> int:
+    """Extract numeric part from label like 'Case_12' for proper ordering."""
+    m = re.search(r"(\d+)", label or "")
+    return int(m.group(1)) if m else 0
 
 
 def render():
@@ -21,7 +28,6 @@ def render():
     all_cases = (
         client.table("synthetic_cases")
         .select("id, label, narrative_summary")
-        .order("label")
         .execute()
     )
     my_sessions = (
@@ -31,12 +37,19 @@ def render():
         .execute()
     )
 
-    cases_dict = {c["id"]: c for c in (all_cases.data or [])}
+    all_cases_sorted = sorted(all_cases.data or [], key=lambda c: _label_sort_key(c.get("label", "")))
+    cases_dict = {c["id"]: c for c in all_cases_sorted}
     sessions_by_case = {s["case_id"]: s for s in (my_sessions.data or [])}
 
-    pending_case_ids = [cid for cid in cases_dict if cid not in sessions_by_case]
-    in_progress = [s for s in (my_sessions.data or []) if s["status"] == "in_progress"]
-    completed = [s for s in (my_sessions.data or []) if s["status"] == "completed"]
+    pending_case_ids = [c["id"] for c in all_cases_sorted if c["id"] not in sessions_by_case]
+    in_progress = sorted(
+        [s for s in (my_sessions.data or []) if s["status"] == "in_progress"],
+        key=lambda s: _label_sort_key(s.get("case_label", "")),
+    )
+    completed = sorted(
+        [s for s in (my_sessions.data or []) if s["status"] == "completed"],
+        key=lambda s: _label_sort_key(s.get("case_label", "")),
+    )
 
     # ── In-Progress ──────────────────────────────────────────────────────────
     st.header(f"In Progress ({len(in_progress)})")
