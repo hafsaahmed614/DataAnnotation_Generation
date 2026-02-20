@@ -1,0 +1,97 @@
+{
+  "case_header": {
+    "case_id": "Case_7",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "74",
+      "diagnosis": "Left groin wound",
+      "region": "Rural/Urban (Not specified, SNF located in PA)"
+    },
+    "outcome": "Successful Home Discharge with HHA Utilization",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound improvement and completion of in-facility physical rehab",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Left groin wound requiring advanced care",
+      "Functional mobility deficits requiring SNF rehab",
+      "Clinical qualification verification by Medical Director required for service enrollment"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Not explicitly detailed in transcript; assumed stable for home return",
+    "modification_type": "N/A",
+    "bureaucratic_steps": [
+      "SNF internal discharge planning meeting",
+      "Insurance authorization for discharge",
+      "Social Worker formal date setting",
+      "Medical Director clinical service approval"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "SNF Communication Gap (Ghosting)",
+      "days_added": "Unknown",
+      "context": "Facility did not keep PN in the loop until discharge date was already set; PN had to follow up multiple times to get a response."
+    },
+    {
+      "trigger_event": "Language Barrier / Translation Latency",
+      "days_added": "2",
+      "context": "Patient David unable to understand English; all coordination required daughter's translation and multiple short daily calls to bridge understanding."
+    },
+    {
+      "trigger_event": "Provider Capacity Constraints",
+      "days_added": "1",
+      "context": "Home nurse had a 'lot on her plate' and no immediate openings, pushing initial visit to 7:00 PM the following night."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient lacks English proficiency and daughter is unfamiliar with clinical details.",
+      "action_taken": "Daily calls to daughter to explain program and schedule.",
+      "intent": "Family Education & Proxy Consent",
+      "result": "Secured agreement for services despite initial confusion."
+    },
+    {
+      "situation": "SNF Social Worker withholding discharge timeline.",
+      "action_taken": "Persistent follow-up (multiple times per week).",
+      "intent": "Information Extraction & Discharge Alignment",
+      "result": "Obtained 12/22 date for immediate service coordination."
+    },
+    {
+      "situation": "Nurse availability and patient schedule conflict during holiday week.",
+      "action_taken": "Scheduled 7:00 PM visit.",
+      "intent": "Service Delivery Optimization",
+      "result": "Successful first visit completed as soon as possible post-discharge."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Holiday week with high provider volume/low availability.",
+        "action": "Facilitated 7:00 PM visit to ensure patient was seen 'as soon as possible' rather than waiting for next business day.",
+        "rationale": "Prioritizes clinical continuity and immediate post-SNF assessment over standard business hours."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Inability to communicate directly with David due to Spanish language barrier.",
+        "action": "Relied entirely on daughter for clinical translation without exploring Certified Medical Interpreter options.",
+        "error_type": "Passive (Potential Compliance/Clinical Risk)"
+      },
+      {
+        "context": "HHA Handoff Coordination.",
+        "action": "Remaining 'unsure' if other home health agencies were involved or if a discharge summary was reviewed.",
+        "error_type": "Passive (Gap in Care Coordination)"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Language barrier (Spanish/English)",
+    "Holiday Week (12/22 discharge - Christmas proximity)",
+    "Provider over-scheduling/capacity issues",
+    "Facility 'Ghosting' / Communication breakdown"
+  ]
+}

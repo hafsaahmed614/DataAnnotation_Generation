@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs at Day 14 of SNF stay for Stage 3 Diabetic Foot Ulcer. Patient is medically stable but non-weight bearing.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "SNF admissions coordinator intentionally delayed referral to ensure the facility captured the full first 20 days of 100% Medicare reimbursement before external eyes joined the case."
+    },
+    {
+      "event_description": "Medicaid CHC Waiver application initiated for a permanent wheelchair ramp. The caseworker notifies the family that three contractor bids are required.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Burned-out Social Worker Brenda refused to facilitate the contractor walk-throughs, telling the daughter, 'I'm not a general contractor, find your own handymen.'"
+    },
+    {
+      "event_description": "The facility issues a 'Notice of Non-Coverage' as Day 100 approaches. The patient still has an open 4cm x 3cm ulcer but has plateaued in PT.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility Administration is forcing a transition to the Long-Term Care wing to trigger private pay rates, ignoring the pending home modification status."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda is 'out of the office' every time the PN calls to coordinate the CHC contractor site visit.",
+      "action_taken": "Shadowed the Physical Therapist during morning rounds to catch the daughter in the room and obtain the contractor bid documents directly.",
+      "intent": "Readiness for immediate family communication"
+    },
+    {
+      "situation": "Family expresses extreme anxiety that the '100-day cliff' will leave them with a $15,000 monthly bill they cannot afford.",
+      "action_taken": "Attended the Week 12 care conference to present the specific Home Health Agency wound care capabilities to the Medical Director.",
+      "intent": "Ensure immediate updates if discharge plans shift"
+    },
+    {
+      "situation": "Daughter threatens to refuse discharge because the ramp is still 10 days from completion despite the waiver approval.",
+      "action_taken": "Coordinated with the HHA to confirm they can provide a 'lift assist' for the first two visits to bridge the gap until the ramp is inspected.",
+      "intent": "Ensure alignment with all transition providers"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that the patient still requires specialized wound debridement and PT for gait training. They facilitate a meeting between the HHA Clinical Director and the SNF Medical Director to secure a 'Skilled Need' extension for 10 days, allowing the ramp installation to finish while maintaining Medicare coverage.",
+      "rationale": "This action uses clinical evidence to align the facility's financial goals (avoiding a safe discharge grievance) with the patient's environmental reality, respecting the professional hierarchy while solving the bottleneck."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN calls the Medicaid CHC supervisor to complain about the Social Worker's incompetence and then offers to personally drive the contractors to the home to speed up the bidding process.",
+      "rationale": "While highly proactive, this is a seductive overstep that creates institutional enemies, violates the SNF's internal chain of command, and takes on liability for home modifications that the PN is not licensed to oversee."
+    }
+  ],
+  "narrative_summary": "Mrs. Rodriguez, a 74-year-old with a persistent diabetic foot ulcer, is trapped between a burned-out Social Worker and the looming 100-day Medicare cliff. The discharge is blocked by a Medicaid CHC Waiver requirement for three contractor estimates for a wheelchair ramp, a process moving at a glacial pace due to lack of facility cooperation. The PN must navigate a hostile family dynamic and a facility eager to flip the bed to private pay while ensuring the patient doesn't lose her 'skilled need' status before the ramp is installed."
+}

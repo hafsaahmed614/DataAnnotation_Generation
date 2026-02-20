@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial referral received on Day 14 of SNF stay; PN discovers the patient has been in the facility for two weeks without an introduction due to a clerical backlog in the 'Evergreen' admissions office.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The SNF Intake Coordinator failed to flag the 'Healing Partners' referral because they were prioritizing new admissions to hit monthly census targets."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan (United) issues an initial denial for home-based Physical Therapy, citing insufficient 'face-to-face' documentation from the surgeon.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility Social Worker, Brenda, is managing a 45-patient caseload and skipped the 'Auth Status' portal check for three consecutive days."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's daughter is highly anxious and threatening to move the patient to a competitor's facility due to perceived 'laziness' from the SNF staff.",
+      "action_taken": "Met with the daughter in-person within 48 hours of assignment to map out the exact transition timeline and clarify the HHA's role.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Facility Social Worker refuses to provide the Managed Medicare denial letter to the PN, claiming 'privacy concerns' despite an active HIPAA release.",
+      "action_taken": "Shadowed the Nurse Practitioner during wound rounds to obtain the clinical summary directly and confirm it met home care criteria.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Discharge is scheduled for Friday at 4:00 PM, but the HHA confirmation has not been sent to the home team.",
+      "action_taken": "Coordinated with the Regional Director (RD) and HHA to ensure the first home visit was scheduled for Saturday morning to prevent 'Double Dipping' with SNF billing.",
+      "intent": "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that the Physical Therapist has not yet completed the final 'Home Safety Evaluation' required for HHA handoff. The PN alerts the Director of Nursing (DON) that the discharge will likely fail without this document and facilitates a three-way call between the HHA intake, the SNF PT, and the daughter to align on a Monday morning exit.",
+      "rationale": "This respects the clinical hierarchy by ensuring the PT's professional assessment is the driver for safety while proactively managing the family's expectations to prevent a weekend 'drop-off' without support."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Recognizing the PT is too busy, the PN visits the patient\u2019s home themselves on Friday afternoon, moves the area rugs, and installs a temporary 'grab bar' they purchased at a local hardware store to ensure the patient can be discharged immediately as requested by the daughter.",
+      "rationale": "This is a seductive overstep for veterans who want to 'fix' the problem; however, it creates massive liability for the organization, performs a clinical task (environmental assessment) without a license, and bypasses the facility's safety protocols."
+    }
+  ],
+  "narrative_summary": "Mr. Arthur Bennett, an 82-year-old post-hip replacement patient, is trapped in an administrative 'Black Hole' at Evergreen Rehab due to a burned-out Social Worker and a Managed Medicare authorization delay. The daughter\u2019s hostility is peaking as the 100-day Medicare cliff approach is whispered by facility staff looking to churn the bed for a higher-reimbursement patient. The PN must navigate the missing 'face-to-face' documentation required by the Advantage plan while preventing the daughter from an unsafe Friday afternoon discharge that lacks confirmed home PT."
+}

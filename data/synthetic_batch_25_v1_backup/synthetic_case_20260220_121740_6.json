@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Elena M. was admitted to Oak Haven Rehab following a L-MCA stroke. Due to the facility Social Worker (Linda) failing to update the 'DocNow' portal during a high-turnover week, the PN did not receive the referral until Day 12 of the stay.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Social Worker Linda intentionally delayed portal entry to manage her own caseload backlog, creating a 'Black Hole' where the family felt abandoned by the transition team."
+    },
+    {
+      "event_description": "Upon the PN's first visit, the patient's daughter (Maria) exhibited extreme hostility, accusing the PN of being 'another salesperson' because no one had discussed home-based recovery options during the first two weeks.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Hostile family dynamic triggered by the initial administrative lag, requiring multiple trust-building sessions to reset expectations."
+    },
+    {
+      "event_description": "Physical Therapy notes indicate Elena has reached 'functional baseline' for stairs, though she still has an unhealed Stage II sacral ulcer. The facility's billing department is pushing for a 'Loss of Skilled Need' discharge to avoid hitting the 100-day Medicare cliff.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Facility administration is pressuring clinical staff to sign off on PT goals early to protect the 100-day financial margin, despite the open wound requiring skilled nursing."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial PN assignment occurred on Day 12 due to the facility's portal lag ('The Black Hole').",
+      "action_taken": "Immediately shadowed the facility NP during afternoon wound rounds to gain entry and establish clinical presence.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Daughter (Maria) is skeptical of the PN's role and is considering a competitor agency recommended by a neighbor.",
+      "action_taken": "Provided a physical appointment card with the Care Coordinator's direct cell number and a detailed breakdown of the wound care specialist's schedule.",
+      "intent": "Ensure patient feels informed and comfortable"
+    },
+    {
+      "situation": "The facility is attempting to discharge the patient under 'Loss of Skilled Need' for PT, ignoring the sacral wound requirements.",
+      "action_taken": "Collaborated with the HHA intake nurse to verify the sacral ulcer as a primary skilled nursing need (RN) to maintain Medicare eligibility.",
+      "intent": "Ensure qualification before introducing services"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN facilitates a three-way 'Care Conference' involving the Social Worker, the HHA clinical lead, and the daughter. The PN presents the wound healing trajectory as the primary 'skilled need' to justify home health, while acknowledging the SW's discharge timeline.",
+      "rationale": "This respects the institutional hierarchy by involving the SW while using clinical documentation (wound care) to solve the eligibility crisis, ensuring the patient isn't discharged without support."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN tells the daughter privately that the Social Worker is 'trying to kick her mother out early for financial reasons' and advises the daughter to file a formal Medicare appeal against the discharge to 'buy more time' at the facility.",
+      "rationale": "While this feels like strong advocacy, it is a seductive overstep that destroys the PN's relationship with the facility staff and involves the PN in a legal/regulatory dispute (Medicare appeals) that is outside their non-clinical scope."
+    }
+  ],
+  "narrative_summary": "Elena M. entered a 14-day 'Black Hole' due to a burned-out Social Worker's administrative delay, resulting in a hostile family dynamic and a lack of early education. As Elena neared her PT goals, the facility attempted to force a discharge to protect their 100-day Medicare margin, ignoring an unhealed sacral ulcer. The PN had to navigate this political minefield by pivoting the 'skilled need' focus from PT to specialized wound care to ensure a safe home transition."
+}

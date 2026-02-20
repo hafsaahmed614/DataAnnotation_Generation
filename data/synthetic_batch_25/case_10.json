@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient (82M, Parkinson's/UTI) admitted to SNF; PN assignment delayed due to high census and facility gatekeeping of the 'Black Hole' period.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The SNF Administrator restricts PN access to the EMR until Day 10 to prevent early 'steering' to home health before the facility captures the high-acuity Medicare reimbursement window."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan triggers a 'Face-to-Face' documentation audit for home-based Physical Therapy and Parkinson's medication titration.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility Social Worker, Ms. Gable, is burned out and intentionally delayed the fax to the PCP to avoid the paperwork surge on a Friday afternoon."
+    },
+    {
+      "event_description": "Facility CFO signals the 100-Day Medicare Cliff; SW attempts to force a Friday discharge despite an unreconciled medication list between the SNF and the patient's community Neurologist.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Institutional politics prioritized clearing the bed for a new high-reimbursement post-surgical patient over the safety of the medication reconciliation for a long-stay Parkinson's patient."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The burned-out Social Worker (Ms. Gable) refuses to provide the final medication list, claiming 'it\u2019s not ready' to mask her backlog.",
+      "action_taken": "Physically intercepted the SNF Floor Nurse during shift change to photocopy the current MAR (Medication Administration Record) with the Nurse's verbal consent.",
+      "taxonomy_category": "Data Harvesting",
+      "tactical_field_intent": "Circumvent the SW's administrative bottleneck by leveraging clinical-floor relationships to secure data for the Home Health Agency before the official discharge packet is finalized."
+    },
+    {
+      "situation": "The patient's daughter is highly anxious and hostile, threatening to block discharge because 'the SNF hasn't fixed his tremors.'",
+      "action_taken": "Facilitated a three-way call between the daughter, the Home Health Agency (HHA) Clinical Director, and the PN to detail the first 48 hours of home-based monitoring.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Shift the accountability for 'stabilization' from the SNF to the HHA to de-escalate the daughter's hostility and prevent a last-minute refusal of services."
+    },
+    {
+      "situation": "Medicare Advantage plan denies the auth for daily home nursing required for complex Parkinson's med titration.",
+      "action_taken": "Drafted a 'Clinical Necessity' letter for the SNF Physician to sign, specifically highlighting the fall risk associated with the UTI-related delirium.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Force the Physician's hand into a formal appeal process by providing a pre-written clinical narrative, reducing their 'administrative friction' to nearly zero."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Decline to intervene in the medication reconciliation process, documenting that the facility is responsible for providing a clean discharge summary per state regulations.",
+      "rationale": "While legally safe, this respects the facility's internal 'silo' but risks a medication error or readmission if the SW fumbles the final handoff."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Organize a 'Pre-Discharge Med-Sync' meeting with the SNF Pharmacist and the daughter to verify all prescriptions are sent to the retail pharmacy 24 hours before the 100-day cliff.",
+      "rationale": "Solves the friction without assuming clinical liability; ensures the daughter has the physical meds in hand before the patient arrives home."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Perform a side-by-side comparison of the SNF MAR and the PCP's records, then provide the family with a 'Corrected Home Med List' to use until the HHA nurse arrives.",
+      "rationale": "This is a seductive overstep for a veteran; while it solves the immediate danger, the PN is practicing medicine/pharmacy without a license and assuming massive professional liability if the comparison is flawed."
+    }
+  ],
+  "narrative_summary": "An 82-year-old male with Parkinson's and a resolving UTI is caught between a burned-out Social Worker and a facility CFO pushing for discharge at the 100-day Medicare cliff. The primary operational bottleneck is a critical delay in medication reconciliation, exacerbated by a 'Black Hole' period where the Navigator was blocked from early engagement. The case requires the Navigator to navigate institutional politics\u2014specifically bypassing an uncooperative Social Worker\u2014while managing an anxious family and a complex Managed Medicare authorization process to ensure a safe transition to home health."
+}

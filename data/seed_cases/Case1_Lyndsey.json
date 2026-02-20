@@ -1,0 +1,92 @@
+{
+  "case_header": {
+    "case_id": "Case_1",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "2",
+    "demographics": {
+      "age": "77",
+      "gender": "Female",
+      "race": "Black or African American",
+      "diagnosis": "Lower left leg trauma/wound",
+      "region": "Urban (Harston Hall, PA)"
+    },
+    "outcome": "Successful Discharge to Home with HHA",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound contraction and reduction in size following debridement",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Wound size/healing status",
+      "Need for specialized at-home wound treatment",
+      "Dialysis management (3x weekly)"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Not explicitly noted as a delay factor",
+    "modification_type": "N/A",
+    "bureaucratic_steps": [
+      "SNF-Family multidisciplinary meeting (10/30)",
+      "Coordination with dialysis schedule (MWF)",
+      "HHA referral and scheduling (Non-dialysis day)"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "SNF Internal Discharge Meeting Delay",
+      "days_added": "75",
+      "context": "Admitted 8/11; discharge meeting did not occur until 10/30 despite wound improvement being the only stated barrier."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient expressed high anxiety to return home during 11/7 visit.",
+      "action_taken": "Real-time coordination with Regional Director/HHA while bedside with patient.",
+      "intent": "Patient-Centered Scheduling",
+      "result": "Secured a Tuesday visit that accommodated the patient's dialysis-free day, increasing patient satisfaction."
+    },
+    {
+      "situation": "Initial SNF point of contact was unavailable at the facility.",
+      "action_taken": "Proactive networking with alternate floor Social Workers to secure the correct contact (Sierra).",
+      "intent": "Stakeholder Mapping",
+      "result": "Established a high-responsiveness communication channel with the assigned SW."
+    },
+    {
+      "situation": "Ambiguity regarding post-discharge wound care during the 48-hour gap (Sunday-Tuesday).",
+      "action_taken": "Followed up with Home Healthcare Coordinator (Ashley) on Day 1 post-visit.",
+      "intent": "Handoff Verification",
+      "result": "Confirmed visit completion and closed the clinical loop."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Transition from observation to execution.",
+        "action": "Prioritized HHA referral and bedside meeting immediately upon receiving 11/9 date.",
+        "rationale": "Direct patient engagement reduces anxiety and ensures scheduling alignment."
+      },
+      {
+        "context": "Post-discharge gap (Sunday discharge, Tuesday visit).",
+        "action": "Verified HHA arrival and status with the Home Healthcare Coordinator.",
+        "rationale": "Ensures the 'warm handoff' actually occurred despite the PN technically being 'off' the case."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Discharge date selection vs. clinical necessity.",
+        "action": "Passive acceptance of the 11/9 date provided by the SW without questioning 90-day stay length.",
+        "error_type": "Passive"
+      },
+      {
+        "context": "Clinical oversight of wound status on 11/10.",
+        "action": "Assuming the doctor/dialysis team checked the wound without explicit verification.",
+        "error_type": "Passive"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Institutional scale (3 SWs on different floors)",
+    "Dialysis scheduling constraints (MWF)",
+    "Sunday discharge logistical gaps"
+  ]
+}

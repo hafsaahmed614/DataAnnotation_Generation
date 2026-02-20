@@ -1,0 +1,95 @@
+{
+  "case_header": {
+    "case_id": "Case_2",
+    "pn_id": "PN_Mark",
+    "complexity_score": "5",
+    "demographics": {
+      "age": "56",
+      "gender": "Female",
+      "race": "White",
+      "diagnosis": "Bilateral Stage IV Pressure Ulcers (Buttocks)",
+      "region": "Urban (Toledo, OH)"
+    },
+    "outcome": "Lost to Follow-up / AMA Discharge",
+    "conversion_success": false
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound closure or home-management stability (Not achieved)",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Worsening Stage IV wounds reported by wound care nurse",
+      "Discontinuation of Wound Vac upon SNF admission (previously used in LTAC)",
+      "History of mobility issues (Wheelchair bound)",
+      "History of drug use",
+      "Provider rejection: Determined patient 'did not qualify' for service after flying in"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Patient lived in an apartment; unreachable upon PN home visit",
+    "modification_type": "None documented",
+    "bureaucratic_steps": [
+      "Referral to Home Health Agency (HHA)",
+      "Scheduling with local Wound Care Clinic (St. Vincent's)",
+      "Attempted PCOC team admission"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Intake Gap/Late Notification",
+      "days_added": "7",
+      "context": "PN notified of patient a week after her discharge; first visit to facility."
+    },
+    {
+      "trigger_event": "Patient Choice/AMA",
+      "days_added": "0",
+      "context": "Patient adamantly refused to stay past 7 days; accelerated discharge before wound closure."
+    },
+    {
+      "trigger_event": "Coordination Failure",
+      "days_added": "Unknown",
+      "context": "HHA unable to reach patient; PN unable to locate or verify wound clinic appointment."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient leaving before wound closure",
+      "action_taken": "Expedited intake; arranged for regional director/provider to fly in from Tennessee",
+      "intent": "Crisis Mitigation",
+      "result": "Failure; Provider determined patient did not qualify upon arrival"
+    },
+    {
+      "situation": "Instruction to cancel existing safety net",
+      "action_taken": "Attempted to locate/cancel Wound Care Clinic appointment",
+      "intent": "Avoid Duplicate Billing/Provider Conflict",
+      "result": "Administrative Chaos; Clinic could not be found, Epic records missing patient"
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "High-acuity short-stay patient missed due to timing",
+        "action": "Implement Daily/Weekly Census Review with Admissions/Social Services",
+        "rationale": "Ensures visibility on patients who discharge before the PN's scheduled facility rotation."
+      },
+      {
+        "context": "Provider denial of Stage IV wound care",
+        "action": "Challenge the denial and demand specific 'Clinical Reason'",
+        "rationale": "Advocacy is required when clinical necessity (Stage IV) contradicts administrative rejection."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Patient leaving AMA with severe wounds",
+        "action": "Failed to investigate root cause of exit (Pain/Withdrawal)",
+        "error_type": "Passive"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Internal firm secrecy/lack of communication",
+    "Provider flown in from out of state (Tennessee to Ohio)",
+    "Missing records in Epic database",
+    "Inaccurate facility-provided contact info for local clinics",
+    "Patient potentially moved out of the Toledo area"
+  ]
+}

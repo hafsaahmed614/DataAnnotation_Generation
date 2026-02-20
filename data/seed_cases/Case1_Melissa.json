@@ -1,0 +1,96 @@
+{
+  "case_header": {
+    "case_id": "Case_1",
+    "pn_id": "PN_Melissa_Pasquarelli",
+    "complexity_score": "2",
+    "demographics": {
+      "age": "78",
+      "diagnosis": "Acute chronic CHF, LLE Cellulitis, Left shin venous ulcer",
+      "region": "Syracuse, NY (Urban/Regional Hub)"
+    },
+    "outcome": "Successful Discharge to Home with Dual-Agency Coordination",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound healed sufficiently for home management; CHF/Cellulitis stabilized via SNF medication regimen",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Open wound (Left shin venous ulcer) requiring specialized protocol",
+      "Chronic CHF requiring daily monitoring/telehealth coordination",
+      "Risk of 'double dipping' (insurance overlap) if HHA and Healing Partners visit on the same day"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Not explicitly detailed; implies home environment was ready as patient had 'support at home'",
+    "modification_type": "Coordination of Dual-Agency Scheduling",
+    "bureaucratic_steps": [
+      "HHA selection/verification (completed by previous PN/SW)",
+      "PCP follow-up appointment scheduling by SW",
+      "Healing Partners Plus first visit scheduling (within 24hrs of D/C)",
+      "Regional Director outreach to home care providers for schedule alignment"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Staffing Transition / PN Turnover",
+      "days_added": "0",
+      "context": "Previous PN left; Melissa took over the Syracuse caseload. Most D/C work was pre-completed, requiring only verification of 'on target' status."
+    },
+    {
+      "trigger_event": "Dual-Provider Schedule Coordination",
+      "days_added": "0",
+      "context": "Coordination required to prevent HHA and Healing Partners from visiting on the same day to avoid insurance reimbursement failure."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "PN Turnover in Syracuse region",
+      "action_taken": "Regional Director took over HHA coordination and schedule outreach",
+      "intent": "Maintaining continuity of care during vacancy",
+      "result": "Discharge remained on target despite lack of local PN for a period."
+    },
+    {
+      "situation": "Risk of insurance 'double dipping'",
+      "action_taken": "Communicated with HHA and SW to ensure alternating visit days",
+      "intent": "Financial Safeguarding / Regulatory Compliance",
+      "result": "Both agencies could be reimbursed; patient received consistent daily oversight."
+    },
+    {
+      "situation": "Uncertainty of HHA Agency Name",
+      "action_taken": "Relied on SW and Regional Director's prior setup",
+      "intent": "Operational Efficiency (Passive)",
+      "result": "Handoff occurred smoothly, though PN lacked direct HHA contact info."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Post-discharge monitoring for complex wounds",
+        "action": "Ensuring Healing Partners Plus visit within 24 hours of SNF discharge",
+        "rationale": "High-risk window for readmission is the first 48 hours post-transition."
+      },
+      {
+        "context": "Administrative Gap (PN Vacancy)",
+        "action": "Interdisciplinary collaboration (SW/PN/Regional Director)",
+        "rationale": "Ensured the '2-4 week' estimate was met (Day 30) despite personnel changes."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "HHA Handoff Information",
+        "action": "Failure to explicitly verify HHA name and specific wound protocols personally",
+        "error_type": "Passive Reliance / Documentation Gap"
+      },
+      {
+        "context": "Advocacy for Daily Eyes",
+        "action": "Strict 'No Overlap' rule resulting in potential 'zero eyes' days for CHF",
+        "error_type": "Passive Monitoring"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Regional PN vacancy (Syracuse region)",
+    "HHA name/identity unknown to the current PN during the handoff process",
+    "Insurance billing constraints ('double dipping') dictating clinical visit schedules"
+  ]
+}

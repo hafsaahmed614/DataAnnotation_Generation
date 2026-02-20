@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Harold Vance (91) reaches Day 88 of his Medicare stay at Oakwood Manor. The Social Worker, Brenda, is visibly burned out and has stopped updating the 'DocNow' portal to avoid extra discharge coordination for complex wound cases.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Social Worker burnout leading to information hoarding and 'Black Hole' operational lag in PN assignment."
+    },
+    {
+      "event_description": "The region's only mobile Wound Care NP, who provides the required 'face-to-face' for Managed Medicare authorization, is hospitalized with severe influenza.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness in a single-specialist geography creates a clinical gap that the SNF tries to exploit by pushing for a non-skilled discharge."
+    },
+    {
+      "event_description": "Facility administration issues a 'Hard Stop' notice as the patient approaches Day 100. They refuse to initiate a Long-Term Care Medicaid application to avoid the administrative burden, insisting the patient is 'safe' for home despite the open Stage IV sacral wound.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility protecting its financial margin by forcing a discharge before the 100-day Medicare cliff to avoid uncompensated care or LTC paperwork."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda is unresponsive to emails regarding the discharge equipment list for NPWT (Wound Vac).",
+      "action_taken": "Reviewed clinical notes in DocNow/Atlantis and performed an in-person bedside visit with the patient within 48 hours.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "NP Miller (specialist) is unavailable to sign the post-discharge home health orders due to illness.",
+      "action_taken": "Coordinated with the Home Health Agency (HHA) generalist nurses to bridge daily dressing changes until the specialist's return.",
+      "intent": "Ensure awareness of barriers or changes in progress"
+    },
+    {
+      "situation": "The facility is rushing discharge for Friday at 4:00 PM to clear the bed before the weekend and the 100-day limit.",
+      "action_taken": "Coordinated with the Regional Director and HHA to prevent same-day 'Double Dipping' and ensure the nurse visit occurs Saturday morning.",
+      "intent": "Ensure service payment and coverage safety"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies the provider illness gap and immediately contacts the SNF Medical Director to secure a bridge order for home health dressing changes, while simultaneously verifying with the HHA that a nurse is available to perform manual debridement if the Wound Vac supplies are delayed by the NP's absence.",
+      "rationale": "This respects the clinical hierarchy by involving the Medical Director for orders while proactively solving the operational gap with the HHA, ensuring the 91-year-old isn't sent home with an unmanaged wound."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN contacts the NP's private office and pressures the administrative assistant to 'stamp' the discharge orders using the NP's digital signature while she is out sick, then tells the family they can skip the HHA intake if the equipment doesn't arrive on time.",
+      "rationale": "While this 'solves' the delay, it is a seductive overstep because it encourages forged clinical documentation and compromises patient safety by suggesting the family manage a Stage IV wound without professional oversight."
+    }
+  ],
+  "narrative_summary": "Mr. Harold Vance, a 91-year-old with a Stage IV sacral wound, is caught between a facility racing against the 100-day Medicare cliff and a burned-out Social Worker who has checked out of the coordination process. The crisis peaks when the only regional wound specialist falls ill, threatening the required documentation for Managed Medicare home health authorization. The Patient Navigator must bypass the facility's administrative silence and the provider's absence to secure a safe transition before the facility forces an unsafe discharge to protect their financial metrics."
+}

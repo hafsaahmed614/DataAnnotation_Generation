@@ -1,0 +1,104 @@
+{
+  "case_header": {
+    "case_id": "Case_2",
+    "pn_id": "PN_Melissa_Pasquarelli",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "46",
+      "gender": "Female",
+      "diagnosis": "Open surgical wound on left buttock (present on admission); History of chronic wounds",
+      "region": "Rural (Syracuse/Steuben - 4.5 hours from PN base)"
+    },
+    "outcome": "Discharged Home with HHA and Healing Partners Plus",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Transition from IV to oral antibiotics; Wound healed to 'manageable size'; Clearance by Infectious Disease",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Significant surgical wound size",
+      "History of chronic wound healing delays",
+      "Comorbidities impacting recovery speed",
+      "Requirement for IV antibiotic course completion and subsequent cultures"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Not specifically noted, though family support/competence was the primary focus for safety",
+    "modification_type": "DME (Walker, Commode, Dressing Supplies, Creams)",
+    "bureaucratic_steps": [
+      "Infectious Disease clearance for home discharge",
+      "Verification of family/fiancé wound care competence (Dressing changes)",
+      "Coordination of non-overlapping schedules between Centers Home Care and Healing Partners Plus",
+      "Securing prior authorizations for specific medications to prevent discharge delays"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Regional Handover Chaos",
+      "days_added": "Unknown",
+      "context": "Previous PN left abruptly; Melissa took over 27 facilities in November, discovering the patient already 90 days into her stay with a 'loss of connection'."
+    },
+    {
+      "trigger_event": "Clinical Wound Progression",
+      "days_added": "101",
+      "context": "Total stay reached 101 days primarily due to the 'significant' size of the surgical wound and history of chronic wounds."
+    },
+    {
+      "trigger_event": "Double-Dipping/Billing Restriction",
+      "days_added": "0",
+      "context": "Coordination required to ensure HHA and Healing Partners did not visit on the same day to avoid Medicare billing denials."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "PN remote from facility (4.5 hours)",
+      "action_taken": "Intensive phone outreach to SW and patient; Hub monitoring",
+      "intent": "Maintaining Continuity of Care",
+      "result": "Re-established rapport after previous PN's abrupt departure; secured service buy-in."
+    },
+    {
+      "situation": "Patient approaching 100-day Medicare cliff",
+      "action_taken": "Coordinated with SW on final DME/Medication logistics and HHA handoff",
+      "intent": "Discharge Velocity",
+      "result": "Patient discharged on 12/16/25 (Day 101) with all supports in place."
+    },
+    {
+      "situation": "Complex wound care required 24/7 coverage",
+      "action_taken": "In-person family training for dressing changes",
+      "intent": "Caregiver Empowerment",
+      "result": "Fiancé became competent in care, reducing reliance on intermittent HHA visits."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Dual agency involvement (Centers + Healing Partners)",
+        "action": "Regional Director coordinated schedules to ensure no overlapping visit days",
+        "rationale": "Prevents 'double-dipping' insurance issues where one entity would not get paid by Medicare."
+      },
+      {
+        "context": "Takeover of neglected region",
+        "action": "Immediate 'Hub' audit and outreach to facility Social Workers",
+        "rationale": "Identified 'lost' patients like Case 2 who were nearing discharge without Healing Partners integration."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Determining antibiotic milestones",
+        "action": "Passive observation; deferring entirely to SW/Infectious Disease findings",
+        "error_type": "Passive"
+      },
+      {
+        "context": "DME/Medication logistics",
+        "action": "Relied on SW to handle all ordering without independent audit of delivery dates",
+        "error_type": "Passive"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Abrupt PN staff turnover in Syracuse region",
+    "Extreme geographical distance (4.5-hour drive) preventing face-to-face visits",
+    "Medicare 100-day coverage limit pressure",
+    "Insurance 'Double-Dipping' billing restrictions for same-day wound care"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient referral received on Day 12 of SNF stay; PN assignment occurs on Day 26 due to regional staffing gaps.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Internal 'Black Hole' lag caused by the SNF Intake Coordinator failing to upload the wound care consult to the shared portal until the billing cycle closed."
+    },
+    {
+      "event_description": "Facility PT/OT notes indicate patient has reached 'Maximum Medical Improvement' for mobility; skilled therapy services are discontinued.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "The facility Social Worker, Sheila, is burned out and fast-tracking the 'Loss of Skilled Need' documentation to clear the bed before the upcoming holiday weekend."
+    },
+    {
+      "event_description": "Medicare Part A benefits are approaching the 100-day limit; facility issues a NOMNC (Notice of Medicare Non-Coverage).",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility's Finance Director is enforcing a '100-Day Cliff' policy to avoid the administrative burden of transitioning the patient to Medicaid Pending status."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient assigned to PN late in the stay, resulting in zero rapport with the hostile daughter who manages the patient's schedule.",
+      "action_taken": "Shadowed the Wound Care NP during rounds to gain an immediate 'clinical' introduction to the family.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "PT/OT discontinuation renders the patient ineligible for home health nursing despite a Stage 4 heel ulcer.",
+      "action_taken": "Reviewed clinical notes in Atlantis to identify a new secondary diagnosis (Stage 3 CHF) that requires skilled RN monitoring/teaching.",
+      "intent": "Ensure qualification before introducing services"
+    },
+    {
+      "situation": "Social Worker Sheila refuses to provide the discharge date, claiming 'it's not finalized' despite the family being told Friday.",
+      "action_taken": "Directly contacted the SNF's Director of Nursing to confirm the clinical discharge plan and HHA selection.",
+      "intent": "Maintain relationship for early discharge info"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that while PT/OT has ended, the patient has a newly prescribed complex insulin regimen; the PN facilitates a 'Skilled RN' need based on medication management/teaching to bridge the home wound care coverage.",
+      "rationale": "This respects the Medicare 'Skilled Need' requirement through legitimate clinical channels without pressuring therapists to falsify progress notes or overstepping into medical prescribing."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN approaches the PT Lead and asks them to 'find a reason' to keep the patient on the schedule for two more weeks so the wound care services can be authorized for home.",
+      "rationale": "While highly proactive for the patient's wound healing, this is a seductive overstep that asks a clinician to commit Medicare fraud/documentation manipulation, which a 20-year veteran knows will destroy the facility relationship and trigger an audit."
+    }
+  ],
+  "narrative_summary": "Mrs. Gable, a 74-year-old with a persistent Stage 4 diabetic foot ulcer, faces a transition crisis at Pine Valley Rehab as she hits the 100-day Medicare cliff. The facility Social Worker is actively pushing for discharge due to a 'Loss of Skilled Need' after PT/OT signed off, despite the wound remaining open and requiring advanced debridement. The PN must navigate a hostile family dynamic and institutional pressure to find a legitimate clinical skilled need to ensure the patient does not lose access to essential home-based wound care services."
+}

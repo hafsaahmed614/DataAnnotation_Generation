@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Mrs. Vance was admitted to Highland Manor post-COPD exacerbation, but the PN was not assigned until Day 14 due to a system integration error between Atlantis and DocNow.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' delay resulted in the family already selecting a sub-par HHA recommended by a neighbor before the PN could provide a vetted list."
+    },
+    {
+      "event_description": "The region's only Pulmonologist, Dr. Aris, contracted a severe flu, preventing the final 'face-to-face' O2 titration required for home oxygen certification.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness; the SNF Social Worker, Janet, refuses to seek a cross-coverage order from the Medical Director due to fear of 'stepping on toes' and her own burnout-induced apathy."
+    },
+    {
+      "event_description": "Facility administration issues a hard notice that Medicare Part A benefits will exhaust on Day 100, regardless of the Pulmonologist's availability.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The 100-Day Cliff; the facility is prioritizing bed turnover over clinical stability to avoid the financial burden of a non-skilled resident."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial PN assignment occurred on Day 14 of the SNF stay, creating a trust gap with the family.",
+      "action_taken": "Shadowed the SNF wound nurse during afternoon rounds to gain facility entry and meet the patient in-person immediately.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Pulmonologist illness caused a gap in the Managed Medicare face-to-face documentation for home O2.",
+      "action_taken": "Reviewed clinical notes in DocNow to ensure the NP's previous 'round notes' contained sufficient respiratory assessment data to support an appeal.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Social Worker Janet is unresponsive to emails regarding the HHA selection for the 100-day discharge.",
+      "action_taken": "Coordinated with the Regional Director to confirm the HHA's first appointment availability to prevent 'Double Dipping' on the Day 100 exit.",
+      "intent": "Ensure service payment and coverage safety"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that Dr. Aris's illness will delay the O2 order past the 100-day cliff. They facilitate a three-way call between the SNF Medical Director, the HHA clinical lead, and the Managed Medicare case manager to secure a one-time authorization for a 'bridge' generalist order based on previous hospital records.",
+      "rationale": "This respects the professional hierarchy by involving the Medical Director for clinical sign-off while proactively addressing the bureaucratic Managed Medicare Auth requirement to prevent a care gap."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Seeing the Social Worker's lack of initiative, the PN contacts Dr. Aris's personal cell phone via a contact at another facility to demand a verbal order for O2, then manually updates the patient's titration log in the facility's paper chart to reflect the 'new' verbal order.",
+      "rationale": "While highly proactive, this is a seductive overstep that violates medical staff bylaws, HIPAA boundaries regarding private contact info, and constitutes non-clinical personnel altering clinical documentation."
+    }
+  ],
+  "narrative_summary": "Mrs. Evelyn Vance, a 71yo O2-dependent COPD patient, is trapped between a 100-day Medicare cliff and a provider availability crisis. A 14-day 'Black Hole' delay in PN assignment allowed a burned-out Social Worker to lose control of the discharge plan, while the only local Pulmonologist's illness stalled mandatory Managed Medicare face-to-face O2 documentation. The PN must navigate a hostile facility environment to secure a bridge of care before the hard financial stop on Day 100 forces a transition to private pay."
+}

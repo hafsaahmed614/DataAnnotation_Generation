@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 88 of the SNF stay; the referral was sitting in the 'Pending' queue due to a hub intake clerk's oversight while on leave.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The regional intake hub failed to flag the 'Pending' status because the primary administrator was on vacation and no backup was trained on the Atlantis portal."
+    },
+    {
+      "event_description": "Seaside Manor administration issues a 'Notice of Non-Coverage' (NOMNC) effective for Day 100, citing 'met goals' despite the patient's persistent 2+ pitting edema in the lower extremities.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility CFO mandated a 100% discharge rate for sub-acute patients reaching the 100-day mark to avoid the administrative burden of LTC Medicaid conversions."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda (6 months from retirement) refuses to assist with HHA selection, stating 'that's the family's problem now.'",
+      "action_taken": "Bypassed the SW to meet the patient's daughter in the dining hall to review the HHA 'Choice' list and explain the Integrated Wound Care benefit.",
+      "intent": "Learn PCP and HHA preferences well in advance"
+    },
+    {
+      "situation": "Facility PT suggests discharging the patient without a gait belt or walker, claiming she is 'independent' to speed up the exit process.",
+      "action_taken": "Requested a joint 'Wound Round' with the NP to demonstrate that the patient cannot safely reach her leg to perform dressing changes independently.",
+      "intent": "Ensure awareness of barriers or changes in progress"
+    },
+    {
+      "situation": "Anxious daughter threatens to 'sue the building' if her mother is discharged while the venous ulcer is still draining.",
+      "action_taken": "Provided a physical appointment card for the first home visit and scheduled a three-way call between the HHA director, the daughter, and the PN.",
+      "intent": "Ensure patient feels informed and comfortable"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN meets with the facility's Director of Nursing (DON) to present a 'Safe Discharge Plan' that includes a confirmed 24-hour post-discharge HHA start-of-care and a pre-arranged delivery of CHF-specific DME (Oxygen and Scale) to the home.",
+      "rationale": "This respects the facility's financial need to discharge at Day 100 while ensuring clinical safety and professional continuity. It mitigates the '100-Day Cliff' without burning bridges with the facility staff."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN contacts the state Ombudsman and the patient's Medicare Advantage carrier to file a formal appeal against the NOMNC, arguing that the patient's CHF status makes her unstable for home discharge.",
+      "rationale": "While this 'Seductive Overstep' feels like strong advocacy, it creates a hostile relationship with the facility (Seaside Manor), likely resulting in the PN being banned from the building and destroying the long-term referral pipeline. It also risks the patient being stuck in a facility they can no longer afford if the appeal is denied."
+    }
+  ],
+  "narrative_summary": "Mrs. Vance, a 78-year-old with CHF and a chronic venous ulcer, is facing a forced discharge on Day 100 as Seaside Manor protects its Medicare financial cliff. The situation is exacerbated by a burned-out Social Worker who has checked out of the coordination process and a hostile daughter who fears her mother is being 'dumped' while still clinically fragile. The PN must navigate these institutional politics to secure a safe transition to home health before the 100-day benefit expires, ensuring the wound care conversion is not lost to the facility's administrative chaos."
+}

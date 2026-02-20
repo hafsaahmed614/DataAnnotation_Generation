@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial referral for 65yo post-stroke female (Eleanor Vance) processed after a 12-day delay in the SNF hub; patient has a Stage III sacral pressure ulcer and requires a stairlift for home access.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Facility Intake Coordinator withheld the referral until the wound was 'stable' to avoid early external PN scrutiny of their treatment protocols."
+    },
+    {
+      "event_description": "Medicaid CHC Waiver application for stairlift installation stalled; Social Worker Linda (burned out, managing 45 cases) failed to submit the required three contractor estimates to the state portal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Social Worker ignored three follow-up emails because they were sent after 3:00 PM on a Friday, claiming 'caseload overflow' as the reason for the missed deadline."
+    },
+    {
+      "event_description": "Facility administration issues a 'Hard Stop' notice as the patient approaches Day 98 of her Medicare benefit; they demand a transition to Long-Term Care (LTC) Private Pay to avoid the financial cliff.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility CFO pressured the clinical team to downgrade 'skilled need' documentation to force an LTC flip before the 100-day benefit exhaustion."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Linda refuses to share the CHC Waiver case number, citing 'HIPAA' incorrectly to mask her lack of progress.",
+      "action_taken": "Collaborated with the patient's daughter to obtain the case number from the patient's own Medicaid portal access.",
+      "intent": "Readiness for immediate family communication"
+    },
+    {
+      "situation": "Facility attempting to discharge to LTC without a wound care plan for the Stage III ulcer.",
+      "action_taken": "Attended the facility care conference with the NP to verify the wound still requires specialized dressing changes.",
+      "intent": "Verify diagnosis meets home care criteria"
+    },
+    {
+      "situation": "Patient's daughter expresses extreme hostility toward the facility, threatening to sue for 'patient dumping'.",
+      "action_taken": "Educated the daughter on the specific timeline for CHC home modifications and the role of the PN in bridge-nursing.",
+      "intent": "Gain trust and prepare patient for transition"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN meets with the facility Administrator and the Social Worker together, presenting a 'Transition Bridge Plan' that highlights how the PN will manage the home-health handoff, thereby reducing the facility's liability for a failed discharge while acknowledging the SW's heavy workload.",
+      "rationale": "This maintains professional alignment by framing the PN as a resource to the facility rather than a critic of the Social Worker's delays, while ensuring the patient's transition remains viable."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN personally contacts two local contractors they know and asks them to provide 'pro bono' estimates for the stairlift, then faxes these directly to the Medicaid office to bypass the Social Worker's inaction.",
+      "rationale": "While highly proactive, this is a seductive overstep because it violates the Social Worker's legal domain, bypasses the facility's internal chain of command, and risks the PN being permanently banned from the facility for overstepping their non-clinical role."
+    }
+  ],
+  "narrative_summary": "Mrs. Eleanor Vance is a 65-year-old female recovering from an ischemic stroke with a Stage III sacral ulcer, caught between a burned-out Social Worker and a facility protecting its 100-day Medicare financial cliff. The discharge is physically blocked by a two-story home layout requiring a Medicaid CHC Waiver for a stairlift, a process currently stalled by administrative neglect. The case is further complicated by a hostile family dynamic and the facility's aggressive push to flip the patient to Long-Term Care to avoid reimbursement drops. The PN must navigate these institutional politics to secure home-health conversion while maintaining a fragile relationship with a 'quiet quitting' facility staff."
+}

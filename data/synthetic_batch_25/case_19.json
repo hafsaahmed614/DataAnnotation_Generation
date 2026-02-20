@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient admitted to Northcrest Rehab after ICU stay for Pneumonia; PN assigned on Day 9 of SNF stay.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' lag occurred because the SNF intake coordinator failed to flag the patient as a 'High-Risk Respiratory' referral until the first utilization review meeting."
+    },
+    {
+      "event_description": "Managed Medicare carrier issues a 'Request for Information' regarding the physician Face-to-Face (F2F) encounter note for home O2 and skilled nursing.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility Social Worker, citing burnout and a Friday afternoon departure, refused to page the attending physician to clarify the F2F note, delaying the auth submission until the following Tuesday."
+    },
+    {
+      "event_description": "The facility begins internal pressure to discharge by Day 100 to avoid the 'Medicare Cliff' while the Managed Medicare Auth is still pending.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility administrator prioritized bed turnover for a high-reimbursement orthopedic patient, signaling the SW to push for a 'Safety Discharge' to LTC if home health auth didn't clear within 48 hours."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The attending physician's F2F note is clinically vague, risking a Managed Medicare denial, and the SW refuses to intervene because 'it's not her job to write clinical notes.'",
+      "action_taken": "Hand-delivered a printed 'F2F Requirement Checklist' to the physician during his 6:30 AM rounds and secured a verbal addendum for the chart.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the SW's gatekeeping and the facility's standard 'request queue' to ensure the clinical documentation is audit-proof before the carrier's 24-hour review window closes."
+    },
+    {
+      "situation": "The patient's daughter is anxious about managing the O2 concentrator and is threatening to keep the patient in the SNF past the 100-day mark, which would trigger private-pay rates.",
+      "action_taken": "Coordinated a three-way call between the HHA Respiratory Therapist and the daughter to perform a 'virtual home walkthrough.'",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Defuse the 'Family Hostility' barrier by providing technical assurance that the SNF staff is too overwhelmed to offer, thereby preventing a pivot to Long-Term Care."
+    },
+    {
+      "situation": "The Managed Medicare carrier requires a specific 'Level of Care' certification that the SNF office manager has not uploaded to the portal.",
+      "action_taken": "Physically sat in the business office and waited for the manager to provide the 'Upload Confirmed' screen capture.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Apply 'Polite Persistence' pressure to ensure the administrative task isn't 'lost' in the Friday afternoon rush, essentially forcing the staff to prioritize this file over their weekend exit."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Decline to intervene in the authorization delay, documenting that the facility Social Worker is the primary point of contact for insurance logistics and respecting the internal discharge planning hierarchy.",
+      "rationale": "While this avoids 'stepping on toes' of the burned-out SW, it allows the 'Managed Medicare Auth' delay to compound, likely resulting in the patient hitting the 100-day cliff and being forced into LTC."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Request a brief meeting with the SW and the Director of Nursing to present the specific 'Face-to-Face' documentation gaps identified by the carrier, offering to facilitate the HHA's clinical liaison to help bridge the information gap.",
+      "rationale": "This addresses the bottleneck through official channels and provides the facility with a resource (the HHA liaison) to solve the clinical documentation problem without the PN assuming clinical liability."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Directly contact the Managed Medicare Medical Director via a personal professional contact to advocate for the patient's home care authorization, bypassing both the facility's UR department and the standard portal process.",
+      "rationale": "Though well-intentioned to secure the 'Service Conversion,' this violates institutional protocol and undermines the facility's internal Utilization Review team, potentially causing a 'Hostile Facility' dynamic that bars the PN from future referrals."
+    }
+  ],
+  "narrative_summary": "An 83-year-old female recovering from pneumonia faces a critical transition delay due to Managed Medicare's stringent Face-to-Face documentation requirements. The case is complicated by a burned-out Social Worker who is non-responsive to authorization status updates and a facility administration eyeing the 100-day Medicare cliff for financial reasons. The Patient Navigator must navigate institutional apathy and family anxiety to secure home health authorization before the patient is transitioned to permanent Long-Term Care."
+}

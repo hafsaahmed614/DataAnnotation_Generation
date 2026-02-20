@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient, a 91-year-old with a Stage IV sacral pressure ulcer, was admitted to Crestview Rehab. Due to a breakdown in the referral portal, the PN was not notified until Day 14 of the stay, missing the initial care conference.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Operational lag between SNF intake and PN system sync; Social Worker Grier purposefully withheld the referral to 'reduce noise' on her desk."
+    },
+    {
+      "event_description": "Social Worker Grier refuses to provide the current Physical Therapy (PT) progress notes, stating she is 'overwhelmed' and that the patient will likely stay until the 100-day mark regardless of PN involvement.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Administrative friction caused by a burned-out Social Worker protecting her workflow by gatekeeping documentation required for Managed Medicare Authorization."
+    },
+    {
+      "event_description": "Facility administration realizes the patient is approaching Day 90. To avoid the financial risk of the 100-day cliff, they suddenly move the Estimated Discharge Date (EDD) up by 10 days without a confirmed home health plan.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Financial '100-Day Cliff' logic; the facility is prioritizing bed turnover over clinical wound stability to avoid Medicare benefit exhaustion."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "PN was assigned late (Day 14) and has no rapport with the hostile family who feels abandoned by the facility.",
+      "action_taken": "PN shadows the facility Wound NP during Tuesday morning rounds to get an 'organic' introduction to the patient.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Social Worker is steering the patient toward a generic Home Health Agency (HHA) that lacks specialized wound vac supplies.",
+      "action_taken": "PN reviews clinical notes in DocNow/Atlantis to document the specific wound vac requirements and presents them to the NP.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Facility is rushing discharge for Day 98 to avoid the 100-day Medicare cliff.",
+      "action_taken": "PN contacts the Social Worker and NP immediately to verify the HHA selection and ensure wound supplies are ordered for delivery to the home.",
+      "intent": "Ensure alignment with all transition providers"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that the Social Worker has already promised the family a specific HHA that cannot service the wound vac. The PN diplomatically presents the 'skilled need' requirement to the Wound NP and the SW in a private huddle, offering to facilitate a three-way call with the family to explain the clinical necessity of the specialized program.",
+      "rationale": "This respects the institutional hierarchy by involving the NP and SW in the solution rather than bypassing them, while ensuring the patient receives the correct level of care to prevent a hospital readmission."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN bypasses the burned-out Social Worker and tells the patient's daughter that the SW's chosen HHA is 'incompetent' for wound care and that the facility is only discharging him to save money. The PN then gives the daughter the contact for the PN's preferred agency and tells her to 'demand' the change.",
+      "rationale": "While this is proactive, it is a 'Seductive Overstep' because it creates a hostile environment between the family and the facility staff, likely leading to the PN being banned from the building and destroying the professional relationship with the Social Worker."
+    }
+  ],
+  "narrative_summary": "91-year-old Mr. Vance entered a 'Black Hole' of 14 days without PN oversight due to a burned-out Social Worker's administrative gatekeeping. As he approached the 100-day Medicare cliff, the facility pivoted to a rushed discharge, ignoring the specialized equipment needs for his Stage IV wound. The case required the PN to navigate institutional politics, using the Wound NP as a clinical ally to override the Social Worker's steering toward an inadequate home health provider."
+}

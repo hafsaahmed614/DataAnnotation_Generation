@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Arthur Vance is nearing Day 20 of his post-CABG stay; the SNF Social Worker, Brenda, is aggressively pushing for a Friday discharge to avoid the Managed Medicare co-pay 'cliff' for the facility's metrics, despite the patient's sternal wound showing serosanguinous drainage.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Social Worker Brenda is intentionally withholding the 'face-to-face' clinical notes from the PN to prevent the PN from flagging the wound as a reason to delay the discharge until the following week."
+    },
+    {
+      "event_description": "The PN was not notified of Mr. Vance's admission until Day 14, creating a 'Black Hole' scenario where the family's anxiety regarding home care has fermented without professional navigation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The facility's admissions coordinator delayed the referral to the PN hub to allow their internal 'preferred' HHA first-right-of-refusal, which was eventually declined due to staffing shortages."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan requires an updated physician certification for the vacuum-assisted closure (VAC) therapy prior to home transition, but the surgeon is currently in a 3-day surgical block.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The surgical group's front office refuses to route the PN's inquiry to the Physician Assistant, insisting that only the Surgeon can sign the 'face-to-face' documentation for the Advantage plan."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda is 'ghosting' the PN's emails regarding the final Home Health Agency (HHA) selection to ensure her preferred vendor gets the referral.",
+      "action_taken": "Physically intercepted Brenda during her morning walk-to-rounds and provided a pre-printed 'Patient Choice' form signed by the daughter.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Force a public acknowledgment of the patient's preference in front of the Nursing Director to neutralize Brenda's steering tactics."
+    },
+    {
+      "situation": "The patient's daughter is hostile, accusing the PN of 'working for the insurance company' to kick her father out of the SNF early.",
+      "action_taken": "Conducted a side-by-side review of the SNF's physical therapy progress notes with the daughter, contrasting them with the home-care clinical requirements.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Pivot the daughter's anger toward the facility's discharge timeline by positioning the PN as the 'safety auditor' who will only allow discharge once the home team is fully briefed."
+    },
+    {
+      "situation": "The SNF Medical Director is ready to sign the discharge order, but the 'face-to-face' encounter for the home wound care is missing from the chart.",
+      "action_taken": "Identified the Surgeon's Nurse Practitioner in the facility parking lot and secured a verbal confirmation of the home care plan to be transcribed immediately.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Bypass the hospital's bureaucratic records department by leveraging a 'parking lot' encounter to ensure the clinical narrative matches the HHA's authorization needs."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the Social Worker's established discharge timeline and wait for the facility to provide the final clinical packet before contacting the home health team.",
+      "rationale": "This maintains institutional harmony by not challenging the SW's authority, but it risks a 'missed discharge' if the HHA doesn't receive the paperwork until after the patient is already home."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Schedule a three-way conference call between the PN, the HHA Intake Coordinator, and the Patient's Daughter to verify that the home care start-of-care time aligns with the facility's Friday transport schedule.",
+      "rationale": "This proactively addresses 'Schedule De-conflict' issues and ensures the family feels supported without overstepping the facility's clinical discharge authority."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Advise the patient's daughter to refuse the transport vehicle on Friday morning, citing 'unstable wound drainage,' until the PN can personally verify the HHA has the VAC supplies in hand.",
+      "rationale": "While this ensures patient safety, it is a significant overstep because a non-clinical PN is coaching a family to ignore a physician's discharge order and interfering with the facility's bed management."
+    }
+  ],
+  "narrative_summary": "75-year-old Arthur Vance is being fast-tracked for discharge after a cardiac bypass to satisfy the SNF's financial metrics before his Medicare Advantage co-pay triggers. The case is complicated by a 'Black Hole' delay in PN assignment and a burned-out Social Worker who is steering the referral to an overburdened HHA. The PN must navigate a hostile family dynamic and a missing 'face-to-face' clinical document to ensure a safe transition that includes specialized wound care for a sternal VAC."
+}

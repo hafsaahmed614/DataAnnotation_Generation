@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Navigator assigned on Day 14 of SNF stay due to the Social Worker failing to update the status in the Atlantis portal; the SW is currently managing a double caseload and is unresponsive to external emails.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Burned-out Social Worker gatekeeping patient data to manage her own workload surge."
+    },
+    {
+      "event_description": "Managed Medicare Advantage provider denies the request for a portable oxygen concentrator, citing a lack of 'face-to-face' documentation regarding the patient's ambulatory O2 needs during the SNF stay.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Administrative failure to document specific 'face-to-face' clinical encounters required by private insurers vs. straight Medicare."
+    },
+    {
+      "event_description": "The region's only Pulmonologist, Dr. Aris, contracts the flu, delaying the final titration signature required for the high-flow O2 home setup for three days.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Single-specialist dependency in the rural corridor creating a care gap during provider illness."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The SNF Social Worker refuses to share the daughter's contact information, citing a 'strict' interpretation of HIPAA to avoid PN interference.",
+      "action_taken": "Shadowed the facility NP during morning rounds to introduce the program directly to the patient and daughter.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Dr. Aris's office is closed due to illness, leaving the O2 titration orders unsigned 48 hours before the Medicare 100-day cliff discharge.",
+      "action_taken": "Coordinated with the HHA generalist nurse to bridge dressing changes and monitoring until the specialist returned.",
+      "intent": "Ensure awareness of barriers or changes in progress"
+    },
+    {
+      "situation": "The SNF is pushing for a 'Friday Dump' discharge to avoid the Day 101 financial shift to private pay, despite the O2 tanks not being delivered.",
+      "action_taken": "Contacted the Regional Director to prevent a 'Double Dipping' billing conflict and ensure the DME delivery was confirmed before the patient left the curb.",
+      "intent": "Ensure service payment and coverage safety"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN contacts the Home Health Agency (HHA) supervisor to confirm that a backup oxygen supply is physically present at the patient's residence and instructs the daughter to remain at the SNF until the DME company provides a delivery confirmation number.",
+      "rationale": "This action ensures clinical safety by verifying the life-sustaining equipment is in place before the patient moves, while respecting the boundaries of the DME and HHA providers."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN, realizing the DME company is running behind, offers to pick up two portable oxygen tanks from the facility's supply closet or a local warehouse and transport them in their personal vehicle to the patient's home to 'save the discharge' and satisfy the burned-out Social Worker.",
+      "rationale": "While highly proactive, this is a dangerous clinical and legal overstep; non-clinical PNs are strictly prohibited from transporting medical equipment or oxygen, and this 'hero' behavior bypasses necessary safety inspections by licensed DME technicians."
+    }
+  ],
+  "narrative_summary": "A 71-year-old O2-dependent COPD patient is caught in a 'Black Hole' delay caused by a burned-out Social Worker who failed to trigger the PN assignment for two weeks. As the facility aggressively pushes for discharge to avoid the 100-day Medicare cliff, a Managed Medicare authorization denial and the sudden illness of the only local Pulmonologist create a high-risk transition gap. The PN must navigate institutional gatekeeping and provider shortages to ensure the patient has life-sustaining oxygen at home before the facility executes a 'Friday Dump' discharge."
+}

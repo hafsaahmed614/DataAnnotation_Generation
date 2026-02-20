@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 14 of stay, well after the initial MS flare stabilization, revealing a significant 'Black Hole' in the transition timeline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The facility admissions clerk failed to flag the MS diagnosis for the PN hub until the first formal care conference was already scheduled."
+    },
+    {
+      "event_description": "Managed Medicare Authorization for home health is stalled because Dr. Vance (Neurologist) has not provided the 'Face-to-Face' (F2F) encounter signature.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker, Marcus, is burned out and refuses to call the Neurologist's office, claiming 'it's the HHA's job to get signatures,' despite the HHA not having access to the facility's internal EMR."
+    },
+    {
+      "event_description": "Patient approaches Day 100 of Medicare benefits; facility administration begins pressuring the family for a Long-Term Care (LTC) transition due to the financial risk of the missing home health auth.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility CFO mandated a '100-day cliff' hard-stop on all sub-acute stays to avoid uncompensated care, regardless of the patient's home-readiness."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Social Worker (Marcus) is unresponsive to emails and explicitly tells the PN to 'stay in their lane' regarding physician outreach for the F2F signature.",
+      "action_taken": "The PN physically intercepted Dr. Vance in the hallway during his Tuesday morning rounds to present the F2F form for an immediate wet-ink signature.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the burned-out gatekeeper (SW) and use the physician's immediate proximity to eliminate a 7-day administrative lag before the weekend."
+    },
+    {
+      "situation": "Patient's daughter, Sarah, is hostile and threatening a 'Safe Discharge' grievance because she believes her mother cannot walk independently with her new walker.",
+      "action_taken": "PN facilitated a 'Family Skills Check' during PT rounds, requiring the daughter to observe the patient's successful 20-foot gait transition.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Shift the burden of proof from the facility to the clinical reality, neutralizing the daughter's legal posturing with documented physical performance."
+    },
+    {
+      "situation": "The Managed Medicare plan (Humana) rejected the initial home health request due to lack of MS-specific 'skilled need' documentation.",
+      "action_taken": "PN coordinated with the RN Case Manager to add 'Medication Management/Titration for Baclofen' to the skilled service list.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Artificially bolster the clinical narrative to satisfy the insurer's binary 'skilled need' requirement while the patient's primary wound is still closed."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's internal hierarchy by documenting the missing F2F signature in the shared DocNow portal and awaiting the Social Worker's return from his mental health leave to finalize the outreach.",
+      "rationale": "This prioritizes 'institutional harmony' and the paper trail over the patient's discharge timeline, potentially leading to a 7-day delay if the SW remains unresponsive."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Contact the Neurologist's Medical Assistant directly to verify the F2F encounter note is finalized in the external EMR and offer to fax the specific Home Health authorization form directly to their desk for a digital signature.",
+      "rationale": "This solves the bottleneck by bridging the gap between the facility and the private specialist office without violating the Social Worker's boundary of 'not pestering the doctor' in person."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Review the Neurologist's recent progress notes and draft the clinical justification for the 'Face-to-Face' encounter yourself, then present it to the doctor to sign as a completed 'administrative courtesy' to save him time.",
+      "rationale": "While efficient, drafting clinical justifications for a physician is a significant boundary overstep that can be seen as practicing medicine without a license or falsifying clinical intent."
+    }
+  ],
+  "narrative_summary": "68-year-old Evelyn is recovering from an MS flare, but her transition home is paralyzed by a missing physician signature required for her Managed Medicare authorization. The facility's Social Worker is exhibiting severe burnout, refusing to assist with physician outreach, while the patient's daughter is threatening a legal grievance over perceived safety concerns. As the 100-day Medicare cliff looms, the PN must navigate institutional politics and administrative delays to secure the F2F documentation before the facility forces an LTC transition. The case tests the PN's ability to bypass uncooperative staff while managing an anxious family dynamic and strict insurance requirements."
+}

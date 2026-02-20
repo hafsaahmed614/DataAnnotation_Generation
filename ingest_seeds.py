@@ -125,8 +125,8 @@ def ingest_seed_cases():
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        # a. Extract case_id
-        case_id = data.get("case_header", {}).get("case_id", filename.replace(".json", ""))
+        # a. Build unique case_id from filename (avoids duplicates across navigators)
+        case_id = filename.replace(".json", "")
 
         # b. Build searchable document string
         document_string = build_document_string(data)

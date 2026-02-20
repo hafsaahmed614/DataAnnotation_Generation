@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial Managed Medicare Authorization request for home health services submitted to the Advantage plan carrier without required 'face-to-face' clinical documentation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker, who is two weeks from retirement, intentionally submitted an incomplete packet to the payer to avoid the administrative burden of tracking down the physician for a signature."
+    },
+    {
+      "event_description": "Facility administration flags the patient approaching Day 85 of his Medicare stay; PT notes are subtly shifted by the DOR to reflect a 'rehab plateau' to prepare the family for the 100-day financial cliff.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is prioritizing the 100-day Medicare cliff to force a transition to private-pay Long-Term Care, as the patient's bed is needed for a higher-reimbursement post-surgical referral."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The attending physician is avoiding the Social Worker's office to evade paperwork, leaving the required F2F encounter note unsigned for the Humana Advantage auth.",
+      "action_taken": "Identified the MD's 'quiet hour' in the facility cafeteria at 6:30 AM and presented the pre-populated F2F form for signature alongside the patient's most recent PT progress report.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the administrative friction of the front office and the burned-out SW by securing a physical signature that can be scanned and sent directly to the payer's clinical reviewer."
+    },
+    {
+      "situation": "The patient's daughter is highly anxious and has been told by the floor nurse that 'home care won't be enough' once the 100 days are up.",
+      "action_taken": "Conducted a three-way conference call with the daughter and the Healing Partners Regional Director to review the specific HHA staffing ratios and emergency on-call protocols.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Neutralize the 'steering' toward Long-Term Care being performed by facility staff who are attempting to secure a permanent resident for the building."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Follow the facility's standard protocol by placing the F2F documentation request in the Social Worker's 'Urgent' bin and documenting the follow-up in the EMR every 24 hours.",
+      "rationale": "This respects the established hierarchy and facility workflow, ensuring the PN is not blamed for procedural errors, though it risks missing the auth window entirely."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Coordinate a 'transition huddle' with the PT Lead and the SW to clarify the specific language required by the Managed Medicare payer to prove homebound status, offering to facilitate the faxing once the SW secures the MD's signature.",
+      "rationale": "This solves the friction by providing the necessary clinical context to the staff while keeping the SW as the primary point of contact, maintaining institutional harmony."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Directly access the physician's dictation queue in the EMR to draft the 'face-to-face' encounter language based on the NP's rounds and then ask the physician to 'quickly sign off' on the note during a hallway encounter.",
+      "rationale": "While this ensures the documentation is perfect for the payer, it constitutes a boundary violation by performing clinical documentation tasks reserved for facility staff or providers, potentially alienating the SW and MD."
+    }
+  ],
+  "narrative_summary": "Mr. Arthur Vance, an 81-year-old stroke survivor, is caught between a Managed Medicare authorization delay and a facility eager to transition him to private-pay LTC as his 100-day benefit cliff approaches. The institutional friction is compounded by a burned-out Social Worker who is providing minimal effort in securing the mandatory 'face-to-face' physician signatures. The Patient Navigator must navigate these political waters to ensure a timely home discharge before the facility's financial interests lock the patient into long-term care. The case tests the veteran's ability to bypass administrative bottlenecks without triggering professional retaliation from facility leadership."
+}

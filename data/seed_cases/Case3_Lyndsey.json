@@ -1,0 +1,86 @@
+{
+  "case_header": {
+    "case_id": "Case_3",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "86",
+      "diagnosis": "Sacral pressure injury",
+      "region": "Suburban (Southampton Estates, PA)"
+    },
+    "outcome": "Discharged to Home with Family",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound healing progress and completion of daily SNF wound care regimen",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Sacral pressure injury requiring advanced dressing care",
+      "Recovery from in-SNF fall affecting mobility",
+      "Age-related frailty (86yo)"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Home readiness for return from 77-day stay",
+    "modification_type": "Private Home (Daughter's residence)",
+    "bureaucratic_steps": [
+      "Social Worker referral for external wound program",
+      "Insurance verification (Straight Medicare)",
+      "Medical Director clinical qualification approval",
+      "Coordination with Bayada Home Health (3x/week)"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Holiday Staffing Shortage",
+      "days_added": "0",
+      "context": "11/26 discharge fell on Thanksgiving week; PN had to navigate reduced nursing availability to maintain the date."
+    },
+    {
+      "trigger_event": "Caregiver Reliability Concerns",
+      "days_added": "0",
+      "context": "Patient expressed doubt that daughter would actually arrive for pick-up; PN had to monitor until the physical exit occurred."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "PN excluded from formal facility clinical meetings/EMR",
+      "action_taken": "Back-channel communication with 'traditional provider' via text/Teams",
+      "intent": "Clinical Surveillance",
+      "result": "Maintained accuracy of 11/26 discharge estimate despite lack of system access."
+    },
+    {
+      "situation": "Bayada Home Health scheduled 3x weekly",
+      "action_taken": "Offsetting PN-service home visit to a different day",
+      "intent": "Care Interleaving",
+      "result": "Increased touchpoints for the patient without overlapping/conflicting with HHA visits."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Patient not in original hub/referral stream",
+        "action": "Facilitated multi-stage approval (Review team + Medical Director)",
+        "rationale": "Ensured clinical and insurance eligibility before promising services to SW."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Clinical progress monitoring over 77 days",
+        "action": "Relying on verbal updates from providers/SW rather than EMR access",
+        "error_type": "Passive"
+      },
+      {
+        "context": "Mobility/Fall recovery tracking",
+        "action": "Self-reported exclusion from mobility discussions",
+        "error_type": "Passive"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Thanksgiving week staffing (Nurse on vacation)",
+    "Daughter/Caretaker unreliability/instability",
+    "In-SNF fall during stay",
+    "Long-stay fatigue (77 days)"
+  ]
+}

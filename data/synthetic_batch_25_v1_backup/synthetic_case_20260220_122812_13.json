@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Managed Medicare Advantage plan (Humana) issued a technical denial for the Home Health Authorization, citing that the SNF's 'face-to-face' documentation failed to explicitly state the patient's homebound status following his left transtibial amputation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The burned-out Social Worker refused to facilitate a secondary 'face-to-face' with the surgeon, claiming it was 'outside her scope' for a patient already in a skilled bed."
+    },
+    {
+      "event_description": "Patient reached Day 93 of his Medicare benefit period. The facility administrator issued a '100-Day Cliff' warning to the family, stating that if discharge to home does not occur by Day 100, the patient must transition to a $450/day private-pay rate or apply for LTC Medicaid.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility financial department is aggressively 'steering' the discharge timeline to avoid the administrative burden of an unfunded Day 101 stay."
+    },
+    {
+      "event_description": "Patient Navigator assigned on Day 88, leaving only a 12-day window to coordinate with the home team. This 'Black Hole' lag resulted in the family feeling blindsided by the sudden push for discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The SNF's internal referral protocol intentionally delays external PN access until the final two weeks of stay to minimize 'outside interference' with their internal HHA steering."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Managed Medicare plan requires detailed 'face-to-face' documentation not present in the SNF record.",
+      "action_taken": "Contacted the Vascular Surgeon's office directly to obtain the specific surgical post-op note and faxed it to the HHA intake coordinator.",
+      "intent": "Ensure qualification before introducing services"
+    },
+    {
+      "situation": "Social Worker is gatekeeping the discharge planning meeting due to burnout and friction with the PN.",
+      "action_taken": "Shadowed the wound care nurse during rounds to gain facility entry and build rapport with the patient directly.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Family is anxious about the 100-Day Cliff and considering a premature AMA discharge.",
+      "action_taken": "Educated the family on the Managed Medicare appeals process and the exact timeline for the HHA's first home visit.",
+      "intent": "Educate patient/family on program benefits"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that the Social Worker has stopped responding to the HHA's requests for the updated clinical packet. Instead of escalating to the Administrator, the PN visits the SW in person with a printed 'Pre-Discharge Checklist,' offering to assist with the faxing and phone calls to the surgeon's office as a 'clerical support' gesture to relieve the SW's workload.",
+      "rationale": "This respects the institutional hierarchy while proactively solving the administrative bottleneck. By framing the intervention as 'support' rather than 'oversight,' the PN mitigates the SW's burnout-induced hostility and secures the necessary documentation for the Managed Medicare Auth."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN, seeing the SW's incompetence, tells the patient's wife to file a formal grievance with the facility's Corporate Compliance office regarding the delay in discharge planning, while simultaneously calling the Insurance Case Manager to report the facility for 'obstructing care.'",
+      "rationale": "While this appears highly proactive to a novice, it is a catastrophic overstep for a non-clinical PN. It permanently destroys the relationship with the facility staff, ensures the PN will be barred from future entry, and creates a hostile environment that may lead the facility to discharge the patient to a competitor HHA just to spite the PN."
+    }
+  ],
+  "narrative_summary": "A 69-year-old male post-amputation is caught between a Managed Medicare authorization delay and a facility aggressively protecting its 100-day financial cliff. The Social Worker, suffering from extreme burnout, has become a bureaucratic barrier, refusing to rectify documentation gaps needed for the 'face-to-face' requirement. The Patient Navigator must navigate this political minefield to secure home health conversion before the patient is forced into a private-pay LTC transition. Success hinges on bypassing the SNF's 'Black Hole' delay to build trust with a family that is increasingly hostile toward the facility's lack of transparency."
+}

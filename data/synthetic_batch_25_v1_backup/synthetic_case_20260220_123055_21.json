@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Arthur, 77, assigned to PN on Day 14 of SNF stay following L3-L5 spinal fusion. The 'Black Hole' lag between admission and PN assignment has resulted in the family feeling neglected by the facility staff.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "SNF Social Worker burnout; the SW 'Sandra' failed to notify the PN hub of the referral until the patient's family complained about the lack of a discharge plan."
+    },
+    {
+      "event_description": "Regional wound NP, the only specialist authorized by the patient's Managed Medicare plan for post-surgical incisional monitoring, is diagnosed with shingles and sidelined.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness; lack of a secondary credentialed specialist within the plan's narrow network for the suburban region."
+    },
+    {
+      "event_description": "The SNF administration initiates a 'Hard Stop' discharge for Day 21 to avoid the Medicare co-pay transition, despite the wound specialist's absence and the family's anxiety regarding the surgical drain.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The 100-Day Cliff logic applied prematurely at the 20-day co-pay threshold to protect facility 'Length of Stay' metrics."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial family hostility due to the 14-day 'Black Hole' delay in communication.",
+      "action_taken": "Shadowed the SNF Physical Therapist during Arthur's midday mobility session to introduce the PN role in a clinical context.",
+      "intent": "Early Engagement"
+    },
+    {
+      "situation": "Social Worker Sandra refuses to provide the 'face-to-face' documentation required for Managed Medicare home health authorization.",
+      "action_taken": "Accessed the DocNow portal to pull NP round notes and faxed them directly to the HHA intake department to bypass the SW's desk.",
+      "intent": "Strategic Outreach"
+    },
+    {
+      "situation": "A 72-hour care gap exists between discharge and the replacement specialist's first home visit.",
+      "action_taken": "Coordinated with the Regional Director and the HHA to ensure the home nurse was briefed on the surgeon's specific spinal dressing protocol.",
+      "intent": "Schedule De-conflict"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies that the Managed Medicare plan requires a specific 'face-to-face' encounter for the home wound care transition. Knowing the SW is burned out, the PN personally facilitates the telehealth bridge between the patient's PCP and the HHA to ensure authorization is active by discharge morning.",
+      "rationale": "This respects the professional ecosystem by completing the necessary administrative link that the SW is neglecting, without overstepping into clinical advice or violating facility hierarchy."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN, seeing the wound specialist is ill and the SW is indifferent, tells the family to refuse to sign the discharge papers and to file a formal 'Quality of Care' grievance with the state ombudsman to force a 48-hour stay extension.",
+      "rationale": "This is a seductive overstep for a veteran because it 'fixes' the immediate safety concern, but it creates a hostile, litigious environment that permanently poisons the relationship with the facility and exceeds the PN's non-clinical scope."
+    }
+  ],
+  "narrative_summary": "Arthur, a 77-year-old recovering from spinal fusion, is caught in a political crossfire between a burned-out Social Worker and a facility eager to discharge him before his Day 20 Medicare co-pay begins. The situation is complicated by the sudden shingles diagnosis of the region's only mobile wound specialist, creating a dangerous care gap for his surgical incision. The PN must navigate the 'Black Hole' of a delayed referral while bypassing administrative bottlenecks to secure Managed Medicare authorization. Success hinges on bridging the clinical gap with the HHA team while managing a family that has lost all trust in the facility's discharge process."
+}

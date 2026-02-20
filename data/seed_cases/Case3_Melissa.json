@@ -1,0 +1,97 @@
+{
+  "case_header": {
+    "case_id": "Case_3",
+    "pn_id": "PN_Melissa",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "83",
+      "gender": "Female",
+      "race": "White",
+      "diagnosis": "Adult Failure to Thrive; COPD; CHF; Cellulitis; Diabetes",
+      "region": "Rural Upstate New York (Ghent SNF)"
+    },
+    "outcome": "Hospital Readmission - Respiratory Failure",
+    "conversion_success": false
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound trajectory improvement and therapy endurance (1hr/day, 6 days/week)",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Multiple wounds: sacrum, left leg, right leg, right groin, right heel",
+      "Two-person assist requirement for transfers",
+      "Deconditioning/Failure to thrive",
+      "Non-compliance with diabetic diet",
+      "Fluid retention (edema) associated with CHF"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Patient required two-person manual assist or mechanical lift for home safety",
+    "modification_type": "DME (Hoyer Lift, Slide Board, Transfer Bench)",
+    "bureaucratic_steps": [
+      "Family training for 2-person assist",
+      "Wound care dressing training for son",
+      "Coordination with SW for DME ordering",
+      "Verification of HHA contract status"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Physical/Manual Strength Barrier",
+      "days_added": "21",
+      "context": "Initial discharge delayed because patient was not strong enough for husband and son to lift safely; needed intensive PT/OT to reach 'more ambulatory' status."
+    },
+    {
+      "trigger_event": "Acute Clinical Deterioration",
+      "days_added": "999",
+      "context": "Acute respiratory failure on 9/24/25 led to hospital transfer, terminating the SNF-to-home discharge track."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Family report of empty O2 tanks and patient 'sitting too much' causing wounds.",
+      "action_taken": "Escalated concerns to Facility Social Worker; verified facility protocol.",
+      "intent": "Advocacy Check",
+      "result": "Facility awareness increased, though staff claimed compliance; friction remained with family."
+    },
+    {
+      "situation": "Patient required 2-person assist; family aging/physical limitations.",
+      "action_taken": "Proposed Hoyer Lift and slide board for home use.",
+      "intent": "Modern Alternative",
+      "result": "Equipment discussed to shorten SNF stay, but limited by patient's own strength needed to use the lift."
+    },
+    {
+      "situation": "Patient transferred to non-affiliated facility after hospitalization.",
+      "action_taken": "Maintained contact with son twice post-discharge to build relationship.",
+      "intent": "Relationship Maintenance / Continuity of Care",
+      "result": "Family appreciated support but declined return due to dissatisfaction with original SNF; case closed due to lack of contract."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Hospitalization of a 'hot' lead.",
+        "action": "Follow-up calls to the son to check on status and offer future help.",
+        "rationale": "Maintains the relationship for potential re-entry or future service needs even if current facility is out-of-network."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "CHF/Fluid retention monitoring.",
+        "action": "Failure to verify 'Daily Weights' at the facility level.",
+        "error_type": "Passive",
+        "rationale": "Clinical indicators (fluid) were present but PN did not formally audit the facility's monitoring prior to the respiratory failure event."
+      },
+      {
+        "context": "Transfer to non-affiliated facility.",
+        "action": "Did not attempt to negotiate a Single Case Agreement (SCA).",
+        "error_type": "Passive",
+        "rationale": "The PN assumed that no contract meant the patient could not be followed, missing an opportunity for operational advocacy."
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Rural Geography: PN traveling up to 3 hours for site visits",
+    "Staffing Volatility: Loss of PN coverage in Buffalo/Syracuse regions during case",
+    "Family Distrust: Son adamant about not returning to 'the sniff' due to perceived neglect"
+  ]
+}

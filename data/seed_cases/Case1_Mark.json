@@ -1,0 +1,96 @@
+{
+  "case_header": {
+    "case_id": "Case_1",
+    "pn_id": "PN_Unspecified",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "68",
+      "gender": "Male",
+      "race": "Hispanic or Latino",
+      "diagnosis": "Diabetes; partial amputation 4th/5th digits (R) foot",
+      "region": "Ohio (Urban/Suburban context - Northcrest Rehab)"
+    },
+    "outcome": "AMA Discharge to Home",
+    "conversion_success": false
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Completion of 6-week antibiotic course",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Delayed wound healing due to Diabetes",
+      "Stalled Physical Therapy progress due to surgical wound presence",
+      "Partial amputation of 4th and 5th digits (R) foot"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Limited mobility/gait training incomplete",
+    "modification_type": "N/A - Patient declined internal services",
+    "bureaucratic_steps": [
+      "Medicare 'Binary' Billing Restriction: Inability to pay for PN service and Vascular Surgeon visits simultaneously",
+      "100-day skilled nursing benefit exhaustion timeline"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Delayed Wound Healing",
+      "days_added": "Unknown",
+      "context": "Facility hoped to keep patient longer than originally anticipated due to diabetes-related slow healing."
+    },
+    {
+      "trigger_event": "AMA Decision",
+      "days_added": "-8",
+      "context": "Original discharge planned for Oct 19 (100-day limit); patient exited Oct 11."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient insists on weekly Vascular Surgeon visits",
+      "action_taken": "De-prioritized/Removed PN service as an option",
+      "intent": "Compliance with Medicare billing guidelines",
+      "result": "Loss of conversion; patient chose specialist over home health agency"
+    },
+    {
+      "situation": "PN introduction delayed until Day 89",
+      "action_taken": "Late-stage advocacy/introduction",
+      "intent": "Initial Case Assessment",
+      "result": "Insufficient time to build trust or pivot from competitor (Ohioans)"
+    },
+    {
+      "situation": "Patient plans to leave AMA on Oct 8",
+      "action_taken": "Contacted Ohioans Home Health to confirm admission",
+      "intent": "Ensuring Continuity of Care",
+      "result": "Confirmed patient had existing history with competitor"
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Patient departing with unhealed surgical wound",
+        "action": "Contacted Ohioans Home Health (competitor) to confirm follow-up",
+        "rationale": "Ensured clinical handoff despite loss of business"
+      },
+      {
+        "context": "Evaluating service overlap",
+        "action": "Correctly identified Medicare exclusion for concurrent Vascular Surgeon/HHA billing",
+        "rationale": "Prevention of billing fraud/denied claims"
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Intake Timing",
+        "action": "Initial visit occurred at the end of a 3-month stay",
+        "error_type": "Passive - Delayed introduction prevented relationship building"
+      },
+      {
+        "context": "Discharge Recording (Follow-up Q10)",
+        "action": "Unaware of why state transition was recorded as 'Home' vs 'Transfer'",
+        "error_type": "Passive - Lack of documentation/process visibility"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "AMA (Against Medical Advice) departure",
+    "Competitor Loyalty (Prior history with Ohioans Home Health)",
+    "Medicare Billing Guideline constraints (Hybrid model prohibited)"
+  ]
+}

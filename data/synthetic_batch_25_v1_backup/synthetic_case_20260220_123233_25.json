@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Silas V. (91yo) has been in Oakhaven Rehab for 12 days for Stage 3 venous ulcers; however, the Patient Navigator (PN) was only notified on Day 13 due to Social Worker Linda's refusal to use the automated referral portal, citing 'system fatigue'.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Social Worker burnout led to a manual faxing delay that bypassed the PN hub's early-alert system."
+    },
+    {
+      "event_description": "Managed Medicare (Advantage Plan) requires updated face-to-face documentation from the attending physician who is currently off-site; the facility's internal UM (Utilization Management) team failed to secure the signature before the weekend.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility is prioritizing 'Day 100' discharge planning over documentation accuracy, creating a gap in home care authorization."
+    },
+    {
+      "event_description": "The patient's daughter, Sarah, is threatening an AMA discharge because the SNF staff hasn't updated her on the wound's square footage in 72 hours, creating a hostile family dynamic that risks a complete care breakdown.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Failure of facility-to-family communication triggered a pivot toward an unsafe home environment without skilled support."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "PN discovers the patient is scheduled for discharge tomorrow morning but has not yet been introduced to the Healing Partners program due to the 'Black Hole' lag.",
+      "action_taken": "Shadowed the Traditional Provider (TP) during afternoon rounds to gain immediate entry to the patient's room and introduce the service.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Social Worker Linda is actively 'steering' the family toward a legacy HHA that does not provide specialized wound debridement.",
+      "action_taken": "Reviewed clinical notes in DocNow/Atlantis to document specific wound complexity and shared these findings with the SW to justify the specialized referral.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Family is confused about the difference between the SNF's wound care and what will happen at home.",
+      "action_taken": "Educated the daughter (POA) on the specific frequency of RN visits and the role of the Medical Assistant in the home setting.",
+      "intent": "Prevent 'missed' discharge or refusal"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "Collaborate with the facility's Physical Therapist to document a continued 'skilled need' for gait training, ensuring the patient remains eligible for the concurrent home wound care service under Medicare guidelines.",
+      "rationale": "This action respects the 'Loss of Skilled Need' boundary by proactively securing a secondary skilled service (PT) to protect the patient's eligibility for wound care, which would otherwise be denied if the patient was deemed 'stable' for home."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Directly confront the Social Worker in the middle of a family care conference, informing the daughter that the SW's preferred HHA is incapable of managing Stage 3 ulcers and that the PN's program is the only safe option.",
+      "rationale": "While highly proactive, this is a seductive overstep for a veteran because it incinerates the institutional relationship with the SW. Veterans know that 'steering' backfires if it creates open facility hostility, potentially leading to the PN being banned from the building."
+    }
+  ],
+  "narrative_summary": "Silas, a 91-year-old with complex chronic ulcers, became a victim of the 'Black Hole' when a burned-out Social Worker delayed his referral by 13 days. The case is further complicated by a hostile daughter who is ready to pull him home without support and a facility pushing for discharge to avoid the 100-day Medicare cliff. The Patient Navigator must now navigate intense institutional politics and a Managed Medicare authorization lag to ensure Silas doesn't lose his 'skilled need' eligibility before the home transition."
+}

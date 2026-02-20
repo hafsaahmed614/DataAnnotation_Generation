@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial referral received on Day 89 of the patient's SNF stay following an ischemic stroke; the PN assignment occurred well after the initial stabilization window.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The internal hub-to-SNF referral pipeline lagged because the intake coordinator was on PTO, and the backup ignored the 'Pending PN' queue."
+    },
+    {
+      "event_description": "SNF Administrator issues a firm discharge notice for Day 100 to avoid the Medicare benefit exhaustion, despite the patient still requiring 2-person assist for transfers.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is protecting its 100-day financial cliff and the Social Worker is under direct orders from the CFO to clear the bed before it flips to a non-paying status."
+    },
+    {
+      "event_description": "Managed Medicare authorization for the Home Health Agency (HHA) is delayed because the required 'face-to-face' documentation from the rounding physician was incomplete.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker is too burned out to track down the rounding physician for a signature, leaving the PN to find the doctor in the hallway."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "PN assigned late in the stay (Day 89) with zero prior rapport with the family or clinical team.",
+      "action_taken": "Shadowed the SNF Nurse Practitioner during morning rounds to introduce the program and gain facility entry.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "The facility Social Worker refuses to return calls regarding the Home Health selection process.",
+      "action_taken": "Attended the facility care conference uninvited to present the HHA options directly to the family and SW.",
+      "intent": "Ensure immediate updates if discharge plans shift"
+    },
+    {
+      "situation": "Patient's daughter (POA) is hostile and threatens to sue the facility for 'unsafe discharge' at Day 100.",
+      "action_taken": "Educated the daughter on the specific clinical support the home team provides to bridge the gap between SNF and home.",
+      "intent": "Prevent 'missed' discharge or refusal"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "Coordinate a tripartite call between the HHA Clinical Director, the SNF Social Worker, and the patient's daughter to define exactly how the first 48 hours at home will be managed safely.",
+      "rationale": "This respects the facility's hard discharge deadline while proactively addressing the clinical safety concerns of the family and ensuring the HHA is ready to catch the patient immediately."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Advise the daughter to file a formal Medicare Appeal (NOMNC) to stop the discharge, arguing that the patient still has a 'skilled need' for daily PT.",
+      "rationale": "While this might buy the patient 48-72 hours, it is a legal/clinical recommendation that a non-clinical PN is not qualified to make, and it permanently destroys the PN's relationship with the facility administration."
+    }
+  ],
+  "narrative_summary": "A 65-year-old female recovering from an ischemic stroke is caught in a high-stakes transition as she hits the '100-Day Medicare Cliff' at a facility focused on financial risk mitigation. The PN was assigned during the 'Black Hole' of the stay, leaving only 11 days to build trust with a hostile family and a burned-out Social Worker who is under pressure to discharge. To secure a successful conversion, the PN must navigate the facility's rigid exit timeline while ensuring the home health team is authorized and equipped to handle the patient's significant mobility deficits."
+}

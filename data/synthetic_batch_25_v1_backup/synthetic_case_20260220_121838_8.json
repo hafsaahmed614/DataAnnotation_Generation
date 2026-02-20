@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 15 of Mrs. Thorne's SNF stay for CHF stabilization; initial data shows no prior outreach to the family regarding home health options.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The facility referral hub delayed the PN notification until the patient was already 50% through her Medicare-A benefit, creating an information vacuum."
+    },
+    {
+      "event_description": "Facility Social Worker (Linda) stops responding to emails regarding the home wound care plan as Mrs. Thorne approaches Day 90 of her benefit period.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The SW is protecting the facility's 100-day Medicare cliff by steering the patient toward internal Long-Term Care (LTC) to avoid an unpaid bed day or a complex home discharge."
+    },
+    {
+      "event_description": "Physical Therapy (PT) issues a discharge summary stating the patient has 'plateaued,' effectively removing the primary skilled need for home-based services.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Clinical staff failed to document the continuing need for 'Skilled Nursing' for renal-comorbidity medication titration, focusing only on gait progress."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's 100-day Medicare limit is approaching and the Social Worker is pressuring the family to sign LTC papers.",
+      "action_taken": "Contacted Social Worker (SW) and TP immediately upon assignment to review clinical notes in Atlantis for wound status.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "PT discharge threatens home health eligibility despite a Stage 2 sacral ulcer requiring daily management.",
+      "action_taken": "Verified diagnosis meets home care criteria by cross-referencing Stage 3 CKD and CHF medication management as a secondary skilled need.",
+      "intent": "Ensure qualification before introducing services"
+    },
+    {
+      "situation": "Family is anxious and feels 'forced' into a permanent nursing home placement by the facility staff.",
+      "action_taken": "Educated patient/family on program benefits and the distinction between 'Skilled PT' and 'Skilled Nursing' for wound care.",
+      "intent": "Prevent 'missed' discharge or refusal"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN shadows the facility Nurse Practitioner during wound rounds to confirm the sacral ulcer requires complex dressing changes and identifies that the patient's CHF/Renal status necessitates skilled RN monitoring for fluid volume management.",
+      "rationale": "This proactively secures a 'Skilled Nursing' need that survives the PT discharge. It respects the clinical hierarchy by collaborating with the NP while ensuring the patient meets the technical criteria for home health transition before the 100-day cliff."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN meets with the family and tells them to refuse the PT discharge, advising them that the Social Worker is only trying to move the patient to LTC for financial reasons and suggesting they demand a 'Level of Care' appeal.",
+      "rationale": "This is a seductive overstep because it appears to advocate for the patient's rights, but it creates a hostile environment with the facility staff and involves the PN in clinical/legal appeals that fall outside their non-clinical scope, potentially burning the relationship with the SW entirely."
+    }
+  ],
+  "narrative_summary": "Mrs. Evelyn Thorne, an 85-year-old with CHF and Stage 3 CKD, is nearing the end of her 100-day Medicare SNF benefit while recovering from a sacral ulcer. The facility's burned-out Social Worker is aggressively steering the family toward a permanent Long-Term Care (LTC) bed to protect the facility's financial interest as the '100-Day Cliff' approaches. Because PT has declared a 'Loss of Skilled Need,' the PN must navigate the administrative hurdle of establishing 'Skilled Nursing' as the primary eligibility trigger to ensure a successful transition to home-based wound care."
+}

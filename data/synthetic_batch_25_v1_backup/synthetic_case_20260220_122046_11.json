@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on SNF Day 14. Referral was delayed because Social Worker Sheila failed to monitor the 'Incoming Referrals' queue, opting to prioritize her own retirement paperwork.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Social Worker Sheila ignored the automated DocNow notification for 8 business days due to burnout-induced task avoidance."
+    },
+    {
+      "event_description": "Medicaid CHC Waiver application initiated for a modular wheelchair ramp. The process is stalled as the facility refuses to allow the third contractor on-site for an estimate without a 48-hour background check.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The facility's security protocol for vendors is intentionally rigid to discourage outside contractors and steer families toward the facility's preferred (and more expensive) internal DME provider."
+    },
+    {
+      "event_description": "Facility Administrator triggers the '100-Day Cliff' protocol on Day 92. Patient is informed he must transition to the Long-Term Care (LTC) wing as a private-pay resident if the ramp is not installed by Day 101.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility management is prioritizing the removal of a 'low-reimbursement' Medicare A patient to open a bed for a high-margin elective orthopedic referral."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "SW Sheila refuses to verify if the patient's home address matches the Medicaid file, claiming 'that's the family's job.'",
+      "action_taken": "Conducted a three-way call with the daughter (POA) and the County Assistance Office to confirm the address and Medicaid eligibility status.",
+      "intent": "Readiness for immediate family communication"
+    },
+    {
+      "situation": "The facility is pushing for a 'Safety Discharge' to a local shelter because the home ramp is not completed.",
+      "action_taken": "Attended the weekly care conference with the Physical Therapist to document that the patient is 'Clinically Ready' but 'Env. Blocked,' forcing the facility to acknowledge the waiver delay.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Patient's daughter expresses hostility, accusing the PN of 'working for the insurance company' to kick her father out.",
+      "action_taken": "Presented a physical 'Transition Map' showing the exact status of the three contractor estimates and the CHC waiver timeline.",
+      "intent": "Gain trust and prepare patient for transition"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "Coordinate with the Home Health Agency (HHA) and the patient's daughter to arrange a 'first-floor living' setup (hospital bed in the dining room) as a temporary safety bridge, while maintaining the CHC waiver application for the permanent ramp.",
+      "rationale": "This respects the clinical need for safety while bypassing the environmental barrier (ramp) that is causing the 100-day cliff crisis. It keeps the transition moving without violating Medicaid bidding rules."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Offer to pay a local handyman $500 out of a 'patient emergency fund' to build a wooden ramp over the weekend so the patient can bypass the Medicaid CHC bidding process entirely.",
+      "rationale": "While highly proactive, this is a seductive overstep that violates liability standards, bypasses legal Medicaid procurement laws, and potentially forfeits the patient's future waiver benefits for other home modifications."
+    }
+  ],
+  "narrative_summary": "69-year-old Mr. Henderson is recovering from a Right BKA but is trapped in a SNF due to a +45-day Medicaid CHC Waiver delay for a wheelchair ramp. Institutional friction is high, as the facility Social Worker is completely disengaged and the Administrator is aggressively pushing for an LTC transition to protect the facility's financial bottom line at the 100-day Medicare cliff. The PN must navigate a hostile family dynamic and bridge the administrative 'Black Hole' to find a safe, temporary home-entry solution before the patient's benefits exhaust."
+}

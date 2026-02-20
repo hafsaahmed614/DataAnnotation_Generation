@@ -1,0 +1,97 @@
+{
+  "case_header": {
+    "case_id": "Case_2",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "67",
+      "diagnosis": "Left plantar heel wound (Serial debridement, Alginate/Silver dressings)",
+      "region": "Urban/Suburban (Harston Hall, Pennsylvania)"
+    },
+    "outcome": "Discharged to Home with HHA; Rapid Readmission to Hospital",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound healing and successful podiatry evaluation for serial debridement",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Chronic non-healing left plantar heel wound",
+      "79-day SNF length of stay indicating slow healing",
+      "Potential arterial blood flow/vascular issues (noted in audit context)",
+      "Patient medically unstable post-discharge (readmitted following MD visit)"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Arrangements at home (unspecified details, but required sister's confirmation)",
+    "modification_type": "N/A - Private home with sister acting as decision maker",
+    "bureaucratic_steps": [
+      "SNF Internal Discharge Meeting",
+      "Home Health Agency (Bayada) scheduling (3x/week)",
+      "Coordination of supplemental 4th nursing visit"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Discharge date moved forward (10/13 to 10/11)",
+      "days_added": "-2",
+      "context": "SW updated PN that meeting occurred and date was moved up by two days with 48-hour notice."
+    },
+    {
+      "trigger_event": "Navigator Turnover/Facility Reassignment",
+      "days_added": "Unknown",
+      "context": "Transition from PN Justine to PN Lyndsey created a period of 'confusion' and 'swapping' during the first weeks of October."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Patient's sister requests higher frequency of care than Bayada provides.",
+      "action_taken": "PN scheduled supplemental home visit on an off-day (Tuesday or Thursday).",
+      "intent": "Family Advocacy / Service Differentiation",
+      "result": "Patient/Family satisfaction and service utilization established."
+    },
+    {
+      "situation": "Physician calls PN with clinical questions and miscommunication of PN role.",
+      "action_taken": "PN escalated to Regional Director to handle MD communication.",
+      "intent": "Role Clarification / Boundary Management",
+      "result": "MD redirected; patient eventually sent back to hospital by MD."
+    },
+    {
+      "situation": "PN excluded from discharge planning meetings.",
+      "action_taken": "Relied on SW updates; marked patient as 'imminent discharge' once informed.",
+      "intent": "Passive Coordination",
+      "result": "PN was 'blindsided' by 48-hour notice for the 10/11 discharge."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Managing high-frequency care requests.",
+        "action": "Coordinating a 4th visit on a day Bayada was not scheduled.",
+        "rationale": "Directly addressed family anxiety and filled a gap in the standard care plan."
+      },
+      {
+        "context": "Information handoff during PN transition.",
+        "action": "Justine (Original PN) provided comprehensive relay of data to Lyndsey.",
+        "rationale": "Maintained continuity of care despite internal organizational chaos."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Accelerated discharge timeline (10/13 to 10/11).",
+        "action": "Assumed home environment was ready because SNF set the date.",
+        "error_type": "Passive / Lack of Verification"
+      },
+      {
+        "context": "Excluded from facility meetings.",
+        "action": "Did not request to attend 'Weekly Utilization Review' or discharge planning.",
+        "error_type": "Passive / Integration Failure"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Internal PN staff reorganization ('Crazy town')",
+    "Surprise physician phone call with 'bad information'",
+    "Decision-making incapacity (Sister acting as POA/decision maker)",
+    "Immediate post-discharge hospital readmission"
+  ]
+}

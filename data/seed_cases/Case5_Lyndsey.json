@@ -1,0 +1,94 @@
+{
+  "case_header": {
+    "case_id": "Case_5",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "4",
+    "demographics": {
+      "age": "69",
+      "gender": "Female",
+      "race": "White",
+      "diagnosis": "Sacral Wound",
+      "region": "Pennsylvania (SNF: Lutherwoods)"
+    },
+    "outcome": "Discharged Home with HHA",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Stabilization after multiple non-wound hospital readmissions",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Sacral wound management",
+      "Intermittent hospital readmissions for non-wound comorbidities",
+      "Cognitive impairment/Inability to make independent decisions"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Patient moving to boyfriend's residence; caretaker (daughter) not living in-home",
+    "modification_type": "Private/Family Caretaker Arrangement",
+    "bureaucratic_steps": [
+      "SNF Discharge Meeting",
+      "Insurance Authorization/Review",
+      "Director of Nursing (DON) vetting via Traditional Provider (TP) introduction",
+      "Caretaker (Sharon) confirmation"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Social Worker Non-Responsiveness",
+      "days_added": "21",
+      "context": "SW was unresponsive for 3 weeks; PN had to shadow TP to force face-to-face interaction."
+    },
+    {
+      "trigger_event": "Hospital Readmission",
+      "days_added": "Unknown",
+      "context": "Admitted to hospital 'here and there' during SNF stay for non-wound reasons, delaying trajectory."
+    },
+    {
+      "trigger_event": "Insurance Review",
+      "days_added": "7",
+      "context": "Insurance played a role in the timing of the final 12/8 discharge date."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "SW Gatekeeping/Silence",
+      "action_taken": "Shadowed Traditional Provider (TP) on clinical rounds",
+      "intent": "Social Capital Leveraging",
+      "result": "Gained face-to-face access to DON and established trust/credibility."
+    },
+    {
+      "situation": "Patient Incapacity",
+      "action_taken": "Pivoted coordination to daughter (Sharon)",
+      "intent": "Surrogate Decision-Maker Engagement",
+      "result": "Secured discharge plan and home health acceptance."
+    },
+    {
+      "situation": "Hospital Readmission",
+      "action_taken": "Monitored SNF re-entry status",
+      "intent": "Continuous Tracking",
+      "result": "Maintained case continuity despite clinical volatility."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Facility staff ignoring digital/telephonic outreach",
+        "action": "Physical shadowing of internal company providers (TP) to bypass administrative barriers",
+        "rationale": "Leveraging existing clinical relationships increases trust and bypasses the 'random caller' filter."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Assessing caregiver labor burden (turning/positioning) for sacral wounds",
+        "action": "Passive acceptance of 1x/week HHA plan",
+        "error_type": "Passive / Clinical Boundary (Deemed outside PN role)"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Recurring hospital readmissions",
+    "3-week administrative silence from Social Worker",
+    "131-day long-stay outlier status",
+    "Non-live-in caregiver for high-needs sacral wound"
+  ]
+}

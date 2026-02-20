@@ -1,0 +1,94 @@
+{
+  "case_header": {
+    "case_id": "Case_4",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "2",
+    "demographics": {
+      "age": "79",
+      "gender": "Female",
+      "race": "Black or African American",
+      "diagnosis": "Wound Care (Chronic/Recurrent)",
+      "region": "Pennsylvania (Buckingham Valley Rehab & Nursing)"
+    },
+    "outcome": "Successful Discharge to Home with HHA",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Wound healing >75% over 4 weeks",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Patient unable to make decisions/non-communicative",
+      "Recurrent 'bounce-back' history (Frequent Flyer status)",
+      "Wound status initially deemed ineligible for home care by Medical Director"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "N/A",
+    "modification_type": "None",
+    "bureaucratic_steps": [
+      "Wound nurse notification of discharge date",
+      "Obtaining daughter's contact information",
+      "Medical Director review and reversal of eligibility",
+      "HHA referral finalization"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Standard 30-day stay pattern",
+      "days_added": "0",
+      "context": "The patient and daughter follow a recurring 30-day admission cycle; discharge was set for 11/25 from admission."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Medical Director initially denied home care based on 75% healing threshold.",
+      "action_taken": "Wait for provider review/follow-up.",
+      "intent": "Verify clinical eligibility for service conversion.",
+      "result": "Medical Director reversed decision same-day due to readmission risk (Frequent Flyer history)."
+    },
+    {
+      "situation": "Patient unable to communicate or make decisions.",
+      "action_taken": "Coordinated exclusively with daughter and SNF wound nurse.",
+      "intent": "Stakeholder alignment and logistical coordination.",
+      "result": "Successful transport arrangement and handoff to home care."
+    },
+    {
+      "situation": "Institutional constraint of 1x/week visit frequency.",
+      "action_taken": "Queried Regional Director for increased frequency.",
+      "intent": "Readmission prevention and advocacy for clinical necessity.",
+      "result": "Request denied; limited to 1x/week per agency policy at the time."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Patient history of recurrent failure at home.",
+        "action": "Challenging the standard visit frequency (1x/week) with the Regional Director.",
+        "rationale": "Attempting to advocate for clinical sufficiency to prevent the next readmission."
+      },
+      {
+        "context": "Doctor vacillating on ordering home care.",
+        "action": "Monitoring the Medical Director's decision-making process for readmission prevention.",
+        "rationale": "Ensuring the patient's 'Frequent Flyer' status was factored into the risk assessment."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Recurring 30-day admissions due to potential caregiver burnout.",
+        "action": "N/A - PN stated they could not answer/flag for Social Work.",
+        "error_type": "Passive - Identified as outside PN scope by the user/system protocol despite clinical relevance."
+      },
+      {
+        "context": "Validation of benefit-driven length of stay (maxing out 30 days).",
+        "action": "Accepting the 30-day date without clinical challenge.",
+        "error_type": "Passive - PN accepted facility-driven timeline without questioning clinical necessity vs. benefit duration."
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Cognitive impairment (patient non-communicative)",
+    "Frequent Flyer / Cycle of SNF bounce-backs",
+    "Internal agency policy confusion regarding visit frequency (1x/week vs. one-time visit)",
+    "Geographic spread of staff ('Stretched out' providers)"
+  ]
+}

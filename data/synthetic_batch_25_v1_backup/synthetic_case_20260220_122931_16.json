@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN assignment occurs on Day 12 of SNF stay, but facility Social Worker (Brenda) gates access to the EMR, citing 'privacy updates' and a high caseload, preventing the PN from seeing the patient for an additional 12 days.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Burned-out Social Worker actively gatekeeping access to reduce her own administrative coordination burden."
+    },
+    {
+      "event_description": "Physical Therapy confirms patient cannot safely enter his home without a modular ramp and bathroom grab bars. The Medicaid CHC Waiver application is initiated, requiring three independent contractor estimates for the ramp installation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Bureaucratic mandate requiring multiple contractor site visits and state-level estimate reconciliation."
+    },
+    {
+      "event_description": "The facility reaches Day 88 of the Medicare benefit period. The Administrator notifies the family that Arthur must transition to Private Pay or Long-Term Care Medicaid on Day 101, as the ramp installation is still 3 weeks out.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility protecting its 100-day Medicare financial cliff by forcing a shift to a lower-reimbursement LTC bed."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker refuses to share the names of the three contractors assigned for the CHC Waiver estimates.",
+      "action_taken": "Shadowed the Physical Therapist during patient mobility training to build direct rapport and obtain the family's contact for the estimate details.",
+      "intent": "Early Engagement"
+    },
+    {
+      "situation": "Patient's daughter is hostile, believing the PN is a 'facility spy' trying to push her father out before the home is ready.",
+      "action_taken": "Provided a physical appointment card and explained the PN's role in coordinating post-discharge wound care independent of the SNF's financial interests.",
+      "intent": "Patient Education"
+    },
+    {
+      "situation": "The CHC Waiver process is stalled because the second contractor failed to submit a bid within the 10-day window.",
+      "action_taken": "Contacted the Regional Director to identify a pre-approved back-up contractor to expedite the third estimate.",
+      "intent": "Proactive transition planning"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN schedules a meeting with the Social Worker and the facility's Business Office Manager to present a 'Bridge Plan,' suggesting a 14-day private-pay window funded by the patient's LTC insurance to cover the gap until the CHC ramp is installed, rather than a permanent LTC transfer.",
+      "rationale": "This respects the facility's financial constraints (the 100-day cliff) while utilizing the PN's knowledge of the patient's external resources to prevent a permanent LTC transition, maintaining the goal of home discharge."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN tells the family to refuse the LTC transfer and file a formal Medicare appeal against the discharge, while simultaneously calling the state Medicaid office to complain about the Social Worker's 'incompetence' in managing the CHC estimates.",
+      "rationale": "This is a seductive overstep for veterans who feel protective of the patient. It creates an adversarial relationship with the facility staff and risks the PN being banned from the building for interfering with facility operations and legal discharge protocols."
+    }
+  ],
+  "narrative_summary": "Arthur, a 69-year-old post-amputation patient, is caught between a slow Medicaid CHC Waiver process and a facility determined to avoid the 100-day Medicare financial cliff. The Social Worker's burnout has created a 'Black Hole' of information, leaving the family hostile and anxious about a premature discharge. The PN must navigate institutional gatekeeping and bureaucratic ramp-installation delays to secure a safe transition home before the facility forces a permanent Long-Term Care placement."
+}

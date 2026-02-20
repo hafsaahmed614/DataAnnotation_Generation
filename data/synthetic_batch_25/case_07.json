@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 12 of the SNF stay due to a regional intake backlog; Social Worker Sheila has already initiated a standard discharge plan to a non-partner HHA without reviewing the patient's complex spinal brace requirements.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The PN was excluded from the initial intake because the SNF Unit Manager intentionally delayed the referral to keep the bed filled until the Medicare census dropped."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan issues a 'No Skilled Need' denial for home-based services, claiming the patient is 'mobile enough' for outpatient therapy despite a complex L4-L5 fusion.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility Social Worker, Sheila, is 6 months from retirement and refuses to file an appeal, stating 'Advantage plans never flip on spinal cases,' effectively stalling the transition."
+    },
+    {
+      "event_description": "Patient reaches Day 95 of the Medicare stay; the facility's billing department issues a '100-Day Cliff' warning, pressuring the family to accept an unsafe discharge to home without services or transition to private pay.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is protecting its financial margin by forcing a 'safety discharge' before the 100-day benefit exhaustion triggers a lower reimbursement tier."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Sheila is burned out and refuses to coordinate a peer-to-peer review with the insurance medical director.",
+      "action_taken": "Hand-delivered the physical 'Face-to-Face' documentation to the SNF's Utilization Review (UR) Director during a shift change.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the uncooperative Social Worker gatekeeper by engaging the UR Director whose performance metrics are tied to successful appeals."
+    },
+    {
+      "situation": "The Managed Medicare plan requires an updated gait assessment to approve the appeal, but the SNF PT is overloaded.",
+      "action_taken": "Coordinated a 'Joint Observation' session where the PN shadowed the PT during the patient's morning walk to ensure the specific 'unsteady gait' phrasing was entered into the EMR.",
+      "taxonomy_category": "Clinical Monitoring",
+      "tactical_field_intent": "Influence clinical documentation through presence without providing direct care, ensuring the specific keywords required for insurance 'Skilled Need' are captured."
+    },
+    {
+      "situation": "Patient's daughter is highly anxious and threatening to move the patient to a competitor's facility due to the insurance delays.",
+      "action_taken": "Provided the daughter with a specific 'Insurance Appeal Checklist' and the direct phone number for the Managed Medicare Member Advocacy line.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Weaponize the family's anxiety by directing it toward the insurance carrier, using the daughter as an external pressure point the facility cannot ignore."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the Social Worker's professional judgment regarding the insurance denial and begin coordinating with the family for private-pay outpatient transport to the surgeon's preferred clinic.",
+      "rationale": "This action avoids conflict with facility staff and adheres to the current 'official' discharge plan, but fails to advocate for the patient's clinical safety at home."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Schedule a multidisciplinary care conference including the UR Director and the Surgeon's PA to present the gap between the insurance denial and the patient's actual 'Face-to-Face' documentation requirements.",
+      "rationale": "This uses formal facility channels to force a review of the denial while bringing in the surgeon's office as a high-authority clinical ally to counteract the SW's inertia."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Personally call the Managed Medicare Case Manager to explain that the SNF physical therapy notes are 'inaccurate' and that the patient is actually much more 'homebound' than the record reflects.",
+      "rationale": "While intending to help the patient, this is a major boundary violation where a non-clinical PN contradicts official medical records to an external payer, creating significant liability and professional friction."
+    }
+  ],
+  "narrative_summary": "Arthur, a 70-year-old post-spinal fusion patient, is trapped in a bureaucratic deadlock between a Managed Medicare 'No Skilled Need' denial and a burned-out Social Worker, Sheila, who refuses to appeal. The facility is aggressively pushing for a Day 100 discharge to protect its financial margins, despite Arthur's inability to safely manage his spinal brace at home. The Patient Navigator must navigate institutional apathy and family hostility to secure the necessary clinical documentation for an appeal before the '100-Day Cliff' forces a transition to private-pay long-term care."
+}

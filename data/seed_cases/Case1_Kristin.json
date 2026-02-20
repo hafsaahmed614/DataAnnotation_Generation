@@ -7,90 +7,94 @@
       "age": "65",
       "gender": "Male",
       "race": "White",
-      "diagnosis": "Leg amputation (post-surgical PT) and contralateral leg wound care",
-      "region": "Pennsylvania (likely Suburban/Urban given provider density)"
+      "diagnosis": "Post-amputation (bilateral risk), extensive leg wound (350 sq cm)",
+      "region": "Pennsylvania (Erie region mentioned for provider backup)"
     },
-    "outcome": "Successful Discharge to Home",
+    "outcome": "Successful Home Discharge with Integrated HHA/Wound Care",
     "conversion_success": true
   },
   "clinical_logic": {
-    "readiness_milestone": "Completion of Physical Therapy (PT) goals and wound healing stabilization",
+    "readiness_milestone": "PT goals met and wounds sufficiently healing for home management",
     "skilled_need_verified": "Yes",
     "clinical_barriers": [
-      "High infection risk (post-amputation status)",
-      "Extensive wound size (approx. 350 sq cm)",
-      "Specialized dressing change requirements"
+      "High risk of infection (prior amputation on contralateral limb)",
+      "Massive wound size (350 sq cm) requiring specialized dressing",
+      "Need for immediate post-discharge wound care continuity"
     ]
   },
   "environmental_logic": {
-    "physical_barriers": "Inaccessible home entry (stair barrier) requiring a wheelchair ramp for safe mobility",
-    "modification_type": "CHC (Community Health Choices) Waiver / Medicaid",
+    "physical_barriers": "Inaccessible home entry (need for wheelchair ramp)",
+    "modification_type": "CHC Waiver (Medicaid)",
     "bureaucratic_steps": [
-      "CHC Waiver application/approval for home modification",
-      "Obtaining three separate contractor estimates (Medicaid requirement)",
-      "Comparison and approval of specific contractor by CHC caseworker",
-      "Ramp installation/construction",
-      "Final inspection/approval for safe discharge"
+      "Waiver approval for environmental modifications",
+      "Procurement of three separate contractor estimates",
+      "Selection and approval of the specific contractor",
+      "Permitting and installation scheduling",
+      "Physical installation and safety inspection"
     ]
   },
   "timeline_deltas": [
     {
-      "trigger_event": "CHC Waiver Administrative Process",
+      "trigger_event": "CHC Waiver Bureaucracy/Ramp Installation",
       "days_added": "45",
-      "context": "Requirement for three estimates and bureaucratic approval cycles extended the stay significantly beyond clinical readiness."
+      "context": "The waiver process required three separate estimates and a multi-step approval chain, stretching a 2-week estimate to 1.5 months."
     },
     {
-      "trigger_event": "Specialist Provider Illness (Force Majeure)",
+      "trigger_event": "Provider COVID-19 Illness",
       "days_added": "3",
-      "context": "Primary wound care provider contracted COVID-19, requiring coordination of a backup provider from a different region (Erie)."
+      "context": "Assigned wound care provider contracted COVID; required coordinating a replacement provider from the Erie region to visit the following Monday."
     }
   ],
   "reasoning_trace_triples": [
     {
-      "situation": "Patient/Family unwilling to pay $200+ out-of-pocket for rental ramp",
-      "action_taken": "Assisted in managing the CHC waiver timeline and expectations",
-      "intent": "Resource Navigation / Financial Stewardship",
-      "result": "Patient remained in SNF for 90+ days to ensure 100% cost coverage by waiver"
+      "situation": "Initial patient resistance/skepticism regarding PN services.",
+      "action_taken": "Direct in-person meeting and alignment with patient's self-reported progress.",
+      "intent": "Trust Building/Service Conversion",
+      "result": "Patient accepted services; PN became the primary info conduit."
     },
     {
-      "situation": "Wound Care Specialist unavailable due to COVID-19",
-      "action_taken": "Coordinated with established HHA (OSTPA) to cover dressing changes",
-      "intent": "Gap Coverage / Clinical Continuity",
-      "result": "Patient safely discharged despite specialist delay; HHA saw patient within 24 hours"
+      "situation": "Social Worker lacked real-time updates on ramp progress.",
+      "action_taken": "Daily check-ins with the patient (who was talking to the CHC coordinator).",
+      "intent": "Information Sourcing/Bridge Building",
+      "result": "PN bypassed the SNF information lag to provide accurate forecasts to the home team."
     },
     {
-      "situation": "Initial SNF/Social Worker estimate of '2 weeks' was unrealistic",
-      "action_taken": "Updated home team/HHA with '45-day+' projection",
-      "intent": "Expectation Management / Operational Forecasting",
-      "result": "Avoided premature HHA activation and preserved stakeholder trust"
+      "situation": "Specialist provider illness left a 72-hour care gap post-discharge.",
+      "action_taken": "Coordinated with HHA (OSTPA) to perform dressing changes on Friday and Sunday.",
+      "intent": "Clinical Safety/Continuity of Care",
+      "result": "Wound integrity maintained until replacement specialist arrived Monday."
     }
   ],
   "judgment_policy": {
     "rank_1_best_practices": [
       {
-        "context": "Specialist provider illness right before discharge",
-        "action": "Leveraged existing relationship with HHA to bridge the clinical gap",
-        "rationale": "Ensures wound integrity and patient comfort without delaying the hard-won discharge date."
+        "context": "Provider availability crisis due to illness.",
+        "action": "Leveraged existing HHA relationship to cover the gap and outsourced a provider from another region.",
+        "rationale": "Prioritizes clinical safety over standard scheduling protocols."
       },
       {
-        "context": "Slow bureaucratic progress with CHC caseworker",
-        "action": "Prioritized patient as the primary information source over the Social Worker",
-        "rationale": "The patient had direct daily contact with the supports coordinator, providing higher fidelity data."
+        "context": "Patient-driven information flow.",
+        "action": "Recognized the patient as the most reliable source for CHC waiver updates compared to the SW.",
+        "rationale": "Utilizes the most direct data source to manage stakeholder expectations."
       }
     ],
     "rank_0_boundary_failures": [
       {
-        "context": "Initial home barrier assessment",
-        "action": "Assumed step-count and ramp needs were solely the domain of PT/Social Work",
-        "error_type": "Passive",
-        "note": "Navigator later realized this should be part of their own intake to prevent timeline surprises."
+        "context": "Financial/Alternative logistics for discharge.",
+        "action": "Failed to present a cost-benefit analysis of private pay vs. waiver delay.",
+        "error_type": "Passive (Missed Advocacy Opportunity)"
+      },
+      {
+        "context": "Initial Intake/Environmental Assessment.",
+        "action": "Assumed home accessibility was verified by SNF/PT.",
+        "error_type": "Passive (Information Gap)"
       }
     ]
   },
   "unscripted_chaos_signals": [
-    "Provider COVID-19 illness",
-    "Regional specialist shortage (only one provider in the region)",
-    "Medicaid 'Three Estimate' mandate",
-    "Patient refusal of private-pay temporary solutions"
+    "Provider COVID-19 infection at the moment of discharge",
+    "Medicaid 'three-estimate' rule causing administrative gridlock",
+    "Regional shortage of advanced wound care specialists",
+    "Patient miscalculation of discharge timeline (initially thinking it was 2 days away)"
   ]
 }

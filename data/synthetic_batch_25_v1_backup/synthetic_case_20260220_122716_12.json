@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN assigned on Day 20 of SNF stay, but the facility's burned-out Social Worker (SW) failed to notify the PN of the L3-L5 fusion complications, leading to a missed window for early family engagement.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' operational lag caused by the SW's refusal to integrate non-clinical staff into the Atlantis/DocNow portal access list."
+    },
+    {
+      "event_description": "The Managed Medicare Advantage plan requires a new 'face-to-face' encounter for the required custom TLSO brace, which the SNF physician neglected to document in the progress notes.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Administrative friction where the SNF billing office prioritizes internal coding over the specific 'face-to-face' requirements of the Advantage payer."
+    },
+    {
+      "event_description": "Patient reaches Day 92. The SNF administration issues a Notice of Non-Coverage, citing the 100-day cliff, and pressures the family to sign Long-Term Care (LTC) conversion papers to secure private-pay revenue.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Financial friction where the facility protects its 100-day Medicare financial cliff by steering the patient toward LTC rather than home-based recovery."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The burned-out SNF Social Worker is screening PN calls and refusing to provide the family's updated contact information.",
+      "action_taken": "PN shadowed the visiting Nurse Practitioner during morning wound rounds to gain physical entry to the patient's room and verify the POA's phone number from the bedside chart.",
+      "intent": "Shadow the Traditional Provider (TP) to get facility entry"
+    },
+    {
+      "situation": "The SNF is planning a Day 98 discharge to home, but the patient cannot yet perform a 'log roll' out of bed safely without assistance.",
+      "action_taken": "PN coordinated with the Home Health Agency (HHA) to schedule a physical therapy evaluation for the afternoon of Day 98 to ensure immediate continuity of mobility training.",
+      "intent": "Proactive transition planning"
+    },
+    {
+      "situation": "The patient's daughter is hostile and hysterical, believing the SNF is 'throwing her father out to die' because of the 100-day limit.",
+      "action_taken": "PN held a bedside meeting to explain the transition from SNF-based PT to the Healing Partners home-based model, specifically detailing how the PN would bridge the gap between the surgeon and the home nurse.",
+      "intent": "Educate patient/family on program benefits"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "PN facilitates a multidisciplinary care conference on Day 95 involving the SNF SW, the HHA intake coordinator, and the family to synchronize the delivery of the TLSO brace with the arrival of the home health nurse on Day 100.",
+      "rationale": "This proactive coordination respects the facility's discharge timeline while ensuring clinical safety and service adoption without overstepping into the SW's financial counseling role."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "PN advises the family to formally appeal the discharge through the Medicare Quality Improvement Organization (QIO), promising that an appeal will force the SNF to keep the patient for another 14 days at no cost.",
+      "rationale": "While this seems protective of the patient, it is a seductive overstep because it provides inaccurate legal/financial advice, destroys the PN's relationship with the facility staff, and risks the patient being hit with retroactive private-pay charges if the appeal is denied."
+    }
+  ],
+  "narrative_summary": "A 77-year-old male recovering from a complex spinal fusion is caught in a high-tension transition as he approaches the 100-day Medicare cliff at a facility focused on bed turnover. The case is complicated by a burned-out Social Worker who has blocked the Patient Navigator's initial intake, creating a 'Black Hole' delay that leaves the family feeling abandoned. The PN must navigate hostile family dynamics and administrative authorization lags for orthopedic equipment to ensure a successful conversion to home health before the facility forces a permanent Long-Term Care placement."
+}

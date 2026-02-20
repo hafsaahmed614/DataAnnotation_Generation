@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial assignment of PN occurs on Day 14 of SNF stay after the Social Worker (Ms. Gable) missed the referral window due to burnout-related absenteeism.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' lag caused by the Social Worker's refusal to utilize the automated referral portal, preferring manual faxing which she neglected for two weeks."
+    },
+    {
+      "event_description": "Facility Physical Therapy director signs off on patient, stating he has reached a 'functional plateau' and no longer qualifies for skilled rehab.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Institutional push to clear the bed for a higher-reimbursement post-surgical patient; the PT director was pressured by the facility administrator to 'plateau' the patient early."
+    },
+    {
+      "event_description": "Financial office notifies the son, Gary, that the 100-day Medicare benefit is nearing exhaustion, triggering an aggressive demand for private pay or LTC Medicaid application.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility's 100-day Medicare financial cliff policy; the business office prioritizes 'Medicaid Pend' status over home transition safety."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Gable is non-responsive to internal PN messages regarding the patient's discharge trajectory.",
+      "action_taken": "Shadowed the facility's Wound Care Nurse Practitioner during rounds to obtain clinical status and discharge timing directly.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Patient's son, Gary, expresses hostility toward the SNF staff and distrust of the 'Healing Partners' program, viewing it as a facility-led eviction tactic.",
+      "action_taken": "Conducted an in-person meeting with Gary to provide a physical appointment card and explain the non-clinical advocacy role.",
+      "intent": "Ensure patient feels informed and comfortable"
+    },
+    {
+      "situation": "Physical Therapy discharge threatens HHA eligibility because the patient still has an open Stage IV sacral wound requiring complex care.",
+      "action_taken": "Verified that the wound diagnosis meets home care criteria and requested the NP to document specific 'skilled nursing' dressing requirements.",
+      "intent": "Ensure qualification before introducing services"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN facilitates a three-way care conference with the Wound NP and Gary (the son) to document 'Skilled Nursing' needs for dressing changes, bypassing the PT plateau while educating the family on the 100-day cliff realities.",
+      "rationale": "This action respects the clinical autonomy of the PT while utilizing the NP's specialized documentation to maintain HHA eligibility under a nursing skilled need, addressing both the financial and clinical barriers legally."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN pressures the Physical Therapy Director to 'find a reason' to keep the patient on therapy for two more weeks to ensure the insurance remains active for the home health referral.",
+      "rationale": "This is a seductive overstep for veterans because it aims to solve the immediate eligibility crisis, but it actively encourages clinical documentation fraud and violates the professional boundaries between navigation and rehab therapy."
+    }
+  ],
+  "narrative_summary": "91-year-old Mr. Bennett faces a critical transition crisis as he approaches the 100-day Medicare cliff with an unhealed Stage IV sacral wound. The institutional friction is high, with a burned-out Social Worker causing a 'Black Hole' delay and a PT department that has prematurely plateaued the patient to facilitate bed turnover. The PN must navigate a hostile son's distrust while strategically coordinating with the Wound NP to justify a 'Skilled Nursing' need to prevent a total loss of home care eligibility."
+}

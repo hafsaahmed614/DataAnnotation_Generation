@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Arthur Vance (88, Bilateral TKA) was admitted to Cedar Heights Rehab on Oct 1st; PN assignment did not occur until Oct 13th due to a referral trigger lag in the central hub.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Central intake coordinator failed to flag the bilateral status as a 'High-Complexity' trigger, delaying PN notification until the second week of stay."
+    },
+    {
+      "event_description": "Social Worker (Ms. Halloway) refuses to provide the actual Physical Therapy (PT) progress notes, claiming she is 'swamped with three other discharges' and that the PN 'doesn't need clinicals to talk to the family'.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Burned-out SW is gatekeeping information to maintain control over the discharge timeline and avoid external 'interference' with her preferred HHA partner."
+    },
+    {
+      "event_description": "Facility administration signals that Mr. Vance's Medicare Part A skilled stay will be terminated on Day 21 due to 'plateaued progress' in stair-climbing, despite him living in a split-level home.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is aggressively managing its internal 20-day 'No-Co-Pay' window to maximize bed turnover for higher-reimbursement post-surgical cases."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial PN assignment occurred on Day 12 of a 21-day expected stay, leaving only 9 days to build rapport with a skeptical patient.",
+      "action_taken": "Conducted an immediate bedside visit and shadowed the rounding NP to introduce the program within the clinical workflow.",
+      "intent": "Gain trust and prepare patient for transition"
+    },
+    {
+      "situation": "Social Worker Halloway is unresponsive to email requests for the final transition care conference date.",
+      "action_taken": "Physically located the SW during her morning floor rounds to offer a brief 'huddle' on the patient's home safety needs.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Daughter is anxious that the 20-day Medicare limit will force her to pay $500/day out-of-pocket for her father's care.",
+      "action_taken": "Provided a detailed comparison of SNF room-and-board costs vs. the no-cost Medicare Home Health benefit for wound care and PT.",
+      "intent": "Educate patient/family on program benefits"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "PN identifies that the patient still has an open surgical drain and uses this 'Skilled Need' to advocate for a 72-hour extension of the SNF stay while simultaneously coordinating the HHA start-of-care for Day 24.",
+      "rationale": "This respects the clinical reality (the drain) while providing the SW and the family a clear, safety-first transition plan that satisfies the facility's need for a hard discharge date."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "PN calls the facility's Director of Nursing (DON) to report the Social Worker's lack of communication and demands the patient be kept an additional week regardless of progress.",
+      "rationale": "While proactive, this is a Seductive Overstep that burns the bridge with the Social Worker, who controls future referrals, and oversteps the PN's non-clinical role by attempting to dictate medical necessity."
+    }
+  ],
+  "narrative_summary": "Arthur Vance, an 88-year-old bilateral knee replacement patient, fell into the 'Black Hole' when his PN assignment was delayed by 12 days, leaving a critical gap in transition planning. The case is further complicated by a burned-out Social Worker who is gatekeeping clinical updates and a facility administration pushing for a Day 21 discharge to protect their financial margins. The PN must navigate these institutional politics to ensure the daughter's financial anxiety doesn't lead to a premature and unsafe discharge home."
+}

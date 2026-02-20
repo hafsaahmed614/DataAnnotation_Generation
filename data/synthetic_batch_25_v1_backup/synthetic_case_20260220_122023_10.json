@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Navigator assigned to case on Day 14 of SNF stay after the referral sat in the 'Black Hole' due to a hub processing error.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The facility referral coordinator intentionally delayed the PN upload to prevent 'outside interference' before the 100-day Medicare cliff was assessed."
+    },
+    {
+      "event_description": "The region's only orthopedic brace and wound specialist contracted influenza, leaving no one to verify spinal stability for the TLSO brace before discharge.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Pineview Rehab refuses to pay for a private-duty specialist visit, insisting the patient wait for the contracted provider to return from sick leave."
+    },
+    {
+      "event_description": "Facility Business Office issues a '100-Day Cliff' notice despite the patient's inability to safely ambulate without the specialist's brace adjustment.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The Social Worker, Brenda, is burned out and has stopped returning PN calls to avoid the conflict between facility profit and patient safety."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda is ignoring emails and phone calls regarding the discharge planning meeting.",
+      "action_taken": "Shadowed the Nurse Practitioner during 7:00 AM wound rounds to secure a face-to-face update in the patient's room.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Patient's daughter is hostile and threatening to sue the facility over the 100-day Medicare cutoff.",
+      "action_taken": "Conducted an education session with the daughter regarding the transition to Home Health Agency (HHA) wound care vs. SNF stay.",
+      "intent": "Prevent 'missed' discharge or refusal"
+    },
+    {
+      "situation": "Regional specialist illness created a care gap for the spinal fusion site assessment.",
+      "action_taken": "Coordinated with the HHA Intake Director to ensure a generalist RN could perform skin-integrity checks until the specialist's return.",
+      "intent": "Proactive transition planning"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN contacts the orthopedic surgeon's office directly to request a telehealth verification of the brace fit, then coordinates with the HHA to have a nurse present at the home during the call to bridge the specialist's absence.",
+      "rationale": "This respects clinical boundaries while using professional coordination to solve a logistical gap caused by provider illness and facility apathy."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN, seeing the discharge is at risk and the patient is frustrated, performs a physical adjustment of the TLSO spinal brace and signs off on the 'skin integrity' checklist to satisfy the Social Worker's discharge requirements.",
+      "rationale": "A seductive overstep for a veteran who wants to 'get the job done,' but it is a massive clinical liability violation; a non-clinical PN cannot perform orthopedic adjustments or clinical assessments."
+    }
+  ],
+  "narrative_summary": "A 77-year-old male recovering from a complex spinal fusion is caught between a facility's aggressive 100-day Medicare cliff and the sudden illness of the region's only orthopedic specialist. The facility's Social Worker has essentially abandoned the case due to burnout, leaving the family hostile and the discharge plan in a 'Black Hole.' The Patient Navigator must bypass the bureaucratic silence of the facility and leverage external HHA resources and telehealth to ensure a safe transition before the patient is forced into expensive private-pay status."
+}

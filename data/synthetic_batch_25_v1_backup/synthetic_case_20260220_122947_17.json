@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial assessment reveals the patient's home requires a modular ramp for safe entry; the Medicaid CHC Waiver process is initiated by the Social Worker who is managing a 60-patient caseload.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The CHC caseworker requires three separate contractor estimates for the ramp; the burned-out SNF Social Worker has only requested one, stalling the entire approval chain."
+    },
+    {
+      "event_description": "Patient reaches Day 85 of Medicare Part A coverage; the facility administrator begins pressuring the family to sign Long-Term Care (LTC) residency papers to avoid an empty bed if the home transition fails.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is protecting its 100-day Medicare financial cliff, actively steering the patient toward permanent placement to secure consistent room revenue."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan requests updated face-to-face documentation for specialized negative pressure wound therapy (NPWT) supplies for home use.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The attending SNF physician is on a 4-day rotation and has not signed the encounter notes required for the Advantage plan's clinical authorization."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "PN assigned on Day 12 of SNF stay, missing the initial family care conference due to late referral notification.",
+      "action_taken": "Conducted an immediate bedside visit with the patient and called the daughter (POA) within 2 hours of assignment.",
+      "intent": "Close the 'Black Hole' delay and establish early alignment"
+    },
+    {
+      "situation": "Social Worker (Linda) is non-responsive to PN emails regarding the CHC Waiver estimate status.",
+      "action_taken": "PN visited the SW office in-person with a coffee, offering to call the contractors directly to 'take the task off her plate.'",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "The family is anxious and considering LTC placement because they fear they cannot manage the Stage 4 ulcer dressing changes.",
+      "action_taken": "PN brought the Home Health Agency (HHA) wound nurse to the facility to demonstrate the simplified dressing protocol to the family.",
+      "intent": "Educate patient/family on program benefits"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN identifies the three-estimate bottleneck and proactively sources the remaining two contractor bids by leveraging regional HHA contacts, then presents the completed packet to the Social Worker for submission.",
+      "rationale": "This action respects the Social Worker's role while removing the administrative burden that was causing the delay, directly accelerating the CHC Waiver process without violating facility hierarchy."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN tells the patient's daughter that the Social Worker is incompetent and suggests the daughter call the State Medicaid office to file a formal complaint about the ramp delay.",
+      "rationale": "While this feels like 'fierce advocacy' to a novice, it creates a hostile environment, destroys the PN's relationship with the facility staff, and likely causes the Social Worker to block the PN's access to future clinical rounds."
+    }
+  ],
+  "narrative_summary": "A 91-year-old male with chronic Stage 4 venous ulcers faces a transition crisis as he nears the 100-day Medicare cliff at a facility prioritizing LTC conversion. The discharge is physically blocked by a required wheelchair ramp, delayed by a Medicaid CHC Waiver process that requires three estimates\u2014a task neglected by a severely burned-out Social Worker. The PN must navigate institutional apathy and physician signature lags to prevent a permanent LTC placement and secure the specialized wound care needed for a safe home return."
+}

@@ -1,0 +1,94 @@
+{
+  "case_header": {
+    "case_id": "Case_6",
+    "pn_id": "PN_Lyndsey",
+    "complexity_score": "5",
+    "demographics": {
+      "age": "78",
+      "diagnosis": "Gastric perforation; Sacral wound; Mid-abdominal open surgical wound",
+      "region": "Urban/Pennsylvania"
+    },
+    "outcome": "Post-Discharge Hospital Readmission",
+    "conversion_success": true
+  },
+  "clinical_logic": {
+    "readiness_milestone": "Lifting of low hemoglobin hold (sudden reversal)",
+    "skilled_need_verified": "Yes",
+    "clinical_barriers": [
+      "Sacral wound deterioration",
+      "Mid-abdominal open surgical wound",
+      "Low hemoglobin (anemia/bleeding risk)",
+      "Gastric perforation recovery"
+    ]
+  },
+  "environmental_logic": {
+    "physical_barriers": "Unknown (PN excluded from discharge planning/home assessment)",
+    "modification_type": "N/A",
+    "bureaucratic_steps": [
+      "Face-to-face attempt via TP rounds",
+      "Direct contact with Director of Nursing (DON)",
+      "Multiple voicemails to husband post-discharge",
+      "Next-day nurse scheduling"
+    ]
+  },
+  "timeline_deltas": [
+    {
+      "trigger_event": "Communication Blackout/SW Unresponsiveness",
+      "days_added": "14",
+      "context": "Social worker was unresponsive for weeks despite in-person meetings."
+    },
+    {
+      "trigger_event": "Clinical Hold (Low Hemoglobin)",
+      "days_added": "1",
+      "context": "Discharge delayed for one day then suddenly cleared."
+    },
+    {
+      "trigger_event": "Family Response Lag",
+      "days_added": "3",
+      "context": "Patient home for a few days before husband returned PN calls."
+    }
+  ],
+  "reasoning_trace_triples": [
+    {
+      "situation": "Social Worker unresponsive to 1-3 weekly contact attempts.",
+      "action_taken": "Bypassed SW by attending rounds with Traditional Provider (TP) and contacting DON.",
+      "intent": "Information Gathering/Relationship Persistence",
+      "result": "Discovered actual discharge status after the fact."
+    },
+    {
+      "situation": "Husband reports no HHA setup and worsening wounds.",
+      "action_taken": "Audited nurse availability for immediate (next-day) visit.",
+      "intent": "Urgent Care Coordination",
+      "result": "Nurse identified critical state and initiated ER transfer."
+    },
+    {
+      "situation": "Low hemoglobin hold lifted within 24 hours.",
+      "action_taken": "Accepted reversal without clinical challenge.",
+      "intent": "Role Boundary Adherence (Non-Clinical)",
+      "result": "Transitioned focus to home care scheduling."
+    }
+  ],
+  "judgment_policy": {
+    "rank_1_best_practices": [
+      {
+        "context": "Facility gatekeeping and unresponsive Social Worker.",
+        "action": "Utilizing the Traditional Provider (TP) to gain 'face-to-face' time during rounds.",
+        "rationale": "Leveraging existing provider relationships to bypass administrative bottlenecks."
+      }
+    ],
+    "rank_0_boundary_failures": [
+      {
+        "context": "Patient with complex open surgical wounds and low hemoglobin.",
+        "action": "Accepting discharge readiness without verifying the HHA handoff details.",
+        "error_type": "Passive (Limited by facility exclusion/non-clinical role perception)"
+      }
+    ]
+  },
+  "unscripted_chaos_signals": [
+    "Facility 'Appointment Only' policy (Gatekeeping)",
+    "Social Worker radio silence",
+    "Sudden clinical reversal (Hemoglobin hold)",
+    "Total failure of SNF-led discharge planning (No HHA set)",
+    "Family desperation/Anger toward facility"
+  ]
+}

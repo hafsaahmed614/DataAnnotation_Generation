@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient reached 'Clinically Ready' status for home PT; however, the intake assessment reveals the home has four steep concrete steps with no railing. The Social Worker (Linda) has not initiated the Medicaid CHC Waiver application for a ramp, citing a 'high caseload.'",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Operational: The 'Black Hole' delay caused by a burned-out Social Worker who failed to trigger the waiver process upon admission."
+    },
+    {
+      "event_description": "Medicaid CHC Waiver coordinator finally assigned but mandates three separate contractor estimates for the modular ramp installation. Two contractors failed to show, and the third provided an estimate exceeding the state cap.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Bureaucratic: Medicaid CHC Waiver rule requiring three competitive bids in a region with a contractor shortage."
+    },
+    {
+      "event_description": "Facility administration issues a 'Notice of Non-Coverage' as the patient approaches Day 92. The Business Office Manager is pressuring the family to sign Long-Term Care (LTC) conversion paperwork to protect the facility's 100-day Medicare financial cliff.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Financial: Institutional protection of the 100-day cliff, prioritizing bed-turnover over home-transition safety."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Linda refuses to follow up on the missing contractor estimates, telling the PN, 'I'm not a construction foreman.'",
+      "action_taken": "PN directly contacted the daughter (Sarah) to provide a vetted list of Medicaid-enrolled contractors and coached her on how to schedule the site visits.",
+      "intent": "Proactive transition planning"
+    },
+    {
+      "situation": "Anxious daughter Sarah threatens to pull the patient AMA because she believes the facility is 'stealing his house' via LTC paperwork.",
+      "action_taken": "Conducted a three-way call with the HHA intake coordinator and Sarah to explain the 'Skilled Need' requirement that keeps her father eligible for home services.",
+      "intent": "Educate patient/family on program benefits"
+    },
+    {
+      "situation": "Facility attempts to cancel the Home Health Agency (HHA) referral on Day 98 to force an internal LTC placement.",
+      "action_taken": "Contacted the Regional Director to confirm the HHA start-of-care date and verified the patient's 'Skilled Need' for RN wound monitoring remained active.",
+      "intent": "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN organizes a formal Care Conference on Day 94, inviting the PT lead to document that the patient is 'safe for home with modifications.' They present the two completed contractor estimates and request a 7-day 'Administrative Extension' from the facility administrator to allow the third bid to finalize.",
+      "rationale": "This respects the clinical hierarchy by using the PT's safety assessment as leverage while offering the administrator a clear, time-bound path to discharge that avoids the 100-day cliff without forcing a premature LTC transition."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN contacts a personal friend who is a general contractor and asks them to 'write up a fake third bid' for the ramp so the Medicaid CHC waiver can be approved immediately before the 100-day mark hits.",
+      "rationale": "While highly proactive, this is a seductive overstep that constitutes fraud and violates Medicaid compliance. A 20-year veteran knows that 'cutting corners' on state-funded modifications can lead to a permanent debarment of the PN from the facility and legal liability if the ramp later fails an inspection."
+    }
+  ],
+  "narrative_summary": "Arthur, an 82-year-old post-hip replacement patient, is caught between a burned-out Social Worker who neglected his Medicaid CHC Waiver application and a facility administration aggressively pushing for LTC conversion as his 100-day Medicare benefit nears exhaustion. The primary barrier is a state-mandated requirement for three contractor estimates for a home ramp, a process currently stalled by contractor no-shows and administrative apathy. The PN must de-escalate a hostile family dynamic and bypass institutional 'steering' to secure a safe home discharge before the financial hard stop occurs."
+}

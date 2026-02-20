@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 12 of the SNF stay, following a breakdown in the facility's automated referral trigger system.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The SNF Intake Coordinator failed to tag the patient as 'Wound Care Active' in the referral portal because the primary wound NP was out on bereavement leave."
+    },
+    {
+      "event_description": "Social Worker Miller denies the PN access to the DocNow portal, claiming the Business Associate Agreement (BAA) does not cover 'non-clinical observation' of PT progress notes.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The SW is intentionally withholding the 'face-to-face' documentation required for Managed Medicare home health authorization to maintain control over the discharge timeline."
+    },
+    {
+      "event_description": "Facility administration flags the patient as reaching Day 85, triggering an internal 'Exit Strategy' meeting to avoid the 100-day Medicare benefit exhaustion.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility Finance Director mandated a discharge date of Day 94 to ensure a 6-day 'buffer' before the Medicare financial cliff, regardless of the patient's home mobility status."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "SW Miller ignores three consecutive email requests for the patient's Physical Therapy (PT) baseline and wound measurements.",
+      "action_taken": "The PN shadowed the Traditional Provider (TP) during the 6:30 AM Wednesday wound rounds to observe the dressing change personally.",
+      "taxonomy_category": "Early Engagement",
+      "tactical_field_intent": "Leverage clinical proximity to the NP to obtain verbal measurements that bypass the SW's gatekeeping of the digital record."
+    },
+    {
+      "situation": "The family is hesitant to accept a Friday discharge due to a lack of weekend support, but the facility is pushing for the 100-day exit.",
+      "action_taken": "The PN coordinated with the HHA to schedule a supplemental nursing visit on Saturday, specifically for 'caregiver training' on the surgical site.",
+      "taxonomy_category": "Schedule De-conflict",
+      "tactical_field_intent": "Neutralize the family's 'safety' objection to prevent the facility from pivoting the patient to a Long-Term Care (LTC) Medicaid application."
+    },
+    {
+      "situation": "The Managed Medicare plan requires a specific 'face-to-face' encounter note that the SW claims is 'not yet transcribed'.",
+      "action_taken": "The PN provided the MD with a pre-filled 'Home Health Certification' template during a hallway encounter and secured a wet signature on the spot.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Create a parallel clinical record that satisfies the insurer's audit requirements without relying on the facility's delayed administrative processing."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Formally submit a written 'Information Request' to the facility\u2019s HIM (Health Information Management) department and wait for the standard 48-hour processing window for clinical records.",
+      "rationale": "This action respects the facility's bureaucratic hierarchy but fails to account for the urgent Managed Medicare authorization window, likely resulting in a 3-day delay in home care start-of-care."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Schedule a joint 'Care Conference' with the SW and the Physical Therapy lead to discuss 'Transition Readiness,' using the meeting to document the required clinical milestones for the home health referral.",
+      "rationale": "This tactfully forces the SW to disclose clinical data in a group setting where 'gatekeeping' would be visible to other department heads, effectively unblocking the information flow."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Utilize the patient's personal bedside tablet to access their 'Patient Portal' and download the most recent physician progress notes to forward directly to the Home Health Agency's intake team.",
+      "rationale": "While highly effective for patient advocacy, this bypasses all institutional privacy controls and puts the PN's company at risk for a HIPAA violation by accessing records through an unauthorized consumer-facing portal."
+    }
+  ],
+  "narrative_summary": "Mrs. Beverly G., a 74yo recovering from Stage III Ovarian Cancer surgery, is trapped between a burned-out Social Worker gatekeeping her clinical records and a facility administration racing to discharge her before the 100-day Medicare cliff. The Social Worker has leveraged 'HIPAA policy' to block the PN from obtaining the Face-to-Face documentation required for her Managed Medicare home care authorization. To ensure a successful transition, the PN must bypass administrative barriers through direct clinical engagement with the Wound NP and MD before the facility forces a Hard Stop discharge on Day 94."
+}

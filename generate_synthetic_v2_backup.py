@@ -44,31 +44,31 @@ BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 # ── Pydantic Output Schema (Section 2.3) ─────────────────────────────────────
 
 class StateLogEntry(BaseModel):
-    event_description: str = Field(description="Describe the event, including specific institutional friction.")
+    event_description: str
     clinical_impact: Literal["Improves", "Worsens", "Unchanged"]
     environmental_impact: Literal["Improves", "Worsens", "Unchanged"]
     service_adoption_impact: Literal["Positive", "Negative", "Unchanged"]
     edd_delta: str = Field(description="Must match Friction Taxonomy rule, e.g., '+30 Days'")
-    ai_assumed_bottleneck: str = Field(description="The specific human or systemic reason for the delay (e.g., 'SW ignored emails because it was Friday at 4 PM').")
 
 
 class ReasoningTriple(BaseModel):
-    situation: str = Field(description="The specific barrier, conflict, or institutional friction.")
-    action_taken: str = Field(description="The tactical, specific action the PN took to solve it.")
-    taxonomy_category: str = Field(description="Must match exactly with an intent from the Action Taxonomy.")
-    tactical_field_intent: str = Field(description="The unwritten, political, or highly specific secondary motive behind the action (e.g., 'Force a verbal commitment without leaving an aggressive email trail').")
+    situation: str
+    action_taken: str
+    intent: str = Field(description="Must match exactly with an intent from Action Taxonomy")
+    goal_met: bool
 
 
-class RLScenarioOption(BaseModel):
-    ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(description="The hidden classification. Do not reveal this in the description.")
-    description: str = Field(description="The exact action taken by the PN. It MUST sound professional and clinically appropriate, even if it is technically a passive move or a boundary overstep.")
-    rationale: str = Field(description="The hidden explanation of why the AI classified it this way (e.g., explaining exactly whose toes are stepped on for an Overstep).")
+class RLChoice(BaseModel):
+    rank: Literal[0, 1]
+    action_type: Literal["Optimal", "Passive", "Overstep"]
+    description: str
+    rationale: str = Field(description="For Rank 1, explain why it balances patient advocacy with SNF relationship management. For Rank 0 Oversteps, explicitly state which facility stakeholder's toes were stepped on and why it damages the long-term facility relationship.")
 
 
 class SyntheticCaseOutput(BaseModel):
     format_1_state_log: List[StateLogEntry]
     format_2_triples: List[ReasoningTriple]
-    format_3_rl_scenario: List[RLScenarioOption]
+    format_3_rl_scenario: List[RLChoice]
     narrative_summary: str
 
 
@@ -142,23 +142,13 @@ You MUST strictly output valid JSON conforming to this schema and NO other text:
 {schema_str}
 
 Rules:
-1. All edd_delta values must reference a delay from the Friction Taxonomy.
-2. The `ai_assumed_bottleneck` must be a specific, testable claim about institutional friction (e.g., "The delay was amplified because the facility requires 3 signatures on Fridays").
-
-Rules for Format 2 (Triples):
-3. The `situation` must involve a specific stakeholder bottleneck (e.g., an unresponsive SW, an anxious family member).
-4. The `action_taken` must be a specific field maneuver, not a generic concept.
-5. The `tactical_field_intent` MUST contain a political or operational trade-off that a 20-year veteran could debate. Do not use generic phrases like 'Gain trust'. Instead, use highly tactical motives (e.g., 'Bypass the physician's gatekeeper by catching them during hallway rounds to secure the F2F signature before the weekend').
-
-Rules for Format 3 (RL Scenarios):
-6. The format_3_rl_scenario MUST contain exactly THREE options for a single difficult dilemma.
-7. You must generate one "Passive" option, one "Proactive" option, and one "Overstep" option.
-8. CRITICAL: The `description` for all three options must sound highly professional, reasonable, and tempting.
-   - The "Passive" action should disguise itself as "respecting the facility's process."
-   - The "Proactive" action must skillfully solve the friction without crossing boundaries.
-   - The "Overstep" action must be a "Seductive Overstep" that sounds like excellent patient advocacy to a rookie, but actually violates clinical or Social Worker boundaries. Do not make the Overstep sound obviously bad or reckless.
-9. narrative_summary must be 3–5 sentences capturing the clinical, political, and operational arc.
-10. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
+1. All edd_delta values must reference a delay from the Friction Taxonomy above.
+2. All intent fields must match an intent listed in the Action Taxonomy.
+3. The format_3_rl_scenario MUST present a difficult professional dilemma.
+   - The rank=1 (Optimal) choice must solve the friction while perfectly maintaining SNF relationship boundaries (e.g., empowering the family to act, coordinating schedules).
+   - The rank=0 choice MUST NOT be simply "passive" or lazy. It must be a "Seductive Overstep"—an action that seems highly proactive and helpful to the patient, but actively violates professional boundaries (e.g., confronting a surgeon, doing the Social Worker's job for them, or giving unauthorized clinical advice).
+4. narrative_summary must be 3–5 sentences capturing the clinical and operational arc.
+5. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
 
@@ -221,12 +211,12 @@ def main():
     outcome_taxonomy  = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are an AI Healthcare Architect generating high-complexity synthetic cases to test 20-year "
-        "non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies. "
-        "CRITICAL INSTRUCTION: You must inject 'Institutional Politics' into the case. Do not assume "
-        "facility staff are perfectly rational or collaborative. You must include at least one of the following: "
-        "a burned-out Social Worker, a facility protecting its 100-day Medicare financial cliff, or "
-        "a hostile/anxious family dynamic. You must make highly specific claims about delays that veterans can verify."
+        "You are an AI Healthcare Architect. Your task is to generate a high-complexity "
+        "Synthetic Patient Case. You must strictly adhere to the provided Static Taxonomies. "
+        "CRITICAL INSTRUCTION: You must inject real-world ambiguity into the case. Stakeholders "
+        "(Family, Social Worker, Physician) must have competing priorities, or the PN must be "
+        "forced to act on incomplete information. The 'correct' path should require emotional "
+        "intelligence and careful boundary management, not just administrative checklist completion."
     )
 
     print(f"Starting batch generation: {BATCH_SIZE} case(s)")

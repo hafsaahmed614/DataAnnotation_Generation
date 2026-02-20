@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial assessment reveals the patient requires a wheelchair ramp and 5L O2 concentrator setup. Medicaid CHC Waiver application initiated, but the facility Social Worker (Janice) has only secured one contractor estimate in three weeks.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Burned-out Social Worker (Janice) is intentionally stalling the waiver process to force a Long-Term Care (LTC) conversion as the patient approaches the 100-day Medicare cliff."
+    },
+    {
+      "event_description": "Facility billing department issues a 'Notice of Non-Coverage' (NOMNC) effective on Day 101. The patient is currently on Day 88. The family is hostile, accusing the PN of 'colluding with the facility' to kick her out before the ramp is installed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Facility administration is protecting its 100-day financial cliff by pressuring the clinical team to stop skilled therapy, thereby triggering a 'Loss of Skilled Need'."
+    },
+    {
+      "event_description": "PN manually sources two additional contractor estimates by contacting local vendors directly and providing them to the family to bypass the Social Worker's desk. CHC Waiver coordinator confirms receipt.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Bureaucratic requirement for three separate estimates was stalled by the SW's refusal to perform non-mandated outreach."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Janice is non-responsive to PN emails regarding the status of the CHC Waiver estimates.",
+      "action_taken": "PN shadowed the Traditional Provider (TP) during morning rounds to gain facility entry and speak with the patient's daughter in the room.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Facility plans to discharge the patient to a sub-optimal LTC bed on Day 101 due to benefit exhaustion.",
+      "action_taken": "PN educated the family on the 100-day cliff and the necessity of immediate O2 home setup via a secondary HHA preference.",
+      "intent": "Educate patient/family on program benefits"
+    },
+    {
+      "situation": "Risk of 'Double Dipping' billing errors if the HHA arrives while the facility is still claiming a skilled day.",
+      "action_taken": "Coordinated with the Regional Director to align the HHA start-of-care for 9:00 AM the morning after the midnight discharge effective date.",
+      "intent": "Ensure service payment and coverage safety"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "The PN meets with the hostile family and the Social Worker in a joint care conference. The PN provides the family with the contact information for the CHC Waiver coordinator and a list of three approved contractors, suggesting the family call them to expedite the estimates while the PN focuses on coordinating the O2 delivery with the HHA.",
+      "rationale": "This approach empowers the family to overcome the bureaucratic hurdle and bypasses the burned-out Social Worker without directly challenging her authority, which preserves the PN's ability to operate within the facility while ensuring the environmental block is addressed."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "The PN files a formal grievance against the Social Worker for 'administrative negligence' and calls the state Medicaid office to report the facility's failure to provide the three required estimates, promising the family that the state will force the facility to pay for the ramp privately.",
+      "rationale": "This is a seductive overstep because it feels like 'fierce advocacy' for a vulnerable patient. However, it violates the non-clinical boundary, destroys the essential relationship with the facility staff, and makes a legal/financial promise that the PN cannot keep, likely resulting in the PN being banned from the building."
+    }
+  ],
+  "narrative_summary": "Dorothy, a 71-year-old O2-dependent COPD patient, is caught between a burned-out Social Worker and a facility administration aggressively managing its 100-day Medicare cliff. The discharge to home is blocked by a Medicaid CHC Waiver requirement for three ramp estimates, which the facility is neglecting in hopes of a lucrative LTC conversion. The PN must navigate a hostile family dynamic and bureaucratic stagnation to source the necessary estimates and align a home oxygen setup before the hard stop of Day 101 forces a permanent institutionalization."
+}

@@ -1,0 +1,60 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Mrs. Dorothy Higgins (85yo, CHF/CKD) was assigned to the PN on Day 14 of her SNF stay, missing the critical window for initial trust-building as the facility administrator restricted visitor access during a minor norovirus outbreak.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "SNF Administrator 'The Black Hole' effect where PN access is delayed to prevent outside coordination from disrupting internal therapy billing cycles."
+    },
+    {
+      "event_description": "The only regional wound care specialist, Dr. Aris, contracted Influenza A; the facility SW, Sheila, refuses to seek a temporary replacement, stating 'we just have to wait it out.'",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness trigger in a rural specialist desert where the facility refuses to pay for locum tenens coverage."
+    },
+    {
+      "event_description": "On Day 95, the facility issues a 48-hour discharge notice. SW Sheila is visibly burned out and ignores the fact that the specialist hasn't cleared the sacral wound, simply stating, 'Medicare won't pay past 100 days, and she's not staying on my watch.'",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The 100-Day Cliff financial protection where the facility forces discharge to avoid the administrative burden of a Long-Term Care Medicaid application."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "PN assigned late during the 'Black Hole' window with limited initial patient access.",
+      "action_taken": "Reviewed clinical notes in DocNow/Atlantis and shadowed the NP during morning rounds.",
+      "intent": "Maintain relationship for early discharge info"
+    },
+    {
+      "situation": "Specialist illness created a 5-day gap in advanced wound dressing changes.",
+      "action_taken": "Coordinated with the HHA Intake Manager to ensure a wound-certified RN was available for the first three home visits.",
+      "intent": "Proactive transition planning"
+    },
+    {
+      "situation": "Burned-out SW Sheila provided no HHA choices to the family, intending to steer to the facility-owned agency.",
+      "action_taken": "Educated the daughter/POA on the right to choose an agency that handles both CHF and complex wounds.",
+      "intent": "Ensure alignment with all transition providers"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "rank": 1,
+      "action_type": "Optimal",
+      "description": "Directly contact the Home Health Agency (HHA) Director of Nursing to confirm they have a wound-certified nurse who can bridge the gap until Dr. Aris returns, while simultaneously briefing the daughter on the specific clinical signs of CHF exacerbation to watch for during the transition.",
+      "rationale": "This action ensures clinical safety by leveraging existing HHA resources and empowers the family, all while remaining strictly within the non-clinical scope of a Patient Navigator."
+    },
+    {
+      "rank": 0,
+      "action_type": "Overstep",
+      "description": "Offer to personally stop by the patient's home on the first evening after discharge to 'take a look' at the sacral wound and demonstrate the dressing change to the daughter since the specialist is still out sick.",
+      "rationale": "While highly proactive, this is a seductive overstep that violates the PN's non-clinical role, creates massive institutional liability, and potentially interferes with the HHA's clinical oversight."
+    }
+  ],
+  "narrative_summary": "Mrs. Higgins, an 85-year-old with CHF and Renal failure, faced a high-risk transition when the facility reached the 100-day Medicare cliff and a burned-out Social Worker forced a discharge despite a regional wound specialist's illness. The PN had to overcome a 14-day 'Black Hole' delay in assignment to build enough trust with the family to prevent facility-led steering. By coordinating a specialized HHA bridge, the PN mitigated the 5-day care gap caused by the provider's illness, ensuring the patient didn't bounce back to the hospital for a wound infection or CHF flare-up."
+}
