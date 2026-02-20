@@ -13,10 +13,21 @@ from supabase import create_client, Client
 load_dotenv()
 
 
+def _get_secret(name: str) -> str:
+    """Read from os.environ first, then fall back to st.secrets (Streamlit Cloud)."""
+    val = os.environ.get(name)
+    if val:
+        return val
+    try:
+        return st.secrets[name]
+    except (KeyError, FileNotFoundError):
+        raise KeyError(f"Missing secret: {name}. Set it in .env or Streamlit Cloud Secrets.")
+
+
 @st.cache_resource
 def _init_client() -> Client:
-    url = os.environ["SUPABASE_URL"]
-    key = os.environ["SUPABASE_KEY"]
+    url = _get_secret("SUPABASE_URL")
+    key = _get_secret("SUPABASE_KEY")
     return create_client(url, key)
 
 
@@ -39,6 +50,6 @@ def get_authenticated_client() -> Client:
 @st.cache_resource
 def get_service_client() -> Client:
     """Return a Supabase client using the service role key (bypasses RLS)."""
-    url = os.environ["SUPABASE_URL"]
-    key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
+    url = _get_secret("SUPABASE_URL")
+    key = _get_secret("SUPABASE_SERVICE_ROLE_KEY")
     return create_client(url, key)

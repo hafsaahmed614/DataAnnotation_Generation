@@ -6,12 +6,17 @@ All registrations are navigators. Supabase email is auto-generated.
 """
 
 import streamlit as st
-from app.auth import sign_in, sign_up
+from app.auth import sign_in, sign_up, is_authenticated
 
 
 def render():
     st.title("Data Annotation Platform")
     st.subheader("Patient Navigator Case Evaluation System")
+
+    if is_authenticated():
+        name = st.session_state.get("full_name", "Navigator")
+        st.success(f'Logged in as {name}. Please proceed to "My Cases" page.')
+        return
 
     tab_register, tab_login = st.tabs(["Register", "Sign In"])
 
