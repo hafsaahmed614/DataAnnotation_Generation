@@ -308,15 +308,15 @@ def render():
         _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
                       case_label, navigator_name)
 
-            # Mark session completed with overall score
-            client.table("evaluation_sessions").update({
-                "status": "completed",
-                "completed_at": datetime.now(timezone.utc).isoformat(),
-                "overall_field_authenticity": overall_score,
-            }).eq("id", session_id).execute()
+        # Mark session completed with overall score
+        client.table("evaluation_sessions").update({
+            "status": "completed",
+            "completed_at": datetime.now(timezone.utc).isoformat(),
+            "overall_field_authenticity": overall_score,
+        }).eq("id", session_id).execute()
 
-            st.success("Evaluation submitted successfully!")
-            st.session_state.pop("current_session_id", None)
-            st.session_state.pop("current_case_id", None)
-            st.session_state["current_page"] = "pn_dashboard"
-            st.rerun()
+        st.success("Evaluation submitted successfully!")
+        st.session_state.pop("current_session_id", None)
+        st.session_state.pop("current_case_id", None)
+        st.session_state["current_page"] = "pn_dashboard"
+        st.rerun()
