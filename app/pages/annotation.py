@@ -294,23 +294,19 @@ def render():
         key="overall_field_authenticity",
     )
 
-    # ── SAVE / SUBMIT ─────────────────────────────────────────────────────────
+    # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
+    _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+                  case_label, navigator_name)
+    client.table("evaluation_sessions").update({
+        "overall_field_authenticity": overall_score,
+    }).eq("id", session_id).execute()
+
+    # ── SUBMIT ──────────────────────────────────────────────────────────────────
     st.divider()
-    col_save, col_submit = st.columns(2)
 
-    with col_save:
-        if st.button("Save Progress", use_container_width=True):
-            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
-                          case_label, navigator_name)
-            client.table("evaluation_sessions").update({
-                "overall_field_authenticity": overall_score,
-            }).eq("id", session_id).execute()
-            st.success("Progress saved!")
-
-    with col_submit:
-        if st.button("Submit Evaluation", type="primary", use_container_width=True):
-            _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
-                          case_label, navigator_name)
+    if st.button("Submit Evaluation", type="primary", use_container_width=True):
+        _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+                      case_label, navigator_name)
 
             # Mark session completed with overall score
             client.table("evaluation_sessions").update({
