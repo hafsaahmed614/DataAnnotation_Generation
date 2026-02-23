@@ -13,7 +13,7 @@ Save Progress writes answers without completing. Submit finalises.
 import streamlit as st
 from datetime import datetime, timezone
 from httpx import RemoteProtocolError
-from app.supabase_client import get_authenticated_client
+from app.supabase_client import get_authenticated_client, get_service_client
 
 
 def _retry(fn, retries=2):
@@ -71,28 +71,29 @@ def _load_saved_answers(client, session_id):
     return f1_saved, f2_saved, f3_saved
 
 
-def _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+def _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                    case_label="", navigator_name=""):
     """Save current answers to eval tables (delete old rows first)."""
+    svc = get_service_client()
     # Clear existing rows for this session
-    client.table("eval_format_1_timeline").delete().eq("session_id", session_id).execute()
-    client.table("eval_format_2_tactics").delete().eq("session_id", session_id).execute()
-    client.table("eval_format_3_boundaries").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_1_timeline").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_2_tactics").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_3_boundaries").delete().eq("session_id", session_id).execute()
 
     common = {"session_id": session_id, "case_label": case_label, "navigator_name": navigator_name}
 
     # Insert current answers
     if f1_inputs:
         f1_rows = [{**common, **inp} for inp in f1_inputs]
-        client.table("eval_format_1_timeline").insert(f1_rows).execute()
+        svc.table("eval_format_1_timeline").insert(f1_rows).execute()
 
     if f2_inputs:
         f2_rows = [{**common, **inp} for inp in f2_inputs]
-        client.table("eval_format_2_tactics").insert(f2_rows).execute()
+        svc.table("eval_format_2_tactics").insert(f2_rows).execute()
 
     if f3_inputs:
         f3_rows = [{**common, **inp} for inp in f3_inputs]
-        client.table("eval_format_3_boundaries").insert(f3_rows).execute()
+        svc.table("eval_format_3_boundaries").insert(f3_rows).execute()
 
 
 def render():
@@ -295,9 +296,9 @@ def render():
     )
 
     # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
-    _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+    _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                   case_label, navigator_name)
-    client.table("evaluation_sessions").update({
+    get_service_client().table("evaluation_sessions").update({
         "overall_field_authenticity": overall_score,
     }).eq("id", session_id).execute()
 
@@ -305,11 +306,11 @@ def render():
     st.divider()
 
     if st.button("Submit Evaluation", type="primary", use_container_width=True):
-        _save_answers(client, session_id, f1_inputs, f2_inputs, f3_inputs,
+        _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                       case_label, navigator_name)
 
         # Mark session completed with overall score
-        client.table("evaluation_sessions").update({
+        get_service_client().table("evaluation_sessions").update({
             "status": "completed",
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "overall_field_authenticity": overall_score,
