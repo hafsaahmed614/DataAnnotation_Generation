@@ -290,7 +290,7 @@ def render():
     saved_suggestion = session_resp.data.get("improvement_suggestion") or ""
 
     overall_score = st.slider(
-        "1 = Completely Artificial / Textbook — 5 = Highly Authentic / Rings 100% True",
+        "1 = Completely Artificial — 5 = Highly Authentic / Rings 100% True",
         min_value=1,
         max_value=5,
         value=int(saved_authenticity),
