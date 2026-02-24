@@ -277,15 +277,16 @@ def render():
         "accurately reflect your lived experience in the field?"
     )
 
-    # Load saved value from session if resuming
+    # Load saved values from session if resuming
     session_resp = _retry(lambda: (
         client.table("evaluation_sessions")
-        .select("overall_field_authenticity")
+        .select("overall_field_authenticity, authenticity_reasoning")
         .eq("id", session_id)
         .single()
         .execute()
     ))
     saved_authenticity = session_resp.data.get("overall_field_authenticity") or 3
+    saved_reasoning = session_resp.data.get("authenticity_reasoning") or ""
 
     overall_score = st.slider(
         "1 = Completely Artificial / Textbook — 5 = Highly Authentic / Rings 100% True",
@@ -295,11 +296,19 @@ def render():
         key="overall_field_authenticity",
     )
 
+    authenticity_reasoning = st.text_area(
+        "Why did you give this score? Please explain your reasoning.",
+        value=saved_reasoning,
+        height=150,
+        key="authenticity_reasoning",
+    )
+
     # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
     _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                   case_label, navigator_name)
     get_service_client().table("evaluation_sessions").update({
         "overall_field_authenticity": overall_score,
+        "authenticity_reasoning": authenticity_reasoning,
     }).eq("id", session_id).execute()
 
     # ── SUBMIT ──────────────────────────────────────────────────────────────────
@@ -314,6 +323,7 @@ def render():
             "status": "completed",
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "overall_field_authenticity": overall_score,
+            "authenticity_reasoning": authenticity_reasoning,
         }).eq("id", session_id).execute()
 
         st.success("Evaluation submitted successfully!")

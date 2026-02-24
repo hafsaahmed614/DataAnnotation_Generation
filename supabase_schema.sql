@@ -53,6 +53,7 @@ CREATE TABLE evaluation_sessions (
     status                      TEXT NOT NULL DEFAULT 'in_progress'
                                 CHECK (status IN ('in_progress', 'completed')),
     overall_field_authenticity  INT CHECK (overall_field_authenticity BETWEEN 1 AND 5),
+    authenticity_reasoning      TEXT,
     created_at                  TIMESTAMPTZ NOT NULL DEFAULT now(),
     completed_at                TIMESTAMPTZ,
     UNIQUE(case_id, navigator_id)
