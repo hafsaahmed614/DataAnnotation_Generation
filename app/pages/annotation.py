@@ -280,13 +280,14 @@ def render():
     # Load saved values from session if resuming
     session_resp = _retry(lambda: (
         client.table("evaluation_sessions")
-        .select("overall_field_authenticity, authenticity_reasoning")
+        .select("overall_field_authenticity, authenticity_reasoning, improvement_suggestion")
         .eq("id", session_id)
         .single()
         .execute()
     ))
     saved_authenticity = session_resp.data.get("overall_field_authenticity") or 3
     saved_reasoning = session_resp.data.get("authenticity_reasoning") or ""
+    saved_suggestion = session_resp.data.get("improvement_suggestion") or ""
 
     overall_score = st.slider(
         "1 = Completely Artificial / Textbook — 5 = Highly Authentic / Rings 100% True",
@@ -303,12 +304,20 @@ def render():
         key="authenticity_reasoning",
     )
 
+    improvement_suggestion = st.text_area(
+        "What is one specific change that would make this case feel more realistic?",
+        value=saved_suggestion,
+        height=150,
+        key="improvement_suggestion",
+    )
+
     # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
     _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                   case_label, navigator_name)
     get_service_client().table("evaluation_sessions").update({
         "overall_field_authenticity": overall_score,
         "authenticity_reasoning": authenticity_reasoning,
+        "improvement_suggestion": improvement_suggestion,
     }).eq("id", session_id).execute()
 
     # ── SUBMIT ──────────────────────────────────────────────────────────────────
