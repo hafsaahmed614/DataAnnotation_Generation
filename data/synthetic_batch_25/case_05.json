@@ -1,66 +1,66 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "PN assigned to 81yo stroke patient on Day 14 of SNF stay; initial review of DocNow shows zero documentation of a Face-to-Face (F2F) encounter for home health despite an upcoming discharge window.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The internal 'Black Hole' delay occurred because the facility intake coordinator failed to flag the patient as a high-risk stroke recovery until the daughter threatened a formal grievance."
-    },
-    {
-      "event_description": "Managed Medicare Advantage (Humana) authorization request pended due to insufficient PT notes failing to justify 'homebound status' for an 81yo with residual hemiparesis.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The burned-out Social Worker, Sheila, submitted the auth request with outdated Day 1 admission notes rather than current progress reports to save time on her 50-patient caseload."
-    },
-    {
-      "event_description": "Facility administration issues a 'Notice of Non-Coverage' as the patient approaches the 100-day Medicare cliff, despite the Managed Medicare Auth still being in appeal.",
+      "event_description": "Patient cleared by Pulmonology for discharge to home with 2L O2; however, physical therapy identifies a 4-inch threshold at the front door and a lack of interior grab bars, triggering a Medicaid CHC Waiver request for home modifications.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "The facility CFO mandated discharge or private-pay transition by Day 95 to ensure no financial 'leakage' during the low-reimbursement tail of the benefit period."
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The state caseworker is strictly adhering to the DNA rule requiring three independent contractor bids for the ramp and grab bar installation before authorizing the home health start-of-care."
+    },
+    {
+      "event_description": "The selected Home Health Agency (HHA) reports that their primary intake coordinator is on a week-long medical leave, leaving the referral sitting in the 'pending' queue without a verified start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA lacks a cross-trained backup for intake, meaning the referral remains stagnant despite the patient being clinically stable for the transition."
+    },
+    {
+      "event_description": "Upon reviewing the discharge packet, the HHA clinical manager identifies that the nebulizer medication list provided by the facility includes a discontinued steroid from the ICU stay that was never reconciled with the current floor orders.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The facility floor nurse failed to update the digital discharge summary after the pulmonologist adjusted the maintenance regimen, creating a clinical safety gap for the home nurse."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The attending physician refuses to sign the F2F encounter note, claiming the SNF's Nurse Practitioner should handle it, while the NP claims they lack the 'billing authority' for this specific Advantage plan.",
-      "action_taken": "Physically intercepted the physician during 6:00 AM 'hallway rounds' with a pre-printed summary of the patient's PT/OT gains and the specific Medicare Advantage F2F form.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Bypass the physician's protective office gatekeeper and the SW's 'email queue' to force a wet-ink signature before the weekend billing cycle closes."
+      "situation": "The CHC Waiver caseworker has only received two of the three required contractor estimates for the wheelchair ramp, stalling the entire home health transition.",
+      "action_taken": "Communicated with the patient's daughter to identify a third local contractor and shared the contact info with the HHA's community liaison.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Accelerate the bureaucratic timeline without assuming the caseworker's legal duties, ensuring the HHA can lock in a nurse for the following month."
     },
     {
-      "situation": "The patient's daughter, Elena, is threatening to refuse any Home Health Agency (HHA) that isn't the one her neighbor used, which is out-of-network for the patient's Advantage plan.",
-      "action_taken": "Conducted a three-way call with the Humana Case Manager and the daughter to review the 'In-Network' list while highlighting the wound-care specialization of the preferred partner.",
+      "situation": "The patient's daughter expresses anxiety about managing the portable oxygen concentrator and the overnight CPAP titration required post-discharge.",
+      "action_taken": "Coordinated a pre-discharge training session where the HHA's respiratory therapist meets the family at the facility to demonstrate the specific home equipment.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Neutralize family hostility by shifting the 'bad cop' role to the insurance carrier while positioning the PN as the 'navigator' through the carrier's bureaucracy."
+      "tactical_field_intent": "Prevent a 'refusal of service' at the doorstep by building caregiver confidence before the patient physically leaves the SNF."
     },
     {
-      "situation": "The SNF Social Worker (Sheila) has stopped answering the PN's calls after the PN reported the missing F2F documentation to the Regional Director.",
-      "action_taken": "Began 'shadowing' the Physical Therapy team during their final sessions to gather clinical data directly for the HHA handoff, bypassing the SW office entirely.",
-      "taxonomy_category": "Clinical Monitoring",
-      "tactical_field_intent": "Establish an alternative data pipeline to ensure transition continuity without relying on a compromised or hostile institutional relationship."
+      "situation": "The HHA reports a staffing shortage in the patient's rural zip code, threatening to push the start-of-care date past the approved waiver window.",
+      "action_taken": "Negotiated with the HHA Regional Director to utilize a per-diem nurse from an adjacent county by offering a clustered visit schedule.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Secure a firm commitment for the first 48-hour visit to maintain service conversion and avoid losing the slot to a competitor."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Decline to intervene in the F2F documentation gap, instead documenting the delay in the system and waiting for the Social Worker to resolve the signature issue during the scheduled Tuesday Care Conference.",
-      "rationale": "This prioritizes institutional hierarchy and avoids professional friction with the SW, but it risks a 7-day discharge delay and potential loss of the home care window."
+      "description": "Wait for the facility Social Worker to resolve the Medicaid CHC Waiver bid discrepancy and check the electronic portal daily for a status change on the home modification approval.",
+      "rationale": "The PN is deferring to the facility's internal processes and the state's timeline, which risks a significant 'Timeline Drift' if the third bid is never secured."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Coordinate a brief huddle between the PT Lead and the NP to align on 'homebound' language, then present the unified clinical narrative to the physician for a streamlined signature on the F2F form.",
-      "rationale": "This solves the bureaucratic friction by facilitating clinical consensus without overstepping into medical decision-making or violating SW territory."
+      "description": "Verify with the HHA Intake Coordinator that the home oxygen and nebulizer supplies have been delivered to the residence and confirmed by the family, while providing the HHA with the updated medication list reconciled by the unit clerk.",
+      "rationale": "The PN is focusing strictly on transition logistics and clinical handoff accuracy, ensuring that when the environment is finally cleared, the HHA can start immediately without equipment or order delays."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Offer to log into the NP's charting station to 'draft' the F2F encounter note for them, using the physician's known templates to ensure the Managed Medicare Auth is approved on the first pass.",
-      "rationale": "While highly effective for speed, this is a seductive overstep that violates HIPAA protocols and non-clinical boundaries by performing clinical documentation on behalf of a licensed provider."
+      "description": "Contact the Medicaid CHC caseworker directly to argue for a waiver of the three-bid rule based on the patient's ICU history and personally draft an appeal letter to the state insurance board for expedited equipment delivery.",
+      "rationale": "The PN is performing the functions of a Social Worker and an insurance advocate, stepping outside the non-clinical transition scope and potentially creating friction with state regulators."
     }
   ],
-  "narrative_summary": "Arthur, an 81-year-old stroke survivor, faces a fractured transition from Northcrest Rehab due to a 'Face-to-Face' documentation gap and a burned-out Social Worker who has deprioritized his case. As his Managed Medicare Advantage plan pends authorization for home health, the facility is aggressively pushing for a Day 100 discharge to protect its financial margins. The PN must navigate a hostile family dynamic and institutional gatekeeping to secure the necessary physician signatures and insurance approvals before the 100-day cliff forces a transition to costly private-pay long-term care."
+  "narrative_summary": "The transition for this 83-year-old patient was primarily delayed by the rigid 'three-estimate' requirement of the Medicaid CHC Waiver for a necessary front-door ramp. While the facility managed the clinical recovery from pneumonia, the Patient Navigator worked to bridge the 40-day environmental gap by ensuring the Home Health Agency (HHA) remained engaged and prepared for a complex respiratory handoff. The PN successfully navigated a staffing shortage in a rural zip code and reconciled a medication mismatch regarding nebulizer treatments before the patient arrived home. By facilitating a pre-discharge equipment training session for the daughter, the PN secured a successful service conversion despite the lengthy bureaucratic stall."
 }

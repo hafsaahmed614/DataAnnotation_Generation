@@ -14,27 +14,87 @@
     },
     {
       "category": "Operational",
-      "signal_barrier": "The 'Black Hole'",
-      "expected_delay": "7–14 Days (Lost Intervention Time)",
-      "logical_dna_rule": "The lag between SNF admission and PN assignment in the hub reduces the window available to build trust and educate the family before a sudden discharge occurs."
-    },
-    {
-      "category": "Operational",
       "signal_barrier": "Provider Illness",
       "expected_delay": "+3–5 Days",
       "logical_dna_rule": "In regions with only one specialist, illness triggers a care gap; the PN must coordinate with HHA generalist nurses to bridge dressing changes until a specialist is available."
-    },
-    {
-      "category": "Financial",
-      "signal_barrier": "The 100-Day Cliff",
-      "expected_delay": "Hard Stop (LTC Transition)",
-      "logical_dna_rule": "Medicare benefits typically exhaust at Day 100; if the patient isn't ready for home, the facility forces a shift to private pay or a Long-Term Care Medicaid application."
     },
     {
       "category": "Eligibility",
       "signal_barrier": "Loss of Skilled Need",
       "expected_delay": "Hard Stop (Ineligibility)",
       "logical_dna_rule": "To qualify for specialized home wound care, the patient must require at least one other skilled service (RN or PT); losing these services renders them ineligible even if the wound is open."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA Weekend Admission Freeze",
+      "expected_delay": "+2–3 Days",
+      "logical_dna_rule": "Most HHAs only process new admissions Monday–Friday; a Friday discharge means the patient sits without home services until Monday unless the PN secures a weekend exception."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "DME Delivery Backlog",
+      "expected_delay": "+3–7 Days",
+      "logical_dna_rule": "Durable Medical Equipment (hospital bed, O2 concentrator, wound vac) must be at the home before discharge; vendor backlog or insurance pre-auth for DME delays the safe transition date."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA Intake Coordinator Unavailable",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The single HHA intake coordinator is out sick, on PTO, or overwhelmed with referrals; the PN cannot confirm the admission slot or start-of-care date until intake processes the referral."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Caregiver Training Gap",
+      "expected_delay": "+2–5 Days",
+      "logical_dna_rule": "The primary caregiver has not been trained on wound care, catheter maintenance, or medication administration; discharge cannot proceed safely until the family demonstrates competency."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Medication List Mismatch",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The medication list from the discharging facility does not match what the HHA received; the PN must reconcile discrepancies before the first home visit to avoid adverse drug events."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "Home Safety Assessment Pending",
+      "expected_delay": "+3–7 Days",
+      "logical_dna_rule": "The HHA requires a home safety evaluation (grab bars, ramp, clear pathways) before start-of-care; if the home fails inspection, modifications must be arranged before the patient can return."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA Staffing Shortage",
+      "expected_delay": "+3–10 Days",
+      "logical_dna_rule": "The HHA does not have a nurse or aide available in the patient's zip code; the PN must find an alternative agency or negotiate coverage with a more distant branch."
+    },
+    {
+      "category": "Administrative",
+      "signal_barrier": "Insurance-HHA Network Mismatch",
+      "expected_delay": "+3–5 Days",
+      "logical_dna_rule": "The patient's preferred or nearest HHA is out-of-network for their insurance plan; the PN must identify an in-network agency willing to take the referral or initiate a single-case agreement."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Family Disagreement on Discharge Plan",
+      "expected_delay": "+2–7 Days",
+      "logical_dna_rule": "Family members disagree about whether the patient should go home vs. a facility; the PN must facilitate alignment on the home health plan while staying within scope (not making clinical recommendations)."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "Transport Coordination Failure",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "Medical transport (wheelchair van, stretcher transport) is unavailable or unscheduled for the discharge date; the PN must coordinate with transport vendors and confirm timing with the HHA's first-visit schedule."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Missing HHA Orders at Handoff",
+      "expected_delay": "+2–4 Days",
+      "logical_dna_rule": "The physician's home health orders were not faxed, were incomplete, or were sent to the wrong HHA; the PN must track down the orders and confirm receipt before start-of-care can be scheduled."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Holiday Coverage Gap",
+      "expected_delay": "+2–5 Days",
+      "logical_dna_rule": "HHA operates on reduced holiday staffing; admissions and first visits are suspended over holiday weekends, pushing the start-of-care date out regardless of patient readiness."
     }
   ]
 }

@@ -1,66 +1,58 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "Initial PN assignment occurs on Day 12 of the SNF stay, following a breakdown in the facility's automated referral trigger system.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The SNF Intake Coordinator failed to tag the patient as 'Wound Care Active' in the referral portal because the primary wound NP was out on bereavement leave."
-    },
-    {
-      "event_description": "Social Worker Miller denies the PN access to the DocNow portal, claiming the Business Associate Agreement (BAA) does not cover 'non-clinical observation' of PT progress notes.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The SW is intentionally withholding the 'face-to-face' documentation required for Managed Medicare home health authorization to maintain control over the discharge timeline."
-    },
-    {
-      "event_description": "Facility administration flags the patient as reaching Day 85, triggering an internal 'Exit Strategy' meeting to avoid the 100-day Medicare benefit exhaustion.",
+      "event_description": "Surgeon provides clinical sign-off for home discharge following spinal fusion; however, the home requires a hospital bed for safe PT/OT initiation.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "The facility Finance Director mandated a discharge date of Day 94 to ensure a 6-day 'buffer' before the Medicare financial cliff, regardless of the patient's home mobility status."
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The DME vendor's delivery driver is on medical leave, and the secondary driver is restricted to local zip codes only, excluding the patient's rural residence."
+    },
+    {
+      "event_description": "PN confirms with the HHA intake coordinator that the start-of-care (SOC) cannot be scheduled until the hospital bed is physically confirmed in the residence.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA refuses to 'blind schedule' the admission visit without a photo or verbal confirmation from the PN that equipment is present, fearing a wasted clinician trip."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "SW Miller ignores three consecutive email requests for the patient's Physical Therapy (PT) baseline and wound measurements.",
-      "action_taken": "The PN shadowed the Traditional Provider (TP) during the 6:30 AM Wednesday wound rounds to observe the dressing change personally.",
-      "taxonomy_category": "Early Engagement",
-      "tactical_field_intent": "Leverage clinical proximity to the NP to obtain verbal measurements that bypass the SW's gatekeeping of the digital record."
+      "situation": "The preferred DME vendor reports a 5-day backlog for the specific semi-electric hospital bed ordered by the facility.",
+      "action_taken": "Identified a secondary in-network DME provider through the HHA\u2019s preferred partner list and relayed the contact to the facility Social Worker.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Leverage the HHA's existing vendor relationships to bypass the facility's standard rotation and expedite equipment arrival."
     },
     {
-      "situation": "The family is hesitant to accept a Friday discharge due to a lack of weekend support, but the facility is pushing for the 100-day exit.",
-      "action_taken": "The PN coordinated with the HHA to schedule a supplemental nursing visit on Saturday, specifically for 'caregiver training' on the surgical site.",
-      "taxonomy_category": "Schedule De-conflict",
-      "tactical_field_intent": "Neutralize the family's 'safety' objection to prevent the facility from pivoting the patient to a Long-Term Care (LTC) Medicaid application."
+      "situation": "Family is concerned that the HHA will cancel the referral if the equipment isn't there by the original Friday discharge date.",
+      "action_taken": "Facilitated a three-way coordination call between the HHA intake, the PN, and the daughter to confirm a Monday morning 'soft-hold' for the admission nurse.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Prevent the HHA from releasing the staffing slot to another patient during the equipment delay window."
     },
     {
-      "situation": "The Managed Medicare plan requires a specific 'face-to-face' encounter note that the SW claims is 'not yet transcribed'.",
-      "action_taken": "The PN provided the MD with a pre-filled 'Home Health Certification' template during a hallway encounter and secured a wet signature on the spot.",
-      "taxonomy_category": "Eligibility Verification",
-      "tactical_field_intent": "Create a parallel clinical record that satisfies the insurer's audit requirements without relying on the facility's delayed administrative processing."
+      "situation": "The medication list provided in the preliminary discharge packet shows a discrepancy in the dosage of the patient's post-surgical anticoagulant.",
+      "action_taken": "Flagged the discrepancy for the HHA clinical supervisor to ensure the home-care nurse brings the correct reconciliation forms for the first visit.",
+      "taxonomy_category": "HHA/Team Handoff",
+      "tactical_field_intent": "Ensure the HHA is prepared to catch the error at the home level without the PN appearing to correct the facility's clinical work."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Formally submit a written 'Information Request' to the facility\u2019s HIM (Health Information Management) department and wait for the standard 48-hour processing window for clinical records.",
-      "rationale": "This action respects the facility's bureaucratic hierarchy but fails to account for the urgent Managed Medicare authorization window, likely resulting in a 3-day delay in home care start-of-care."
+      "description": "The PN monitors the facility's internal logistics log and waits for the Social Worker to confirm when the DME vendor has successfully delivered the bed to the patient's home.",
+      "rationale": "The PN is deferring entirely to the facility's discharge process, failing to proactively coordinate with the HHA to ensure the admission slot is preserved during the delay."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Schedule a joint 'Care Conference' with the SW and the Physical Therapy lead to discuss 'Transition Readiness,' using the meeting to document the required clinical milestones for the home health referral.",
-      "rationale": "This tactfully forces the SW to disclose clinical data in a group setting where 'gatekeeping' would be visible to other department heads, effectively unblocking the information flow."
+      "description": "The PN contacts the DME vendor directly to verify the delivery window, then provides the HHA intake coordinator with the specific delivery confirmation number to secure a Monday morning start-of-care visit.",
+      "rationale": "This action remains within the PN's scope of transition logistics by verifying equipment readiness and aligning it with the HHA's scheduling needs."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Utilize the patient's personal bedside tablet to access their 'Patient Portal' and download the most recent physician progress notes to forward directly to the Home Health Agency's intake team.",
-      "rationale": "While highly effective for patient advocacy, this bypasses all institutional privacy controls and puts the PN's company at risk for a HIPAA violation by accessing records through an unauthorized consumer-facing portal."
+      "description": "The PN contacts the patient's insurance provider to request an urgent medical override for an out-of-network DME supplier and then drafts a revised clinical justification for the surgeon to sign.",
+      "rationale": "The PN is performing the Social Worker's role (insurance negotiation) and the clinician's role (drafting medical justifications), which violates the non-clinical boundary."
     }
   ],
-  "narrative_summary": "Mrs. Beverly G., a 74yo recovering from Stage III Ovarian Cancer surgery, is trapped between a burned-out Social Worker gatekeeping her clinical records and a facility administration racing to discharge her before the 100-day Medicare cliff. The Social Worker has leveraged 'HIPAA policy' to block the PN from obtaining the Face-to-Face documentation required for her Managed Medicare home care authorization. To ensure a successful transition, the PN must bypass administrative barriers through direct clinical engagement with the Wound NP and MD before the facility forces a Hard Stop discharge on Day 94."
+  "narrative_summary": "Following a successful spinal fusion, the patient's transition to home health was stalled by a logistical backlog in hospital bed delivery, a critical requirement for post-surgical mobility. The Patient Navigator stepped in to bridge the gap between the DME vendor's delay and the HHA's strict admission requirements, ensuring the referral was not dropped by the agency. By coordinating the delivery timing with the HHA's staffing schedule, the PN secured a Monday morning start-of-care, preventing a weekend without professional oversight. The case highlights the PN's role in managing external vendor friction to maintain continuity of care after the facility's clinical responsibilities end."
 }

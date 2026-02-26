@@ -1,66 +1,58 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "PN assigned to Case 1024 on Day 14 of SNF stay. Initial review of DocNow indicates the referral was sitting in the queue while the facility Social Worker was on 'unplanned leave.'",
+      "event_description": "Patient cleared for Friday discharge following bilateral TKA; however, the Home Health Agency (HHA) reports that the specific physical therapy protocols and wound care orders were never received from the facility.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The internal 'Black Hole' lag occurred because the SNF liaison failed to notify the hub until the patient\u2019s physical therapy progress plateaued."
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "The facility ward clerk faxed the discharge summary but omitted the signed physician orders required by the HHA to initiate the start-of-care visit."
     },
     {
-      "event_description": "Managed Medicare Advantage provider (Humana) pends the home health authorization due to a missing 'Face-to-Face' (F2F) physician encounter signature specifically documenting the COPD exacerbation as the primary reason for homebound status.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The attending physician only rounds on Tuesdays; the unit clerk refused to fax the F2F form to the doctor's private office, claiming it 'violates facility workflow protocols' for non-emergent paperwork."
-    },
-    {
-      "event_description": "Facility administration flags the patient as approaching the 100-day Medicare benefit exhaustion. The Social Worker, citing burnout and high caseload, informs the family they must transition to Private Pay if the signature isn't secured by Friday.",
+      "event_description": "Friday afternoon discharge proceeds as planned by the facility, but the HHA intake coordinator is unable to schedule a weekend admission without the missing clinical orders.",
       "clinical_impact": "Worsens",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "The facility is aggressively protecting its financial margin by forcing a discharge timeline that ignores the pending insurance authorization window."
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA weekend admission freeze prevents any new starts-of-care until Monday because no intake staff are available to process late-arriving paperwork."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The unit Social Worker is hostile and refuses to facilitate communication with the attending physician regarding the missing F2F signature.",
-      "action_taken": "Coordinated with the floor's Physical Therapist to identify the exact window the physician rounds, then waited at the nurse's station to present the F2F form directly to the MD.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Bypass the SW's gatekeeping by using the PT's clinical schedule as intelligence to force a direct interaction with the physician before the weekend 'Black Hole' begins."
+      "situation": "The HHA intake coordinator cannot confirm the start-of-care date because the SNF faxed the referral to the wrong branch office.",
+      "action_taken": "Obtained the correct branch-specific fax number and provided it to the SNF unit secretary while requesting a confirmation of transmission.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Eliminate administrative 'ping-pong' between the facility and the agency to secure a firm Monday morning admission slot."
     },
     {
-      "situation": "Patient's wife is highly anxious and threatens to sign the patient out AMA due to fear of the 100-day cliff costs.",
-      "action_taken": "Provided the wife with a physical appointment card including the HHA Care Coordinator's direct cell number and a specific time for the first home visit.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Stabilize the family's flight risk by creating a tangible 'safety net' that makes the home transition feel immediate and managed, preventing a disorganized AMA exit."
+      "situation": "88yo patient and family are anxious about managing bilateral knee incisions over the weekend without a nurse visit.",
+      "action_taken": "Provided the family with a physical appointment card containing the HHA's 24/7 on-call number and confirmed the scheduled Monday arrival time.",
+      "taxonomy_category": "Patient Confirmation",
+      "tactical_field_intent": "Reduce the likelihood of a 'fear-based' ER readmission by establishing a clear communication bridge before the home team arrives."
     },
     {
-      "situation": "Insurance auth is delayed, but the facility is proceeding with discharge on Friday morning regardless of HHA readiness.",
-      "action_taken": "Contacted the Regional Director to pre-authorize a 'bridge visit' by the MA to ensure O2 tank levels were verified before the HHA could officially admit.",
-      "taxonomy_category": "Schedule De-conflict",
-      "tactical_field_intent": "Mitigate the risk of a rapid readmission by filling the gap between facility exit and formal HHA start-of-care, while avoiding billing 'double-dipping' by labeling it as a non-billable engagement."
+      "situation": "The HHA requires a verification of the home environment before the first PT visit for the bilateral TKA patient.",
+      "action_taken": "Verified with the family that the rented hospital bed was delivered and that the pathway from the bedroom to the bathroom was cleared of rugs.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Ensure the home is 'HHA-ready' so the therapist does not refuse the visit on safety grounds, causing further delay."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Respect the facility's internal hierarchy by submitting a formal request through the Social Worker's office for the physician to sign the F2F, ensuring all documentation follows the SNF's established administrative chain of command.",
-      "rationale": "This follows the 'rules' but ignores the reality of the SW's burnout and the impending 3-7 day Managed Medicare delay, likely resulting in a service gap or LTC transition."
+      "description": "Monitor the HHA's referral portal over the weekend and wait for the SNF social worker to re-send the missing clinical orders on Monday morning.",
+      "rationale": "This approach avoids conflict with the facility staff but results in a significant care gap for a high-risk 88-year-old bilateral TKA patient."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the specific clinical language required by the Advantage plan, print the F2F form with the patient's demographics pre-filled, and hand-deliver it to the physician during their rounding window at the nurse's station for a 'point-of-care' signature.",
-      "rationale": "Directly addresses the friction (missing signature) and the administrative bottleneck (SW inaction) without violating clinical scope or misrepresenting the PN role."
+      "description": "Identify the specific missing order elements through the HHA intake coordinator and facilitate the exchange of the correct fax numbers between the HHA and the SNF ward clerk before the Friday afternoon shift change.",
+      "rationale": "This keeps the PN within their non-clinical role as a logistics coordinator, ensuring that the necessary paperwork is in the right hands to prevent a weekend delay."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Review the physician's previous progress notes in Atlantis, transcribe the relevant COPD assessments into the F2F form to ensure clinical alignment, and leave the document in the physician's 'To Be Signed' folder with a high-priority flag.",
-      "rationale": "While efficient, this constitutes 'scribing' and drafting clinical justifications for a physician, which violates non-clinical PN boundaries and creates liability for the navigator's organization."
+      "description": "Contact the orthopedic surgeon's office directly to explain the SNF's administrative error and request that the surgeon's assistant draft and sign a new set of home health orders for immediate faxing to the HHA.",
+      "rationale": "The PN is performing the clinical coordination and order procurement duties that belong to the Social Worker or Discharge Planner, stepping outside their role as a transition navigator."
     }
   ],
-  "narrative_summary": "A 65-year-old male with COPD is trapped in a sub-acute rehab facility due to a missing 'Face-to-Face' signature required by his Managed Medicare plan. The situation is complicated by a burned-out Social Worker who is obstructing the Patient Navigator's access to the attending physician and a facility administration pushing for discharge to avoid the 100-day financial cliff. The PN must navigate these institutional politics to secure the necessary authorization and prevent a dangerous, uncoordinated home discharge or a forced transition to private-pay long-term care."
+  "narrative_summary": "The 88-year-old patient completed a successful bilateral TKA recovery at the facility, but the transition to home health was jeopardized when the clinical orders failed to reach the HHA intake department. Despite the facility proceeding with the discharge on a Friday, the missing paperwork triggered a weekend admission freeze at the agency. The Patient Navigator focused on reconciling the communication breakdown between the facility ward clerk and the HHA branch office to secure a Monday start-of-care. By managing family expectations and verifying home readiness, the PN ensured the patient remained stable at home until professional services could be initiated."
 }

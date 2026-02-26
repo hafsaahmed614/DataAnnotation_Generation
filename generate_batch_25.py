@@ -34,20 +34,35 @@ PATIENTS = [
 
 FRICTIONS = [
     "Managed Medicare Auth",
-    "Family Conflict Over Discharge",
-    "SW Gatekeeping Records",
-    "Facility Pushing Early Discharge",
-    "Missing Physician Signature",
-    "Insurance Denial of Home Services",
-    "Bed Availability Crisis",
-    "Weekend Coverage Gap",
-    "Medication Reconciliation Delay",
+    "Medicaid CHC Waiver",
+    "HHA Weekend Admission Freeze",
+    "DME Delivery Backlog",
+    "HHA Intake Coordinator Unavailable",
+    "Caregiver Training Gap",
+    "Medication List Mismatch",
+    "Home Safety Assessment Pending",
+    "HHA Staffing Shortage",
+    "Insurance-HHA Network Mismatch",
+    "Family Disagreement on Discharge Plan",
     "Transport Coordination Failure",
+    "Missing HHA Orders at Handoff",
+    "Holiday Coverage Gap",
+    "Provider Illness",
+    "Loss of Skilled Need",
 ]
+
+
+def _build_unique_combos(patients, frictions, n=25):
+    """Build n unique (patient, friction) pairs. No duplicate combos."""
+    import itertools
+    all_combos = list(itertools.product(patients, frictions))
+    random.shuffle(all_combos)
+    return all_combos[:n]
+
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
-    genai.configure(api_key=api_key)
+    genai.configure(api_key=api_key, transport="rest")
     model = genai.GenerativeModel(
         model_name=MODEL_NAME,
         generation_config=genai.GenerationConfig(
@@ -75,12 +90,14 @@ def main():
         "'Private pay to LTC', or 'Black Hole'."
     )
 
+    # Build 25 unique (patient, friction) combos — no duplicates
+    combos = _build_unique_combos(PATIENTS, FRICTIONS, n=25)
+    print(f"Generated {len(combos)} unique patient-friction combinations.\n")
+
     successes = 0
     failures = 0
 
-    for i in range(25):
-        patient = random.choice(PATIENTS)
-        friction = random.choice(FRICTIONS)
+    for i, (patient, friction) in enumerate(combos):
         print(f"\n--- Case {i+1}/25 --- Patient: {patient} | Friction: {friction}")
 
         query_text = f"Bureaucratic delay with {friction} and clinical barriers"

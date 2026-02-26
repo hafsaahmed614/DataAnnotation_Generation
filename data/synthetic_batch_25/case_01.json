@@ -1,66 +1,52 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "Initial PN assignment occurs on Day 12 of SNF stay; patient is post-bilateral TKA with complex polypharmacy and newly initiated anticoagulation.",
+      "event_description": "Initial intake identifies that the patient's preferred Home Health Agency (HHA) is out-of-network for his specific Medicare Advantage plan, requiring a search for an in-network provider with bilateral TKA specialty experience.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The internal referral trigger failed because the Admissions Director was on PTO, leaving the patient in the 'Black Hole' without PN engagement during the critical education window."
-    },
-    {
-      "event_description": "Managed Medicare Advantage plan (UnitedHealthcare) issues a request for additional 'face-to-face' documentation specifically for the bilateral gait training necessity.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The facility MD used a generic TKA template that lacked the specific 'homebound' justification required by the Advantage plan, necessitating a manual chart addendum."
-    },
-    {
-      "event_description": "The facility MD (solo practitioner) goes on leave; medication reconciliation for home discharge is stalled as the cross-covering physician refuses to sign orders for the high-risk Warfarin protocol.",
-      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "The facility has no standing protocol for cross-coverage sign-offs on specialty anticoagulation, and the Social Worker is currently 'checking out' mentally two weeks before her retirement."
+      "ai_assumed_bottleneck": "The facility Social Worker only uses a standard referral list and was unaware the patient's Advantage plan had restricted HHA contracts in this specific zip code."
+    },
+    {
+      "event_description": "The only in-network HHA identifies a staffing shortage for Physical Therapists capable of managing a high-acuity bilateral TKA patient during the required weekend start-of-care window.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator failed to flag the PT shortage until the day before the anticipated discharge, forcing a search for a secondary agency."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The burned-out Social Worker (Brenda) has stopped responding to the HHA's requests for the signed Medication Reconciliation list, jeopardizing the 48-hour discharge window.",
-      "action_taken": "PN physically locates the HHA referral packet in the 'outbound' tray and hand-carries it to the nursing station, securing a timestamped fax confirmation to the HHA while Brenda is at lunch.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Circumvent the gatekeeping SW to force a paper trail that the HHA can use to justify their staffing start-date without waiting for Brenda's formal approval."
+      "situation": "The identified in-network HHA confirms they have no Physical Therapy availability for the next 7 days, stalling the transition for an 88-year-old bilateral TKA patient who is clinically ready.",
+      "action_taken": "Canvassed three secondary HHAs within a 20-mile radius to verify current PT staffing levels and insurance contract status before presenting the viable options to the facility Social Worker.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Vet the HHA capacity privately to ensure that when the SW makes the official referral, it is to an agency guaranteed to accept the case, preventing 'referral ping-pong'."
     },
     {
-      "situation": "The family is increasingly hostile, fearing the '100-Day Cliff' as the patient is now on Day 85 with slow bilateral mobility progress.",
-      "action_taken": "PN conducts a 1-on-1 education session with the POA focusing exclusively on the 'Skilled Need' requirement for home wound care and PT to maintain eligibility.",
+      "situation": "Family is resistant to using the in-network HHA because of poor local online reviews, threatening to refuse home health services entirely and stay in the SNF.",
+      "action_taken": "Educated the family on the specific clinical protocols our program monitors with the in-network agency and provided a physical appointment card for the first home visit.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Shift the family's focus from 'days remaining' to 'clinical milestones' to prevent a premature AMA exit that would result in a loss of HHA coverage."
-    },
-    {
-      "situation": "The HHA refuses to accept the patient due to a discrepancy between the SNF discharge list (Warfarin) and the patient's pre-op home list (Eliquis).",
-      "action_taken": "PN schedules a three-way call between the SNF Floor Lead and the HHA Intake Coordinator to verify the surgeon's post-op bridge protocol.",
-      "taxonomy_category": "Schedule De-conflict",
-      "tactical_field_intent": "Establish a single source of truth for high-risk meds to prevent a Day 1 readmission, while ensuring the PN is not the one 'confirming' the clinical dosage."
+      "tactical_field_intent": "Shift family focus from generic online reviews to the structured accountability of the PN-monitored transition plan to secure service adoption."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Decline to intervene in the medication reconciliation discrepancy and wait for the formal Thursday morning Interdisciplinary Team (IDT) meeting to raise the issue with the Medical Director.",
-      "rationale": "This follows the facility's established chain of command and avoids friction with the nursing staff, though it risks the patient staying through the weekend due to the Friday processing lag."
+      "description": "Wait for the facility Social Worker to complete the standard 'choice' list process and allow the HHA intake coordinators to respond in their typical 48-hour window regarding insurance verification.",
+      "rationale": "The PN avoids interfering with the facility's standard discharge workflow but risks a significant delay if the chosen agency eventually denies the referral due to the network mismatch."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Request the SNF Unit Manager to facilitate a 'warm handoff' call between the SNF floor nurse and the HHA's clinical supervisor to resolve the Eliquis vs. Warfarin conflict prior to the final discharge order being written.",
-      "rationale": "It solves the operational bottleneck by facilitating clinical communication without the PN actually making a clinical recommendation or stepping on the Social Worker's toes."
+      "description": "Identify the two in-network agencies with the highest PT staffing levels for this zip code and provide their direct intake contact names to the Social Worker to expedite the referral once the patient is clinically cleared.",
+      "rationale": "This stays within the PN scope by facilitating logistics and communication without performing the actual referral or clinical assessment."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Review the patient's pre-admission medication bottles brought in by the daughter and cross-reference them with the SNF's EMAR, then provide a 'corrected' list to the HHA to expedite the intake process.",
-      "rationale": "While this ensures the HHA has the 'correct' home list, it is a clinical function (medication reconciliation) that a non-clinical PN is prohibited from performing, creating massive liability for the organization."
+      "description": "Call the patient's Medicare Advantage plan directly to request a single-case agreement for the out-of-network HHA and update the patient's clinical chart with the insurance representative's authorization notes.",
+      "rationale": "The PN is performing insurance authorization and EMR documentation, which are strictly the roles of the facility Social Worker and clinical staff."
     }
   ],
-  "narrative_summary": "Mr. Arthur Vance, 88, is nearing discharge after a Bilateral TKA, but his transition is paralyzed by a medication reconciliation conflict involving high-risk anticoagulants. The facility's Social Worker is non-responsive due to impending retirement, and a Managed Medicare Advantage plan has stalled the authorization process by demanding specific gait-training documentation. The case is further complicated by a hostile family concerned about the 100-day Medicare cliff, requiring the Navigator to bypass institutional inertia to secure a safe and paid home transition."
+  "narrative_summary": "The transition for this 88-year-old bilateral TKA patient was complicated by a significant mismatch between his Medicare Advantage plan and the local Home Health Agency network. While the patient achieved his clinical milestones for discharge, the lack of an in-network HHA with available Physical Therapy staff created a ten-day 'Timeline Drift'. The Patient Navigator successfully identified an alternative in-network agency and coordinated with the facility Social Worker to ensure a warm handoff. This intervention prevented a complete service refusal by the family and secured a confirmed start-of-care date that aligned with the patient's home arrival."
 }

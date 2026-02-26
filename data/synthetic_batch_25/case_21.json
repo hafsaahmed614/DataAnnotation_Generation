@@ -1,66 +1,58 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "Patient Dorothy (72yo, ORIF) enters the 'Black Hole' period where PN assignment occurs 12 days post-SNF admission, missing the initial family alignment window.",
+      "event_description": "Initial HHA referral for diabetic wound care rejected due to lack of wound-certified nursing staff in the patient's rural zip code.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The SNF Social Worker, Brenda, intentionally delayed the referral to the PN hub to prioritize the facility's internal 'preferred' home health partner."
+      "edd_delta": "+10 Days",
+      "ai_assumed_bottleneck": "The HHA's regional staffing manager failed to update the referral portal to show that their only wound-certified RN for the county is on extended medical leave."
     },
     {
-      "event_description": "Managed Medicare Advantage provider triggers a 'Face-to-Face' documentation audit, requiring a specific surgeon signature that is not present in the current SNF chart.",
+      "event_description": "PN identifies a discrepancy between the facility's final insulin sliding scale and the orders received by the HHA's intake department.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The surgeon's office administrator refuses to process 'outside' paperwork on Fridays, and the SNF SW is too burned out to escalate the request."
-    },
-    {
-      "event_description": "Facility finance department flags Dorothy as approaching the 100-day Medicare cliff, pressuring the clinical team for an immediate Friday discharge despite the lack of HHA authorization.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "Facility Director of Nursing is prioritizing bed-turnover metrics for the new month over the clinical readiness of the post-surgical site."
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "The SNF floor nurse updated the paper chart but the administrative clerk faxed an older version of the medication list to the home health agency."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The SNF Social Worker (Brenda) is avoiding the surgeon's office due to a prior professional dispute, leaving the 'Face-to-Face' documentation for the Managed Medicare Auth unaddressed.",
-      "action_taken": "PN intercepted the rounding surgeon in the hallway to obtain a verbal confirmation of the 'Face-to-Face' encounter, then immediately notified the HHA intake coordinator.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Bypass the Social Worker\u2019s gatekeeping without creating a paper trail of her negligence, ensuring the authorization clock starts before the weekend."
+      "situation": "The preferred HHA reports a staffing freeze for new diabetic debridement cases in the patient's specific geographic zone.",
+      "action_taken": "Initiated a conference call with the HHA Regional Director to negotiate a mileage-based incentive for a nurse from an adjacent territory to cover the first 48 hours.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Leverage the agency's regional volume to force a staffing exception before the Social Worker looks for a different agency."
     },
     {
-      "situation": "Dorothy\u2019s daughter is becoming increasingly hostile, threatening to take her mother home AMA because she believes the SNF is 'warehousing' her for the 100-day benefit.",
-      "action_taken": "PN facilitated a 'Family Readiness' session using the DocNow clinical notes to show the actual gap between Dorothy's current gait distance and home safety requirements.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Use clinical data to de-escalate the family\u2019s financial anxiety, effectively neutralizing the daughter's hostility toward the facility staff to maintain PN influence."
+      "situation": "Patient's daughter expresses confusion about the timing of the first home nurse visit versus the delivery of the specialized diabetic dressings.",
+      "action_taken": "Provided a physical appointment card documenting the HHA's 'Start of Care' window and the DME vendor's delivery confirmation number.",
+      "taxonomy_category": "Patient Confirmation",
+      "tactical_field_intent": "Reduce family anxiety to prevent them from calling the SNF and potentially triggering a 'safety' hold that would delay the transition."
     },
     {
-      "situation": "Managed Medicare provider denies the initial HHA authorization because the SNF Physical Therapy notes lack 'homebound' status justification.",
-      "action_taken": "PN coordinated a meeting between the PT Lead and the HHA Liaison to align the discharge summary language with the Advantage plan\u2019s specific 'binary' criteria.",
-      "taxonomy_category": "Stakeholder Alignment",
-      "tactical_field_intent": "Force a collaborative documentation standard between two siloed departments to prevent a 7-day appeal window delay."
+      "situation": "Medication reconciliation reveals the HHA is missing the updated prescription for the patient's off-loading boot.",
+      "action_taken": "Alerted the HHA intake coordinator to the specific missing order and cross-referenced the SNF's last-signed physician order set.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Ensure the HHA has all necessary documentation to prevent a 'refusal to treat' once the nurse arrives at the home."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Respect the facility's internal hierarchy by waiting for the Social Worker to resolve the Managed Medicare authorization delay through the standard weekly care conference.",
-      "rationale": "Maintains professional boundaries with the SNF staff but fails to address the '100-day cliff' pressure, likely leading to a lapse in skilled care at discharge."
+      "description": "The PN monitors the SNF's referral portal and waits for the Social Worker to identify a secondary HHA that has available staffing in the patient's zip code.",
+      "rationale": "The PN is deferring the logistical search entirely to the facility staff, which often results in the patient remaining in the SNF longer than necessary while the SW manages other cases."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Provide the Social Worker with a pre-filled 'Face-to-Face' template and the surgeon\u2019s direct fax number, offering to track the document\u2019s return on her behalf to reduce her administrative load.",
-      "rationale": "Solves the bottleneck by removing the work burden from the burned-out SW while keeping her as the 'official' point of contact, preserving the institutional relationship."
+      "description": "The PN contacts three alternative in-network HHAs to verify current wound-care nursing availability and presents the 'ready-to-accept' options to the Social Worker.",
+      "rationale": "This remains within the PN scope by facilitating the transition logistics and providing the SW with actionable data without making the final clinical or placement decision."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Directly call the Managed Medicare Medical Director to argue for an authorization override based on Dorothy\u2019s post-surgical ORIF status and the facility's inability to provide documentation.",
-      "rationale": "While effective for the patient, this bypasses both the HHA\u2019s intake department and the facility\u2019s clinical leadership, potentially triggering a 'steering' investigation or alienating the payer."
+      "description": "The PN calls the patient's insurance provider to request a single-case agreement for an out-of-network HHA that has better staffing for diabetic wounds.",
+      "rationale": "Insurance negotiations and 'Single Case Agreements' are strictly the responsibility of the facility Social Worker or Case Manager; a PN engaging in financial/contractual advocacy oversteps their non-clinical role."
     }
   ],
-  "narrative_summary": "72-year-old Dorothy is caught between a Managed Medicare authorization bottleneck and a facility desperate to avoid a 100-day financial cliff following her hip ORIF. The primary friction is a burned-out Social Worker who has stalled the 'Face-to-Face' documentation required for home health transition. The PN must navigate institutional politics to secure surgeon signatures and manage a hostile family dynamic that threatens an unsafe AMA discharge. The case hinges on the PN's ability to drive the transition timeline without triggering a bureaucratic backlash from the facility's administrative staff."
+  "narrative_summary": "A 69-year-old female with a complex diabetic foot ulcer faces a significant transition delay when the primary HHA reveals a staffing shortage in her rural region. The Patient Navigator intervenes by identifying alternative agencies with active wound-certified nurses and coordinating with the Regional Director to bridge the coverage gap. During the final handoff, the PN identifies a medication list mismatch regarding the patient's insulin, resolving it through the HHA intake coordinator to ensure a safe first home visit. The case concludes with a successful transition to home care despite the regional provider limitations."
 }

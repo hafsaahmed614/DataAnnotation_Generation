@@ -1,66 +1,58 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "Mrs. Reed, an 83yo post-ICU pneumonia patient, is admitted to Oak Ridge Rehab. The PN is not notified of the admission for 10 days due to a staffing crisis in the SNF intake office.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The SNF intake coordinator intentionally delayed the PN referral to prevent 'outside interference' while they attempted to secure a private-pay LTC conversion."
-    },
-    {
-      "event_description": "PN attempts to secure Managed Medicare authorization for home wound care. The facility's physician refuses to sign the Face-to-Face (F2F) documentation, citing a 'heavy census' and prioritizing new admissions.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The physician's administrative assistant is 'gatekeeping' the signature folder to minimize the doctor's non-billable paperwork during a bed availability crisis."
-    },
-    {
-      "event_description": "The SNF Social Worker, Brenda, triggers a 'Safety Discharge' warning as the patient approaches Day 90, suggesting the patient is too weak for home and should transition to the facility's LTC wing.",
+      "event_description": "The SNF discharge packet delivered to the patient's family contains a different inhaler regimen than the digital referral sent to the Home Health Agency (HHA) intake desk.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "The facility is protecting its 100-day Medicare financial cliff by pressuring the family into an LTC contract before the high-reimbursement rehab window expires."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The SNF floor nurse updated the paper discharge summary but the administrative assistant faxed an outdated 'Admission Med List' to the HHA referral portal."
+    },
+    {
+      "event_description": "HHA refuses to schedule the Start-of-Care (SOC) visit until the prescribing physician clarifies the discrepancy between the oral antibiotic and the previous IV orders listed in the ICU transfer notes.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA Intake Coordinator is unwilling to process the referral without a 'clean' med list to avoid a clinical error during the first home visit."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The burned-out Social Worker (Brenda) is withholding the PT/OT progress notes required for the HHA handoff.",
-      "action_taken": "The PN physically visits the rehab gym during Mrs. Reed's session to obtain verbal progress updates directly from the PT lead.",
-      "taxonomy_category": "Clinical Monitoring",
-      "tactical_field_intent": "Bypass the SW's administrative bottleneck by gathering 'first-hand' clinical data that can be used to pre-build the home care plan before the formal discharge summary is released."
+      "situation": "The HHA is threatening to push the admission to Monday because the SNF discharge orders are missing the specific nebulizer frequency for the patient's pneumonia recovery.",
+      "action_taken": "Located the physical discharge folder in the patient's room and requested the SNF Unit Secretary fax the 'Medication Reconciliation' page specifically to the HHA Intake line.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Secure a verbal confirmation of receipt from the HHA before the Friday afternoon 'Admission Freeze' to lock in a Saturday morning nurse visit."
     },
     {
-      "situation": "Mrs. Reed's daughter is highly anxious and being 'steered' by the SNF staff toward a permanent LTC placement.",
-      "action_taken": "PN facilitates a three-way call between the daughter and the Home Health Agency (HHA) Director to review the 24/7 emergency call-light protocol.",
+      "situation": "Patient's daughter is confused by the two different medication lists and is considering delaying the discharge until 'the doctors get it right.'",
+      "action_taken": "Provided the daughter with a physical appointment card and the direct phone number for the HHA's Clinical Manager to discuss the home-side reconciliation process.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Counteract the facility's 'safety' narrative with specific home-based risk mitigation data, forcing the SW to justify the LTC recommendation against a viable home plan."
+      "tactical_field_intent": "Prevent a 'refusal of service' by shifting the family's focus from the facility's error to the HHA's safety-first intake protocol."
     },
     {
-      "situation": "The Managed Medicare carrier requires an updated F2F signature that the SNF doctor has ignored for 72 hours.",
-      "action_taken": "PN waits in the hallway near the physician's dictation station during the 6:00 AM shift change to secure a 'wet signature' on the pre-filled form.",
-      "taxonomy_category": "Eligibility Verification",
-      "tactical_field_intent": "Eliminate the 'lost in the fax' excuse by obtaining a physical document that can be immediately photographed and uploaded to the authorization portal."
+      "situation": "The SNF Social Worker is unaware that the HHA has stalled the admission due to the medication discrepancy.",
+      "action_taken": "Alerted the Social Worker that the HHA selection is pending a 'clean' fax, allowing the SW to prioritize the physician's signature on the reconciled list.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Maintain the PN's role as the 'eyes and ears' for the HHA without appearing to manage the facility's clinical staff."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The PN decides to wait for the scheduled weekly Care Conference to address the discharge delays, ensuring all facility stakeholders are present and following standard SNF communication protocols.",
-      "rationale": "While professional, this respects the 'institutional silence' and allows the facility to control the timeline, likely resulting in the patient hitting the 100-day cliff before home services are authorized."
+      "description": "Wait for the facility's Social Worker to finish their daily rounds and hope they notice the HHA's request for a corrected medication list before the end of the business day.",
+      "rationale": "This relies entirely on the facility's internal processes and fails to advocate for the transition timeline, risking a multi-day delay over a simple faxing error."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN prepares a 'Transition Readiness' packet for the daughter, including the PT's functional scores and a side-by-side comparison of HHA services versus LTC costs, and requests a private meeting with the SW to align on the home discharge date.",
-      "rationale": "This uses objective data to empower the family and professionally nudges the SW without violating the facility's chain of command or making clinical diagnoses."
+      "description": "Confirm the HHA has received the correct discharge medication list by physically verifying the presence of the reconciliation sheet in the patient's hand-off folder and alerting the HHA intake coordinator that the document is ready for review.",
+      "rationale": "The PN ensures the transition mechanics (the flow of information) are functioning correctly between the facility and the home health provider without performing clinical reconciliation themselves."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN reviews the patient's medication administration record (MAR) and informs the family that the patient is clinically stable enough for discharge today, advising them to sign the 'Against Medical Advice' (AMA) forms to bypass the SW's delay.",
-      "rationale": "This is a seductive overstep; while it solves the 'Bed Availability' friction, it involves a non-clinical PN interpreting medical records and encouraging an AMA discharge, which creates massive liability and violates the non-clinical scope."
+      "description": "Review the patient's ICU records to identify the correct antibiotic dosage and call the HHA clinical director to verbally authorize the change so the discharge can proceed without waiting for the SNF physician.",
+      "rationale": "The PN is performing a clinical reconciliation and attempting to authorize medical orders, which is a direct violation of their non-clinical scope and an overstep into physician and nursing responsibilities."
     }
   ],
-  "narrative_summary": "Mrs. Reed, an 83yo recovering from post-ICU pneumonia, is caught in a 'Bed Availability Crisis' where the SNF is prioritizing LTC conversion over home discharge. Social Worker Brenda is professionally exhausted and actively obstructing information to protect the facility's 100-day Medicare cliff. The PN must navigate a 'Black Hole' referral delay and a recalcitrant physician to secure the Managed Medicare authorization before the family is coerced into a permanent LTC placement."
+  "narrative_summary": "An 83-year-old female recovering from post-ICU pneumonia is facing a discharge delay due to a medication list mismatch between the SNF's paper records and the HHA's digital referral. The HHA is unwilling to commit to a Start-of-Care visit until the discrepancies regarding her nebulizer and antibiotic taper are resolved, threatening a weekend coverage gap. The Patient Navigator intervenes by facilitating the transfer of the correct reconciliation paperwork from the SNF to the HHA intake desk. This coordination ensures the patient returns home with a confirmed nurse visit scheduled within 24 hours, maintaining clinical safety and preventing a hospital readmission."
 }

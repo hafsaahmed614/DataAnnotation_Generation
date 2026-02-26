@@ -1,66 +1,52 @@
 {
   "format_1_state_log": [
     {
-      "event_description": "Patient admitted to Northcrest Rehab after ICU stay for Pneumonia; PN assigned on Day 9 of SNF stay.",
+      "event_description": "The primary caregiver (patient's son) has not demonstrated competency in managing the specialized enteral nutrition pump required post-chemo, as the facility training sessions conflicted with his work schedule.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
-      "ai_assumed_bottleneck": "The 'Black Hole' lag occurred because the SNF intake coordinator failed to flag the patient as a 'High-Risk Respiratory' referral until the first utilization review meeting."
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The SNF floor nurses only offered training during the day shift, and the son works 8 AM to 5 PM, preventing the HHA from accepting the 'safe at home' attestation."
     },
     {
-      "event_description": "Managed Medicare carrier issues a 'Request for Information' regarding the physician Face-to-Face (F2F) encounter note for home O2 and skilled nursing.",
+      "event_description": "The specialized enteral feeding pump and the specific high-protein formula prescribed are currently backordered at the HHA's primary DME vendor.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The facility Social Worker, citing burnout and a Friday afternoon departure, refused to page the attending physician to clarify the F2F note, delaying the auth submission until the following Tuesday."
-    },
-    {
-      "event_description": "The facility begins internal pressure to discharge by Day 100 to avoid the 'Medicare Cliff' while the Managed Medicare Auth is still pending.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Transition)",
-      "ai_assumed_bottleneck": "The facility administrator prioritized bed turnover for a high-reimbursement orthopedic patient, signaling the SW to push for a 'Safety Discharge' to LTC if home health auth didn't clear within 48 hours."
+      "ai_assumed_bottleneck": "The DME vendor failed to flag the stock-out to the HHA intake department until the day before the anticipated transition."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The attending physician's F2F note is clinically vague, risking a Managed Medicare denial, and the SW refuses to intervene because 'it's not her job to write clinical notes.'",
-      "action_taken": "Hand-delivered a printed 'F2F Requirement Checklist' to the physician during his 6:30 AM rounds and secured a verbal addendum for the chart.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Bypass the SW's gatekeeping and the facility's standard 'request queue' to ensure the clinical documentation is audit-proof before the carrier's 24-hour review window closes."
+      "situation": "The Home Health Agency (HHA) is hesitant to confirm a Start-of-Care (SOC) date because the patient's son has not completed the required 'hands-on' demo for the feeding pump.",
+      "action_taken": "Coordinated a three-way call between the HHA clinical manager, the SNF unit clerk, and the son to schedule a one-time 6 PM training exception at the facility.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Secure a verbal commitment from the HHA for a Friday admission to prevent the case from sliding into a weekend freeze."
     },
     {
-      "situation": "The patient's daughter is anxious about managing the O2 concentrator and is threatening to keep the patient in the SNF past the 100-day mark, which would trigger private-pay rates.",
-      "action_taken": "Coordinated a three-way call between the HHA Respiratory Therapist and the daughter to perform a 'virtual home walkthrough.'",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Defuse the 'Family Hostility' barrier by providing technical assurance that the SNF staff is too overwhelmed to offer, thereby preventing a pivot to Long-Term Care."
-    },
-    {
-      "situation": "The Managed Medicare carrier requires a specific 'Level of Care' certification that the SNF office manager has not uploaded to the portal.",
-      "action_taken": "Physically sat in the business office and waited for the manager to provide the 'Upload Confirmed' screen capture.",
-      "taxonomy_category": "Eligibility Verification",
-      "tactical_field_intent": "Apply 'Polite Persistence' pressure to ensure the administrative task isn't 'lost' in the Friday afternoon rush, essentially forcing the staff to prioritize this file over their weekend exit."
+      "situation": "The SNF discharge summary for the 74yo patient omitted the specific titration schedule for her post-chemo anti-emetics, which the HHA requires for their first visit medication reconciliation.",
+      "action_taken": "Contacted the HHA intake coordinator to identify the specific missing data points and then requested the SNF unit clerk to include the oncology addendum in the final packet.",
+      "taxonomy_category": "HHA/Team Handoff",
+      "tactical_field_intent": "Bridge the data gap between facility and home team without directly modifying or interpreting the clinical orders."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Decline to intervene in the authorization delay, documenting that the facility Social Worker is the primary point of contact for insurance logistics and respecting the internal discharge planning hierarchy.",
-      "rationale": "While this avoids 'stepping on toes' of the burned-out SW, it allows the 'Managed Medicare Auth' delay to compound, likely resulting in the patient hitting the 100-day cliff and being forced into LTC."
+      "description": "Advise the son to watch the manufacturer's YouTube videos for the enteral pump and wait for the HHA nurse to perform the formal training during the first home visit next week.",
+      "rationale": "This avoids conflict with the SNF's training schedule but leaves the patient at home for 48-72 hours without a competent caregiver, risking a nutritional crisis or readmission."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Request a brief meeting with the SW and the Director of Nursing to present the specific 'Face-to-Face' documentation gaps identified by the carrier, offering to facilitate the HHA's clinical liaison to help bridge the information gap.",
-      "rationale": "This addresses the bottleneck through official channels and provides the facility with a resource (the HHA liaison) to solve the clinical documentation problem without the PN assuming clinical liability."
+      "description": "Verify with the HHA that the specific pump model is available for home delivery and facilitate a meeting between the HHA intake nurse and the son to confirm what specific competencies must be documented for a Friday discharge.",
+      "rationale": "This aligns the family's schedule with the HHA's requirements within the PN's scope of transition logistics and coordination."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Directly contact the Managed Medicare Medical Director via a personal professional contact to advocate for the patient's home care authorization, bypassing both the facility's UR department and the standard portal process.",
-      "rationale": "Though well-intentioned to secure the 'Service Conversion,' this violates institutional protocol and undermines the facility's internal Utilization Review team, potentially causing a 'Hostile Facility' dynamic that bars the PN from future referrals."
+      "description": "Personally review the clinical competency checklist with the son at the bedside and sign the facility's training verification form to ensure the discharge stays on track for Friday morning.",
+      "rationale": "Signing clinical competency forms or performing patient/caregiver training on medical devices is a clinical function reserved for facility nurses or HHA staff; the PN is non-clinical."
     }
   ],
-  "narrative_summary": "An 83-year-old female recovering from pneumonia faces a critical transition delay due to Managed Medicare's stringent Face-to-Face documentation requirements. The case is complicated by a burned-out Social Worker who is non-responsive to authorization status updates and a facility administration eyeing the 100-day Medicare cliff for financial reasons. The Patient Navigator must navigate institutional apathy and family anxiety to secure home health authorization before the patient is transitioned to permanent Long-Term Care."
+  "narrative_summary": "A 74-year-old female recovering from chemotherapy was delayed in her transition to home health due to a caregiver training gap regarding her enteral nutrition pump. While the patient was clinically stable, the HHA could not accept the referral until her son demonstrated competency, a process hindered by a mismatch between SNF training hours and his work schedule. The Patient Navigator successfully aligned the HHA intake requirements with a specialized after-hours training session at the facility, while simultaneously resolving a DME backorder for the feeding supplies. This ensured the patient could discharge on a Friday with full HHA support, avoiding a weekend gap in specialized care."
 }
