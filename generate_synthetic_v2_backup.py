@@ -6,7 +6,7 @@ calls the Gemini LLM to generate a high-fidelity synthetic patient case.
 Output is validated via Pydantic and saved to ./data/synthetic_output/.
 
 Usage:
-    export GEMINI_API_KEY="AIzaSyDnJ5j9zzSBdddoXfPh17tQjiPwOI_nnf0"
+    export GEMINI_API_KEY=""
     python generate_synthetic.py
 
     # Optional: override target variables via env vars
