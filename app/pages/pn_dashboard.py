@@ -26,12 +26,12 @@ def render():
 
     # Fetch all cases and this navigator's sessions
     all_cases = (
-        client.table("synthetic_cases")
+        client.table("synthetic_cases_v3")
         .select("id, label, narrative_summary")
         .execute()
     )
     my_sessions = (
-        client.table("evaluation_sessions")
+        client.table("evaluation_sessions_v3")
         .select("id, case_id, case_label, status, created_at, completed_at")
         .eq("navigator_id", user_id)
         .execute()
@@ -83,7 +83,7 @@ def render():
             with col_b:
                 if st.button("Start", key=f"start_{case_id}"):
                     new_session = (
-                        client.table("evaluation_sessions")
+                        client.table("evaluation_sessions_v3")
                         .insert({
                             "case_id": case_id,
                             "case_label": label,

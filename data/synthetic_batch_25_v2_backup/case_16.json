@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial referral received via the hub on Day 12 of Mrs. Vance\u2019s SNF stay; however, the facility Social Worker (Sheila) failed to return three consecutive calls for PN access, citing a 'strict no-vendor' policy during a minor Norovirus outbreak.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' was exacerbated by a burned-out Social Worker who used the infection control protocol as a shield to avoid onboarding a new external partner during a high-census week."
+    },
+    {
+      "event_description": "Managed Medicare Advantage (Advantage Health) issued an immediate denial for Home Health Services, claiming Mrs. Vance is 'not homebound' after she was observed by a corporate auditor walking 20 feet to the dining hall.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The SNF failed to submit the 'Face-to-Face' (F2F) encounter note from the Nephrologist, which explicitly detailed her post-dialysis exhaustion and fall risk, leaving the payer with only the 'dining hall' observation."
+    },
+    {
+      "event_description": "Mrs. Vance reaches Day 92 of her Medicare stay. The SNF Business Office issues a 'Notice of Non-Coverage,' pressuring the family to transition to Private Pay or Long-Term Care Medicaid immediately, despite the pending HHA appeal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility CFO prioritized clearing the '100-Day Cliff' financial risk over the clinical transition plan, directing the SW to pivot the family toward a permanent LTC bed."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Sheila is refusing to provide the Nephrologist\u2019s F2F encounter notes, claiming it's a HIPAA violation to share with an 'unauthorized' PN.",
+      "action_taken": "PN hand-delivered a signed HIPAA authorization from the patient\u2019s daughter (Linda) during the SW\u2019s morning coffee break at the nurse's station.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Publicly present the legal document in front of the Nursing Director to shame the SW into compliance without filing a formal grievance."
+    },
+    {
+      "situation": "The Advantage Health appeal requires a specific 'Functional Limitation' report that the SNF Physical Therapist hasn't updated in 10 days.",
+      "action_taken": "PN attended the 'Wound and Mobility' rounds, offering to scribe for the PT to ensure the 'max-assist' requirements were documented in real-time.",
+      "taxonomy_category": "Clinical Monitoring",
+      "tactical_field_intent": "Subtly ghost-write the clinical narrative required for insurance approval while appearing to 'help' the overworked staff with their administrative burden."
+    },
+    {
+      "situation": "Daughter Linda is threatening to remove her mother from the facility AMA because of the '100-day' financial threats from the Business Office.",
+      "action_taken": "PN organized a 'HHA Readiness' education session for Linda, outlining the exact cost-difference between 24/7 private duty and the specialized renal program.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the family\u2019s litigation-heavy posture by focusing them on the financial math, effectively buying the facility 48 hours of peace."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Advise the family to wait for the formal 'Notice of Action' from Advantage Health before attempting to schedule any home-based renal care providers.",
+      "rationale": "This follows the standard insurance hierarchy and avoids a 'double-dipping' conflict, but it essentially accepts the 'Black Hole' delay and risks the patient being forced into a permanent LTC bed while waiting for paperwork."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Coordinate a pre-discharge conference with the SNF Business Office and the HHA intake team to establish a 'Conditional Admission' agreement pending the appeal outcome.",
+      "rationale": "This addresses the financial risk of the 100-day cliff for the facility while ensuring the patient has a clinical safety net at home, without overstepping into the actual clinical treatment plan."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Directly call the Nephrologist's private office to request they change the patient's 'homebound' status code in the EMR to ensure the Advantage Health appeal is successful.",
+      "rationale": "While this sounds like aggressive advocacy, a non-clinical PN cannot direct a physician to alter clinical coding or documentation; this violates professional boundaries and could be interpreted as insurance fraud or clinical interference."
+    }
+  ],
+  "narrative_summary": "Mrs. Vance, a 77-year-old renal patient, is caught between a Managed Medicare denial and an SNF eager to avoid the 100-day financial cliff. The Social Worker is actively obstructive due to burnout, and the patient's daughter is highly litigious regarding the 'homebound' status dispute. The case requires the PN to navigate institutional politics, secure missing clinical documentation for an insurance appeal, and manage a transition that is being forced by financial exhaustion rather than clinical readiness."
+}

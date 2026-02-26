@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment at Day 82 of the 100-day Medicare window. Social Worker Brenda has ignored three phone calls and two emails regarding the patient's prosthetic fitting status and home health preference.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' lag was intentionally extended by the SW to prevent external agencies from 'interfering' with her preferred discharge vendor before the 100-day cliff."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan requests a detailed 'face-to-face' (F2F) note for the BKA wound care authorization. SW claims the chart is 'unavailable' due to a pending internal audit.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "SW Brenda is utilizing 'Administrative Friction' as a gatekeeping tactic to force the family toward a facility-owned HHA that does not require the same level of external scrutiny."
+    },
+    {
+      "event_description": "Facility administration issues a 'Hard Stop' for Day 98 to avoid the 100-day Medicare reimbursement cliff. Patient is not yet stable for independent prosthetic use, and the son is threatening to block the discharge.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is prioritizing the 100-day financial cliff over the patient's functional readiness, leading to a hostile family pivot toward Long-Term Care."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker Brenda is gatekeeping the clinical EMR and refusing to share the Physical Therapy (PT) progress notes needed for home health scheduling.",
+      "action_taken": "Cultivated a relationship with the Floor Nurse by providing a printed 'Transition Checklist' that simplified the nurse's own discharge paperwork.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Leverage nursing staff to obtain verbal confirmation of the PT's 'Homebound' status, bypassing the SW's administrative blockade."
+    },
+    {
+      "situation": "The patient's son is anxious and hostile, believing the PN is an 'agent of the insurance company' trying to kick his father out of the SNF.",
+      "action_taken": "Invited the son to shadow a 'wound round' with the Traditional Provider (TP) to see the progress of the BKA stump healing firsthand.",
+      "taxonomy_category": "Early Engagement",
+      "tactical_field_intent": "Neutralize family hostility by using the TP's clinical authority as a 'shield' while establishing the PN as a partner in the home-safety plan."
+    },
+    {
+      "situation": "The Managed Medicare plan requires a specific prosthetic-related F2F signature that the attending MD has failed to complete.",
+      "action_taken": "Intercepted the Physiatrist in the hallway between patient rooms to obtain a wet-ink signature on the HHA referral form.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Secure the 'Golden Signature' in a high-traffic zone to prevent the SW from intercepting the document and delaying the home health authorization."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Formally request a copy of the discharge summary through the facility's Health Information Management (HIM) department and wait for the standard 48-hour processing window.",
+      "rationale": "This action respects the facility's official hierarchy and avoids a direct confrontation with the burned-out SW, but it risks missing the narrow window for Managed Medicare authorization before the weekend."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Collaborate with the facility's Director of Nursing (DON) to present the PN program as a 'readmission reduction tool' that handles the heavy lifting of HHA coordination for the SW.",
+      "rationale": "This reframes the PN's presence as a resource rather than a threat, potentially dissolving the SW's gatekeeping by aligning with the facility's goal of clearing the bed before the 100-day cliff."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Enter the patient's room and assist the son in logging into the patient's personal 'MyChart' portal to download and print the clinical notes for the external home health agency.",
+      "rationale": "While this provides the necessary data and empowers the family, it bypasses the facility's legal release process and risks the PN being permanently banned for facilitating a 'backdoor' data transfer."
+    }
+  ],
+  "narrative_summary": "79-year-old Mr. Vance is approaching the 100-day Medicare cliff at Hillcrest Manor following a BKA, with a burned-out Social Worker actively gatekeeping records. The case is complicated by a hostile family dynamic and the urgent need for Managed Medicare authorization for prosthetic-compatible home health. The PN must navigate institutional politics and administrative friction to secure a safe home transition before the facility forces a shift to private-pay LTC status."
+}

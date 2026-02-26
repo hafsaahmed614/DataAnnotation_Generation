@@ -43,21 +43,21 @@ EDD_DELTA_OPTIONS = [
 def _load_saved_answers(client, session_id):
     """Fetch any previously saved evaluation answers for this session."""
     f1_resp = _retry(lambda: (
-        client.table("eval_format_1_timeline")
+        client.table("eval_format_1_timeline_v3")
         .select("*")
         .eq("session_id", session_id)
         .order("event_index")
         .execute()
     ))
     f2_resp = _retry(lambda: (
-        client.table("eval_format_2_tactics")
+        client.table("eval_format_2_tactics_v3")
         .select("*")
         .eq("session_id", session_id)
         .order("triple_index")
         .execute()
     ))
     f3_resp = _retry(lambda: (
-        client.table("eval_format_3_boundaries")
+        client.table("eval_format_3_boundaries_v3")
         .select("*")
         .eq("session_id", session_id)
         .order("option_index")
@@ -76,24 +76,24 @@ def _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
     """Save current answers to eval tables (delete old rows first)."""
     svc = get_service_client()
     # Clear existing rows for this session
-    svc.table("eval_format_1_timeline").delete().eq("session_id", session_id).execute()
-    svc.table("eval_format_2_tactics").delete().eq("session_id", session_id).execute()
-    svc.table("eval_format_3_boundaries").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_1_timeline_v3").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_2_tactics_v3").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_3_boundaries_v3").delete().eq("session_id", session_id).execute()
 
     common = {"session_id": session_id, "case_label": case_label, "navigator_name": navigator_name}
 
     # Insert current answers
     if f1_inputs:
         f1_rows = [{**common, **inp} for inp in f1_inputs]
-        svc.table("eval_format_1_timeline").insert(f1_rows).execute()
+        svc.table("eval_format_1_timeline_v3").insert(f1_rows).execute()
 
     if f2_inputs:
         f2_rows = [{**common, **inp} for inp in f2_inputs]
-        svc.table("eval_format_2_tactics").insert(f2_rows).execute()
+        svc.table("eval_format_2_tactics_v3").insert(f2_rows).execute()
 
     if f3_inputs:
         f3_rows = [{**common, **inp} for inp in f3_inputs]
-        svc.table("eval_format_3_boundaries").insert(f3_rows).execute()
+        svc.table("eval_format_3_boundaries_v3").insert(f3_rows).execute()
 
 
 def render():
@@ -114,7 +114,7 @@ def render():
 
     # ── Fetch case data ──────────────────────────────────────────────────────
     case_resp = (
-        client.table("synthetic_cases")
+        client.table("synthetic_cases_v3")
         .select("*")
         .eq("id", case_id)
         .single()
@@ -279,7 +279,7 @@ def render():
 
     # Load saved values from session if resuming
     session_resp = _retry(lambda: (
-        client.table("evaluation_sessions")
+        client.table("evaluation_sessions_v3")
         .select("overall_field_authenticity, authenticity_reasoning, improvement_suggestion")
         .eq("id", session_id)
         .single()
@@ -314,7 +314,7 @@ def render():
     # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
     _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                   case_label, navigator_name)
-    get_service_client().table("evaluation_sessions").update({
+    get_service_client().table("evaluation_sessions_v3").update({
         "overall_field_authenticity": overall_score,
         "authenticity_reasoning": authenticity_reasoning,
         "improvement_suggestion": improvement_suggestion,
@@ -328,11 +328,12 @@ def render():
                       case_label, navigator_name)
 
         # Mark session completed with overall score
-        get_service_client().table("evaluation_sessions").update({
+        get_service_client().table("evaluation_sessions_v3").update({
             "status": "completed",
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "overall_field_authenticity": overall_score,
             "authenticity_reasoning": authenticity_reasoning,
+            "improvement_suggestion": improvement_suggestion,
         }).eq("id", session_id).execute()
 
         st.success("Evaluation submitted successfully!")

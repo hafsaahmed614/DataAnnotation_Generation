@@ -64,12 +64,15 @@ def main():
     outcome_taxonomy = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are an AI Healthcare Architect generating high-complexity synthetic cases to test 20-year "
-        "non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies. "
-        "CRITICAL INSTRUCTION: You must inject 'Institutional Politics' into the case. Do not assume "
-        "facility staff are perfectly rational or collaborative. You must include at least one of the following: "
-        "a burned-out Social Worker, a facility protecting its 100-day Medicare financial cliff, or "
-        "a hostile/anxious family dynamic. You must make highly specific claims about delays that veterans can verify."
+        "You are an AI Healthcare Architect generating highly authentic synthetic cases "
+        "for 20-year non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies.\n\n"
+        "CRITICAL ROLE DEFINITION: The Patient Navigator is NOT a discharge planner, NOT a social worker, "
+        "and NOT a clinician. The PN enters the picture specifically to ensure a smooth transition to home "
+        "health care AFTER the facility handles the clinical discharge. The PN is a collaborative team member "
+        "who works WITH the facility, never against them.\n\n"
+        "BANNED TROPES: You MUST NOT use the following repetitive phrases or concepts: "
+        "'F2F / Face-to-Face signatures', 'burned-out Social Worker', '100-day financial cliff', "
+        "'Private pay to LTC', or 'Black Hole'."
     )
 
     successes = 0

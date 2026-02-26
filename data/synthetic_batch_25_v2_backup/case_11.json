@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Navigator (PN) assigned 9 days post-SNF admission due to 'The Black Hole' referral lag. Mrs. Vance is clinically stable but requires 2L O2 and intense PT.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "Internal hub delay; PN was not notified of admission until the SNF Social Worker (Janet) manually flagged the file after a week of backlog."
+    },
+    {
+      "event_description": "Managed Medicare Advantage Plan (UnitedHealthcare) issues a 'Request for Information' regarding the Face-to-Face (F2F) encounter note for home oxygen and PT services.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility MD signed the progress note but failed to include the specific 'skilled need' verbiage required by the Advantage plan's audit-threshold criteria."
+    },
+    {
+      "event_description": "Social Worker (Janet) announces she is taking a 4-day weekend starting Thursday; refuses to process any further 'non-emergency' discharge authorizations until her return.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Burned-out staff member intentionally slowing the workflow to manage personal exhaustion, utilizing 'facility policy' as a shield against PN inquiries."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Social Worker (Janet) is gatekeeping the DocNow portal access, preventing the PN from verifying if the F2F encounter note is actually uploaded.",
+      "action_taken": "Leveraged a 5-minute hallway 'curbside' with the Physical Therapist to verify the clinical progress notes and confirm the MD's signature was missing on the DME order.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the administrative gatekeeper to gather clinical intelligence without triggering a 'boundary violation' report from the Social Worker."
+    },
+    {
+      "situation": "The Managed Medicare payor requires a specific attestation of 'Homebound Status' that the SNF physician considers 'redundant paperwork'.",
+      "action_taken": "Pre-filled the attestation form with the patient\u2019s PT scores and caught the MD during his 6:00 AM coffee break in the lounge to secure a wet-ink signature.",
+      "taxonomy_category": "Stakeholder Alignment",
+      "tactical_field_intent": "Secure the necessary 'Face-to-Face' documentation by removing all friction for the physician, ensuring the file is 'audit-proof' before the SW can block the submission."
+    },
+    {
+      "situation": "Patient's daughter (anxious) is threatening to take the patient home 'with or without oxygen' because she is frustrated with the SNF's lack of communication.",
+      "action_taken": "Conducted an unscheduled bedside family meeting to show the daughter the specific 'Authorization Pending' status from the insurance portal.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Redirect family hostility toward the 'anonymous' insurance payor rather than the facility, buying the PN 48 hours of cooperation to finalize the transition."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to return from her long weekend to finalize the discharge plan, adhering to the facility's standard internal hierarchy for documentation submission.",
+      "rationale": "Disguises itself as respect for institutional protocol but fails to mitigate the 4-day delay, likely leading to a family-initiated AMA or an unnecessary '100-day cliff' progression."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Coordinate with the SNF's Director of Nursing (DON) to identify a secondary 'backup' signer for the F2F documentation while the primary SW is out of the office.",
+      "rationale": "Solves the friction by escalating through the proper clinical chain of command without overstepping into the SW's personal administrative files, maintaining professional boundaries while driving the timeline."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Access the patient\u2019s medical records through the PN-specific portal and fax the F2F documentation directly to the Home Health Agency's intake department to bypass the SNF's internal delays.",
+      "rationale": "While it ensures the home team has the info, it violates the SNF's right to control the discharge packet and potentially exposes the PN to a HIPAA-adjacent complaint for transmitting data before the official facility sign-off."
+    }
+  ],
+  "narrative_summary": "Mrs. Vance, an 83-year-old recovering from post-ICU pneumonia, is caught in a 'Managed Medicare Auth' logjam exacerbated by a burned-out Social Worker who is gatekeeping documentation before a long weekend. The PN must navigate a missing 'Face-to-Face' encounter signature required by UnitedHealthcare, which threatens to delay discharge by over a week. Success hinges on bypassing the administrative friction via clinical-side alliances (PT and MD) to secure the authorization before the family's frustration leads to a dangerous AMA exit."
+}

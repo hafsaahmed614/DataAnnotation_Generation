@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN assigned to Mrs. Vance on Day 14 of SNF stay; however, the facility Social Worker (SW) failed to notify the hub, resulting in a 9-day communication lag.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The Social Worker is managing a double caseload due to staff turnover and intentionally delayed the PN's entry to avoid 'too many cooks' during the initial discharge planning phase."
+    },
+    {
+      "event_description": "Facility Administrator pushes for discharge on Day 20 to avoid the Medicare co-pay transition, despite the patient's Managed Medicare plan requiring a fresh 'face-to-face' (F2F) clinical note for home-based wound care.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The SNF attending physician refuses to document the F2F, claiming it is the responsibility of the community PCP, creating an administrative deadlock between the facility and the insurer."
+    },
+    {
+      "event_description": "The patient's daughter, overwhelmed by the renal failure diagnosis, threatens to refuse the discharge, claiming the home is not safe for dialysis education.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is pressuring the family to sign LTC papers to protect their 100-day financial cliff, rather than addressing the home-safety concerns raised by the daughter."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The burned-out SW, Sharon, is 'ghosting' the PN's requests for the latest PT notes needed to justify skilled home care to the insurer.",
+      "action_taken": "PN physically intercepts the PT Director in the hallway during morning rounds to obtain a verbal summary of the patient's progress and the therapist's direct extension.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the SW gatekeeper to secure clinical ammunition for the insurance appeal without appearing to subvert the SW's authority on the official record."
+    },
+    {
+      "situation": "The SNF physician refuses to sign the home health orders, citing a lack of 'recent' assessment, while the facility is demanding discharge within 24 hours.",
+      "action_taken": "PN facilitates a three-way call between the PCP's office manager and the SNF discharge planner to 'bridge' the order authority.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Shift the administrative burden onto the PCP's office to force the SNF's hand, ensuring the F2F is completed before the patient loses 'skilled need' status upon discharge."
+    },
+    {
+      "situation": "The family is hostile toward the SNF staff, believing the early discharge is purely financial, and is now refusing to speak with any 'transition' personnel.",
+      "action_taken": "PN positions the home-based wound care program as an 'independent safety audit' of the SNF's work rather than a continuation of the facility's plan.",
+      "taxonomy_category": "Early Engagement",
+      "tactical_field_intent": "Triangulate against the facility to build 'us vs. them' solidarity with the family, securing service conversion by distancing the PN from the unpopular discharge mandate."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's internal timeline by allowing the Social Worker to lead the family meeting and only providing program brochures when specifically invited to speak.",
+      "rationale": "Maintains a frictionless relationship with the facility staff but risks the patient being discharged without a firm home care start date due to the SW's burnout and lack of follow-through."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Coordinate a pre-discharge 'huddle' with the Home Health Agency's intake nurse and the patient's daughter to review the specific dialysis education schedule, effectively creating a 'soft landing' that addresses the family's anxiety.",
+      "rationale": "Directly mitigates the 'Timeline Drift' by involving the home team early, providing the family with concrete dates that reduce the fear of a care vacuum post-discharge."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Advise the daughter to formally 'contest' the discharge notice through the Quality Improvement Organization (QIO), providing her with the specific clinical terminology to use regarding the unfinished dialysis education.",
+      "rationale": "While this protects the patient's safety, it is a massive overstep that sabotages the facility's discharge metrics and will likely lead to the PN being banned from the facility by the Administrator for 'legal steering'."
+    }
+  ],
+  "narrative_summary": "Mrs. Vance, a 77-year-old in renal transition, is caught in a high-stakes tug-of-war between a facility racing to avoid a Medicare co-pay cliff and a family paralyzed by a new dialysis reality. The burned-out Social Worker has effectively 'black-holed' the transition process, leaving a critical gap in insurance authorization for specialized home care. The PN must navigate hostile family dynamics and institutional ghosting to bridge the 3-7 day Managed Medicare authorization delay. Ultimately, the case hinges on whether the PN can secure a clinical 'face-to-face' before the facility forces a discharge that would render the patient ineligible for skilled home services."
+}

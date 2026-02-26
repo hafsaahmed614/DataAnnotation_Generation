@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial PN assignment occurs on Day 14 of the SNF stay for a 68yo female with an MS flare. The facility Social Worker, Sheila, has not updated the transition portal, leading to a significant information gap.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The delay was amplified because the facility SW intentionally withheld the referral until the patient's 'skilled' therapy minutes peaked to maximize billing before involving external navigators."
+    },
+    {
+      "event_description": "Managed Medicare Advantage carrier requests a specific 'Face-to-Face' (F2F) physician signature to authorize home health. Dr. Aris is off-site and his Medical Assistant refuses to process faxed requests from 'non-facility' staff.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The delay was caused by the facility's broken fax-to-server relay and the SW's refusal to use the MD's preferred e-signature portal, citing 'technical fatigue'."
+    },
+    {
+      "event_description": "Facility administration begins 'steering' the family toward Long-Term Care (LTC) placement, claiming the MS flare recovery is too slow for a safe home discharge, coinciding with the patient's approaching benefit limit.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The CFO flagged the patient's record because her Managed Medicare reimbursement rate drops significantly after Day 40, incentivizing a pivot to private-pay LTC."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "SW Sheila is burned out and hostile, refusing to provide the PN with the Physician\u2019s rounding schedule or the specific F2F form status.",
+      "action_taken": "Shadowed the Physical Therapy Director during morning gym rounds to identify the exact window Dr. Aris visits the facility.",
+      "taxonomy_category": "Maintain relationship for early discharge info",
+      "tactical_field_intent": "Bypass the SW's information gatekeeping by leveraging the PT's clinical rapport to gain physical access to the physician."
+    },
+    {
+      "situation": "The MD's office claims they never received the F2F request, despite the SNF record showing it was sent four times.",
+      "action_taken": "Obtained the MD's private office 'back-line' number from a friendly floor nurse and called the office manager directly.",
+      "taxonomy_category": "Ensure awareness of barriers or changes in progress",
+      "tactical_field_intent": "Circumvent the facility's administrative 'Black Hole' to confirm if the breakdown is at the SNF's fax machine or the MD's front desk."
+    },
+    {
+      "situation": "The patient's daughter is becoming anxious and hostile due to conflicting messages about 'safety' from the SW and 'readiness' from the PT.",
+      "action_taken": "Organized an informal 'bedside huddle' with the daughter and the PT lead before the formal care conference.",
+      "taxonomy_category": "Prevent 'missed' discharge or refusal",
+      "tactical_field_intent": "Pre-emptively align the daughter with the clinical success of PT to neutralize the SW's 'unsafe for home' narrative during the official meeting."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's hierarchy by documenting the missing signature in the common portal and waiting for the Social Worker to address it during the next weekly Utilization Review.",
+      "rationale": "This preserves the relationship with the burned-out SW by not 'doing her job,' but it guarantees a 7-day delay as the patient nears the 100-day cliff."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Prepare a 'signature-ready' packet including the F2F form and the specific PT notes proving skilled need, and hand it directly to Dr. Aris during his 7:00 AM hallway rounds.",
+      "rationale": "This solves the friction immediately by removing all administrative hurdles for the MD without violating any clinical scope or facility rules."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Offer to personally transport the patient's full clinical chart to Dr. Aris's private practice office across town to ensure he signs the authorization before the weekend.",
+      "rationale": "While this sounds like high-level advocacy, it is a seductive overstep that violates HIPAA transport protocols and positions the PN as a subordinate 'runner' for the facility's administrative failures."
+    }
+  ],
+  "narrative_summary": "A 68yo female recovering from an MS flare at 'The Highlands' is trapped in an administrative stalemate between a burned-out Social Worker and an elusive Physician. The primary barrier is a missing 'Face-to-Face' signature required by her Managed Medicare plan, which the facility staff is neglecting as they quietly push for a Long-Term Care conversion to secure a higher margin. The Patient Navigator must navigate institutional hostility and 'Black Hole' communication delays to secure home health authorization before the facility CFO forces a permanent LTC placement at the 100-day cliff."
+}

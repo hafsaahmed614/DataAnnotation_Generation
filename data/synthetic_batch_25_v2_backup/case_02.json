@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Managed Medicare Advantage plan issues a 'Notice of Non-Coverage' (NONC) citing lack of skilled need for home health, despite patient's Stage 3 CKD and CHF exacerbation history.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The facility's Managed Care Coordinator submitted outdated SNF intake notes rather than the NP's current wound and edema management notes, triggering an automatic denial."
+    },
+    {
+      "event_description": "Facility administration flags patient for '100-Day Cliff' transition; Social Worker begins Long-Term Care (LTC) Medicaid application to secure facility payment, disregarding home discharge goals.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The Social Worker is managing a caseload of 45 patients and is prioritizing the CFO\u2019s 'Red List' of expiring Medicare benefits over the patient's preference for home."
+    },
+    {
+      "event_description": "Patient's daughter, acting as POA, refuses to sign the LTC transition papers and demands a CHC Waiver for a stair lift, citing the patient's inability to navigate her 2-story residence.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The CHC Waiver process is stalled because the daughter is insisting on using her cousin\u2019s unlicensed construction firm, which cannot provide the three required state-approved estimates."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The SNF Social Worker (SW) is avoiding the PN's calls because she perceives the PN as 'interfering' with the necessary LTC placement.",
+      "action_taken": "Bypassed the SW office to corner the Physical Therapist (PT) during the patient's morning session to confirm the patient has met 'gait training' milestones.",
+      "taxonomy_category": "Clinical Monitoring",
+      "tactical_field_intent": "Secure clinical 'skilled need' evidence directly from the floor staff to undermine the SW\u2019s claim that the patient is 'custodial only' during the next care conference."
+    },
+    {
+      "situation": "Managed Medicare appeal requires a specific 'face-to-face' (F2F) encounter note that the attending physician has not yet signed in the Atlantis EMR.",
+      "action_taken": "Physically waited at the nurse's station during the physician's 6:00 AM 'quiet rounds' to present a printed copy of the encounter for a wet signature.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Circumvent the physician's gatekeeper (Medical Records) who typically takes 48 hours to upload signatures, ensuring the appeal is filed before the 5:00 PM Friday deadline."
+    },
+    {
+      "situation": "The daughter is threatening to take the patient home AMA due to frustration with the facility's 'dumping' tactics.",
+      "action_taken": "Conducted a three-way call with the HHA Regional Director and the daughter to demonstrate a confirmed Saturday morning nurse visit despite the insurance denial.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the daughter\u2019s hostility by showing 'boots on the ground' readiness, preventing an AMA discharge that would forfeit the HHA's ability to bill the secondary insurer."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the Social Worker\u2019s timeline for LTC placement while documenting the insurance denial as a secondary barrier in the PN log.",
+      "rationale": "This maintains institutional harmony and acknowledges the reality of the 100-day Medicare cliff, though it ultimately fails to achieve the patient's goal of returning home."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Present the Social Worker with the specific PT progress notes and the physician\u2019s signed F2F, offering to draft the appeal narrative for her to review and submit.",
+      "rationale": "This reduces the burned-out SW's workload while providing the necessary clinical leverage to overturn the insurance denial and facilitate a home discharge."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Directly call the Managed Care Organization\u2019s (MCO) medical director to advocate for the patient\u2019s home health necessity, bypassing the facility\u2019s internal billing and appeal protocols.",
+      "rationale": "While highly effective for the patient, this move violates the facility's chain of command and risks the PN being banned from the SNF for interfering with their contracted insurance relationships."
+    }
+  ],
+  "narrative_summary": "Mrs. Eleanor Vance, a 78-year-old with CHF, is caught between a burned-out Social Worker pushing for LTC placement and an insurance denial claiming 'no skilled need.' The facility is aggressively managing its 100-day Medicare cliff, attempting to transition Eleanor to private pay or Medicaid LTC by Day 101. The PN must navigate a hostile family dynamic and bureaucratic delays in CHC Waiver approvals while clinically proving Eleanor\u2019s eligibility for home health. Success hinges on bypassing administrative gatekeepers to secure the precise documentation needed to overturn the Managed Medicare denial."
+}

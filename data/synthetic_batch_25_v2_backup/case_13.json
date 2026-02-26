@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN assigned on Day 14 of post-spinal fusion SNF stay; initial review in DocNow reveals SW Elena has not yet initiated the Managed Medicare F2F document for the surgeon's signature.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' lag occurred because the facility's internal referral system failed to notify the hub until the patient's first PT plateau."
+    },
+    {
+      "event_description": "Surgeon's gatekeeper (Medical Assistant) refuses to process the F2F attestation, claiming the SNF's post-op notes are insufficient for the doctor's 'Face-to-Face' requirement for Managed Medicare.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The surgeon's office is intentionally throttling non-essential paperwork to reduce the physician's administrative burden during a high-volume surgical week."
+    },
+    {
+      "event_description": "Facility Administrator signals the 100-day Medicare cliff is approaching; SW Elena attempts to pivot the patient to a 'private pay' LTC transition to avoid the administrative headache of a contested discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "Burned-out SW is steering the patient toward LTC to clear the bed and avoid the labor-intensive coordination required for a complex home discharge."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "SW Elena is 'forgetting' to include the PN in the weekly Utilization Review (UR) meetings where discharge dates are finalized.",
+      "action_taken": "Cultivated a relationship with the SNF Floor Nurse to receive 'pocket' updates on UR outcomes immediately after the meetings conclude.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Establish a shadow information network to bypass the SW's gatekeeping and prevent being blindsided by a 24-hour discharge notice."
+    },
+    {
+      "situation": "Managed Medicare Advantage plan (Aetna) requires a specific 'Spinal Stability' attestation that is missing from the standard SNF discharge packet.",
+      "action_taken": "Hand-delivered the specific Aetna-formatted F2F form to the Surgeon's clinic and waited in the lobby for the MA to confirm the doctor\u2019s review.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Force a real-time acknowledgment of the document's urgency, making it harder for the office staff to claim the fax was 'lost' or 'incomplete'."
+    },
+    {
+      "situation": "Patient's son is highly anxious and threatening to sue the facility if the home care isn't 'perfect' upon arrival.",
+      "action_taken": "Conducted a joint education session with the son and the HHA Intake Coordinator via speakerphone while at the patient's bedside.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate family hostility by transferring technical accountability to the HHA while maintaining the PN's role as the neutral 'advocate'."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's established workflow by sending a formal email to SW Elena and the Surgeon's office, documenting the missing F2F signature and requesting a status update for the next care conference.",
+      "rationale": "Maintains professional boundaries and follows the chain of command, but fails to address the immediate '100-day cliff' risk or the SW's known burnout-induced delays."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Coordinate with the SNF's Nurse Practitioner to draft a clinical summary of the patient's 'skilled need' progress and fax it to the Surgeon's MA as supporting documentation to facilitate the F2F signature.",
+      "rationale": "Provides the necessary clinical 'ammunition' to the Surgeon's office to solve the signature bottleneck without bypassing the SW or performing clinical assessments themselves."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Review the patient's surgical EMR, extract the specific L4-L5 fusion stability metrics, and pre-fill the attestation form for the Surgeon, then present it to the Surgeon during their hallway rounds for a quick signature.",
+      "rationale": "The PN is performing clinical synthesis and 'steering' the physician's documentation, which violates non-clinical scope and risks institutional blowback if the SW feels 'shown up' in front of the Surgeon."
+    }
+  ],
+  "narrative_summary": "A 70-year-old male post-spinal fusion is trapped in an administrative 'Black Hole' caused by a burned-out Social Worker and a gatekeeping Surgeon's office. The primary barrier is a missing 'Face-to-Face' signature required by his Managed Medicare Advantage plan, which is further complicated by the facility's push to avoid the 100-day financial cliff. The Navigator must navigate institutional politics and family anxiety to secure the transition to home health before the patient is forced into a Long-Term Care Medicaid pivot."
+}

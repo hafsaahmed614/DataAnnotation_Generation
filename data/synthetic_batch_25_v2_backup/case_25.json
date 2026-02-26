@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient reaches Day 85 of 100-day Medicare benefit. Social Worker (Ms. Gable) flags the case for 'LTC Pivot' due to lack of a wheelchair ramp at home and patient's high fall risk (Dementia).",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility's Director of Rehab instructed the SW to prioritize clearing the bed for a high-reimbursement post-surgical patient before the 100-day cliff."
+    },
+    {
+      "event_description": "Daughter (POA) initiates Medicaid CHC Waiver for home modifications. The caseworker informs the PN that the process requires three separate contractor estimates for the ramp installation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Medicaid caseworker is managing a 150-case backlog and refused to expedite the contractor walkthroughs because the patient is 'currently safe' in a SNF."
+    },
+    {
+      "event_description": "Social Worker stops attending the PN's weekly transition huddles and stops responding to 'Home Health' inquiries, citing 'rehab plateaus' in the NP rounding notes.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The SW is intentionally 'ghosting' the PN to finalize the LTC bed placement without outside interference from home-care advocates."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The burned-out Social Worker is actively steering the family toward a permanent LTC placement to resolve the 100-day financial cliff.",
+      "action_taken": "PN physically shadowed the SNF Medical Director during morning rounds to obtain a verbal 'skilled need' confirmation for continued wound care (Stage 3 Sacral).",
+      "taxonomy_category": "Early Engagement",
+      "tactical_field_intent": "Bypass the SW's gatekeeping by securing a clinical anchor that prevents the facility from documenting a 'Loss of Skilled Need' to force a discharge."
+    },
+    {
+      "situation": "Daughter is hostile toward facility staff, leading the SW to document the home environment as 'unsafe/hostile' for HHA staff.",
+      "action_taken": "PN facilitated a private three-way call between the HHA intake nurse and the daughter to establish a 'Behavioral Contract' for home visits.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Neutralize the SW's 'safety' argument for LTC by creating a documented clinical plan for HHA staff safety that the facility cannot easily refute."
+    },
+    {
+      "situation": "The facility's internal utilization review (UR) committee is meeting on Friday to finalize the 100-day transition plan.",
+      "action_taken": "PN submitted a formal 'Home Readiness Update' to the UR committee chair 2 hours before the meeting, including the Medicaid Waiver tracking number.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Force the UR committee to acknowledge the active home-discharge pathway on the record, making an LTC-only decision legally and ethically difficult to justify."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Acknowledge the facility's concerns regarding the 100-day cliff and wait for the formal care conference to present the home-care benefits to the family and Social Worker.",
+      "rationale": "This follows the standard institutional hierarchy and avoids direct conflict with the Social Worker, but it effectively cedes control of the timeline to the facility's financial interests."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Request a 'Pre-Discharge Family Meeting' including the HHA Clinical Manager to specifically address the ramp delay and present a 24-hour caregiver schedule to mitigate the fall risk.",
+      "rationale": "Addresses the specific 'Env. Blocked' and 'LTC Transition' triggers from the Outcome Taxonomy without bypassing facility leadership or violating clinical boundaries."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Directly advise the daughter to refuse to sign the LTC admission paperwork and instead request a formal Medicare Appeal (IM) to buy time for the Medicaid Waiver ramp installation.",
+      "rationale": "While this protects the patient's goal of returning home, it is a 'Seductive Overstep' because it involves giving legal/financial advice and creates an adversarial relationship between the PN and the facility's administration."
+    }
+  ],
+  "narrative_summary": "86-year-old Mr. Abraham faces a forced transition to Long-Term Care as his 100-day Medicare benefit nears exhaustion. The facility Social Worker, overwhelmed and pressured by administration to clear the bed, is ignoring the daughter's desire for a home return due to a pending Medicaid Waiver for a wheelchair ramp. The PN must navigate this 'Institutional Politics' by securing clinical skilled-need documentation to prevent a 'Loss of Skilled Need' discharge while managing a hostile family dynamic and a bureaucratic 45-day delay in home modifications."
+}

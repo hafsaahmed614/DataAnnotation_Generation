@@ -16,7 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25"
+BATCH_ID = "synthetic_batch_25_v3"
+TABLE_NAME = "synthetic_cases_v3"
 
 
 def main():
@@ -46,8 +47,8 @@ def main():
             "format_3_rl_scenario": data.get("format_3_rl_scenario", []),
         })
 
-    result = client.table("synthetic_cases").insert(rows).execute()
-    print(f"Inserted {len(result.data)} rows into synthetic_cases.")
+    result = client.table(TABLE_NAME).insert(rows).execute()
+    print(f"Inserted {len(result.data)} rows into {TABLE_NAME}.")
     print("Upload complete.")
 
 

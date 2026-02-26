@@ -143,21 +143,33 @@ You MUST strictly output valid JSON conforming to this schema and NO other text:
 
 Rules:
 1. All edd_delta values must reference a delay from the Friction Taxonomy.
-2. The `ai_assumed_bottleneck` must be a specific, testable claim about institutional friction (e.g., "The delay was amplified because the facility requires 3 signatures on Fridays").
+2. The `ai_assumed_bottleneck` must be a specific, testable claim about a HOME HEALTH TRANSITION barrier (e.g., "The HHA could not schedule a weekend admission because their intake coordinator only works Mon-Fri").
+
+NEGATIVE CONSTRAINTS (What a PN NEVER does):
+- The PN NEVER touches F2F forms, clinical documentation, or the EMR.
+- The PN NEVER calls insurance companies for authorization.
+- The PN NEVER calls or leads facility team meetings.
+- The PN NEVER interrupts doctors during rounds or gathers charts from the nurse's station.
+- The PN NEVER proves cost analysis of home care vs LTC.
+- The PN NEVER tells families to refuse discharge or go Against Medical Advice (AMA).
+
+POSITIVE CONSTRAINTS (What a PN ACTUALLY does):
+- The PN focuses entirely on Home Health Agency (HHA) coordination and transition logistics.
+- Valid PN friction includes: HHA weekend admission scheduling limits, delays in Durable Medical Equipment (DME) delivery to the home, family caregiver training gaps, or discrepancies in the medication list at handoff.
 
 Rules for Format 2 (Triples):
-3. The `situation` must involve a specific stakeholder bottleneck (e.g., an unresponsive SW, an anxious family member).
-4. The `action_taken` must be a specific field maneuver, not a generic concept.
-5. The `tactical_field_intent` MUST contain a political or operational trade-off that a 20-year veteran could debate. Do not use generic phrases like 'Gain trust'. Instead, use highly tactical motives (e.g., 'Bypass the physician's gatekeeper by catching them during hallway rounds to secure the F2F signature before the weekend').
+3. The `situation` must involve a specific stakeholder bottleneck WITHIN THE PN's SCOPE (e.g., HHA not returning calls, DME vendor backordered, family caregiver not trained on wound care, medication list mismatch between facility and home).
+4. The `action_taken` must be a specific field maneuver that a PN would realistically take, not a Social Worker action.
+5. The `tactical_field_intent` MUST contain a political or operational trade-off that a 20-year PN veteran could debate. Use PN-specific motives (e.g., 'Lock in the HHA admission slot before the weekend so the discharge does not slip to Monday').
 
 Rules for Format 3 (RL Scenarios):
 6. The format_3_rl_scenario MUST contain exactly THREE options for a single difficult dilemma.
 7. You must generate one "Passive" option, one "Proactive" option, and one "Overstep" option.
 8. CRITICAL: The `description` for all three options must sound highly professional, reasonable, and tempting.
-   - The "Passive" action should disguise itself as "respecting the facility's process."
-   - The "Proactive" action must skillfully solve the friction without crossing boundaries.
-   - The "Overstep" action must be a "Seductive Overstep" that sounds like excellent patient advocacy to a rookie, but actually violates clinical or Social Worker boundaries. Do not make the Overstep sound obviously bad or reckless.
-9. narrative_summary must be 3–5 sentences capturing the clinical, political, and operational arc.
+   - "Passive" means the PN waits for the SW/facility to handle everything and fails to follow up on HHA setup or home equipment.
+   - "Proactive" means the PN takes a great field action WITHIN THEIR SCOPE (e.g., confirming the HHA admission date, verifying supplies are waiting at home, educating the family on what to expect on Day 1, checking weekend HHA availability).
+   - "Overstep" MUST feature the PN accidentally doing the Social Worker's job (e.g., handling discharge documentation, confronting facility staff, calling the patient's insurance, or drafting clinical notes). It must still sound like good patient advocacy to a rookie.
+9. narrative_summary must be 3-5 sentences capturing the home health transition arc, not the facility discharge process.
 10. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
@@ -221,12 +233,15 @@ def main():
     outcome_taxonomy  = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are an AI Healthcare Architect generating high-complexity synthetic cases to test 20-year "
-        "non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies. "
-        "CRITICAL INSTRUCTION: You must inject 'Institutional Politics' into the case. Do not assume "
-        "facility staff are perfectly rational or collaborative. You must include at least one of the following: "
-        "a burned-out Social Worker, a facility protecting its 100-day Medicare financial cliff, or "
-        "a hostile/anxious family dynamic. You must make highly specific claims about delays that veterans can verify."
+        "You are an AI Healthcare Architect generating highly authentic synthetic cases "
+        "for 20-year non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies.\n\n"
+        "CRITICAL ROLE DEFINITION: The Patient Navigator is NOT a discharge planner, NOT a social worker, "
+        "and NOT a clinician. The PN enters the picture specifically to ensure a smooth transition to home "
+        "health care AFTER the facility handles the clinical discharge. The PN is a collaborative team member "
+        "who works WITH the facility, never against them.\n\n"
+        "BANNED TROPES: You MUST NOT use the following repetitive phrases or concepts: "
+        "'F2F / Face-to-Face signatures', 'burned-out Social Worker', '100-day financial cliff', "
+        "'Private pay to LTC', or 'Black Hole'."
     )
 
     print(f"Starting batch generation: {BATCH_SIZE} case(s)")

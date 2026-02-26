@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN identifies that the SNF Social Worker (SW) has scheduled a Friday 2:00 PM discharge for Evelyn, despite the Managed Medicare Advantage plan still pending authorization for the specialized wound vac required for her renal ulcer.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker is burned out and intentionally ignored the 'pending auth' flag in the portal to ensure her weekend case-load was cleared before 4:00 PM."
+    },
+    {
+      "event_description": "The attending physician's Medical Assistant (MA) refuses to process the required 'face-to-face' (F2F) documentation for the home health agency, claiming the doctor is already 'off the clock' for the weekend as of Friday noon.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The facility is protecting its 100-day Medicare financial cliff; because Evelyn is at Day 92, they are rushing the discharge to avoid the administrative burden of a long-term care Medicaid conversion."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter (POA) is hostile and anxious, threatening to take the patient to the ER if the wound supplies aren't at the house when they arrive Friday evening.",
+      "action_taken": "Conducted an urgent bedside meeting with the daughter and the SNF's Director of Nursing (DON) to verify a 'bridge supply' of dressings would be sent home in the discharge bag.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Force the facility to bear the cost of the bridge supplies by framing it as a 'patient safety/abandonment' issue in front of the DON to prevent a Friday night ER bounce-back."
+    },
+    {
+      "situation": "The Managed Medicare payer requires a specific F2F signature that the attending physician hasn't signed, and the MA is gatekeeping the doctor's office.",
+      "action_taken": "Physically intercepted the rounding Nephrologist in the hallway between the SNF and the dialysis center to obtain a wet-ink signature on the home health orders.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the administrative 'Black Hole' of the MA's office by exploiting the Nephrologist's rounding schedule before the weekend 'Black Hole' begins."
+    },
+    {
+      "situation": "The assigned Home Health Agency (HHA) does not staff wound-certified nurses on Saturdays or Sundays.",
+      "action_taken": "Coordinated with the Regional Director to re-assign the case to a generalist RN with prior SNF experience for a Saturday 'monitoring only' visit.",
+      "taxonomy_category": "Schedule De-conflict",
+      "tactical_field_intent": "Secure service conversion by ensuring any HHA presence is in the home within 24 hours, even if specialized care is deferred until Monday, to prevent family 'steering' to a competitor."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the Social Worker's discharge timeline and provide the family with a list of local medical supply stores that carry the necessary dressings in case the HHA delivery is delayed until Monday.",
+      "rationale": "This follows the facility's established workflow and avoids conflict with the SW, but it shifts the clinical and financial burden onto the family, risking a failed transition."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Negotiate with the HHA intake department to expedite the supply delivery using a courier service and schedule a 'bridging' nurse visit for Saturday to verify the family's ability to manage the dressing until the specialist arrives.",
+      "rationale": "This solves the immediate supply and care gap through proper channels without violating non-clinical boundaries or stepping on the SW's toes."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Personally obtain a 3-day supply of the specialized silver dressings from the facility's supply closet with the help of a friendly floor nurse and deliver them to the patient's home yourself to ensure the wound is not left open over the weekend.",
+      "rationale": "While this ensures the patient's safety, it is a significant liability overstep; the PN is handling clinical supplies and entering a home in a clinical capacity, violating non-clinical protocols and potentially the SNF's inventory policy."
+    }
+  ],
+  "narrative_summary": "Evelyn, a 77-year-old with end-stage renal disease and a complex leg ulcer, faces a high-risk Friday discharge driven by a burned-out Social Worker and the facility's proximity to the 100-day Medicare cliff. A 'Managed Medicare Auth' delay for wound supplies creates a 3-7 day gap, exacerbated by the physician's office closing early for the weekend. The PN must manage a hostile family dynamic and bypass administrative gatekeepers to ensure a safe transition and prevent a weekend ER return."
+}

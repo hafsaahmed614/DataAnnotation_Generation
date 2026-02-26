@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient Arthur (82, Parkinson's/UTI) reaches clinical stability on a Thursday afternoon; SNF Social Worker Linda initiates a Friday 4 PM discharge to maximize weekend bed turnover and minimize high-acuity staffing costs.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "7\u201314 Days (Lost Intervention Time)",
+      "ai_assumed_bottleneck": "The 'Black Hole' lag was exploited by the SNF to push a late Friday discharge before the PN could establish a rapport with the hostile daughter or verify home safety."
+    },
+    {
+      "event_description": "Managed Medicare Advantage plan requires a specific Face-to-Face (F2F) encounter note for home health authorization; the SNF NP fails to sign the digital chart before leaving for a long weekend.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker, burned out and nearing retirement, refused to page the on-call MD for the signature, claiming it was a 'non-emergent administrative task' unsuitable for weekend coverage."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The SNF Social Worker (Linda) is actively steering the family toward a competitor HHA because they 'don't ask for as much paperwork' on Friday afternoons.",
+      "action_taken": "Confronted Linda in the breakroom with a pre-filled 'Face-to-Face' template and offered to hand-carry it to the NP's station.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Force a public professional commitment from the SW to use the preferred provider by removing her 'too much paperwork' excuse in front of her supervisor."
+    },
+    {
+      "situation": "The patient's daughter is highly anxious and hostile, threatening to refuse all services because the HHA cannot guarantee a Saturday morning start for Parkinson's med management.",
+      "action_taken": "Mapped out the HHA's Monday-Friday schedule and the PN's own cell phone availability for the daughter, while omitting the fact that the HHA has zero weekend 'start-of-care' capacity.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the immediate discharge crisis by providing a 'perceived' safety net, buying 48 hours to find a workaround for the weekend coverage gap."
+    },
+    {
+      "situation": "Managed Medicare Advantage authorization is stalled due to the UTI diagnosis being listed as 'resolved' while the Parkinson's gait instability is 'chronic'.",
+      "action_taken": "Liaised with the SNF Physical Therapist to specifically document a 'new' fall risk secondary to post-UTI delirium for the HHA referral.",
+      "taxonomy_category": "Eligibility Verification",
+      "tactical_field_intent": "Manufacture a 'Skilled Need' narrative that satisfies the Managed Medicare 'Face-to-Face' requirement to prevent an immediate coverage denial."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's internal discharge protocol by allowing the Social Worker to lead the family meeting and accepting the Monday HHA start date as the earliest feasible option under Managed Medicare guidelines.",
+      "rationale": "This avoids friction with the burned-out SW and follows the standard bureaucratic timeline, even if it leaves the patient unsupported over the weekend."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Directly contact the HHA's Intake Director to request an 'Administrative Exception' for a Friday evening assessment, while simultaneously providing the daughter with a list of community-based respite providers for the weekend gap.",
+      "rationale": "This addresses the coverage gap through legitimate administrative channels and empowers the family without assuming clinical responsibility."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Create a customized Parkinson's medication 'titration and safety' schedule for the daughter to follow during the weekend, utilizing the PN's prior experience with similar cases to ensure no doses are missed before the nurse arrives.",
+      "rationale": "While helpful, this is a seductive overstep into clinical medication reconciliation, which is strictly the domain of the RN/MD and exposes the PN to massive liability if the patient falls."
+    }
+  ],
+  "narrative_summary": "Arthur, an 82-year-old with Parkinson's, is being 'Friday-dumped' by a SNF looking to clear beds, despite a pending Managed Medicare authorization. The Social Worker, Linda, is actively obstructing the transition due to burnout, refusing to secure the necessary F2F signatures before the weekend. The PN must navigate a hostile family dynamic and a 3-7 day authorization delay to prevent a 'Black Hole' scenario where the patient is left home alone without skilled care during a high-risk medication window."
+}

@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "PN identifies that Mrs. Vance is clinically stable for home transition, but the Managed Medicare Advantage plan requires a specific 'face-to-face' (F2F) encounter note that is currently missing from the physician's chart. The Social Worker, Brenda, who is managing a caseload of 45 patients, refuses to flag this for the MD, stating it's 'not her job to scribe.'",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker is burned out and intentionally gatekeeping physician access to avoid the administrative burden of a complex home discharge."
+    },
+    {
+      "event_description": "The facility reaches Day 95 of the 100-day Medicare window. The Finance Director issues a 'Notice of Non-Coverage' to the family, effective in 48 hours, while the Managed Medicare Auth remains pending due to the missing F2F documentation. The daughter becomes hostile, accusing the facility of 'dumping' her mother.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "Hard Stop (LTC Transition)",
+      "ai_assumed_bottleneck": "The facility is protecting its revenue cycle by forcing a transition to private pay or immediate discharge exactly at the 100-day financial cliff."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The burned-out Social Worker (Brenda) stops answering PN phone calls and hides in the staff-only breakroom to avoid discussing the Managed Medicare Auth status.",
+      "action_taken": "PN waits at the nursing station during the shift-change 'huddle' to intercept the rounding Nurse Practitioner (NP) for a 30-second verbal confirmation of the F2F requirement.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Bypass the SW's gatekeeping by leveraging the high-traffic shift change to force a clinical interaction that the SW cannot block."
+    },
+    {
+      "situation": "The patient's daughter is threatening to call a lawyer because she believes the '100-day cliff' notice is a personal attack by the facility.",
+      "action_taken": "PN facilitates a private meeting with the daughter in the facility garden to explain the 'Notice of Non-Coverage' (NNC) as a standard Medicare regulatory requirement rather than a facility choice.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the family's hostility toward the facility to prevent a total breakdown in the discharge plan that would lead to a 'Service Conversion' failure."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Respect the facility's established chain of command by documenting the missing F2F requirement in the electronic health record and awaiting the weekly multi-disciplinary team meeting to address the delay with Brenda and the attending physician.",
+      "rationale": "This action disguises itself as professional boundary-keeping but effectively allows the 'Managed Medicare Auth' delay to persist, likely pushing the patient past the 100-day cliff without a home plan."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Prepare a 'Managed Medicare Discharge Checklist' that highlights the specific missing F2F elements and hand-deliver it to the Nurse Practitioner during wound rounds, offering to fax the completed note to the payor once the NP signs off.",
+      "rationale": "This solves the administrative friction by providing the clinician with the tools to succeed while bypassing the uncooperative Social Worker without causing a public confrontation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the Managed Medicare Advantage plan's utilization reviewer directly to explain the facility's internal administrative delays and provide the PN's own clinical assessment notes as a substitute for the physician's F2F documentation.",
+      "rationale": "This is a seductive overstep because it sounds like aggressive advocacy, but it violates the non-clinical boundary of the PN and risks triggering a claim denial or an audit for providing unlicensed clinical data to a payor."
+    }
+  ],
+  "narrative_summary": "Mrs. Eleanor Vance, a 78-year-old CHF patient, is caught in a high-stakes standoff between a burned-out Social Worker and a facility focused on the 100-day Medicare cliff. The primary barrier is a missing 'face-to-face' encounter note required for Managed Medicare Authorization, which the facility staff is too overwhelmed or indifferent to rectify. The PN must navigate a hostile family dynamic and institutional gatekeeping to secure the necessary signatures before the financial 'hard stop' triggers an unsafe discharge or a transition to long-term care."
+}
