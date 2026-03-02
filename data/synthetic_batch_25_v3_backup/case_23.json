@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient cleared for discharge following CABG; PN confirms HHA (Amedisys) is ready for Friday afternoon start-of-care (SOC).",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "Initial alignment achieved; HHA intake confirmed for a 4:00 PM Friday admission slot."
+    },
+    {
+      "event_description": "The facility's contracted wheelchair van service reports a fleet-wide dispatch failure, cancelling the 2:00 PM pickup for Mr. Vance.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Logistical: Transport vendor overbooked and failed to notify the facility SW until the last minute, risking the HHA's Friday admission window."
+    },
+    {
+      "event_description": "PN identifies an alternative transport provider and coordinates with the HHA to push the SOC visit to 6:00 PM to accommodate the new transport time.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Operational: HHA intake required a confirmed arrival time before 5:00 PM to authorize an after-hours nurse visit."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Medical transport provider cancels Friday afternoon pickup, threatening to push the home health start-of-care to Monday.",
+      "action_taken": "Contacted the HHA Intake Coordinator to negotiate a 'Late-Start' exception for the admitting RN pending the new transport time.",
+      "taxonomy_category": "HHA/Team Handoff",
+      "tactical_field_intent": "Secure a verbal commitment for a Friday evening admission to prevent a 72-hour service gap over the weekend."
+    },
+    {
+      "situation": "Patient's spouse is anxious that the transport delay means the home health PT won't show up as promised on Saturday.",
+      "action_taken": "Provided the spouse with a physical appointment card and the direct phone number for the Amedisys weekend on-call supervisor.",
+      "taxonomy_category": "Patient Confirmation",
+      "tactical_field_intent": "De-escalate family anxiety and prevent a 'refusal of service' if the transport delay causes frustration with the program."
+    },
+    {
+      "situation": "HHA requires the final medication list to be verified at the home, but the facility transport delay might result in the patient arriving after the RN's shift.",
+      "action_taken": "Verified with the HHA that the medication list in the referral packet matched the discharge summary provided to the family.",
+      "taxonomy_category": "Schedule De-conflict",
+      "tactical_field_intent": "Ensure the HHA has zero administrative excuses to cancel the first visit once the patient finally arrives home."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the facility's internal transport log and wait for the Social Worker to secure a new transport window for the following Monday morning.",
+      "rationale": "The PN avoids stepping on the SW's toes regarding logistics but allows a 3-day delay in skilled nursing and PT services during a critical post-CABG window."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Collaborate with the HHA to extend their admission window while providing the facility SW with a list of three alternative private-pay transport vendors who have current availability.",
+      "rationale": "Keeps the transition on track by solving the logistical barrier within the HHA's operational constraints without performing the SW's booking duties."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the patient's insurance provider to demand an emergency authorization for an out-of-network ambulance and then sign the facility's discharge liability waiver on behalf of the family.",
+      "rationale": "The PN is performing insurance navigation and legal/clinical documentation, which are strictly the roles of the Social Worker and the patient's Power of Attorney."
+    }
+  ],
+  "narrative_summary": "Mr. Vance, a 75-year-old cardiac bypass patient, was scheduled for a Friday discharge to initiate home-based physical therapy and incision monitoring. The transition was nearly derailed when the primary transport vendor failed to arrive, risking a 'weekend slide' where home services would not begin until Monday. The Patient Navigator successfully bridged the gap by coordinating a late-evening admission with the Home Health Agency and facilitating alternative transport options through the facility's Social Worker."
+}

@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial intake identifies that the patient's preferred HHA, which her family has used previously, is currently out-of-network for her new Managed Medicare plan.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "The HHA intake department took 48 hours to run the insurance verification before flagging the network mismatch to the facility."
+    },
+    {
+      "event_description": "PN identifies an in-network HHA alternative, but the agency reports a staffing shortage for the patient's specific rural zip code.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's regional scheduler is prioritizing urban cases due to high clinician mileage costs, leaving the rural referral in 'pending' status."
+    },
+    {
+      "event_description": "PN coordinates with the HHA Intake Coordinator to confirm a 'start-of-care' date by verifying the primary caregiver's availability for the initial assessment.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA was unwilling to commit to an admission date until they could guarantee the daughter would be present for the medication reconciliation."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The in-network HHA is hesitant to accept the renal failure patient due to the complexity of fluid management monitoring in a remote area.",
+      "action_taken": "Compiled a logistics brief for the HHA intake lead detailing the patient's proximity to the nearest dialysis center and the daughter's schedule.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Reduce the HHA's perceived 'risk' of the referral to secure an immediate admission slot."
+    },
+    {
+      "situation": "The SNF Social Worker is unaware that the in-network HHA has internally waitlisted the patient due to staffing.",
+      "action_taken": "Alerted the Social Worker to the specific staffing gap and provided the names of two other in-network agencies with active capacity.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Prompt the facility to pivot the referral early enough to prevent a Friday afternoon discharge collapse."
+    },
+    {
+      "situation": "Patient's family is confused about why they cannot use their preferred HHA from three years ago.",
+      "action_taken": "Educated the family on the current insurance-provider alignment while emphasizing the renal-specific capabilities of the in-network alternatives.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate family frustration to prevent them from refusing home health services entirely in favor of an unsafe solo transition."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the facility Social Worker to resolve the network mismatch and notify the PN once a new HHA has been officially assigned in the discharge planner.",
+      "rationale": "The PN is deferring the logistical search entirely to the facility, which may lead to a multi-day delay if the Social Worker is managing a high caseload."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Contact three in-network HHAs to verify their current RN staffing availability for renal patients in the patient\u2019s zip code and report the findings to the Social Worker.",
+      "rationale": "This stays within the PN's scope of transition coordination by doing the logistical legwork to identify viable agencies without attempting to change insurance or clinical plans."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the patient's Medicare Advantage plan's provider relations line to request a single-case agreement for the out-of-network HHA based on the patient's history.",
+      "rationale": "Negotiating insurance contracts and single-case agreements is a clinical/administrative function of the facility or the HHA itself; the PN has no authority to negotiate on behalf of the patient's insurance."
+    }
+  ],
+  "narrative_summary": "Mrs. Gable, a 77-year-old managing renal failure, is ready to transition home, but her preferred home health agency is no longer in-network for her insurance. The search for an in-network replacement is further complicated by a localized staffing shortage that threatens to delay her start-of-care. The Patient Navigator's role is critical in identifying alternative agencies with specific renal experience and ensuring the family accepts the new provider. By facilitating the logistical handoff between the facility and the new HHA, the PN ensures Mrs. Gable does not face a gap in her vital medication and fluid monitoring."
+}

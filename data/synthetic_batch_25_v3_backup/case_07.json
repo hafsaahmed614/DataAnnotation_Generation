@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Facility confirms clinical readiness for a 69yo female with a diabetic calcaneal ulcer; however, the scheduled wheelchair transport for the 1:00 PM discharge is a no-show due to a regional dispatch error.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The third-party transport vendor overbooked their Friday afternoon route and failed to notify the facility Social Worker until 3:30 PM."
+    },
+    {
+      "event_description": "The transport delay pushes the patient's home arrival past 4:00 PM, triggering a conflict with the Home Health Agency (HHA) intake nurse's Friday cutoff.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA refuses to process a 'Start of Care' visit after 5:00 PM on Fridays, and they do not have weekend intake staff available for new admissions."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The failure of Friday transport threatens to leave the patient without skilled nursing for the diabetic wound over the weekend.",
+      "action_taken": "PN contacted the HHA Regional Director to secure a verbal commitment for a Priority Monday 8:00 AM admission slot before the weekend freeze took effect.",
+      "taxonomy_category": "Schedule De-conflict",
+      "tactical_field_intent": "Lock in the HHA's first available Monday slot to prevent the referral from being 'lost' or deprioritized during the weekend backlog."
+    },
+    {
+      "situation": "The family expresses anxiety about managing the diabetic wound vac without professional assistance until Monday.",
+      "action_taken": "PN verified that the facility provided a 3-day supply of wound canisters and coordinated a brief training reinforcement session between the floor nurse and the daughter.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Prevent a 'refusal of service' or a last-minute pivot to a different agency by stabilizing the caregiver's confidence during the transport delay."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the facility Social Worker to resolve the transport scheduling issue and monitor the Atlantis portal for a new discharge date to be posted on Monday.",
+      "rationale": "The PN avoids friction with the facility staff but risks the HHA canceling the referral entirely due to the lack of a firm transition window, leading to a loss of service continuity."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Confirm with the HHA that the Monday 9:00 AM 'Start of Care' is still viable, then coordinate with the family to ensure they have the HHA\u2019s on-call number for any weekend wound vac technical issues.",
+      "rationale": "This maintains the PN's role as a transition bridge, ensuring the home health adoption is not derailed by the transport-induced delay while staying within non-clinical boundaries."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the transport company's corporate dispatch office to demand a priority vehicle, then offer to update the patient's clinical medication reconciliation in the facility's EMR to speed up the Monday exit.",
+      "rationale": "The PN is attempting to manage facility vendors and perform clinical documentation tasks (medication reconciliation) that are strictly the responsibility of the Social Worker and clinical staff."
+    }
+  ],
+  "narrative_summary": "A 69-year-old female with a stage III diabetic calcaneal ulcer was prepared for transition to home health following a 24-day stay. The transition plan faltered when the contracted wheelchair transport failed to arrive for the Friday afternoon discharge, threatening the Home Health Agency's (HHA) Friday admission window and triggering a weekend service freeze. The Patient Navigator stepped in to synchronize a new Monday morning transport arrival with the HHA's intake schedule, ensuring the family was equipped for weekend wound management while securing the service adoption for the following week."
+}

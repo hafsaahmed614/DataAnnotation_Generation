@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial HHA referral for post-spinal fusion PT and nursing rejected by primary agency due to a lack of available field staff in the patient's rural zip code.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's regional staffing coordinator reported a vacancy for the specific territory, preventing any new admissions regardless of clinical urgency."
+    },
+    {
+      "event_description": "PN identifies a secondary HHA but the agency requires a home safety assessment before confirming the start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The secondary HHA's therapist is only available for home inspections on Tuesdays, and the referral was received late Thursday afternoon."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Primary HHA preferred by the family cannot staff the nursing visits for the first 72 hours post-discharge.",
+      "action_taken": "Negotiated with the HHA Regional Director to utilize a per-diem nurse from a neighboring county for the initial intake and first two visits.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Secure a verbal commitment for the admission slot to prevent the Social Worker from steering the patient to a sub-optimal facility-owned agency."
+    },
+    {
+      "situation": "The HHA's start-of-care date is set for Monday, but the SNF plans to discharge the patient on a Friday afternoon.",
+      "action_taken": "Coordinated with the Regional Director and HHA Intake to confirm a 'weekend exception' for a Saturday morning nurse visit.",
+      "taxonomy_category": "Schedule De-conflict",
+      "tactical_field_intent": "Ensure the first home visit occurs within 24 hours to maximize the likelihood of long-term service adoption and prevent readmission."
+    },
+    {
+      "situation": "The patient's family is unsure if the home is ready for a walker and post-surgical equipment.",
+      "action_taken": "Provided the family with a transition checklist and confirmed the DME vendor's delivery window for the hospital bed and walker.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Empower the family to self-report readiness to the Social Worker, reducing the chance of a 'last-minute' discharge cancellation."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the facility's internal referral portal and wait for the Social Worker to identify an alternative agency that has an open staffing slot for the patient's location.",
+      "rationale": "This approach relies entirely on the facility's existing discharge workflow and avoids the PN taking an active role in agency selection or logistics, likely resulting in a multi-day delay."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Directly contact three in-network HHAs to verify current staffing capacity for spinal fusion recovery and confirm which agency can guarantee a start-of-care visit within 48 hours of the projected discharge date.",
+      "rationale": "The PN is performing core transition logistics by vetting agency availability and ensuring the home team is ready to receive the patient, staying strictly within the non-clinical scope."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the patient's insurance provider to request an out-of-network authorization for a specialized nursing agency and draft a clinical justification for the Social Worker to sign.",
+      "rationale": "This oversteps into both Administrative (insurance auth) and Clinical (drafting justifications) domains, which are the exclusive responsibilities of the facility Social Worker and clinical team."
+    }
+  ],
+  "narrative_summary": "The transition for this 70-year-old spinal fusion patient was initially stalled by a severe HHA staffing shortage in his rural zip code, threatening to keep him in the SNF past his clinical readiness. By leveraging relationships with regional HHA directors, the Patient Navigator was able to secure a staffing exception and coordinate a Saturday start-of-care to avoid a weekend gap. This proactive coordination ensured that the patient\u2019s home PT and nursing services were locked in before the facility could pivot to a different discharge plan. The case concluded with a successful home transition, maintaining clinical continuity despite the regional provider shortage."
+}

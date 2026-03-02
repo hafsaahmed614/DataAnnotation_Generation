@@ -1,66 +1,67 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge from the facility and the initial faxing of the referral packet. The Patient Navigator is responsible for verifying the HHA's receipt of those orders, confirming the start-of-care (SOC) date with the home team, and educating the family on what happens the moment the patient crosses the threshold of their home.",
   "format_1_state_log": [
     {
-      "event_description": "Initial referral sent to preferred HHA; however, the HHA Intake Coordinator is out on unscheduled PTO with no active backup coverage for the regional territory.",
+      "event_description": "The HHA Intake Coordinator is out on unscheduled PTO, and the backup contact is unresponsive to the facility's referral for the spinal fusion follow-up.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA's internal policy requires the specific territory coordinator to sign off on staffing ratios before confirming an admission slot."
+      "ai_assumed_bottleneck": "The HHA has a single-point-of-failure in their intake department, causing a backlog of unprocessed referrals over the weekend."
     },
     {
-      "event_description": "Discharge date finalized for Friday afternoon, but HHA intake remains unresponsive, threatening a weekend service gap for high-acuity stroke recovery.",
+      "event_description": "Upon follow-up, the HHA reports they received the demographics and insurance face sheet, but the physician's specific home health orders (PT frequency and incision care) are missing from the packet.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20133 Days",
-      "ai_assumed_bottleneck": "HHA Weekend Admission Freeze; the agency will not process new starts-of-care between Friday 3:00 PM and Monday 9:00 AM."
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "The facility's automated fax system failed to attach the clinical 'Orders' tab from the EMR, and the SW is currently in a 4-hour care conference."
     },
     {
-      "event_description": "PN identifies an alternative in-network HHA with a 'Weekend Warrior' intake team and confirms therapist availability for a Saturday morning assessment.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "The transition was initially stalled by rigid agency-specific staffing models rather than patient clinical readiness."
+      "event_description": "The patient's spouse expresses fear about assisting the patient with the back brace during the first 24 hours at home without a nurse present.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver panic is rising because the HHA cannot provide a specific time window for the first visit until the orders are processed."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA intake coordinator is unavailable, and the agency cannot confirm the first PT visit for the stroke patient.",
-      "action_taken": "Contacted the HHA Clinical Liaison directly to request a manual override of the intake queue for a high-priority post-stroke referral.",
+      "situation": "The primary HHA intake coordinator is unavailable, leaving the referral in 'pending' status while the discharge date looms.",
+      "action_taken": "Contacted the HHA's Director of Nursing to identify the specific backup staff member authorized to review the referral packet.",
       "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Leverage a personal relationship with the liaison to bypass the administrative desk bottleneck without involving the facility SW."
+      "tactical_field_intent": "Establish a secondary point of contact at the HHA to bypass the administrative bottleneck without involving the SW yet."
     },
     {
-      "situation": "Family is concerned that a Friday discharge will result in the patient being home for three days without stroke-specific therapy.",
-      "action_taken": "Educated the family on the difference between 'Friday Discharges' and 'Weekend Starts-of-Care' and offered to verify the HHA's weekend staffing roster.",
+      "situation": "The HHA reports missing clinical orders, but the SW insists the entire packet was sent via the facility portal.",
+      "action_taken": "Requested the HHA fax-confirmation log and presented the discrepancy to the SW, suggesting a manual fax of the PT/RN orders.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with objective proof of the failure so they can rectify the clinical handoff without feeling personally attacked."
+    },
+    {
+      "situation": "The patient's wife is threatening to refuse the Friday discharge because she hasn't heard from the HHA nurse.",
+      "action_taken": "Walked the family through a 'Day 1' checklist, including what to do if the nurse arrives after 5 PM and how to contact the HHA's on-call supervisor.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Manage family expectations early to prevent them from feeling abandoned by the transition team over the weekend."
-    },
-    {
-      "situation": "The SNF medication list includes a new anticoagulant that was not on the HHA's preliminary referral file.",
-      "action_taken": "Cross-referenced the SNF discharge summary with the HHA's intake packet and flagged the discrepancy for the HHA's admitting nurse.",
-      "taxonomy_category": "Schedule De-conflict",
-      "tactical_field_intent": "Pre-emptively resolve medication reconciliation errors to ensure the first home visit focus remains on clinical assessment rather than paperwork."
+      "tactical_field_intent": "De-escalate caregiver anxiety to ensure the patient actually goes home, securing the service conversion."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Advise the family that the facility Social Worker is responsible for the HHA follow-up and monitor the referral portal for status updates.",
-      "rationale": "The PN is waiting for the system to correct itself and deferring the coordination of the transition back to the facility staff, risking a 3-day care gap."
+      "description": "Document the missing order status in the transition log and notify the Social Worker via email that the HHA cannot confirm a start-of-care date until the clinical packet is complete, then wait for the facility's response.",
+      "rationale": "This is a strategic deferral. The PN recognizes that clinical orders are the sole responsibility of the facility and the physician. Stepping back prevents the PN from becoming the 'middleman' for clinical documentation they cannot legally touch."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Identify a secondary in-network HHA with confirmed weekend intake capacity and present the option to the facility Social Worker and the family.",
-      "rationale": "The PN remains within scope by facilitating choice and ensuring continuity of care without performing clinical tasks or administrative discharge duties."
+      "description": "Verify the HHA's direct clinical fax number, provide it to the Social Worker, and present two alternative agencies that have confirmed they have 'weekend intake' capacity if the current agency cannot process the orders by 2 PM.",
+      "rationale": "The PN is supporting the transition by identifying the technical fix (the fax number) and suggesting pre-vetted alternatives, while leaving the final decision and the clinical action to the SW."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Request the patient's EMR login from the nurse's station to download the latest PT notes and fax them directly to the HHA to expedite their clinical review.",
-      "rationale": "The PN is accessing clinical records and performing documentation tasks that are the sole responsibility of the facility's clinical and social work staff."
+      "description": "Call the spinal surgeon's medical assistant directly to explain the HHA's delay and request that they fax a duplicate set of the PT and wound care orders to the agency to ensure the Friday discharge is not missed.",
+      "rationale": "This is a hero complex overstep. The PN is acting as a clinical liaison and bypassing the facility's established discharge process, which could create conflicting orders or HIPAA concerns."
     }
   ],
-  "narrative_summary": "An 81-year-old male is ready to transition home following a successful sub-acute rehab stay for an ischemic stroke. The transition was nearly derailed when the primary Home Health Agency's intake coordinator went on leave, leaving the referral in an unconfirmed status as the weekend approached. The Patient Navigator successfully navigated this operational friction by coordinating between the family and an alternative HHA that offered weekend starts-of-care, ensuring PT and OT services began within 24 hours of discharge. This intervention prevented a common 'Friday slump' where high-needs patients sit at home without skilled support for several days."
+  "narrative_summary": "Mr. Vance, a 70-year-old post-spinal fusion patient, was scheduled for a Friday discharge with a plan for home PT and nursing. The transition stalled when the HHA reported that the clinical orders were missing from the facility's referral packet, and the HHA's intake coordinator was out sick. The PN navigated a rising tide of caregiver panic from the patient's wife, who felt unprepared to manage his back brace without professional guidance. By identifying a backup contact at the HHA and providing the SW with the missing order verification, the PN aimed to secure a late Friday start-of-care despite the administrative friction."
 }

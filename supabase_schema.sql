@@ -361,3 +361,139 @@ CREATE POLICY "Navigators manage own f3 evals v3"
     ON eval_format_3_boundaries_v3 FOR ALL
     USING (EXISTS (SELECT 1 FROM evaluation_sessions_v3 WHERE evaluation_sessions_v3.id = eval_format_3_boundaries_v3.session_id AND evaluation_sessions_v3.navigator_id = auth.uid()))
     WITH CHECK (EXISTS (SELECT 1 FROM evaluation_sessions_v3 WHERE evaluation_sessions_v3.id = eval_format_3_boundaries_v3.session_id AND evaluation_sessions_v3.navigator_id = auth.uid()));
+
+
+-- ============================================================================
+-- V4 TABLES (Round 3 — "Support, Suggest, Escalate" mentality overhaul)
+-- V3 tables above are preserved with Round 2 evaluation data.
+-- ============================================================================
+
+-- ── 12. synthetic_cases_v4 ──────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS synthetic_cases_v4 (
+    id                              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    batch_id                        TEXT,
+    label                           TEXT,
+    narrative_summary               TEXT,
+    boundary_planning_scratchpad    TEXT,
+    format_1_state_log              JSONB,
+    format_2_triples                JSONB,
+    format_3_rl_scenario            JSONB,
+    created_at                      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ── 13. evaluation_sessions_v4 ──────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS evaluation_sessions_v4 (
+    id                          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    case_id                     UUID NOT NULL REFERENCES synthetic_cases_v4(id) ON DELETE CASCADE,
+    case_label                  TEXT,
+    navigator_id                UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+    navigator_name              TEXT,
+    status                      TEXT NOT NULL DEFAULT 'in_progress'
+                                CHECK (status IN ('in_progress', 'completed')),
+    overall_field_authenticity  INT CHECK (overall_field_authenticity BETWEEN 1 AND 5),
+    authenticity_reasoning      TEXT,
+    improvement_suggestion      TEXT,
+    created_at                  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    completed_at                TIMESTAMPTZ,
+    UNIQUE(case_id, navigator_id)
+);
+
+-- ── 14. eval_format_1_timeline_v4 ───────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS eval_format_1_timeline_v4 (
+    id                              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    session_id                      UUID NOT NULL REFERENCES evaluation_sessions_v4(id) ON DELETE CASCADE,
+    case_label                      TEXT,
+    navigator_name                  TEXT,
+    event_index                     INT NOT NULL,
+    clinical_impact                 TEXT NOT NULL,
+    environmental_impact            TEXT NOT NULL,
+    home_service_adoption_impact    TEXT NOT NULL,
+    edd_delta                       TEXT NOT NULL,
+    bottleneck_realism              BOOLEAN NOT NULL
+);
+
+-- ── 15. eval_format_2_tactics_v4 ────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS eval_format_2_tactics_v4 (
+    id                          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    session_id                  UUID NOT NULL REFERENCES evaluation_sessions_v4(id) ON DELETE CASCADE,
+    case_label                  TEXT,
+    navigator_name              TEXT,
+    triple_index                INT NOT NULL,
+    tactical_viability_score    INT NOT NULL CHECK (tactical_viability_score BETWEEN 1 AND 5)
+);
+
+-- ── 16. eval_format_3_boundaries_v4 ─────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS eval_format_3_boundaries_v4 (
+    id                      UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    session_id              UUID NOT NULL REFERENCES evaluation_sessions_v4(id) ON DELETE CASCADE,
+    case_label              TEXT,
+    navigator_name          TEXT,
+    option_index            INT NOT NULL,
+    pn_category             TEXT NOT NULL,
+    ai_intended_category    TEXT NOT NULL
+);
+
+
+-- ============================================================================
+-- V4 TABLE RLS POLICIES
+-- ============================================================================
+
+ALTER TABLE synthetic_cases_v4 ENABLE ROW LEVEL SECURITY;
+ALTER TABLE evaluation_sessions_v4 ENABLE ROW LEVEL SECURITY;
+ALTER TABLE eval_format_1_timeline_v4 ENABLE ROW LEVEL SECURITY;
+ALTER TABLE eval_format_2_tactics_v4 ENABLE ROW LEVEL SECURITY;
+ALTER TABLE eval_format_3_boundaries_v4 ENABLE ROW LEVEL SECURITY;
+
+-- synthetic_cases_v4
+DROP POLICY IF EXISTS "Admins full access on synthetic_cases_v4" ON synthetic_cases_v4;
+CREATE POLICY "Admins full access on synthetic_cases_v4"
+    ON synthetic_cases_v4 FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators read synthetic_cases_v4" ON synthetic_cases_v4;
+CREATE POLICY "Navigators read synthetic_cases_v4"
+    ON synthetic_cases_v4 FOR SELECT
+    USING (EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'navigator'));
+
+-- evaluation_sessions_v4
+DROP POLICY IF EXISTS "Admins full access on evaluation_sessions_v4" ON evaluation_sessions_v4;
+CREATE POLICY "Admins full access on evaluation_sessions_v4"
+    ON evaluation_sessions_v4 FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own sessions v4" ON evaluation_sessions_v4;
+CREATE POLICY "Navigators manage own sessions v4"
+    ON evaluation_sessions_v4 FOR ALL
+    USING (navigator_id = auth.uid())
+    WITH CHECK (navigator_id = auth.uid());
+
+-- eval_format_1_timeline_v4
+DROP POLICY IF EXISTS "Admins full access on eval_format_1_timeline_v4" ON eval_format_1_timeline_v4;
+CREATE POLICY "Admins full access on eval_format_1_timeline_v4"
+    ON eval_format_1_timeline_v4 FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own f1 evals v4" ON eval_format_1_timeline_v4;
+CREATE POLICY "Navigators manage own f1 evals v4"
+    ON eval_format_1_timeline_v4 FOR ALL
+    USING (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_1_timeline_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()))
+    WITH CHECK (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_1_timeline_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()));
+
+-- eval_format_2_tactics_v4
+DROP POLICY IF EXISTS "Admins full access on eval_format_2_tactics_v4" ON eval_format_2_tactics_v4;
+CREATE POLICY "Admins full access on eval_format_2_tactics_v4"
+    ON eval_format_2_tactics_v4 FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own f2 evals v4" ON eval_format_2_tactics_v4;
+CREATE POLICY "Navigators manage own f2 evals v4"
+    ON eval_format_2_tactics_v4 FOR ALL
+    USING (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_2_tactics_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()))
+    WITH CHECK (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_2_tactics_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()));
+
+-- eval_format_3_boundaries_v4
+DROP POLICY IF EXISTS "Admins full access on eval_format_3_boundaries_v4" ON eval_format_3_boundaries_v4;
+CREATE POLICY "Admins full access on eval_format_3_boundaries_v4"
+    ON eval_format_3_boundaries_v4 FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own f3 evals v4" ON eval_format_3_boundaries_v4;
+CREATE POLICY "Navigators manage own f3 evals v4"
+    ON eval_format_3_boundaries_v4 FOR ALL
+    USING (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_3_boundaries_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()))
+    WITH CHECK (EXISTS (SELECT 1 FROM evaluation_sessions_v4 WHERE evaluation_sessions_v4.id = eval_format_3_boundaries_v4.session_id AND evaluation_sessions_v4.navigator_id = auth.uid()));

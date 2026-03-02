@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Medicaid CHC Waiver process initiated for entry ramp installation following bilateral TKA; SNF clinical team confirms patient is PT-ready, but home remains inaccessible.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The state-assigned caseworker is strictly adhering to the 'three-estimate' rule and will not approve the contractor until the third bid is received, despite the first two being submitted."
+    },
+    {
+      "event_description": "DME vendor reports a backlog on the heavy-duty bariatric walker and CPM machine required for home recovery.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The DME provider\u2019s regional warehouse is understaffed, leading to a 5-day delay in processing orthopedic equipment orders."
+    },
+    {
+      "event_description": "HHA identifies a staffing shortage for physical therapists in the patient's rural zip code, threatening the 48-hour start-of-care window.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's only therapist covering the northern county resigned, and the agency is struggling to re-route a therapist from the central branch."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA intake coordinator is refusing to accept the referral because the SNF medication list contains a high-dose anticoagulant that isn't on the HHA's standard formulary.",
+      "action_taken": "Facilitated a direct call between the HHA intake nurse and the facility's floor nurse to reconcile the medication list before the final discharge order was printed.",
+      "taxonomy_category": "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'",
+      "tactical_field_intent": "Ensure the HHA has no administrative excuses to deny the admission on the day of discharge."
+    },
+    {
+      "situation": "The family is confused about the difference between the Medicaid CHC waiver for the ramp and the HHA's skilled PT visits, leading to frustration over the delay.",
+      "action_taken": "Provided the family with a physical transition roadmap outlining the separate timelines for the environmental modifications versus the clinical home health start-of-care.",
+      "taxonomy_category": "Educate patient/family on program benefits",
+      "tactical_field_intent": "Prevent 'missed' discharge or refusal by managing expectations regarding the bureaucratic delay."
+    },
+    {
+      "situation": "The HHA indicates they cannot admit the patient on a Friday due to a 'Weekend Admission Freeze' for new orthopedic cases.",
+      "action_taken": "Negotiated with the HHA Regional Director to secure a Monday morning 'Start of Care' (SOC) and confirmed the SNF would hold the patient until then to avoid a weekend care gap.",
+      "taxonomy_category": "Talk with SW to confirm D/C date and HHA selection",
+      "tactical_field_intent": "Protect the patient's safety by preventing a 'Friday Drop' where the patient sits at home without professional support for 72 hours."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Social Worker's progress on the Medicaid waiver and wait for the facility to confirm the ramp installation date before contacting the HHA.",
+      "rationale": "The PN is deferring the environmental barrier management entirely to the facility staff, risking a scenario where the HHA is not ready when the ramp is finally installed."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Confirm the HHA has the patient's updated home address and a secondary contact number for the contractor, then schedule a tentative 'Start of Care' date conditioned on the ramp completion.",
+      "rationale": "This keeps the transition logistics moving forward within the PN's scope without overstepping into the caseworker's legal or financial territory."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the Medicaid CHC caseworker directly to submit the three required contractor estimates and advocate for the patient\u2019s financial eligibility to speed up the approval.",
+      "rationale": "This is an overstep because it involves the PN performing the Social Worker's role in financial advocacy and bureaucratic management of state waiver programs."
+    }
+  ],
+  "narrative_summary": "The transition for this 88-year-old male following bilateral TKA was primarily stalled by a 45-day Medicaid CHC Waiver delay for a necessary home ramp. The Patient Navigator focused on maintaining the HHA's commitment to the case despite the extended timeline and rural staffing shortages. By reconciling a medication list mismatch and preventing a Friday discharge during an HHA weekend freeze, the PN ensured the patient returned home with both the physical modifications and skilled nursing support synchronized for a safe recovery."
+}

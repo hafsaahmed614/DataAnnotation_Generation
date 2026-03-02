@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial HHA referral for diabetic wound care rejected due to lack of wound-certified nursing staff in the patient's rural zip code.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+10 Days",
+      "ai_assumed_bottleneck": "The HHA's regional staffing manager failed to update the referral portal to show that their only wound-certified RN for the county is on extended medical leave."
+    },
+    {
+      "event_description": "PN identifies a discrepancy between the facility's final insulin sliding scale and the orders received by the HHA's intake department.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "The SNF floor nurse updated the paper chart but the administrative clerk faxed an older version of the medication list to the home health agency."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The preferred HHA reports a staffing freeze for new diabetic debridement cases in the patient's specific geographic zone.",
+      "action_taken": "Initiated a conference call with the HHA Regional Director to negotiate a mileage-based incentive for a nurse from an adjacent territory to cover the first 48 hours.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Leverage the agency's regional volume to force a staffing exception before the Social Worker looks for a different agency."
+    },
+    {
+      "situation": "Patient's daughter expresses confusion about the timing of the first home nurse visit versus the delivery of the specialized diabetic dressings.",
+      "action_taken": "Provided a physical appointment card documenting the HHA's 'Start of Care' window and the DME vendor's delivery confirmation number.",
+      "taxonomy_category": "Patient Confirmation",
+      "tactical_field_intent": "Reduce family anxiety to prevent them from calling the SNF and potentially triggering a 'safety' hold that would delay the transition."
+    },
+    {
+      "situation": "Medication reconciliation reveals the HHA is missing the updated prescription for the patient's off-loading boot.",
+      "action_taken": "Alerted the HHA intake coordinator to the specific missing order and cross-referenced the SNF's last-signed physician order set.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Ensure the HHA has all necessary documentation to prevent a 'refusal to treat' once the nurse arrives at the home."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN monitors the SNF's referral portal and waits for the Social Worker to identify a secondary HHA that has available staffing in the patient's zip code.",
+      "rationale": "The PN is deferring the logistical search entirely to the facility staff, which often results in the patient remaining in the SNF longer than necessary while the SW manages other cases."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN contacts three alternative in-network HHAs to verify current wound-care nursing availability and presents the 'ready-to-accept' options to the Social Worker.",
+      "rationale": "This remains within the PN scope by facilitating the transition logistics and providing the SW with actionable data without making the final clinical or placement decision."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN calls the patient's insurance provider to request a single-case agreement for an out-of-network HHA that has better staffing for diabetic wounds.",
+      "rationale": "Insurance negotiations and 'Single Case Agreements' are strictly the responsibility of the facility Social Worker or Case Manager; a PN engaging in financial/contractual advocacy oversteps their non-clinical role."
+    }
+  ],
+  "narrative_summary": "A 69-year-old female with a complex diabetic foot ulcer faces a significant transition delay when the primary HHA reveals a staffing shortage in her rural region. The Patient Navigator intervenes by identifying alternative agencies with active wound-certified nurses and coordinating with the Regional Director to bridge the coverage gap. During the final handoff, the PN identifies a medication list mismatch regarding the patient's insulin, resolving it through the HHA intake coordinator to ensure a safe first home visit. The case concludes with a successful transition to home care despite the regional provider limitations."
+}

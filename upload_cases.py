@@ -16,8 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25_v3"
-TABLE_NAME = "synthetic_cases_v3"
+BATCH_ID = "synthetic_batch_25_v4"
+TABLE_NAME = "synthetic_cases_v4"
 
 
 def main():
@@ -42,6 +42,7 @@ def main():
             "batch_id": BATCH_ID,
             "label": f"Case_{idx}",
             "narrative_summary": data.get("narrative_summary", ""),
+            "boundary_planning_scratchpad": data.get("boundary_planning_scratchpad", ""),
             "format_1_state_log": data.get("format_1_state_log", []),
             "format_2_triples": data.get("format_2_triples", []),
             "format_3_rl_scenario": data.get("format_3_rl_scenario", []),

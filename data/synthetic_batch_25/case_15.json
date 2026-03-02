@@ -1,66 +1,59 @@
 {
+  "boundary_planning_scratchpad": "The SW is handling the formal clinical discharge meeting, the legal sign-off for catheter competency, and the final physician orders. The PN is only handling the verification of the HHA's intake readiness, educating the daughter on the specific sequence of events for the first 48 hours at home, and flagging the caregiver's panic level to the SW to prevent a last-minute refusal of transport.",
   "format_1_state_log": [
     {
-      "event_description": "Medicaid CHC Waiver process initiated for entry ramp installation following bilateral TKA; SNF clinical team confirms patient is PT-ready, but home remains inaccessible.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+30\u201345 Days",
-      "ai_assumed_bottleneck": "The state-assigned caseworker is strictly adhering to the 'three-estimate' rule and will not approve the contractor until the third bid is received, despite the first two being submitted."
-    },
-    {
-      "event_description": "DME vendor reports a backlog on the heavy-duty bariatric walker and CPM machine required for home recovery.",
+      "event_description": "SW confirms Thursday discharge; however, the daughter (Linda) reports she has never seen a catheter changed and refuses to sign the transport agreement due to her father's Parkinson's tremors making her 'too shaky' to help.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The DME provider\u2019s regional warehouse is understaffed, leading to a 5-day delay in processing orthopedic equipment orders."
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The facility floor nurses are short-staffed and have not scheduled the mandatory family teaching session despite the SW marking it as 'pending' in the transition notes."
     },
     {
-      "event_description": "HHA identifies a staffing shortage for physical therapists in the patient's rural zip code, threatening the 48-hour start-of-care window.",
-      "clinical_impact": "Worsens",
+      "event_description": "HHA 'Reliance Home Care' places the intake on hold, stating they cannot provide a Start of Care (SOC) window until they receive a verified 'Caregiver Competency' note from the facility regarding the indwelling catheter.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA's only therapist covering the northern county resigned, and the agency is struggling to re-route a therapist from the central branch."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA Intake Coordinator is strictly adhering to a risk-mitigation policy that requires family training documentation before assigning a field nurse to a high-tremor Parkinson's patient."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA intake coordinator is refusing to accept the referral because the SNF medication list contains a high-dose anticoagulant that isn't on the HHA's standard formulary.",
-      "action_taken": "Facilitated a direct call between the HHA intake nurse and the facility's floor nurse to reconcile the medication list before the final discharge order was printed.",
-      "taxonomy_category": "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'",
-      "tactical_field_intent": "Ensure the HHA has no administrative excuses to deny the admission on the day of discharge."
+      "situation": "The daughter, Linda, is threatening to refuse the discharge because she doesn't know what to do if the catheter leaks before the HHA nurse arrives.",
+      "action_taken": "Walked the daughter through the 'Day 1' expectation checklist, specifically detailing that the HHA nurse provides an emergency 24/7 triage number and that the PN will verify the HHA's arrival window before Arthur leaves the facility.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate caregiver panic to prevent a 'refusal of transport' while keeping the SW informed of the emotional volatility."
     },
     {
-      "situation": "The family is confused about the difference between the Medicaid CHC waiver for the ramp and the HHA's skilled PT visits, leading to frustration over the delay.",
-      "action_taken": "Provided the family with a physical transition roadmap outlining the separate timelines for the environmental modifications versus the clinical home health start-of-care.",
-      "taxonomy_category": "Educate patient/family on program benefits",
-      "tactical_field_intent": "Prevent 'missed' discharge or refusal by managing expectations regarding the bureaucratic delay."
+      "situation": "The primary HHA (Reliance) is refusing to commit to a Friday SOC due to the missing training documentation, risking a weekend with no clinical oversight.",
+      "action_taken": "Presented 2 pre-vetted alternative agencies to the SW that have 'Neuro-Specialty' nurses available for Saturday starts who are willing to perform the initial training in-home if the facility provides the baseline orders.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with an immediate 'Plan B' to bypass the primary HHA's bureaucratic intake freeze."
     },
     {
-      "situation": "The HHA indicates they cannot admit the patient on a Friday due to a 'Weekend Admission Freeze' for new orthopedic cases.",
-      "action_taken": "Negotiated with the HHA Regional Director to secure a Monday morning 'Start of Care' (SOC) and confirmed the SNF would hold the patient until then to avoid a weekend care gap.",
-      "taxonomy_category": "Talk with SW to confirm D/C date and HHA selection",
-      "tactical_field_intent": "Protect the patient's safety by preventing a 'Friday Drop' where the patient sits at home without professional support for 72 hours."
+      "situation": "The facility medication list for Arthur\u2019s Parkinson\u2019s meds (Carbidopa/Levodopa) shows a different frequency than what the daughter has in her notes from home.",
+      "action_taken": "Flagged the medication frequency discrepancy to the SW and requested that the HHA referral packet be updated with the most recent facility MAR (Medication Administration Record) to ensure the HHA nurse has the correct data for the first visit.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Ensure the HHA has the 'source of truth' for meds without the PN attempting to reconcile the clinical data themselves."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Monitor the Social Worker's progress on the Medicaid waiver and wait for the facility to confirm the ramp installation date before contacting the HHA.",
-      "rationale": "The PN is deferring the environmental barrier management entirely to the facility staff, risking a scenario where the HHA is not ready when the ramp is finally installed."
+      "description": "Documented the daughter's stated fears regarding the catheter and Parkinson's tremors in the transition log and notified the Social Worker via email that the family is requesting a formal care conference before proceeding with the discharge.",
+      "rationale": "This is a strategic deferral. The family's refusal to proceed is a high-level discharge planning barrier that falls squarely under the SW's professional responsibility to resolve through a clinical/legal meeting."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Confirm the HHA has the patient's updated home address and a secondary contact number for the contractor, then schedule a tentative 'Start of Care' date conditioned on the ramp completion.",
-      "rationale": "This keeps the transition logistics moving forward within the PN's scope without overstepping into the caseworker's legal or financial territory."
+      "description": "Suggested to the Social Worker that the floor nurse allow the daughter to observe the 2:00 PM catheter care today, and simultaneously contacted the HHA to confirm they have the correct supplies (leg bags and overnight bags) ready for delivery to the home.",
+      "rationale": "This is Rank 1 PN behavior. It supports the existing plan by suggesting a practical step to the SW (observation) while verifying the logistical readiness (supplies) which is the PN's core domain."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the Medicaid CHC caseworker directly to submit the three required contractor estimates and advocate for the patient\u2019s financial eligibility to speed up the approval.",
-      "rationale": "This is an overstep because it involves the PN performing the Social Worker's role in financial advocacy and bureaucratic management of state waiver programs."
+      "description": "Took the daughter into the patient's room and personally demonstrated how to secure the catheter bag to the leg to show her that her father's tremors wouldn't interfere with the drainage, then called the HHA to tell them the 'training' was complete.",
+      "rationale": "This is a Hero Complex overstep. The PN is performing a clinical demonstration (out of scope) and potentially falsifying 'training' status to the HHA, bypassing the facility's legal responsibility for competency sign-off."
     }
   ],
-  "narrative_summary": "The transition for this 88-year-old male following bilateral TKA was primarily stalled by a 45-day Medicaid CHC Waiver delay for a necessary home ramp. The Patient Navigator focused on maintaining the HHA's commitment to the case despite the extended timeline and rural staffing shortages. By reconciling a medication list mismatch and preventing a Friday discharge during an HHA weekend freeze, the PN ensured the patient returned home with both the physical modifications and skilled nursing support synchronized for a safe recovery."
+  "narrative_summary": "Arthur, an 82-year-old with advanced Parkinson\u2019s, is nearing discharge following a UTI, but the transition is stalled by his daughter's fear of managing his new catheter amidst his significant tremors. The primary Home Health Agency is refusing to schedule the start-of-care visit until the facility provides a formal caregiver training sign-off, which the floor staff has yet to complete. The Patient Navigator is currently working to de-escalate the daughter\u2019s anxiety by setting Day 1 expectations while providing the Social Worker with alternative HHA options that offer more flexible neuro-specialty weekend coverage."
 }

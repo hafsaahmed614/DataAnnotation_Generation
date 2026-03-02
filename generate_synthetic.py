@@ -35,7 +35,7 @@ MODEL_NAME         = "gemini-3-flash-preview"
 
 # Target variables for this generation run (override via env vars or edit here)
 TARGET_COMPLEXITY_GTE  = int(os.environ.get("COMPLEXITY_GTE", 4))
-TARGET_FRICTION        = os.environ.get("FRICTION_BARRIER", "Managed Medicare Auth")
+TARGET_FRICTION        = os.environ.get("FRICTION_BARRIER", "HHA_Intake_Freeze")
 TARGET_PATIENT_DESC    = os.environ.get("PATIENT_DESC", "78yo Female, CHF")
 N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
@@ -60,12 +60,13 @@ class ReasoningTriple(BaseModel):
 
 
 class RLScenarioOption(BaseModel):
-    ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(description="The hidden classification. Do not reveal this in the description.")
+    ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(description="The hidden classification. Do not reveal this in the description. Passive = 'Strategic Deferral' (PN steps back to let SW handle a volatile or out-of-scope situation). Proactive = 'Collaborative and Deferential' (PN escalates to SW, educates family, suggests alternatives, or verifies HHA logistics). Overstep = 'Hero Complex' (PN tries to fix it themselves, doing the SW's or clinician's job).")
     description: str = Field(description="The exact action taken by the PN. It MUST sound professional and clinically appropriate, even if it is technically a passive move or a boundary overstep.")
-    rationale: str = Field(description="The hidden explanation of why the AI classified it this way (e.g., explaining exactly whose toes are stepped on for an Overstep).")
+    rationale: str = Field(description="The hidden explanation of why the AI classified it this way (e.g., explaining exactly whose toes are stepped on for an Overstep, or why stepping back is the right boundary call for Passive).")
 
 
 class SyntheticCaseOutput(BaseModel):
+    boundary_planning_scratchpad: str = Field(description="Before writing the case, explicitly state: 'The SW is handling [X] and the PN is only handling [Y]'. This must clearly delineate SW vs PN responsibilities for this specific case.")
     format_1_state_log: List[StateLogEntry]
     format_2_triples: List[ReasoningTriple]
     format_3_rl_scenario: List[RLScenarioOption]
@@ -166,9 +167,9 @@ Rules for Format 3 (RL Scenarios):
 6. The format_3_rl_scenario MUST contain exactly THREE options for a single difficult dilemma.
 7. You must generate one "Passive" option, one "Proactive" option, and one "Overstep" option.
 8. CRITICAL: The `description` for all three options must sound highly professional, reasonable, and tempting.
-   - "Passive" means the PN waits for the SW/facility to handle everything and fails to follow up on HHA setup or home equipment.
-   - "Proactive" means the PN takes a great field action WITHIN THEIR SCOPE (e.g., confirming the HHA admission date, verifying supplies are waiting at home, educating the family on what to expect on Day 1, checking weekend HHA availability).
-   - "Overstep" MUST feature the PN accidentally doing the Social Worker's job (e.g., handling discharge documentation, confronting facility staff, calling the patient's insurance, or drafting clinical notes). It must still sound like good patient advocacy to a rookie.
+   - "Passive" = STRATEGIC DEFERRAL: The PN deliberately steps back to let the SW or facility handle a volatile or out-of-scope situation. This is NOT laziness — it is a boundary-respecting choice where the PN recognizes the issue belongs to someone else (e.g., "I documented the family's concerns and notified the SW to address them in the next care conference"). A veteran would recognize this as wise restraint.
+   - "Proactive" = COLLABORATIVE AND DEFERENTIAL (Rank 1): The PN takes action WITHIN THEIR SCOPE by doing one of: (a) Escalating to the SW with specific, actionable information, (b) Educating the family on Day 1 home expectations, (c) Suggesting 2-3 pre-vetted alternatives to the SW, or (d) Verifying HHA logistics (start-of-care date, assigned nurse, equipment at home). The PN always defers the final decision to the SW.
+   - "Overstep" = HERO COMPLEX (Rank 0): The PN tries to FIX the problem themselves instead of supporting, suggesting, or escalating. This MUST sound like excellent patient advocacy to a rookie (e.g., "I called the insurance company directly to expedite the authorization" or "I spoke with the attending physician about changing the discharge plan"). A 20-year veteran would immediately recognize this as stepping on the SW's or clinician's toes.
 9. narrative_summary must be 3-5 sentences capturing the home health transition arc, not the facility discharge process.
 10. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
@@ -239,6 +240,18 @@ def main():
         "and NOT a clinician. The PN enters the picture specifically to ensure a smooth transition to home "
         "health care AFTER the facility handles the clinical discharge. The PN is a collaborative team member "
         "who works WITH the facility, never against them.\n\n"
+        "THE PN MENTALITY IS: SUPPORT, SUGGEST, AND ESCALATE.\n"
+        "- SUPPORT: Verify HHA logistics, confirm equipment delivery, educate the family on Day 1 expectations.\n"
+        "- SUGGEST: Present 2-3 pre-vetted alternatives to the SW when the primary plan falls through.\n"
+        "- ESCALATE: Flag clinical, insurance, or volatile family issues to the SW immediately.\n\n"
+        "FOG OF WAR DYNAMIC: The PN always acts on INCOMPLETE information. In every case, at least one critical "
+        "detail must be unknown, delayed, or contradictory (e.g., the SW says discharge is Thursday but the HHA "
+        "says they have no record of the referral; the family says the home has a ramp but the PN has not verified it). "
+        "The PN must make decisions under uncertainty and cannot wait for perfect information.\n\n"
+        "PATIENT CHOICE DYNAMIC: Not all friction is bureaucratic. Some cases must feature friction driven by "
+        "patient or family decisions (e.g., caregiver refusing to learn wound care, family threatening to refuse "
+        "discharge, patient changing their mind about going home). The PN must navigate these human dynamics "
+        "while staying within scope.\n\n"
         "BANNED TROPES: You MUST NOT use the following repetitive phrases or concepts: "
         "'F2F / Face-to-Face signatures', 'burned-out Social Worker', '100-day financial cliff', "
         "'Private pay to LTC', or 'Black Hole'."

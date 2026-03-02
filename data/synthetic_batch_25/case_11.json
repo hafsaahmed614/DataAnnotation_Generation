@@ -1,58 +1,53 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge from the SNF and the final decision on the discharge date. The PN is responsible for verifying that the HHA's home safety assessment is completed, educating the family on the HHA's safety requirements, and suggesting alternative vendors to the SW if the current home setup fails the HHA's inspection.",
   "format_1_state_log": [
     {
-      "event_description": "Initial HHA referral for post-spinal fusion PT and nursing rejected by primary agency due to a lack of available field staff in the patient's rural zip code.",
+      "event_description": "HHA (Precision Home Health) reports the home safety assessment is 'on hold' because the field evaluator could not gain entry; the patient's son claims he waited four hours and no one arrived.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA's regional staffing coordinator reported a vacancy for the specific territory, preventing any new admissions regardless of clinical urgency."
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The HHA field evaluator went to the patient's old address listed in the EMR instead of the son's home where the patient is relocating."
     },
     {
-      "event_description": "PN identifies a secondary HHA but the agency requires a home safety assessment before confirming the start-of-care date.",
+      "event_description": "HHA evaluator identifies that the bathroom door frame is 2 inches too narrow for the patient's bariatric wheelchair; HHA refuses to schedule Start-of-Care (SOC) until a solution is documented.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Unchanged",
       "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The secondary HHA's therapist is only available for home inspections on Tuesdays, and the referral was received late Thursday afternoon."
+      "ai_assumed_bottleneck": "The SNF physical therapy team measured the patient's standard wheelchair, but the DME vendor delivered a wider bariatric model due to stock shortages."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Primary HHA preferred by the family cannot staff the nursing visits for the first 72 hours post-discharge.",
-      "action_taken": "Negotiated with the HHA Regional Director to utilize a per-diem nurse from a neighboring county for the initial intake and first two visits.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Secure a verbal commitment for the admission slot to prevent the Social Worker from steering the patient to a sub-optimal facility-owned agency."
-    },
-    {
-      "situation": "The HHA's start-of-care date is set for Monday, but the SNF plans to discharge the patient on a Friday afternoon.",
-      "action_taken": "Coordinated with the Regional Director and HHA Intake to confirm a 'weekend exception' for a Saturday morning nurse visit.",
-      "taxonomy_category": "Schedule De-conflict",
-      "tactical_field_intent": "Ensure the first home visit occurs within 24 hours to maximize the likelihood of long-term service adoption and prevent readmission."
-    },
-    {
-      "situation": "The patient's family is unsure if the home is ready for a walker and post-surgical equipment.",
-      "action_taken": "Provided the family with a transition checklist and confirmed the DME vendor's delivery window for the hospital bed and walker.",
+      "situation": "The HHA intake coordinator is refusing to assign a nurse because the home safety assessment report shows 'unsecured throw rugs' and 'insufficient lighting' in the recovery area.",
+      "action_taken": "PN provides the family with a 'Day 1 Home Readiness' checklist and explains that the HHA will not initiate services until these specific trip hazards are removed.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Empower the family to self-report readiness to the Social Worker, reducing the chance of a 'last-minute' discharge cancellation."
+      "tactical_field_intent": "Shift the burden of environmental compliance to the family to prevent the HHA from officially rejecting the referral."
+    },
+    {
+      "situation": "The primary HHA (Precision) cannot send a tech to re-evaluate the home for 5 days, which will push the discharge past the patient's desired Friday date.",
+      "action_taken": "PN identifies 2 alternative HHAs in the same zip code who have 'evaluators on call' and presents these options to the Social Worker.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Apply subtle pressure on the primary HHA by showing the SW that other agencies are more responsive, without explicitly recommending a change."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Monitor the facility's internal referral portal and wait for the Social Worker to identify an alternative agency that has an open staffing slot for the patient's location.",
-      "rationale": "This approach relies entirely on the facility's existing discharge workflow and avoids the PN taking an active role in agency selection or logistics, likely resulting in a multi-day delay."
+      "description": "PN documents the failed safety assessment due to the broken chair lift and notifies the Social Worker that the home environment is currently 'blocked,' then waits for the SW's care conference notes.",
+      "rationale": "This is a strategic deferral. The PN recognizes that if the home is unsafe, the decision to delay discharge or pivot to LTC is a clinical and social work responsibility that requires a formal team meeting."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Directly contact three in-network HHAs to verify current staffing capacity for spinal fusion recovery and confirm which agency can guarantee a start-of-care visit within 48 hours of the projected discharge date.",
-      "rationale": "The PN is performing core transition logistics by vetting agency availability and ensuring the home team is ready to receive the patient, staying strictly within the non-clinical scope."
+      "description": "PN contacts the HHA intake coordinator to clarify the specific modifications needed to pass the assessment and suggests 3 pre-vetted DME vendors to the SW who offer expedited grab-bar installation.",
+      "rationale": "The PN stays within scope by facilitating communication and providing resources (suggesting) to the SW, while educating the family on what is needed to secure the SOC date."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the patient's insurance provider to request an out-of-network authorization for a specialized nursing agency and draft a clinical justification for the Social Worker to sign.",
-      "rationale": "This oversteps into both Administrative (insurance auth) and Clinical (drafting justifications) domains, which are the exclusive responsibilities of the facility Social Worker and clinical team."
+      "description": "PN calls the patient's insurance company to request an emergency waiver for the home safety requirement, arguing that the patient's amputation site is stable enough for a 'delayed' assessment.",
+      "rationale": "This is a boundary failure. The PN is attempting to negotiate insurance requirements and clinical safety protocols, which are roles strictly reserved for the facility's clinical team and the HHA's medical director."
     }
   ],
-  "narrative_summary": "The transition for this 70-year-old spinal fusion patient was initially stalled by a severe HHA staffing shortage in his rural zip code, threatening to keep him in the SNF past his clinical readiness. By leveraging relationships with regional HHA directors, the Patient Navigator was able to secure a staffing exception and coordinate a Saturday start-of-care to avoid a weekend gap. This proactive coordination ensured that the patient\u2019s home PT and nursing services were locked in before the facility could pivot to a different discharge plan. The case concluded with a successful home transition, maintaining clinical continuity despite the regional provider shortage."
+  "narrative_summary": "79-year-old male post-right leg amputation is clinically ready for discharge, but the transition is stalled by a pending home safety assessment from the HHA. Conflicting reports between the HHA evaluator and the patient's son regarding home access have created a logistical 'Fog of War' that threatens the Friday discharge window. The PN is currently navigating the HHA's strict environment protocols regarding wheelchair clearance and lighting to ensure the patient doesn't return to an unsafe home without skilled nursing support. The case hinges on whether the family can modify the home environment before the SNF's clinical clearance expires."
 }

@@ -1,58 +1,67 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker is handling the internal family mediation between the son (who wants LTC) and the daughter (who wants Home), as well as the formal discharge order. The Patient Navigator is only handling the HHA logistics for the daughter's preferred home plan, verifying the Parkinson's-specific medication handoff to the agency, and ensuring the hospital bed is correctly placed for a Parkinson's patient.",
   "format_1_state_log": [
     {
-      "event_description": "Initial HHA referral for diabetic wound care rejected due to lack of wound-certified nursing staff in the patient's rural zip code.",
+      "event_description": "Family meeting held by SW reveals deep rift; son threatens to block discharge, claiming the daughter cannot manage the patient's Parkinson's tremors and UTI-related confusion at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker must resolve the legal and familial dispute before the HHA can be authorized to perform the start-of-care visit."
+    },
+    {
+      "event_description": "HHA intake coordinator reports that the referral packet from the SNF is missing the specific Carbidopa/Levodopa titration schedule required for the home nurse.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+10 Days",
-      "ai_assumed_bottleneck": "The HHA's regional staffing manager failed to update the referral portal to show that their only wound-certified RN for the county is on extended medical leave."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The SNF medical records clerk is prioritized on new admissions and has not responded to the HHA's request for the missing medication titration page."
     },
     {
-      "event_description": "PN identifies a discrepancy between the facility's final insulin sliding scale and the orders received by the HHA's intake department.",
-      "clinical_impact": "Worsens",
+      "event_description": "Primary HHA notifies the PN they have no nurse available in the patient's rural zip code for a weekend start-of-care.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3 Days",
-      "ai_assumed_bottleneck": "The SNF floor nurse updated the paper chart but the administrative clerk faxed an older version of the medication list to the home health agency."
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's regional scheduler only has PRN staff available, none of whom are willing to travel the 40-mile radius for a single patient."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The preferred HHA reports a staffing freeze for new diabetic debridement cases in the patient's specific geographic zone.",
-      "action_taken": "Initiated a conference call with the HHA Regional Director to negotiate a mileage-based incentive for a nurse from an adjacent territory to cover the first 48 hours.",
-      "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Leverage the agency's regional volume to force a staffing exception before the Social Worker looks for a different agency."
+      "situation": "The HHA and SNF medication lists for the Parkinson's regimen do not match, creating a risk for the first home visit.",
+      "action_taken": "Flagged the discrepancy to the Social Worker and provided the HHA's specific request list to the SNF nursing station clerk.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Create a paper trail of the mismatch to ensure the PN is not held liable for clinical errors while accelerating the SW's internal document push."
     },
     {
-      "situation": "Patient's daughter expresses confusion about the timing of the first home nurse visit versus the delivery of the specialized diabetic dressings.",
-      "action_taken": "Provided a physical appointment card documenting the HHA's 'Start of Care' window and the DME vendor's delivery confirmation number.",
-      "taxonomy_category": "Patient Confirmation",
-      "tactical_field_intent": "Reduce family anxiety to prevent them from calling the SNF and potentially triggering a 'safety' hold that would delay the transition."
+      "situation": "The daughter is overwhelmed by the son's pressure and is unsure what the first 24 hours at home will actually look like.",
+      "action_taken": "Walked the daughter through the 'Day 1' checklist, including the expected arrival window of the HHA nurse and the specific equipment verification steps.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Solidify the daughter's resolve to proceed with home care by reducing the 'unknowns' that the son is using as leverage."
     },
     {
-      "situation": "Medication reconciliation reveals the HHA is missing the updated prescription for the patient's off-loading boot.",
-      "action_taken": "Alerted the HHA intake coordinator to the specific missing order and cross-referenced the SNF's last-signed physician order set.",
-      "taxonomy_category": "Final Coordination",
-      "tactical_field_intent": "Ensure the HHA has all necessary documentation to prevent a 'refusal to treat' once the nurse arrives at the home."
+      "situation": "The preferred HHA cannot staff the case due to the patient's remote location.",
+      "action_taken": "Identified two alternative in-network agencies with active staffing in that zip code and presented the contact info to the SW.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Bypass the 'staffing shortage' delay by doing the legwork for the SW without overstepping the final agency selection."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The PN monitors the SNF's referral portal and waits for the Social Worker to identify a secondary HHA that has available staffing in the patient's zip code.",
-      "rationale": "The PN is deferring the logistical search entirely to the facility staff, which often results in the patient remaining in the SNF longer than necessary while the SW manages other cases."
+      "description": "Upon witnessing a heated argument between the son and daughter in the patient's room regarding the safety of the home, the PN documented the specific concerns raised by the son and immediately notified the Social Worker, stating they would pause HHA logistics until the family reached a consensus.",
+      "rationale": "This is strategic deferral. The PN recognizes that family mediation and discharge safety decisions are the legal and professional responsibility of the Social Worker. Stepping back prevents the PN from being caught in a legal crossfire."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN contacts three alternative in-network HHAs to verify current wound-care nursing availability and presents the 'ready-to-accept' options to the Social Worker.",
-      "rationale": "This remains within the PN scope by facilitating the transition logistics and providing the SW with actionable data without making the final clinical or placement decision."
+      "description": "The PN contacted the Social Worker to flag the son's resistance and suggested the SW provide the family with a clear list of the home health services already being coordinated (HHA, PT, and DME) to address the son's safety fears. Simultaneously, the PN verified the HHA's ability to provide a Parkinson's-trained nurse.",
+      "rationale": "The PN supports the transition by providing the SW with the 'ammunition' (the concrete home care plan) needed to ease family anxiety, while staying within the scope of HHA verification."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN calls the patient's insurance provider to request a single-case agreement for an out-of-network HHA that has better staffing for diabetic wounds.",
-      "rationale": "Insurance negotiations and 'Single Case Agreements' are strictly the responsibility of the facility Social Worker or Case Manager; a PN engaging in financial/contractual advocacy oversteps their non-clinical role."
+      "description": "The PN pulled the son aside and provided a detailed comparison of the costs and clinical outcomes of home-based therapy versus long-term care, ultimately advising the son that home care was the superior option for his father's Parkinson's management.",
+      "rationale": "This is a Hero Complex overstep. The PN is performing a clinical/financial consultation and social work mediation, both of which are outside their non-clinical, transition-focused scope."
     }
   ],
-  "narrative_summary": "A 69-year-old female with a complex diabetic foot ulcer faces a significant transition delay when the primary HHA reveals a staffing shortage in her rural region. The Patient Navigator intervenes by identifying alternative agencies with active wound-certified nurses and coordinating with the Regional Director to bridge the coverage gap. During the final handoff, the PN identifies a medication list mismatch regarding the patient's insulin, resolving it through the HHA intake coordinator to ensure a safe first home visit. The case concludes with a successful transition to home care despite the regional provider limitations."
+  "narrative_summary": "Arthur, an 82-year-old with Parkinson's, is caught in a family dispute that threatens his transition home following a UTI stabilization. While the daughter is eager to care for him, the son is vocal about his safety concerns, leading to a potential discharge block. The PN's role is further complicated by a staffing shortage at the primary HHA and a critical mismatch in the Parkinson's medication handoff data. The PN must navigate these human and bureaucratic hurdles to ensure that if the home plan proceeds, the clinical and logistical support is actually in place for 'Day 1'."
 }

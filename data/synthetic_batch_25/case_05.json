@@ -1,66 +1,67 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge order and the primary insurance authorization for home health. The Patient Navigator (PN) is only handling the verification of HHA network status, confirming the HHA's actual intake capacity for stroke-specific physical therapy, and educating the family on why the start-of-care date is shifting due to the network mismatch.",
   "format_1_state_log": [
     {
-      "event_description": "Patient cleared by Pulmonology for discharge to home with 2L O2; however, physical therapy identifies a 4-inch threshold at the front door and a lack of interior grab bars, triggering a Medicaid CHC Waiver request for home modifications.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+30\u201345 Days",
-      "ai_assumed_bottleneck": "The state caseworker is strictly adhering to the DNA rule requiring three independent contractor bids for the ramp and grab bar installation before authorizing the home health start-of-care."
-    },
-    {
-      "event_description": "The selected Home Health Agency (HHA) reports that their primary intake coordinator is on a week-long medical leave, leaving the referral sitting in the 'pending' queue without a verified start-of-care date.",
+      "event_description": "Initial HHA referral for stroke rehab sent by SW to 'Midwest Home Health' based on geographic proximity; PN attempts to confirm receipt with HHA intake.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
+      "service_adoption_impact": "Unchanged",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA lacks a cross-trained backup for intake, meaning the referral remains stagnant despite the patient being clinically stable for the transition."
+      "ai_assumed_bottleneck": "The single HHA intake coordinator is out on PTO, leaving the referral sitting in a digital queue without a confirmed start-of-care date."
     },
     {
-      "event_description": "Upon reviewing the discharge packet, the HHA clinical manager identifies that the nebulizer medication list provided by the facility includes a discontinued steroid from the ICU stay that was never reconciled with the current floor orders.",
+      "event_description": "Midwest Home Health finally processes the packet but flags a network mismatch with the patient's specific Medicare Advantage PPO sub-group.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The facility floor nurse failed to update the digital discharge summary after the pulmonologist adjusted the maintenance regimen, creating a clinical safety gap for the home nurse."
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "The facility SW relied on an outdated insurance grid that listed the HHA as in-network, but the specific Advantage plan recently changed its tiering."
+    },
+    {
+      "event_description": "Patient's son threatens to refuse discharge unless the out-of-network HHA used by his mother is approved for his father's stroke care.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family fear regarding the quality of in-network stroke specialists leads to a hard refusal of the secondary discharge plan."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The CHC Waiver caseworker has only received two of the three required contractor estimates for the wheelchair ramp, stalling the entire home health transition.",
-      "action_taken": "Communicated with the patient's daughter to identify a third local contractor and shared the contact info with the HHA's community liaison.",
-      "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Accelerate the bureaucratic timeline without assuming the caseworker's legal duties, ensuring the HHA can lock in a nurse for the following month."
-    },
-    {
-      "situation": "The patient's daughter expresses anxiety about managing the portable oxygen concentrator and the overnight CPAP titration required post-discharge.",
-      "action_taken": "Coordinated a pre-discharge training session where the HHA's respiratory therapist meets the family at the facility to demonstrate the specific home equipment.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Prevent a 'refusal of service' at the doorstep by building caregiver confidence before the patient physically leaves the SNF."
-    },
-    {
-      "situation": "The HHA reports a staffing shortage in the patient's rural zip code, threatening to push the start-of-care date past the approved waiver window.",
-      "action_taken": "Negotiated with the HHA Regional Director to utilize a per-diem nurse from an adjacent county by offering a clustered visit schedule.",
+      "situation": "The HHA intake coordinator is unresponsive to the facility's referral for the 81yo stroke patient.",
+      "action_taken": "Contacted HHA intake coordinator directly to confirm referral receipt and request an estimated Start-of-Care (SOC) window.",
       "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Secure a firm commitment for the first 48-hour visit to maintain service conversion and avoid losing the slot to a competitor."
+      "tactical_field_intent": "Establish a verbal connection with intake to ensure the referral isn't buried behind high-volume orthopedic cases."
+    },
+    {
+      "situation": "Midwest Home Health confirms they are out-of-network for the patient's Advantage plan, stalling the transition.",
+      "action_taken": "Identified three alternative HHAs in the patient's zip code that are in-network and have active stroke rehab programs, then presented these options to the SW.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with turnkey solutions to prevent the discharge from being delayed by a week of back-and-forth phone calls."
+    },
+    {
+      "situation": "Family is confused about why their preferred HHA cannot be used and is becoming combative with facility staff.",
+      "action_taken": "Walked the family through the Day 1 expectations for an in-network provider and explained the logistics of service coverage without making clinical promises.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the family by focusing on the continuity of PT services rather than the bureaucratic insurance terminology."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the facility Social Worker to resolve the Medicaid CHC Waiver bid discrepancy and check the electronic portal daily for a status change on the home modification approval.",
-      "rationale": "The PN is deferring to the facility's internal processes and the state's timeline, which risks a significant 'Timeline Drift' if the third bid is never secured."
+      "description": "After identifying the network mismatch, the PN documented the findings and notified the Social Worker that the current HHA plan was non-viable, then waited for the SW to issue a new referral.",
+      "rationale": "This is a strategic deferral that respects the SW's authority over the formal referral process. By stepping back, the PN avoids confusing the HHAs with multiple points of contact for a new clinical packet."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify with the HHA Intake Coordinator that the home oxygen and nebulizer supplies have been delivered to the residence and confirmed by the family, while providing the HHA with the updated medication list reconciled by the unit clerk.",
-      "rationale": "The PN is focusing strictly on transition logistics and clinical handoff accuracy, ensuring that when the environment is finally cleared, the HHA can start immediately without equipment or order delays."
+      "description": "The PN pre-vetted two local HHAs for both network status and stroke-rehab staffing availability, then brought the contact names and phone numbers to the SW as suggested alternatives for the patient's transition.",
+      "rationale": "The PN supports the SW by doing the legwork of verifying capacity and network status, which are non-clinical logistical tasks, while leaving the final referral decision to the facility."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the Medicaid CHC caseworker directly to argue for a waiver of the three-bid rule based on the patient's ICU history and personally draft an appeal letter to the state insurance board for expedited equipment delivery.",
-      "rationale": "The PN is performing the functions of a Social Worker and an insurance advocate, stepping outside the non-clinical transition scope and potentially creating friction with state regulators."
+      "description": "The PN contacted the patient's Medicare Advantage plan directly to argue for a single-case agreement for the out-of-network HHA to satisfy the family's request.",
+      "rationale": "This is a hero-complex overstep because the PN is performing insurance negotiation and authorization work, which is strictly the responsibility of the facility's case management or the HHA's billing department."
     }
   ],
-  "narrative_summary": "The transition for this 83-year-old patient was primarily delayed by the rigid 'three-estimate' requirement of the Medicaid CHC Waiver for a necessary front-door ramp. While the facility managed the clinical recovery from pneumonia, the Patient Navigator worked to bridge the 40-day environmental gap by ensuring the Home Health Agency (HHA) remained engaged and prepared for a complex respiratory handoff. The PN successfully navigated a staffing shortage in a rural zip code and reconciled a medication mismatch regarding nebulizer treatments before the patient arrived home. By facilitating a pre-discharge equipment training session for the daughter, the PN secured a successful service conversion despite the lengthy bureaucratic stall."
+  "narrative_summary": "Mr. Vance's transition from stroke rehab was nearly derailed when his primary HHA was identified as out-of-network only 48 hours before discharge. The situation was further complicated by his son's insistence on a specific provider, leading to a potential refusal of the entire home care plan. The Patient Navigator successfully identified the mismatch early by verifying HHA intake data and provided the Social Worker with three pre-vetted, in-network alternatives that specialized in neurological recovery. This allowed the transition to proceed with only a minor delay, ensuring Mr. Vance's physical therapy began at home without the family facing unexpected out-of-pocket costs."
 }

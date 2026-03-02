@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Surgeon provides clinical sign-off for home discharge following spinal fusion; however, the home requires a hospital bed for safe PT/OT initiation.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The DME vendor's delivery driver is on medical leave, and the secondary driver is restricted to local zip codes only, excluding the patient's rural residence."
+    },
+    {
+      "event_description": "PN confirms with the HHA intake coordinator that the start-of-care (SOC) cannot be scheduled until the hospital bed is physically confirmed in the residence.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA refuses to 'blind schedule' the admission visit without a photo or verbal confirmation from the PN that equipment is present, fearing a wasted clinician trip."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The preferred DME vendor reports a 5-day backlog for the specific semi-electric hospital bed ordered by the facility.",
+      "action_taken": "Identified a secondary in-network DME provider through the HHA\u2019s preferred partner list and relayed the contact to the facility Social Worker.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Leverage the HHA's existing vendor relationships to bypass the facility's standard rotation and expedite equipment arrival."
+    },
+    {
+      "situation": "Family is concerned that the HHA will cancel the referral if the equipment isn't there by the original Friday discharge date.",
+      "action_taken": "Facilitated a three-way coordination call between the HHA intake, the PN, and the daughter to confirm a Monday morning 'soft-hold' for the admission nurse.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Prevent the HHA from releasing the staffing slot to another patient during the equipment delay window."
+    },
+    {
+      "situation": "The medication list provided in the preliminary discharge packet shows a discrepancy in the dosage of the patient's post-surgical anticoagulant.",
+      "action_taken": "Flagged the discrepancy for the HHA clinical supervisor to ensure the home-care nurse brings the correct reconciliation forms for the first visit.",
+      "taxonomy_category": "HHA/Team Handoff",
+      "tactical_field_intent": "Ensure the HHA is prepared to catch the error at the home level without the PN appearing to correct the facility's clinical work."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN monitors the facility's internal logistics log and waits for the Social Worker to confirm when the DME vendor has successfully delivered the bed to the patient's home.",
+      "rationale": "The PN is deferring entirely to the facility's discharge process, failing to proactively coordinate with the HHA to ensure the admission slot is preserved during the delay."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN contacts the DME vendor directly to verify the delivery window, then provides the HHA intake coordinator with the specific delivery confirmation number to secure a Monday morning start-of-care visit.",
+      "rationale": "This action remains within the PN's scope of transition logistics by verifying equipment readiness and aligning it with the HHA's scheduling needs."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN contacts the patient's insurance provider to request an urgent medical override for an out-of-network DME supplier and then drafts a revised clinical justification for the surgeon to sign.",
+      "rationale": "The PN is performing the Social Worker's role (insurance negotiation) and the clinician's role (drafting medical justifications), which violates the non-clinical boundary."
+    }
+  ],
+  "narrative_summary": "Following a successful spinal fusion, the patient's transition to home health was stalled by a logistical backlog in hospital bed delivery, a critical requirement for post-surgical mobility. The Patient Navigator stepped in to bridge the gap between the DME vendor's delay and the HHA's strict admission requirements, ensuring the referral was not dropped by the agency. By coordinating the delivery timing with the HHA's staffing schedule, the PN secured a Monday morning start-of-care, preventing a weekend without professional oversight. The case highlights the PN's role in managing external vendor friction to maintain continuity of care after the facility's clinical responsibilities end."
+}

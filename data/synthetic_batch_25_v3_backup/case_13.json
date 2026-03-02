@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Physician clears patient for Friday discharge following CABG recovery; however, the preferred Home Health Agency (HHA) notifies the PN that their intake department closes at 3 PM on Fridays.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA Intake Coordinator is unavailable to process the referral, triggering an automatic weekend admission freeze."
+    },
+    {
+      "event_description": "PN identifies a discrepancy between the facility\u2019s Friday medication list and the HHA's preliminary electronic record during the weekend bridge period.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff/Medication List Mismatch due to the facility sending an outdated reconciled list to the HHA portal."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA intake coordinator indicates that no field nurses are available for a Saturday Start-of-Care (SOC) for a high-risk cardiac patient.",
+      "action_taken": "Contacted the HHA Regional Director to negotiate a weekend exception based on the patient's sternal wound complexity.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Leverage regional relationship to bypass local branch staffing freezes without involving the facility SW."
+    },
+    {
+      "situation": "Patient's spouse expresses anxiety about managing the post-surgical chest tube site over the weekend without professional oversight.",
+      "action_taken": "Provided the HHA\u2019s 24/7 clinical supervisor line and confirmed the specific Monday morning 9 AM arrival window.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate family anxiety to prevent a 'fear-based' ER return before the HHA can arrive."
+    },
+    {
+      "situation": "The facility Social Worker suggests the patient stay until Monday to avoid the HHA weekend gap, but the patient is eager to return home Friday.",
+      "action_taken": "Verified that all required DME (O2 and shower chair) was physically inside the home and confirmed the HHA's Monday SOC via a physical appointment card.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Lock in the home-based transition to prevent the facility from 'steering' the patient toward a longer, unnecessary inpatient stay."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the facility's internal discharge log and wait for the Social Worker to confirm when the Home Health Agency has officially accepted the Monday admission slot.",
+      "rationale": "The PN is deferring entirely to the facility's timeline, failing to proactively secure the HHA slot, which may lead to the patient being 'forgotten' over the weekend."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Directly coordinate with the HHA Intake Manager on Friday morning to confirm the referral is 'Admission Pending' and verify that the family has the correct HHA on-call contact information for the weekend gap.",
+      "rationale": "This stays within the PN scope by ensuring the transition logistics are solidified and the family is prepared for the specific delay defined by the HHA's weekend freeze."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Review the patient's clinical chart to update the sternal wound measurements in the discharge summary to ensure the HHA has the most current data for their weekend staffing triage.",
+      "rationale": "The PN is performing clinical documentation and editing the facility's discharge summary, which is a strict violation of the non-clinical role boundary."
+    }
+  ],
+  "narrative_summary": "Mr. Bennett, a 75-year-old recovering from a cardiac bypass, was clinically cleared for a Friday discharge, but the transition was immediately threatened by a standard HHA weekend admission freeze. The Patient Navigator stepped in to bridge the 72-hour gap by securing a firm Monday morning Start-of-Care and reconciling a medication list mismatch that occurred during the facility handoff. By coordinating directly with the HHA's regional leadership and providing the family with a clear weekend support plan, the PN prevented a 'fear-based' hospital readmission. The case highlights the critical role of the PN in managing post-discharge logistics when facility responsibility ends and home care has yet to begin."
+}

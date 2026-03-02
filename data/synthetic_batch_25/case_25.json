@@ -1,66 +1,59 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge orders and the initial selection of the Home Health Agency (HHA). The Patient Navigator (PN) is strictly focused on verifying the HHA's intake processing status, confirming the start-of-care window with the HHA clinical manager during the coordinator's absence, and de-escalating the daughter's anxiety by clarifying 'Day 1' logistics versus clinical care.",
   "format_1_state_log": [
     {
-      "event_description": "Initial home safety assessment identifies that the patient's 79yo frame and new RLE BKA status require a modular ramp for entry, triggering the Medicaid CHC Waiver process.",
+      "event_description": "The primary HHA Intake Coordinator is out on unscheduled PTO; the referral for Mr. Bennett remains in 'Pending' status without an assigned nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA utilizes a single-threaded intake process where only one individual has the credentials to move referrals from the portal to the active scheduling roster."
+    },
+    {
+      "event_description": "The patient's daughter expresses 'Caregiver Panic,' threatening to refuse the discharge transport unless a nurse is physically present at the home the moment the patient arrives.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+30\u201345 Days",
-      "ai_assumed_bottleneck": "The state waiver coordinator is strictly enforcing the 'three-contractor estimate' rule, refusing to move to the approval phase until the third vendor completes a site visit."
-    },
-    {
-      "event_description": "Discharge is tentatively set for a Friday afternoon following the ramp installation, but the preferred HHA notifies the team of a weekend admission freeze.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA's intake coordinator is off on Fridays, and the agency does not allow start-of-care visits on Saturdays for new patients."
-    },
-    {
-      "event_description": "During the final handoff call, the PN identifies that the facility discharge med list includes a dosage of Gabapentin that contradicts the HHA's pre-admission record.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The facility's EHR update from the morning rounds did not sync with the referral packet sent to the HHA intake department."
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family fear regarding dementia-related wandering and fall risk is manifesting as a demand for 24/7 clinical presence that exceeds the HHA's scope."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The family is overwhelmed by the CHC Waiver paperwork and is considering a 'private' ramp that may not meet HHA safety standards.",
-      "action_taken": "Provided the family with a checklist of HHA-specific home safety requirements and confirmed the waiver coordinator's contact info.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Prevent the family from installing an unapproved ramp that would cause the HHA to refuse the admission on Day 1."
-    },
-    {
-      "situation": "The HHA indicates they may not have a PT available in the patient's rural zip code for the first 10 days post-discharge.",
-      "action_taken": "Contacted the HHA's Regional Director to negotiate a 'split-start' where the RN begins wound care while the PT is sourced from a neighboring branch.",
+      "situation": "The HHA Intake Coordinator is unavailable, and the SW believes the referral is 'all set' despite no confirmed SOC date.",
+      "action_taken": "Contacted the HHA Clinical Manager directly to verify if the referral appeared in the internal clinical queue.",
       "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Lock in the nursing admission slot immediately to prevent the patient from being 'steered' to a competitor by the SNF staff."
+      "tactical_field_intent": "Bypass the administrative bottleneck to secure a verbal commitment from clinical leadership before the weekend coverage gap."
     },
     {
-      "situation": "The patient's PCP has not yet confirmed they will sign the home health orders, which could delay the HHA start-of-care.",
-      "action_taken": "Confirmed with the patient's daughter that the PCP appointment is scheduled for Day 3 post-discharge and passed this to the HHA.",
+      "situation": "Daughter is uncertain if the hospital bed was delivered to the correct entrance of the home, which has a split-level layout.",
+      "action_taken": "Requested the daughter provide a photo of the delivered equipment in the designated room to verify setup.",
       "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Establish a firm 'bridge' of accountability so the HHA feels comfortable admitting the patient under the facility's temporary orders."
+      "tactical_field_intent": "Validate home readiness remotely to prevent a 'failed drop' where the patient arrives but cannot be safely transferred to bed."
+    },
+    {
+      "situation": "Daughter demands the PN 'approve' a delay in discharge until the HHA nurse can guarantee a Friday evening visit.",
+      "action_taken": "Educated the daughter on the standard 24-48 hour SOC window and immediately flagged the family's hesitation to the SW.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Shift the liability of the discharge timing decision back to the facility while managing family expectations of HHA timing."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the facility Social Worker to resolve the ramp estimate delays and check the facility's daily discharge log for an updated transition date.",
-      "rationale": "The PN is avoiding any direct intervention in the procurement process, which leads to a loss of momentum and a high risk of the patient 'drifting' into a long-term care state."
+      "description": "Document the HHA's lack of response and notify the Social Worker that the home health transition cannot be verified, then wait for the SW to provide an updated discharge directive.",
+      "rationale": "This is a strategic deferral. Since the PN cannot force the HHA to pick up the phone or make clinical timing decisions, stepping back prevents the PN from being blamed for a 'rushed' discharge if the SW chooses to proceed without a confirmed nurse."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Coordinate a three-way call between the family and the HHA intake lead to confirm that the HHA will accept the third-party ramp certification, ensuring no start-of-care delays once the waiver is approved.",
-      "rationale": "This aligns the home environment with the service provider's safety requirements without the PN performing the actual clinical or social work tasks."
+      "description": "Identify two alternative HHAs with 24/7 intake departments and present these options to the SW as potential backups while walking the daughter through a 'Day 1' checklist to reduce her anxiety.",
+      "rationale": "The PN is supporting the transition by offering solutions (alternatives) and educating the family, but leaves the final decision to change the referral to the SW."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the Medicaid CHC Waiver coordinator directly to submit a clinical justification for why the three-estimate rule should be waived due to the patient's rapid rehab progress.",
-      "rationale": "The PN is performing the role of a Social Worker or Case Manager by attempting to influence state-level bureaucratic policy and providing clinical justifications for administrative changes."
+      "description": "Call the HHA's regional director to demand an emergency intake override for this patient and then tell the daughter that you will ensure the nurse arrives within two hours of the patient getting home.",
+      "rationale": "This is a 'Hero Complex' overstep. The PN is making clinical promises (nurse arrival time) they cannot keep and bypassing the facility's relationship with the HHA, which creates significant liability."
     }
   ],
-  "narrative_summary": "A 79-year-old male recovering from a right lower extremity amputation is clinically ready for home transition but faces a 45-day delay due to the Medicaid CHC Waiver's procurement rules for a wheelchair ramp. The Patient Navigator must bridge the gap between the facility's discharge timing and the HHA's strict admission windows, especially as the case nears a Friday exit. By identifying a medication list mismatch and a potential PT staffing shortage in the patient's rural area, the PN ensures that the transition is not just a physical move, but a secured clinical handoff. The case highlights the critical importance of aligning environmental modifications with HHA safety protocols to prevent a last-minute service refusal."
+  "narrative_summary": "Mr. Bennett, an 86-year-old with dementia, is approaching discharge following a hip fracture, but the transition is stalled because the HHA Intake Coordinator is out sick. While the Social Worker assumes the plan is moving forward, the PN discovered the referral is stuck in a 'Pending' queue with no nurse assigned for the weekend. Simultaneously, the daughter is experiencing significant 'Caregiver Panic,' threatening to block the discharge due to fears of managing her father\u2019s dementia-related wandering without immediate professional support. The PN must now navigate the 'Fog of War' regarding the actual HHA start-of-care date while ensuring the daughter is educated on the realities of home health timing."
 }

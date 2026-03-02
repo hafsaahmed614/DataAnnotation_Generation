@@ -1,0 +1,66 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient cleared by Pulmonology for discharge to home with 2L O2; however, physical therapy identifies a 4-inch threshold at the front door and a lack of interior grab bars, triggering a Medicaid CHC Waiver request for home modifications.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "The state caseworker is strictly adhering to the DNA rule requiring three independent contractor bids for the ramp and grab bar installation before authorizing the home health start-of-care."
+    },
+    {
+      "event_description": "The selected Home Health Agency (HHA) reports that their primary intake coordinator is on a week-long medical leave, leaving the referral sitting in the 'pending' queue without a verified start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA lacks a cross-trained backup for intake, meaning the referral remains stagnant despite the patient being clinically stable for the transition."
+    },
+    {
+      "event_description": "Upon reviewing the discharge packet, the HHA clinical manager identifies that the nebulizer medication list provided by the facility includes a discontinued steroid from the ICU stay that was never reconciled with the current floor orders.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The facility floor nurse failed to update the digital discharge summary after the pulmonologist adjusted the maintenance regimen, creating a clinical safety gap for the home nurse."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The CHC Waiver caseworker has only received two of the three required contractor estimates for the wheelchair ramp, stalling the entire home health transition.",
+      "action_taken": "Communicated with the patient's daughter to identify a third local contractor and shared the contact info with the HHA's community liaison.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Accelerate the bureaucratic timeline without assuming the caseworker's legal duties, ensuring the HHA can lock in a nurse for the following month."
+    },
+    {
+      "situation": "The patient's daughter expresses anxiety about managing the portable oxygen concentrator and the overnight CPAP titration required post-discharge.",
+      "action_taken": "Coordinated a pre-discharge training session where the HHA's respiratory therapist meets the family at the facility to demonstrate the specific home equipment.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Prevent a 'refusal of service' at the doorstep by building caregiver confidence before the patient physically leaves the SNF."
+    },
+    {
+      "situation": "The HHA reports a staffing shortage in the patient's rural zip code, threatening to push the start-of-care date past the approved waiver window.",
+      "action_taken": "Negotiated with the HHA Regional Director to utilize a per-diem nurse from an adjacent county by offering a clustered visit schedule.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Secure a firm commitment for the first 48-hour visit to maintain service conversion and avoid losing the slot to a competitor."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the facility Social Worker to resolve the Medicaid CHC Waiver bid discrepancy and check the electronic portal daily for a status change on the home modification approval.",
+      "rationale": "The PN is deferring to the facility's internal processes and the state's timeline, which risks a significant 'Timeline Drift' if the third bid is never secured."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify with the HHA Intake Coordinator that the home oxygen and nebulizer supplies have been delivered to the residence and confirmed by the family, while providing the HHA with the updated medication list reconciled by the unit clerk.",
+      "rationale": "The PN is focusing strictly on transition logistics and clinical handoff accuracy, ensuring that when the environment is finally cleared, the HHA can start immediately without equipment or order delays."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the Medicaid CHC caseworker directly to argue for a waiver of the three-bid rule based on the patient's ICU history and personally draft an appeal letter to the state insurance board for expedited equipment delivery.",
+      "rationale": "The PN is performing the functions of a Social Worker and an insurance advocate, stepping outside the non-clinical transition scope and potentially creating friction with state regulators."
+    }
+  ],
+  "narrative_summary": "The transition for this 83-year-old patient was primarily delayed by the rigid 'three-estimate' requirement of the Medicaid CHC Waiver for a necessary front-door ramp. While the facility managed the clinical recovery from pneumonia, the Patient Navigator worked to bridge the 40-day environmental gap by ensuring the Home Health Agency (HHA) remained engaged and prepared for a complex respiratory handoff. The PN successfully navigated a staffing shortage in a rural zip code and reconciled a medication mismatch regarding nebulizer treatments before the patient arrived home. By facilitating a pre-discharge equipment training session for the daughter, the PN secured a successful service conversion despite the lengthy bureaucratic stall."
+}

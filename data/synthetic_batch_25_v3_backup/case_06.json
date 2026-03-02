@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "The SNF discharge packet delivered to the patient's family contains a different inhaler regimen than the digital referral sent to the Home Health Agency (HHA) intake desk.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The SNF floor nurse updated the paper discharge summary but the administrative assistant faxed an outdated 'Admission Med List' to the HHA referral portal."
+    },
+    {
+      "event_description": "HHA refuses to schedule the Start-of-Care (SOC) visit until the prescribing physician clarifies the discrepancy between the oral antibiotic and the previous IV orders listed in the ICU transfer notes.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA Intake Coordinator is unwilling to process the referral without a 'clean' med list to avoid a clinical error during the first home visit."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA is threatening to push the admission to Monday because the SNF discharge orders are missing the specific nebulizer frequency for the patient's pneumonia recovery.",
+      "action_taken": "Located the physical discharge folder in the patient's room and requested the SNF Unit Secretary fax the 'Medication Reconciliation' page specifically to the HHA Intake line.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Secure a verbal confirmation of receipt from the HHA before the Friday afternoon 'Admission Freeze' to lock in a Saturday morning nurse visit."
+    },
+    {
+      "situation": "Patient's daughter is confused by the two different medication lists and is considering delaying the discharge until 'the doctors get it right.'",
+      "action_taken": "Provided the daughter with a physical appointment card and the direct phone number for the HHA's Clinical Manager to discuss the home-side reconciliation process.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Prevent a 'refusal of service' by shifting the family's focus from the facility's error to the HHA's safety-first intake protocol."
+    },
+    {
+      "situation": "The SNF Social Worker is unaware that the HHA has stalled the admission due to the medication discrepancy.",
+      "action_taken": "Alerted the Social Worker that the HHA selection is pending a 'clean' fax, allowing the SW to prioritize the physician's signature on the reconciled list.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Maintain the PN's role as the 'eyes and ears' for the HHA without appearing to manage the facility's clinical staff."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the facility's Social Worker to finish their daily rounds and hope they notice the HHA's request for a corrected medication list before the end of the business day.",
+      "rationale": "This relies entirely on the facility's internal processes and fails to advocate for the transition timeline, risking a multi-day delay over a simple faxing error."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Confirm the HHA has received the correct discharge medication list by physically verifying the presence of the reconciliation sheet in the patient's hand-off folder and alerting the HHA intake coordinator that the document is ready for review.",
+      "rationale": "The PN ensures the transition mechanics (the flow of information) are functioning correctly between the facility and the home health provider without performing clinical reconciliation themselves."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Review the patient's ICU records to identify the correct antibiotic dosage and call the HHA clinical director to verbally authorize the change so the discharge can proceed without waiting for the SNF physician.",
+      "rationale": "The PN is performing a clinical reconciliation and attempting to authorize medical orders, which is a direct violation of their non-clinical scope and an overstep into physician and nursing responsibilities."
+    }
+  ],
+  "narrative_summary": "An 83-year-old female recovering from post-ICU pneumonia is facing a discharge delay due to a medication list mismatch between the SNF's paper records and the HHA's digital referral. The HHA is unwilling to commit to a Start-of-Care visit until the discrepancies regarding her nebulizer and antibiotic taper are resolved, threatening a weekend coverage gap. The Patient Navigator intervenes by facilitating the transfer of the correct reconciliation paperwork from the SNF to the HHA intake desk. This coordination ensures the patient returns home with a confirmed nurse visit scheduled within 24 hours, maintaining clinical safety and preventing a hospital readmission."
+}

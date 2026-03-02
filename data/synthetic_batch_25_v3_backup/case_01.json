@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Initial intake identifies that the patient's preferred Home Health Agency (HHA) is out-of-network for his specific Medicare Advantage plan, requiring a search for an in-network provider with bilateral TKA specialty experience.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "The facility Social Worker only uses a standard referral list and was unaware the patient's Advantage plan had restricted HHA contracts in this specific zip code."
+    },
+    {
+      "event_description": "The only in-network HHA identifies a staffing shortage for Physical Therapists capable of managing a high-acuity bilateral TKA patient during the required weekend start-of-care window.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator failed to flag the PT shortage until the day before the anticipated discharge, forcing a search for a secondary agency."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The identified in-network HHA confirms they have no Physical Therapy availability for the next 7 days, stalling the transition for an 88-year-old bilateral TKA patient who is clinically ready.",
+      "action_taken": "Canvassed three secondary HHAs within a 20-mile radius to verify current PT staffing levels and insurance contract status before presenting the viable options to the facility Social Worker.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Vet the HHA capacity privately to ensure that when the SW makes the official referral, it is to an agency guaranteed to accept the case, preventing 'referral ping-pong'."
+    },
+    {
+      "situation": "Family is resistant to using the in-network HHA because of poor local online reviews, threatening to refuse home health services entirely and stay in the SNF.",
+      "action_taken": "Educated the family on the specific clinical protocols our program monitors with the in-network agency and provided a physical appointment card for the first home visit.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Shift family focus from generic online reviews to the structured accountability of the PN-monitored transition plan to secure service adoption."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the facility Social Worker to complete the standard 'choice' list process and allow the HHA intake coordinators to respond in their typical 48-hour window regarding insurance verification.",
+      "rationale": "The PN avoids interfering with the facility's standard discharge workflow but risks a significant delay if the chosen agency eventually denies the referral due to the network mismatch."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Identify the two in-network agencies with the highest PT staffing levels for this zip code and provide their direct intake contact names to the Social Worker to expedite the referral once the patient is clinically cleared.",
+      "rationale": "This stays within the PN scope by facilitating logistics and communication without performing the actual referral or clinical assessment."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the patient's Medicare Advantage plan directly to request a single-case agreement for the out-of-network HHA and update the patient's clinical chart with the insurance representative's authorization notes.",
+      "rationale": "The PN is performing insurance authorization and EMR documentation, which are strictly the roles of the facility Social Worker and clinical staff."
+    }
+  ],
+  "narrative_summary": "The transition for this 88-year-old bilateral TKA patient was complicated by a significant mismatch between his Medicare Advantage plan and the local Home Health Agency network. While the patient achieved his clinical milestones for discharge, the lack of an in-network HHA with available Physical Therapy staff created a ten-day 'Timeline Drift'. The Patient Navigator successfully identified an alternative in-network agency and coordinated with the facility Social Worker to ensure a warm handoff. This intervention prevented a complete service refusal by the family and secured a confirmed start-of-care date that aligned with the patient's home arrival."
+}

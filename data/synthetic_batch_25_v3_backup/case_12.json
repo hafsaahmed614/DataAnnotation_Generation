@@ -1,0 +1,52 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "The patient's son expresses concern regarding his mother's ability to manage supplemental oxygen at home, conflicting with the daughter's plan for immediate home return.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker is waiting for a formal family consensus before initiating the final HHA referral paperwork, causing the home care slot to remain unconfirmed."
+    },
+    {
+      "event_description": "The Home Health Agency (HHA) reports a delay in securing an oxygen concentrator for the patient's residence due to a regional vendor shortage.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator is unwilling to finalize the Start-of-Care (SOC) date until the DME vendor provides a tracking number for the home delivery."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary caregiver (daughter) is overwhelmed by the conflicting medication lists provided by the hospital and the current subacute facility.",
+      "action_taken": "The PN requested the HHA liaison to prioritize a medication reconciliation task for the admitting nurse's first visit and provided the daughter with the HHA\u2019s 24/7 clinical help-line number.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Reduce family anxiety to prevent a last-minute refusal of home services in favor of long-term care."
+    },
+    {
+      "situation": "The HHA intake coordinator is out on PTO, and the referral for the 83-year-old patient is sitting in an unread queue.",
+      "action_taken": "The PN contacted the HHA Regional Director to identify the coverage person and confirmed the patient\u2019s zip code was within their active staffing zone for PT.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Lock in the admission slot before the weekend staffing freeze occurs at the HHA level."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the facility's internal communication board for an updated discharge date and wait for the Social Worker to notify the family of the finalized HHA choice.",
+      "rationale": "The PN is deferring all coordination to the facility staff, which risks a transition gap if the SW fails to communicate the HHA's arrival time to the family."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Facilitate a call between the HHA liaison and the patient's daughter to walk through the first 48 hours of home care, specifically focusing on the PT and Nursing schedule.",
+      "rationale": "This stays within the PN scope by focusing on service adoption and transition logistics without interfering in clinical or social work mediation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Review the patient's latest ICU-to-SAR transfer notes to explain the clinical stability of her oxygen saturation levels to the skeptical son during a family meeting.",
+      "rationale": "The PN is accessing clinical documentation and providing medical interpretations, which are the exclusive responsibilities of the clinical team and Social Worker."
+    }
+  ],
+  "narrative_summary": "An 83-year-old female recovering from pneumonia post-ICU is caught between her children's differing views on her safety at home. While the clinical team has cleared her for discharge with supplemental oxygen, the transition is stalled by a lack of caregiver alignment and a regional DME shortage for oxygen concentrators. The Patient Navigator's role focuses on bridging this gap by ensuring the Home Health Agency is fully prepared for a high-acuity admission and that the family understands the support structure available post-discharge. Success is defined by securing a confirmed Start-of-Care date and ensuring all home equipment is verified before the patient leaves the facility."
+}

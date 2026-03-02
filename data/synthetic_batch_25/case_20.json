@@ -1,66 +1,67 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker is managing the clinical discharge summary, the medical transportation to the residence, and the surgeon's follow-up schedule. The Patient Navigator is focused exclusively on verifying the Home Health Agency's (HHA) home safety assessment results, confirming the hospital bed delivery for the post-CABG recovery, and educating the patient's daughter on the HHA's Day 1 arrival window.",
   "format_1_state_log": [
     {
-      "event_description": "Initial transition planning identifies that the patient's preferred Home Health Agency (HHA) is out-of-network for her Managed Medicare plan, and the only in-network provider has no nurse available in her rural zip code.",
+      "event_description": "Social Worker identifies Arthur for Friday discharge; however, BestLife HHA reports the required home safety assessment for the hospital bed placement has not been scheduled.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "The HHA's field assessor is only available in the patient's rural zip code on Tuesdays and Thursdays, missing the Friday discharge window."
+    },
+    {
+      "event_description": "PN contacts Arthur\u2019s daughter who reveals she hasn't cleared the spare room for the DME delivery because she thought the facility provided the bed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Caregiver training gap regarding the physical requirements for post-surgical home recovery equipment."
+    },
+    {
+      "event_description": "BestLife HHA confirms an intake freeze for new cardiac referrals due to a sudden surge in post-holiday admissions.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "The Managed Medicare plan's provider directory is outdated, listing agencies as 'active' that no longer service the patient's specific geographic territory."
-    },
-    {
-      "event_description": "Facility Social Worker attempts to send a referral to a third-party agency, but the HHA intake coordinator is out on PTO, leaving the referral sitting in an unmonitored fax queue.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA lacks a centralized intake redundancy system, relying on a single individual to process all incoming SNF transition referrals."
-    },
-    {
-      "event_description": "PN identifies an alternative in-network HHA willing to staff the case and confirms they have a wound-certified nurse available for a Monday start-of-care.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None; active PN intervention bypassed the administrative silence of the first two agencies."
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA intake department is overwhelmed and has stopped processing new Start-of-Care (SOC) requests for the weekend."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The in-network HHA claims they cannot accept the patient due to a lack of wound care supplies in their current inventory.",
-      "action_taken": "Coordinated with the SNF central supply to ensure the patient was discharged with a 3-day 'bridge' supply of specialized diabetic dressings.",
-      "taxonomy_category": "Proactive transition planning",
-      "tactical_field_intent": "Remove the HHA's primary excuse for declining the referral by providing immediate clinical overhead relief."
+      "situation": "The SW is under pressure to clear the bed for an incoming cardiac patient, but BestLife HHA cannot confirm a nurse for the Saturday morning follow-up.",
+      "action_taken": "Identified two alternative in-network HHAs with weekend staffing capacity and presented the options to the SW.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with a 'path of least resistance' to maintain the Friday discharge without risking an unmonitored weekend."
     },
     {
-      "situation": "The patient's daughter is skeptical about using an unfamiliar HHA instead of the family's preferred provider.",
-      "action_taken": "Facilitated a three-way introductory call between the daughter, the HHA intake manager, and the PN to review the care plan.",
-      "taxonomy_category": "Educate patient/family on program benefits",
-      "tactical_field_intent": "Secure emotional buy-in and prevent a last-minute refusal of services that would result in an unsafe discharge."
+      "situation": "Arthur's daughter expresses high anxiety about managing the sternal incision and the oxygen concentrator without professional help on the first night.",
+      "action_taken": "Provided a detailed Day 1 walkthrough, explaining exactly what time the DME vendor arrives and how to contact the HHA on-call nurse if the first visit is delayed.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate caregiver panic to prevent a 'refusal of discharge' at the eleventh hour."
     },
     {
-      "situation": "The HHA requires a confirmed discharge time before they will assign a nurse for the start-of-care visit.",
-      "action_taken": "Liaised with the facility transport coordinator to lock in a 10:00 AM wheelchair van slot and relayed this immediately to the HHA scheduler.",
-      "taxonomy_category": "Pass contact/address info and first appointment availability to home team",
-      "tactical_field_intent": "Create a 'hard' schedule that forces the HHA to commit a specific staff member to the case before the weekend admission freeze."
+      "situation": "The facility medication list shows Arthur on a new anticoagulant, but the HHA referral packet still lists his pre-surgical meds.",
+      "action_taken": "Flagged the medication discrepancy to the SW and requested a reconciled list be faxed to the HHA intake coordinator immediately.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Ensure clinical safety at handoff while keeping the PN out of the actual reconciliation process."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the facility Social Worker to resolve the network mismatch and notify the PN once an HHA has finally accepted the referral and confirmed a date.",
-      "rationale": "The PN avoids any potential conflict with the facility's internal discharge process but risks a multi-day delay if the SW is preoccupied with higher-acuity cases."
+      "description": "Upon learning that the daughter is refusing to allow the home safety assessment until her brother is present on Sunday, the PN documented the delay and notified the Social Worker that the environment would not be ready for the Friday discharge.",
+      "rationale": "The PN recognizes that a family's refusal to grant home access is a social/volatile dynamic that requires the SW's intervention and avoids overstepping into family mediation."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Research three alternative in-network HHAs that specialize in diabetic wound care and provide their direct intake phone numbers to the Social Worker to expedite the referral pivot.",
-      "rationale": "This supports the facility's workflow by doing the logistical legwork while leaving the clinical and administrative referral authority with the Social Worker."
+      "description": "The PN verified with the DME vendor that the hospital bed was on the truck for Friday morning and suggested to the SW that the discharge be moved to Friday afternoon once the 'Home Safety Assessment Pending' flag was cleared by the HHA field tech.",
+      "rationale": "This action supports the transition by confirming logistics and providing a specific, actionable suggestion to the SW based on verified equipment status."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the patient's Managed Medicare insurance provider directly to negotiate a Single Case Agreement (SCA) for the preferred out-of-network HHA.",
-      "rationale": "While intended to help the patient, this is a clear overstep into the Social Worker's and the HHA's administrative responsibilities and involves discussing insurance authorizations, which is out of scope for a PN."
+      "description": "The PN called Arthur's cardiologist directly to request a waiver for the home safety assessment requirement, arguing that Arthur's mobility was sufficient to bypass the HHA's internal safety protocols.",
+      "rationale": "This is a major overstep as the PN is making a clinical judgment about the patient's mobility and attempting to override an HHA's safety protocol and a physician's oversight."
     }
   ],
-  "narrative_summary": "Mrs. Rodriguez was prepared for discharge following treatment for a diabetic foot ulcer, but a significant network mismatch between her insurance and available home health agencies threatened to keep her in the facility indefinitely. The Patient Navigator stepped in to resolve the logistical gridlock by identifying an alternative in-network agency with the necessary wound-care expertise and nursing staff in her zip code. By coordinating the delivery of bridge supplies and confirming medical transport timing, the PN ensured that the HHA was ready for a Monday start-of-care, successfully avoiding a weekend service gap. The transition was finalized once the family felt comfortable with the new agency's credentials, resulting in a successful service conversion."
+  "narrative_summary": "Arthur, a 75-year-old post-CABG patient, was slated for a Friday discharge until a 'Home Safety Assessment Pending' barrier emerged from the primary HHA. The PN discovered that the home was not yet configured for the necessary hospital bed, and the daughter was unprepared for the technical requirements of home recovery. By identifying alternative HHAs with weekend capacity and providing the family with a concrete Day 1 roadmap, the PN facilitated a safe transition that survived an HHA intake freeze. The case concluded with a successful home discharge on Monday once the environmental modifications were verified and the caregiver's anxiety was mitigated through education."
 }

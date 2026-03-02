@@ -1,58 +1,59 @@
 {
+  "boundary_planning_scratchpad": "The Social Worker is handling the formal mediation between the patient's son (who demands a SNF extension) and daughter (who wants him home), while the PN is only handling the verification of the HHA's physical therapy capacity and the logistics of the CPM machine delivery for the bilateral TKA recovery.",
   "format_1_state_log": [
     {
-      "event_description": "Surgeon provides clinical sign-off for home discharge following spinal fusion; however, the home requires a hospital bed for safe PT/OT initiation.",
+      "event_description": "The patient's son verbally threatens to refuse the discharge, citing that the home is not 'medical grade' for a bilateral TKA recovery, while the daughter insists on immediate return.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The DME vendor's delivery driver is on medical leave, and the secondary driver is restricted to local zip codes only, excluding the patient's rural residence."
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The son is leveraging his role as secondary POA to stall the discharge because he does not trust the HHA's ability to manage 24/7 safety."
     },
     {
-      "event_description": "PN confirms with the HHA intake coordinator that the start-of-care (SOC) cannot be scheduled until the hospital bed is physically confirmed in the residence.",
+      "event_description": "PN attempts to confirm the Thursday start-of-care with the primary HHA, but discovers the intake coordinator is out on leave without a designated backup.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA refuses to 'blind schedule' the admission visit without a photo or verbal confirmation from the PN that equipment is present, fearing a wasted clinician trip."
+      "ai_assumed_bottleneck": "The HHA's centralized intake system is stalled because only one individual has the credentials to authorize new TKA referrals into the clinician's schedule."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The preferred DME vendor reports a 5-day backlog for the specific semi-electric hospital bed ordered by the facility.",
-      "action_taken": "Identified a secondary in-network DME provider through the HHA\u2019s preferred partner list and relayed the contact to the facility Social Worker.",
-      "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Leverage the HHA's existing vendor relationships to bypass the facility's standard rotation and expedite equipment arrival."
+      "situation": "The primary HHA cannot confirm a Physical Therapist for the Day 1 visit due to a sudden localized staffing shortage for bilateral knee cases.",
+      "action_taken": "Presented two pre-vetted alternative agencies with active PT availability to the Social Worker.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Ensure a backup is ready so the SW can pivot immediately if the son's resistance is overcome, preventing a secondary delay."
     },
     {
-      "situation": "Family is concerned that the HHA will cancel the referral if the equipment isn't there by the original Friday discharge date.",
-      "action_taken": "Facilitated a three-way coordination call between the HHA intake, the PN, and the daughter to confirm a Monday morning 'soft-hold' for the admission nurse.",
+      "situation": "The son expresses confusion over who will be in the home and when the equipment will arrive, contributing to his refusal to support the plan.",
+      "action_taken": "Provided a detailed Day 1 expectations guide, including the DME delivery window and the HHA's nurse-triage contact number.",
       "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Prevent the HHA from releasing the staffing slot to another patient during the equipment delay window."
+      "tactical_field_intent": "De-escalate caregiver panic by replacing vague fears with concrete operational timelines."
     },
     {
-      "situation": "The medication list provided in the preliminary discharge packet shows a discrepancy in the dosage of the patient's post-surgical anticoagulant.",
-      "action_taken": "Flagged the discrepancy for the HHA clinical supervisor to ensure the home-care nurse brings the correct reconciliation forms for the first visit.",
-      "taxonomy_category": "HHA/Team Handoff",
-      "tactical_field_intent": "Ensure the HHA is prepared to catch the error at the home level without the PN appearing to correct the facility's clinical work."
+      "situation": "Conflicting reports exist regarding the home\u2019s layout; the daughter claims it is a ranch, but the intake records suggest a two-story with a broken chairlift.",
+      "action_taken": "Flagged the structural discrepancy to the Social Worker and requested a formal home safety evaluation be prioritized by the HHA.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Force a factual resolution of the environmental barrier to stop the family's 'he-said-she-said' dynamic from stalling the transition."
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The PN monitors the facility's internal logistics log and waits for the Social Worker to confirm when the DME vendor has successfully delivered the bed to the patient's home.",
-      "rationale": "The PN is deferring entirely to the facility's discharge process, failing to proactively coordinate with the HHA to ensure the admission slot is preserved during the delay."
+      "description": "Documented the son's specific safety concerns regarding the stairs and formally notified the Social Worker that a family mediation is required before HHA logistics can be finalized.",
+      "rationale": "The PN recognizes that a family dispute over the safety of the discharge destination is a Social Work/Legal competency; stepping back prevents the PN from being caught in the middle of a POA conflict."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN contacts the DME vendor directly to verify the delivery window, then provides the HHA intake coordinator with the specific delivery confirmation number to secure a Monday morning start-of-care visit.",
-      "rationale": "This action remains within the PN's scope of transition logistics by verifying equipment readiness and aligning it with the HHA's scheduling needs."
+      "description": "Verified the delivery window for the CPM machine and walker with the DME vendor and shared the confirmation numbers with both the daughter and the Social Worker.",
+      "rationale": "The PN stays within scope by confirming the logistical readiness of the home, providing the SW with the 'facts on the ground' needed to reassure the family that the home is prepared."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN contacts the patient's insurance provider to request an urgent medical override for an out-of-network DME supplier and then drafts a revised clinical justification for the surgeon to sign.",
-      "rationale": "The PN is performing the Social Worker's role (insurance negotiation) and the clinician's role (drafting medical justifications), which violates the non-clinical boundary."
+      "description": "Offered to conduct a preliminary home visit to assess the stairs and chairlift personally to convince the son that the discharge is safe.",
+      "rationale": "Environmental safety assessments for a bilateral TKA patient are clinical functions performed by PTs or HHAs; the PN is assuming liability and performing a clinical role they are not qualified for."
     }
   ],
-  "narrative_summary": "Following a successful spinal fusion, the patient's transition to home health was stalled by a logistical backlog in hospital bed delivery, a critical requirement for post-surgical mobility. The Patient Navigator stepped in to bridge the gap between the DME vendor's delay and the HHA's strict admission requirements, ensuring the referral was not dropped by the agency. By coordinating the delivery timing with the HHA's staffing schedule, the PN secured a Monday morning start-of-care, preventing a weekend without professional oversight. The case highlights the PN's role in managing external vendor friction to maintain continuity of care after the facility's clinical responsibilities end."
+  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, faces a stalled transition home due to a sharp disagreement between his children regarding his safety. While the daughter is eager for his return, the son\u2019s fear of a fall has led to a threat of discharge refusal, complicating the HHA\u2019s ability to schedule a start-of-care. Compounding the issue, the HHA\u2019s intake department is currently unresponsive due to staff leave, and the PT assignment remains unconfirmed. The PN is focused on verifying that all necessary equipment is delivered and presenting alternative agencies to the Social Worker to ensure Arthur doesn't lose his window for home-based rehab."
 }

@@ -1,0 +1,58 @@
+{
+  "format_1_state_log": [
+    {
+      "event_description": "Patient cleared for Friday discharge following bilateral TKA; however, the Home Health Agency (HHA) reports that the specific physical therapy protocols and wound care orders were never received from the facility.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "The facility ward clerk faxed the discharge summary but omitted the signed physician orders required by the HHA to initiate the start-of-care visit."
+    },
+    {
+      "event_description": "Friday afternoon discharge proceeds as planned by the facility, but the HHA intake coordinator is unable to schedule a weekend admission without the missing clinical orders.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA weekend admission freeze prevents any new starts-of-care until Monday because no intake staff are available to process late-arriving paperwork."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA intake coordinator cannot confirm the start-of-care date because the SNF faxed the referral to the wrong branch office.",
+      "action_taken": "Obtained the correct branch-specific fax number and provided it to the SNF unit secretary while requesting a confirmation of transmission.",
+      "taxonomy_category": "Final Coordination",
+      "tactical_field_intent": "Eliminate administrative 'ping-pong' between the facility and the agency to secure a firm Monday morning admission slot."
+    },
+    {
+      "situation": "88yo patient and family are anxious about managing bilateral knee incisions over the weekend without a nurse visit.",
+      "action_taken": "Provided the family with a physical appointment card containing the HHA's 24/7 on-call number and confirmed the scheduled Monday arrival time.",
+      "taxonomy_category": "Patient Confirmation",
+      "tactical_field_intent": "Reduce the likelihood of a 'fear-based' ER readmission by establishing a clear communication bridge before the home team arrives."
+    },
+    {
+      "situation": "The HHA requires a verification of the home environment before the first PT visit for the bilateral TKA patient.",
+      "action_taken": "Verified with the family that the rented hospital bed was delivered and that the pathway from the bedroom to the bathroom was cleared of rugs.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Ensure the home is 'HHA-ready' so the therapist does not refuse the visit on safety grounds, causing further delay."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the HHA's referral portal over the weekend and wait for the SNF social worker to re-send the missing clinical orders on Monday morning.",
+      "rationale": "This approach avoids conflict with the facility staff but results in a significant care gap for a high-risk 88-year-old bilateral TKA patient."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Identify the specific missing order elements through the HHA intake coordinator and facilitate the exchange of the correct fax numbers between the HHA and the SNF ward clerk before the Friday afternoon shift change.",
+      "rationale": "This keeps the PN within their non-clinical role as a logistics coordinator, ensuring that the necessary paperwork is in the right hands to prevent a weekend delay."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the orthopedic surgeon's office directly to explain the SNF's administrative error and request that the surgeon's assistant draft and sign a new set of home health orders for immediate faxing to the HHA.",
+      "rationale": "The PN is performing the clinical coordination and order procurement duties that belong to the Social Worker or Discharge Planner, stepping outside their role as a transition navigator."
+    }
+  ],
+  "narrative_summary": "The 88-year-old patient completed a successful bilateral TKA recovery at the facility, but the transition to home health was jeopardized when the clinical orders failed to reach the HHA intake department. Despite the facility proceeding with the discharge on a Friday, the missing paperwork triggered a weekend admission freeze at the agency. The Patient Navigator focused on reconciling the communication breakdown between the facility ward clerk and the HHA branch office to secure a Monday start-of-care. By managing family expectations and verifying home readiness, the PN ensured the patient remained stable at home until professional services could be initiated."
+}

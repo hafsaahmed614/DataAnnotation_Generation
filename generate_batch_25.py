@@ -33,13 +33,14 @@ PATIENTS = [
 ]
 
 FRICTIONS = [
-    "Managed Medicare Auth",
     "Medicaid CHC Waiver",
-    "HHA Weekend Admission Freeze",
-    "DME Delivery Backlog",
+    "Provider Illness",
+    "Loss of Skilled Need",
+    "HHA_Intake_Freeze",
+    "DME_Delivery_Failure",
     "HHA Intake Coordinator Unavailable",
     "Caregiver Training Gap",
-    "Medication List Mismatch",
+    "Handoff_Data_Mismatch",
     "Home Safety Assessment Pending",
     "HHA Staffing Shortage",
     "Insurance-HHA Network Mismatch",
@@ -47,17 +48,45 @@ FRICTIONS = [
     "Transport Coordination Failure",
     "Missing HHA Orders at Handoff",
     "Holiday Coverage Gap",
-    "Provider Illness",
-    "Loss of Skilled Need",
+    "Caregiver_Panic",
+]
+
+# Patient-choice frictions (used to enforce ~30% patient/family-driven cases)
+PATIENT_CHOICE_FRICTIONS = [
+    "Caregiver_Panic",
+    "Family Disagreement on Discharge Plan",
+    "Caregiver Training Gap",
 ]
 
 
-def _build_unique_combos(patients, frictions, n=25):
-    """Build n unique (patient, friction) pairs. No duplicate combos."""
+def _build_unique_combos(patients, frictions, n=25, patient_choice_frictions=None, patient_choice_slots=8):
+    """Build n unique (patient, friction) pairs with ~30% patient-choice enforcement.
+
+    Reserves `patient_choice_slots` for patient/family-driven frictions,
+    fills the rest with non-patient-choice frictions. No duplicate combos.
+    """
     import itertools
-    all_combos = list(itertools.product(patients, frictions))
-    random.shuffle(all_combos)
-    return all_combos[:n]
+
+    if patient_choice_frictions is None:
+        patient_choice_frictions = []
+
+    pc_set = set(patient_choice_frictions)
+    pc_frictions = [f for f in frictions if f in pc_set]
+    non_pc_frictions = [f for f in frictions if f not in pc_set]
+
+    # Build patient-choice combos
+    pc_combos = list(itertools.product(patients, pc_frictions))
+    random.shuffle(pc_combos)
+    pc_selected = pc_combos[:patient_choice_slots]
+
+    # Build non-patient-choice combos
+    non_pc_combos = list(itertools.product(patients, non_pc_frictions))
+    random.shuffle(non_pc_combos)
+    non_pc_selected = non_pc_combos[:(n - len(pc_selected))]
+
+    combined = pc_selected + non_pc_selected
+    random.shuffle(combined)
+    return combined[:n]
 
 
 def main():
@@ -85,13 +114,27 @@ def main():
         "and NOT a clinician. The PN enters the picture specifically to ensure a smooth transition to home "
         "health care AFTER the facility handles the clinical discharge. The PN is a collaborative team member "
         "who works WITH the facility, never against them.\n\n"
+        "THE PN MENTALITY IS: SUPPORT, SUGGEST, AND ESCALATE.\n"
+        "- SUPPORT: Verify HHA logistics, confirm equipment delivery, educate the family on Day 1 expectations.\n"
+        "- SUGGEST: Present 2-3 pre-vetted alternatives to the SW when the primary plan falls through.\n"
+        "- ESCALATE: Flag clinical, insurance, or volatile family issues to the SW immediately.\n\n"
+        "FOG OF WAR DYNAMIC: The PN always acts on INCOMPLETE information. In every case, at least one critical "
+        "detail must be unknown, delayed, or contradictory (e.g., the SW says discharge is Thursday but the HHA "
+        "says they have no record of the referral; the family says the home has a ramp but the PN has not verified it). "
+        "The PN must make decisions under uncertainty and cannot wait for perfect information.\n\n"
+        "PATIENT CHOICE DYNAMIC: Not all friction is bureaucratic. Some cases must feature friction driven by "
+        "patient or family decisions (e.g., caregiver refusing to learn wound care, family threatening to refuse "
+        "discharge, patient changing their mind about going home). The PN must navigate these human dynamics "
+        "while staying within scope.\n\n"
         "BANNED TROPES: You MUST NOT use the following repetitive phrases or concepts: "
         "'F2F / Face-to-Face signatures', 'burned-out Social Worker', '100-day financial cliff', "
         "'Private pay to LTC', or 'Black Hole'."
     )
 
-    # Build 25 unique (patient, friction) combos — no duplicates
-    combos = _build_unique_combos(PATIENTS, FRICTIONS, n=25)
+    # Build 25 unique (patient, friction) combos — 8 patient-choice, 17 other
+    combos = _build_unique_combos(PATIENTS, FRICTIONS, n=25,
+                                  patient_choice_frictions=PATIENT_CHOICE_FRICTIONS,
+                                  patient_choice_slots=8)
     print(f"Generated {len(combos)} unique patient-friction combinations.\n")
 
     successes = 0
