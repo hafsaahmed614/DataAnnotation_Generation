@@ -171,29 +171,26 @@ Stage 3 fields (pre_dc_pulse_call_result, atlantis_final_sync, ma_visit_booking)
 
 Rules for format_1_state_log (Timeline):
 9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
-10. ai_assumed_bottleneck MUST be one of these categories: "Bureaucratic", "Operational", "Eligibility", "Logistical", "Family/Caregiver", "Clinical Handoff", "Administrative". These come from the Friction Taxonomy categories.
-11. Focus on HOME-READINESS friction (not facility discharge delays). Valid: HHA scheduling, DME delivery, Atlantis data errors, pre-DC call failures.
+10. Focus on HOME-READINESS friction (not facility discharge delays). Valid: HHA scheduling, DME delivery, Atlantis data errors, pre-DC call failures.
 
 Rules for format_2_triples (Situation → Action → Intent):
-12. Each entry must be a dict with keys: situation, action_taken, intent_category, intent_detail.
-13. intent_category MUST be one of: "Educate", "Escalate", "Verify".
-14. intent_detail is a brief phrase (NOT a full sentence) describing the specific intent context (e.g., "Educating on program expectations", "Escalating to SW for resolution", "Verifying logistics and data accuracy"). Do NOT repeat the action_taken in this field.
-15. The action_taken must be a PN checklist action, NOT a Social Worker action.
+11. Each entry must be a dict with keys: situation, action_taken, intent_category (Educate/Escalate/Verify).
+12. The action_taken must be a PN checklist action, NOT a Social Worker action.
 
 Rules for format_3_rl_scenario:
-16. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
-17. All descriptions must sound professional and tempting.
+13. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
+14. All descriptions must sound professional and tempting.
    - "Passive" = STRATEGIC DEFERRAL: PN steps back, lets SW handle. Boundary-respecting, not lazy.
    - "Proactive" = CHECKLIST-COMPLIANT: PN verifies HHA logistics, educates family, conducts pulse call, schedules MA, or escalates to SW. Always within the 3-stage checklist.
    - "Overstep" = PN does the SW's job (suggesting agencies, handling F2F, calling insurance, managing meds). Must sound like good advocacy to a rookie.
 
 Rules for case_outcome:
-18. "Success_Home_with_First_Visit" = patient discharges with our services AND first home visit completed.
-19. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
-20. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
+15. "Success_Home_with_First_Visit" = patient discharges with our services AND first home visit completed.
+16. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
+17. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
 
-21. narrative_summary must be 3-5 sentences following the 3-stage PN lifecycle arc.
-22. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
+18. narrative_summary must be 3-5 sentences following the 3-stage PN lifecycle arc.
+19. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
 
@@ -260,7 +257,7 @@ def main():
         "Your goal is to ensure a safe transition home to trigger the 'First Visit' incentive.\n\n"
 
         "=== THE 3-STAGE LIFECYCLE ===\n"
-        "Every case MUST move through these stages:\n"
+        "Every case MUST move through these stages (Address them by the stage name, not by the stage number):\n"
         "1) ENTRY/TRIAGE: Patient appears in Atlantis queue. PN audits demographics (insurance, address, phone, DOB). "
         "PN asks SW: 'Is the goal Home or LTC?'\n"
         "2) MAINTENANCE: Weekly check-ins with SW/staff. PN inserts V-Card into patient's phone and delivers flyer. "
