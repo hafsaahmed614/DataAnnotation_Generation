@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+5 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Caregiver Panic: Wife expresses fear of managing spinal brace and mobility at home."
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "24-Hour Pulse Call de-escalation regarding HHA arrival window.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "24-Hour Pulse Call de-escalation regarding HHA arrival window."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Wife is overwhelmed by post-surgical care instructions provided by the facility.",
       "action_taken": "Walked the family through Day 1 expectations: who arrives, what equipment is needed, and the MA's role in the first 24 hours.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Walked the family through Day 1 expectations: who arrives, what equipment is needed, and the MA's role in the first 24 hours."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Wife threatens to refuse discharge due to anxiety about the 48-hour HHA intake window.",
       "action_taken": "Escalated the volatile family situation to the Social Worker to ensure clinical alignment on discharge readiness.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated the volatile family situation to the Social Worker to ensure clinical alignment on discharge readiness."
+      "intent_detail": "Escalating to SW for resolution"
     },
     {
       "situation": "Atlantis queue shows a missing secondary contact number for the patient's residence.",
       "action_taken": "Audited the facility face sheet and updated Atlantis demographics to ensure the home team could reach the family.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited the facility face sheet and updated Atlantis demographics to ensure the home team could reach the family."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [

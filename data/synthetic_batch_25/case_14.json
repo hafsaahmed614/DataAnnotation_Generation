@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Operational staffing/system failure at the HHA branch."
+      "ai_assumed_bottleneck": "Operational"
     },
     {
       "event_description": "Friday Discharge Gap: Facility proceeds with discharge despite HHA inability to staff a weekend RN.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "HHA reduced holiday/weekend staffing capacity."
+      "ai_assumed_bottleneck": "Operational"
     },
     {
       "event_description": "MA Scheduling Bridge: PN secures Saturday morning slot for Medical Assistant assessment.",
@@ -33,8 +31,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "N/A - Resolution of visit window gap."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -42,19 +39,19 @@
       "situation": "HHA intake coordinator reports a freeze on new referrals due to a system-wide outage.",
       "action_taken": "Flagged the intake delay to the Social Worker and requested a status update on the referral's internal 'Hub' receipt.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Flagged the intake delay to the Social Worker and requested a status update on the referral's internal 'Hub' receipt."
+      "intent_detail": "Escalating to SW for resolution"
     },
     {
       "situation": "Patient's daughter expresses fear about managing MS symptoms over the weekend without a nurse.",
       "action_taken": "Educated the daughter on the MA's role in verifying home safety and medication setup while the HHA nurse visit is pending.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Educated the daughter on the MA's role in verifying home safety and medication setup while the HHA nurse visit is pending."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Atlantis demographics list an outdated landline for the patient.",
       "action_taken": "Audited the facility face sheet and updated Atlantis with the correct POA mobile number to ensure pulse call success.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited the facility face sheet and updated Atlantis with the correct POA mobile number to ensure pulse call success."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [

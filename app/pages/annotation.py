@@ -164,8 +164,6 @@ def render():
         with st.expander(f"Event {i + 1}: {label}...", expanded=True):
             st.markdown(f"**Event Description:** {event['event_description']}")
             st.markdown(f"**AI Bot Assumed Bottleneck:** `{event['ai_assumed_bottleneck']}`")
-            if event.get("bottleneck_detail"):
-                st.markdown(f"**Bottleneck Detail:** {event['bottleneck_detail']}")
 
             st.divider()
             st.subheader("Your Evaluation")

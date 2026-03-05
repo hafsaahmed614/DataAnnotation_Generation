@@ -15,8 +15,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative",
-      "bottleneck_detail": "Atlantis Data Audit"
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
       "event_description": "Caregiver Training Gap (Drain Management)",
@@ -24,8 +23,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Caregiver Training Gap (Drain Management)"
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "Pre-DC Pulse Call Confirmation",
@@ -33,8 +31,7 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Pre-DC Pulse Call Confirmation"
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -42,19 +39,19 @@
       "situation": "Daughter expresses anxiety about managing the cardiac drain at home.",
       "action_taken": "Educated daughter on the 'Day 1' HHA expectations, including the nurse's role in verifying drain care.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Educated daughter on the 'Day 1' HHA expectations, including the nurse's role in verifying drain care."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "SW is unavailable to confirm if the daughter's training session was rescheduled.",
       "action_taken": "Contacted the facility floor nurse to verify if the training was logged in the chart without accessing the EMR directly.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Contacted the facility floor nurse to verify if the training was logged in the chart without accessing the EMR directly."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Conflicting information regarding the HHA's ability to staff a cardiac case in this zip code.",
       "action_taken": "Escalated the staffing concern to the SW to ensure an alternative agency was identified if the primary HHA could not commit.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated the staffing concern to the SW to ensure an alternative agency was identified if the primary HHA could not commit."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

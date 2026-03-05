@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Positive",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Family readiness and support system stability"
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "Atlantis_Data_Lag: POA phone number transposed in the system queue.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative",
-      "bottleneck_detail": "Atlantis_Data_Lag: POA phone number transposed in the system queue."
+      "ai_assumed_bottleneck": "Administrative"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Daughter threatens to refuse discharge due to fear of patient falling.",
       "action_taken": "Walked daughter through Day 1 expectations and the role of the MA visit.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Walked daughter through Day 1 expectations and the role of the MA visit."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "SW needs to know if the patient's home is ready for the transition.",
       "action_taken": "Conducted 24-hour pre-discharge pulse call to verify home readiness.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Conducted 24-hour pre-discharge pulse call to verify home readiness."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Daughter requests medical advice on managing patient's chemo-induced nausea.",
       "action_taken": "Escalated clinical concerns to the Social Worker and floor nurse.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated clinical concerns to the Social Worker and floor nurse."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

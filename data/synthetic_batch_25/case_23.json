@@ -15,8 +15,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "Hard Stop (Ineligibility)",
-      "ai_assumed_bottleneck": "Eligibility",
-      "bottleneck_detail": "Eligibility: Loss of Skilled Need"
+      "ai_assumed_bottleneck": "Eligibility"
     },
     {
       "event_description": "EMR Data Delay",
@@ -24,8 +23,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2 Days",
-      "ai_assumed_bottleneck": "Clinical Handoff",
-      "bottleneck_detail": "Operational: Handoff_Data_Mismatch"
+      "ai_assumed_bottleneck": "Clinical Handoff"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Atlantis demographic record contains a suffix error in the patient's home address.",
       "action_taken": "Audited the facility face sheet and updated the Atlantis queue to ensure HHA and MA travel to the correct location.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited the facility face sheet and updated the Atlantis queue to ensure HHA and MA travel to the correct location."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Daughter is uncertain about how to manage the patient's MS flare-ups after discharge.",
       "action_taken": "Delivered the program flyer and walked the family through Day 1 expectations and the role of the transition team.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Delivered the program flyer and walked the family through Day 1 expectations and the role of the transition team."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "PT indicates the patient is back to baseline, removing the skilled need for home health.",
       "action_taken": "Escalated the eligibility status to the Social Worker to determine if a nursing need (RN) for medication teaching could be established.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated the eligibility status to the Social Worker to determine if a nursing need (RN) for medication teaching could be established."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

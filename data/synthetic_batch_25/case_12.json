@@ -15,8 +15,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Weekly alignment with SW regarding wound healing progress."
+      "ai_assumed_bottleneck": "Operational"
     },
     {
       "event_description": "Mandatory 24-hour pre-discharge pulse call failed; POA unreachable.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20132 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Communication Barrier (Pre-DC_Call_Disconnect)"
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Atlantis demographics missing daughter's secondary contact number.",
       "action_taken": "Audited facility face sheet and updated Atlantis record to ensure reachability.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited facility face sheet and updated Atlantis record to ensure reachability."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Patient's daughter expresses anxiety about managing diabetic wound dressings at home.",
       "action_taken": "Conducted bedside education walking the family through Day 1 expectations and MA support.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Conducted bedside education walking the family through Day 1 expectations and MA support."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "PN cannot reach family 24 hours before discharge to confirm the MA schedule.",
       "action_taken": "Escalated the communication gap to the Social Worker to ensure the visit time is relayed during discharge paperwork.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated the communication gap to the Social Worker to ensure the visit time is relayed during discharge paperwork."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

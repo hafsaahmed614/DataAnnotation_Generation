@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Caregiver Panic: Spouse expresses fear of managing post-CABG wound and meds."
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "HHA Intake Coordinator Unavailable: Single point of contact at agency out sick.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "HHA Intake Coordinator Unavailable: Single point of contact at agency out sick."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Spouse is overwhelmed by the complexity of post-discharge cardiac instructions.",
       "action_taken": "Walked spouse through 'Day 1 expectations' including HHA arrival and equipment check.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Walked spouse through 'Day 1 expectations' including HHA arrival and equipment check."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Atlantis queue displays an outdated emergency contact for the patient.",
       "action_taken": "Audited demographics against the facility face sheet and updated Atlantis record.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited demographics against the facility face sheet and updated Atlantis record."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Spouse threatens to refuse discharge due to fear of managing the patient's care.",
       "action_taken": "Flagged the volatile family situation to the Social Worker for immediate intervention.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Flagged the volatile family situation to the Social Worker for immediate intervention."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

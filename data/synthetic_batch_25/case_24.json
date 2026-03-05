@@ -15,8 +15,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative",
-      "bottleneck_detail": "Atlantis demographic audit reveals incorrect zip code and outdated primary insurance contact."
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
       "event_description": "Arthur's son (POA) refuses to sign discharge papers for home, citing inability to assist with hygiene.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Arthur's son (POA) refuses to sign discharge papers for home, citing inability to assist with hygiene."
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "HHA intake coordinator out on PTO; confirmation of nurse availability for Day 1 is delayed.",
@@ -33,8 +31,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Unchanged",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "HHA intake coordinator out on PTO; confirmation of nurse availability for Day 1 is delayed."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -42,19 +39,19 @@
       "situation": "Patient's son expresses fear about the complexity of the BKA dressing changes at home.",
       "action_taken": "Educated family on the specific role of the HHA nurse in wound management and the MA's role in the 24-hour visit.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Educated family on the specific role of the HHA nurse in wound management and the MA's role in the 24-hour visit."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Son demands Arthur be moved to a permanent LTC bed against Arthur's wishes.",
       "action_taken": "Escalated the family conflict to SW Sarah to facilitate a formal clinical family meeting.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Escalated the family conflict to SW Sarah to facilitate a formal clinical family meeting."
+      "intent_detail": "Escalating to SW for resolution"
     },
     {
       "situation": "PN notices the facility face sheet has a different phone number for the POA than what is listed in Atlantis.",
       "action_taken": "Audited the demographics and updated the Atlantis contact tab with the correct mobile number.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Audited the demographics and updated the Atlantis contact tab with the correct mobile number."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [

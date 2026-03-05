@@ -15,8 +15,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "+1 Day",
-      "ai_assumed_bottleneck": "Administrative",
-      "bottleneck_detail": "Initial demographic audit identifies outdated contact information in Atlantis."
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
       "event_description": "Social Worker determines the patient requires a level of care inconsistent with home discharge after clinical decline.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "Hard Stop (LTC Closure)",
-      "ai_assumed_bottleneck": "Eligibility",
-      "bottleneck_detail": "Social Worker determines the patient requires a level of care inconsistent with home discharge after clinical decline."
+      "ai_assumed_bottleneck": "Eligibility"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Atlantis record lists a disconnected landline as the primary contact for the amputation patient.",
       "action_taken": "PN audited the facility face sheet and updated Atlantis with the son's mobile number.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: PN audited the facility face sheet and updated Atlantis with the son's mobile number."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Family expresses intense fear of managing the patient's stump care and mobility at home.",
       "action_taken": "PN educated the family on the Day 1 HHA expectations and then escalated the family's panic to the Social Worker.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: PN educated the family on the Day 1 HHA expectations and then escalated the family's panic to the Social Worker."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "SW formally changes the discharge goal to Long-Term Care (LTC) due to safety concerns.",
       "action_taken": "PN performed a Neutral_LTC_Closure in Atlantis and stopped all home transition work.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: PN performed a Neutral_LTC_Closure in Atlantis and stopped all home transition work."
+      "intent_detail": "Escalating to SW for resolution"
     }
   ],
   "format_3_rl_scenario": [

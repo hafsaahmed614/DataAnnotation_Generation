@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver",
-      "bottleneck_detail": "Family Disagreement on Discharge Plan regarding home dialysis safety."
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
       "event_description": "HHA_SOC_Overlap: Difficulty finding a nurse certified for Martha's specific dialysis fistula care.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "HHA_SOC_Overlap: Difficulty finding a nurse certified for Martha's specific dialysis fistula care."
+      "ai_assumed_bottleneck": "Operational"
     },
     {
       "event_description": "Friday Discharge Gap: Facility pushed discharge to Friday afternoon, risking a weekend without monitoring.",
@@ -33,8 +31,7 @@
       "environmental_impact": "Neutral",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Friday Discharge Gap: Facility pushed discharge to Friday afternoon, risking a weekend without monitoring."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -42,19 +39,19 @@
       "situation": "The patient's son demands a cost-benefit analysis of home care versus a long-term care facility.",
       "action_taken": "PN educated the family on the program benefits and safety monitoring while deferring financial comparisons to the Social Worker.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: PN educated the family on the program benefits and safety monitoring while deferring financial comparisons to the Social Worker."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Son threatens to block the transport company from taking the patient home.",
       "action_taken": "PN flagged the volatile family situation to the Social Worker for immediate intervention and a formal family meeting.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: PN flagged the volatile family situation to the Social Worker for immediate intervention and a formal family meeting."
+      "intent_detail": "Escalating to SW for resolution"
     },
     {
       "situation": "The HHA coordinator is uncertain if they can staff the Saturday morning visit for a Friday discharge.",
       "action_taken": "PN verified HHA receipt of the referral and confirmed the assigned nurse name and first-visit time window for the MA to follow.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: PN verified HHA receipt of the referral and confirmed the assigned nurse name and first-visit time window for the MA to follow."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [

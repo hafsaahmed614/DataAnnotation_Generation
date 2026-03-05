@@ -15,8 +15,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "Logistical",
-      "bottleneck_detail": "Vendor logistical error requiring re-delivery of correct components before home is safe."
+      "ai_assumed_bottleneck": "Logistical"
     },
     {
       "event_description": "PN verifies correct DME setup via photo confirmation from daughter.",
@@ -24,8 +23,7 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Verification step completed; transition can proceed."
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -33,19 +31,19 @@
       "situation": "Daughter reports incomplete hospital bed delivery during pulse call.",
       "action_taken": "Immediately flagged the DME mismatch to the Social Worker and HHA intake coordinator.",
       "intent_category": "Escalate",
-      "intent_detail": "Escalating to SW for resolution: Immediately flagged the DME mismatch to the Social Worker and HHA intake coordinator."
+      "intent_detail": "Escalating to SW for resolution"
     },
     {
       "situation": "Patient's daughter expresses anxiety about managing the O2 concentrator.",
       "action_taken": "Walked family through Day 1 expectations, including who to call if the HHA nurse is delayed.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Walked family through Day 1 expectations, including who to call if the HHA nurse is delayed."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Discharge date shifted due to DME delay.",
       "action_taken": "Updated Atlantis D/C and First Visit dates to align with the new 24-hour window.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Updated Atlantis D/C and First Visit dates to align with the new 24-hour window."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [

@@ -15,8 +15,7 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Administrative",
-      "bottleneck_detail": "Initial Atlantis Triage and Demographic Audit"
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
       "event_description": "Missing HHA Orders at Handoff (Physician fax failed)",
@@ -24,8 +23,7 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3 Days",
-      "ai_assumed_bottleneck": "Clinical Handoff",
-      "bottleneck_detail": "Missing HHA Orders at Handoff (Physician fax failed)"
+      "ai_assumed_bottleneck": "Clinical Handoff"
     },
     {
       "event_description": "Pre-Discharge Pulse Call - Family Education and MA Schedule Confirmation",
@@ -33,8 +31,7 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational",
-      "bottleneck_detail": "Pre-Discharge Pulse Call - Family Education and MA Schedule Confirmation"
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
@@ -42,19 +39,19 @@
       "situation": "HHA Intake Coordinator reports they cannot process the referral because the physician's home health orders are missing from the packet.",
       "action_taken": "Flagged the missing orders to the Social Worker and provided the HHA's direct fax number to ensure the clinical packet was resent.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Flagged the missing orders to the Social Worker and provided the HHA's direct fax number to ensure the clinical packet was resent."
+      "intent_detail": "Verifying logistics and data accuracy"
     },
     {
       "situation": "Patient's daughter expresses confusion about which agency is coming and what time to expect them on Day 1.",
       "action_taken": "Walked the daughter through the Day 1 expectations and provided a physical appointment card with the MA's scheduled time.",
       "intent_category": "Educate",
-      "intent_detail": "Educating on program expectations: Walked the daughter through the Day 1 expectations and provided a physical appointment card with the MA's scheduled time."
+      "intent_detail": "Educating on program expectations"
     },
     {
       "situation": "Atlantis queue reflects an outdated phone number for the patient's primary caregiver.",
       "action_taken": "Updated the contact information in Atlantis after verifying the correct cell number during a bedside visit.",
       "intent_category": "Verify",
-      "intent_detail": "Verifying logistics and data accuracy: Updated the contact information in Atlantis after verifying the correct cell number during a bedside visit."
+      "intent_detail": "Verifying logistics and data accuracy"
     }
   ],
   "format_3_rl_scenario": [
