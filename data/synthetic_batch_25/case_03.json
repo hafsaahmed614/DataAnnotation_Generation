@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag: Address discrepancy found between facility face sheet and Atlantis record."
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Atlantis_Data_Lag: Address discrepancy found between facility face sheet and Atlantis record."
     },
     {
       "event_description": "HHA Scheduling Conflict",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "HHA_SOC_Overlap: HHA intake reports high volume for Friday discharges, delaying confirmed Start of Care time."
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA_SOC_Overlap: HHA intake reports high volume for Friday discharges, delaying confirmed Start of Care time."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Patient address in Atlantis does not match the facility face sheet.",
       "action_taken": "Updated demographics in Atlantis to ensure the HHA and MA have the correct navigation data.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Updated demographics in Atlantis to ensure the HHA and MA have the correct navigation data."
     },
     {
       "situation": "Family is unsure what to do if the HHA nurse does not arrive on the first day.",
       "action_taken": "Educated the daughter on 'Day 1' expectations, including the role of the MA and who to contact if the HHA is delayed.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Educated the daughter on 'Day 1' expectations, including the role of the MA and who to contact if the HHA is delayed."
     },
     {
       "situation": "HHA intake coordinator indicates staffing constraints may push the first visit to Monday.",
       "action_taken": "Escalated the potential weekend coverage gap to the Social Worker to determine if the discharge date should be adjusted.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the potential weekend coverage gap to the Social Worker to determine if the discharge date should be adjusted."
     }
   ],
   "format_3_rl_scenario": [

@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "N/A",
-      "ai_assumed_bottleneck": "Demographic Data Entry"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Initial Atlantis Audit"
     },
     {
       "event_description": "Discovery of Handoff_Data_Mismatch (Medication List)",
@@ -23,7 +24,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Clinical Handoff Error"
+      "ai_assumed_bottleneck": "Clinical Handoff",
+      "bottleneck_detail": "Discovery of Handoff_Data_Mismatch (Medication List)"
     },
     {
       "event_description": "MA Visit Booking Confirmation",
@@ -31,24 +33,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "MA Visit Booking Confirmation"
     }
   ],
   "format_2_triples": [
     {
       "situation": "Patient's phone number in Atlantis does not match the facility face sheet.",
       "action_taken": "Updated Atlantis demographics to ensure the HHA and home team have the correct POA contact info.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Updated Atlantis demographics to ensure the HHA and home team have the correct POA contact info."
     },
     {
       "situation": "HHA intake coordinator has an outdated medication profile during the 24-hour pulse call.",
       "action_taken": "Flagged the discrepancy to the Social Worker and requested a corrected discharge summary be re-faxed to the agency.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Flagged the discrepancy to the Social Worker and requested a corrected discharge summary be re-faxed to the agency."
     },
     {
       "situation": "Daughter is concerned about the timing of the first home visit.",
       "action_taken": "Provided a physical appointment card and explained that the MA and Nurse would arrive within 24 hours of him getting home.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Provided a physical appointment card and explained that the MA and Nurse would arrive within 24 hours of him getting home."
     }
   ],
   "format_3_rl_scenario": [

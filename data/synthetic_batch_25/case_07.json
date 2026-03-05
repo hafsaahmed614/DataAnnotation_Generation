@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Atlantis Data Audit: Phone number mismatch identified and corrected."
     },
     {
       "event_description": "Day 1 Home No-Show: HHA nurse fails to arrive for the scheduled 09:00 AM start-of-care visit.",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Day 1 Home No-Show"
+      "ai_assumed_bottleneck": "Clinical Handoff",
+      "bottleneck_detail": "Day 1 Home No-Show: HHA nurse fails to arrive for the scheduled 09:00 AM start-of-care visit."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Patient's contact information in Atlantis was the facility's main line rather than the patient's cell.",
       "action_taken": "Audited the facility face sheet and manually updated the patient's primary phone number in Atlantis.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited the facility face sheet and manually updated the patient's primary phone number in Atlantis."
     },
     {
       "situation": "Patient expressed anxiety about managing sternal incision care at home.",
       "action_taken": "Educated the patient and spouse on the specific role of the HHA nurse and the timing of the first home visit.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Educated the patient and spouse on the specific role of the HHA nurse and the timing of the first home visit."
     },
     {
       "situation": "The HHA nurse did not arrive at the scheduled time on the first day post-discharge.",
       "action_taken": "Escalated the no-show to the HHA intake coordinator and flagged the safety gap to the Social Worker.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the no-show to the HHA intake coordinator and flagged the safety gap to the Social Worker."
     }
   ],
   "format_3_rl_scenario": [

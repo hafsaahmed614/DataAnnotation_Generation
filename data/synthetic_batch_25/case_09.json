@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative data mismatch"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Atlantis Data Lag: Disconnected phone number in system prevented initial family contact."
     },
     {
       "event_description": "Caregiver_Panic: Husband threatens to refuse discharge due to fear of MS symptom management.",
@@ -23,7 +24,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family readiness"
+      "ai_assumed_bottleneck": "Family/Caregiver",
+      "bottleneck_detail": "Caregiver_Panic: Husband threatens to refuse discharge due to fear of MS symptom management."
     },
     {
       "event_description": "Friday Discharge Gap: Facility pushed D/C to Friday afternoon; HHA weekend staffing was initially unconfirmed.",
@@ -31,24 +33,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "HHA Staffing Capacity"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "Friday Discharge Gap: Facility pushed D/C to Friday afternoon; HHA weekend staffing was initially unconfirmed."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Husband expressed fear that he cannot lift the patient if she falls at home.",
       "action_taken": "Walked the husband through the Day 1 expectations, including the exact time the HHA nurse and MA would arrive.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked the husband through the Day 1 expectations, including the exact time the HHA nurse and MA would arrive."
     },
     {
       "situation": "Uncertainty regarding whether the hospital bed (DME) was delivered to the home address.",
       "action_taken": "Conducted 24-hour pulse call to husband to verify the bed was present and functional before D/C.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Conducted 24-hour pulse call to husband to verify the bed was present and functional before D/C."
     },
     {
       "situation": "Husband became verbally combative with nursing staff about the discharge timing.",
       "action_taken": "Flagged the volatile caregiver situation to the Social Worker for immediate intervention and family counseling.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Flagged the volatile caregiver situation to the Social Worker for immediate intervention and family counseling."
     }
   ],
   "format_3_rl_scenario": [

@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "Insurance-HHA Network Mismatch"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Discovery of Insurance-HHA Network Mismatch during demographic audit."
     },
     {
       "event_description": "PN verifies daughter's home address for DME delivery and MA travel routing.",
@@ -23,7 +24,8 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "N/A"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "PN verifies daughter's home address for DME delivery and MA travel routing."
     },
     {
       "event_description": "HHA intake coordinator confirms new in-network referral receipt.",
@@ -31,24 +33,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "-2 Days",
-      "ai_assumed_bottleneck": "N/A"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA intake coordinator confirms new in-network referral receipt."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Atlantis demographics show Martha's old apartment address which lacks wheelchair access.",
       "action_taken": "Audited facility face sheet and updated Atlantis with the daughter's ranch-style home address.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited facility face sheet and updated Atlantis with the daughter's ranch-style home address."
     },
     {
       "situation": "Martha's daughter expressed fear about managing the oxygen concentrator at home.",
       "action_taken": "Walked the daughter through the Day 1 expectations, including who to call if the equipment fails.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked the daughter through the Day 1 expectations, including who to call if the equipment fails."
     },
     {
       "situation": "The SW's first choice for HHA was out-of-network for BlueCare Plus.",
       "action_taken": "Escalated the insurance mismatch to the SW and confirmed the Hub received the updated insurance data.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the insurance mismatch to the SW and confirmed the Hub received the updated insurance data."
     }
   ],
   "format_3_rl_scenario": [

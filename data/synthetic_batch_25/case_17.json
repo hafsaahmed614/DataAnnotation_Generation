@@ -15,7 +15,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA intake department operating on skeleton crew; no new starts-of-care until Tuesday post-holiday."
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA intake department operating on skeleton crew; no new starts-of-care until Tuesday post-holiday."
     },
     {
       "event_description": "Friday Discharge Gap (August 30th)",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Unchanged",
       "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "Patient discharging on Friday; HHA has no weekend admission slots available due to holiday."
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "Patient discharging on Friday; HHA has no weekend admission slots available due to holiday."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Patient has dementia and may not remember the visit time or the PN's role.",
       "action_taken": "Inserted V-Card into the daughter/POA's phone and provided a physical appointment card.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Inserted V-Card into the daughter/POA's phone and provided a physical appointment card."
     },
     {
       "situation": "Discharge scheduled for Friday before a holiday with no HHA nurse available until Tuesday.",
       "action_taken": "Scheduled the Medical Assistant (MA) for a Saturday morning visit to bridge the gap and perform the safety check.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Scheduled the Medical Assistant (MA) for a Saturday morning visit to bridge the gap and perform the safety check."
     },
     {
       "situation": "Atlantis demographics show an outdated address from a previous admission.",
       "action_taken": "Audited face sheet against Atlantis and flagged the zip code error to the SW for correction.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited face sheet against Atlantis and flagged the zip code error to the SW for correction."
     }
   ],
   "format_3_rl_scenario": [

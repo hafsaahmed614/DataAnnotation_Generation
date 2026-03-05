@@ -15,7 +15,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Operational"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA Intake Coordinator Unavailable"
     },
     {
       "event_description": "Successful 24-hour pre-discharge pulse call",
@@ -23,24 +24,28 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "Successful 24-hour pre-discharge pulse call"
     }
   ],
   "format_2_triples": [
     {
       "situation": "HHA intake coordinator out sick, stalling the confirmation of the Friday start-of-care.",
       "action_taken": "Flagged the HHA unresponsiveness to the Social Worker to request an alternate agency contact.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Flagged the HHA unresponsiveness to the Social Worker to request an alternate agency contact."
     },
     {
       "situation": "Family expressed confusion over the timing of the first home visit.",
       "action_taken": "Walked the family through the Day 1 expectations, including the 24-hour MA visit window.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked the family through the Day 1 expectations, including the 24-hour MA visit window."
     },
     {
       "situation": "Atlantis demographics for the patient listed an outdated phone number.",
       "action_taken": "Audited the facility face sheet and updated the patient record in Atlantis with the correct contact info.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited the facility face sheet and updated the patient record in Atlantis with the correct contact info."
     }
   ],
   "format_3_rl_scenario": [

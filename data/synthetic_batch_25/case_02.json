@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "N/A",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Initial Atlantis Triage and Demographic Audit"
     },
     {
       "event_description": "DME Vendor delivers manual bed instead of semi-electric model",
@@ -23,7 +24,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+      "ai_assumed_bottleneck": "Logistical",
+      "bottleneck_detail": "DME Vendor delivers manual bed instead of semi-electric model"
     },
     {
       "event_description": "SW coordinates expedited equipment swap; PN verifies delivery at home",
@@ -31,24 +33,28 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "SW coordinates expedited equipment swap; PN verifies delivery at home"
     }
   ],
   "format_2_triples": [
     {
       "situation": "Daughter reports wrong bed type arrived at the residence during pulse call.",
       "action_taken": "Immediately flagged the specific equipment mismatch to the SW to prevent an unsafe discharge.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Immediately flagged the specific equipment mismatch to the SW to prevent an unsafe discharge."
     },
     {
       "situation": "Patient's daughter is unsure how to handle the first 24 hours post-discharge.",
       "action_taken": "Walked the family through the Day 1 checklist, including MA arrival time and wound care supply verification.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked the family through the Day 1 checklist, including MA arrival time and wound care supply verification."
     },
     {
       "situation": "Atlantis record shows an outdated phone number for the primary caregiver.",
       "action_taken": "Updated the Atlantis demographic fields with the daughter's current mobile number after verifying the face sheet.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Updated the Atlantis demographic fields with the daughter's current mobile number after verifying the face sheet."
     }
   ],
   "format_3_rl_scenario": [

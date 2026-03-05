@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Clinical Handoff"
+      "ai_assumed_bottleneck": "Clinical Handoff",
+      "bottleneck_detail": "Handoff_Data_Mismatch: Discrepancy identified between SNF medication list and HHA intake records regarding Sinemet frequency."
     },
     {
       "event_description": "Atlantis demographics audit reveals outdated emergency contact (out-of-state son) vs local daughter/POA.",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "+0 Days",
-      "ai_assumed_bottleneck": "Administrative"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Atlantis demographics audit reveals outdated emergency contact (out-of-state son) vs local daughter/POA."
     }
   ],
   "format_2_triples": [
     {
       "situation": "HHA records show an allergy to Cipro that is not listed in the SNF's current discharge summary for the UTI treatment.",
       "action_taken": "Flagged the data discrepancy to the Social Worker for clinical reconciliation with the nursing staff.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Flagged the data discrepancy to the Social Worker for clinical reconciliation with the nursing staff."
     },
     {
       "situation": "Daughter is concerned about how the MA visit differs from the HHA nurse visit.",
       "action_taken": "Educated family on the specific role of the MA in monitoring and program benefits.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Educated family on the specific role of the MA in monitoring and program benefits."
     },
     {
       "situation": "HHA intake coordinator reports they have not received the final updated med list 24 hours before discharge.",
       "action_taken": "Escalated the missing data to the SW to ensure the HHA has the correct orders before the patient arrives home.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the missing data to the SW to ensure the HHA has the correct orders before the patient arrives home."
     }
   ],
   "format_3_rl_scenario": [

@@ -15,7 +15,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "HHA_SOC_Overlap"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA reports intake staffing freeze for weekend admissions."
     },
     {
       "event_description": "PN verifies daughter's availability for a Monday morning visit instead of Saturday.",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Operational coordination"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "PN verifies daughter's availability for a Monday morning visit instead of Saturday."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Atlantis demographics for patient address mismatched the facility face sheet.",
       "action_taken": "Updated Atlantis record to match verified face sheet address before HHA referral.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Updated Atlantis record to match verified face sheet address before HHA referral."
     },
     {
       "situation": "HHA intake coordinator reports inability to staff a Saturday start-of-care.",
       "action_taken": "Escalated the coverage gap to the Social Worker to determine if Friday discharge was still clinically safe without weekend monitoring.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the coverage gap to the Social Worker to determine if Friday discharge was still clinically safe without weekend monitoring."
     },
     {
       "situation": "Patient's daughter expresses anxiety about managing the CHF scale/weight log.",
       "action_taken": "Educated daughter on the role of the Medical Assistant and the physical appointment card contact info.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Educated daughter on the role of the Medical Assistant and the physical appointment card contact info."
     }
   ],
   "format_3_rl_scenario": [

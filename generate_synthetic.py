@@ -170,27 +170,31 @@ Stage 3 fields (pre_dc_pulse_call_result, atlantis_final_sync, ma_visit_booking)
 === FORMAT RULES ===
 
 Rules for format_1_state_log (Timeline):
-9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
-10. Focus on HOME-READINESS friction (not facility discharge delays). Valid: HHA scheduling, DME delivery, Atlantis data errors, pre-DC call failures.
+9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck, bottleneck_detail.
+10. ai_assumed_bottleneck MUST be one of these categories: "Bureaucratic", "Operational", "Eligibility", "Logistical", "Family/Caregiver", "Clinical Handoff", "Administrative". These come from the Friction Taxonomy categories.
+11. bottleneck_detail is a 1-2 sentence free-text explanation of the specific bottleneck in this case (e.g., "HHA intake coordinator on PTO; no backup processor until Monday").
+12. Focus on HOME-READINESS friction (not facility discharge delays). Valid: HHA scheduling, DME delivery, Atlantis data errors, pre-DC call failures.
 
 Rules for format_2_triples (Situation → Action → Intent):
-11. Each entry must be a dict with keys: situation, action_taken, intent_category (Educate/Escalate/Verify).
-12. The action_taken must be a PN checklist action, NOT a Social Worker action.
+13. Each entry must be a dict with keys: situation, action_taken, intent_category, intent_detail.
+14. intent_category MUST be one of: "Educate", "Escalate", "Verify".
+15. intent_detail is a 1-sentence explanation of why this specific intent applies (e.g., "Educating the daughter on Day 1 HHA expectations to reduce caregiver anxiety").
+16. The action_taken must be a PN checklist action, NOT a Social Worker action.
 
 Rules for format_3_rl_scenario:
-13. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
-14. All descriptions must sound professional and tempting.
+17. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
+18. All descriptions must sound professional and tempting.
    - "Passive" = STRATEGIC DEFERRAL: PN steps back, lets SW handle. Boundary-respecting, not lazy.
    - "Proactive" = CHECKLIST-COMPLIANT: PN verifies HHA logistics, educates family, conducts pulse call, schedules MA, or escalates to SW. Always within the 3-stage checklist.
    - "Overstep" = PN does the SW's job (suggesting agencies, handling F2F, calling insurance, managing meds). Must sound like good advocacy to a rookie.
 
 Rules for case_outcome:
-15. "Success_Home_with_First_Visit" = patient discharges with our services AND first home visit completed.
-16. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
-17. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
+19. "Success_Home_with_First_Visit" = patient discharges with our services AND first home visit completed.
+20. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
+21. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
 
-18. narrative_summary must be 3-5 sentences following the 3-stage PN lifecycle arc.
-19. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
+22. narrative_summary must be 3-5 sentences following the 3-stage PN lifecycle arc.
+23. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
 

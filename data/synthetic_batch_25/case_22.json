@@ -15,7 +15,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1-3 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Atlantis Audit: Address mismatch found between facility records and Atlantis queue."
     },
     {
       "event_description": "Insurance-HHA Network Mismatch: Patient's Horizon plan does not initially cover the preferred HHA branch in Jersey City.",
@@ -23,7 +24,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3-5 Days",
-      "ai_assumed_bottleneck": "Insurance-HHA Network Mismatch"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Insurance-HHA Network Mismatch: Patient's Horizon plan does not initially cover the preferred HHA branch in Jersey City."
     },
     {
       "event_description": "First Visit Coordination: HHA confirms single-case agreement reached; first visit window locked for Wednesday morning.",
@@ -31,24 +33,28 @@
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "First Visit Coordination: HHA confirms single-case agreement reached; first visit window locked for Wednesday morning."
     }
   ],
   "format_2_triples": [
     {
       "situation": "Patient's insurance plan is out-of-network for the primary HHA in her zip code.",
       "action_taken": "Flagged the network mismatch to the SW and provided the HHA's contracting contact info for a single-case agreement.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Flagged the network mismatch to the SW and provided the HHA's contracting contact info for a single-case agreement."
     },
     {
       "situation": "Daughter is confused about the timing of the first home nurse visit vs dialysis schedule.",
       "action_taken": "Walked daughter through the Day 1 expectations, detailing when the nurse arrives and when the MA will follow up.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked daughter through the Day 1 expectations, detailing when the nurse arrives and when the MA will follow up."
     },
     {
       "situation": "Atlantis records show an outdated phone number for the patient's daughter.",
       "action_taken": "Audited the face sheet and updated the contact information in the Atlantis patient profile.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited the face sheet and updated the contact information in the Atlantis patient profile."
     }
   ],
   "format_3_rl_scenario": [

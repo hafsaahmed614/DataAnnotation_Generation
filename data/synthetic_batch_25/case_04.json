@@ -15,7 +15,8 @@
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "Operational: Provider Illness"
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA Oncology Specialist reports flu; intake department is scrambling for coverage."
     },
     {
       "event_description": "Atlantis data sync reveals mismatch in patient primary phone number.",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative: Atlantis_Data_Lag"
+      "ai_assumed_bottleneck": "Administrative",
+      "bottleneck_detail": "Administrative: Atlantis_Data_Lag"
     }
   ],
   "format_2_triples": [
     {
       "situation": "HHA intake coordinator reports the assigned nurse is out sick and cannot perform the Start of Care on the discharge day.",
       "action_taken": "Escalated the coverage gap to the Social Worker to determine if a generalist HHA nurse could bridge the gap or if the discharge date should be adjusted.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Escalated the coverage gap to the Social Worker to determine if a generalist HHA nurse could bridge the gap or if the discharge date should be adjuste"
     },
     {
       "situation": "Martha's daughter expressed confusion about the difference between the HHA nurse and the program's Medical Assistant.",
       "action_taken": "Conducted a family education session explaining that the MA provides an extra layer of safety within 24 hours, while the HHA handles clinical wound/medication management.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Conducted a family education session explaining that the MA provides an extra layer of safety within 24 hours, while the HHA handles clinical wound/me"
     },
     {
       "situation": "The facility EMR shows a different discharge date than the SW's verbal update.",
       "action_taken": "Checked in with the SW to confirm the finalized date before updating the Atlantis record and scheduling the MA.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Checked in with the SW to confirm the finalized date before updating the Atlantis record and scheduling the MA."
     }
   ],
   "format_3_rl_scenario": [

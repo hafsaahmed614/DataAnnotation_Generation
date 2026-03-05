@@ -15,7 +15,8 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA intake coordinator unavailable to assign a weekend nurse for the SOC visit."
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "HHA intake coordinator unavailable to assign a weekend nurse for the SOC visit."
     },
     {
       "event_description": "HHA_SOC_Overlap: HHA's skeleton crew for the weekend is fully booked with existing patients, preventing the 24-hour post-discharge visit for new referrals.",
@@ -23,24 +24,28 @@
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Staffing capacity reached; no available RN for Saturday/Sunday window."
+      "ai_assumed_bottleneck": "Operational",
+      "bottleneck_detail": "Staffing capacity reached; no available RN for Saturday/Sunday window."
     }
   ],
   "format_2_triples": [
     {
       "situation": "HHA intake coordinator informs PN that the first visit cannot occur until Tuesday due to the holiday.",
       "action_taken": "Escalated the holiday coverage gap to the Social Worker to flag the risk of a 72-hour monitoring void for a CHF patient.",
-      "intent_category": "Escalate"
+      "intent_category": "Escalate",
+      "intent_detail": "Escalating to SW for resolution: Escalated the holiday coverage gap to the Social Worker to flag the risk of a 72-hour monitoring void for a CHF patient."
     },
     {
       "situation": "Daughter expresses fear that her mother will 'backslide' without a nurse over the long weekend.",
       "action_taken": "Walked the family through Stage 3 Day 1 expectations, explaining the difference between the HHA nurse visit and the PN's MA scheduling.",
-      "intent_category": "Educate"
+      "intent_category": "Educate",
+      "intent_detail": "Educating on program expectations: Walked the family through Stage 3 Day 1 expectations, explaining the difference between the HHA nurse visit and the PN's MA scheduling."
     },
     {
       "situation": "Atlantis demographics list an outdated landline for the patient.",
       "action_taken": "Audited the face sheet and updated the contact number to the daughter\u2019s mobile to ensure the HHA can reach them.",
-      "intent_category": "Verify"
+      "intent_category": "Verify",
+      "intent_detail": "Verifying logistics and data accuracy: Audited the face sheet and updated the contact number to the daughter\u2019s mobile to ensure the HHA can reach them."
     }
   ],
   "format_3_rl_scenario": [

@@ -163,7 +163,9 @@ def render():
         label = event["event_description"][:80]
         with st.expander(f"Event {i + 1}: {label}...", expanded=True):
             st.markdown(f"**Event Description:** {event['event_description']}")
-            st.markdown(f"**AI Bot Assumed Bottleneck:** {event['ai_assumed_bottleneck']}")
+            st.markdown(f"**AI Bot Assumed Bottleneck:** `{event['ai_assumed_bottleneck']}`")
+            if event.get("bottleneck_detail"):
+                st.markdown(f"**Bottleneck Detail:** {event['bottleneck_detail']}")
 
             st.divider()
             st.subheader("Your Evaluation")
@@ -241,7 +243,10 @@ def render():
         with st.expander(f"Triple {i + 1}: {label}...", expanded=True):
             st.markdown(f"**Situation:** {triple['situation']}")
             st.markdown(f"**Action Taken:** {triple['action_taken']}")
-            st.markdown(f"**Intent:** {triple.get('intent_category', triple.get('tactical_field_intent', triple.get('intent', '')))}")
+            intent = triple.get('intent_category', triple.get('tactical_field_intent', triple.get('intent', '')))
+            st.markdown(f"**Intent:** `{intent}`")
+            if triple.get("intent_detail"):
+                st.markdown(f"**Intent Detail:** {triple['intent_detail']}")
 
             st.divider()
             score_default = saved.get("tactical_viability_score", 3)
