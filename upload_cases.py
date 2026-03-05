@@ -16,8 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25_v4"
-TABLE_NAME = "synthetic_cases_v4"
+BATCH_ID = "synthetic_batch_25_v5"
+TABLE_NAME = "synthetic_cases_v5"
 
 
 def main():
@@ -41,11 +41,23 @@ def main():
         rows.append({
             "batch_id": BATCH_ID,
             "label": f"Case_{idx}",
+            # Stage 1
+            "atlantis_entry_confirmed": data.get("atlantis_entry_confirmed", False),
+            "demographic_audit_note": data.get("demographic_audit_note", ""),
+            "home_vs_ltc_determination": data.get("home_vs_ltc_determination", ""),
+            # Stage 2
+            "weekly_facility_update": data.get("weekly_facility_update", ""),
+            "v_card_and_flyer_status": data.get("v_card_and_flyer_status", ""),
+            # Stage 3
+            "pre_dc_pulse_call_result": data.get("pre_dc_pulse_call_result", ""),
+            "atlantis_final_sync": data.get("atlantis_final_sync", ""),
+            "ma_visit_booking": data.get("ma_visit_booking", ""),
+            # Core content
             "narrative_summary": data.get("narrative_summary", ""),
-            "boundary_planning_scratchpad": data.get("boundary_planning_scratchpad", ""),
             "format_1_state_log": data.get("format_1_state_log", []),
             "format_2_triples": data.get("format_2_triples", []),
             "format_3_rl_scenario": data.get("format_3_rl_scenario", []),
+            "case_outcome": data.get("case_outcome", ""),
         })
 
     result = client.table(TABLE_NAME).insert(rows).execute()

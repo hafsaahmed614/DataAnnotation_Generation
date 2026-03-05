@@ -1,0 +1,67 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge order, the official insurance notification of benefit termination, and the final selection of the post-acute provider. The Patient Navigator (PN) is responsible for identifying the 'Skilled Need' mismatch between the facility's PT notes and the HHA's intake requirements, verifying if the home ramp Arthur mentioned actually exists, and providing the SW with alternative HHAs that specialize in 'Skilled Nursing' for complex wounds to bypass the PT plateau barrier.",
+  "format_1_state_log": [
+    {
+      "event_description": "SNF Physical Therapy department transitions Arthur to 'Maintenance' status, triggering a potential Loss of Skilled Need for home health eligibility.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "The SNF PT lead updated the status to 'Maintenance' in the EMR but did not verbally notify the SW before the HHA referral was sent."
+    },
+    {
+      "event_description": "Primary HHA (Citywide Home Care) rejects the referral, citing the PT plateau; they refuse to admit for wound care alone without a secondary skilled service.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-5 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator is working from a stale medication list and is unaware of the new insulin regimen which could qualify as a nursing skilled need."
+    },
+    {
+      "event_description": "PN attempts to verify Arthur's self-reported wheelchair ramp; family is unreachable, and neighbor reports seeing 'only stairs' at the front entrance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3-7 Days",
+      "ai_assumed_bottleneck": "The family is avoiding calls because they are overwhelmed by the sudden 'Maintenance' designation and the threat of losing coverage."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "HHA refuses admission because PT notes show a 'Maintenance' plateau, rendering the Stage III sacral wound 'unskilled' for Medicare home health.",
+      "action_taken": "Identified Arthur's new complex insulin titration in the SW's summary and suggested the SW present this as a 'Skilled Nursing' need to the HHA.",
+      "taxonomy_category": "When the primary HHA cannot meet the timeline, present 2-3 pre-vetted alternative agencies to the SW for referral",
+      "tactical_field_intent": "Pivot the clinical narrative from 'Rehab' to 'Chronic Management' to secure HHA acceptance before the facility discharge date."
+    },
+    {
+      "situation": "Arthur claims a ramp was installed by his son, but the HHA requires a safety assessment before the Start of Care visit.",
+      "action_taken": "Requested the family send a photo of the home entrance via text to confirm ramp presence for the HHA coordinator.",
+      "taxonomy_category": "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
+      "tactical_field_intent": "Verify environmental readiness without waiting for a formal contractor inspection to prevent a 'failed' first home visit."
+    },
+    {
+      "situation": "The HHA intake coordinator is out for the weekend, and the referral is sitting in an unmonitored queue.",
+      "action_taken": "Contacted the HHA's on-call supervisor to confirm the referral was received and flagged the 'Loss of Skilled Need' risk for early Monday review.",
+      "taxonomy_category": "Confirm referral receipt with HHA intake coordinator",
+      "tactical_field_intent": "Ensure the case isn't 'lost' in the weekend gap, forcing a decision by Monday morning."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon learning that the HHA rejected the patient due to lack of skilled need, I documented the denial and notified the Social Worker that the current transition plan is stalled pending their clinical re-evaluation.",
+      "rationale": "The PN correctly identifies that clinical eligibility and 'skilled need' designations are the purview of the SW and the clinical team; stepping back allows the SW to handle the regulatory dispute."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "I flagged the HHA's rejection to the Social Worker and provided a list of three alternative HHAs known for high-acuity wound programs that may accept 'Skilled Nursing' for insulin education as a qualifying trigger.",
+      "rationale": "This follows the 'Suggest' and 'Escalate' protocols. The PN does not make the clinical argument but provides the SW with pre-vetted options to solve the bureaucratic 'Hard Stop'."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "I met with the SNF Physical Therapy Lead to explain the HHA's reimbursement requirements and requested they amend the therapy notes to reflect 'Restorative' goals instead of 'Maintenance' to ensure coverage.",
+      "rationale": "The PN is attempting to influence clinical documentation to achieve a logistical outcome, which violates the non-clinical boundary and interferes with the professional judgment of the PT."
+    }
+  ],
+  "narrative_summary": "Arthur, an 81-year-old stroke survivor, faced a transition crisis when his SNF therapy was downgraded to 'Maintenance,' causing the HHA to reject his referral despite an open sacral wound. The transition was further complicated by contradictory reports regarding home accessibility, as Arthur's son allegedly installed a ramp that the HHA had yet to verify. The PN navigated this by identifying a secondary skilled need\u2014new insulin management\u2014and presenting alternative HHAs to the Social Worker to ensure Arthur didn't lose home care support at the moment of discharge."
+}

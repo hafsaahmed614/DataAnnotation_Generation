@@ -1,67 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The SW is handling the formal discharge meeting, clinical readiness assessment, and legal implications of a family-refused discharge, while the PN is only handling the verification of the hospital bed delivery, HHA start-of-care alignment, and educating the son on the transition-day logistics to mitigate anxiety.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet revealed a discrepancy in the primary phone number; the number ending in -4402 was disconnected. Verified correct contact info for husband (caregiver) and updated Atlantis demographics.",
+  "home_vs_ltc_determination": "Social Worker (SW) confirmed the goal is Home with HHA services; LTC was ruled out as the patient reached PT/OT goals for home safety.",
+  "weekly_facility_update": "Week 2: Patient's MS spasticity has stabilized. SW reports husband is expressing 'cold feet' about managing the patient's mobility at home; discharge target set for Friday.",
+  "v_card_and_flyer_status": "V-Card successfully saved to the husband's contact list during the bedside visit; program flyer handed to patient and daughter.",
+  "pre_dc_pulse_call_result": "Pulse call conducted 24 hours prior to D/C. Husband was in a state of high anxiety (Caregiver_Panic), questioning if the hospital was 'kicking them out.' PN de-escalated by confirming the HHA start-of-care time and MA visit window.",
+  "atlantis_final_sync": "D/C date of 10/24 and first home visit date of 10/25 successfully synced in Atlantis.",
+  "ma_visit_booking": "Medical Assistant visit confirmed for 10/25 at 2:00 PM, within 22 hours of the patient's scheduled noon discharge.",
+  "narrative_summary": "Patient was identified in Atlantis following an MS flare with a discharge plan to return home. During the maintenance phase, the primary caregiver exhibited significant anxiety regarding the transition, necessitating intensive education on the Day 1 support structure. Through a 24-hour pulse call and coordination with the HHA intake coordinator, the PN secured a visit within the incentive window and de-escalated the family's concerns.",
   "format_1_state_log": [
     {
-      "event_description": "Patient Arthur (88, Bilateral TKA) cleared by PT for discharge to home. Son (Robert) expresses 'extreme fear' about managing two surgical sites and mobility; HHA intake coordinator is currently out of the office for a long weekend, delaying the admission slot confirmation.",
+      "event_description": "Atlantis Data Lag: Disconnected phone number in system prevented initial family contact.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The single HHA intake coordinator is unavailable to process the SNF referral, leaving the family in limbo regarding the start-of-care date."
+      "ai_assumed_bottleneck": "Administrative data mismatch"
     },
     {
-      "event_description": "DME vendor confirms hospital bed delivery via automated system, but Robert calls PN screaming that the garage and house are empty. Robert threatens to 'barricade the door' to prevent his father's return.",
+      "event_description": "Caregiver_Panic: Husband threatens to refuse discharge due to fear of MS symptom management.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "DME vendor delivered the hospital bed to the identical street address in the neighboring township; the PN must facilitate the reroute before the HHA nurse visit can be scheduled."
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family readiness"
     },
     {
-      "event_description": "PN provides Robert with the HHA's assigned nurse name and the specific 2-hour arrival window for the PT assessment. PN notifies SW of the DME recovery; SW conducts a 'safety huddle' with the son to de-escalate the discharge refusal.",
+      "event_description": "Friday Discharge Gap: Facility pushed D/C to Friday afternoon; HHA weekend staffing was initially unconfirmed.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver Panic remains the primary barrier; the PN's role is restricted to logistical certainty while the SW manages the emotional/legal refusal risk."
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Capacity"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Robert (son) denies receiving the hospital bed, contradicting the DME vendor's 'Delivered' status in the facility portal.",
-      "action_taken": "Requested Robert send a photo of the front porch and requested the DME vendor provide the GPS 'drop-off' coordinates.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Verify equipment at the home before the HHA start-of-care visit without relying on the vendor's potentially flawed automated data."
+      "situation": "Husband expressed fear that he cannot lift the patient if she falls at home.",
+      "action_taken": "Walked the husband through the Day 1 expectations, including the exact time the HHA nurse and MA would arrive.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The HHA intake coordinator's absence prevents the SNF from getting a 'hard' start date for PT/RN visits.",
-      "action_taken": "Contacted the HHA's Regional Director to request a temporary intake surrogate to review Arthur's bilateral TKA orders.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Leverage regional management relationships to bypass a localized staffing bottleneck and secure a weekend admission slot."
+      "situation": "Uncertainty regarding whether the hospital bed (DME) was delivered to the home address.",
+      "action_taken": "Conducted 24-hour pulse call to husband to verify the bed was present and functional before D/C.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "Robert threatens to refuse the discharge because he 'cannot lift' his father, despite Arthur being weight-bearing as tolerated.",
-      "action_taken": "Provided Robert with a physical 'Day 1 HHA expectations' card outlining that the PT will lead the first transfer to the bed.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Reduce caregiver anxiety by setting concrete expectations and shifting the perceived 'labor' from the son to the arriving clinician."
+      "situation": "Husband became verbally combative with nursing staff about the discharge timing.",
+      "action_taken": "Flagged the volatile caregiver situation to the Social Worker for immediate intervention and family counseling.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "PN listens to Robert's detailed list of fears regarding his father's surgical staples and mobility, documents the specific concerns in the transition log, and formally requests the Social Worker address these during the upcoming afternoon care conference.",
-      "rationale": "This is a strategic deferral. The son's panic is bordering on a formal refusal of discharge, which is a social/legal matter for the facility SW. The PN avoids overstepping into family counseling while ensuring the SW has the necessary data."
+      "description": "PN documents the husband's anxiety in the Atlantis notes and waits for the Social Worker to lead the final discharge planning meeting to address caregiver readiness.",
+      "rationale": "Strategic Deferral: Per the SW Boundary, the PN respects the SW's role in managing the clinical discharge plan and family dynamics while remaining available for HHA logistics."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "PN confirms the HHA has assigned a nurse for the Monday morning window, verifies the corrected DME delivery address with the vendor, and provides Robert with a step-by-step checklist of who will be entering the home in the first 48 hours.",
-      "rationale": "The PN focuses on logistical certainty. By providing concrete names, times, and verification of equipment, the PN supports the transition and reduces the 'unknowns' that drive caregiver panic without assuming the SW's role."
+      "description": "PN conducts the 24-hour pulse call, provides the husband with a physical appointment card for the MA visit, and confirms the HHA nurse's name to reduce transition anxiety.",
+      "rationale": "Checklist-Compliant: Stage 3 requires the pulse call and physical appointment card delivery to ensure a safe transition and secure the first visit incentive."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "PN reassures Robert that the HHA can provide 24/7 aide coverage for the first three days to help him adjust and calls the attending surgeon to suggest delaying the discharge until Robert's own 'back issues' are resolved.",
-      "rationale": "This is a hero-complex overstep. The PN is making clinical staffing promises (HHA aides are usually intermittent, not 24/7) and attempting to influence the surgeon's clinical discharge order, which is strictly outside the PN's scope."
+      "description": "PN reviews the patient's MS medication schedule with the husband and suggests he contact a specific private-pay HHA that is 'better' at handling MS patients than the current referral.",
+      "rationale": "Clinical/SW Interference: The PN is banned from managing facility medications and must NEVER suggest alternative HHA agencies to the family or SW."
     }
   ],
-  "narrative_summary": "Arthur, an 88-year-old following bilateral TKA, faced a transition crisis when his son, Robert, experienced severe caregiver panic compounded by a DME delivery error. The PN navigated a 'Fog of War' scenario where the DME vendor claimed delivery to a wrong-township address, while the HHA intake was stalled by a long-weekend staffing gap. By leveraging regional HHA contacts and providing concrete 'Day 1' schedules, the PN stabilized the logistics, allowing the Social Worker to focus on the son's emotional readiness. The case concluded with a successful home transition after the hospital bed was rerouted and the son's anxiety was mitigated through logistical transparency."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

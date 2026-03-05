@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker (Sarah) is responsible for the clinical discharge order, the official faxing of the medical record, and the medical transport. The PN is responsible for verifying the HHA (HomeCare Elite) has received and reconciled the correct data, educating the daughter on the first-visit timeline, and flagging the medication and address discrepancies to the SW for correction.",
+  "format_1_state_log": [
+    {
+      "event_description": "PN identifies that HomeCare Elite's intake file lists the patient's 2022 address and a Coumadin prescription, while the current SNF chart indicates a move to his daughter's home and Eliquis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The facility's EHR auto-populated an outdated 'historical' referral template instead of the current admission's active medication list."
+    },
+    {
+      "event_description": "HHA intake coordinator is out sick; the backup coordinator refuses to update the patient address without a 'corrected' formal referral from the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA's internal policy requires a new faxed referral for any demographic change, and the backup coordinator is following the letter of the law to avoid liability."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA is preparing a Coumadin-specific teaching kit based on outdated data, while the patient is actually on Eliquis.",
+      "action_taken": "Flagged the clinical data mismatch to the Social Worker and requested the HHA put a 'Hold' on the clinical supply kit until the new med list is received.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Prevent the HHA from wasting resources on the wrong clinical pathway, which would cause confusion during the Start-of-Care visit."
+    },
+    {
+      "situation": "Arthur's daughter is confused about why the HHA thinks her father still lives in his old apartment.",
+      "action_taken": "Educated the daughter on how the referral system can sometimes pull 'ghost' data and walked her through the Day 1 expectations for verifying her address with the nurse.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate family anxiety by framing the bureaucratic error as a common technical glitch rather than facility incompetence."
+    },
+    {
+      "situation": "The HHA cannot confirm a nurse for the new zip code (daughter's home) without the updated referral being processed.",
+      "action_taken": "Suggested 2-3 alternative HHAs to the Social Worker that have higher staffing density in the daughter's suburban zip code.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Apply subtle pressure to the primary HHA to prioritize the intake update while simultaneously giving the SW an 'out' if the first agency remains blocked."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Document the medication and address discrepancies in the transition log and notify the Social Worker that the HHA is awaiting a corrected clinical packet before they can assign a nurse.",
+      "rationale": "This is a strategic deferral. Since the medication list is a clinical document and the referral is a legal transfer of care, the PN must step back and allow the facility's licensed staff to resolve the data integrity issue."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Alert the SW to the specific data mismatch, then contact the HHA Intake to verify if they have a nurse available for the daughter's zip code once the corrected paperwork arrives.",
+      "rationale": "The PN is supporting the transition by identifying the specific barrier and verifying logistics (nurse availability in the correct zip code) without attempting to modify clinical records themselves."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Access the nurse's station to print the current Eliquis orders and the daughter's contact sheet, then fax them directly to the HHA to ensure the intake is corrected before the weekend.",
+      "rationale": "This is a 'Hero Complex' overstep. The PN is accessing the EMR/nurse's station and transmitting clinical documentation, which is strictly outside their non-clinical scope and violates facility protocol."
+    }
+  ],
+  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, faced a transition delay when his HHA referral contained 'ghost' data from a 2022 admission, listing an old address and Coumadin instead of his current Eliquis regimen. The Patient Navigator identified the mismatch between the facility's plan and the HHA's intake record, preventing a potentially dangerous medication error at home. By coordinating between the daughter's new location and the Social Worker's office, the PN ensured that the HHA corrected the delivery address and clinical profile before the first visit was scheduled."
+}

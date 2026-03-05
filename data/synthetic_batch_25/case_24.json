@@ -1,59 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (Sarah) is responsible for the clinical discharge order, the official faxing of the medical record, and the medical transport. The PN is responsible for verifying the HHA (HomeCare Elite) has received and reconciled the correct data, educating the daughter on the first-visit timeline, and flagging the medication and address discrepancies to the SW for correction.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage Plan (Aetna) primary; identified discrepancy between Atlantis address and facility face sheet (wrong zip code 19104 vs 19143); DOB 05/12/1945 confirmed.",
+  "home_vs_ltc_determination": "SW Sarah confirms Home is the goal, but notes significant pushback from the patient's son (POA) who is demanding a Long-Term Care placement due to fear of managing the BKA stump care.",
+  "weekly_facility_update": "Week 3: Arthur has reached therapy goals for transfers; SW Sarah scheduled a family conference to address the son's refusal to accept home discharge. PN provided program benefits overview to Arthur.",
+  "v_card_and_flyer_status": "V-Card inserted into Arthur's Jitterbug phone; program flyer delivered to son during bedside education session on 11/05.",
+  "pre_dc_pulse_call_result": "Reached son on 11/12. Son confirms home ramp is installed but remains anxious; PN confirmed the 24-hour post-discharge visit window for the MA and HHA nurse.",
+  "atlantis_final_sync": "D/C date 11/13/2023 and 1st visit date 11/14/2023 entered into Atlantis queue.",
+  "ma_visit_booking": "MA scheduled for 11/14/2023 at 11:00 AM to align with the HHA nurse's morning assessment window.",
+  "narrative_summary": "Arthur was admitted for amputation rehab with a complex family dynamic where his son initially blocked a home discharge due to caregiving anxiety. The PN utilized the 3-stage lifecycle to audit demographics, provide intensive family education on the transition support model, and coordinate closely with SW Sarah to ensure the home goal remained the priority. Despite a 5-day delay caused by family disagreement, the PN successfully secured a home discharge with a confirmed first visit within 24 hours.",
   "format_1_state_log": [
     {
-      "event_description": "PN identifies that HomeCare Elite's intake file lists the patient's 2022 address and a Coumadin prescription, while the current SNF chart indicates a move to his daughter's home and Eliquis.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The facility's EHR auto-populated an outdated 'historical' referral template instead of the current admission's active medication list."
-    },
-    {
-      "event_description": "HHA intake coordinator is out sick; the backup coordinator refuses to update the patient address without a 'corrected' formal referral from the Social Worker.",
+      "event_description": "Atlantis demographic audit reveals incorrect zip code and outdated primary insurance contact.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA's internal policy requires a new faxed referral for any demographic change, and the backup coordinator is following the letter of the law to avoid liability."
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Arthur's son (POA) refuses to sign discharge papers for home, citing inability to assist with hygiene.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "HHA intake coordinator out on PTO; confirmation of nurse availability for Day 1 is delayed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA is preparing a Coumadin-specific teaching kit based on outdated data, while the patient is actually on Eliquis.",
-      "action_taken": "Flagged the clinical data mismatch to the Social Worker and requested the HHA put a 'Hold' on the clinical supply kit until the new med list is received.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Prevent the HHA from wasting resources on the wrong clinical pathway, which would cause confusion during the Start-of-Care visit."
+      "situation": "Patient's son expresses fear about the complexity of the BKA dressing changes at home.",
+      "action_taken": "Educated family on the specific role of the HHA nurse in wound management and the MA's role in the 24-hour visit.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Arthur's daughter is confused about why the HHA thinks her father still lives in his old apartment.",
-      "action_taken": "Educated the daughter on how the referral system can sometimes pull 'ghost' data and walked her through the Day 1 expectations for verifying her address with the nurse.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate family anxiety by framing the bureaucratic error as a common technical glitch rather than facility incompetence."
+      "situation": "Son demands Arthur be moved to a permanent LTC bed against Arthur's wishes.",
+      "action_taken": "Escalated the family conflict to SW Sarah to facilitate a formal clinical family meeting.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "The HHA cannot confirm a nurse for the new zip code (daughter's home) without the updated referral being processed.",
-      "action_taken": "Suggested 2-3 alternative HHAs to the Social Worker that have higher staffing density in the daughter's suburban zip code.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Apply subtle pressure to the primary HHA to prioritize the intake update while simultaneously giving the SW an 'out' if the first agency remains blocked."
+      "situation": "PN notices the facility face sheet has a different phone number for the POA than what is listed in Atlantis.",
+      "action_taken": "Audited the demographics and updated the Atlantis contact tab with the correct mobile number.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Document the medication and address discrepancies in the transition log and notify the Social Worker that the HHA is awaiting a corrected clinical packet before they can assign a nurse.",
-      "rationale": "This is a strategic deferral. Since the medication list is a clinical document and the referral is a legal transfer of care, the PN must step back and allow the facility's licensed staff to resolve the data integrity issue."
+      "description": "When the son asks if Arthur is truly safe to go home, the PN suggests the son wait for the Social Worker\u2019s final recommendation after the next care team meeting.",
+      "rationale": "This respects the SW's role in determining the safety of the discharge plan and avoids making a clinical safety guarantee that is outside the PN scope."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Alert the SW to the specific data mismatch, then contact the HHA Intake to verify if they have a nurse available for the daughter's zip code once the corrected paperwork arrives.",
-      "rationale": "The PN is supporting the transition by identifying the specific barrier and verifying logistics (nurse availability in the correct zip code) without attempting to modify clinical records themselves."
+      "description": "PN schedules a 24-hour pre-discharge pulse call with the son to verify that the DME (hospital bed) was delivered and to confirm the exact time for the MA visit.",
+      "rationale": "This follows the Stage 3 checklist for final coordination and ensures the home environment is operationally ready for the transition."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Access the nurse's station to print the current Eliquis orders and the daughter's contact sheet, then fax them directly to the HHA to ensure the intake is corrected before the weekend.",
-      "rationale": "This is a 'Hero Complex' overstep. The PN is accessing the EMR/nurse's station and transmitting clinical documentation, which is strictly outside their non-clinical scope and violates facility protocol."
+      "description": "PN reviews the surgeon's wound care orders and demonstrates to the son how to apply the Alginate dressing to the stump to help him feel more comfortable.",
+      "rationale": "This is an overstep because the PN is performing clinical education and managing wound care, which is the sole responsibility of the facility nurses and the HHA."
     }
   ],
-  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, faced a transition delay when his HHA referral contained 'ghost' data from a 2022 admission, listing an old address and Coumadin instead of his current Eliquis regimen. The Patient Navigator identified the mismatch between the facility's plan and the HHA's intake record, preventing a potentially dangerous medication error at home. By coordinating between the daughter's new location and the Social Worker's office, the PN ensured that the HHA corrected the delivery address and clinical profile before the first visit was scheduled."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

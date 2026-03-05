@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge orders from the surgeon and the formal SNF exit paperwork. The Patient Navigator is focused exclusively on the Home Health Agency (HHA) transition, specifically verifying weekend/holiday staffing for the start-of-care (SOC) visit and de-escalating the family's fear of a care gap during the Labor Day weekend.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against Northcrest face sheet. Verified Medicare Advantage PPO status. Corrected patient phone number in Atlantis; facility record had a transposed digit. Address confirmed as single-story residential.",
+  "home_vs_ltc_determination": "Social Worker confirmed discharge goal is Home with HHA services for gait training and UTI monitoring; LTC is not being considered at this time.",
+  "weekly_facility_update": "Week 2 Check-in: SW reports UTI is clear. PT noted 'freezing' gait episodes related to Parkinson's. Target discharge set for next Wednesday. PN initiated education on MA post-discharge visit.",
+  "v_card_and_flyer_status": "Program flyer delivered to patient; V-Card successfully inserted into the daughter's (POA) smartphone during the Stage 2 education session.",
+  "pre_dc_pulse_call_result": "Pulse call conducted 24 hours prior to D/C. Daughter confirmed home is ready but expressed confusion because the HHA intake nurse called her with a medication list that does not match the SNF\u2019s current bedside list.",
+  "atlantis_final_sync": "D/C Date of 10/25 and First Visit Date of 10/26 successfully logged in Atlantis sync module.",
+  "ma_visit_booking": "MA scheduled for 10/26 at 09:00 AM. Physical appointment card with Care Coordinator contact info handed to patient during the bedside handoff.",
+  "narrative_summary": "Patient was triaged in Stage 1 with a focus on gait safety and UTI follow-up. During Stage 2 maintenance, PN identified a discrepancy between the facility's medication records and the HHA's intake data, specifically regarding Parkinson's dosages. PN escalated this handoff data mismatch to the SW to ensure clinical alignment, ultimately securing a successful transition with the first home visit scheduled within the 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "Facility schedules discharge for Friday afternoon preceding Labor Day weekend. The primary HHA (Coastal Care) has not returned the PN's call to confirm the Friday Start-of-Care (SOC) nurse assignment.",
-      "clinical_impact": "Unchanged",
+      "event_description": "Handoff_Data_Mismatch: Discrepancy identified between SNF medication list and HHA intake records regarding Sinemet frequency.",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The HHA intake coordinator left early for the holiday weekend without assigning the referral to a field nurse for the Saturday morning slot."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff"
     },
     {
-      "event_description": "Patient's spouse expresses extreme anxiety regarding spinal brace management and mobility assistance, threatening to refuse discharge if no nurse is guaranteed for Saturday.",
+      "event_description": "Atlantis demographics audit reveals outdated emergency contact (out-of-state son) vs local daughter/POA.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver Panic: The spouse does not feel competent in managing the post-surgical mobility restrictions without professional supervision during the first 48 hours."
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "Administrative"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Coastal Care HHA is unresponsive to verification requests regarding the Saturday morning nursing visit.",
-      "action_taken": "Identified two alternative HHAs (Marshland Home Health and Atlantic Nursing) that maintain 24/7 intake and presented these options to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an immediate 'Plan B' to prevent the discharge from sliding to the following Tuesday due to holiday staffing freezes."
+      "situation": "HHA records show an allergy to Cipro that is not listed in the SNF's current discharge summary for the UTI treatment.",
+      "action_taken": "Flagged the data discrepancy to the Social Worker for clinical reconciliation with the nursing staff.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "Spouse is confused about the difference between the HHA nurse's role and the PN's role during the first 24 hours home.",
-      "action_taken": "Conducted a 'Day 1 Expectations' walkthrough with the spouse, clarifying that the HHA nurse performs the clinical assessment while the PN verifies equipment arrival.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Isolate and resolve logistical anxiety to prevent a family-driven discharge refusal."
+      "situation": "Daughter is concerned about how the MA visit differs from the HHA nurse visit.",
+      "action_taken": "Educated family on the specific role of the MA in monitoring and program benefits.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The SNF physical therapy notes indicate the patient requires a walker, but the HHA intake record shows 'standard cane' for the home equipment list.",
-      "action_taken": "Flagged the equipment discrepancy to the Social Worker and requested the DME vendor update the delivery order before the Friday 2 PM cutoff.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Ensure the correct mobility aid is at the home before the HHA nurse arrives, preventing a safety-related admission rejection."
+      "situation": "HHA intake coordinator reports they have not received the final updated med list 24 hours before discharge.",
+      "action_taken": "Escalated the missing data to the SW to ensure the HHA has the correct orders before the patient arrives home.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the spouse's verbalized refusal to accept a Friday discharge and formally notified the Social Worker that the transition is stalled due to caregiver anxiety and HHA non-responsiveness.",
-      "rationale": "The PN correctly identifies that a family's refusal to leave the facility is a clinical/social barrier that falls under the SW's authority to resolve via a care conference."
+      "description": "Wait for the Social Worker and the HHA intake team to resolve the medication list discrepancies through their standard clinical channels before attempting to schedule the MA visit.",
+      "rationale": "Respects the SW boundary regarding clinical documentation and avoids PN involvement in medication reconciliation, which is a banned action."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Contacted the HHA's on-call supervisor to verify the Saturday nurse's name and visit window, then provided a physical appointment card to the spouse detailing exactly who will arrive and when.",
-      "rationale": "The PN stays within scope by verifying HHA logistics and using concrete information to reduce caregiver anxiety without making clinical promises."
+      "description": "Flag the specific handoff data mismatch to the SW, verify with the daughter that she has the correct SNF discharge packet, and confirm the HHA has the final version to ensure the 24-hour MA visit remains viable.",
+      "rationale": "Follows the Stage 3 checklist for final coordination and handoff verification without crossing into clinical management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Met with the attending surgeon during morning rounds to suggest delaying the discharge until Tuesday to ensure the patient has full HHA staffing and 'peace of mind' for the family.",
-      "rationale": "The PN is interfering with the clinical discharge timeline and the doctor's medical judgment, which is the sole purview of the clinical team and the Social Worker."
+      "description": "Review the patient's facility EMR to find the most recent physician order for Sinemet and call the HHA clinical director to manually update their intake form to match.",
+      "rationale": "Violates the Banned Actions by touching the facility EMR and managing clinical medication data, which is the sole responsibility of the SW and clinical staff."
     }
   ],
-  "narrative_summary": "Arthur, a 70-year-old post-spinal fusion patient, is caught in a high-risk transition window as his Friday discharge coincides with Labor Day weekend. The primary HHA has entered a holiday coverage gap, leaving the family terrified of a 72-hour period without professional support for Arthur's mobility needs. While the SNF considers him clinically ready, the PN must navigate an unresponsive HHA intake department and a panicked spouse. The PN's success hinges on verifying a reliable weekend nursing slot or providing the SW with vetted alternatives before the Friday afternoon operational lockout."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

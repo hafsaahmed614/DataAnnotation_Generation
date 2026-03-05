@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The SW is handling the formal clinical discharge meeting, the legal sign-off for catheter competency, and the final physician orders. The PN is only handling the verification of the HHA's intake readiness, educating the daughter on the specific sequence of events for the first 48 hours at home, and flagging the caregiver's panic level to the SW to prevent a last-minute refusal of transport.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage eligibility; identified that the Atlantis record listed the patient's former residence in a 2nd-floor walk-up, but the facility face sheet confirms she is moving to her daughter's ADA-compliant ground-floor ranch. Updated address and primary POA phone in Atlantis.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with HHA for CHF management and PT; patient has strong family support and LTC is not being pursued.",
+  "weekly_facility_update": "Week 2: PT notes patient is now 'Supervised' for transfers; SW targets discharge for the Friday before Labor Day. Edema is stable with current diuretic regimen.",
+  "v_card_and_flyer_status": "V-Card inserted into daughter's phone; physical program flyer delivered to patient and reviewed at bedside during Stage 2 check-in.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to Friday discharge. Confirmed home is ready, but daughter is anxious as the HHA intake coordinator hinted that the 'Start of Care' might be delayed due to the holiday weekend.",
+  "atlantis_final_sync": "D/C Date: 08/30 (Friday); 1st Visit Date: 09/03 (Tuesday). Gap identified in Atlantis due to HHA staffing constraints over Labor Day.",
+  "ma_visit_booking": "MA visit attempted for Saturday (08/31) but blocked; HHA policy prevents MA entry until the RN has completed the initial Start-of-Care (SOC) assessment, which is delayed until Tuesday.",
+  "narrative_summary": "Mrs. Thorne's transition was successfully audited in Stage 1, correcting a critical address error that would have sent the MA to the wrong location. During Stage 2, the family was educated on CHF monitoring and the importance of the 24-hour visit window. However, the Friday discharge coincided with a Labor Day holiday coverage gap, where the HHA intake department froze new admissions. This operational barrier pushed the first visit to the following Tuesday, resulting in a transition breakdown regarding the incentive window.",
   "format_1_state_log": [
     {
-      "event_description": "SW confirms Thursday discharge; however, the daughter (Linda) reports she has never seen a catheter changed and refuses to sign the transport agreement due to her father's Parkinson's tremors making her 'too shaky' to help.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
+      "event_description": "Holiday Coverage Gap: HHA reports reduced staffing for Labor Day weekend; no new admissions processed from Friday 5 PM until Tuesday 8 AM.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The facility floor nurses are short-staffed and have not scheduled the mandatory family teaching session despite the SW marking it as 'pending' in the transition notes."
+      "ai_assumed_bottleneck": "HHA intake coordinator unavailable to assign a weekend nurse for the SOC visit."
     },
     {
-      "event_description": "HHA 'Reliance Home Care' places the intake on hold, stating they cannot provide a Start of Care (SOC) window until they receive a verified 'Caregiver Competency' note from the facility regarding the indwelling catheter.",
+      "event_description": "HHA_SOC_Overlap: HHA's skeleton crew for the weekend is fully booked with existing patients, preventing the 24-hour post-discharge visit for new referrals.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA Intake Coordinator is strictly adhering to a risk-mitigation policy that requires family training documentation before assigning a field nurse to a high-tremor Parkinson's patient."
+      "ai_assumed_bottleneck": "Staffing capacity reached; no available RN for Saturday/Sunday window."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The daughter, Linda, is threatening to refuse the discharge because she doesn't know what to do if the catheter leaks before the HHA nurse arrives.",
-      "action_taken": "Walked the daughter through the 'Day 1' expectation checklist, specifically detailing that the HHA nurse provides an emergency 24/7 triage number and that the PN will verify the HHA's arrival window before Arthur leaves the facility.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate caregiver panic to prevent a 'refusal of transport' while keeping the SW informed of the emotional volatility."
+      "situation": "HHA intake coordinator informs PN that the first visit cannot occur until Tuesday due to the holiday.",
+      "action_taken": "Escalated the holiday coverage gap to the Social Worker to flag the risk of a 72-hour monitoring void for a CHF patient.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "The primary HHA (Reliance) is refusing to commit to a Friday SOC due to the missing training documentation, risking a weekend with no clinical oversight.",
-      "action_taken": "Presented 2 pre-vetted alternative agencies to the SW that have 'Neuro-Specialty' nurses available for Saturday starts who are willing to perform the initial training in-home if the facility provides the baseline orders.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an immediate 'Plan B' to bypass the primary HHA's bureaucratic intake freeze."
+      "situation": "Daughter expresses fear that her mother will 'backslide' without a nurse over the long weekend.",
+      "action_taken": "Walked the family through Stage 3 Day 1 expectations, explaining the difference between the HHA nurse visit and the PN's MA scheduling.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The facility medication list for Arthur\u2019s Parkinson\u2019s meds (Carbidopa/Levodopa) shows a different frequency than what the daughter has in her notes from home.",
-      "action_taken": "Flagged the medication frequency discrepancy to the SW and requested that the HHA referral packet be updated with the most recent facility MAR (Medication Administration Record) to ensure the HHA nurse has the correct data for the first visit.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Ensure the HHA has the 'source of truth' for meds without the PN attempting to reconcile the clinical data themselves."
+      "situation": "Atlantis demographics list an outdated landline for the patient.",
+      "action_taken": "Audited the face sheet and updated the contact number to the daughter\u2019s mobile to ensure the HHA can reach them.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the daughter's stated fears regarding the catheter and Parkinson's tremors in the transition log and notified the Social Worker via email that the family is requesting a formal care conference before proceeding with the discharge.",
-      "rationale": "This is a strategic deferral. The family's refusal to proceed is a high-level discharge planning barrier that falls squarely under the SW's professional responsibility to resolve through a clinical/legal meeting."
+      "description": "The PN documents the HHA's holiday staffing delay in Atlantis and informs the SW that the first visit will be Tuesday, then steps back to allow the facility and agency to manage the clinical handoff.",
+      "rationale": "This follows the 'Strategic Deferral' model, respecting the SW boundary by not attempting to manipulate the discharge date or agency capacity directly."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Suggested to the Social Worker that the floor nurse allow the daughter to observe the 2:00 PM catheter care today, and simultaneously contacted the HHA to confirm they have the correct supplies (leg bags and overnight bags) ready for delivery to the home.",
-      "rationale": "This is Rank 1 PN behavior. It supports the existing plan by suggesting a practical step to the SW (observation) while verifying the logistical readiness (supplies) which is the PN's core domain."
+      "description": "The PN flags the Friday discharge to the SW, highlighting that the HHA cannot perform the 24-hour pulse call or first visit until Tuesday, and asks the SW to verify if the patient is safe for a 3-day gap without RN monitoring.",
+      "rationale": "This is checklist-compliant; the PN identifies a barrier (Stage 3 handoff failure) and escalates it to the appropriate professional (SW) for clinical safety determination."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Took the daughter into the patient's room and personally demonstrated how to secure the catheter bag to the leg to show her that her father's tremors wouldn't interfere with the drainage, then called the HHA to tell them the 'training' was complete.",
-      "rationale": "This is a Hero Complex overstep. The PN is performing a clinical demonstration (out of scope) and potentially falsifying 'training' status to the HHA, bypassing the facility's legal responsibility for competency sign-off."
+      "description": "The PN calls two other local home health agencies to find one that has a nurse working on Saturday, then presents these options to the daughter and tells her to ask the SW to switch agencies to ensure a faster visit.",
+      "rationale": "This is an automatic overstep; the PN is suggesting specific alternative HHAs and interfering with the SW's referral management role."
     }
   ],
-  "narrative_summary": "Arthur, an 82-year-old with advanced Parkinson\u2019s, is nearing discharge following a UTI, but the transition is stalled by his daughter's fear of managing his new catheter amidst his significant tremors. The primary Home Health Agency is refusing to schedule the start-of-care visit until the facility provides a formal caregiver training sign-off, which the floor staff has yet to complete. The Patient Navigator is currently working to de-escalate the daughter\u2019s anxiety by setting Day 1 expectations while providing the Social Worker with alternative HHA options that offer more flexible neuro-specialty weekend coverage."
+  "case_outcome": "Failure_Transition_Breakdown"
 }

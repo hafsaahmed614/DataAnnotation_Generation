@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The SW is handling the clinical discharge orders and the formal insurance authorization for the SNF stay, while the PN is strictly focused on resolving the HHA intake freeze, verifying the daughter's readiness for 'Day 1' at home, and providing alternative agency options to the SW to prevent a discharge lapse.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage (Aetna) and confirmed address in Atlantis matches the SNF face sheet. Discovered the phone number listed was a disconnected landline; updated Atlantis with the patient's current cell phone number and her daughter's (POA) contact info.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with Home Health Agency (HHA) support for post-chemo weakness and medication management.",
+  "weekly_facility_update": "Week 2: Patient is meeting PT goals for gait stability. SW indicates discharge is targeted for Friday, pending the final oncology clearance. PN educated the family on the Medical Assistant (MA) 'First Visit' role.",
+  "v_card_and_flyer_status": "V-Card inserted into Martha's iPhone; physical 'Safe Transition' flyer delivered to Martha and her daughter during the bedside education session.",
+  "pre_dc_pulse_call_result": "Reached Martha's daughter 24 hours prior to discharge. Confirmed the home is prepared with groceries and meds, but the HHA intake coordinator notified us that the primary oncology nurse is out with the flu.",
+  "atlantis_final_sync": "D/C Date: 11/15/2024; First Visit Date: 11/16/2024. All dates synced in Atlantis to trigger the MA workflow.",
+  "ma_visit_booking": "MA scheduled for 11/16/2024 at 09:30 AM. Physical appointment card with the MA's name and the Care Coordinator's phone number was handed to Martha.",
+  "narrative_summary": "Martha was triaged in Atlantis following post-chemo rehab, where I corrected her contact information and confirmed a home-bound goal with the SW. During the maintenance phase, I provided program education and inserted my V-card, though a delay was introduced when the HHA's lead nurse fell ill. I completed the 24-hour pulse call to Martha's daughter and successfully scheduled the MA visit within the required window to ensure a safe transition despite the HHA's staffing gap.",
   "format_1_state_log": [
     {
-      "event_description": "Initial HHA (Priority Care) confirms a total intake freeze through the upcoming holiday weekend due to a sudden staffing shortage and system migration.",
+      "event_description": "HHA Oncology Specialist reports flu; intake department is scrambling for coverage.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The HHA intake coordinator is unavailable to process the referral until Tuesday morning, leaving the Monday discharge date unconfirmed."
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Operational: Provider Illness"
     },
     {
-      "event_description": "Patient's daughter expresses high anxiety regarding the mother's post-chemo exhaustion and threatens to refuse the Monday discharge if a nurse isn't there by noon.",
+      "event_description": "Atlantis data sync reveals mismatch in patient primary phone number.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver panic regarding the management of chemo-related fatigue and medication adherence without immediate professional oversight."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative: Atlantis_Data_Lag"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA (Priority Care) is under an intake freeze, and the Social Worker is currently tied up with a high-acuity trauma admission.",
-      "action_taken": "Pre-vetted three local alternative agencies (Beta Health, City Nursing, and Harbor Home) for capacity to accept a post-chemo patient on Monday.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an 'easy button' to pivot the referral without the PN making the clinical selection herself."
+      "situation": "HHA intake coordinator reports the assigned nurse is out sick and cannot perform the Start of Care on the discharge day.",
+      "action_taken": "Escalated the coverage gap to the Social Worker to determine if a generalist HHA nurse could bridge the gap or if the discharge date should be adjusted.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "Discrepancy identified between the facility's discharge medication list and the daughter's understanding of the home chemo-support prescriptions.",
-      "action_taken": "Flagged the medication list mismatch to the Social Worker and requested a formal reconciliation for the HHA handoff packet.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Avoid clinical interpretation of the meds while ensuring the HHA receives the correct data to prevent a Day 1 medication error."
+      "situation": "Martha's daughter expressed confusion about the difference between the HHA nurse and the program's Medical Assistant.",
+      "action_taken": "Conducted a family education session explaining that the MA provides an extra layer of safety within 24 hours, while the HHA handles clinical wound/medication management.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Daughter is unsure if the home walker fits through the bathroom door, creating a potential safety barrier for the HHA's first PT visit.",
-      "action_taken": "Provided the daughter with a 'Home Readiness Checklist' and instructed her to measure the doorway and verify the walker's width before Monday.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Empower the family to resolve logistical barriers themselves to ensure the HHA start-of-care visit is not aborted for safety reasons."
+      "situation": "The facility EMR shows a different discharge date than the SW's verbal update.",
+      "action_taken": "Checked in with the SW to confirm the finalized date before updating the Atlantis record and scheduling the MA.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
-      "ai_intended_category": "Proactive",
-      "description": "The PN meets with the daughter to walk through exactly what the first 48 hours at home look like, while simultaneously providing the SW with the names of two agencies that have confirmed they have a nurse available for a Monday afternoon start-of-care.",
-      "rationale": "The PN stays in scope by educating the family to reduce anxiety and providing the SW with vetted alternatives to bypass the intake freeze, leaving the final referral decision to the SW."
+      "ai_intended_category": "Passive",
+      "description": "Step back and allow the Social Worker to contact the HHA to resolve the staffing shortage or find a replacement nurse.",
+      "rationale": "Respects the SW Boundary; the PN does not manage HHA staffing or coordinate agency-level clinical coverage."
     },
     {
-      "ai_intended_category": "Passive",
-      "description": "The PN documents the daughter's refusal to accept a Monday discharge without a nurse present and sends a high-priority notification to the Social Worker stating that the transition is currently stalled due to the HHA intake freeze and family concerns.",
-      "rationale": "This is a strategic deferral. The PN recognizes that the daughter's threat to refuse discharge is a volatile situation that requires the SW's professional intervention and social work expertise."
+      "ai_intended_category": "Proactive",
+      "description": "Verify the HHA has a confirmed Start-of-Care date and schedule the MA visit for the morning after discharge to ensure the patient is not alone during the provider's illness gap.",
+      "rationale": "Complies with Stage 3 Handoff rules and the Scheduling Anchor, ensuring the PN's 'First Visit' incentive is secured through the MA."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN calls the intake manager at Priority Care and negotiates a 'one-time exception' for the freeze, then calls the daughter to promise that a nurse will definitely be at the house by 1:00 PM on Monday.",
-      "rationale": "This is a hero-complex overstep. The PN is making clinical staffing promises they cannot control and intervening in the HHA's internal operational decisions, potentially creating a liability if the nurse fails to appear."
+      "description": "Call a different HHA that you have a personal relationship with and ask them to take the case since the current HHA has a sick nurse.",
+      "rationale": "Banned Action: Suggesting specific HHA agencies to the SW or interfering with the agency selection process is a direct overstep of the PN role."
     }
   ],
-  "narrative_summary": "A 74-year-old female recovering from chemotherapy-related debility is scheduled for a Monday discharge, but the transition is threatened by a sudden intake freeze at the primary Home Health Agency. The daughter is exhibiting significant 'Caregiver Panic,' threatening to block the discharge due to fears over managing her mother's post-chemo weakness. The Patient Navigator must bridge the information gap by verifying the daughter's home preparation while providing the Social Worker with pre-vetted agency alternatives to ensure a safe, on-time transition to home care."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

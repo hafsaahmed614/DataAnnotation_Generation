@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge order and the legal selection of the Home Health Agency (HHA). The Patient Navigator (PN) is solely responsible for verifying the HHA's capacity to accept the referral, confirming the equipment is physically in the home, and educating the daughter on what the first 48 hours of home care will look like to reduce her anxiety.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility face sheet; corrected error in patient ZIP code and added missing secondary phone number for the daughter (POA). Verified Medicare Advantage Plan coverage for home health.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with skilled nursing for diabetic wound care and PT for gait training; patient's daughter is available to assist with ADLs.",
+  "weekly_facility_update": "Week 2: SW reports wound is showing granulation; PT notes patient is now 'Min Assist' for transfers. Target discharge date set for Wednesday the 15th.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into patient's smartphone and physical program flyer delivered to the bedside during the Week 2 education session.",
+  "pre_dc_pulse_call_result": "Pre-DC_Call_Disconnect: Attempted 24-hour pulse call to daughter (POA) three times; all calls went to voicemail. Home readiness and first-visit window remain unconfirmed.",
+  "atlantis_final_sync": "Entered D/C date of 11/15 and 1st visit date of 11/16 into Atlantis based on the Social Worker's verbal discharge plan.",
+  "ma_visit_booking": "Medical Assistant (MA) scheduled for 11/16 at 09:00 AM; visit status marked as 'Pending Confirmation' due to failed pulse call reach.",
+  "narrative_summary": "A 69yo female with a diabetic wound was triaged in Atlantis for a home transition. The PN completed Stage 1 audits and Stage 2 education, ensuring the V-Card was installed. However, a Stage 3 Pre-DC pulse call disconnect prevented verification of the MA visit window, resulting in a transition breakdown when the patient was not home for the scheduled start-of-care.",
   "format_1_state_log": [
     {
-      "event_description": "PN attempts to confirm referral receipt with Preferred HHA; Intake Coordinator reports a 'System Outage' freeze on all new admissions for the next 72 hours.",
-      "clinical_impact": "Unchanged",
+      "event_description": "Weekly alignment with SW regarding wound healing progress.",
+      "clinical_impact": "Improves",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The HHA intake department is frozen due to a server migration; the coordinator cannot manually enter the patient into the scheduling software."
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     },
     {
-      "event_description": "Primary caregiver (daughter) expresses fear of managing the patient's new thickened-liquid diet and threats to refuse the Friday discharge if a nurse isn't there by Friday evening.",
+      "event_description": "Mandatory 24-hour pre-discharge pulse call failed; POA unreachable.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver panic regarding the management of post-stroke dysphagia without immediate professional supervision."
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Communication Barrier (Pre-DC_Call_Disconnect)"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA Intake Freeze prevents the preferred agency from confirming a Start-of-Care (SOC) date for the 81yo stroke patient.",
-      "action_taken": "Identified two alternative in-network HHAs with open slots and presented their contact information to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an immediate 'path of least resistance' to avoid a discharge delay without overstepping the patient's right to choose."
+      "situation": "Atlantis demographics missing daughter's secondary contact number.",
+      "action_taken": "Audited facility face sheet and updated Atlantis record to ensure reachability.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The daughter claims the hospital bed was delivered, but the HHA requires verification of the specific 'low-air-loss' mattress for skin integrity before the nurse's first visit.",
-      "action_taken": "Requested the daughter text a photo of the bed's serial number and setup to verify against the DME order.",
-      "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Confirm the home is 'clinically ready' for the HHA's arrival without needing to wait for a formal vendor delivery receipt."
+      "situation": "Patient's daughter expresses anxiety about managing diabetic wound dressings at home.",
+      "action_taken": "Conducted bedside education walking the family through Day 1 expectations and MA support.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Social Worker is under pressure to clear the bed by Friday, but the HHA cannot staff a weekend RN for the initial assessment.",
-      "action_taken": "Educated the family on the 'Day 1' expectations, explaining that the first visit is an assessment and not a 24/7 care shift.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Level-set family expectations to prevent a 'refusal of service' when the nurse eventually arrives on Monday."
+      "situation": "PN cannot reach family 24 hours before discharge to confirm the MA schedule.",
+      "action_taken": "Escalated the communication gap to the Social Worker to ensure the visit time is relayed during discharge paperwork.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Notified the Social Worker via email that the preferred HHA is on an intake freeze and documented the daughter's concerns about the Friday discharge timing, then stepped back to await the facility's revised transition plan.",
-      "rationale": "This is a strategic deferral. The PN recognizes that the choice of agency and the timing of discharge are clinical and administrative decisions owned by the facility/SW. By documenting and stepping back, the PN avoids taking ownership of a failing plan."
+      "description": "Wait for the Home Health Agency intake coordinator to confirm they have successfully contacted the family before finalizing the MA schedule in Atlantis.",
+      "rationale": "Respects the HHA's responsibility for intake coordination but risks missing the 24-hour incentive window if the HHA is also delayed."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Provided the Social Worker with two alternative HHAs that confirmed they have RN availability for a weekend start-of-care and offered to facilitate an introductory call between the daughter and the new HHA intake leads.",
-      "rationale": "This follows the 'Support, Suggest, and Escalate' mentality. The PN isn't making the decision but is providing the SW with vetted solutions to the current bottleneck while supporting the family's education needs."
+      "description": "Flag the unreachable POA to the Social Worker and request they verify the 09:00 AM MA visit time with the family during the physical discharge handoff.",
+      "rationale": "Complies with the PN checklist Stage 3 by using the SW as the primary facility channel to bridge the communication gap without overstepping."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contacted the HHA's Regional Director to argue for a 'manual override' of the intake freeze for this patient and then spoke with the attending physician to suggest the patient remain inpatient for an additional 48 hours until the system is live.",
-      "rationale": "The PN is attempting to resolve a system-wide HHA issue they cannot control and, more critically, is making a clinical recommendation to a physician about the length of stay, which is far outside the PN's non-clinical scope."
+      "description": "Call the patient's insurance provider to request an alternate emergency contact number or to verify if the patient has a secondary residence listed in their file.",
+      "rationale": "Directly violates the SW Boundary and Banned Actions by contacting insurance companies for administrative data that should be managed by the facility staff."
     }
   ],
-  "narrative_summary": "Mr. Vance, an 81-year-old stroke survivor, is nearing discharge from rehab, but his transition is threatened by a 72-hour system-wide intake freeze at the preferred home health agency. While the facility pushes for a Friday exit, the PN discovered that the home health referral has not been processed and the daughter is experiencing significant 'caregiver panic' regarding weekend support. The case hinges on whether a transition can be secured with an alternative agency or if the family's hesitation will lead to a discharge refusal. The PN must verify that the required DME is properly installed at home while maintaining a strictly supportive role to the Social Worker during this operational outage."
+  "case_outcome": "Failure_Transition_Breakdown"
 }

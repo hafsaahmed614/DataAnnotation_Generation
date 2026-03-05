@@ -1,59 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge orders and the initial selection of the Home Health Agency (HHA). The Patient Navigator (PN) is strictly focused on verifying the HHA's intake processing status, confirming the start-of-care window with the HHA clinical manager during the coordinator's absence, and de-escalating the daughter's anxiety by clarifying 'Day 1' logistics versus clinical care.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified insurance (Straight Medicare) and compared Atlantis record against facility face sheet; corrected patient's zip code from 19102 to 19104 and added Apartment 4B to the primary address string to ensure HHA and MA find the residence.",
+  "home_vs_ltc_determination": "Social Worker confirms the goal is Home with HHA services for CHF management and diuretic monitoring; patient's daughter is available to provide 24/7 support initially.",
+  "weekly_facility_update": "Week 2: SW reports patient is stabilizing on intravenous Lasix; Physical Therapy notes progress in gait but recommends DME (rolling walker) for home safety. Target discharge set for Friday.",
+  "v_card_and_flyer_status": "V-Card inserted into Martha's iPhone contacts under 'Care Team' and physical program flyer delivered to her daughter, Elena, during the Tuesday bedside check-in.",
+  "pre_dc_pulse_call_result": "Reached Elena (daughter) 24 hours prior to discharge; home is ready and walker has been delivered, but Elena reported the HHA had not yet confirmed a nurse arrival time due to missing paperwork.",
+  "atlantis_final_sync": "Entered confirmed discharge date of 10/27 and first visit date of 10/28 into the Atlantis transition module.",
+  "ma_visit_booking": "MA scheduled for 10/28 at 10:00 AM to coincide with the HHA's projected start-of-care window, ensuring the 'First Visit' incentive is triggered.",
+  "narrative_summary": "Martha, a 78yo female with CHF, was successfully triaged in Atlantis where her demographics were audited for HHA accuracy. During her maintenance phase, the PN provided education to her daughter and inserted the V-Card to ensure a direct line of communication. Despite a delay triggered by missing physician orders at the time of handoff, the PN facilitated the transition by flagging the gap to the SW and scheduling the MA visit within the mandatory 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "The primary HHA Intake Coordinator is out on unscheduled PTO; the referral for Mr. Bennett remains in 'Pending' status without an assigned nurse.",
+      "event_description": "Initial Atlantis Triage and Demographic Audit",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA utilizes a single-threaded intake process where only one individual has the credentials to move referrals from the portal to the active scheduling roster."
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
-      "event_description": "The patient's daughter expresses 'Caregiver Panic,' threatening to refuse the discharge transport unless a nurse is physically present at the home the moment the patient arrives.",
+      "event_description": "Missing HHA Orders at Handoff (Physician fax failed)",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family fear regarding dementia-related wandering and fall risk is manifesting as a demand for 24/7 clinical presence that exceeds the HHA's scope."
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff"
+    },
+    {
+      "event_description": "Pre-Discharge Pulse Call - Family Education and MA Schedule Confirmation",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA Intake Coordinator is unavailable, and the SW believes the referral is 'all set' despite no confirmed SOC date.",
-      "action_taken": "Contacted the HHA Clinical Manager directly to verify if the referral appeared in the internal clinical queue.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Bypass the administrative bottleneck to secure a verbal commitment from clinical leadership before the weekend coverage gap."
+      "situation": "HHA Intake Coordinator reports they cannot process the referral because the physician's home health orders are missing from the packet.",
+      "action_taken": "Flagged the missing orders to the Social Worker and provided the HHA's direct fax number to ensure the clinical packet was resent.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "Daughter is uncertain if the hospital bed was delivered to the correct entrance of the home, which has a split-level layout.",
-      "action_taken": "Requested the daughter provide a photo of the delivered equipment in the designated room to verify setup.",
-      "taxonomy_category": "Resource Planning",
-      "tactical_field_intent": "Validate home readiness remotely to prevent a 'failed drop' where the patient arrives but cannot be safely transferred to bed."
+      "situation": "Patient's daughter expresses confusion about which agency is coming and what time to expect them on Day 1.",
+      "action_taken": "Walked the daughter through the Day 1 expectations and provided a physical appointment card with the MA's scheduled time.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Daughter demands the PN 'approve' a delay in discharge until the HHA nurse can guarantee a Friday evening visit.",
-      "action_taken": "Educated the daughter on the standard 24-48 hour SOC window and immediately flagged the family's hesitation to the SW.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Shift the liability of the discharge timing decision back to the facility while managing family expectations of HHA timing."
+      "situation": "Atlantis queue reflects an outdated phone number for the patient's primary caregiver.",
+      "action_taken": "Updated the contact information in Atlantis after verifying the correct cell number during a bedside visit.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Document the HHA's lack of response and notify the Social Worker that the home health transition cannot be verified, then wait for the SW to provide an updated discharge directive.",
-      "rationale": "This is a strategic deferral. Since the PN cannot force the HHA to pick up the phone or make clinical timing decisions, stepping back prevents the PN from being blamed for a 'rushed' discharge if the SW chooses to proceed without a confirmed nurse."
+      "description": "Allow the Social Worker to discover the missing HHA orders during their routine end-of-day discharge audit.",
+      "rationale": "Respects the SW's ownership of the clinical referral packet and avoids over-stepping into the administrative handoff process."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Identify two alternative HHAs with 24/7 intake departments and present these options to the SW as potential backups while walking the daughter through a 'Day 1' checklist to reduce her anxiety.",
-      "rationale": "The PN is supporting the transition by offering solutions (alternatives) and educating the family, but leaves the final decision to change the referral to the SW."
+      "description": "Notify the SW immediately that the HHA intake coordinator is missing the physician orders and confirm when the fax has been successfully sent to keep the MA schedule on track.",
+      "rationale": "Follows the PN checklist for Stage 3: Final Coordination, ensuring all transition providers are aligned without performing the SW's tasks."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the HHA's regional director to demand an emergency intake override for this patient and then tell the daughter that you will ensure the nurse arrives within two hours of the patient getting home.",
-      "rationale": "This is a 'Hero Complex' overstep. The PN is making clinical promises (nurse arrival time) they cannot keep and bypassing the facility's relationship with the HHA, which creates significant liability."
+      "description": "Contact the physician's office directly to request a new set of signed orders and fax them to the HHA to ensure the discharge isn't delayed.",
+      "rationale": "This violates the SW boundary by handling clinical documentation and physician communication which is the sole responsibility of the facility staff."
     }
   ],
-  "narrative_summary": "Mr. Bennett, an 86-year-old with dementia, is approaching discharge following a hip fracture, but the transition is stalled because the HHA Intake Coordinator is out sick. While the Social Worker assumes the plan is moving forward, the PN discovered the referral is stuck in a 'Pending' queue with no nurse assigned for the weekend. Simultaneously, the daughter is experiencing significant 'Caregiver Panic,' threatening to block the discharge due to fears of managing her father\u2019s dementia-related wandering without immediate professional support. The PN must now navigate the 'Fog of War' regarding the actual HHA start-of-care date while ensuring the daughter is educated on the realities of home health timing."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

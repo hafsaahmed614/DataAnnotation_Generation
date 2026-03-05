@@ -1,67 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is handling the clinical discharge orders, the legal discharge date, and the contracting of the oxygen vendor. The PN is focusing strictly on the Home Health Agency (HHA) transition, specifically verifying that the caregiver (Linda) is actually prepared for the Day 1 nebulizer schedule and that the HHA has assigned a nurse who can perform the initial competency check at the home. The PN will not touch the clinical training herself but will escalate the 'training gap' to the SW to prevent a discharge failure.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage PPO; confirmed home address in Silver Spring, MD; DOB 1954 matches face sheet; updated daughter's mobile as the primary transition contact.",
+  "home_vs_ltc_determination": "Home. SW confirms patient is a candidate for home PT and nursing following L4-L5 spinal fusion.",
+  "weekly_facility_update": "Week 2: Patient meeting 50ft gait goals; SW identifies 'CareLink HHA' for post-acute services. Target discharge set for Thursday.",
+  "v_card_and_flyer_status": "V-Card saved to patient's iPhone contacts; physical program flyer delivered to daughter during bedside education session.",
+  "pre_dc_pulse_call_result": "Reached daughter 24h prior; home environment confirmed with raised toilet seat and walker; daughter aware of Friday morning MA visit.",
+  "atlantis_final_sync": "Discharge date of Thursday and first visit date of Friday morning entered into Atlantis queue.",
+  "ma_visit_booking": "MA scheduled for Friday at 09:30 AM, ensuring the visit occurs within the 24-hour post-discharge window.",
+  "narrative_summary": "The patient was triaged following a spinal fusion with demographics successfully audited in Atlantis. During the maintenance phase, the PN provided program education and inserted the V-Card while the SW finalized the HHA selection. Despite the HHA intake coordinator being unavailable due to illness, the PN flagged the communication gap to the SW early, allowing for a confirmed Friday morning first visit and securing the incentive.",
   "format_1_state_log": [
     {
-      "event_description": "Initial intake for Mrs. Vance (83yo, post-ICU pneumonia). Daughter/Caregiver Linda expresses high anxiety regarding home oxygen and nebulizer maintenance.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "+0 Days",
-      "ai_assumed_bottleneck": "Initial referral received; family education on HHA role started to build trust."
-    },
-    {
-      "event_description": "Caregiver Training Gap identified: Linda reports she has not received the promised hands-on training with the specific home-grade concentrator model.",
+      "event_description": "HHA Intake Coordinator Unavailable",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The SNF respiratory therapist was out sick, and the HHA intake coordinator failed to schedule the pre-discharge bedside demo."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Operational"
     },
     {
-      "event_description": "Logistical friction: DME vendor delivered the oxygen concentrator to the home, but the nasal cannula sizing is for a pediatric patient, not an 83yo adult.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "DME vendor data entry error at the warehouse; PN verified the equipment at the home via photo from the daughter."
+      "event_description": "Successful 24-hour pre-discharge pulse call",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The daughter (Linda) threatens to refuse the Thursday discharge because she 'doesn't know how to clean the nebulizer cups' and is spiraling into a panic.",
-      "action_taken": "Immediately flagged the caregiver's volatile emotional state to the Social Worker and requested a brief huddle to realign expectations.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Flag volatile family situation to SW for immediate intervention while maintaining the PN as a supportive, non-clinical ally."
+      "situation": "HHA intake coordinator out sick, stalling the confirmation of the Friday start-of-care.",
+      "action_taken": "Flagged the HHA unresponsiveness to the Social Worker to request an alternate agency contact.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "The HHA intake coordinator is unavailable due to a regional system outage, preventing confirmation of the Start-of-Care (SOC) nurse assignment.",
-      "action_taken": "Contacted the HHA's alternate branch manager to verify if a nurse from the neighboring zip code could be 'floated' for the Day 1 visit.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Force a verbal commitment from HHA leadership to ensure the SOC date doesn't slip due to administrative technicalities."
+      "situation": "Family expressed confusion over the timing of the first home visit.",
+      "action_taken": "Walked the family through the Day 1 expectations, including the 24-hour MA visit window.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "DME vendor delivered the wrong nasal cannula size to the home, and the SW is unaware of the delivery error.",
-      "action_taken": "Provided the SW with 2-3 pre-vetted backup DME vendors who have the correct adult supplies in stock for immediate delivery.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with a 'turnkey' solution to the equipment problem so the discharge timeline remains viable."
+      "situation": "Atlantis demographics for the patient listed an outdated phone number.",
+      "action_taken": "Audited the facility face sheet and updated the patient record in Atlantis with the correct contact info.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The PN documents the caregiver's refusal to manage the nebulizer in the internal transition log and notifies the Social Worker that the family is requesting more time. The PN then steps back to allow the facility's clinical team to address the training deficiency during their next internal round.",
-      "rationale": "This is a strategic deferral. Training competency is a clinical function. By stepping back, the PN respects the facility's responsibility for clinical readiness while keeping the SW informed of the barrier."
+      "description": "The PN documents the HHA intake coordinator's absence in Atlantis and waits for the Social Worker to resolve the communication delay during the next business day.",
+      "rationale": "Respects the SW's role as the primary liaison with the HHA, ensuring no overstep into agency management."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN walks the daughter through the 'Day 1 HHA Expectations' brochure, explaining that the HHA nurse's primary goal during the first visit is to verify equipment safety and perform a hands-on training refresher. Simultaneously, the PN suggests to the SW that the HHA nurse be invited to the SNF for a joint bedside handoff.",
-      "rationale": "The PN stays in scope by focusing on education and coordination. They reduce the daughter's anxiety by clarifying the HHA's role and suggest a collaborative solution to the SW without overstepping into clinical instruction."
+      "description": "The PN flags the intake coordinator's illness to the SW and verifies with the HHA's general office that the referral was received, then schedules the MA for the 24-hour window.",
+      "rationale": "Follows Stage 3 checklist by escalating barriers to the SW while maintaining scheduling anchors for the MA visit."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN visits the patient's room, takes the nebulizer from the bedside table, and demonstrates the proper assembly and cleaning technique to the daughter. The PN then calls the HHA directly to tell them the training is complete and they can proceed with the discharge for tomorrow.",
-      "rationale": "This is a 'Hero Complex' overstep. The PN is performing a clinical task (respiratory education) and making a clinical determination (training complete), which bypasses both the facility's therapists and the HHA's licensed staff."
+      "description": "The PN calls the HHA clinical director directly to provide the missing F2F documentation and suggests a different HHA to the SW to avoid the intake delay.",
+      "rationale": "Violates the Banned Actions by handling F2F forms and suggesting alternative HHA agencies to the SW."
     }
   ],
-  "narrative_summary": "Mrs. Vance's transition from the SNF to home care was nearly derailed by her daughter's intense anxiety regarding complex respiratory equipment. While the facility deemed the patient clinically stable, the 'Caregiver Training Gap' necessitated a 4-day delay to ensure the daughter could safely manage the nebulizer and oxygen concentrator. The Patient Navigator successfully bridged this gap by identifying a DME delivery error early and coordinating with the Social Worker to ensure the Home Health Agency scheduled a specialized 'Start-of-Care' nurse who could provide the final competency check at the home."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

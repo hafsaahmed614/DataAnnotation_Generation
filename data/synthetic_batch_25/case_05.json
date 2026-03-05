@@ -1,67 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge order and the primary insurance authorization for home health. The Patient Navigator (PN) is only handling the verification of HHA network status, confirming the HHA's actual intake capacity for stroke-specific physical therapy, and educating the family on why the start-of-care date is shifting due to the network mismatch.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against Northcrest face sheet; corrected patient's zip code and added daughter's secondary mobile number. Verified Medicare Advantage PPO eligibility.",
+  "home_vs_ltc_determination": "SW confirms the goal is Home with HHA support; patient has strong family involvement but requires a hospital bed and O2.",
+  "weekly_facility_update": "Week 2 Check-in: SW reports patient is stable post-chemo rehab. PT goals met for transfers. Discharge target set for Friday. DME vendor confirmed for Thursday delivery.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's phone; program flyer delivered to daughter (POA) during bedside education session on Day 1 expectations.",
+  "pre_dc_pulse_call_result": "Pulse call conducted 24h prior to D/C. Daughter reports 'DME Failure': the hospital bed arrived but is missing the mattress and side rails. Home is currently unsafe for transition.",
+  "atlantis_final_sync": "D/C date adjusted to 11/18; 1st visit date 11/19 entered into Atlantis following DME resolution.",
+  "ma_visit_booking": "MA scheduled for 11/19 at 09:00 AM to ensure visit occurs within 24 hours of the rescheduled discharge.",
+  "narrative_summary": "Patient was triaged in Atlantis and confirmed for home discharge with HHA services. During the maintenance phase, education was provided to the family and contact info was exchanged. A significant DME delivery failure was identified during the 24-hour pulse call, requiring a 3-day discharge delay which the PN communicated to the home team. Once the correct equipment was verified at the home, the MA visit was successfully scheduled for the morning after discharge.",
   "format_1_state_log": [
     {
-      "event_description": "Initial HHA referral for stroke rehab sent by SW to 'Midwest Home Health' based on geographic proximity; PN attempts to confirm receipt with HHA intake.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The single HHA intake coordinator is out on PTO, leaving the referral sitting in a digital queue without a confirmed start-of-care date."
-    },
-    {
-      "event_description": "Midwest Home Health finally processes the packet but flags a network mismatch with the patient's specific Medicare Advantage PPO sub-group.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "The facility SW relied on an outdated insurance grid that listed the HHA as in-network, but the specific Advantage plan recently changed its tiering."
-    },
-    {
-      "event_description": "Patient's son threatens to refuse discharge unless the out-of-network HHA used by his mother is approved for his father's stroke care.",
+      "event_description": "DME_Delivery_Failure: Hospital bed arrived incomplete (no mattress/rails).",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family fear regarding the quality of in-network stroke specialists leads to a hard refusal of the secondary discharge plan."
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Vendor logistical error requiring re-delivery of correct components before home is safe."
+    },
+    {
+      "event_description": "PN verifies correct DME setup via photo confirmation from daughter.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Verification step completed; transition can proceed."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA intake coordinator is unresponsive to the facility's referral for the 81yo stroke patient.",
-      "action_taken": "Contacted HHA intake coordinator directly to confirm referral receipt and request an estimated Start-of-Care (SOC) window.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Establish a verbal connection with intake to ensure the referral isn't buried behind high-volume orthopedic cases."
+      "situation": "Daughter reports incomplete hospital bed delivery during pulse call.",
+      "action_taken": "Immediately flagged the DME mismatch to the Social Worker and HHA intake coordinator.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "Midwest Home Health confirms they are out-of-network for the patient's Advantage plan, stalling the transition.",
-      "action_taken": "Identified three alternative HHAs in the patient's zip code that are in-network and have active stroke rehab programs, then presented these options to the SW.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with turnkey solutions to prevent the discharge from being delayed by a week of back-and-forth phone calls."
+      "situation": "Patient's daughter expresses anxiety about managing the O2 concentrator.",
+      "action_taken": "Walked family through Day 1 expectations, including who to call if the HHA nurse is delayed.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Family is confused about why their preferred HHA cannot be used and is becoming combative with facility staff.",
-      "action_taken": "Walked the family through the Day 1 expectations for an in-network provider and explained the logistics of service coverage without making clinical promises.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate the family by focusing on the continuity of PT services rather than the bureaucratic insurance terminology."
+      "situation": "Discharge date shifted due to DME delay.",
+      "action_taken": "Updated Atlantis D/C and First Visit dates to align with the new 24-hour window.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "After identifying the network mismatch, the PN documented the findings and notified the Social Worker that the current HHA plan was non-viable, then waited for the SW to issue a new referral.",
-      "rationale": "This is a strategic deferral that respects the SW's authority over the formal referral process. By stepping back, the PN avoids confusing the HHAs with multiple points of contact for a new clinical packet."
+      "description": "Wait for the Social Worker to provide a new confirmed discharge date after they resolve the DME issue with the vendor.",
+      "rationale": "Respects the SW boundary as the primary coordinator of facility-ordered equipment and discharge timing."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN pre-vetted two local HHAs for both network status and stroke-rehab staffing availability, then brought the contact names and phone numbers to the SW as suggested alternatives for the patient's transition.",
-      "rationale": "The PN supports the SW by doing the legwork of verifying capacity and network status, which are non-clinical logistical tasks, while leaving the final referral decision to the facility."
+      "description": "Coordinate with the HHA intake coordinator to put the start-of-care visit on 'standby' and verify they have the capacity to shift the visit to the following Monday if the DME is not fixed by Friday.",
+      "rationale": "Aligned with Stage 3 checklist for HHA/Team Handoff and de-conflicting the schedule to protect the 24-hour visit window."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN contacted the patient's Medicare Advantage plan directly to argue for a single-case agreement for the out-of-network HHA to satisfy the family's request.",
-      "rationale": "This is a hero-complex overstep because the PN is performing insurance negotiation and authorization work, which is strictly the responsibility of the facility's case management or the HHA's billing department."
+      "description": "Call the DME vendor directly to provide clinical justification for an emergency mattress delivery and suggest a different vendor to the SW if they cannot deliver today.",
+      "rationale": "Oversteps into SW territory (finding agencies/vendors) and clinical medication/equipment management."
     }
   ],
-  "narrative_summary": "Mr. Vance's transition from stroke rehab was nearly derailed when his primary HHA was identified as out-of-network only 48 hours before discharge. The situation was further complicated by his son's insistence on a specific provider, leading to a potential refusal of the entire home care plan. The Patient Navigator successfully identified the mismatch early by verifying HHA intake data and provided the Social Worker with three pre-vetted, in-network alternatives that specialized in neurological recovery. This allowed the transition to proceed with only a minor delay, ensuring Mr. Vance's physical therapy began at home without the family facing unexpected out-of-pocket costs."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

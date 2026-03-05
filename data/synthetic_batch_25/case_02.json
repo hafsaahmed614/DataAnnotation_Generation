@@ -1,67 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is managing the clinical discharge timeline, coordinating the Medicaid CHC waiver application, and handling the official communication with the family regarding discharge dates. The Patient Navigator is focusing specifically on the Home Health Agency (HHA) transition, verifying the delivery of the hospital bed and oxygen concentrator, and monitoring the status of the three required contractor estimates for the wheelchair ramp to ensure the HHA nurse can safely perform the start-of-care visit.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis queue against facility face sheet; corrected DOB from 05/12/1954 to 05/12/1955. Confirmed Medicare Advantage PPO eligibility and verified home address in the 19104 zip code for MA travel distance.",
+  "home_vs_ltc_determination": "Social Worker Maria confirmed the goal is Home with HHA services for daily diabetic wound dressing changes and PT for gait training.",
+  "weekly_facility_update": "Week 2: Wound healing is stable; SW confirms target discharge for Friday. Patient remains a high fall risk, requiring a hospital bed and O2 concentrator at home before transition.",
+  "v_card_and_flyer_status": "PN V-Card successfully inserted into patient's contact list; physical program flyer delivered to the patient's daughter during the bedside education session.",
+  "pre_dc_pulse_call_result": "Reached daughter via phone 24 hours prior to discharge. Daughter reported that the DME vendor delivered a standard manual bed instead of the prescribed semi-electric model with a pressure-reduction mattress, creating a safety risk for the patient's diabetic ulcers.",
+  "atlantis_final_sync": "Entered D/C date of 10/27/2023 and 1st Visit Date of 10/28/2023 into Atlantis after SW confirmed the DME swap was expedited.",
+  "ma_visit_booking": "Medical Assistant scheduled for 10/28/2023 at 11:00 AM, following the HHA's confirmed Start of Care window to ensure clinical continuity.",
+  "narrative_summary": "In Stage 1, I audited demographic errors in Atlantis and confirmed the home discharge goal with the SW. During Stage 2, I maintained weekly check-ins and educated the family, which proved critical when the daughter identified a DME delivery failure during my 24-hour pulse call. I successfully escalated the equipment mismatch to the SW, allowing for a corrected delivery before finalizing the Stage 3 handoff and scheduling the MA first visit.",
   "format_1_state_log": [
     {
-      "event_description": "The Medicaid CHC Waiver process has stalled because only two out of the three required contractor estimates for the wheelchair ramp have been received by the county caseworker.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+30\u201345 Days",
-      "ai_assumed_bottleneck": "The county caseworker refuses to move the file to the 'Pending' status until the third estimate is physically in the folder, regardless of the patient's clinical readiness."
-    },
-    {
-      "event_description": "The HHA intake coordinator is out on PTO for a long weekend; the referral for CHF management and PT gait training is sitting in an unmonitored queue.",
+      "event_description": "Initial Atlantis Triage and Demographic Audit",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA lacks a cross-trained backup for the intake role, causing a total freeze on processing new referrals until Tuesday morning."
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "DME vendor delivered a standard manual wheelchair instead of the requested high-back reclining chair needed for Martha's orthostatic hypotension.",
+      "event_description": "DME Vendor delivers manual bed instead of semi-electric model",
       "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
       "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The warehouse dispatcher misread the order code and the delivery driver did not verify the item against the physician's order upon arrival at the residence."
+      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+    },
+    {
+      "event_description": "SW coordinates expedited equipment swap; PN verifies delivery at home",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA (Evergreen Home Health) cannot commit to a 24-hour start-of-care window because they are short-staffed in Martha's specific zip code.",
-      "action_taken": "Identified two alternative HHAs (Mercy Care and Northside) that have active nurses in the patient's neighborhood and presented their capacity details to the SW.",
-      "taxonomy_category": "When the primary HHA cannot meet the timeline, present 2-3 pre-vetted alternative agencies to the SW for referral",
-      "tactical_field_intent": "Prevent the discharge from being pushed into the following week by providing the SW with turnkey alternatives that require zero additional research."
+      "situation": "Daughter reports wrong bed type arrived at the residence during pulse call.",
+      "action_taken": "Immediately flagged the specific equipment mismatch to the SW to prevent an unsafe discharge.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "Martha's daughter is unsure if the oxygen concentrator will be delivered before Martha arrives home, creating significant caregiver anxiety.",
-      "action_taken": "Contacted the DME vendor's dispatch line to confirm a delivery window and provided the daughter with the driver's name and expected arrival time.",
-      "taxonomy_category": "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
-      "tactical_field_intent": "Reduce the likelihood of the family refusing the discharge at the last minute by securing a concrete logistical win."
+      "situation": "Patient's daughter is unsure how to handle the first 24 hours post-discharge.",
+      "action_taken": "Walked the family through the Day 1 checklist, including MA arrival time and wound care supply verification.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The facility medication reconciliation list shows Martha on Furosemide 40mg, but the family believes she was taking 20mg at home prior to admission.",
-      "action_taken": "Flagged the medication dosage discrepancy to the Social Worker and requested a formal reconciliation from the attending nurse before the discharge papers were finalized.",
-      "taxonomy_category": "Escalate clinical or insurance concerns to the Social Worker rather than attempting resolution directly",
-      "tactical_field_intent": "Ensure clinical safety while avoiding the 'clinical trap' of interpreting medication orders myself."
+      "situation": "Atlantis record shows an outdated phone number for the primary caregiver.",
+      "action_taken": "Updated the Atlantis demographic fields with the daughter's current mobile number after verifying the face sheet.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the delay in the Medicaid CHC ramp estimates and informed the Social Worker that the HHA start-of-care remains on hold until the environmental barrier is resolved.",
-      "rationale": "This is a strategic deferral. The PN recognizes that the Medicaid waiver and contractor procurement are facility-led social work functions. Stepping back allows the SW to fulfill their regulatory role in ensuring a safe discharge environment."
+      "description": "Wait for the Social Worker to receive confirmation from the DME vendor regarding the replacement bed delivery before updating the Atlantis transition record.",
+      "rationale": "This follows the SW boundary by allowing the facility professional to manage the logistics of the equipment vendor while the PN remains in a monitoring stance for the final handoff."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verified with the third contractor that their estimate was faxed, then provided the SW with the contractor's direct contact info and the confirmation receipt to facilitate the waiver approval.",
-      "rationale": "This is collaborative and deferential. The PN performs the legwork of verifying the logistical detail (the fax receipt) but hands the 'fix' to the SW, who maintains control over the official Medicaid communication."
+      "description": "Verify the specific delivery window for the replacement bed with the family and ensure the MA visit is scheduled only after the equipment is confirmed to be in place.",
+      "rationale": "This aligns with the Stage 3 Scheduling Anchor, ensuring the environment is safe before the 'First Visit' incentive is triggered."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Called the Medicaid CHC county caseworker directly to explain Martha's CHF status and requested an emergency waiver for the 3-estimate rule to expedite the ramp installation.",
-      "rationale": "This is a hero complex overstep. The PN is attempting to negotiate Medicaid policy and communicate clinical status (CHF) directly with a government agency, which is the exclusive domain of the facility's clinical and social work teams."
+      "description": "Call the DME company directly to demand an upgrade to a higher-tier air mattress and suggest the SW switch to a different vendor that provides faster service.",
+      "rationale": "This is an overstep because it involves managing vendor relationships and suggesting specific providers, which falls under the SW's exclusive domain."
     }
   ],
-  "narrative_summary": "Martha, a 78-year-old managing CHF, is ready for home health, but the transition is stalled by a Medicaid CHC waiver requirement for a wheelchair ramp that requires three separate contractor estimates. While the facility handles the bureaucratic delay, the PN is navigating an operational freeze at the HHA and a delivery error by the DME vendor that sent the wrong wheelchair. The PN is focused on verifying that the home will be clinically safe for a nurse's arrival, despite the daughter's rising anxiety and the missing contractor paperwork. The goal is to ensure that once the ramp is approved, the HHA, oxygen, and PT services are synchronized for a Day 1 start-of-care."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

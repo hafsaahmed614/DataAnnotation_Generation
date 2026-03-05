@@ -1,67 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is handling the formal mediation between the patient's children and the final clinical discharge order. The PN is only handling the verification of HHA capacity for the complex renal dressing, educating the family on Day 1 home expectations, and suggesting alternative agencies when the primary HHA's intake coordinator is unresponsive.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited face sheet against Atlantis queue; corrected patient address from '742 Evergreen Terrace' to '742 Evergreen Lane' and verified straight Medicare Part B eligibility for the 68yo female with MS flare.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is a return to her ranch-style home with her daughter as the primary caregiver.",
+  "weekly_facility_update": "Week 2: Patient's MS flare has stabilized; neuro-rehab progress is significant. PT expects discharge in 4 days. Fog of War: PT's final functional assessment is delayed due to an internal EMR sync issue at the facility.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into the patient\u2019s smartphone contacts; physical program flyer delivered to the daughter during the family teaching session.",
+  "pre_dc_pulse_call_result": "Reached patient's daughter 24 hours prior to discharge. Daughter reported that PT signed off this morning because the patient reached her prior functional baseline, meaning no further PT is required at home.",
+  "atlantis_final_sync": "Unable to enter 1st visit date; logged 'Transition Cancelled' in Atlantis due to Loss of Skilled Need and updated the discharge date to the current date.",
+  "ma_visit_booking": "MA visit not scheduled; the HHA rejected the referral because the patient no longer meets the Medicare requirement for a skilled need (RN/PT) post-PT-sign-off.",
+  "narrative_summary": "The patient, a 68-year-old female admitted for an MS flare, was tracked through the 3-stage lifecycle with all demographics verified in Atlantis. While the PN successfully provided education and delivered program materials, the PT's final evaluation determined the patient had reached her functional baseline. This resulted in a 'Loss of Skilled Need,' which is a hard stop for home health eligibility, preventing the scheduling of the first visit and triggering a transition failure.",
   "format_1_state_log": [
     {
-      "event_description": "Family meeting held by SW; daughter wants home care but son demands LTC placement, leading to a temporary hold on the discharge plan.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
+      "event_description": "PT Discharge Evaluation",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "The Social Worker must wait for the family to reach a consensus or for the patient to exert their right to choose home care before the transition can proceed."
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Eligibility: Loss of Skilled Need"
     },
     {
-      "event_description": "PN attempts to confirm the Thursday start-of-care, but the HHA Intake Coordinator is out of the office unexpectedly.",
+      "event_description": "EMR Data Delay",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA's internal policy prevents any admission scheduling without the specific signature of the lead intake coordinator, who is currently on PTO."
-    },
-    {
-      "event_description": "SW confirms the discharge is finally moving forward for Friday, but the HHA reports they are missing the specific physician orders for the renal graft dressing.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "The facility's unit secretary faxed the medication list but neglected the specific wound care treatment plan required by the HHA to staff the case."
+      "edd_delta": "+2 Days",
+      "ai_assumed_bottleneck": "Operational: Handoff_Data_Mismatch"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA's intake coordinator is unresponsive, and the Friday discharge window is closing.",
-      "action_taken": "Presented two pre-vetted alternative HHAs in the patient's zip code to the Social Worker, both of whom confirmed weekend admission capacity.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an 'easy button' to pivot the referral without the PN appearing to steer the patient to a preferred provider."
+      "situation": "Atlantis demographic record contains a suffix error in the patient's home address.",
+      "action_taken": "Audited the facility face sheet and updated the Atlantis queue to ensure HHA and MA travel to the correct location.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The son expresses fear that his mother will bleed out from her dialysis access site on the first night home.",
-      "action_taken": "Conducted a family education session detailing exactly what the HHA nurse will check during the first 24 hours and how to reach the HHA on-call line.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate caregiver panic to prevent a last-minute refusal of discharge that would stall the transition."
+      "situation": "Daughter is uncertain about how to manage the patient's MS flare-ups after discharge.",
+      "action_taken": "Delivered the program flyer and walked the family through Day 1 expectations and the role of the transition team.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Discrepancy found between the SNF's discharge summary and the HHA's initial intake notes regarding the frequency of dressing changes.",
-      "action_taken": "Flagged the data mismatch to the Social Worker and requested a clarified order be sent to the HHA before the patient leaves the building.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Force the facility to reconcile clinical documentation early to avoid a 'no-visit' scenario on Day 1 due to incomplete orders."
+      "situation": "PT indicates the patient is back to baseline, removing the skilled need for home health.",
+      "action_taken": "Escalated the eligibility status to the Social Worker to determine if a nursing need (RN) for medication teaching could be established.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "After witnessing the son and daughter's heated argument in the lobby, the PN documented the conflict and notified the Social Worker that HHA logistics would remain on standby until the SW resolved the family's placement dispute.",
-      "rationale": "This is strategic deferral. The PN recognizes that family mediation is a core Social Worker function and avoids getting caught in the crossfire of a legal or emotional dispute that is outside the scope of transition logistics."
+      "description": "The PN notes the PT's functional independence score in the weekly update and waits for the Social Worker to officially cancel the home health referral.",
+      "rationale": "Respects the SW boundary by allowing the facility to manage the clinical discharge plan once the patient is no longer eligible for services."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN organized a brief meeting with the Social Worker to suggest providing the family with a 'Day 1 Home Care Checklist,' which explicitly outlines the HHA's responsibilities for renal care to address the son's safety concerns.",
-      "rationale": "The PN is supporting the transition by using education to reduce anxiety, while correctly deferring the coordination of the family meeting to the Social Worker."
+      "description": "The PN verifies with the SW if there are any remaining nursing needs, such as catheter care or new medication teaching, that would maintain the patient's skilled need eligibility.",
+      "rationale": "Follows the checklist by investigating potential eligibility bridges through the SW before closing the case in Atlantis."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN pulled the son aside and provided a detailed comparison of the facility's infection rates versus the HHA's outcomes to convince him that home care was the clinically superior and safer choice for his mother.",
-      "rationale": "This is a hero-complex overstep. The PN is making clinical quality comparisons and trying to influence a placement decision, which is the role of the physician and the Social Worker, not the Navigator."
+      "description": "The PN speaks with the Physical Therapist and suggests they delay the 'goals met' sign-off by two days to ensure the patient qualifies for the home health transition program.",
+      "rationale": "This is an overstep because the PN is attempting to influence clinical documentation and facility staff decisions to meet program incentives."
     }
   ],
-  "narrative_summary": "Martha, a 77-year-old managing end-stage renal disease, was prepared for discharge following a vascular access infection. The transition was nearly derailed by a sharp disagreement between her children regarding the safety of home care, which the PN addressed through targeted caregiver education. Despite a bureaucratic delay caused by an absent HHA intake coordinator and missing wound care orders, the PN secured the transition by presenting pre-vetted agency alternatives to the Social Worker. The case concluded with a successful home handoff, ensuring the HHA nurse was prepared for the complex renal dressing requirements on the first evening."
+  "case_outcome": "Failure_Transition_Breakdown"
 }

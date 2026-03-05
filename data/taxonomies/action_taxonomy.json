@@ -18,7 +18,9 @@
           "category": "Data Harvesting",
           "action_items": [
             "Gather DOB, phone, address, and POA details",
-            "Check distance for Medical Assistant (MA) travel"
+            "Check distance for Medical Assistant (MA) travel",
+            "Audit face sheets for address errors (cross-check Atlantis data against facility face sheet before HHA referral)",
+            "Audit Atlantis demographics (verify insurance, address, phone #, and DOB accuracy in Atlantis queue)"
           ],
           "primary_intents": [
             "Readiness for immediate family communication"
@@ -38,7 +40,8 @@
           "category": "Strategic Outreach",
           "action_items": [
             "Contact Social Worker (SW) and TP immediately upon assignment",
-            "Confirm referral receipt with HHA intake coordinator"
+            "Confirm referral receipt with HHA intake coordinator",
+            "Verify internal 'Hub' receipt (confirm the referral was received and logged in the Hub system)"
           ],
           "primary_intents": [
             "Maintain relationship for early discharge info"
@@ -75,7 +78,8 @@
           "action_items": [
             "Educate patient/family on program benefits",
             "Discuss POA awareness of home services",
-            "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late"
+            "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
+            "Insert V-Card into patient's phone and deliver program flyer to patient/family"
           ],
           "primary_intents": [
             "Prevent 'missed' discharge or refusal",
@@ -96,7 +100,8 @@
           "category": "Boundary Escalation",
           "action_items": [
             "Escalate clinical or insurance concerns to the Social Worker rather than attempting resolution directly",
-            "Flag volatile family situations to SW for immediate intervention"
+            "Flag volatile family situations to SW for immediate intervention",
+            "Escalate weekend coverage gaps to the SW (flag Friday discharges with no weekend HHA coverage so SW can adjust the discharge date or arrange bridging)"
           ],
           "primary_intents": [
             "Ensure complex issues are handled by the appropriate professional"
@@ -131,8 +136,10 @@
         {
           "category": "Patient Confirmation",
           "action_items": [
-            "Provide physical appointment card with Care Coordinator info",
-            "Confirm time works for patient/DM"
+            "Conduct 24-hour pre-discharge pulse call to patient/family to confirm home readiness and first-visit time",
+            "Hand physical appointment card with Care Coordinator info to patient",
+            "Confirm time works for patient/DM",
+            "Schedule the Medical Assistant (MA) for the first visit within 24 hours of discharge"
           ],
           "primary_intents": [
             "Ensure patient feels informed and comfortable"
@@ -145,16 +152,6 @@
           ],
           "primary_intents": [
             "Ensure service payment and coverage safety"
-          ]
-        },
-        {
-          "category": "Alternative Planning",
-          "action_items": [
-            "When the primary HHA cannot meet the timeline, present 2-3 pre-vetted alternative agencies to the SW for referral",
-            "Suggest backup DME vendors if the primary vendor cannot deliver on time"
-          ],
-          "primary_intents": [
-            "Provide options without making the selection decision (that is the SW's role)"
           ]
         }
       ]

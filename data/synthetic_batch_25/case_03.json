@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is responsible for finalizing the clinical discharge date from the SNF and managing the family's expectations regarding the facility's liability. The PN is strictly focused on verifying that a Home Health Agency (HHA) has an available nurse in the patient's specific rural zip code and ensuring the walker and raised toilet seat are physically inside the home before the patient arrives.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited face sheet against Atlantis queue; corrected patient address from 402 Oak Street to 402 Oak Avenue and verified Straight Medicare eligibility for post-acute benefits.",
+  "home_vs_ltc_determination": "Social Worker confirmed the discharge goal is Home with HHA services following successful ORIF recovery.",
+  "weekly_facility_update": "Week 2 Check-in: SW reports PT progress is excellent; patient is ambulating 50 feet with a walker. Targeted discharge is Friday, pending final surgical clearance.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into patient's smartphone and physical program flyer delivered to daughter during bedside education session.",
+  "pre_dc_pulse_call_result": "Pulse call completed 24 hours prior to discharge; daughter confirmed the ramp is clear and the hospital bed was delivered, but expressed concern about the HHA's arrival time.",
+  "atlantis_final_sync": "Entered discharge date of 10/27 and first home visit date of 10/28 into Atlantis portal.",
+  "ma_visit_booking": "Medical Assistant visit scheduled for 10/28 at 10:00 AM, within the mandatory 24-hour post-discharge window.",
+  "narrative_summary": "The PN initiated the case by auditing demographics in Atlantis and confirming a home discharge goal for a 72-year-old hip fracture patient. During the maintenance phase, the PN educated the family on the transition process and verified home readiness through a pulse call. Despite an HHA staffing overlap that threatened the initial visit window, the PN successfully coordinated the MA schedule and secured the first visit incentive.",
   "format_1_state_log": [
     {
-      "event_description": "Primary HHA (NorthStar Home Health) accepted the referral electronically but failed to assign a specific nurse for the start-of-care visit.",
+      "event_description": "Atlantis Data Audit",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag: Address discrepancy found between facility face sheet and Atlantis record."
+    },
+    {
+      "event_description": "HHA Scheduling Conflict",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA's central intake department accepted the referral based on insurance eligibility without checking the local branch's actual field staffing for a rural route."
-    },
-    {
-      "event_description": "PN identifies that the patient's home is 45 miles from the nearest HHA hub, complicating the 48-hour start-of-care requirement.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "HHA intake coordinator is prioritizing urban cases with shorter drive times to meet their internal productivity quotas."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA_SOC_Overlap: HHA intake reports high volume for Friday discharges, delaying confirmed Start of Care time."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Family is insistent on using NorthStar Home Health due to a previous positive experience, but NorthStar confirms they have no nursing availability in the patient's zip code for at least 8 days.",
-      "action_taken": "Identified two alternative, smaller HHAs that currently have active cases in the patient's neighborhood and presented their contact info to the SW.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with a pre-solved logistics path to prevent the discharge from stalling into a long-term care discussion."
+      "situation": "Patient address in Atlantis does not match the facility face sheet.",
+      "action_taken": "Updated demographics in Atlantis to ensure the HHA and MA have the correct navigation data.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The HHA reports they cannot find the physician's specific orders for the spinal fusion dressing changes in the referral packet.",
-      "action_taken": "Flagged the missing wound care orders to the SW and requested a post-conference summary to verify the HHA received the corrected fax.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Force the facility to correct the documentation gap before the patient leaves the building, avoiding a 'no-visit' weekend."
+      "situation": "Family is unsure what to do if the HHA nurse does not arrive on the first day.",
+      "action_taken": "Educated the daughter on 'Day 1' expectations, including the role of the MA and who to contact if the HHA is delayed.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Patient's daughter believes the hospital bed was delivered, but the PN cannot confirm the delivery time with the vendor.",
-      "action_taken": "Requested the daughter text a photo of the set-up equipment in the home to verify the model and placement before the HHA nurse arrives.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Verify environmental readiness through the family to avoid an HHA 'safety failure' on Day 1 without overstepping into a physical home inspection."
+      "situation": "HHA intake coordinator indicates staffing constraints may push the first visit to Monday.",
+      "action_taken": "Escalated the potential weekend coverage gap to the Social Worker to determine if the discharge date should be adjusted.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the HHA's staffing shortage and the family's refusal to consider other agencies, then formally notified the Social Worker that the current plan will result in a care gap, requesting they address it in the next family meeting.",
-      "rationale": "This is a strategic deferral. The family's refusal to change providers is a sensitive dynamic that falls under the SW's role in counseling and discharge planning. The PN identifies the risk but lets the licensed professional handle the conflict."
+      "description": "Wait for the Social Worker to resolve the HHA scheduling conflict before finalizing the MA visit time in the Atlantis system.",
+      "rationale": "PN respects the SW's role in agency selection and scheduling, avoiding premature coordination until the clinical handoff is settled."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Educated the family on the clinical importance of a Day 1 nursing visit for spinal fusion monitoring and suggested to the SW that they offer the family two alternative agencies that have confirmed nurse availability for the requested discharge date.",
-      "rationale": "The PN stays in scope by educating on transition expectations and providing the SW with vetted alternatives (Suggest and Support) without making the final choice for the family."
+      "description": "Schedule the Medical Assistant for a Saturday morning visit and provide the family with a physical appointment card, while flagging the HHA staffing overlap to the SW for awareness.",
+      "rationale": "PN fulfills the Stage 3 requirement of scheduling the MA within 24 hours and educating the family, while staying within the communication boundary of the SW."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Called the Clinical Director at NorthStar Home Health and negotiated a 'priority status' for this patient by suggesting they pull a nurse from a neighboring county to cover the rural visit, then informed the family that the problem was solved.",
-      "rationale": "This is an overstep because the PN is interfering with the HHA's internal operational management and making promises to the family that they cannot legally or professionally guarantee, potentially creating liability for the agency."
+      "description": "Contact the HHA directly to suggest they prioritize this patient over others to ensure the 24-hour visit window is met, and offer to assist with the Face-to-Face form to speed up intake.",
+      "rationale": "PN interferes with HHA operations and attempts to handle clinical documentation (F2F), both of which are banned actions."
     }
   ],
-  "narrative_summary": "A 70-year-old male recovering from a complex spinal fusion is clinically ready for discharge, but his rural location has triggered a significant HHA staffing shortage. While the family is emotionally tied to a specific agency, that provider cannot staff a nurse for the critical 48-hour post-discharge window. The Patient Navigator must navigate the 'fog' of unconfirmed equipment deliveries while providing the Social Worker with alternative agency options to ensure the patient doesn't return home without professional wound monitoring. The case hinges on balancing family preference against the logistical reality of rural healthcare deserts."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

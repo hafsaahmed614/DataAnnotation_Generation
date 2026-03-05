@@ -1,59 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge orders, the official selection of the Home Health Agency (HHA), and the medical transport timing. The Patient Navigator (PN) is solely responsible for verifying that the HHA has an available physical therapist (PT) and nurse in the patient's specific rural zip code, educating the family on the Day 1 home care sequence, and providing the SW with pre-vetted alternative agencies if the primary choice fails to staff the case.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics; corrected the primary phone number from a landline to the daughter's mobile. Verified Straight Medicare coverage and confirmed the home address in the renal-friendly zip code matches the SNF face sheet.",
+  "home_vs_ltc_determination": "SW confirms the goal is Home, though the patient's son is currently advocating for LTC placement due to the complexity of the dialysis regimen.",
+  "weekly_facility_update": "Week 2: SW reports the patient is clinically stable, but the discharge timeline is fluid due to the son's refusal to sign off on the home plan. PN requested a post-conference summary from the SW.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into the patient's tablet; 'Home Care vs. SNF' program flyer delivered to both the patient and the daughter during the bedside visit.",
+  "pre_dc_pulse_call_result": "Reached the daughter (POA); she confirms the home is ready and she will be present for the transition. Son's concerns remain, but the SW has cleared the discharge to the daughter's care.",
+  "atlantis_final_sync": "Entered D/C date of 05/19 and 1st visit date of 05/20 into the Atlantis tracking module.",
+  "ma_visit_booking": "Medical Assistant visit scheduled for 05/20 at 09:00 AM, ensuring the 24-hour post-discharge window is met.",
+  "narrative_summary": "Martha G. was identified in Atlantis as a renal failure transition requiring complex home monitoring. During the maintenance phase, a significant family disagreement emerged between the daughter (pro-home) and the son (pro-LTC), which I escalated to the SW for mediation. Once the SW finalized the home plan, I conducted the pulse call to verify logistics and successfully scheduled the MA for the morning after discharge to secure the first-visit incentive.",
   "format_1_state_log": [
     {
-      "event_description": "Social Worker confirms HHA 'Southshore' for Friday discharge; however, Southshore intake reports a critical Physical Therapy staffing shortage in the patient's rural sector.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA's only therapist covering the northern county resigned, and the agency failed to notify the facility's discharge planning team of their current 'no-admit' status for PT-heavy cases."
-    },
-    {
-      "event_description": "PN identifies that the patient's home has a steep gravel driveway; the medical transport van requires a specific clearance that hasn't been verified by the facility.",
+      "event_description": "Family Disagreement on Discharge Plan regarding home dialysis safety.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "HHA_SOC_Overlap: Difficulty finding a nurse certified for Martha's specific dialysis fistula care.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The facility transport coordinator utilized a standard sedan service instead of a high-clearance wheelchair van, unaware of the rural terrain constraints."
+      "ai_assumed_bottleneck": "Operational"
+    },
+    {
+      "event_description": "Friday Discharge Gap: Facility pushed discharge to Friday afternoon, risking a weekend without monitoring.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Neutral",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA (Southshore) confirms they can send a nurse for the wound check but cannot staff the PT for at least 8 days due to regional shortages.",
-      "action_taken": "Audited three neighboring HHAs for PT availability in the patient's zip code and presented two agencies with active staffing to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with a 'ready-to-go' solution to prevent the discharge from slipping into the following week due to a lack of skilled PT coverage."
+      "situation": "The patient's son demands a cost-benefit analysis of home care versus a long-term care facility.",
+      "action_taken": "PN educated the family on the program benefits and safety monitoring while deferring financial comparisons to the Social Worker.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The patient's daughter is expressing extreme anxiety (Caregiver Panic) about managing a bilateral TKA recovery without immediate PT support.",
-      "action_taken": "Conducted a 'Day 1 expectation' walkthrough, clarifying that the HHA nurse arrives first to assess the site before the PT evaluation occurs.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate family fear to prevent them from demanding a late-stage pivot to a Skilled Nursing Facility (SNF) which would void the home health transition."
+      "situation": "Son threatens to block the transport company from taking the patient home.",
+      "action_taken": "PN flagged the volatile family situation to the Social Worker for immediate intervention and a formal family meeting.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "Discrepancy found between the facility's discharge medication list and the family's understanding of the post-op blood thinner protocol.",
-      "action_taken": "Flagged the medication mismatch to the Social Worker and requested a formal reconciliation from the floor nurse before the patient left the building.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Ensure clinical errors are corrected by licensed staff while documenting the PN's role in identifying the risk to the home team."
+      "situation": "The HHA coordinator is uncertain if they can staff the Saturday morning visit for a Friday discharge.",
+      "action_taken": "PN verified HHA receipt of the referral and confirmed the assigned nurse name and first-visit time window for the MA to follow.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
-      "ai_intended_category": "Proactive",
-      "description": "After confirming the primary HHA lacks PT staffing, I contacted two alternative agencies to verify they had therapists available in the rural zone, then presented these options to the Social Worker to facilitate a potential change in referral.",
-      "rationale": "This follows the 'Suggest' and 'Support' mandate. The PN does the legwork of vetting availability\u2014which the SW rarely has time for\u2014but leaves the final referral decision to the facility."
+      "ai_intended_category": "Passive",
+      "description": "Step back from the family conflict to allow the Social Worker to lead the multidisciplinary meeting regarding the son's preference for LTC.",
+      "rationale": "Respects the SW boundary and ensures the PN does not overstep into placement decisions or financial counseling."
     },
     {
-      "ai_intended_category": "Passive",
-      "description": "I documented the HHA's staffing shortage in my transition notes and notified the Social Worker that the current plan might result in a 72-hour gap in therapy services, advising the SW to follow up with the agency's director.",
-      "rationale": "This is a strategic deferral. In some institutional cultures, the PN stepping in to find new HHAs is seen as interference; here, the PN flags the risk and steps back to let the facility handle the vendor relationship."
+      "ai_intended_category": "Proactive",
+      "description": "Walk the daughter through the Day 1 expectations, specifically explaining who will arrive and how the MA will assist the HHA nurse in the 24-hour window.",
+      "rationale": "Follows the Stage 2 Patient Education checklist to reduce caregiver anxiety and ensure service adoption."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "I contacted the patient's orthopedic surgeon directly to request a delay in the discharge until a physical therapist was guaranteed to be at the home, as the current HHA plan was unsafe for a bilateral TKA patient.",
-      "rationale": "This is a 'Hero Complex' move. The PN is making a clinical judgment ('unsafe') and bypassing the Social Worker to influence the physician's discharge order, which is a major boundary violation."
+      "description": "Provide the son with a detailed cost analysis showing that home care is more affordable than the 100-day private pay rate at a local LTC facility.",
+      "rationale": "This violates the Banned Actions regarding providing cost analysis and handling financial cliff discussions."
     }
   ],
-  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, was slated for home discharge until a regional HHA staffing shortage left his physical therapy orders unfillable for over a week. While the facility Social Worker believed the referral was solid, the PN's verification call revealed the agency's inability to service Arthur's rural zip code. The PN navigated a 'Fog of War' scenario where the family's anxiety nearly triggered a refusal of discharge, requiring a delicate balance of caregiver education and the presentation of pre-vetted alternative agencies to the SW. Ultimately, the transition hinged on resolving the logistical gap between the facility's assumptions and the HHA's actual field capacity."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

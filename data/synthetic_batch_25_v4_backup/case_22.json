@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is handling the formal mediation between the patient's son (who demands a SNF extension) and daughter (who wants him home), while the PN is only handling the verification of the HHA's physical therapy capacity and the logistics of the CPM machine delivery for the bilateral TKA recovery.",
+  "format_1_state_log": [
+    {
+      "event_description": "The patient's son verbally threatens to refuse the discharge, citing that the home is not 'medical grade' for a bilateral TKA recovery, while the daughter insists on immediate return.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The son is leveraging his role as secondary POA to stall the discharge because he does not trust the HHA's ability to manage 24/7 safety."
+    },
+    {
+      "event_description": "PN attempts to confirm the Thursday start-of-care with the primary HHA, but discovers the intake coordinator is out on leave without a designated backup.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA's centralized intake system is stalled because only one individual has the credentials to authorize new TKA referrals into the clinician's schedule."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary HHA cannot confirm a Physical Therapist for the Day 1 visit due to a sudden localized staffing shortage for bilateral knee cases.",
+      "action_taken": "Presented two pre-vetted alternative agencies with active PT availability to the Social Worker.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Ensure a backup is ready so the SW can pivot immediately if the son's resistance is overcome, preventing a secondary delay."
+    },
+    {
+      "situation": "The son expresses confusion over who will be in the home and when the equipment will arrive, contributing to his refusal to support the plan.",
+      "action_taken": "Provided a detailed Day 1 expectations guide, including the DME delivery window and the HHA's nurse-triage contact number.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate caregiver panic by replacing vague fears with concrete operational timelines."
+    },
+    {
+      "situation": "Conflicting reports exist regarding the home\u2019s layout; the daughter claims it is a ranch, but the intake records suggest a two-story with a broken chairlift.",
+      "action_taken": "Flagged the structural discrepancy to the Social Worker and requested a formal home safety evaluation be prioritized by the HHA.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Force a factual resolution of the environmental barrier to stop the family's 'he-said-she-said' dynamic from stalling the transition."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Documented the son's specific safety concerns regarding the stairs and formally notified the Social Worker that a family mediation is required before HHA logistics can be finalized.",
+      "rationale": "The PN recognizes that a family dispute over the safety of the discharge destination is a Social Work/Legal competency; stepping back prevents the PN from being caught in the middle of a POA conflict."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verified the delivery window for the CPM machine and walker with the DME vendor and shared the confirmation numbers with both the daughter and the Social Worker.",
+      "rationale": "The PN stays within scope by confirming the logistical readiness of the home, providing the SW with the 'facts on the ground' needed to reassure the family that the home is prepared."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Offered to conduct a preliminary home visit to assess the stairs and chairlift personally to convince the son that the discharge is safe.",
+      "rationale": "Environmental safety assessments for a bilateral TKA patient are clinical functions performed by PTs or HHAs; the PN is assuming liability and performing a clinical role they are not qualified for."
+    }
+  ],
+  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, faces a stalled transition home due to a sharp disagreement between his children regarding his safety. While the daughter is eager for his return, the son\u2019s fear of a fall has led to a threat of discharge refusal, complicating the HHA\u2019s ability to schedule a start-of-care. Compounding the issue, the HHA\u2019s intake department is currently unresponsive due to staff leave, and the PT assignment remains unconfirmed. The PN is focused on verifying that all necessary equipment is delivered and presenting alternative agencies to the Social Worker to ensure Arthur doesn't lose his window for home-based rehab."
+}

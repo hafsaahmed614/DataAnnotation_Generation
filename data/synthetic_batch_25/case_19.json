@@ -1,59 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is handling the physician's discharge order, the medical transport scheduling, and the clinical handoff documentation. The Patient Navigator is only handling the verification of the Home Health Agency's weekend intake capacity, educating the daughter on what to expect during the first 48 hours at home, and verifying if the durable medical equipment (DME) mentioned by the family is actually present and appropriate for a high-fall-risk patient.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited face sheet against Atlantis; corrected zip code from 19082 to 19083. Verified Medicare Advantage Plan coverage for post-acute home health. DOB and phone number confirmed with spouse.",
+  "home_vs_ltc_determination": "Social Worker (SW) confirms the discharge goal is Home with HHA; patient has strong family support and no clinical indicators for LTC placement.",
+  "weekly_facility_update": "Week 2: Patient is meeting PT goals for ambulation. SW reports a 'Caregiver Training Gap' as the daughter is struggling to attend sessions for post-surgical incision monitoring and drain care.",
+  "v_card_and_flyer_status": "V-Card saved to patient's mobile device; physical program flyer delivered to the spouse and daughter during the education session.",
+  "pre_dc_pulse_call_result": "Reached daughter via phone; she confirmed the final training session with the facility nurse was completed. Home is prepared, and she understands the HHA start-of-care window.",
+  "atlantis_final_sync": "Entered D/C date of 11/14 and first visit date of 11/15 into the Atlantis system.",
+  "ma_visit_booking": "MA visit scheduled for 11/15 at 11:30 AM; confirmed with HHA intake that the RN start-of-care is booked for the same morning to avoid gap.",
+  "narrative_summary": "Patient was triaged in Atlantis following cardiac bypass; PN audited demographics and confirmed the home discharge goal with the SW. During the maintenance phase, a caregiver training gap delayed the timeline by four days, which the PN tracked via weekly check-ins while educating the family on the HHA's role in bridging the care gap. The transition concluded with a successful 24-hour pulse call, Atlantis data synchronization, and scheduling the MA for the first visit within the required 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "The primary Home Health Agency (HHA), Choice Care, notified the facility that their intake department is entering a holiday freeze starting Thursday at noon, meaning no new starts-of-care can be initiated until the following Monday.",
+      "event_description": "Atlantis Data Audit",
       "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Caregiver Training Gap (Drain Management)",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "The HHA intake coordinator is taking an extended holiday leave and the agency has not designated a backup for processing new referrals over the long weekend."
+      "ai_assumed_bottleneck": "Caregiver Training Gap"
     },
     {
-      "event_description": "The patient's daughter claims she purchased a 'high-end walker' for the home, but she cannot confirm the model or if it has the required four-point stability needed for a patient with advanced dementia and gait instability.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "A logistical gap exists because the PN has not been able to physically verify the equipment at the home, and the PT department at the facility has not yet reviewed the daughter's choice."
+      "event_description": "Pre-DC Pulse Call Confirmation",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The daughter is expressing high anxiety (Caregiver Panic) about managing her father's dementia-related wandering during the Thanksgiving holiday without professional support.",
-      "action_taken": "Walked the daughter through the 'Day 1 Expectations' guide, specifically detailing the HHA's first visit window and how to contact the on-call nurse if the scheduled visit is delayed.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate the caregiver's fear to prevent a 'refusal of discharge' that would force the SW to pivot to a long-term care placement."
+      "situation": "Daughter expresses anxiety about managing the cardiac drain at home.",
+      "action_taken": "Educated daughter on the 'Day 1' HHA expectations, including the nurse's role in verifying drain care.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Choice Care HHA confirmed they cannot meet the Friday discharge timeline due to holiday staffing gaps.",
-      "action_taken": "Identified two alternative in-network agencies (Lakeside Home Health and Riverview Nursing) and presented their holiday availability to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with immediate solutions to maintain the Friday discharge window without overstepping into the actual referral selection."
+      "situation": "SW is unavailable to confirm if the daughter's training session was rescheduled.",
+      "action_taken": "Contacted the facility floor nurse to verify if the training was logged in the chart without accessing the EMR directly.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "Discrepancy noted between the facility's medication list and the daughter's report of what is currently in the kitchen cabinet at home.",
-      "action_taken": "Flagged the medication mismatch to the Social Worker and requested a post-conference summary of the final reconciled list to share with the home team.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Ensure the clinical error is corrected by the facility staff before the HHA nurse arrives for the start-of-care visit."
+      "situation": "Conflicting information regarding the HHA's ability to staff a cardiac case in this zip code.",
+      "action_taken": "Escalated the staffing concern to the SW to ensure an alternative agency was identified if the primary HHA could not commit.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the daughter's concerns regarding the lack of home equipment and the HHA's holiday delay in the transition log, then notified the Social Worker that the family may need a formal care conference to discuss safety before Friday.",
-      "rationale": "This is a strategic deferral. The PN recognizes that the patient's safety and equipment needs are a clinical/PT determination that must be handled in a formal facility setting led by the SW."
+      "description": "The PN monitors the SW's progress on the caregiver training schedule and waits for a confirmed discharge date before initiating the pre-discharge pulse call.",
+      "rationale": "Respects the SW boundary regarding discharge readiness while ensuring Stage 3 actions only occur once the clinical barrier is resolved by the facility."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Contacted three local DME vendors to verify if a standard front-wheeled walker could be delivered to the home by Friday morning as a backup, then provided these options to the Social Worker for the family's consideration.",
-      "rationale": "The PN is supporting the transition by solving a logistical barrier (equipment) and suggesting vetted alternatives to the SW without making the final purchase or clinical recommendation."
+      "description": "The PN walks the family through the specific checklist of equipment and supplies they need to have ready for the HHA's first visit, while checking with the SW to see if the training gap has been closed.",
+      "rationale": "Follows the Stage 2 checklist for patient education and stakeholder alignment without crossing into clinical instruction or discharge planning."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Advised the daughter to tell the Social Worker that she refuses to take her father home unless the facility provides a 48-hour supply of medications and a temporary walker from the rehab gym.",
-      "rationale": "The PN is interfering with the facility's discharge plan and coaching the family to be adversarial with the SW, which is a direct violation of the collaborative role definition."
+      "description": "The PN observes the daughter struggling with the drain and offers to provide a hands-on demonstration of the emptying and measurement procedure to ensure she is ready for a Friday discharge.",
+      "rationale": "Directly violates the Banned Actions by managing clinical tasks and performing medical education that is the sole responsibility of the facility nursing staff."
     }
   ],
-  "narrative_summary": "Arthur, an 86-year-old with dementia and a recent hip fracture, is scheduled for a Friday discharge into a complex holiday weekend. The primary HHA has declared an intake freeze, and the daughter is exhibiting significant caregiver panic regarding the lack of professional support over the Thanksgiving break. The PN is currently navigating a 'Fog of War' scenario regarding the appropriateness of home equipment while attempting to secure an alternative HHA that can guarantee a Saturday start-of-care. The case focuses on bridging the gap between a facility eager to discharge and a home environment currently unequipped for a high-risk patient."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

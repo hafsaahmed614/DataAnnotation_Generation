@@ -1,59 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is handling the formal mediation between the patient's son (who demands a SNF extension) and daughter (who wants him home), while the PN is only handling the verification of the HHA's physical therapy capacity and the logistics of the CPM machine delivery for the bilateral TKA recovery.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Martha G. (77yo). Atlantis queue listed daughter's address in Newark as primary; cross-referenced with facility face sheet and confirmed Jersey City residence. Insurance verified as Horizon BCBS Advantage; noted potential zip code service gap for the preferred home health provider.",
+  "home_vs_ltc_determination": "Social Worker (SW) confirms the goal is Home with specialized renal monitoring and dialysis support.",
+  "weekly_facility_update": "Week 2: SW indicates dialysis shunt site is healing well; patient is meeting PT goals for stair climbing. Target discharge window established for following Tuesday.",
+  "v_card_and_flyer_status": "V-Card saved to patient's smartphone contact list; program benefits flyer delivered to patient and daughter (POA) during bedside education session.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Confirmed home is stocked with renal-safe meals and dialysis supplies. Daughter expressed anxiety regarding the gap between discharge and the first nurse visit.",
+  "atlantis_final_sync": "Confirmed D/C date of 11/14 and scheduled 1st visit date of 11/15 entered into Atlantis. HHA SOC confirmed for morning window.",
+  "ma_visit_booking": "MA scheduled for 11/15 at 2:00 PM to ensure overlap with HHA nurse and verify medication reconciliation for renal meds.",
+  "narrative_summary": "PN Martha G. initiated Stage 1 intake by auditing demographics and confirming a home discharge goal with the SW. During Stage 2, an Insurance-HHA Network Mismatch was discovered, necessitating a 4-day delay while the SW negotiated a single-case agreement for the patient's preferred agency. Stage 3 was completed successfully with a 24-hour pulse call to the daughter and the scheduling of the MA visit within 24 hours of the patient's return home.",
   "format_1_state_log": [
     {
-      "event_description": "The patient's son verbally threatens to refuse the discharge, citing that the home is not 'medical grade' for a bilateral TKA recovery, while the daughter insists on immediate return.",
+      "event_description": "Atlantis Audit: Address mismatch found between facility records and Atlantis queue.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "The son is leveraging his role as secondary POA to stall the discharge because he does not trust the HHA's ability to manage 24/7 safety."
+      "edd_delta": "+1-3 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "PN attempts to confirm the Thursday start-of-care with the primary HHA, but discovers the intake coordinator is out on leave without a designated backup.",
+      "event_description": "Insurance-HHA Network Mismatch: Patient's Horizon plan does not initially cover the preferred HHA branch in Jersey City.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA's centralized intake system is stalled because only one individual has the credentials to authorize new TKA referrals into the clinician's schedule."
+      "edd_delta": "+3-5 Days",
+      "ai_assumed_bottleneck": "Insurance-HHA Network Mismatch"
+    },
+    {
+      "event_description": "First Visit Coordination: HHA confirms single-case agreement reached; first visit window locked for Wednesday morning.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA cannot confirm a Physical Therapist for the Day 1 visit due to a sudden localized staffing shortage for bilateral knee cases.",
-      "action_taken": "Presented two pre-vetted alternative agencies with active PT availability to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Ensure a backup is ready so the SW can pivot immediately if the son's resistance is overcome, preventing a secondary delay."
+      "situation": "Patient's insurance plan is out-of-network for the primary HHA in her zip code.",
+      "action_taken": "Flagged the network mismatch to the SW and provided the HHA's contracting contact info for a single-case agreement.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "The son expresses confusion over who will be in the home and when the equipment will arrive, contributing to his refusal to support the plan.",
-      "action_taken": "Provided a detailed Day 1 expectations guide, including the DME delivery window and the HHA's nurse-triage contact number.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate caregiver panic by replacing vague fears with concrete operational timelines."
+      "situation": "Daughter is confused about the timing of the first home nurse visit vs dialysis schedule.",
+      "action_taken": "Walked daughter through the Day 1 expectations, detailing when the nurse arrives and when the MA will follow up.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Conflicting reports exist regarding the home\u2019s layout; the daughter claims it is a ranch, but the intake records suggest a two-story with a broken chairlift.",
-      "action_taken": "Flagged the structural discrepancy to the Social Worker and requested a formal home safety evaluation be prioritized by the HHA.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Force a factual resolution of the environmental barrier to stop the family's 'he-said-she-said' dynamic from stalling the transition."
+      "situation": "Atlantis records show an outdated phone number for the patient's daughter.",
+      "action_taken": "Audited the face sheet and updated the contact information in the Atlantis patient profile.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Documented the son's specific safety concerns regarding the stairs and formally notified the Social Worker that a family mediation is required before HHA logistics can be finalized.",
-      "rationale": "The PN recognizes that a family dispute over the safety of the discharge destination is a Social Work/Legal competency; stepping back prevents the PN from being caught in the middle of a POA conflict."
+      "description": "Wait for the Social Worker to finish the insurance negotiation for the out-of-network agency before initiating Stage 3 logistics.",
+      "rationale": "Respects the SW boundary regarding insurance authorizations and avoids premature scheduling that might be cancelled if the agreement fails."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verified the delivery window for the CPM machine and walker with the DME vendor and shared the confirmation numbers with both the daughter and the Social Worker.",
-      "rationale": "The PN stays within scope by confirming the logistical readiness of the home, providing the SW with the 'facts on the ground' needed to reassure the family that the home is prepared."
+      "description": "Conduct the 24-hour pulse call to confirm home readiness and inform the SW that the family is anxious about the delay caused by the insurance mismatch.",
+      "rationale": "Adheres to the 3-stage lifecycle by maintaining patient education and escalating barriers to the SW without overstepping into the negotiation itself."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Offered to conduct a preliminary home visit to assess the stairs and chairlift personally to convince the son that the discharge is safe.",
-      "rationale": "Environmental safety assessments for a bilateral TKA patient are clinical functions performed by PTs or HHAs; the PN is assuming liability and performing a clinical role they are not qualified for."
+      "description": "Call the insurance company directly to advocate for the single-case agreement and suggest an alternative HHA that you know is in-network to speed up the discharge.",
+      "rationale": "Violates the Banned Actions by calling the insurance company for authorization and suggesting alternative HHA agencies to the SW."
     }
   ],
-  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, faces a stalled transition home due to a sharp disagreement between his children regarding his safety. While the daughter is eager for his return, the son\u2019s fear of a fall has led to a threat of discharge refusal, complicating the HHA\u2019s ability to schedule a start-of-care. Compounding the issue, the HHA\u2019s intake department is currently unresponsive due to staff leave, and the PT assignment remains unconfirmed. The PN is focused on verifying that all necessary equipment is delivered and presenting alternative agencies to the Social Worker to ensure Arthur doesn't lose his window for home-based rehab."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

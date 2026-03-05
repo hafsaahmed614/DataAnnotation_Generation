@@ -1,67 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is handling the internal family mediation between the son (who wants LTC) and the daughter (who wants Home), as well as the formal discharge order. The Patient Navigator is only handling the HHA logistics for the daughter's preferred home plan, verifying the Parkinson's-specific medication handoff to the agency, and ensuring the hospital bed is correctly placed for a Parkinson's patient.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility face sheet; corrected a typo in the ZIP code (18104) and verified Medicare Advantage eligibility for the spinal fusion recovery program. Home address and primary phone for wife (caregiver) are now accurate in the queue.",
+  "home_vs_ltc_determination": "Social Worker confirmed the discharge goal is Home with Home Health Agency (HHA) support rather than Long-Term Care, contingent on caregiver readiness.",
+  "weekly_facility_update": "Week 2 Check-in: Patient is meeting PT goals for mobility post-spinal fusion, but the wife is exhibiting high anxiety regarding the home layout and brace management. SW is monitoring caregiver stress levels.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into the patient's smartphone and program flyer delivered to the wife during the bedside education session on Day 5.",
+  "pre_dc_pulse_call_result": "Completed 24-hour pulse call. Reached the wife who was in a state of 'Caregiver Panic,' threatening to refuse discharge because she felt the HHA wouldn't arrive fast enough. PN de-escalated by confirming the scheduled MA visit and providing the physical appointment card details.",
+  "atlantis_final_sync": "Discharge date of 11/14 and first visit date of 11/15 have been synced in Atlantis. Success metric tracked.",
+  "ma_visit_booking": "Medical Assistant visit is confirmed and scheduled for 11/15 at 09:00 AM, which is 19 hours post-discharge, meeting the 24-hour incentive window.",
+  "narrative_summary": "The patient, a 70-year-old male recovering from spinal fusion, was identified in Atlantis with a primary goal of returning home. During the maintenance phase, significant friction emerged via 'Caregiver Panic' from the wife, which was addressed through proactive education on the transition timeline and the delivery of a physical appointment card. By coordinating the MA visit within 24 hours of the confirmed discharge date and syncing all data in Atlantis, the PN secured a safe transition and triggered the first visit incentive.",
   "format_1_state_log": [
     {
-      "event_description": "Family meeting held by SW reveals deep rift; son threatens to block discharge, claiming the daughter cannot manage the patient's Parkinson's tremors and UTI-related confusion at home.",
+      "event_description": "Caregiver Panic: Wife expresses fear of managing spinal brace and mobility at home.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "The Social Worker must resolve the legal and familial dispute before the HHA can be authorized to perform the start-of-care visit."
+      "edd_delta": "+5 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
-      "event_description": "HHA intake coordinator reports that the referral packet from the SNF is missing the specific Carbidopa/Levodopa titration schedule required for the home nurse.",
+      "event_description": "24-Hour Pulse Call de-escalation regarding HHA arrival window.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The SNF medical records clerk is prioritized on new admissions and has not responded to the HHA's request for the missing medication titration page."
-    },
-    {
-      "event_description": "Primary HHA notifies the PN they have no nurse available in the patient's rural zip code for a weekend start-of-care.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA's regional scheduler only has PRN staff available, none of whom are willing to travel the 40-mile radius for a single patient."
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA and SNF medication lists for the Parkinson's regimen do not match, creating a risk for the first home visit.",
-      "action_taken": "Flagged the discrepancy to the Social Worker and provided the HHA's specific request list to the SNF nursing station clerk.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Create a paper trail of the mismatch to ensure the PN is not held liable for clinical errors while accelerating the SW's internal document push."
+      "situation": "Wife is overwhelmed by post-surgical care instructions provided by the facility.",
+      "action_taken": "Walked the family through Day 1 expectations: who arrives, what equipment is needed, and the MA's role in the first 24 hours.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The daughter is overwhelmed by the son's pressure and is unsure what the first 24 hours at home will actually look like.",
-      "action_taken": "Walked the daughter through the 'Day 1' checklist, including the expected arrival window of the HHA nurse and the specific equipment verification steps.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Solidify the daughter's resolve to proceed with home care by reducing the 'unknowns' that the son is using as leverage."
+      "situation": "Wife threatens to refuse discharge due to anxiety about the 48-hour HHA intake window.",
+      "action_taken": "Escalated the volatile family situation to the Social Worker to ensure clinical alignment on discharge readiness.",
+      "intent_category": "Escalate"
     },
     {
-      "situation": "The preferred HHA cannot staff the case due to the patient's remote location.",
-      "action_taken": "Identified two alternative in-network agencies with active staffing in that zip code and presented the contact info to the SW.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Bypass the 'staffing shortage' delay by doing the legwork for the SW without overstepping the final agency selection."
+      "situation": "Atlantis queue shows a missing secondary contact number for the patient's residence.",
+      "action_taken": "Audited the facility face sheet and updated Atlantis demographics to ensure the home team could reach the family.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon witnessing a heated argument between the son and daughter in the patient's room regarding the safety of the home, the PN documented the specific concerns raised by the son and immediately notified the Social Worker, stating they would pause HHA logistics until the family reached a consensus.",
-      "rationale": "This is strategic deferral. The PN recognizes that family mediation and discharge safety decisions are the legal and professional responsibility of the Social Worker. Stepping back prevents the PN from being caught in a legal crossfire."
+      "description": "Step back and allow the Social Worker to lead the family meeting regarding the wife's refusal to accept the discharge date.",
+      "rationale": "Respects the SW boundary as the primary lead for discharge planning and family mediation when refusal is threatened."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN contacted the Social Worker to flag the son's resistance and suggested the SW provide the family with a clear list of the home health services already being coordinated (HHA, PT, and DME) to address the son's safety fears. Simultaneously, the PN verified the HHA's ability to provide a Parkinson's-trained nurse.",
-      "rationale": "The PN supports the transition by providing the SW with the 'ammunition' (the concrete home care plan) needed to ease family anxiety, while staying within the scope of HHA verification."
+      "description": "Conduct a 24-hour pre-discharge pulse call to confirm home readiness and provide the wife with a physical appointment card for the MA visit.",
+      "rationale": "Follows the Stage 3 checklist to reduce caregiver anxiety through concrete scheduling and expectations."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN pulled the son aside and provided a detailed comparison of the costs and clinical outcomes of home-based therapy versus long-term care, ultimately advising the son that home care was the superior option for his father's Parkinson's management.",
-      "rationale": "This is a Hero Complex overstep. The PN is performing a clinical/financial consultation and social work mediation, both of which are outside their non-clinical, transition-focused scope."
+      "description": "Suggest a different HHA agency to the Social Worker that has a faster intake turnaround to appease the wife's timeline.",
+      "rationale": "Directly violates the SW boundary by suggesting alternative HHA agencies and interfering with the referral process."
     }
   ],
-  "narrative_summary": "Arthur, an 82-year-old with Parkinson's, is caught in a family dispute that threatens his transition home following a UTI stabilization. While the daughter is eager to care for him, the son is vocal about his safety concerns, leading to a potential discharge block. The PN's role is further complicated by a staffing shortage at the primary HHA and a critical mismatch in the Parkinson's medication handoff data. The PN must navigate these human and bureaucratic hurdles to ensure that if the home plan proceeds, the clinical and logistical support is actually in place for 'Day 1'."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

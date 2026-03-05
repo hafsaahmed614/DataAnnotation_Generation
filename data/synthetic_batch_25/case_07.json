@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge packet and the formal physician-signed orders. The Patient Navigator (PN) is responsible for verifying that the Home Health Agency (HHA) has actually received and processed those orders to ensure the Start of Care (SOC) date is set, and for managing the family's logistical expectations. The PN will not contact the physician's office or handle the clinical signatures directly.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis queue against facility face sheet; corrected patient phone number (primary contact was listed as the facility front desk) and verified Medicare Advantage eligibility for home health benefits.",
+  "home_vs_ltc_determination": "Social Worker confirms the discharge goal is Home with 24/7 family support; patient is recovering well from cardiac bypass and requires skilled nursing for incision monitoring.",
+  "weekly_facility_update": "Week 2 Check-in: SW reports patient is meeting PT goals for stair climbing; cardiac output stable. Discharge tentatively set for Friday morning.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into the patient's smartphone during bedside education; program flyer handed to the patient's spouse to explain the 24-hour post-discharge visit process.",
+  "pre_dc_pulse_call_result": "24-hour pulse call completed; spouse confirmed home is ready and the hospital bed was delivered. Re-verified the HHA start-of-care window for the following day.",
+  "atlantis_final_sync": "Discharge date of 11/15 and initial visit date of 11/16 synchronized in Atlantis; HHA name and contact details verified.",
+  "ma_visit_booking": "Medical Assistant (MA) scheduled for 11/16 at 1:00 PM to follow the HHA's morning start-of-care visit.",
+  "narrative_summary": "The patient, a 75-year-old male recovering from a cardiac bypass, was triaged in Atlantis and cleared for home discharge after the SW confirmed a robust family support plan. During the maintenance phase, the PN provided education on post-surgical monitoring and ensured the family had the program contact information via V-Card. However, despite a successful pre-discharge pulse call and MA scheduling, the transition failed on Day 1 when the HHA nurse failed to appear for the start-of-care visit, leaving the patient without clinical monitoring during the critical 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "SW confirms referral was faxed to Preferred Home Health. PN contacts HHA intake; they confirm receipt of the demographic face sheet but state the clinical wound care orders and frequency are missing.",
+      "event_description": "Atlantis Data Audit: Phone number mismatch identified and corrected.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "The facility's automated fax system failed to attach the multi-page clinical addendum, and the HHA intake clerk did not flag the omission until the PN called."
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Patient's daughter expresses fear of changing the diabetic foot dressing without a nurse present, threatening to refuse discharge unless a 'morning-of' arrival is guaranteed.",
-      "clinical_impact": "Unchanged",
+      "event_description": "Day 1 Home No-Show: HHA nurse fails to arrive for the scheduled 09:00 AM start-of-care visit.",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver Panic: The daughter feels clinically unprepared and is using discharge refusal as a defense mechanism against perceived abandonment by the facility."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Day 1 Home No-Show"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "HHA intake coordinator claims 'no orders' while SW insists 'orders sent'\u2014a classic documentation stalemate.",
-      "action_taken": "Requested the HHA coordinator provide a specific 'Missing Document Checklist' and hand-delivered that list to the SW's desk.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Eliminate administrative 'ghosting' by forcing the SW to acknowledge the specific missing pages rather than relying on a generic 'sent' status."
+      "situation": "Patient's contact information in Atlantis was the facility's main line rather than the patient's cell.",
+      "action_taken": "Audited the facility face sheet and manually updated the patient's primary phone number in Atlantis.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The primary HHA cannot guarantee a Saturday SOC visit due to the missing orders not being processed before the Friday 3 PM cutoff.",
-      "action_taken": "Identified two alternative in-network HHAs with weekend intake capabilities and presented their contact info to the SW.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with an immediate 'path of least resistance' to maintain the discharge timeline without the PN making the final agency selection."
+      "situation": "Patient expressed anxiety about managing sternal incision care at home.",
+      "action_taken": "Educated the patient and spouse on the specific role of the HHA nurse and the timing of the first home visit.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Patient's daughter is overwhelmed by the stack of discharge paperwork and the lack of a confirmed nurse arrival time.",
-      "action_taken": "Conducted a 'Day 1 Walkthrough' session, explaining the 4-hour arrival window and the specific wound supplies that should be in the home before the nurse arrives.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate caregiver anxiety by replacing clinical 'unknowns' with concrete logistical 'knowns'."
+      "situation": "The HHA nurse did not arrive at the scheduled time on the first day post-discharge.",
+      "action_taken": "Escalated the no-show to the HHA intake coordinator and flagged the safety gap to the Social Worker.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Log the documentation discrepancy in the transition notes and notify the Social Worker via email that the HHA is unable to schedule the first visit until they receive the clinical wound care orders.",
-      "rationale": "This is a strategic deferral that respects the SW's ownership of clinical documentation. A veteran PN knows that pushing too hard on clinical paperwork can be seen as an overstep of the non-clinical boundary."
+      "description": "Monitor the Atlantis queue for a status change from the HHA and wait for the Social Worker's routine daily discharge follow-up to address the missed visit.",
+      "rationale": "Respects the SW's role as the primary coordinator of HHA agencies, avoiding direct interference in agency management."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Obtain the direct phone number for the HHA's weekend intake supervisor and facilitate a three-way handoff with the SW to confirm exactly which clinical pages are missing from the faxed packet.",
-      "rationale": "This is collaborative and deferential. The PN isn't fixing the clinical issue but is providing the logistical bridge to ensure the two parties with clinical authority (SW and HHA) are communicating effectively."
+      "description": "Call the HHA intake coordinator to verify the nurse's ETA, then notify the SW of the delay while updating the family to manage expectations and ensure safety.",
+      "rationale": "Follows the PN checklist for Stage 3 by verifying HHA confirmation and escalating gaps to the SW without overstepping into clinical management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Review the patient's physical chart at the nurse's station to locate the signed wound care orders, then fax them directly to the HHA to ensure the Friday afternoon deadline is met.",
-      "rationale": "This is a hero complex move. The PN is accessing the EMR/physical chart and handling clinical orders, which is a direct violation of the role's non-clinical boundary and steps on the SW's toes."
+      "description": "Instruct the family to call a different HHA agency that the PN knows has better staffing, and offer to fax the discharge orders to the new agency immediately.",
+      "rationale": "Violates the SW Boundary by suggesting alternative HHAs and the Banned Actions by attempting to manage the referral process."
     }
   ],
-  "narrative_summary": "69-year-old Mrs. Gable is prepared for discharge following diabetic wound debridement, but the transition is stalled by a mismatch between the facility's records and the HHA's intake department. While the SW believes the referral is complete, the HHA lacks the specific physician orders required to schedule the first home visit, creating a 2-4 day delay. This administrative friction is compounded by the daughter\u2019s anxiety, as she threatens to refuse discharge until a nurse's arrival is guaranteed. The Patient Navigator must resolve the communication gap between the facility and the agency while de-escalating the family's fears to ensure the transition to home health remains viable."
+  "case_outcome": "Failure_Transition_Breakdown"
 }

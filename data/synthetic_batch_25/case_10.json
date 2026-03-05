@@ -1,67 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge from the facility and the initial faxing of the referral packet. The Patient Navigator is responsible for verifying the HHA's receipt of those orders, confirming the start-of-care (SOC) date with the home team, and educating the family on what happens the moment the patient crosses the threshold of their home.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified 79yo male patient in Atlantis queue. Cross-check of facility face sheet revealed the primary phone number was the patient's disconnected landline; successfully updated Atlantis with son's (POA) mobile number and confirmed Medicare Advantage PPO status.",
+  "home_vs_ltc_determination": "SW initially confirmed the goal was Home with family support, but pivoted to LTC on Day 14 after the patient's wound debridement required more intensive monitoring than the family could provide.",
+  "weekly_facility_update": "Week 2 Check-in: SW reports PT is progressing slowly due to phantom limb pain; family is expressing anxiety regarding the upcoming discharge and the level of care required for the surgical site.",
+  "v_card_and_flyer_status": "Program flyer delivered to patient; V-Card successfully inserted into the son's (POA) smartphone during the Week 1 education session.",
+  "pre_dc_pulse_call_result": "N/A - Pre-discharge pulse call not conducted as the case reached a 'Hard Stop' due to the LTC pivot.",
+  "atlantis_final_sync": "No first visit date entered; case closed in Atlantis using the 'Neutral_LTC_Closure' status code following the SW's final determination.",
+  "ma_visit_booking": "MA visit not scheduled; the patient's transition to a long-term care wing at a sister facility rendered the home transition incentives void.",
+  "narrative_summary": "Patient was admitted for amputation rehabilitation with an initial goal of returning home. The PN conducted a thorough demographic audit and provided education to the family regarding home health expectations. During the maintenance phase, the family's ability to provide wound care became a primary concern, leading the Social Worker to pivot the discharge plan from home to Long-Term Care (LTC). Per the LTC Filter policy, the PN immediately ceased all home care coordination and performed a Neutral_LTC_Closure in Atlantis.",
   "format_1_state_log": [
     {
-      "event_description": "The HHA Intake Coordinator is out on unscheduled PTO, and the backup contact is unresponsive to the facility's referral for the spinal fusion follow-up.",
+      "event_description": "Initial demographic audit identifies outdated contact information in Atlantis.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "The HHA has a single-point-of-failure in their intake department, causing a backlog of unprocessed referrals over the weekend."
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Upon follow-up, the HHA reports they received the demographics and insurance face sheet, but the physician's specific home health orders (PT frequency and incision care) are missing from the packet.",
+      "event_description": "Social Worker determines the patient requires a level of care inconsistent with home discharge after clinical decline.",
       "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20134 Days",
-      "ai_assumed_bottleneck": "The facility's automated fax system failed to attach the clinical 'Orders' tab from the EMR, and the SW is currently in a 4-hour care conference."
-    },
-    {
-      "event_description": "The patient's spouse expresses fear about assisting the patient with the back brace during the first 24 hours at home without a nurse present.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver panic is rising because the HHA cannot provide a specific time window for the first visit until the orders are processed."
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The primary HHA intake coordinator is unavailable, leaving the referral in 'pending' status while the discharge date looms.",
-      "action_taken": "Contacted the HHA's Director of Nursing to identify the specific backup staff member authorized to review the referral packet.",
-      "taxonomy_category": "Strategic Outreach",
-      "tactical_field_intent": "Establish a secondary point of contact at the HHA to bypass the administrative bottleneck without involving the SW yet."
+      "situation": "Atlantis record lists a disconnected landline as the primary contact for the amputation patient.",
+      "action_taken": "PN audited the facility face sheet and updated Atlantis with the son's mobile number.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The HHA reports missing clinical orders, but the SW insists the entire packet was sent via the facility portal.",
-      "action_taken": "Requested the HHA fax-confirmation log and presented the discrepancy to the SW, suggesting a manual fax of the PT/RN orders.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with objective proof of the failure so they can rectify the clinical handoff without feeling personally attacked."
+      "situation": "Family expresses intense fear of managing the patient's stump care and mobility at home.",
+      "action_taken": "PN educated the family on the Day 1 HHA expectations and then escalated the family's panic to the Social Worker.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The patient's wife is threatening to refuse the Friday discharge because she hasn't heard from the HHA nurse.",
-      "action_taken": "Walked the family through a 'Day 1' checklist, including what to do if the nurse arrives after 5 PM and how to contact the HHA's on-call supervisor.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "De-escalate caregiver anxiety to ensure the patient actually goes home, securing the service conversion."
+      "situation": "SW formally changes the discharge goal to Long-Term Care (LTC) due to safety concerns.",
+      "action_taken": "PN performed a Neutral_LTC_Closure in Atlantis and stopped all home transition work.",
+      "intent_category": "Escalate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Document the missing order status in the transition log and notify the Social Worker via email that the HHA cannot confirm a start-of-care date until the clinical packet is complete, then wait for the facility's response.",
-      "rationale": "This is a strategic deferral. The PN recognizes that clinical orders are the sole responsibility of the facility and the physician. Stepping back prevents the PN from becoming the 'middleman' for clinical documentation they cannot legally touch."
+      "description": "PN notes the family's growing hesitation in the weekly update and waits for the SW to finalize the discharge plan before taking further action.",
+      "rationale": "Adheres to the SW Boundary by allowing the professional staff to manage the discharge destination without interference."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the HHA's direct clinical fax number, provide it to the Social Worker, and present two alternative agencies that have confirmed they have 'weekend intake' capacity if the current agency cannot process the orders by 2 PM.",
-      "rationale": "The PN is supporting the transition by identifying the technical fix (the fax number) and suggesting pre-vetted alternatives, while leaving the final decision and the clinical action to the SW."
+      "description": "PN walks the family through the HHA equipment requirements for the home while simultaneously flagging the family's 'Caregiver Panic' to the SW for a safety intervention.",
+      "rationale": "Follows Stage 2 education protocols and uses the Boundary Escalation checklist item to ensure the SW is aware of the potential for a failed home transition."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the spinal surgeon's medical assistant directly to explain the HHA's delay and request that they fax a duplicate set of the PT and wound care orders to the agency to ensure the Friday discharge is not missed.",
-      "rationale": "This is a hero complex overstep. The PN is acting as a clinical liaison and bypassing the facility's established discharge process, which could create conflicting orders or HIPAA concerns."
+      "description": "PN suggests the family look into a specific Skilled Nursing Facility that specializes in amputation care to help them feel better about the LTC transition.",
+      "rationale": "Violates the SW Boundary and Banned Actions by suggesting specific facilities or directing the discharge destination, which is the sole responsibility of the SW."
     }
   ],
-  "narrative_summary": "Mr. Vance, a 70-year-old post-spinal fusion patient, was scheduled for a Friday discharge with a plan for home PT and nursing. The transition stalled when the HHA reported that the clinical orders were missing from the facility's referral packet, and the HHA's intake coordinator was out sick. The PN navigated a rising tide of caregiver panic from the patient's wife, who felt unprepared to manage his back brace without professional guidance. By identifying a backup contact at the HHA and providing the SW with the missing order verification, the PN aimed to secure a late Friday start-of-care despite the administrative friction."
+  "case_outcome": "Neutral_LTC_Closure"
 }

@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge orders, the official selection of the Home Health Agency (HHA), and the medical transport timing. The Patient Navigator (PN) is solely responsible for verifying that the HHA has an available physical therapist (PT) and nurse in the patient's specific rural zip code, educating the family on the Day 1 home care sequence, and providing the SW with pre-vetted alternative agencies if the primary choice fails to staff the case.",
+  "format_1_state_log": [
+    {
+      "event_description": "Social Worker confirms HHA 'Southshore' for Friday discharge; however, Southshore intake reports a critical Physical Therapy staffing shortage in the patient's rural sector.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's only therapist covering the northern county resigned, and the agency failed to notify the facility's discharge planning team of their current 'no-admit' status for PT-heavy cases."
+    },
+    {
+      "event_description": "PN identifies that the patient's home has a steep gravel driveway; the medical transport van requires a specific clearance that hasn't been verified by the facility.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The facility transport coordinator utilized a standard sedan service instead of a high-clearance wheelchair van, unaware of the rural terrain constraints."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary HHA (Southshore) confirms they can send a nurse for the wound check but cannot staff the PT for at least 8 days due to regional shortages.",
+      "action_taken": "Audited three neighboring HHAs for PT availability in the patient's zip code and presented two agencies with active staffing to the Social Worker.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with a 'ready-to-go' solution to prevent the discharge from slipping into the following week due to a lack of skilled PT coverage."
+    },
+    {
+      "situation": "The patient's daughter is expressing extreme anxiety (Caregiver Panic) about managing a bilateral TKA recovery without immediate PT support.",
+      "action_taken": "Conducted a 'Day 1 expectation' walkthrough, clarifying that the HHA nurse arrives first to assess the site before the PT evaluation occurs.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate family fear to prevent them from demanding a late-stage pivot to a Skilled Nursing Facility (SNF) which would void the home health transition."
+    },
+    {
+      "situation": "Discrepancy found between the facility's discharge medication list and the family's understanding of the post-op blood thinner protocol.",
+      "action_taken": "Flagged the medication mismatch to the Social Worker and requested a formal reconciliation from the floor nurse before the patient left the building.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Ensure clinical errors are corrected by licensed staff while documenting the PN's role in identifying the risk to the home team."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Proactive",
+      "description": "After confirming the primary HHA lacks PT staffing, I contacted two alternative agencies to verify they had therapists available in the rural zone, then presented these options to the Social Worker to facilitate a potential change in referral.",
+      "rationale": "This follows the 'Suggest' and 'Support' mandate. The PN does the legwork of vetting availability\u2014which the SW rarely has time for\u2014but leaves the final referral decision to the facility."
+    },
+    {
+      "ai_intended_category": "Passive",
+      "description": "I documented the HHA's staffing shortage in my transition notes and notified the Social Worker that the current plan might result in a 72-hour gap in therapy services, advising the SW to follow up with the agency's director.",
+      "rationale": "This is a strategic deferral. In some institutional cultures, the PN stepping in to find new HHAs is seen as interference; here, the PN flags the risk and steps back to let the facility handle the vendor relationship."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "I contacted the patient's orthopedic surgeon directly to request a delay in the discharge until a physical therapist was guaranteed to be at the home, as the current HHA plan was unsafe for a bilateral TKA patient.",
+      "rationale": "This is a 'Hero Complex' move. The PN is making a clinical judgment ('unsafe') and bypassing the Social Worker to influence the physician's discharge order, which is a major boundary violation."
+    }
+  ],
+  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral TKA, was slated for home discharge until a regional HHA staffing shortage left his physical therapy orders unfillable for over a week. While the facility Social Worker believed the referral was solid, the PN's verification call revealed the agency's inability to service Arthur's rural zip code. The PN navigated a 'Fog of War' scenario where the family's anxiety nearly triggered a refusal of discharge, requiring a delicate balance of caregiver education and the presentation of pre-vetted alternative agencies to the SW. Ultimately, the transition hinged on resolving the logistical gap between the facility's assumptions and the HHA's actual field capacity."
+}

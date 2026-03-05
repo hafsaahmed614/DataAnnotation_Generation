@@ -95,6 +95,42 @@
       "signal_barrier": "Caregiver_Panic",
       "expected_delay": "+2–7 Days",
       "logical_dna_rule": "The primary caregiver or family member threatens to refuse discharge or demands the patient stay in the facility, driven by fear of managing care at home; the PN must educate and de-escalate while staying within scope (not making clinical promises or overriding the family's right to refuse)."
+    },
+    {
+      "category": "Administrative",
+      "signal_barrier": "Atlantis_Data_Lag",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The patient's record appears in the Atlantis queue with stale or missing data (wrong address, outdated insurance, missing phone number); the PN must audit the face sheet against Atlantis and request corrections before the HHA can process the referral."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Friday Discharge Gap",
+      "expected_delay": "+2–4 Days",
+      "logical_dna_rule": "Patient is discharged on a Friday but the HHA does not staff weekend admissions; the first home visit cannot occur until Monday at earliest, leaving a 48-72 hour gap in post-discharge monitoring."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Day 1 Home No-Show",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The HHA nurse assigned to the first post-discharge home visit does not appear at the scheduled time; the PN must escalate to the HHA intake coordinator and flag the no-show to the SW to determine if the patient is safe."
+    },
+    {
+      "category": "Eligibility",
+      "signal_barrier": "LTC_Pivot_Abort",
+      "expected_delay": "Hard Stop (LTC Closure)",
+      "logical_dna_rule": "The SW determines the patient's goal is Long-Term Care (LTC), not home discharge; the PN must perform a Neutral_LTC_Closure in Atlantis and stop all home transition work. Continuing to pitch home services to an LTC patient is an Overstep."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Pre-DC_Call_Disconnect",
+      "expected_delay": "+1–2 Days",
+      "logical_dna_rule": "The PN cannot reach the patient or family during the mandatory 24-hour pre-discharge pulse call; without confirming home readiness and the first-visit time, the discharge proceeds with an unverified transition plan."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA_SOC_Overlap",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The HHA's start-of-care (SOC) scheduling conflicts with another patient admission or an internal staffing constraint; the first visit cannot be booked in the 24-hour window post-discharge, risking the PN's success metric."
     }
   ]
 }

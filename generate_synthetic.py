@@ -22,7 +22,7 @@ from datetime import datetime
 
 load_dotenv()
 from pydantic import BaseModel, Field
-from typing import List, Literal
+from typing import List, Literal, Optional
 
 
 # ── Configuration ────────────────────────────────────────────────────────────
@@ -41,36 +41,45 @@ N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 
 
-# ── Pydantic Output Schema (Section 2.3) ─────────────────────────────────────
-
-class StateLogEntry(BaseModel):
-    event_description: str = Field(description="Describe the event, including specific institutional friction.")
-    clinical_impact: Literal["Improves", "Worsens", "Unchanged"]
-    environmental_impact: Literal["Improves", "Worsens", "Unchanged"]
-    service_adoption_impact: Literal["Positive", "Negative", "Unchanged"]
-    edd_delta: str = Field(description="Must match Friction Taxonomy rule, e.g., '+30 Days'")
-    ai_assumed_bottleneck: str = Field(description="The specific human or systemic reason for the delay (e.g., 'SW ignored emails because it was Friday at 4 PM').")
-
-
-class ReasoningTriple(BaseModel):
-    situation: str = Field(description="The specific barrier, conflict, or institutional friction.")
-    action_taken: str = Field(description="The tactical, specific action the PN took to solve it.")
-    taxonomy_category: str = Field(description="Must match exactly with an intent from the Action Taxonomy.")
-    tactical_field_intent: str = Field(description="The unwritten, political, or highly specific secondary motive behind the action (e.g., 'Force a verbal commitment without leaving an aggressive email trail').")
-
+# ── Pydantic Output Schema (V5: 3-Stage PN Lifecycle Checklist) ──────────────
 
 class RLScenarioOption(BaseModel):
-    ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(description="The hidden classification. Do not reveal this in the description. Passive = 'Strategic Deferral' (PN steps back to let SW handle a volatile or out-of-scope situation). Proactive = 'Collaborative and Deferential' (PN escalates to SW, educates family, suggests alternatives, or verifies HHA logistics). Overstep = 'Hero Complex' (PN tries to fix it themselves, doing the SW's or clinician's job).")
-    description: str = Field(description="The exact action taken by the PN. It MUST sound professional and clinically appropriate, even if it is technically a passive move or a boundary overstep.")
-    rationale: str = Field(description="The hidden explanation of why the AI classified it this way (e.g., explaining exactly whose toes are stepped on for an Overstep, or why stepping back is the right boundary call for Passive).")
+    ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(
+        description="Passive=Strategic Deferral; Proactive=Checklist-compliant verification/education; Overstep=Clinical/SW interference."
+    )
+    description: str = Field(description="The exact PN action taken.")
+    rationale: str = Field(description="Explanation citing the PN Checklist Stage and role boundaries.")
 
 
 class SyntheticCaseOutput(BaseModel):
-    boundary_planning_scratchpad: str = Field(description="Before writing the case, explicitly state: 'The SW is handling [X] and the PN is only handling [Y]'. This must clearly delineate SW vs PN responsibilities for this specific case.")
-    format_1_state_log: List[StateLogEntry]
-    format_2_triples: List[ReasoningTriple]
-    format_3_rl_scenario: List[RLScenarioOption]
-    narrative_summary: str
+    # Stage 1: Atlantis Entry & Triage
+    atlantis_entry_confirmed: bool = Field(description="PN confirms patient appeared in Atlantis queue.")
+    demographic_audit_note: str = Field(description="Verifying insurance, address, phone #, and DOB accuracy.")
+    home_vs_ltc_determination: str = Field(description="Result of querying the SW on the goal (Home vs. LTC).")
+
+    # Stage 2: Maintenance & Engagement
+    weekly_facility_update: str = Field(description="Summary of weekly check-in with SW/Staff.")
+    v_card_and_flyer_status: str = Field(description="Documenting V-card insertion into patient phone and flyer delivery.")
+
+    # Stage 3: Handoff & Success Verification
+    pre_dc_pulse_call_result: str = Field(description="Outcome of the call to patient 24hrs before discharge.")
+    atlantis_final_sync: str = Field(description="Entry of D/C date and 1st visit date into Atlantis.")
+    ma_visit_booking: str = Field(description="Confirmation of scheduling the MA for the 24-hour window.")
+
+    # Core Content Formats
+    narrative_summary: str = Field(description="A field report strictly following the 3-stage PN lifecycle.")
+    format_1_state_log: List[dict] = Field(description="Timeline focused on home-readiness friction (not facility delays).")
+    format_2_triples: List[dict] = Field(description="Situation -> Action -> Intent (Educate/Escalate/Verify).")
+    format_3_rl_scenario: List[RLScenarioOption] = Field(description="Dilemmas regarding scope boundaries.")
+
+    case_outcome: Literal[
+        "Success_Home_with_First_Visit",
+        "Neutral_LTC_Closure",
+        "Neutral_Alternative_Agency",
+        "Failure_Transition_Breakdown",
+    ] = Field(
+        description="Success only occurs if the patient goes home with our services and the first visit is completed."
+    )
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -118,7 +127,7 @@ def build_prompt(friction_taxonomy: dict, action_taxonomy: dict, outcome_taxonom
 --- Friction Taxonomy (defines allowable time delays) ---
 {friction_str}
 
---- Action Taxonomy (defines Rank 1 success intents) ---
+--- Action Taxonomy (defines PN checklist actions by stage) ---
 {action_str}
 
 --- Outcome Taxonomy (defines state transition triggers) ---
@@ -142,36 +151,46 @@ You MUST strictly output valid JSON conforming to this schema and NO other text:
 
 {schema_str}
 
-Rules:
-1. All edd_delta values must reference a delay from the Friction Taxonomy.
-2. The `ai_assumed_bottleneck` must be a specific, testable claim about a HOME HEALTH TRANSITION barrier (e.g., "The HHA could not schedule a weekend admission because their intake coordinator only works Mon-Fri").
+=== 3-STAGE CHECKLIST RULES ===
 
-NEGATIVE CONSTRAINTS (What a PN NEVER does):
-- The PN NEVER touches F2F forms, clinical documentation, or the EMR.
-- The PN NEVER calls insurance companies for authorization.
-- The PN NEVER calls or leads facility team meetings.
-- The PN NEVER interrupts doctors during rounds or gathers charts from the nurse's station.
-- The PN NEVER proves cost analysis of home care vs LTC.
-- The PN NEVER tells families to refuse discharge or go Against Medical Advice (AMA).
+Stage 1 fields (atlantis_entry_confirmed, demographic_audit_note, home_vs_ltc_determination):
+1. atlantis_entry_confirmed must be true (patient appeared in queue).
+2. demographic_audit_note must describe specific data verified or errors found (insurance type, address, phone, DOB).
+3. home_vs_ltc_determination must record the SW's answer to "Is the goal Home or LTC?" If LTC, set case_outcome to "Neutral_LTC_Closure".
 
-POSITIVE CONSTRAINTS (What a PN ACTUALLY does):
-- The PN focuses entirely on Home Health Agency (HHA) coordination and transition logistics.
-- Valid PN friction includes: HHA weekend admission scheduling limits, delays in Durable Medical Equipment (DME) delivery to the home, family caregiver training gaps, or discrepancies in the medication list at handoff.
+Stage 2 fields (weekly_facility_update, v_card_and_flyer_status):
+4. weekly_facility_update must summarize a specific check-in (e.g., "Week 2: SW confirms D/C target is next Thursday; PT eval pending").
+5. v_card_and_flyer_status must confirm whether the V-Card was inserted into the patient's phone and the flyer was delivered.
 
-Rules for Format 2 (Triples):
-3. The `situation` must involve a specific stakeholder bottleneck WITHIN THE PN's SCOPE (e.g., HHA not returning calls, DME vendor backordered, family caregiver not trained on wound care, medication list mismatch between facility and home).
-4. The `action_taken` must be a specific field maneuver that a PN would realistically take, not a Social Worker action.
-5. The `tactical_field_intent` MUST contain a political or operational trade-off that a 20-year PN veteran could debate. Use PN-specific motives (e.g., 'Lock in the HHA admission slot before the weekend so the discharge does not slip to Monday').
+Stage 3 fields (pre_dc_pulse_call_result, atlantis_final_sync, ma_visit_booking):
+6. pre_dc_pulse_call_result must describe the outcome of the 24-hour pre-discharge call (reached/not reached, home readiness confirmed or concerns raised).
+7. atlantis_final_sync must confirm the D/C date and 1st visit date were entered into Atlantis.
+8. ma_visit_booking must confirm the MA was scheduled within 24 hours of discharge, or explain the barrier.
 
-Rules for Format 3 (RL Scenarios):
-6. The format_3_rl_scenario MUST contain exactly THREE options for a single difficult dilemma.
-7. You must generate one "Passive" option, one "Proactive" option, and one "Overstep" option.
-8. CRITICAL: The `description` for all three options must sound highly professional, reasonable, and tempting.
-   - "Passive" = STRATEGIC DEFERRAL: The PN deliberately steps back to let the SW or facility handle a volatile or out-of-scope situation. This is NOT laziness — it is a boundary-respecting choice where the PN recognizes the issue belongs to someone else (e.g., "I documented the family's concerns and notified the SW to address them in the next care conference"). A veteran would recognize this as wise restraint.
-   - "Proactive" = COLLABORATIVE AND DEFERENTIAL (Rank 1): The PN takes action WITHIN THEIR SCOPE by doing one of: (a) Escalating to the SW with specific, actionable information, (b) Educating the family on Day 1 home expectations, (c) Suggesting 2-3 pre-vetted alternatives to the SW, or (d) Verifying HHA logistics (start-of-care date, assigned nurse, equipment at home). The PN always defers the final decision to the SW.
-   - "Overstep" = HERO COMPLEX (Rank 0): The PN tries to FIX the problem themselves instead of supporting, suggesting, or escalating. This MUST sound like excellent patient advocacy to a rookie (e.g., "I called the insurance company directly to expedite the authorization" or "I spoke with the attending physician about changing the discharge plan"). A 20-year veteran would immediately recognize this as stepping on the SW's or clinician's toes.
-9. narrative_summary must be 3-5 sentences capturing the home health transition arc, not the facility discharge process.
-10. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
+=== FORMAT RULES ===
+
+Rules for format_1_state_log (Timeline):
+9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
+10. Focus on HOME-READINESS friction (not facility discharge delays). Valid: HHA scheduling, DME delivery, Atlantis data errors, pre-DC call failures.
+
+Rules for format_2_triples (Situation → Action → Intent):
+11. Each entry must be a dict with keys: situation, action_taken, intent_category (Educate/Escalate/Verify).
+12. The action_taken must be a PN checklist action, NOT a Social Worker action.
+
+Rules for format_3_rl_scenario:
+13. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
+14. All descriptions must sound professional and tempting.
+   - "Passive" = STRATEGIC DEFERRAL: PN steps back, lets SW handle. Boundary-respecting, not lazy.
+   - "Proactive" = CHECKLIST-COMPLIANT: PN verifies HHA logistics, educates family, conducts pulse call, schedules MA, or escalates to SW. Always within the 3-stage checklist.
+   - "Overstep" = PN does the SW's job (suggesting agencies, handling F2F, calling insurance, managing meds). Must sound like good advocacy to a rookie.
+
+Rules for case_outcome:
+15. "Success_Home_with_First_Visit" = patient discharges with our services AND first home visit completed.
+16. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
+17. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
+
+18. narrative_summary must be 3-5 sentences following the 3-stage PN lifecycle arc.
+19. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
 
@@ -234,27 +253,48 @@ def main():
     outcome_taxonomy  = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are an AI Healthcare Architect generating highly authentic synthetic cases "
-        "for 20-year non-clinical Patient Navigator veterans. You must strictly adhere to the Static Taxonomies.\n\n"
-        "CRITICAL ROLE DEFINITION: The Patient Navigator is NOT a discharge planner, NOT a social worker, "
-        "and NOT a clinician. The PN enters the picture specifically to ensure a smooth transition to home "
-        "health care AFTER the facility handles the clinical discharge. The PN is a collaborative team member "
-        "who works WITH the facility, never against them.\n\n"
-        "THE PN MENTALITY IS: SUPPORT, SUGGEST, AND ESCALATE.\n"
-        "- SUPPORT: Verify HHA logistics, confirm equipment delivery, educate the family on Day 1 expectations.\n"
-        "- SUGGEST: Present 2-3 pre-vetted alternatives to the SW when the primary plan falls through.\n"
-        "- ESCALATE: Flag clinical, insurance, or volatile family issues to the SW immediately.\n\n"
-        "FOG OF WAR DYNAMIC: The PN always acts on INCOMPLETE information. In every case, at least one critical "
-        "detail must be unknown, delayed, or contradictory (e.g., the SW says discharge is Thursday but the HHA "
-        "says they have no record of the referral; the family says the home has a ramp but the PN has not verified it). "
-        "The PN must make decisions under uncertainty and cannot wait for perfect information.\n\n"
-        "PATIENT CHOICE DYNAMIC: Not all friction is bureaucratic. Some cases must feature friction driven by "
-        "patient or family decisions (e.g., caregiver refusing to learn wound care, family threatening to refuse "
-        "discharge, patient changing their mind about going home). The PN must navigate these human dynamics "
-        "while staying within scope.\n\n"
-        "BANNED TROPES: You MUST NOT use the following repetitive phrases or concepts: "
-        "'F2F / Face-to-Face signatures', 'burned-out Social Worker', '100-day financial cliff', "
-        "'Private pay to LTC', or 'Black Hole'."
+        "You are a Patient Navigator (PN) operating in the Atlantis software environment. "
+        "Your goal is to ensure a safe transition home to trigger the 'First Visit' incentive.\n\n"
+
+        "=== THE 3-STAGE LIFECYCLE ===\n"
+        "Every case MUST move through these stages:\n"
+        "1) ENTRY/TRIAGE: Patient appears in Atlantis queue. PN audits demographics (insurance, address, phone, DOB). "
+        "PN asks SW: 'Is the goal Home or LTC?'\n"
+        "2) MAINTENANCE: Weekly check-ins with SW/staff. PN inserts V-Card into patient's phone and delivers flyer. "
+        "PN educates patient/family on program benefits.\n"
+        "3) HANDOFF: PN conducts 24-hour pre-discharge pulse call. Enters D/C date and 1st visit date into Atlantis. "
+        "Hands physical appointment card to patient. Schedules the MA for the first visit within 24 hours of discharge.\n\n"
+
+        "=== THE LTC FILTER ===\n"
+        "If the SW determines the goal is Long-Term Care (LTC), the PN performs a Neutral_LTC_Closure in Atlantis "
+        "and stops all work. Continuing to pitch home care to an LTC patient is an Overstep.\n\n"
+
+        "=== THE SW BOUNDARY ===\n"
+        "The Social Worker (SW) sends referrals and finds agencies. The PN NEVER suggests alternative HHAs, "
+        "handles F2F forms, or manages clinical medications.\n\n"
+
+        "=== SCHEDULING ANCHOR ===\n"
+        "The PN must give the patient a physical appointment card and ensure the visit happens within "
+        "24 hours of discharge. The PN must schedule the MA for this visit.\n\n"
+
+        "=== BANNED ACTIONS (AUTOMATIC OVERSTEP) ===\n"
+        "- Suggesting specific HHA agencies to the SW\n"
+        "- Handling F2F (Face-to-Face) forms\n"
+        "- Managing facility medications\n"
+        "- Touching the facility EMR or clinical documentation\n"
+        "- Calling insurance companies for authorization\n"
+        "- Leading or calling facility team meetings\n"
+        "- Interrupting doctors during rounds\n"
+        "- Proving cost analysis of home care vs LTC\n"
+        "- Telling families to refuse discharge or go AMA\n\n"
+
+        "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
+        "detail must be unknown, delayed, or contradictory.\n\n"
+
+        "PATIENT CHOICE: Some cases must feature friction driven by patient or family decisions.\n\n"
+
+        "BANNED TROPES: 'F2F / Face-to-Face signatures', 'burned-out Social Worker', "
+        "'100-day financial cliff', 'Private pay to LTC', 'Black Hole'."
     )
 
     print(f"Starting batch generation: {BATCH_SIZE} case(s)")

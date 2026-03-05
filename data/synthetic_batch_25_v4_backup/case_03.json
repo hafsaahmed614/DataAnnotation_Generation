@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is responsible for finalizing the clinical discharge date from the SNF and managing the family's expectations regarding the facility's liability. The PN is strictly focused on verifying that a Home Health Agency (HHA) has an available nurse in the patient's specific rural zip code and ensuring the walker and raised toilet seat are physically inside the home before the patient arrives.",
+  "format_1_state_log": [
+    {
+      "event_description": "Primary HHA (NorthStar Home Health) accepted the referral electronically but failed to assign a specific nurse for the start-of-care visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA's central intake department accepted the referral based on insurance eligibility without checking the local branch's actual field staffing for a rural route."
+    },
+    {
+      "event_description": "PN identifies that the patient's home is 45 miles from the nearest HHA hub, complicating the 48-hour start-of-care requirement.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "HHA intake coordinator is prioritizing urban cases with shorter drive times to meet their internal productivity quotas."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Family is insistent on using NorthStar Home Health due to a previous positive experience, but NorthStar confirms they have no nursing availability in the patient's zip code for at least 8 days.",
+      "action_taken": "Identified two alternative, smaller HHAs that currently have active cases in the patient's neighborhood and presented their contact info to the SW.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with a pre-solved logistics path to prevent the discharge from stalling into a long-term care discussion."
+    },
+    {
+      "situation": "The HHA reports they cannot find the physician's specific orders for the spinal fusion dressing changes in the referral packet.",
+      "action_taken": "Flagged the missing wound care orders to the SW and requested a post-conference summary to verify the HHA received the corrected fax.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Force the facility to correct the documentation gap before the patient leaves the building, avoiding a 'no-visit' weekend."
+    },
+    {
+      "situation": "Patient's daughter believes the hospital bed was delivered, but the PN cannot confirm the delivery time with the vendor.",
+      "action_taken": "Requested the daughter text a photo of the set-up equipment in the home to verify the model and placement before the HHA nurse arrives.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Verify environmental readiness through the family to avoid an HHA 'safety failure' on Day 1 without overstepping into a physical home inspection."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Documented the HHA's staffing shortage and the family's refusal to consider other agencies, then formally notified the Social Worker that the current plan will result in a care gap, requesting they address it in the next family meeting.",
+      "rationale": "This is a strategic deferral. The family's refusal to change providers is a sensitive dynamic that falls under the SW's role in counseling and discharge planning. The PN identifies the risk but lets the licensed professional handle the conflict."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Educated the family on the clinical importance of a Day 1 nursing visit for spinal fusion monitoring and suggested to the SW that they offer the family two alternative agencies that have confirmed nurse availability for the requested discharge date.",
+      "rationale": "The PN stays in scope by educating on transition expectations and providing the SW with vetted alternatives (Suggest and Support) without making the final choice for the family."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Called the Clinical Director at NorthStar Home Health and negotiated a 'priority status' for this patient by suggesting they pull a nurse from a neighboring county to cover the rural visit, then informed the family that the problem was solved.",
+      "rationale": "This is an overstep because the PN is interfering with the HHA's internal operational management and making promises to the family that they cannot legally or professionally guarantee, potentially creating liability for the agency."
+    }
+  ],
+  "narrative_summary": "A 70-year-old male recovering from a complex spinal fusion is clinically ready for discharge, but his rural location has triggered a significant HHA staffing shortage. While the family is emotionally tied to a specific agency, that provider cannot staff a nurse for the critical 48-hour post-discharge window. The Patient Navigator must navigate the 'fog' of unconfirmed equipment deliveries while providing the Social Worker with alternative agency options to ensure the patient doesn't return home without professional wound monitoring. The case hinges on balancing family preference against the logistical reality of rural healthcare deserts."
+}

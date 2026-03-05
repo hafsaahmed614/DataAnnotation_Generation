@@ -1,0 +1,67 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is handling the clinical discharge orders, the legal discharge date, and the contracting of the oxygen vendor. The PN is focusing strictly on the Home Health Agency (HHA) transition, specifically verifying that the caregiver (Linda) is actually prepared for the Day 1 nebulizer schedule and that the HHA has assigned a nurse who can perform the initial competency check at the home. The PN will not touch the clinical training herself but will escalate the 'training gap' to the SW to prevent a discharge failure.",
+  "format_1_state_log": [
+    {
+      "event_description": "Initial intake for Mrs. Vance (83yo, post-ICU pneumonia). Daughter/Caregiver Linda expresses high anxiety regarding home oxygen and nebulizer maintenance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "Initial referral received; family education on HHA role started to build trust."
+    },
+    {
+      "event_description": "Caregiver Training Gap identified: Linda reports she has not received the promised hands-on training with the specific home-grade concentrator model.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The SNF respiratory therapist was out sick, and the HHA intake coordinator failed to schedule the pre-discharge bedside demo."
+    },
+    {
+      "event_description": "Logistical friction: DME vendor delivered the oxygen concentrator to the home, but the nasal cannula sizing is for a pediatric patient, not an 83yo adult.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "DME vendor data entry error at the warehouse; PN verified the equipment at the home via photo from the daughter."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter (Linda) threatens to refuse the Thursday discharge because she 'doesn't know how to clean the nebulizer cups' and is spiraling into a panic.",
+      "action_taken": "Immediately flagged the caregiver's volatile emotional state to the Social Worker and requested a brief huddle to realign expectations.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Flag volatile family situation to SW for immediate intervention while maintaining the PN as a supportive, non-clinical ally."
+    },
+    {
+      "situation": "The HHA intake coordinator is unavailable due to a regional system outage, preventing confirmation of the Start-of-Care (SOC) nurse assignment.",
+      "action_taken": "Contacted the HHA's alternate branch manager to verify if a nurse from the neighboring zip code could be 'floated' for the Day 1 visit.",
+      "taxonomy_category": "Strategic Outreach",
+      "tactical_field_intent": "Force a verbal commitment from HHA leadership to ensure the SOC date doesn't slip due to administrative technicalities."
+    },
+    {
+      "situation": "DME vendor delivered the wrong nasal cannula size to the home, and the SW is unaware of the delivery error.",
+      "action_taken": "Provided the SW with 2-3 pre-vetted backup DME vendors who have the correct adult supplies in stock for immediate delivery.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with a 'turnkey' solution to the equipment problem so the discharge timeline remains viable."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN documents the caregiver's refusal to manage the nebulizer in the internal transition log and notifies the Social Worker that the family is requesting more time. The PN then steps back to allow the facility's clinical team to address the training deficiency during their next internal round.",
+      "rationale": "This is a strategic deferral. Training competency is a clinical function. By stepping back, the PN respects the facility's responsibility for clinical readiness while keeping the SW informed of the barrier."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN walks the daughter through the 'Day 1 HHA Expectations' brochure, explaining that the HHA nurse's primary goal during the first visit is to verify equipment safety and perform a hands-on training refresher. Simultaneously, the PN suggests to the SW that the HHA nurse be invited to the SNF for a joint bedside handoff.",
+      "rationale": "The PN stays in scope by focusing on education and coordination. They reduce the daughter's anxiety by clarifying the HHA's role and suggest a collaborative solution to the SW without overstepping into clinical instruction."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN visits the patient's room, takes the nebulizer from the bedside table, and demonstrates the proper assembly and cleaning technique to the daughter. The PN then calls the HHA directly to tell them the training is complete and they can proceed with the discharge for tomorrow.",
+      "rationale": "This is a 'Hero Complex' overstep. The PN is performing a clinical task (respiratory education) and making a clinical determination (training complete), which bypasses both the facility's therapists and the HHA's licensed staff."
+    }
+  ],
+  "narrative_summary": "Mrs. Vance's transition from the SNF to home care was nearly derailed by her daughter's intense anxiety regarding complex respiratory equipment. While the facility deemed the patient clinically stable, the 'Caregiver Training Gap' necessitated a 4-day delay to ensure the daughter could safely manage the nebulizer and oxygen concentrator. The Patient Navigator successfully bridged this gap by identifying a DME delivery error early and coordinating with the Social Worker to ensure the Home Health Agency scheduled a specialized 'Start-of-Care' nurse who could provide the final competency check at the home."
+}

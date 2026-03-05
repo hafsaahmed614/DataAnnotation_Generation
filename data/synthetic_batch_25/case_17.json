@@ -1,59 +1,64 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker (SW) is managing the facility discharge orders, arranging the medical transport van, and handling the official clinical handoff to the dialysis center. The Patient Navigator (PN) is focused exclusively on the Home Health Agency (HHA) transition, specifically de-escalating the caregiver's fear of 'Day 1' abandonment and verifying that the HHA nurse is equipped to handle the renal medication reconciliation and access site monitoring.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet revealed a zip code mismatch (19104 vs 19143). Verified Straight Medicare eligibility and confirmed daughter (POA) as primary contact for the 86yo patient with dementia.",
+  "home_vs_ltc_determination": "Social Worker (SW) confirms the goal is Home with 24/7 supervision from daughter; LTC was ruled out by family despite high fall risk.",
+  "weekly_facility_update": "Week 3: Patient is at baseline confusion; PT reports steady gait with walker. SW targets discharge for Friday, August 30th, preceding Labor Day weekend.",
+  "v_card_and_flyer_status": "V-Card inserted into daughter's mobile device; physical program flyer delivered to daughter during the Week 2 family conference.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Confirmed home is ready with a hospital bed; daughter expressed anxiety about the upcoming holiday weekend and lack of HHA response.",
+  "atlantis_final_sync": "Confirmed D/C date of 08/30/2024 and first home visit date of 08/31/2024 entered into Atlantis.",
+  "ma_visit_booking": "MA visit successfully booked for Saturday morning (08/31/2024) to ensure the first visit occurs within 24 hours, bridging the HHA's holiday staffing delay.",
+  "narrative_summary": "Arthur Miller, an 86-year-old with dementia and a history of falls, was successfully transitioned home following a three-week stay. The PN addressed a critical holiday coverage gap by coordinating a Saturday Medical Assistant visit when the HHA could not guarantee a nurse until Tuesday. By maintaining close contact with the daughter (POA) and ensuring all demographic data was corrected in Atlantis during Stage 1, the PN secured a successful first-visit incentive despite the logistical friction of a holiday weekend.",
   "format_1_state_log": [
     {
-      "event_description": "The primary caregiver (daughter, Linda) expresses extreme anxiety regarding the complex renal medication schedule and the monitoring of the dialysis access site, threatening to refuse the Friday discharge.",
+      "event_description": "Holiday Coverage Gap identified for Labor Day weekend",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "The caregiver is overwhelmed by the clinical complexity and perceives a lack of support from the HHA for the first 24 hours at home."
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA intake department operating on skeleton crew; no new starts-of-care until Tuesday post-holiday."
     },
     {
-      "event_description": "The preferred HHA intake coordinator reports a staffing freeze for the patient's rural zip code, stating they cannot guarantee a nurse visit until the following Tuesday.",
+      "event_description": "Friday Discharge Gap (August 30th)",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u201310 Days",
-      "ai_assumed_bottleneck": "The HHA has a regional shortage of nurses trained in advanced renal/dialysis monitoring, causing a geographic care gap."
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Patient discharging on Friday; HHA has no weekend admission slots available due to holiday."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The caregiver, Linda, believes the HHA will not arrive until 48 hours after discharge, leaving her alone with the dialysis port management.",
-      "action_taken": "Contacted the HHA intake manager to secure a specific 'First Visit' time window (10 AM - 12 PM) and the name of the assigned RN.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Reduce caregiver anxiety with concrete logistics to prevent a last-minute discharge refusal."
+      "situation": "Patient has dementia and may not remember the visit time or the PN's role.",
+      "action_taken": "Inserted V-Card into the daughter/POA's phone and provided a physical appointment card.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The facility medication list for Mrs. Vance shows a discrepancy in the dosage of her phosphate binder compared to the HHA\u2019s preliminary intake record.",
-      "action_taken": "Flagged the data mismatch to the Social Worker and the HHA intake nurse for reconciliation prior to the first home visit.",
-      "taxonomy_category": "Boundary Escalation",
-      "tactical_field_intent": "Ensure clinical errors are caught by the licensed staff before they reach the home environment without performing the reconciliation personally."
+      "situation": "Discharge scheduled for Friday before a holiday with no HHA nurse available until Tuesday.",
+      "action_taken": "Scheduled the Medical Assistant (MA) for a Saturday morning visit to bridge the gap and perform the safety check.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The primary HHA cannot meet the Friday discharge timeline due to a staffing shortage in the patient's specific zone.",
-      "action_taken": "Identified two alternative in-network HHAs with available renal-trained nurses and presented their contact info to the SW.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Provide the SW with immediate solutions to keep the discharge on track without overstepping the SW's right to choose the provider."
+      "situation": "Atlantis demographics show an outdated address from a previous admission.",
+      "action_taken": "Audited face sheet against Atlantis and flagged the zip code error to the SW for correction.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon hearing the daughter's threat to refuse discharge due to fear, the PN documents the specific concerns and notifies the Social Worker that a family care conference may be necessary to address the caregiver's perceived lack of competency.",
-      "rationale": "This is a strategic deferral. The PN recognizes that the caregiver's refusal to take the patient home is a high-level discharge barrier that requires the SW's authority and potentially a clinical educator's intervention."
+      "description": "PN monitors the SW's progress on the holiday discharge and waits for the HHA to notify the family regarding the Tuesday start-of-care date, deferring to the agency's internal scheduling.",
+      "rationale": "Respects the SW's role in finding agencies and the HHA's autonomy in scheduling, ensuring no overstep into agency operations."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN provides the daughter with a 'Day 1 Home Health Roadmap,' detailing exactly what the HHA nurse will check during the first visit and confirming that the HHA has already received the dialysis center's contact info for coordination.",
-      "rationale": "This is collaborative and within scope. The PN is using education and logistical verification to lower the 'Panic' barrier without making clinical promises or interfering with the SW's discharge plan."
+      "description": "PN flags the Friday holiday gap to the SW and immediately schedules the MA for a Saturday visit, providing the daughter with a physical appointment card to secure the 24-hour window.",
+      "rationale": "Follows the Stage 3 Handoff protocol by ensuring a visit within 24 hours of discharge using internal resources (MA) to bridge external agency gaps."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN spends two hours with the daughter in the patient's room, demonstrating how to properly clean the dialysis access site and organizing the medication pill-box for the first week to prove that 'it isn't that hard.'",
-      "rationale": "This is a hero complex/boundary failure. The PN is performing clinical education and medication management, which are strictly the roles of the facility nurses or the HHA staff, creating significant liability."
+      "description": "PN calls the HHA intake coordinator and demands they authorize holiday overtime for a nurse to visit on Saturday, then calls the patient's insurance to see if they will cover a different agency that has weekend staff.",
+      "rationale": "Oversteps by attempting to manage HHA staffing and performing insurance authorization work, which are Banned Actions."
     }
   ],
-  "narrative_summary": "Mrs. Vance, a 77-year-old renal patient, was prepared for discharge to home with HHA support, but the transition was nearly derailed by her daughter\u2019s extreme anxiety regarding dialysis port care. While the HHA initially reported a staffing shortage in the rural zip code, the PN successfully identified alternative agencies for the Social Worker to consider. The case remains in a 'Fog of War' state as the HHA has yet to confirm if the assigned nurse has specific experience with renal-failure medication reconciliation, which the daughter is demanding to know before she agrees to leave the facility."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

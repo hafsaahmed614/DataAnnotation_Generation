@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker (SW) is responsible for the clinical discharge order and the legal selection of the Home Health Agency (HHA). The Patient Navigator (PN) is solely responsible for verifying the HHA's capacity to accept the referral, confirming the equipment is physically in the home, and educating the daughter on what the first 48 hours of home care will look like to reduce her anxiety.",
+  "format_1_state_log": [
+    {
+      "event_description": "PN attempts to confirm referral receipt with Preferred HHA; Intake Coordinator reports a 'System Outage' freeze on all new admissions for the next 72 hours.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The HHA intake department is frozen due to a server migration; the coordinator cannot manually enter the patient into the scheduling software."
+    },
+    {
+      "event_description": "Primary caregiver (daughter) expresses fear of managing the patient's new thickened-liquid diet and threats to refuse the Friday discharge if a nurse isn't there by Friday evening.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver panic regarding the management of post-stroke dysphagia without immediate professional supervision."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA Intake Freeze prevents the preferred agency from confirming a Start-of-Care (SOC) date for the 81yo stroke patient.",
+      "action_taken": "Identified two alternative in-network HHAs with open slots and presented their contact information to the Social Worker.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with an immediate 'path of least resistance' to avoid a discharge delay without overstepping the patient's right to choose."
+    },
+    {
+      "situation": "The daughter claims the hospital bed was delivered, but the HHA requires verification of the specific 'low-air-loss' mattress for skin integrity before the nurse's first visit.",
+      "action_taken": "Requested the daughter text a photo of the bed's serial number and setup to verify against the DME order.",
+      "taxonomy_category": "Resource Planning",
+      "tactical_field_intent": "Confirm the home is 'clinically ready' for the HHA's arrival without needing to wait for a formal vendor delivery receipt."
+    },
+    {
+      "situation": "Social Worker is under pressure to clear the bed by Friday, but the HHA cannot staff a weekend RN for the initial assessment.",
+      "action_taken": "Educated the family on the 'Day 1' expectations, explaining that the first visit is an assessment and not a 24/7 care shift.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Level-set family expectations to prevent a 'refusal of service' when the nurse eventually arrives on Monday."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Notified the Social Worker via email that the preferred HHA is on an intake freeze and documented the daughter's concerns about the Friday discharge timing, then stepped back to await the facility's revised transition plan.",
+      "rationale": "This is a strategic deferral. The PN recognizes that the choice of agency and the timing of discharge are clinical and administrative decisions owned by the facility/SW. By documenting and stepping back, the PN avoids taking ownership of a failing plan."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Provided the Social Worker with two alternative HHAs that confirmed they have RN availability for a weekend start-of-care and offered to facilitate an introductory call between the daughter and the new HHA intake leads.",
+      "rationale": "This follows the 'Support, Suggest, and Escalate' mentality. The PN isn't making the decision but is providing the SW with vetted solutions to the current bottleneck while supporting the family's education needs."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contacted the HHA's Regional Director to argue for a 'manual override' of the intake freeze for this patient and then spoke with the attending physician to suggest the patient remain inpatient for an additional 48 hours until the system is live.",
+      "rationale": "The PN is attempting to resolve a system-wide HHA issue they cannot control and, more critically, is making a clinical recommendation to a physician about the length of stay, which is far outside the PN's non-clinical scope."
+    }
+  ],
+  "narrative_summary": "Mr. Vance, an 81-year-old stroke survivor, is nearing discharge from rehab, but his transition is threatened by a 72-hour system-wide intake freeze at the preferred home health agency. While the facility pushes for a Friday exit, the PN discovered that the home health referral has not been processed and the daughter is experiencing significant 'caregiver panic' regarding weekend support. The case hinges on whether a transition can be secured with an alternative agency or if the family's hesitation will lead to a discharge refusal. The PN must verify that the required DME is properly installed at home while maintaining a strictly supportive role to the Social Worker during this operational outage."
+}

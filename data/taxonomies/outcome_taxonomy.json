@@ -13,17 +13,26 @@
     {
       "state": "LTC Transition",
       "primary_exit_trigger": "Day 101 Medicare benefit exhaustion or Social Worker safety pivot",
-      "leading_indicator_of_failure": "Family verbalizes an 'inability to help at home' or demonstrates unwillingness to assist"
+      "leading_indicator_of_failure": "Family verbalizes an 'inability to help at home' or demonstrates unwillingness to assist",
+      "v5_outcome_mapping": "Neutral_LTC_Closure — LTC pivot is a job requirement, NOT a failure. PN logs neutral closure in Atlantis."
     },
     {
       "state": "Hospital Return",
       "primary_exit_trigger": "Acute medical emergency (e.g., acute CHF or respiratory failure)",
-      "leading_indicator_of_failure": "Evidence of O2 tank mismanagement, cellulitis flare-up, or missed HHA monitoring visits"
+      "leading_indicator_of_failure": "Evidence of O2 tank mismanagement, cellulitis flare-up, or missed HHA monitoring visits",
+      "v5_outcome_mapping": "Failure_Transition_Breakdown — The home transition failed; patient returned to acute care."
     },
     {
       "state": "Service Conversion",
-      "primary_exit_trigger": "First Healing Partners visit completed within 24–48 hours of discharge",
-      "leading_indicator_of_failure": "Competitive steering by Social Worker or failure to establish trust during the intake phase"
+      "primary_exit_trigger": "First home visit completed within 24–48 hours of discharge with our services",
+      "leading_indicator_of_failure": "Competitive steering by Social Worker or failure to establish trust during the intake phase",
+      "v5_outcome_mapping": "Success_Home_with_First_Visit — Patient discharges home with our services AND the first post-discharge home visit is completed."
+    },
+    {
+      "state": "Alternative Agency",
+      "primary_exit_trigger": "Patient or SW selects a different home health agency",
+      "leading_indicator_of_failure": "PN failed to build rapport or HHA could not staff the case in the patient's area",
+      "v5_outcome_mapping": "Neutral_Alternative_Agency — Patient chose a different agency. This is a job requirement, NOT a failure."
     }
   ]
 }

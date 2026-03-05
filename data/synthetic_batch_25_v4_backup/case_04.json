@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The SW is handling the clinical discharge orders and the formal insurance authorization for the SNF stay, while the PN is strictly focused on resolving the HHA intake freeze, verifying the daughter's readiness for 'Day 1' at home, and providing alternative agency options to the SW to prevent a discharge lapse.",
+  "format_1_state_log": [
+    {
+      "event_description": "Initial HHA (Priority Care) confirms a total intake freeze through the upcoming holiday weekend due to a sudden staffing shortage and system migration.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator is unavailable to process the referral until Tuesday morning, leaving the Monday discharge date unconfirmed."
+    },
+    {
+      "event_description": "Patient's daughter expresses high anxiety regarding the mother's post-chemo exhaustion and threatens to refuse the Monday discharge if a nurse isn't there by noon.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver panic regarding the management of chemo-related fatigue and medication adherence without immediate professional oversight."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary HHA (Priority Care) is under an intake freeze, and the Social Worker is currently tied up with a high-acuity trauma admission.",
+      "action_taken": "Pre-vetted three local alternative agencies (Beta Health, City Nursing, and Harbor Home) for capacity to accept a post-chemo patient on Monday.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with an 'easy button' to pivot the referral without the PN making the clinical selection herself."
+    },
+    {
+      "situation": "Discrepancy identified between the facility's discharge medication list and the daughter's understanding of the home chemo-support prescriptions.",
+      "action_taken": "Flagged the medication list mismatch to the Social Worker and requested a formal reconciliation for the HHA handoff packet.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Avoid clinical interpretation of the meds while ensuring the HHA receives the correct data to prevent a Day 1 medication error."
+    },
+    {
+      "situation": "Daughter is unsure if the home walker fits through the bathroom door, creating a potential safety barrier for the HHA's first PT visit.",
+      "action_taken": "Provided the daughter with a 'Home Readiness Checklist' and instructed her to measure the doorway and verify the walker's width before Monday.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Empower the family to resolve logistical barriers themselves to ensure the HHA start-of-care visit is not aborted for safety reasons."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN meets with the daughter to walk through exactly what the first 48 hours at home look like, while simultaneously providing the SW with the names of two agencies that have confirmed they have a nurse available for a Monday afternoon start-of-care.",
+      "rationale": "The PN stays in scope by educating the family to reduce anxiety and providing the SW with vetted alternatives to bypass the intake freeze, leaving the final referral decision to the SW."
+    },
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN documents the daughter's refusal to accept a Monday discharge without a nurse present and sends a high-priority notification to the Social Worker stating that the transition is currently stalled due to the HHA intake freeze and family concerns.",
+      "rationale": "This is a strategic deferral. The PN recognizes that the daughter's threat to refuse discharge is a volatile situation that requires the SW's professional intervention and social work expertise."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN calls the intake manager at Priority Care and negotiates a 'one-time exception' for the freeze, then calls the daughter to promise that a nurse will definitely be at the house by 1:00 PM on Monday.",
+      "rationale": "This is a hero-complex overstep. The PN is making clinical staffing promises they cannot control and intervening in the HHA's internal operational decisions, potentially creating a liability if the nurse fails to appear."
+    }
+  ],
+  "narrative_summary": "A 74-year-old female recovering from chemotherapy-related debility is scheduled for a Monday discharge, but the transition is threatened by a sudden intake freeze at the primary Home Health Agency. The daughter is exhibiting significant 'Caregiver Panic,' threatening to block the discharge due to fears over managing her mother's post-chemo weakness. The Patient Navigator must bridge the information gap by verifying the daughter's home preparation while providing the Social Worker with pre-vetted agency alternatives to ensure a safe, on-time transition to home care."
+}

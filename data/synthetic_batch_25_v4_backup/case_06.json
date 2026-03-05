@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The SW is handling the clinical discharge timeline, SNF-to-home insurance authorization, and the formal medical record transfer. The PN is exclusively handling the verification of the HHA's field nurse availability for the specific rural zip code, identifying backup agencies when staffing gaps are found, and educating the daughter on what intermittent home health visits actually look like for a dementia patient.",
+  "format_1_state_log": [
+    {
+      "event_description": "SW confirms preferred HHA has 'accepted' the referral for Friday discharge; however, PN calls HHA intake and discovers the only RN for that rural route is on leave, leaving the case unstaffed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "The HHA intake coordinator accepted the referral based on the insurance contract without checking the actual field nurse's PTO calendar for that specific zip code."
+    },
+    {
+      "event_description": "Patient's daughter expresses extreme anxiety (Caregiver Panic) upon learning the HHA nurse only visits for 45 minutes, fearing her father's dementia-driven wandering will cause a fall the first night.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The facility staff failed to explain the intermittent nature of home health, leading the family to believe 'home care' meant 24/7 supervision."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary HHA cannot guarantee a Start-of-Care (SOC) visit within 48 hours of discharge due to a regional nurse shortage.",
+      "action_taken": "Identified two alternative in-network agencies and verified they have a nurse available for a Saturday morning admission before presenting them to the SW.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with a 'ready-to-go' solution so the discharge doesn't slip to the following week due to administrative inertia."
+    },
+    {
+      "situation": "The daughter is threatening to refuse the discharge because she does not know how to manage her father's 'sundowning' behaviors alone.",
+      "action_taken": "Walked the daughter through the 'Day 1' expectations, including the arrival of the physical therapist and the medication reconciliation process, while escalating the need for a caregiver training session to the SW.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate the caregiver's immediate panic by focusing on the concrete schedule of the first 24 hours."
+    },
+    {
+      "situation": "The facility's medication list shows the patient is on a new antipsychotic for dementia behaviors, but the HHA's intake record still shows his pre-admission meds.",
+      "action_taken": "Flagged the discrepancy to the SW and requested that the updated discharge medication profile be re-sent to the HHA intake coordinator.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Ensure clinical safety at the handoff without performing the clinical reconciliation myself."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "I documented the daughter's refusal to accept the Friday discharge and notified the Social Worker that a formal family care conference is required to discuss the transition safety for a patient with dementia.",
+      "rationale": "The PN recognizes that a family's refusal to take a patient home is a high-level discharge barrier that falls under the Social Worker's clinical and legal responsibility."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "I contacted the HHA intake manager to confirm the assigned nurse's name for Saturday and then presented two alternative agencies with confirmed staffing to the SW to ensure the patient has coverage regardless of the primary agency's shortage.",
+      "rationale": "The PN stays within scope by verifying logistics and suggesting pre-vetted alternatives, leaving the final agency selection and discharge order to the facility staff."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "I spoke with the attending physician to recommend extending the patient's SNF stay by four days until the HHA can guarantee a nurse is available for the rural zip code.",
+      "rationale": "The PN is making a clinical recommendation to a physician regarding the length of stay, which is the role of the medical team and the Social Worker, not a non-clinical navigator."
+    }
+  ],
+  "narrative_summary": "86-year-old Mr. Arthur, recovering from a hip fracture with underlying dementia, faced a transition crisis when his rural HHA admitted they lacked a nurse for his specific zip code. While the facility planned for a Friday discharge, the PN discovered the staffing gap and the daughter\u2019s escalating fear that her father would fall again without 24/7 support. By sourcing alternative agencies with immediate availability and clarifying the intermittent nature of HHA visits for the family, the PN prevented a 'failed' discharge and secured a stable handoff for the weekend."
+}

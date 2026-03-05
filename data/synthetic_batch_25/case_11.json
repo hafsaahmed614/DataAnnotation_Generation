@@ -1,53 +1,72 @@
 {
-  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge from the SNF and the final decision on the discharge date. The PN is responsible for verifying that the HHA's home safety assessment is completed, educating the family on the HHA's safety requirements, and suggesting alternative vendors to the SW if the current home setup fails the HHA's inspection.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet for Arthur M. (79yo M, Left BKA). Verified Humana Gold Plus (Medicare Advantage) eligibility. Identified discrepancy in primary contact phone number; updated Atlantis to reflect the daughter's (POA) current mobile number.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with HHA services for wound care and PT. Patient has a stable environment with a ramp already installed.",
+  "weekly_facility_update": "Week 2: Patient meeting PT goals for prosthetic gait training. SW indicates tentative discharge for Friday. PN provided education on the 24-hour first visit requirement to the patient and daughter.",
+  "v_card_and_flyer_status": "Program flyer delivered to patient's bedside and V-Card successfully saved to the patient's personal smartphone contacts under 'Home Care Support'.",
+  "pre_dc_pulse_call_result": "Conducted 24-hour pre-discharge pulse call to daughter. Discovered a critical 'Handoff_Data_Mismatch' where the HHA intake record still listed the patient's pre-surgical medication list, missing the new post-amputation anticoagulants.",
+  "atlantis_final_sync": "Entered confirmed discharge date of 11/14 and scheduled first visit for 11/15 into Atlantis.",
+  "ma_visit_booking": "Medical Assistant scheduled for 11/15 at 10:00 AM, following the HHA Start of Care window to ensure the 24-hour incentive trigger is met.",
+  "narrative_summary": "The patient, a 79-year-old male recovering from a Left BKA, was monitored through a 14-day rehab stay. During the handoff stage, a pulse call revealed that the HHA possessed an outdated medication list, which the PN immediately flagged to the Social Worker for reconciliation. Despite this data mismatch, the PN successfully coordinated the HHA and MA schedules, ensuring the first visit occurred within 24 hours of discharge.",
   "format_1_state_log": [
     {
-      "event_description": "HHA (Precision Home Health) reports the home safety assessment is 'on hold' because the field evaluator could not gain entry; the patient's son claims he waited four hours and no one arrived.",
+      "event_description": "Initial Atlantis Audit",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The HHA field evaluator went to the patient's old address listed in the EMR instead of the son's home where the patient is relocating."
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Demographic Data Entry"
     },
     {
-      "event_description": "HHA evaluator identifies that the bathroom door frame is 2 inches too narrow for the patient's bariatric wheelchair; HHA refuses to schedule Start-of-Care (SOC) until a solution is documented.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "The SNF physical therapy team measured the patient's standard wheelchair, but the DME vendor delivered a wider bariatric model due to stock shortages."
+      "event_description": "Discovery of Handoff_Data_Mismatch (Medication List)",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff Error"
+    },
+    {
+      "event_description": "MA Visit Booking Confirmation",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The HHA intake coordinator is refusing to assign a nurse because the home safety assessment report shows 'unsecured throw rugs' and 'insufficient lighting' in the recovery area.",
-      "action_taken": "PN provides the family with a 'Day 1 Home Readiness' checklist and explains that the HHA will not initiate services until these specific trip hazards are removed.",
-      "taxonomy_category": "Patient Education",
-      "tactical_field_intent": "Shift the burden of environmental compliance to the family to prevent the HHA from officially rejecting the referral."
+      "situation": "Patient's phone number in Atlantis does not match the facility face sheet.",
+      "action_taken": "Updated Atlantis demographics to ensure the HHA and home team have the correct POA contact info.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The primary HHA (Precision) cannot send a tech to re-evaluate the home for 5 days, which will push the discharge past the patient's desired Friday date.",
-      "action_taken": "PN identifies 2 alternative HHAs in the same zip code who have 'evaluators on call' and presents these options to the Social Worker.",
-      "taxonomy_category": "Alternative Planning",
-      "tactical_field_intent": "Apply subtle pressure on the primary HHA by showing the SW that other agencies are more responsive, without explicitly recommending a change."
+      "situation": "HHA intake coordinator has an outdated medication profile during the 24-hour pulse call.",
+      "action_taken": "Flagged the discrepancy to the Social Worker and requested a corrected discharge summary be re-faxed to the agency.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Daughter is concerned about the timing of the first home visit.",
+      "action_taken": "Provided a physical appointment card and explained that the MA and Nurse would arrive within 24 hours of him getting home.",
+      "intent_category": "Educate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "PN documents the failed safety assessment due to the broken chair lift and notifies the Social Worker that the home environment is currently 'blocked,' then waits for the SW's care conference notes.",
-      "rationale": "This is a strategic deferral. The PN recognizes that if the home is unsafe, the decision to delay discharge or pivot to LTC is a clinical and social work responsibility that requires a formal team meeting."
+      "description": "Wait for the Social Worker to notice the medication list discrepancy during their final discharge meeting with the patient.",
+      "rationale": "Respects the SW's role in clinical documentation but risks a service delay or medication error if the SW misses the mismatch during the busy discharge window."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "PN contacts the HHA intake coordinator to clarify the specific modifications needed to pass the assessment and suggests 3 pre-vetted DME vendors to the SW who offer expedited grab-bar installation.",
-      "rationale": "The PN stays within scope by facilitating communication and providing resources (suggesting) to the SW, while educating the family on what is needed to secure the SOC date."
+      "description": "Identify the specific medication discrepancies during the pulse call and immediately alert the SW to ensure the HHA receives the correct orders before the patient leaves.",
+      "rationale": "Follows the Stage 3 Handoff checklist by verifying handoff data and escalating clinical mismatches to the appropriate professional (SW) without overstepping into clinical management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "PN calls the patient's insurance company to request an emergency waiver for the home safety requirement, arguing that the patient's amputation site is stable enough for a 'delayed' assessment.",
-      "rationale": "This is a boundary failure. The PN is attempting to negotiate insurance requirements and clinical safety protocols, which are roles strictly reserved for the facility's clinical team and the HHA's medical director."
+      "description": "Directly call the patient's surgeon to verify the current anticoagulant dosage and then call the HHA nurse to verbally update the medication administration record.",
+      "rationale": "While ensuring accuracy, this violates the SW Boundary and Banned Actions by managing medications and touching clinical documentation, which is strictly outside the PN scope."
     }
   ],
-  "narrative_summary": "79-year-old male post-right leg amputation is clinically ready for discharge, but the transition is stalled by a pending home safety assessment from the HHA. Conflicting reports between the HHA evaluator and the patient's son regarding home access have created a logistical 'Fog of War' that threatens the Friday discharge window. The PN is currently navigating the HHA's strict environment protocols regarding wheelchair clearance and lighting to ensure the patient doesn't return to an unsafe home without skilled nursing support. The case hinges on whether the family can modify the home environment before the SNF's clinical clearance expires."
+  "case_outcome": "Success_Home_with_First_Visit"
 }

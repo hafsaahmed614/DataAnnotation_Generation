@@ -1,0 +1,59 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is responsible for the clinical discharge order and the formal submission of the referral to the Home Health Agency (HHA). The Patient Navigator is focusing on the 'Holiday Coverage Gap' logistics, specifically verifying if the HHA can staff a Start-of-Care (SOC) visit over the Labor Day weekend and ensuring the complex Parkinson's medication schedule is accurately communicated to the home team to prevent a hospital return.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient cleared for discharge following UTI stabilization; however, the primary HHA (Mountain View Home Health) reports they are not accepting new starts until the Tuesday after the Labor Day holiday.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "The HHA Intake Coordinator is off for the holiday weekend, and the skeleton crew on-site is prohibited from authorizing new admissions without supervisor sign-off."
+    },
+    {
+      "event_description": "Caregiver expresses panic regarding the 72-hour gap without professional monitoring of the patient's Parkinson's 'off-periods' and UTI relapse signs.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The family is threatening to refuse the Friday discharge unless a Saturday nurse visit is guaranteed, which the current HHA cannot provide."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The facility's medication handoff list shows Sinemet 25/100 four times daily, but the HHA's intake portal only displays a twice-daily dosage.",
+      "action_taken": "Flagged the dosage discrepancy to the Social Worker and provided the HHA's intake fax number to ensure the corrected list was sent before the office closed for the holiday.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Prevent a medication-induced Parkinsonian crisis on Day 1 without performing a clinical reconciliation myself."
+    },
+    {
+      "situation": "Primary HHA admits they have no nurses available in the patient's zip code until Wednesday due to holiday vacation requests.",
+      "action_taken": "Identified two alternative in-network HHAs with confirmed weekend 'on-call' availability and presented these options to the Social Worker for a potential secondary referral.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with an immediate 'path of least resistance' to keep the discharge on track for Friday."
+    },
+    {
+      "situation": "The family is unsure how to use the portable oxygen concentrator scheduled for home delivery.",
+      "action_taken": "Verified with the DME vendor that the delivery includes a 'white glove' setup and requested a specific delivery window to ensure the family is present for the education.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "Reduce the likelihood of an 'equipment failure' emergency call that would trigger a 911 transport over the weekend."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Documented the HHA's inability to provide a weekend visit and notified the Social Worker that the family is feeling anxious, then deferred to the facility's weekend on-call team for the final discharge decision.",
+      "rationale": "This is a strategic deferral that recognizes the PN cannot force an HHA to staff a visit and ensures the facility's clinical team retains the risk-assessment responsibility for a Friday discharge."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Educated the family on 'Day 1' expectations, including a step-by-step guide on how to contact the HHA's after-hours supervisor if a nurse does not arrive, while suggesting to the SW that a backup HHA be contacted to confirm weekend capacity.",
+      "rationale": "This follows the 'Support, Suggest, Escalate' model by empowering the family with logistics and providing the SW with a solution-oriented alternative without overstepping into clinical management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contacted the HHA's Director of Nursing on their personal cell phone to argue that the patient's Parkinson's diagnosis makes them 'high-risk' and successfully negotiated for an emergency nurse visit on Saturday morning.",
+      "rationale": "While this achieves a positive patient outcome, it is a 'Hero Complex' overstep. The PN is manipulating HHA clinical triage and staffing, which violates the collaborative boundary with the agency and the facility's discharge planner."
+    }
+  ],
+  "narrative_summary": "The transition for this 82-year-old patient is complicated by a 'Holiday Coverage Gap' that threatens to delay home health services until Tuesday, despite a Friday discharge. The Patient Navigator is managing significant caregiver panic regarding the 72-hour service void, especially given the patient's complex Parkinson's medication regimen. By identifying alternative agencies with weekend capacity and flagging a critical medication list mismatch to the Social Worker, the PN is attempting to bridge the gap between the facility's clinical sign-off and the HHA's actual start-of-care."
+}

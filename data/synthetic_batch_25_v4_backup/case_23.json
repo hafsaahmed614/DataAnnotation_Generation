@@ -1,0 +1,67 @@
+{
+  "boundary_planning_scratchpad": "The Social Worker is handling the formal mediation between the patient's children and the final clinical discharge order. The PN is only handling the verification of HHA capacity for the complex renal dressing, educating the family on Day 1 home expectations, and suggesting alternative agencies when the primary HHA's intake coordinator is unresponsive.",
+  "format_1_state_log": [
+    {
+      "event_description": "Family meeting held by SW; daughter wants home care but son demands LTC placement, leading to a temporary hold on the discharge plan.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "The Social Worker must wait for the family to reach a consensus or for the patient to exert their right to choose home care before the transition can proceed."
+    },
+    {
+      "event_description": "PN attempts to confirm the Thursday start-of-care, but the HHA Intake Coordinator is out of the office unexpectedly.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA's internal policy prevents any admission scheduling without the specific signature of the lead intake coordinator, who is currently on PTO."
+    },
+    {
+      "event_description": "SW confirms the discharge is finally moving forward for Friday, but the HHA reports they are missing the specific physician orders for the renal graft dressing.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "The facility's unit secretary faxed the medication list but neglected the specific wound care treatment plan required by the HHA to staff the case."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary HHA's intake coordinator is unresponsive, and the Friday discharge window is closing.",
+      "action_taken": "Presented two pre-vetted alternative HHAs in the patient's zip code to the Social Worker, both of whom confirmed weekend admission capacity.",
+      "taxonomy_category": "Alternative Planning",
+      "tactical_field_intent": "Provide the SW with an 'easy button' to pivot the referral without the PN appearing to steer the patient to a preferred provider."
+    },
+    {
+      "situation": "The son expresses fear that his mother will bleed out from her dialysis access site on the first night home.",
+      "action_taken": "Conducted a family education session detailing exactly what the HHA nurse will check during the first 24 hours and how to reach the HHA on-call line.",
+      "taxonomy_category": "Patient Education",
+      "tactical_field_intent": "De-escalate caregiver panic to prevent a last-minute refusal of discharge that would stall the transition."
+    },
+    {
+      "situation": "Discrepancy found between the SNF's discharge summary and the HHA's initial intake notes regarding the frequency of dressing changes.",
+      "action_taken": "Flagged the data mismatch to the Social Worker and requested a clarified order be sent to the HHA before the patient leaves the building.",
+      "taxonomy_category": "Boundary Escalation",
+      "tactical_field_intent": "Force the facility to reconcile clinical documentation early to avoid a 'no-visit' scenario on Day 1 due to incomplete orders."
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "After witnessing the son and daughter's heated argument in the lobby, the PN documented the conflict and notified the Social Worker that HHA logistics would remain on standby until the SW resolved the family's placement dispute.",
+      "rationale": "This is strategic deferral. The PN recognizes that family mediation is a core Social Worker function and avoids getting caught in the crossfire of a legal or emotional dispute that is outside the scope of transition logistics."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN organized a brief meeting with the Social Worker to suggest providing the family with a 'Day 1 Home Care Checklist,' which explicitly outlines the HHA's responsibilities for renal care to address the son's safety concerns.",
+      "rationale": "The PN is supporting the transition by using education to reduce anxiety, while correctly deferring the coordination of the family meeting to the Social Worker."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN pulled the son aside and provided a detailed comparison of the facility's infection rates versus the HHA's outcomes to convince him that home care was the clinically superior and safer choice for his mother.",
+      "rationale": "This is a hero-complex overstep. The PN is making clinical quality comparisons and trying to influence a placement decision, which is the role of the physician and the Social Worker, not the Navigator."
+    }
+  ],
+  "narrative_summary": "Martha, a 77-year-old managing end-stage renal disease, was prepared for discharge following a vascular access infection. The transition was nearly derailed by a sharp disagreement between her children regarding the safety of home care, which the PN addressed through targeted caregiver education. Despite a bureaucratic delay caused by an absent HHA intake coordinator and missing wound care orders, the PN secured the transition by presenting pre-vetted agency alternatives to the Social Worker. The case concluded with a successful home handoff, ensuring the HHA nurse was prepared for the complex renal dressing requirements on the first evening."
+}
