@@ -43,21 +43,21 @@ EDD_DELTA_OPTIONS = [
 def _load_saved_answers(client, session_id):
     """Fetch any previously saved evaluation answers for this session."""
     f1_resp = _retry(lambda: (
-        client.table("eval_format_1_timeline_v5")
+        client.table("eval_format_1_timeline_v6")
         .select("*")
         .eq("session_id", session_id)
         .order("event_index")
         .execute()
     ))
     f2_resp = _retry(lambda: (
-        client.table("eval_format_2_tactics_v5")
+        client.table("eval_format_2_tactics_v6")
         .select("*")
         .eq("session_id", session_id)
         .order("triple_index")
         .execute()
     ))
     f3_resp = _retry(lambda: (
-        client.table("eval_format_3_boundaries_v5")
+        client.table("eval_format_3_boundaries_v6")
         .select("*")
         .eq("session_id", session_id)
         .order("option_index")
@@ -76,24 +76,24 @@ def _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
     """Save current answers to eval tables (delete old rows first)."""
     svc = get_service_client()
     # Clear existing rows for this session
-    svc.table("eval_format_1_timeline_v5").delete().eq("session_id", session_id).execute()
-    svc.table("eval_format_2_tactics_v5").delete().eq("session_id", session_id).execute()
-    svc.table("eval_format_3_boundaries_v5").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_1_timeline_v6").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_2_tactics_v6").delete().eq("session_id", session_id).execute()
+    svc.table("eval_format_3_boundaries_v6").delete().eq("session_id", session_id).execute()
 
     common = {"session_id": session_id, "case_label": case_label, "navigator_name": navigator_name}
 
     # Insert current answers
     if f1_inputs:
         f1_rows = [{**common, **inp} for inp in f1_inputs]
-        svc.table("eval_format_1_timeline_v5").insert(f1_rows).execute()
+        svc.table("eval_format_1_timeline_v6").insert(f1_rows).execute()
 
     if f2_inputs:
         f2_rows = [{**common, **inp} for inp in f2_inputs]
-        svc.table("eval_format_2_tactics_v5").insert(f2_rows).execute()
+        svc.table("eval_format_2_tactics_v6").insert(f2_rows).execute()
 
     if f3_inputs:
         f3_rows = [{**common, **inp} for inp in f3_inputs]
-        svc.table("eval_format_3_boundaries_v5").insert(f3_rows).execute()
+        svc.table("eval_format_3_boundaries_v6").insert(f3_rows).execute()
 
 
 def render():
@@ -114,7 +114,7 @@ def render():
 
     # ── Fetch case data ──────────────────────────────────────────────────────
     case_resp = (
-        client.table("synthetic_cases_v5")
+        client.table("synthetic_cases_v6")
         .select("*")
         .eq("id", case_id)
         .single()
@@ -138,12 +138,15 @@ def render():
         st.markdown(f"**Atlantis Entry Confirmed:** {'Yes' if case.get('atlantis_entry_confirmed') else 'No'}")
         st.markdown(f"**Demographic Audit:** {case.get('demographic_audit_note', 'N/A')}")
         st.markdown(f"**Home vs LTC Determination:** {case.get('home_vs_ltc_determination', 'N/A')}")
+        st.markdown(f"**Connection Intake Responses:** {case.get('stage_1_intake_responses', 'N/A')}")
 
         st.subheader("Stage 2: Maintenance & Engagement")
         st.markdown(f"**Weekly Facility Update:** {case.get('weekly_facility_update', 'N/A')}")
         st.markdown(f"**V-Card & Flyer Status:** {case.get('v_card_and_flyer_status', 'N/A')}")
 
         st.subheader("Stage 3: Handoff & Success Verification")
+        st.markdown(f"**HHA Confirmation Status:** {case.get('hha_confirmation_status', 'N/A')}")
+        st.markdown(f"**Confidence Audit (Follow-up):** {case.get('stage_3_followup_audit', 'N/A')}")
         st.markdown(f"**Pre-DC Pulse Call:** {case.get('pre_dc_pulse_call_result', 'N/A')}")
         st.markdown(f"**Atlantis Final Sync:** {case.get('atlantis_final_sync', 'N/A')}")
         st.markdown(f"**MA Visit Booking:** {case.get('ma_visit_booking', 'N/A')}")
@@ -300,7 +303,7 @@ def render():
 
     # Load saved values from session if resuming
     session_resp = _retry(lambda: (
-        client.table("evaluation_sessions_v5")
+        client.table("evaluation_sessions_v6")
         .select("overall_field_authenticity, authenticity_reasoning, improvement_suggestion")
         .eq("id", session_id)
         .single()
@@ -335,7 +338,7 @@ def render():
     # ── AUTO-SAVE on every interaction ─────────────────────────────────────────
     _save_answers(session_id, f1_inputs, f2_inputs, f3_inputs,
                   case_label, navigator_name)
-    get_service_client().table("evaluation_sessions_v5").update({
+    get_service_client().table("evaluation_sessions_v6").update({
         "overall_field_authenticity": overall_score,
         "authenticity_reasoning": authenticity_reasoning,
         "improvement_suggestion": improvement_suggestion,
@@ -349,7 +352,7 @@ def render():
                       case_label, navigator_name)
 
         # Mark session completed with overall score
-        get_service_client().table("evaluation_sessions_v5").update({
+        get_service_client().table("evaluation_sessions_v6").update({
             "status": "completed",
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "overall_field_authenticity": overall_score,

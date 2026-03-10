@@ -131,6 +131,30 @@
       "signal_barrier": "HHA_SOC_Overlap",
       "expected_delay": "+1–3 Days",
       "logical_dna_rule": "The HHA's start-of-care (SOC) scheduling conflicts with another patient admission or an internal staffing constraint; the first visit cannot be booked in the 24-hour window post-discharge, risking the PN's success metric."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA_Acceptance_Lag",
+      "expected_delay": "+2–5 Days",
+      "logical_dna_rule": "The HHA has received the referral but has not yet confirmed acceptance (no SOC date, no assigned nurse, no first-visit window); the PN cannot schedule the MA because the HHA is not yet 'In Place'. The PN must investigate the specific barrier (staffing? intake backlog? missing orders?) and escalate to the SW."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Last_Minute_Clinical_Change",
+      "expected_delay": "+1–4 Days",
+      "logical_dna_rule": "A clinical change occurs within 48 hours of planned discharge (new lab results, medication adjustment, therapy setback) that shifts the D/C date or changes the home care plan; the PN must re-verify HHA readiness and re-run the Confidence Audit with the SW and patient/family."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Intake_Barrier_Identified",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The Connection Intake (Q4: 'Do you have any concerns about going home?') surfaces a specific barrier — no caregiver available, unsafe home environment, or patient anxiety about managing care alone; the PN must escalate to the SW for intervention before proceeding with transition planning."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "MA_Scheduling_Premature",
+      "expected_delay": "+1–3 Days (rework)",
+      "logical_dna_rule": "The MA was scheduled before the HHA confirmed 'In Place' status; the HHA subsequently delays or cancels the first visit, leaving the MA with no patient to see. The PN must cancel and reschedule the MA after re-confirming HHA readiness, wasting time and risking the incentive window."
     }
   ]
 }

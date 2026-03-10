@@ -16,8 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25_v5"
-TABLE_NAME = "synthetic_cases_v5"
+BATCH_ID = "synthetic_batch_25_v6"
+TABLE_NAME = "synthetic_cases_v6"
 
 
 def main():
@@ -45,10 +45,13 @@ def main():
             "atlantis_entry_confirmed": data.get("atlantis_entry_confirmed", False),
             "demographic_audit_note": data.get("demographic_audit_note", ""),
             "home_vs_ltc_determination": data.get("home_vs_ltc_determination", ""),
+            "stage_1_intake_responses": data.get("stage_1_intake_responses", ""),
             # Stage 2
             "weekly_facility_update": data.get("weekly_facility_update", ""),
             "v_card_and_flyer_status": data.get("v_card_and_flyer_status", ""),
             # Stage 3
+            "hha_confirmation_status": data.get("hha_confirmation_status", ""),
+            "stage_3_followup_audit": data.get("stage_3_followup_audit", ""),
             "pre_dc_pulse_call_result": data.get("pre_dc_pulse_call_result", ""),
             "atlantis_final_sync": data.get("atlantis_final_sync", ""),
             "ma_visit_booking": data.get("ma_visit_booking", ""),

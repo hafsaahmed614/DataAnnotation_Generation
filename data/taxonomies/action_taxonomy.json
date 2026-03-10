@@ -46,6 +46,21 @@
           "primary_intents": [
             "Maintain relationship for early discharge info"
           ]
+        },
+        {
+          "category": "Conduct_Connection_Intake",
+          "action_items": [
+            "Ask Q1: 'Have you heard of [our company]?'",
+            "Ask Q2: 'Do you know why we are here?'",
+            "Ask Q3: 'Has anyone explained home health services to you?'",
+            "Ask Q4: 'Do you have any concerns about going home?'",
+            "Document patient responses in stage_1_intake_responses",
+            "If Q4 surfaces specific barriers (no caregiver, unsafe home, patient anxiety), escalate to SW immediately"
+          ],
+          "primary_intents": [
+            "Establish baseline patient awareness and anxiety level",
+            "Identify early barriers that require SW intervention"
+          ]
         }
       ]
     },
@@ -143,6 +158,46 @@
           ],
           "primary_intents": [
             "Ensure patient feels informed and comfortable"
+          ]
+        },
+        {
+          "category": "Verify_HHA_Status_Before_MA_Schedule",
+          "action_items": [
+            "Confirm HHA has set the SOC date",
+            "Confirm HHA has assigned a nurse for the first visit",
+            "Confirm HHA has provided the first-visit time window",
+            "Only after all three confirmations ('In Place'), proceed to schedule the MA",
+            "If HHA is NOT 'In Place', investigate the specific barrier and escalate to SW"
+          ],
+          "primary_intents": [
+            "Prevent premature MA scheduling that risks a wasted visit",
+            "Ensure the HHA-First Rule is satisfied before committing MA resources"
+          ]
+        },
+        {
+          "category": "Deep_Dive_HHA_Barrier",
+          "action_items": [
+            "When HHA is not 'In Place', call the HHA intake coordinator to identify the specific blocker",
+            "Categorize the barrier (staffing shortage, intake freeze, missing orders, SOC scheduling conflict)",
+            "Escalate the categorized barrier to the SW with a specific ask (e.g., 'Can you follow up on the missing orders?')",
+            "Document the barrier in hha_confirmation_status"
+          ],
+          "primary_intents": [
+            "Transform a vague 'HHA not ready' into an actionable, specific barrier",
+            "Give the SW a clear next step rather than a generic escalation"
+          ]
+        },
+        {
+          "category": "Perform_Confidence_Followup",
+          "action_items": [
+            "Call SW to confirm D/C date is firm and HHA has confirmed start-of-care",
+            "Call patient/family to confirm understanding of Day 1 plan (who is arriving, equipment, what to do if nurse is late)",
+            "Document both calls in stage_3_followup_audit",
+            "If either call reveals a gap, escalate before proceeding to pulse call"
+          ],
+          "primary_intents": [
+            "Close the Confidence Loop before the final 24-hour window",
+            "Prevent discharge-day surprises by verifying alignment across all parties"
           ]
         },
         {
