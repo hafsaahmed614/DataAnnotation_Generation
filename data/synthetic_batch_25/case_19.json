@@ -1,74 +1,72 @@
 {
+  "role_delineation_check": "Social Worker (SW) is responsible for securing the HHA agency and coordinating the Friday discharge logistics. The PN's role is strictly to audit Atlantis demographic data, verify the family's readiness sentiment, and flag the potential 72-hour monitoring gap to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified Medicare Advantage PPO; confirmed home address matches face sheet. Discovered an error in the emergency contact phone number in Atlantis and corrected it after speaking with the patient's daughter.",
-  "home_vs_ltc_determination": "Home - SW confirmed the patient has a strong social support network and the goal is to return home with specialized PT for MS management.",
-  "stage_1_intake_responses": "Q1: No, I haven't heard of you. Q2: To help me get settled at home? Q3: The social worker mentioned someone would help with the transition. Q4: I am worried about the timing of my IV steroid infusions and if I can manage the stairs; escalated mobility/medication concerns to SW.",
-  "weekly_facility_update": "Week 2: Patient is completing IV steroid course; PT reports improved gait but remains at high fall risk. SW targets discharge for Friday.",
-  "v_card_and_flyer_status": "V-Card successfully inserted into patient's smartphone; program flyer delivered to daughter during bedside visit.",
-  "hha_confirmation_status": "In Place - Initially 'Not In Place' due to Provider Illness (assigned MS-specialist nurse out with flu); investigated with HHA Intake and confirmed a backup nurse is assigned for Saturday morning SOC.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday D/C is firm and HHA has confirmed the Saturday 9:00 AM start-of-care. Call 2 (to family): Confirmed daughter understands the Saturday nurse arrival and has the walker ready.",
-  "pre_dc_pulse_call_result": "Reached patient 24 hours prior to discharge; confirmed she has her new prescriptions and knows the MA will visit on Sunday.",
-  "atlantis_final_sync": "Entered D/C date (11/15) and 1st visit date (11/16) into Atlantis system.",
-  "ma_visit_booking": "MA visit scheduled for 11/16 at 2:00 PM; booking was held until HHA confirmed the backup nurse assignment following the primary provider's illness.",
-  "narrative_summary": "Patient Elena Vance was triaged in Atlantis following an MS flare-up with a clear goal for home discharge. During the Connection Intake, she expressed anxiety regarding her IV steroid schedule, which was immediately escalated to the Social Worker. The transition faced a delay when the primary HHA nurse fell ill, but by adhering to the HHA-First Rule, I delayed MA scheduling until a backup nurse was confirmed 'In Place'. The Confidence Loop was closed through a final audit with the SW and family, ensuring a safe handoff for the Saturday start-of-care.",
+  "demographic_audit_note": "Verified DOB (05/14/1954) and Medicare Advantage status. Identified a discrepancy in the primary contact phone number; the face sheet listed the daughter's mobile while Atlantis held an outdated landline. Flagged for SW correction.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: PT notes patient is meeting gait goals post-spinal fusion. SW confirms Friday discharge target. PN flagged the 'Friday Discharge Gap' to SW as the HHA does not perform weekend intake.",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's phone for Caller ID recognition; program flyer delivered to daughter to explain the first-visit timeline.",
+  "pre_dc_pulse_call": "Reached daughter via phone. Sentiment Score: Anxious. Daughter expressed concern about managing her father's pain and mobility over the weekend without professional support.",
+  "atlantis_final_sync": "Discharge date of Friday entered. First home visit date set for Monday morning in Atlantis, reflecting the HHA's weekend staffing freeze.",
+  "ma_visit_booking": "MA visit booked for Monday at 09:00 AM. This was scheduled only after the SW confirmed HHA acceptance and the start-of-care date in the Atlantis portal.",
+  "narrative_summary": "Audited Atlantis records against the facility face sheet to ensure data accuracy for the HHA referral. Verified the family's sentiment score, which revealed high anxiety regarding the Friday discharge and subsequent weekend care gap. Educated the family on what to expect during the first visit while flagging the 72-hour monitoring delay to the SW for potential bridging orders. Secured the first MA visit for Monday morning following system confirmation of HHA readiness.",
   "format_1_state_log": [
     {
-      "event_description": "HHA intake coordinator reports the assigned MS-specialist nurse is out with flu.",
+      "event_description": "Atlantis Data Lag: Outdated phone number in system.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "Provider Illness"
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative data entry delay between facility and Atlantis portal."
     },
     {
-      "event_description": "PN investigates barrier and HHA identifies a backup generalist nurse to cover the Saturday SOC.",
-      "clinical_impact": "Improves",
+      "event_description": "Friday Discharge Gap: HHA does not staff weekend admissions.",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "N/A"
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "HHA operational constraint regarding weekend intake coordinators."
     },
     {
-      "event_description": "PN verifies HHA 'In Place' status and proceeds to schedule MA visit within 24 hours of SOC.",
-      "clinical_impact": "Improves",
+      "event_description": "Sentiment Readiness Gap: Daughter expresses high anxiety about spinal fusion recovery.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "N/A"
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver panic regarding post-surgical management without immediate professional oversight."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient expresses anxiety about IV infusion timing during Connection Intake Q4.",
-      "action_taken": "Escalated clinical concerns to the Social Worker for medication-schedule clarification.",
-      "intent_category": "Escalate"
+      "situation": "Daughter is worried about the 72-hour gap between Friday discharge and Monday's first visit.",
+      "action_taken": "Educated the daughter on the Day 1 visit timeline and what equipment should be present upon arrival.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "HHA reports the assigned nurse is sick and cannot meet the Friday start-of-care.",
-      "action_taken": "Investigated the specific barrier with HHA Intake and held the MA schedule until a backup was assigned.",
-      "intent_category": "Verify"
+      "situation": "HHA intake portal shows 'Pending' status for a Friday referral.",
+      "action_taken": "Flagged the pending status to the SW and waited for the portal to update to 'Accepted'.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "Final 24-hour window before discharge.",
-      "action_taken": "Performed Confidence Audit calls to both the SW and the patient's family to verify Day 1 alignment.",
+      "situation": "Spinal fusion patient requires specific bed height for safe transfers.",
+      "action_taken": "Verified with the daughter that the home environment was ready for the patient's return.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to notify the HHA about the nurse illness and provide a new discharge date before updating Atlantis.",
-      "rationale": "This respects the SW's role as the primary coordinator but delays the PN's ability to secure the MA visit window."
+      "description": "Wait for the Social Worker to address the HHA's weekend staffing freeze and confirm if a different agency can take the case sooner.",
+      "rationale": "Respects the SW boundary as the PN is forbidden from searching for or suggesting alternative HHA agencies."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Call the HHA intake coordinator to identify the specific staffing blocker, categorize it as Provider Illness, and escalate the need for a backup nurse to the SW to keep the Friday discharge on track.",
-      "rationale": "This follows the PN's 'Deep Dive HHA Barrier' checklist and ensures the HHA-First Rule is satisfied before scheduling the MA."
+      "description": "Document the daughter's anxiety in Atlantis, flag the Friday Discharge Gap to the SW, and verify the HHA's acceptance status via the portal before scheduling the MA.",
+      "rationale": "Follows the Liaison model by using system data and family education to support the transition without contacting vendors."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call a different HHA agency to see if they have an available MS-specialist nurse and suggest to the SW that they switch the referral to the new agency.",
-      "rationale": "Suggesting specific alternative HHAs to the SW is a Banned Action and an automatic overstep of the PN's boundary."
+      "description": "Call the HHA Intake Coordinator directly to negotiate a Saturday 'Start of Care' visit and then call the DME vendor to ensure the hospital bed is delivered by Friday noon.",
+      "rationale": "Violates the No-Vendor Rule and uses 'Fixer' verbs like negotiate and ensure, which are outside the PN scope."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

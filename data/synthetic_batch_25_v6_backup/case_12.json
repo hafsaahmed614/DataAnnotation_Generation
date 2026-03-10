@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Straight (Red, White, and Blue card). Cross-checked Atlantis record against facility face sheet; corrected the POA phone number (daughter) and verified the primary residence is within the MA's 30-mile travel radius.",
+  "home_vs_ltc_determination": "Home. Social Worker confirmed the goal is a transition to home-based dialysis support.",
+  "stage_1_intake_responses": "Q1: No, family is unfamiliar with our services. Q2: Patient believes we are 'dialysis nurses.' Q3: SW provided a packet but did not explain timing. Q4: Patient expressed high anxiety regarding fluid restriction management at home; PN immediately escalated this clinical concern to the SW for a dietitian consult before discharge.",
+  "weekly_facility_update": "Week 2: Patient GFR is stable. SW reports the discharge target is Friday. Dialysis chair time at the local center has been secured for Mon/Wed/Fri.",
+  "v_card_and_flyer_status": "Program flyer delivered to patient's bedside table; V-Card successfully inserted into the daughter's contact list during the bedside meeting.",
+  "hha_confirmation_status": "Not In Place. The HHA Intake Coordinator (Margie) is out sick with no coverage. Referral is sitting in a queue; no SOC date or nurse has been assigned. PN investigated the delay and flagged the coordinator's absence to the SW.",
+  "stage_3_followup_audit": "Call 1 (SW): Confirmed D/C date is firm for Friday, but flagged that HHA is stalled due to intake coordinator illness. Call 2 (Family): Confirmed daughter understands the 'Day 1' plan and equipment needs, but informed her we are still verifying the HHA's arrival window.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Home readiness confirmed, including arrival of the hospital bed. Daughter is aware that the HHA nurse assignment is still pending due to the intake backlog.",
+  "atlantis_final_sync": "Entered Friday as the D/C date. 1st visit date entered as Saturday morning following late-Friday HHA confirmation.",
+  "ma_visit_booking": "MA scheduled for Saturday at 10:00 AM. Booking was held until Friday at 3:45 PM when the HHA finally confirmed the SOC date, assigned Nurse 'Brenda,' and provided a 9:00 AM - 12:00 PM window.",
+  "narrative_summary": "77yo female with renal failure transitioning to home care. Initial Connection Intake revealed significant patient anxiety regarding home fluid management, which was successfully escalated to the Social Worker. The transition faced an operational bottleneck when the HHA Intake Coordinator became unavailable, but the PN adhered to the HHA-First Rule, delaying MA scheduling until HHA 'In Place' status was secured late on the day of discharge. The Confidence Loop was completed via the audit calls, ensuring the family remained aligned despite the coordinator delay.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA Intake Coordinator Unavailable",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Operational: Single point of failure in HHA intake department prevents referral processing."
+    },
+    {
+      "event_description": "Connection Intake Q4 Barrier Identification",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Patient/Caregiver: Early identification of renal diet anxiety allows for SW/Dietitian intervention prior to transition."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient confused about our role, thinking we are dialysis technicians.",
+      "action_taken": "Conducted Connection Intake (Q1-Q3) to clarify home health support vs. clinical dialysis.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA has not responded to the referral 48 hours before discharge.",
+      "action_taken": "Called HHA directly to identify the specific barrier (Intake Coordinator illness) and reported findings to the SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Daughter expresses frustration over lack of HHA start-of-care time.",
+      "action_taken": "Performed Confidence Audit call to family to validate the Day 1 plan and equipment status while acknowledging the HHA lag.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to follow up with the HHA regarding the missing start-of-care date and nurse assignment.",
+      "rationale": "Respects the SW's role as the primary liaison for agency communication and avoids redundant phone calls to the HHA."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Investigate the HHA delay by calling the intake office, identifying the coordinator's absence, and escalating the specific 'Operational' barrier to the SW to facilitate a potential agency pivot or push.",
+      "rationale": "Follows the Deep_Dive_HHA_Barrier protocol to provide the SW with actionable data rather than a generic complaint, while respecting the HHA-First Rule."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Schedule the Medical Assistant for the Saturday visit immediately to ensure the incentive window is met, assuming the HHA will eventually process the paperwork by Friday evening.",
+      "rationale": "Risks a wasted visit and failed incentive if the HHA coordinator remains out and the nurse is never assigned, violating the HHA-First Rule."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

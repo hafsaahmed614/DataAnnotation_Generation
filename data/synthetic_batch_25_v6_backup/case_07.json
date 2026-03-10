@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage eligibility. Cross-check of Atlantis against facility face sheet revealed a discrepancy in the primary phone number; updated Atlantis to reflect daughter's cell (POA) as primary contact.",
+  "home_vs_ltc_determination": "SW confirms the goal is Home discharge, though notes significant friction between the patient's daughter (advocating for home) and the wife (expressing fear of medical management).",
+  "stage_1_intake_responses": "Q1: No, family has not heard of the company. Q2: Understands we assist with the transition. Q3: SW provided a brief overview. Q4: Patient is eager to return home, but wife expressed 'Caregiver_Panic' regarding the management of the sternal incision and medication complexity; concern escalated to SW immediately.",
+  "weekly_facility_update": "Week 2: Patient meeting physical therapy benchmarks. SW indicates a tentative discharge for Friday. Conducted a family education session to walk the wife through Day 1 expectations to mitigate anxiety.",
+  "v_card_and_flyer_status": "V-Card inserted into the patient\u2019s daughter\u2019s smartphone; program flyer delivered to the wife at the bedside.",
+  "hha_confirmation_status": "Not In Place. Investigation of HHA (Elite Home Health) revealed an 'HHA_Staffing_Shortage' in the patient's rural zip code; no nurse yet assigned for the Friday window. PN escalated to SW to determine if an alternative agency or a Monday discharge is required.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed the D/C date is pushed to Monday to ensure HHA coverage. Call 2 (to daughter): Verified understanding of the Day 1 plan, including the arrival of the hospital bed and the HHA nurse's 4-hour arrival window.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Confirmed that the wife has agreed to the home plan following SW counseling. Home is prepped with the necessary DME.",
+  "atlantis_final_sync": "Entered D/C date of 10/28 and 1st visit date of 10/29 into Atlantis.",
+  "ma_visit_booking": "MA scheduled for 10/29 at 11:00 AM, confirmed only after HHA (Elite) provided the SOC date and assigned RN Miller for the morning window.",
+  "narrative_summary": "Arthur\u2019s transition was initially threatened by 'Caregiver_Panic' from his wife, which I identified during the CONNECTION INTAKE and escalated to the SW. During the MAINTENANCE phase, I focused on family education while navigating a 'HHA_Staffing_Shortage' that delayed the start-of-care. By performing the CONFIDENCE AUDIT and adhering to the HHA-First Rule, I ensured the MA was only scheduled once the HHA was 'In Place,' resulting in a successful home transition.",
+  "format_1_state_log": [
+    {
+      "event_description": "Connection Intake Q4 surfaces wife's refusal to manage cardiac meds/chest wound.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "HHA intake reports no available RN for the patient's specific zip code for a Friday start.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "HHA_Staffing_Shortage"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Primary caregiver (wife) threatens to refuse discharge due to fear of clinical tasks.",
+      "action_taken": "Escalated concern to SW and provided family with the 'Day 1 Expectations' flyer.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA has not confirmed a nurse assignment 48 hours before discharge.",
+      "action_taken": "Called HHA intake coordinator to identify the specific staffing barrier and informed SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Discharge date moved from Friday to Monday.",
+      "action_taken": "Conducted a new Confidence Audit call to the daughter to re-verify the Monday arrival plan.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon hearing the wife's disagreement with the discharge plan, the PN steps back and notifies the Social Worker that the family needs to resolve their conflict before any further transition steps are taken.",
+      "rationale": "Respects the SW boundary regarding family counseling and discharge planning, ensuring the PN does not overstep into mediation."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN conducts the Connection Intake and identifies the wife's anxiety as a barrier. The PN then calls the HHA to verify if they can provide a morning SOC visit to ease the wife's burden, only scheduling the MA after the HHA confirms 'In Place' status.",
+      "rationale": "Follows the 3-stage checklist, identifies barriers early via Connection Intake, and adheres to the HHA-First Rule for scheduling."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN suggests the daughter switch to a different HHA that the PN knows has better staffing in that zip code, then calls the wife's cardiologist to ask for a medication simplification to make the home plan more palatable.",
+      "rationale": "Violates the SW boundary by suggesting HHAs and violates the clinical boundary by attempting to influence physician medication orders."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified 72yo female demographics in Atlantis; corrected a transposition error in the primary phone number for the daughter (POA) and confirmed Straight Medicare as primary with Medicaid secondary for the CHC Waiver.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with skilled nursing and PT, contingent on successful ramp installation via Medicaid CHC Waiver.",
+  "stage_1_intake_responses": "Q1: No, first time hearing about the program. Q2: Thinks we are 'insurance adjusters'. Q3: SW mentioned home care, but patient is unclear on the difference between PT and nursing. Q4: High anxiety regarding the three concrete steps at her front door; escalated the immediate need for the CHC ramp to the SW.",
+  "weekly_facility_update": "Week 4: CHC Waiver process is in 'bureaucratic limbo'; SW is waiting for the second of three required contractor estimates. Patient is clinically ready but environmentally blocked.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's Jitterbug flip-phone with daughter's assistance; program flyer delivered and placed in the patient's discharge folder.",
+  "hha_confirmation_status": "HHA is confirmed 'In Place' as of 10/12: SOC date set for 10/14, Nurse 'Elena V.' assigned, and first-visit window confirmed for 09:00-11:00 AM.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date is firm for 10/13 following ramp inspection. Call 2 (to daughter): Verified she knows Elena (HHA) is coming Monday morning and knows to call the agency if the nurse hasn't arrived by 11:30 AM.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge; confirmed the hospital bed was delivered to the first floor and the ramp is functional. No new clinical concerns.",
+  "atlantis_final_sync": "Discharge date of 10/13 and first visit date of 10/14 successfully entered into Atlantis sync queue.",
+  "ma_visit_booking": "MA visit scheduled for 10/14 at 1:00 PM. This was booked only after Elena (HHA) confirmed her 9:00 AM arrival window to ensure the HHA-First Rule was satisfied.",
+  "narrative_summary": "A 72yo female recovering from a hip fracture faced a 38-day delay due to the Medicaid CHC Waiver requirement for three contractor estimates for a home ramp. The PN identified this environmental barrier during the Connection Intake and maintained alignment with the SW throughout the bureaucratic hold. Once the ramp was installed, the PN executed the Confidence Audit, ensuring the HHA was 'In Place' before scheduling the MA. The transition was successfully completed within 24 hours of discharge.",
+  "format_1_state_log": [
+    {
+      "event_description": "Medicaid CHC Waiver estimate delay",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Bureaucratic: State requires three separate contractor bids before approving ramp installation."
+    },
+    {
+      "event_description": "HHA Confirmation 'In Place'",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Operational: PN verified nurse assignment and time window prior to MA booking."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient confused about our role vs. insurance during initial meeting.",
+      "action_taken": "Conducted Connection Intake (Q1-Q4) to clarify program benefits and identify home safety fears.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA initially unable to provide a specific nurse name for the SOC visit.",
+      "action_taken": "Investigated HHA barrier (staffing backlog) and delayed MA scheduling until name was provided.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient expresses fear of falling on the new ramp on Day 1.",
+      "action_taken": "Performed Confidence Audit Call 2, walking the family through the Day 1 arrival plan and PT schedule.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Atlantis queue and wait for the Social Worker to notify the PN when the CHC Waiver ramp installation is complete and a discharge date is set.",
+      "rationale": "Respects the SW's domain over environmental modifications and avoids redundant communication with the state caseworker."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Check in weekly with the SW for ramp updates; once the date is firm, perform the Confidence Audit by calling the HHA to confirm the SOC window and the family to verify Day 1 readiness.",
+      "rationale": "Adheres to the 3-Stage Lifecycle and HHA-First Rule by verifying all touchpoints are aligned before committing MA resources."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the three ramp contractors directly to find out who submitted the lowest bid and then call the Medicaid caseworker to urge them to expedite the approval to save the patient's Medicare days.",
+      "rationale": "While proactive, this crosses into the Social Worker's territory and involves direct negotiation with state vendors and insurance-related entities."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

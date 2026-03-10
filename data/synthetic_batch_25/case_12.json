@@ -1,67 +1,73 @@
 {
+  "role_delineation_check": "The Social Worker (SW) is responsible for securing the HHA agency and arranging medical transport for the patient\u2019s Parkinson\u2019s-related mobility needs. The Patient Navigator (PN) is responsible for auditing demographic accuracy in Atlantis, educating the family on the Healing Partners program, verifying family sentiment, and flagging HHA confirmation delays to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified Medicare Straight (Red, White, and Blue card). Cross-checked Atlantis record against facility face sheet; corrected the POA phone number (daughter) and verified the primary residence is within the MA's 30-mile travel radius.",
-  "home_vs_ltc_determination": "Home. Social Worker confirmed the goal is a transition to home-based dialysis support.",
-  "stage_1_intake_responses": "Q1: No, family is unfamiliar with our services. Q2: Patient believes we are 'dialysis nurses.' Q3: SW provided a packet but did not explain timing. Q4: Patient expressed high anxiety regarding fluid restriction management at home; PN immediately escalated this clinical concern to the SW for a dietitian consult before discharge.",
-  "weekly_facility_update": "Week 2: Patient GFR is stable. SW reports the discharge target is Friday. Dialysis chair time at the local center has been secured for Mon/Wed/Fri.",
-  "v_card_and_flyer_status": "Program flyer delivered to patient's bedside table; V-Card successfully inserted into the daughter's contact list during the bedside meeting.",
-  "hha_confirmation_status": "Not In Place. The HHA Intake Coordinator (Margie) is out sick with no coverage. Referral is sitting in a queue; no SOC date or nurse has been assigned. PN investigated the delay and flagged the coordinator's absence to the SW.",
-  "stage_3_followup_audit": "Call 1 (SW): Confirmed D/C date is firm for Friday, but flagged that HHA is stalled due to intake coordinator illness. Call 2 (Family): Confirmed daughter understands the 'Day 1' plan and equipment needs, but informed her we are still verifying the HHA's arrival window.",
-  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Home readiness confirmed, including arrival of the hospital bed. Daughter is aware that the HHA nurse assignment is still pending due to the intake backlog.",
-  "atlantis_final_sync": "Entered Friday as the D/C date. 1st visit date entered as Saturday morning following late-Friday HHA confirmation.",
-  "ma_visit_booking": "MA scheduled for Saturday at 10:00 AM. Booking was held until Friday at 3:45 PM when the HHA finally confirmed the SOC date, assigned Nurse 'Brenda,' and provided a 9:00 AM - 12:00 PM window.",
-  "narrative_summary": "77yo female with renal failure transitioning to home care. Initial Connection Intake revealed significant patient anxiety regarding home fluid management, which was successfully escalated to the Social Worker. The transition faced an operational bottleneck when the HHA Intake Coordinator became unavailable, but the PN adhered to the HHA-First Rule, delaying MA scheduling until HHA 'In Place' status was secured late on the day of discharge. The Confidence Loop was completed via the audit calls, ensuring the family remained aligned despite the coordinator delay.",
+  "demographic_audit_note": "Audited Atlantis record against facility Face Sheet. Found DOB discrepancy (Atlantis listed 1942, Face Sheet confirmed 1941) and an outdated landline number. Updated Atlantis with the daughter's (POA) current mobile number and corrected the birth year to ensure HHA referral matches insurance records.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 1: SW reports UTI is responding well to IV antibiotics; PT working on gait training. Week 2: Patient at baseline for Parkinson's; SW sets discharge target for Friday afternoon. PN confirmed daughter is the primary caregiver.",
+  "v_card_flyer_status": "V-Card successfully inserted into daughter's phone contacts to ensure Healing Partners Caller ID recognition; program flyer delivered to patient's bedside and discussed with daughter.",
+  "pre_dc_pulse_call": "Attempted 24-hour pre-discharge pulse call to daughter (POA). Call went to a full voicemail box; no return call received. Home readiness sentiment and first-visit time window remain unverified.",
+  "atlantis_final_sync": "Entered Friday discharge date into Atlantis. 1st visit date remains blank as HHA has not confirmed the start-of-care window in the portal.",
+  "ma_visit_booking": "MA visit not scheduled. PN flagged the 'Pending' HHA status and the failed pulse call to the SW in Atlantis. PN is waiting for SW to confirm HHA readiness before booking the MA.",
+  "narrative_summary": "PN audited demographic data and corrected a birth year error to prevent insurance rejection. Educated the daughter on Parkinson's safety and the role of the Medical Assistant. Due to the pre-discharge call disconnect and the HHA's failure to confirm a start-of-care window by Thursday evening, the PN flagged the transition risk to the SW and maintained the 'Wait' default regarding MA scheduling.",
   "format_1_state_log": [
     {
-      "event_description": "HHA Intake Coordinator Unavailable",
+      "event_description": "Atlantis demographics audit revealed stale landline and incorrect DOB.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
+      "service_adoption_impact": "Positive",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Operational: Single point of failure in HHA intake department prevents referral processing."
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Connection Intake Q4 Barrier Identification",
-      "clinical_impact": "Improves",
+      "event_description": "SW confirms Friday discharge; HHA portal shows no assigned nurse.",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Patient/Caregiver: Early identification of renal diet anxiety allows for SW/Dietitian intervention prior to transition."
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Friday Discharge Gap"
+    },
+    {
+      "event_description": "24-hour pulse call to POA failed; voicemail box full.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Pre-DC_Call_Disconnect"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient confused about our role, thinking we are dialysis technicians.",
-      "action_taken": "Conducted Connection Intake (Q1-Q3) to clarify home health support vs. clinical dialysis.",
+      "situation": "Daughter expresses fear regarding father's Parkinson's tremors during home transition.",
+      "action_taken": "Educated daughter on the specific support the MA provides during the first 24 hours.",
       "intent_category": "Educate"
     },
     {
-      "situation": "HHA has not responded to the referral 48 hours before discharge.",
-      "action_taken": "Called HHA directly to identify the specific barrier (Intake Coordinator illness) and reported findings to the SW.",
-      "intent_category": "Verify"
+      "situation": "HHA intake status remains 'Pending' in Atlantis 18 hours before discharge.",
+      "action_taken": "Flagged the pending status to the SW and requested verification of HHA acceptance.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "Daughter expresses frustration over lack of HHA start-of-care time.",
-      "action_taken": "Performed Confidence Audit call to family to validate the Day 1 plan and equipment status while acknowledging the HHA lag.",
+      "situation": "Face Sheet contains a different phone number than the Atlantis primary contact field.",
+      "action_taken": "Verified the correct contact number with the patient during bedside visit.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to follow up with the HHA regarding the missing start-of-care date and nurse assignment.",
-      "rationale": "Respects the SW's role as the primary liaison for agency communication and avoids redundant phone calls to the HHA."
+      "description": "PN documents the failed pulse call and the HHA's 'Pending' status in the Atlantis log. PN waits for the SW to provide an update after the morning multidisciplinary rounds on Friday.",
+      "rationale": "Respects the 'Wait' default and SW boundary when HHA logistics are stalled and the family is unreachable."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Investigate the HHA delay by calling the intake office, identifying the coordinator's absence, and escalating the specific 'Operational' barrier to the SW to facilitate a potential agency pivot or push.",
-      "rationale": "Follows the Deep_Dive_HHA_Barrier protocol to provide the SW with actionable data rather than a generic complaint, while respecting the HHA-First Rule."
+      "description": "PN asks the SW if there is an alternative contact number for the family and verifies if the HHA has confirmed the start-of-care window in the portal. PN flags the disconnect to the SW as a high risk for a missed first visit.",
+      "rationale": "Uses Liaison verbs (Ask, Verify, Flag) to highlight data gaps without contacting vendors directly."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Schedule the Medical Assistant for the Saturday visit immediately to ensure the incentive window is met, assuming the HHA will eventually process the paperwork by Friday evening.",
-      "rationale": "Risks a wasted visit and failed incentive if the HHA coordinator remains out and the nurse is never assigned, violating the HHA-First Rule."
+      "description": "PN calls the HHA Intake Coordinator directly to push for a Friday afternoon start-of-care time, then calls the patient's pharmacy to ensure the Parkinson's medications are ready for pick-up by the daughter.",
+      "rationale": "Violates the No-Vendor rule by contacting HHA Intake and performs 'Fixer' actions regarding medication logistics."
     }
   ],
-  "case_outcome": "Success_Home_with_First_Visit"
+  "case_outcome": "Failure_Transition_Breakdown"
 }

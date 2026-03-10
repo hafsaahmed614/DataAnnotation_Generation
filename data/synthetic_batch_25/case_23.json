@@ -1,75 +1,73 @@
 {
+  "role_delineation_check": "Social Worker (SW) manages the HHA agency selection and handles all vendor communication regarding the COPD care plan. The Patient Navigator (PN) verifies the accuracy of demographics in Atlantis, educates the family on the Healing Partners program, and flags any HHA provider gaps to the SW for resolution.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited Atlantis record against facility face sheet; verified Straight Medicare eligibility. Address in Harston Hall confirmed, but primary phone number was discovered to be the patient's disconnected landline; updated Atlantis with daughter's (POA) mobile number.",
-  "home_vs_ltc_determination": "SW initially indicated Home goal, but after a family conference on Day 12, the goal was pivoted to Long-Term Care (LTC) due to the patient's inability to perform ADLs safely following the MS flare.",
-  "stage_1_intake_responses": "Q1: No, I haven't heard of you. Q2: To help me get stronger? Q3: The nurse said someone might come to the house. Q4: I am terrified of falling when I try to get to the bathroom at night\u2014escalated this specific mobility anxiety to SW.",
-  "weekly_facility_update": "Week 1: Patient making slow progress in PT; SW still eyeing a Friday discharge. Week 2: SW reports a 'Safety Pivot'; patient's MS flare has resulted in significant neurogenic bladder issues and the family has verbalized they cannot manage the catheter care at home.",
-  "v_card_and_flyer_status": "V-Card inserted into daughter's iPhone during initial intake; program flyer delivered to patient's bedside table.",
-  "hha_confirmation_status": "Not In Place. Reason: LTC_Pivot_Abort. The Social Worker has officially shifted the discharge plan from Home Health to a permanent LTC placement within the facility's skilled wing.",
-  "stage_3_followup_audit": "Audit not completed. Per the LTC Filter rule, all transition coordination was suspended once the SW confirmed the LTC goal.",
-  "pre_dc_pulse_call_result": "Call not performed; patient is no longer a candidate for home transition services.",
-  "atlantis_final_sync": "Logged Neutral_LTC_Closure in Atlantis on Day 14. No discharge date or first visit date entered as the patient is remaining in the facility.",
-  "ma_visit_booking": "MA not scheduled. Scheduling an MA for a patient pivoting to LTC is a Banned Action and would violate the HHA-First Rule.",
-  "narrative_summary": "During the ENTRY/TRIAGE stage, the Connection Intake revealed significant patient anxiety regarding home safety, which was immediately escalated to the SW. In the MAINTENANCE stage, weekly check-ins with the SW highlighted a decline in the patient's functional status and a lack of caregiver support for catheter management. Once the SW determined the goal was Long-Term Care (LTC), the LTC Filter was applied. A Neutral_LTC_Closure was performed in Atlantis to prevent overstepping into the SW's placement process.",
+  "demographic_audit_note": "Audited Atlantis demographics against the facility Face Sheet; corrected the primary phone number for the daughter (POA) and verified the Medicare Part B insurance ID was entered correctly for billing alignment.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 1: Robert is completing his steroid taper and O2 titration. SW confirmed referral was sent to 'Highland Home Health' but noted the intake coordinator is currently out sick, delaying the acceptance timestamp in Atlantis.",
+  "v_card_flyer_status": "V-Card successfully saved to Robert's phone to ensure Caller ID recognition of Healing Partners calls. Program flyer delivered to Robert and his daughter during the bedside education session.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge. Sentiment Score: Anxious. Daughter expressed high concern regarding Robert's ability to manage the portable oxygen concentrator independently. Flagged this anxiety to the SW for a final bedside review.",
+  "atlantis_final_sync": "Discharge date of Oct 26 and First Home Visit date of Oct 27 documented in Atlantis portal.",
+  "ma_visit_booking": "Medical Assistant (MA) scheduled for Oct 27 at 10:30 AM; booking was held until the SW confirmed that Highland Home Health assigned a replacement nurse for the initial assessment.",
+  "narrative_summary": "Verified the accuracy of Robert's contact data in Atlantis to prevent transition communication failures. Documented a delay in HHA acceptance due to the intake coordinator's illness and flagged the coverage gap to the Social Worker. Educated the family on what to expect during the first 24 hours at home and verified that the V-Card was active for future caller recognition. Scheduled the first MA visit only after the SW confirmed a nurse was assigned to bridge the COPD monitoring gap.",
   "format_1_state_log": [
     {
-      "event_description": "Connection Intake Q4 surfaces profound fear of night-time falls.",
+      "event_description": "Atlantis Data Lag: Patient address in Atlantis was missing the apartment number found on the facility face sheet.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Caregiver_Panic"
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
-      "event_description": "Atlantis demographic audit reveals disconnected landline for primary contact.",
+      "event_description": "Provider Illness: The HHA intake coordinator is out sick, creating an intake freeze for new COPD referrals.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
     },
     {
-      "event_description": "Social Worker formalizes the pivot to Long-Term Care (LTC).",
+      "event_description": "Sentiment Readiness Gap: Daughter verbalized reluctance to take the patient home without a confirmed O2 delivery window.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Closure)",
-      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient expresses high anxiety about managing catheter care alone at home during Stage 1 meeting.",
-      "action_taken": "Documented responses and escalated Q4 concerns to the SW immediately.",
-      "intent_category": "Escalate"
-    },
-    {
-      "situation": "Atlantis queue lists an outdated home phone number for the patient.",
-      "action_taken": "Cross-referenced face sheet and updated Atlantis with POA's mobile number.",
+      "situation": "Patient address in Atlantis (123 Main St) does not match Face Sheet (123 Main St, Apt 4B).",
+      "action_taken": "Documented the discrepancy in Atlantis and asked the SW to update the HHA referral with the apartment number.",
       "intent_category": "Verify"
     },
     {
-      "situation": "SW informs PN that the patient will be staying in the facility for LTC.",
-      "action_taken": "Stopped all home care education and performed a Neutral_LTC_Closure in Atlantis.",
-      "intent_category": "Verify"
+      "situation": "SW reports HHA intake is delayed because the sole coordinator is out on medical leave.",
+      "action_taken": "Flagged the HHA_Intake_Freeze in Atlantis and documented the expected 3-day delay for the first home visit.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Robert's daughter is anxious about managing the COPD 'flare-up' protocol at home.",
+      "action_taken": "Educated the family on the role of the Healing Partners MA in monitoring vital signs during the first 24 hours.",
+      "intent_category": "Educate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "After the SW announces the LTC pivot, the PN steps back and stops attending the patient's weekly updates to allow the SW to manage the placement logistics.",
-      "rationale": "Respects the SW Boundary and the LTC Filter; once the goal is LTC, the PN's role in the transition ceases."
+      "description": "Wait for the SW to resolve the HHA intake freeze or select a different agency that has available staffing.",
+      "rationale": "Respects the SW boundary as the sole individual responsible for agency selection and vendor negotiation."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Upon hearing the family's concerns about catheter care, the PN documents the 'Caregiver Training Gap' and provides the SW with a summary of the patient's Q4 anxiety responses to assist the SW's safety assessment.",
-      "rationale": "Follows the Connection Intake protocol and ensures critical barriers are escalated to the appropriate professional (the SW) without attempting to solve them."
+      "description": "Verify the HHA acceptance status in the Atlantis portal daily and flag the continued delay to the SW while educating the family on the updated timeline.",
+      "rationale": "Maintains the PN role as a data auditor and family liaison without contacting the HHA vendor directly."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN contacts the facility's billing department to provide a cost-analysis comparing the expense of 24/7 home health aides versus the LTC room rate to help the family decide.",
-      "rationale": "Banned Action: Proving cost analysis of home care vs LTC is an automatic overstep and interferes with the SW's financial counseling role."
+      "description": "Call the HHA intake office directly to ask if another staff member can process Robert's referral to avoid a discharge delay.",
+      "rationale": "Violates the No-Vendor Rule and attempts to resolve a logistics barrier that belongs to the Social Worker."
     }
   ],
-  "case_outcome": "Neutral_LTC_Closure"
+  "case_outcome": "Success_Home_with_First_Visit"
 }

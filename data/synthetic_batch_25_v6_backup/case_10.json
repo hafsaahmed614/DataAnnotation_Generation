@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis record against facility face sheet revealed a transposition error in the zip code (19104 vs 19140). Updated address and verified Straight Medicare eligibility. Primary contact updated to daughter (POA).",
+  "home_vs_ltc_determination": "Home. SW confirms the goal is for the patient to return to her daughter\u2019s ranch-style home once PT milestones for pneumonia recovery are met.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thinks we are 'oxygen delivery'. Q3: SW mentioned home health but patient didn't understand the schedule. Q4: Patient expressed fear of falling while daughter is at work, as she is still weak post-ICU; escalated 'Intake_Barrier_Identified' to SW.",
+  "weekly_facility_update": "Week 2: Patient finishing antibiotic course. SW is coordinating with daughter to ensure a neighbor can check in during the day to address the safety concern raised during intake.",
+  "v_card_and_flyer_status": "V-Card inserted into daughter's phone during bedside education; program flyer left on patient's bedside table.",
+  "hha_confirmation_status": "In Place. HHA (Compassionate Care) has confirmed SOC for Friday 10/27, assigned RN 'Julie', and provided a 9 AM\u201311 AM arrival window.",
+  "stage_3_followup_audit": "Call 1 (SW): Confirmed Friday D/C is firm and orders were received by HHA. Call 2 (Daughter): Confirmed she understands the 9 AM HHA window and knows to call the PN if the nurse has not arrived by noon.",
+  "pre_dc_pulse_call_result": "24-hour pulse call completed with daughter. She confirmed the hospital bed was delivered to the home and she has the appointment card for our MA visit.",
+  "atlantis_final_sync": "D/C date of 10/27 and 1st visit date of 10/27 synchronized in Atlantis queue.",
+  "ma_visit_booking": "MA scheduled for 10/27 at 1:00 PM. Booking was held until HHA confirmed RN Julie was assigned and the morning window was set.",
+  "narrative_summary": "During the Entry/Triage stage, the Connection Intake revealed a significant safety barrier regarding the patient being alone post-ICU, which was immediately escalated to the SW. Maintenance focused on educating the daughter on the Day 1 transition to mitigate caregiver panic. The process concluded with a successful Confidence Audit, ensuring HHA readiness before the MA was booked for the first post-discharge visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "Connection Intake Q4 reveals patient fear of falling due to daughter's work schedule.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Intake_Barrier_Identified"
+    },
+    {
+      "event_description": "SW confirms neighbor will provide supplemental supervision during daughter's shift.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "N/A"
+    },
+    {
+      "event_description": "HHA intake delay due to missing pneumonia discharge summary.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient unaware of home health frequency/duration during initial meeting.",
+      "action_taken": "Conducted Connection Intake and provided program flyer explaining service scope.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Patient expresses fear of being alone post-ICU during Connection Intake.",
+      "action_taken": "Escalated safety concern to SW for caregiver planning.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA has not confirmed a specific nurse for the Friday discharge.",
+      "action_taken": "Held MA scheduling and called HHA intake coordinator to verify staffing status.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon hearing the patient's fear of falling during the intake, the PN documents the concern in Atlantis and waits for the Social Worker's formal discharge notes to see how the family plan evolves.",
+      "rationale": "This respects the SW's domain over discharge planning but risks the transition failing if the PN doesn't actively ensure the 'Confidence Loop' is closed before the patient leaves the facility."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN flags the anxiety barrier to the SW immediately after the Connection Intake, then performs a Confidence Audit call to the daughter 48 hours before discharge to verify the neighbor's supervision plan is actually in place before scheduling the MA.",
+      "rationale": "The PN acts as a liaison, surfacing barriers for the SW and verifying the plan's readiness with the family without overstepping into clinical or logistical management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "To resolve the patient's fear of falling, the PN contacts a local private-duty care agency to get quotes for the daughter and then faxes the patient's medication list to the HHA to speed up the intake process.",
+      "rationale": "This is an overstep because the PN is suggesting specific agencies (SW role) and handling clinical documentation/medication lists (Banned Action)."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

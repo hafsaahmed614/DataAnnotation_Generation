@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Highmark Medicare Advantage; address confirmed at 4421 Oakhaven Ct. Phone number updated in Atlantis to reflect daughter's mobile as primary contact.",
+  "home_vs_ltc_determination": "Home. SW confirmed patient resides in a ranch-style home with his spouse; goal is to return home with supplemental oxygen and respiratory therapy education.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thought I was here to deliver a nebulizer. Q3: SW mentioned a nurse would visit but didn't give details. Q4: Very anxious about 'running out of air' at night; escalated anxiety concern to SW.",
+  "weekly_facility_update": "Week 2: Patient transitioned to room air successfully. PT notes indicate patient is ambulating 200ft without dyspnea, meeting all functional goals 4 days early.",
+  "v_card_and_flyer_status": "V-Card saved to patient's Samsung device; physical program flyer placed in discharge folder.",
+  "hha_confirmation_status": "Not In Place. Barrier: Loss of Skilled Need. HHA Intake Coordinator flagged the referral as ineligible because PT goals were met and the patient no longer requires skilled nursing for O2 titration or wound care.",
+  "stage_3_followup_audit": "Call 1 (SW): Confirmed D/C date is firm for Friday, but SW acknowledges HHA has not accepted the referral due to clinical stability. Call 2 (Patient): Family is aware that the 'In Place' status for the nurse is pending a clinical re-evaluation.",
+  "pre_dc_pulse_call_result": "Reached spouse; home is prepared and oxygen has been delivered, but confirmed that no HHA nurse has called to set a window.",
+  "atlantis_final_sync": "D/C date entered for 10/27; 1st visit date left blank pending eligibility resolution.",
+  "ma_visit_booking": "MA visit not booked. HHA status is 'Not In Place' due to eligibility denial; scheduling the MA would violate the HHA-First Rule and risk a wasted visit.",
+  "narrative_summary": "The case began in Stage 1 with a successful Connection Intake that identified significant patient anxiety regarding respiratory management at home. During Stage 2 maintenance, the patient's rapid clinical recovery led to a 'Loss of Skilled Need' signal barrier, as the HHA determined the patient was too stable for skilled services. Following the HHA-First Rule, I performed a Deep_Dive_HHA_Barrier and escalated the specific eligibility denial to the SW, ultimately resulting in a Neutral_Alternative_Agency closure when the patient was discharged without skilled home health orders.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient clinical stabilization on room air",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Loss of Skilled Need"
+    },
+    {
+      "event_description": "HHA intake refusal of referral",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-5 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient expresses high anxiety about managing COPD alone during Connection Intake.",
+      "action_taken": "Escalated anxiety barrier to SW to ensure respiratory therapy was prioritized in the D/C plan.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA intake coordinator flags patient as ineligible for skilled care.",
+      "action_taken": "Conducted Deep_Dive_HHA_Barrier to confirm the specific reason (PT goals met) and relayed to SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient is 24 hours from discharge without HHA confirmation.",
+      "action_taken": "Deferred MA scheduling to prevent a wasted visit per the HHA-First Rule.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Note the HHA's eligibility denial in Atlantis and wait for the Social Worker to either find a new agency or update the discharge plan to non-skilled care.",
+      "rationale": "Respects the SW's domain over finding alternative agencies and recognizes the 'Loss of Skilled Need' as a hard stop for the current program's clinical criteria."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Call the HHA intake coordinator to confirm if any other skilled need (e.g., new medication teaching) was overlooked, then escalate those specific clinical findings to the SW for a final 'Home vs LTC' pivot.",
+      "rationale": "Follows the Stage 3 Deep_Dive_HHA_Barrier protocol by investigating the specific blocker and providing the SW with actionable data without overstepping into clinical management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Advise the patient's spouse to tell the doctor the patient is still having 'shortness of breath' so that the skilled need is documented, ensuring the HHA accepts the referral and the MA can be scheduled.",
+      "rationale": "This constitutes an overstep by coaching the family to manipulate clinical documentation and potentially leading to a fraudulent HHA admission just to secure a PN conversion."
+    }
+  ],
+  "case_outcome": "Neutral_Alternative_Agency"
+}

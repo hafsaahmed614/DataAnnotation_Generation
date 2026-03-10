@@ -1,74 +1,72 @@
 {
+  "role_delineation_check": "SW Sarah is responsible for selecting the HHA agency and securing the discharge order. PN verifies the accuracy of the contact data in Atlantis, educates daughter Linda on transition expectations, and flags caregiver readiness concerns to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified Medicare Advantage PPO status. Cross-checked Atlantis face sheet against facility records; corrected zip code from 19102 to 19104. Confirmed daughter (POA) is primary contact.",
-  "home_vs_ltc_determination": "Home (SW confirmed discharge to daughter's residence after family meeting).",
-  "stage_1_intake_responses": "Q1: No, never heard of the program. Q2: Thinks we are hospital transport. Q3: No one has explained home health yet. Q4: Very anxious; patient wants home but son is demanding LTC placement due to fall risk. Escalated family conflict to SW.",
-  "weekly_facility_update": "Week 2: PT reports patient is weight-bearing as tolerated with walker. SW reports family meeting held; son agreed to home trial if 24/7 care is arranged for the first week.",
-  "v_card_and_flyer_status": "V-Card inserted into daughter's phone contacts; program flyer delivered to patient and daughter at bedside.",
-  "hha_confirmation_status": "In Place: Kindred HHA confirmed SOC for 11/14, Nurse 'Elena M.' assigned, first-visit window 11:00 AM - 1:00 PM.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed firm 11/13 D/C date; HHA orders faxed and received. Call 2 (to daughter): Confirmed hospital bed and shower chair are in the home; daughter understands Elena from Kindred arrives tomorrow between 11-1.",
-  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to D/C; confirmed no changes in health and readiness for morning discharge.",
-  "atlantis_final_sync": "D/C date 11/13 and 1st visit date 11/14 entered into Atlantis queue.",
-  "ma_visit_booking": "MA scheduled for 11/14 at 2:30 PM (coordinated to follow HHA morning window).",
-  "narrative_summary": "72yo Evelyn's transition was initially stalled by a high-friction disagreement between her son and daughter regarding LTC vs. Home care. The PN identified this barrier during the Stage 1 Connection Intake and escalated it to the SW for a formal family conference. Once the home goal was solidified, the PN executed the Confidence Loop by verifying Kindred HHA was 'In Place' before scheduling the MA. The case resulted in a successful home transition with all stakeholders aligned on the Day 1 plan.",
+  "demographic_audit_note": "Audit of Atlantis demographics against the facility face sheet revealed a discrepancy in the primary contact number; Arthur's landline was listed instead of daughter Linda's mobile. Corrected phone number in Atlantis to ensure pre-discharge pulse call connectivity.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW Sarah confirms PT/OT goals are nearly met; HHA referral sent to 'Elite Home Health'. Arthur's UTI has cleared, but mobility remains limited. PN verified V-Card is in Linda's phone.",
+  "v_card_flyer_status": "Confirmed V-Card successfully inserted into daughter Linda's phone strictly for Healing Partners caller ID recognition; delivered program flyer during bedside educational session.",
+  "pre_dc_pulse_call": "Reached Linda via cell. Sentiment Score: Anxious/Reluctant. Linda expressed panic over managing Arthur's Parkinson's medications and fall risk at home. Educated her on the MA visit timeline and flagged sentiment to SW.",
+  "atlantis_final_sync": "D/C Date: 11/14; 1st Visit Date: 11/15 entered into Atlantis after portal update.",
+  "ma_visit_booking": "MA scheduled for 11/15 at 11:00 AM. Scheduling occurred only after the Atlantis portal showed 'HHA Accepted' and SW Sarah confirmed Elite Home Health had a nurse assigned for the morning SOC.",
+  "narrative_summary": "Audited Atlantis demographics against the facility Face Sheet to ensure Linda, the primary caregiver, was the main point of contact. Conducted a sentiment verification which revealed significant caregiver panic regarding medication management and mobility. Documented these concerns and flagged them to SW Sarah, while educating the family on the 24-hour first-visit window to provide reassurance without overstepping into clinical advice.",
   "format_1_state_log": [
     {
-      "event_description": "Connection Intake Q4 surfaces son's refusal of home plan.",
+      "event_description": "Atlantis_Data_Lag: Phone number mismatch between Atlantis and SNF Face Sheet.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
+      "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+5 Days",
-      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative data entry error"
     },
     {
-      "event_description": "HHA intake coordinator confirms nurse availability in 19104.",
+      "event_description": "Caregiver_Panic: Daughter Linda expresses inability to manage Parkinson's tremors/meds.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family readiness/Sentiment readiness gap"
+    },
+    {
+      "event_description": "HHA_Acceptance_Lag: Elite Home Health portal status remains 'Pending' for 48 hours.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "N/A"
-    },
-    {
-      "event_description": "Confidence Audit Call 2: Daughter confirms DME delivery.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "N/A"
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA intake department staffing capacity"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient's son is vocally opposing home discharge in the presence of the patient.",
-      "action_taken": "PN documented the concern and requested the SW lead a family transition meeting.",
-      "intent_category": "Escalate"
+      "situation": "Linda crying at bedside regarding Arthur's medication schedule.",
+      "action_taken": "Educate Linda on the 'Day 1' expectations and what to expect from the MA visit.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "HHA referral sent but intake coordinator has not provided a nurse name.",
-      "action_taken": "PN delayed MA scheduling and called HHA intake to confirm 'In Place' status.",
+      "situation": "Arthur's Atlantis record shows an old address from three years ago.",
+      "action_taken": "Verify current residence with SW and update Atlantis queue to match the Face Sheet.",
       "intent_category": "Verify"
     },
     {
-      "situation": "Family is unsure what to do if the HHA nurse does not arrive at the scheduled time.",
-      "action_taken": "PN walked daughter through the Day 1 plan and provided the HHA's direct agency line.",
-      "intent_category": "Educate"
+      "situation": "Elite Home Health has not confirmed the start-of-care window by 4:00 PM the day before discharge.",
+      "action_taken": "Flag the missing confirmation to SW Sarah in Atlantis and wait for her update.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon hearing the son's demand for LTC, the PN steps back and waits for the SW to update the goal in Atlantis before resuming any family education.",
-      "rationale": "Respects the SW boundary regarding placement decisions and prevents the PN from overstepping into clinical/social advocacy during a dispute."
+      "description": "Wait for the Social Worker to notice the caregiver's distress during the discharge meeting before taking any action or documenting the sentiment.",
+      "rationale": "Respects the SW's role as the primary family counselor but risks the discharge being canceled due to unaddressed anxiety."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "PN conducts the Connection Intake, identifies the son's anxiety as the primary barrier, escalates the specific conflict to the SW, and performs the Confidence Audit once the goal is cleared.",
-      "rationale": "Follows the 3-stage lifecycle by identifying barriers early and using the SW as the escalation point while maintaining the Confidence Loop."
+      "description": "Educate Linda on the specific timing of the first MA visit and document her 'Anxious' sentiment score in Atlantis, then flag her medication concerns to SW Sarah for a clinical care conference.",
+      "rationale": "Uses Liaison verbs to support the family and keep the SW informed without crossing into clinical or vendor management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "PN provides the son with a cost-comparison analysis showing home care is cheaper than LTC and suggests a specific HHA that specializes in post-hip fracture rehab to win him over.",
-      "rationale": "Violates the Banned Actions by providing cost analysis and suggesting specific HHA agencies, which is the SW's responsibility."
+      "description": "Call the intake coordinator at Elite Home Health to negotiate a specialized Parkinson's nurse and ask the facility nurse to provide a 1:1 med-management training for Linda.",
+      "rationale": "Violates the No-Vendor Rule and performs clinical coordination, which are strictly the SW's and clinical staff's responsibilities."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

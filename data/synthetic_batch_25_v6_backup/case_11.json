@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue vs. facility face sheet: Verified 83yo female, DOB 05/12/1941. Confirmed Straight Medicare eligibility. Primary address in suburban zip code verified; daughter (POA) phone number updated in Atlantis to ensure pre-DC pulse call reachability.",
+  "home_vs_ltc_determination": "SW confirms the goal is Home with Skilled Nursing (RN) and Physical Therapy (PT) for post-pneumonia recovery and gait training.",
+  "stage_1_intake_responses": "Q1: Patient has not heard of the company. Q2: Patient believes we are 'the oxygen people.' Q3: SW mentioned home health but patient is confused about frequency of visits. Q4: Patient is terrified of 'suffocating' if the O2 tank fails; PN escalated anxiety regarding DME management to SW immediately.",
+  "weekly_facility_update": "Week 1: Patient finishing IV antibiotic course. SW reports PT progress is slow but steady. Target D/C set for Friday. PN confirmed daughter is available for Day 1 support.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into daughter's iPhone; program flyer delivered and reviewed at bedside during Week 1 maintenance check-in.",
+  "hha_confirmation_status": "Not In Place. The HHA intake coordinator is out on unexpected medical leave; the referral is sitting in the HHA's 'Unprocessed' folder. No SOC date or nurse assigned. MA scheduling is on hold per HHA-First Rule.",
+  "stage_3_followup_audit": "Call 1 (to SW): Flagged that HHA referral is stalled due to coordinator illness; SW is contacting the HHA Director of Nursing for a backup processor. Call 2 (to family): Confirmed daughter understands that the HHA nurse must arrive before our MA; verified O2 concentrator is scheduled for Thursday delivery.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to discharge. Home readiness confirmed. Daughter notified that HHA backup confirmed a Saturday morning SOC window.",
+  "atlantis_final_sync": "D/C date (Friday) and 1st visit date (Saturday) entered into Atlantis after HHA backup confirmed 'In Place' status.",
+  "ma_visit_booking": "MA scheduled for Saturday at 11:00 AM, following the confirmed HHA SOC window of 8:00 AM - 10:00 AM.",
+  "narrative_summary": "During ENTRY/TRIAGE, the PN identified significant patient anxiety regarding home oxygen through the Connection Intake, which was escalated to the SW. In the MAINTENANCE stage, the PN tracked a Friday discharge but discovered the HHA intake coordinator was unavailable, stalling the transition. Adhering to the HHA-First Rule, the PN deferred MA scheduling until a backup HHA contact confirmed the SOC window, then closed the Confidence Loop via a final audit and pulse call to ensure a successful Saturday conversion.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA Intake Coordinator Unavailable",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Operational: Single point of failure at HHA intake prevents referral processing."
+    },
+    {
+      "event_description": "Connection Intake Q4 Escalation",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver: Identifying O2 anxiety early allowed SW to arrange extra DME education."
+    },
+    {
+      "event_description": "HHA Backup Contact Identified",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Administrative: PN insistence on HHA-First status forced the SW to find a backup processor."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "HHA intake coordinator out sick; referral status unknown.",
+      "action_taken": "Called HHA main line to identify the DON and flagged the stalled referral to the SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient expresses fear of managing O2 equipment alone at home.",
+      "action_taken": "Conducted Connection Intake Q4 and immediately reported the barrier to the SW for intervention.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Daughter is unsure of the sequence of providers on Day 1.",
+      "action_taken": "Performed Confidence Audit Call 2, explaining the HHA nurse arrives first for assessment followed by our MA.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the HHA coordinator to return from sick leave and monitor Atlantis for the 'In Place' status update before taking further action.",
+      "rationale": "Respects the SW's role in agency management and avoids unnecessary calls to the HHA during a staffing crisis."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Call the HHA to confirm the coordinator's absence, identify the backup processor, and inform the SW that the referral is stalled, while withholding the MA schedule until the backup confirms the nurse name and SOC time.",
+      "rationale": "Follows the HHA-First Rule and Confidence Audit protocol by identifying the specific barrier and ensuring alignment before resource allocation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Schedule the MA for Friday afternoon immediately to ensure the patient is seen, then call the HHA and offer to fax the F2F forms myself to speed up their intake process.",
+      "rationale": "Violates the HHA-First Rule by scheduling the MA before confirmation and oversteps into SW/clinical territory by handling F2F documentation."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

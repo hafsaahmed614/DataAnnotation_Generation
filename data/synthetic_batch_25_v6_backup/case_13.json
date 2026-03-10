@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility face sheet; corrected insurance from Medicare Straight to Aetna Medicare Advantage and updated the primary phone number to the daughter's (POA) mobile.",
+  "home_vs_ltc_determination": "Home",
+  "stage_1_intake_responses": "Q1: Yes, daughter saw a flyer. Q2: To help with the transition home. Q3: Yes, SW mentioned nurse visits. Q4: Patient is extremely anxious about managing chemo-related nausea and IV site care without facility staff \u2014 escalated to SW for clinical reassurance.",
+  "weekly_facility_update": "Week 2: Patient completed final round of inpatient rehab; PT reports patient is ambulatory with a rolling walker. SW targeting discharge for Tuesday, 11/14.",
+  "v_card_and_flyer_status": "V-Card inserted into daughter's phone contact list; physical program flyer placed in the patient's 'Home Transition' folder.",
+  "hha_confirmation_status": "In Place (Delayed). Initially 'Not In Place' due to Missing HHA Orders. After SW re-sent the physician's orders, Sunnyside HHA confirmed SOC for 11/14, assigned RN Miller, and set a 10AM-2PM window.",
+  "stage_3_followup_audit": "Call 1 (SW): Confirmed 11/14 D/C is firm; flagged that Sunnyside was missing the medication titration orders. Call 2 (Family): Confirmed daughter understands RN Miller will arrive Tuesday afternoon and that oxygen equipment should be delivered by 9AM.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior; she confirmed the home is ready and the patient is excited but still nervous. Reassured her about the MA visit timing.",
+  "atlantis_final_sync": "Entered D/C date 11/14 and first MA visit date 11/15 into Atlantis record.",
+  "ma_visit_booking": "MA scheduled for 11/15 at 09:00 AM. Booking was held until 11/13 when Sunnyside HHA finally confirmed the nurse assignment and 'In Place' status.",
+  "narrative_summary": "In Stage 1, the Connection Intake identified significant patient anxiety regarding post-chemo symptom management, which was escalated to the SW to ensure clinical alignment. Maintenance in Stage 2 focused on educating the daughter on the Day 1 transition plan and inserting the V-Card. Stage 3 was hindered by missing clinical orders at the HHA, which I identified during the Confidence Audit and escalated to the SW for resolution. Once HHA 'In Place' status was verified, I scheduled the MA visit within the 24-hour window, successfully closing the Confidence Loop.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Insurance mismatch between Atlantis and Face Sheet",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
+    },
+    {
+      "event_description": "Missing HHA Orders at Handoff: Sunnyside HHA reports no titration orders received",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff"
+    },
+    {
+      "event_description": "MA Scheduling Postponed: HHA not 'In Place' due to missing orders",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Operational"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Connection Intake Q4 surfaces anxiety about managing chemo side effects at home.",
+      "action_taken": "Escalated concern to the Social Worker to facilitate a clinical discussion between the nurse and patient.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Sunnyside HHA claims they cannot set an SOC date because the physician's orders are incomplete.",
+      "action_taken": "Called HHA intake to identify specific missing forms and relayed the exact document names to the SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Discharge is tomorrow but HHA has not yet assigned a specific nurse.",
+      "action_taken": "Withheld MA scheduling and continued daily follow-up with SW until nurse assignment was confirmed.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to realize the HHA is missing orders during their own routine discharge check.",
+      "rationale": "Respects the SW's primary responsibility for the clinical handoff but risks a delayed discharge or a failed Day 1 transition if the SW is overwhelmed."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Conduct the Confidence Audit call to the HHA to identify the specific missing orders, then provide the SW with a clear, actionable request to re-fax those documents.",
+      "rationale": "Aligns with the PN goal of building a Confidence Loop by identifying barriers early and providing the SW with the information needed to fix them without overstepping into clinical management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Access the patient's facility chart, print the missing chemotherapy titration orders, and fax them directly to Sunnyside HHA to ensure the SOC date isn't pushed.",
+      "rationale": "While this ensures the transition moves forward, it violates the Banned Actions by touching clinical documentation and performing a task strictly reserved for the SW or facility clinical staff."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

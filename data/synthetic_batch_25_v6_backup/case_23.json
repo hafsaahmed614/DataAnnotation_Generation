@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis record against facility face sheet; verified Straight Medicare eligibility. Address in Harston Hall confirmed, but primary phone number was discovered to be the patient's disconnected landline; updated Atlantis with daughter's (POA) mobile number.",
+  "home_vs_ltc_determination": "SW initially indicated Home goal, but after a family conference on Day 12, the goal was pivoted to Long-Term Care (LTC) due to the patient's inability to perform ADLs safely following the MS flare.",
+  "stage_1_intake_responses": "Q1: No, I haven't heard of you. Q2: To help me get stronger? Q3: The nurse said someone might come to the house. Q4: I am terrified of falling when I try to get to the bathroom at night\u2014escalated this specific mobility anxiety to SW.",
+  "weekly_facility_update": "Week 1: Patient making slow progress in PT; SW still eyeing a Friday discharge. Week 2: SW reports a 'Safety Pivot'; patient's MS flare has resulted in significant neurogenic bladder issues and the family has verbalized they cannot manage the catheter care at home.",
+  "v_card_and_flyer_status": "V-Card inserted into daughter's iPhone during initial intake; program flyer delivered to patient's bedside table.",
+  "hha_confirmation_status": "Not In Place. Reason: LTC_Pivot_Abort. The Social Worker has officially shifted the discharge plan from Home Health to a permanent LTC placement within the facility's skilled wing.",
+  "stage_3_followup_audit": "Audit not completed. Per the LTC Filter rule, all transition coordination was suspended once the SW confirmed the LTC goal.",
+  "pre_dc_pulse_call_result": "Call not performed; patient is no longer a candidate for home transition services.",
+  "atlantis_final_sync": "Logged Neutral_LTC_Closure in Atlantis on Day 14. No discharge date or first visit date entered as the patient is remaining in the facility.",
+  "ma_visit_booking": "MA not scheduled. Scheduling an MA for a patient pivoting to LTC is a Banned Action and would violate the HHA-First Rule.",
+  "narrative_summary": "During the ENTRY/TRIAGE stage, the Connection Intake revealed significant patient anxiety regarding home safety, which was immediately escalated to the SW. In the MAINTENANCE stage, weekly check-ins with the SW highlighted a decline in the patient's functional status and a lack of caregiver support for catheter management. Once the SW determined the goal was Long-Term Care (LTC), the LTC Filter was applied. A Neutral_LTC_Closure was performed in Atlantis to prevent overstepping into the SW's placement process.",
+  "format_1_state_log": [
+    {
+      "event_description": "Connection Intake Q4 surfaces profound fear of night-time falls.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "Atlantis demographic audit reveals disconnected landline for primary contact.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Social Worker formalizes the pivot to Long-Term Care (LTC).",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient expresses high anxiety about managing catheter care alone at home during Stage 1 meeting.",
+      "action_taken": "Documented responses and escalated Q4 concerns to the SW immediately.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Atlantis queue lists an outdated home phone number for the patient.",
+      "action_taken": "Cross-referenced face sheet and updated Atlantis with POA's mobile number.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "SW informs PN that the patient will be staying in the facility for LTC.",
+      "action_taken": "Stopped all home care education and performed a Neutral_LTC_Closure in Atlantis.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "After the SW announces the LTC pivot, the PN steps back and stops attending the patient's weekly updates to allow the SW to manage the placement logistics.",
+      "rationale": "Respects the SW Boundary and the LTC Filter; once the goal is LTC, the PN's role in the transition ceases."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Upon hearing the family's concerns about catheter care, the PN documents the 'Caregiver Training Gap' and provides the SW with a summary of the patient's Q4 anxiety responses to assist the SW's safety assessment.",
+      "rationale": "Follows the Connection Intake protocol and ensures critical barriers are escalated to the appropriate professional (the SW) without attempting to solve them."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN contacts the facility's billing department to provide a cost-analysis comparing the expense of 24/7 home health aides versus the LTC room rate to help the family decide.",
+      "rationale": "Banned Action: Proving cost analysis of home care vs LTC is an automatic overstep and interferes with the SW's financial counseling role."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

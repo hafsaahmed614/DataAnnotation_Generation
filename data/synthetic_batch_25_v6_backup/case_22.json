@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage plan. Corrected primary phone number in Atlantis; the facility face sheet had the patient's landline, but the daughter (Mary) requested her mobile number be the primary contact for coordination.",
+  "home_vs_ltc_determination": "Social Worker confirms the goal is home discharge with 24/7 family support.",
+  "stage_1_intake_responses": "Q1: No, family has not heard of the company. Q2: Thinks we are 'extra therapy'. Q3: SW mentioned a nurse would visit but didn't explain the MA role. Q4: Daughter (Mary) is extremely anxious about managing father's stroke-related hemiparesis during the first night \u2014 escalated concern to SW for additional caregiver training.",
+  "weekly_facility_update": "Week 2: Patient meeting 75% of PT goals; SW reports D/C is likely for Friday. Mary still expressing 'Caregiver Panic' regarding the lack of a hospital bed at home.",
+  "v_card_and_flyer_status": "V-Card saved to Mary's smartphone; program flyer delivered to patient's bedside and reviewed with the family.",
+  "hha_confirmation_status": "HHA is confirmed 'In Place'. SOC date set for Saturday (10/26); RN Miller assigned; first-visit time window confirmed for 0900\u20131100. PN verified HHA has the specific orders for stroke rehab and fall precautions.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday D/C is firm and HHA has received all clinical handoff data. Call 2 (to Mary): Verified she understands the HHA window and knows to call the PN if the nurse does not arrive by 11:30 AM.",
+  "pre_dc_pulse_call_result": "Reached Mary 24 hours prior to D/C. She confirmed the hospital bed was delivered but was still 'very nervous'. PN reinforced the Day 1 plan and confirmed the MA visit time.",
+  "atlantis_final_sync": "D/C date (10/25) and 1st visit date (10/26) entered into Atlantis for tracking.",
+  "ma_visit_booking": "MA scheduled for Saturday (10/26) at 13:00. This follows the 0900\u20131100 HHA window, ensuring no overlap and adhering to the HHA-First Rule.",
+  "narrative_summary": "PN identified significant Caregiver Panic during the Stage 1 Connection Intake, which was immediately escalated to the SW for intervention. Throughout the Maintenance stage, the PN focused on family education and Day 1 preparation to reduce anxiety. By conducting a rigorous Confidence Audit in Stage 3, the PN verified the HHA was 'In Place' before scheduling the MA, resulting in a seamless transition and successful service adoption.",
+  "format_1_state_log": [
+    {
+      "event_description": "Mary (Daughter) threatens to refuse discharge due to fear of patient falling at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+5 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "Hospital bed delivered to home but lacks the specific side-rails requested for stroke safety.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+    },
+    {
+      "event_description": "HHA Intake Coordinator out sick; SOC date for stroke rehab cannot be confirmed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Daughter expresses total 'panic' about managing father's transfer from bed to chair.",
+      "action_taken": "Conducted Connection Intake Q4 and escalated 'Caregiver Training Gap' to the SW.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "SW reports HHA has the referral but no nurse is assigned 48 hours before discharge.",
+      "action_taken": "Called HHA intake to investigate the specific barrier (staffing shortage) and flagged the delay to the SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Daughter confused about the sequence of providers arriving on the first day home.",
+      "action_taken": "Performed Confidence Audit Call 2 to walk the family through the 24-hour Day 1 timeline.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN notices the daughter is overwhelmed by the PT's home exercise instructions and steps back to allow the SW to lead a family conference regarding the discharge plan.",
+      "rationale": "Respects the SW's role in managing complex family dynamics and discharge planning while the PN focuses on the Confidence Loop."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN conducts the Stage 3 Confidence Audit, calling the SW to confirm the HHA is 'In Place' with a set SOC window before scheduling the MA visit for the following afternoon.",
+      "rationale": "Adheres to the HHA-First Rule, ensuring the MA visit is only booked once the HHA transition is verified."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN calls the Durable Medical Equipment (DME) company directly to negotiate a faster delivery time for the hospital bed and suggests a specific brand of walker to the SW.",
+      "rationale": "Violates the boundary against managing logistical equipment procurement and suggesting specific clinical tools, which is the responsibility of the SW and clinical team."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

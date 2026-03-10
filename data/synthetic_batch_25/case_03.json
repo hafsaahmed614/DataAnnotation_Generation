@@ -1,75 +1,73 @@
 {
+  "role_delineation_check": "Social Worker (SW) manages HHA selection, referral submission, and vendor communication. Patient Navigator (PN) audits Atlantis data against the face sheet, verifies family sentiment, and flags logistical barriers to the SW while adhering to the 'Wait' default.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis vs. facility face sheet revealed a zip code mismatch (19143 vs 19104). Corrected in Atlantis to ensure the HHA referral was routed to the correct catchment area. Verified Medicare Part B as primary.",
-  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with HHA services for renal monitoring and PT. Patient has a stable home environment with a local caregiver (daughter).",
-  "stage_1_intake_responses": "Q1: Yes, saw the logo in the lobby. Q2: Thinks we are 'discharge helpers.' Q3: SW mentioned home care but patient was unclear on the MA role. Q4: Expressed high anxiety that the nurse won't show up on time, leaving her alone with her dialysis port \u2014 escalated this anxiety to the SW.",
-  "weekly_facility_update": "Week 2: Patient completed final round of acute stabilization. SW confirms discharge target is Friday. PT notes patient is now 'supervision only' for transfers.",
-  "v_card_and_flyer_status": "V-Card inserted into daughter's iPhone; program flyer with PN contact information delivered to patient's bedside folder.",
-  "hha_confirmation_status": "HHA (Reliant Home Health) confirmed 'In Place' status on Thursday. SOC date: Friday; Nurse: Sarah T.; First-visit window: 10:00 AM \u2013 12:00 PM. Barrier identified: None at time of booking.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday D/C is firm and Reliant HHA has the orders. Call 2 (to daughter): Confirmed daughter will be present for the 10:00 AM HHA window and knows to call the PN if the nurse is 30 minutes late.",
-  "pre_dc_pulse_call_result": "Reached patient 24 hours prior to D/C. Patient confirmed home is ready and dialysis transport for Monday is booked. Re-confirmed HHA visit time.",
-  "atlantis_final_sync": "Entered D/C date (Friday) and 1st visit date (Friday) into Atlantis. Physical appointment card handed to patient during final bedside visit.",
-  "ma_visit_booking": "MA scheduled for Friday at 2:00 PM, allowing a two-hour buffer after the HHA's confirmed 12:00 PM window closure. Booking occurred only after HHA was 'In Place'.",
-  "narrative_summary": "Martha G. was a high-risk renal transition where the Connection Intake revealed significant anxiety regarding home care reliability. The PN successfully built a Confidence Loop by verifying HHA 'In Place' status and conducting a dual-call Confidence Audit. However, on the day of discharge, the HHA nurse failed to appear during the confirmed window (Day 1 Home No-Show). Despite the PN following all HHA-First scheduling rules, the transition failed when the MA arrived at a home where skilled intake had not yet occurred.",
+  "demographic_audit_note": "Verified DOB (05/14/1942) and BCBS Medicare Advantage plan. Identified an address error in the Atlantis queue: face sheet lists '123 Main Ave' while Atlantis recorded '123 Main St'. Flagged for update.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW confirms patient is clearing stroke rehab milestones; PT/OT discharge recommendations are being finalized. HHA referral pending.",
+  "v_card_flyer_status": "V-Card successfully inserted into the daughter's phone for Caller ID recognition; flyer delivered and program benefits explained to family.",
+  "pre_dc_pulse_call": "Reached daughter; patient is excited to return home but daughter reports high anxiety (Sentiment Score: 2/5) regarding the lack of a confirmed HHA start time. Flagged anxiety to SW.",
+  "atlantis_final_sync": "Entered D/C date of 11/20/2023. 1st visit date documented as 11/21/2023 following SW confirmation of HHA readiness.",
+  "ma_visit_booking": "MA visit scheduled for 11/21/2023 at 10:00 AM. Appointment was only booked after the SW confirmed the HHA intake freeze was resolved and the agency was ready.",
+  "narrative_summary": "Conducted a demographic audit and flagged an address discrepancy in Atlantis to ensure HHA routing accuracy. Educated the family on the program and verified their sentiment, flagging high caregiver anxiety to the Social Worker. Identified an HHA intake freeze via the Atlantis portal and documented the barrier while waiting for the SW to resolve vendor capacity. Scheduled the Medical Assistant only after the SW confirmed HHA acceptance, ensuring a successful first home visit.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis demographic audit reveals incorrect zip code for HHA routing.",
+      "event_description": "ENTRY/TRIAGE: Atlantis_Data_Lag identified regarding patient primary address.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+      "ai_assumed_bottleneck": "Administrative data entry error"
     },
     {
-      "event_description": "Connection Intake Q4 reveals patient fear of nurse no-shows.",
+      "event_description": "MAINTENANCE: Sentiment_Readiness_Gap identified in primary caregiver.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Intake_Barrier_Identified"
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver Anxiety"
     },
     {
-      "event_description": "HHA nurse fails to arrive for the scheduled Friday morning SOC visit.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
+      "event_description": "HANDOFF: HHA_Intake_Freeze preventing referral acceptance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Day 1 Home No-Show"
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Vendor Capacity"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient expresses fear of being abandoned by the HHA on Day 1.",
-      "action_taken": "Conducted Connection Intake Q4 and escalated anxiety to the SW for agency vetting.",
-      "intent_category": "Escalate"
+      "situation": "Atlantis portal shows the HHA referral is stuck in 'Pending' status due to intake staffing.",
+      "action_taken": "Flagged the HHA_Intake_Freeze to the SW in Atlantis and documented the delay.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "HHA status is pending without an assigned nurse name.",
-      "action_taken": "Deferred MA scheduling and called HHA intake coordinator to identify the staffing blocker.",
-      "intent_category": "Verify"
-    },
-    {
-      "situation": "Daughter is unsure of who to contact if the HHA is late.",
-      "action_taken": "Performed Confidence Audit Call 2 and inserted PN V-Card into phone.",
+      "situation": "Patient's daughter expresses fear about managing a stroke patient without a nurse present immediately.",
+      "action_taken": "Educated the daughter on the Day 1 expectations and the role of the Medical Assistant.",
       "intent_category": "Educate"
+    },
+    {
+      "situation": "Face sheet lists a different primary phone number than the Atlantis queue.",
+      "action_taken": "Verified the correct number with the family and documented the update for the SW.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon learning of the HHA no-show from the daughter, the PN logs the delay in Atlantis and waits for the Social Worker to contact the agency for a status update the following Monday.",
-      "rationale": "Respects the SW's role as the primary agency liaison but risks a total transition breakdown over the weekend."
+      "description": "Wait for the Social Worker to resolve the HHA intake freeze without checking the Atlantis portal for status updates, assuming the SW will provide notice when the MA can be scheduled.",
+      "rationale": "Respects the SW's role as the vendor manager but fails to proactively monitor the data available in the Atlantis portal to assist the transition timeline."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN calls the HHA intake coordinator to identify the specific cause of the no-show, discovers a nurse car breakdown, and immediately flags this to the SW to determine if the patient is safe or needs a Saturday bridge visit.",
-      "rationale": "Functions as a liaison by identifying the specific barrier and providing the SW with actionable data to resolve the care gap."
+      "description": "Verify the HHA acceptance status in the Atlantis portal, document the intake freeze, and ask the SW for an update on the transition timeline before scheduling the MA.",
+      "rationale": "Adheres to the Liaison role by using system data and the SW as the primary contact, avoiding direct vendor communication while keeping the case moving."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN calls a secondary HHA agency that they personally know has weekend staff and asks them to 'pick up' the Martha G. referral immediately to save the Friday transition.",
-      "rationale": "Directly violates the SW Boundary by suggesting and initiating a referral to an alternative agency."
+      "description": "Call the HHA intake coordinator directly to investigate why the referral is frozen and offer to provide clinical documentation to speed up the acceptance process.",
+      "rationale": "Violates the No-Vendor Rule and the Verb Filter by using 'Fixer' actions like investigating and negotiating directly with a third-party vendor."
     }
   ],
-  "case_outcome": "Failure_Transition_Breakdown"
+  "case_outcome": "Success_Home_with_First_Visit"
 }

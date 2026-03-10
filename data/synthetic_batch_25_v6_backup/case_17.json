@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Straight Medicare eligibility. Face sheet audit revealed a zip code typo in Atlantis (19082 vs 19083); updated record to ensure HHA routing is accurate for the Upper Darby territory.",
+  "home_vs_ltc_determination": "Home. SW confirms patient is a 'high-rehab' candidate with a goal of returning to his ranch-style residence once PT milestones are met.",
+  "stage_1_intake_responses": "Q1: No, first time hearing the name. Q2: Thinks we are the transport company. Q3: SW mentioned a nurse would visit but no details provided. Q4: Very concerned about the upcoming Labor Day weekend and who to call if pain becomes unmanageable; escalated anxiety to SW.",
+  "weekly_facility_update": "Week 2: Patient meeting 75% of PT goals post-bilateral TKA. SW targeting discharge for the Friday before Labor Day. PN delivered flyer to patient's son.",
+  "v_card_and_flyer_status": "V-Card inserted into son's (POA) phone; physical program flyer placed in the discharge folder at bedside.",
+  "hha_confirmation_status": "Not In Place. Barrier: Holiday Coverage Gap. Deep dive call to HHA intake coordinator confirmed they are at capacity for the holiday weekend and cannot guarantee a Friday SOC or weekend monitoring.",
+  "stage_3_followup_audit": "Call 1 (to SW): Flagged that HHA cannot staff the Friday D/C; SW agreed to pivot D/C to the following Tuesday to ensure safety. Call 2 (to Son): Confirmed understanding of the new Tuesday timeline and the 'In Place' HHA plan for Wednesday morning.",
+  "pre_dc_pulse_call_result": "Reached son 24 hours prior to Tuesday discharge. Confirmed he has the V-card, the walker is in the car, and he knows to call the PN if the HHA nurse is not there by noon on Wednesday.",
+  "atlantis_final_sync": "Tuesday discharge date and Wednesday first-visit date successfully synced in Atlantis.",
+  "ma_visit_booking": "MA scheduled for Wednesday at 9:00 AM. Booking was held until Monday afternoon when the HHA confirmed the nurse assignment and the 10:00 AM - 2:00 PM SOC window.",
+  "narrative_summary": "In the Entry stage, the Connection Intake identified that the 88yo patient was highly anxious about managing his bilateral TKA recovery over a holiday weekend. During Maintenance, the PN identified a Holiday Coverage Gap where the assigned HHA lacked weekend staffing, which would have left the patient unmonitored. By performing the Confidence Audit and escalating to the SW, the PN successfully delayed the discharge to a safe Tuesday window, ensuring the HHA was 'In Place' before the MA was scheduled.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA Holiday Coverage Gap identified via Deep Dive call to intake.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    },
+    {
+      "event_description": "Confidence Audit Call 1: SW agrees to Tuesday D/C to align with HHA staffing.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "MA scheduled following HHA 'In Place' confirmation for Tuesday SOC.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's son is confused about which agency is coming on Day 1.",
+      "action_taken": "Conducted Confidence Audit Call 2 to explain the Day 1 plan and equipment arrival.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA intake coordinator reports no nurses available for Friday evening start-of-care.",
+      "action_taken": "Investigated specific barrier and escalated the Holiday Coverage Gap to the SW.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Initial Atlantis record showed the wrong home address for the 88yo patient.",
+      "action_taken": "Audited face sheet against Atlantis and requested demographic correction.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN notes the holiday staffing concern in Atlantis and waits for the Social Worker's Friday morning huddle to see if the discharge date is adjusted by the facility team.",
+      "rationale": "Respects the SW's role as the primary discharge planner but risks a last-minute failed transition if the SW is unaware of the HHA's specific holiday capacity limits."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN calls the HHA intake coordinator to confirm 'In Place' status, identifies the holiday staffing gap, and immediately escalates to the SW to suggest a 'Confidence Loop' delay until Tuesday.",
+      "rationale": "Adheres to the HHA-First Rule by refusing to schedule the MA for a Friday/Saturday slot that the HHA cannot support, ensuring a high-confidence handoff."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN calls three alternative HHA agencies in the area to find one with holiday weekend availability and presents the best option to the family to keep the Friday discharge on track.",
+      "rationale": "While intended to help, this violates the SW boundary by suggesting alternative agencies and interfering with the clinical referral process."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

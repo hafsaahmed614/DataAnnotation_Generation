@@ -48,18 +48,28 @@
           ]
         },
         {
-          "category": "Conduct_Connection_Intake",
+          "category": "Confirm_Caller_ID_Readiness",
           "action_items": [
-            "Ask Q1: 'Have you heard of [our company]?'",
-            "Ask Q2: 'Do you know why we are here?'",
-            "Ask Q3: 'Has anyone explained home health services to you?'",
-            "Ask Q4: 'Do you have any concerns about going home?'",
-            "Document patient responses in stage_1_intake_responses",
-            "If Q4 surfaces specific barriers (no caregiver, unsafe home, patient anxiety), escalate to SW immediately"
+            "Verify that the V-Card was successfully inserted into the patient's phone",
+            "Ask patient/family: 'When you see this number, that's us — Healing Partners'",
+            "Document confirmation in v_card_flyer_status"
           ],
           "primary_intents": [
-            "Establish baseline patient awareness and anxiety level",
-            "Identify early barriers that require SW intervention"
+            "Ensure the patient recognizes Healing Partners calls (Caller ID only)",
+            "The V-Card is NOT for coordinating logistics"
+          ]
+        },
+        {
+          "category": "Verify_Sentiment_Score",
+          "action_items": [
+            "Ask patient/family: 'How ready do you feel about going home?'",
+            "Ask patient/family: 'What concerns do you have about managing at home?'",
+            "Document the family's sentiment (confident, anxious, reluctant)",
+            "If anxious or reluctant, flag to SW for a care conference"
+          ],
+          "primary_intents": [
+            "Gauge family readiness without performing clinical intake",
+            "Route anxiety-driven barriers to the SW for professional intervention"
           ]
         }
       ]
@@ -161,43 +171,29 @@
           ]
         },
         {
-          "category": "Verify_HHA_Status_Before_MA_Schedule",
+          "category": "Liaison_Reporting_Only",
           "action_items": [
-            "Confirm HHA has set the SOC date",
-            "Confirm HHA has assigned a nurse for the first visit",
-            "Confirm HHA has provided the first-visit time window",
-            "Only after all three confirmations ('In Place'), proceed to schedule the MA",
-            "If HHA is NOT 'In Place', investigate the specific barrier and escalate to SW"
+            "If HHA is not confirmed ready, flag the status to SW in Atlantis and WAIT",
+            "Do NOT call HHA intake, DME vendors, or transport companies directly",
+            "Document what was flagged and the SW's response",
+            "If SW has not responded, ask SW for an update — do not attempt to resolve independently"
           ],
           "primary_intents": [
-            "Prevent premature MA scheduling that risks a wasted visit",
-            "Ensure the HHA-First Rule is satisfied before committing MA resources"
+            "Enforce the 'Wait' default — PN flags, SW resolves",
+            "Prevent the PN from crossing into vendor communication"
           ]
         },
         {
-          "category": "Deep_Dive_HHA_Barrier",
+          "category": "Verify_HHA_Acceptance_via_Portal",
           "action_items": [
-            "When HHA is not 'In Place', call the HHA intake coordinator to identify the specific blocker",
-            "Categorize the barrier (staffing shortage, intake freeze, missing orders, SOC scheduling conflict)",
-            "Escalate the categorized barrier to the SW with a specific ask (e.g., 'Can you follow up on the missing orders?')",
-            "Document the barrier in hha_confirmation_status"
+            "Check Atlantis portal for HHA acceptance status (do NOT call HHA directly)",
+            "If portal shows HHA accepted with SOC date, proceed to schedule MA",
+            "If portal shows pending or no update, flag to SW and WAIT",
+            "Document portal status in ma_visit_booking"
           ],
           "primary_intents": [
-            "Transform a vague 'HHA not ready' into an actionable, specific barrier",
-            "Give the SW a clear next step rather than a generic escalation"
-          ]
-        },
-        {
-          "category": "Perform_Confidence_Followup",
-          "action_items": [
-            "Call SW to confirm D/C date is firm and HHA has confirmed start-of-care",
-            "Call patient/family to confirm understanding of Day 1 plan (who is arriving, equipment, what to do if nurse is late)",
-            "Document both calls in stage_3_followup_audit",
-            "If either call reveals a gap, escalate before proceeding to pulse call"
-          ],
-          "primary_intents": [
-            "Close the Confidence Loop before the final 24-hour window",
-            "Prevent discharge-day surprises by verifying alignment across all parties"
+            "Verify HHA readiness through system data, not direct vendor contact",
+            "Maintain the No-Vendor Rule while ensuring MA is not scheduled prematurely"
           ]
         },
         {

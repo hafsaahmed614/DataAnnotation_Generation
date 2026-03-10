@@ -1,75 +1,73 @@
 {
+  "role_delineation_check": "The Social Worker (SW) is responsible for identifying the HHA agency and sending the clinical referral. The Patient Navigator (PN) audits Atlantis data accuracy against the facility face sheet, educates the family on what to expect during the first 24 hours at home, and flags any service gaps or no-shows to the SW for resolution.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet revealed a critical data lag; Atlantis still listed the patient's 2018 apartment address, while the face sheet shows a new ADA-compliant ranch home. Insurance Medicare MBI had a transposed digit in Atlantis.",
-  "home_vs_ltc_determination": "SW confirms goal is Home for intensive stroke rehab following sub-acute stay.",
-  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thinks we are the transport company. Q3: SW mentioned a 'wound nurse' but not the full scope of home health. Q4: Patient is extremely anxious about his left-side weakness and whether the HHA nurse will help with transfers\u2014escalated anxiety and safety concern to SW.",
-  "weekly_facility_update": "Week 2: Patient demonstrating progress in PT with hemi-walker; SW targets discharge for next Thursday. Hub has not yet updated the Atlantis record with the corrected address despite two requests.",
-  "v_card_and_flyer_status": "V-Card inserted into patient's daughter's phone; program flyer delivered to patient and placed in discharge folder.",
-  "hha_confirmation_status": "Not In Place. Barrier: Atlantis_Data_Lag. The HHA intake coordinator flagged that the referral address (stale Atlantis data) is outside their service zip code, while the actual home is within it. PN investigated and found the HHA is holding the referral pending corrected physician orders with the new address.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date is firm; SW is manually faxing the corrected face sheet and orders to the HHA to bypass the Atlantis lag. Call 2 (to family): Confirmed daughter understands the Day 1 plan and knows to expect the HHA nurse between 12:00 PM and 2:00 PM on Friday.",
-  "pre_dc_pulse_call_result": "Reached patient's daughter 24 hours prior; she confirmed the hospital bed was delivered to the correct (new) address and the home is ready. Re-confirmed HHA first-visit window.",
-  "atlantis_final_sync": "Manually updated D/C date and 1st visit date in Atlantis notes field; demographic correction still pending hub approval.",
-  "ma_visit_booking": "MA scheduled for Saturday morning at 09:00 AM, confirmed only after HHA intake verified a nurse was assigned and the SOC date was locked.",
-  "narrative_summary": "The patient's transition was nearly derailed by an Atlantis_Data_Lag that sent the HHA referral to an incorrect branch based on an old address. During Stage 1, the PN identified the mismatch during the demographic audit and surfaced transfer anxieties during the Connection Intake. By Stage 3, the PN performed the Confidence Audit, identifying that the HHA was 'Not In Place' due to the address error, allowing for a targeted escalation to the SW before the MA was scheduled.",
+  "demographic_audit_note": "Audited Atlantis demographics against the Northcrest face sheet; verified DOB (05/12/1943) and Medicare Advantage plan. Identified a discrepancy in the primary phone number: Atlantis listed 555-0102, but face sheet confirms 555-0120. Flagged for correction.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2 Check-in: SW confirms patient is progressing with stroke rehab and gait training. Discharge target is set for next Tuesday. PN verified daughter is the primary caregiver.",
+  "v_card_flyer_status": "V-Card successfully inserted into the daughter's phone to ensure Healing Partners caller ID recognition; program flyer delivered and reviewed with the patient.",
+  "pre_dc_pulse_call": "Reached the daughter 24 hours prior to discharge. Verified sentiment score as 'Anxious' due to the patient's left-side weakness. Documented readiness and flagged the anxiety score to the SW.",
+  "atlantis_final_sync": "Confirmed D/C date (Oct 24) and 1st visit date (Oct 25) are synchronized in Atlantis.",
+  "ma_visit_booking": "Scheduled the Medical Assistant (MA) for Oct 25 at 1:00 PM, following the SW's confirmation that the HHA had accepted the referral and assigned a nurse.",
+  "narrative_summary": "Audited the patient's record for demographic accuracy to ensure the HHA and MA had correct contact details for this 81yo stroke patient. Verified that the family understood the Day 1 transition timeline and recognized our Caller ID. When the HHA nurse failed to arrive for the morning visit, I verified the no-show with the family, documented the status in Atlantis, and flagged the urgent care gap to the SW.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis Data Lag: Patient record appears with 5-year-old address and incorrect MBI.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
-    },
-    {
-      "event_description": "HHA Referral Mismatch: HHA branch rejects referral based on stale Atlantis zip code.",
+      "event_description": "Atlantis Data Lag regarding primary contact number",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Incorrect phone data prevents HHA from scheduling the intake assessment."
     },
     {
-      "event_description": "Confidence Audit reveals HHA is 'Not In Place' due to missing corrected orders.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "+1\u20132 Days",
-      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+      "event_description": "Sentiment_Readiness_Gap identified in daughter",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver anxiety regarding stroke-related transfers may lead to discharge refusal."
+    },
+    {
+      "event_description": "Day 1 Home No-Show by HHA nurse",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "The HHA nurse assigned to the first post-discharge visit did not appear, leaving the patient without skilled monitoring."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Initial Atlantis entry shows address mismatch against facility face sheet.",
-      "action_taken": "Conducted demographic audit and flagged data lag to the Hub/SW immediately.",
+      "situation": "Atlantis displays an outdated phone number for the patient's daughter.",
+      "action_taken": "Flagged the discrepancy to the SW and documented the correct number from the Face Sheet in Atlantis.",
       "intent_category": "Verify"
     },
     {
-      "situation": "Patient expresses fear about home transfers during first meeting.",
-      "action_taken": "Conducted Connection Intake Q4 and escalated the specific safety concern to the SW.",
-      "intent_category": "Escalate"
+      "situation": "The daughter expresses fear about the patient falling during the first night home.",
+      "action_taken": "Educated the family on the Day 1 schedule and flagged the high anxiety sentiment to the SW.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "HHA intake coordinator has not confirmed SOC date 48 hours before discharge.",
-      "action_taken": "Called HHA intake to identify specific blocker (address mismatch in orders) and escalated to SW.",
-      "intent_category": "Verify"
+      "situation": "Family calls at 11:00 AM stating the 9:00 AM HHA nurse never arrived.",
+      "action_taken": "Verified the no-show status with the daughter and flagged the service failure to the SW in Atlantis.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Atlantis Hub to process the demographic correction before contacting the HHA or the SW, ensuring the system of record is clean before taking action.",
-      "rationale": "Respects the internal data processing workflow and avoids creating manual workarounds for the SW, though it risks a discharge delay."
+      "description": "Document the HHA no-show in the Atlantis patient notes and wait for the SW to review the logs during the next scheduled morning huddle.",
+      "rationale": "This follows the 'Wait' default but lacks the proactive liaison required to alert the SW to a high-risk care gap for a stroke patient."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Perform the Confidence Audit by calling the HHA to identify the specific reason for the 'Not In Place' status, then ask the SW to fax corrected orders manually to the HHA to bypass the Atlantis lag.",
-      "rationale": "Follows the HHA-First rule by investigating the specific barrier and using the SW escalation path to ensure the HHA is ready before scheduling the MA."
+      "description": "Verify the patient's immediate safety with the daughter, document the HHA no-show in Atlantis, and immediately flag the status to the SW via the portal to request an urgent HHA status update.",
+      "rationale": "This respects the No-Vendor rule by communicating only with the family and SW, uses Liaison verbs, and alerts the professional responsible for vendor management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Schedule the MA visit immediately based on the projected discharge date to ensure the incentive window is met, then call the HHA and tell them you will personally hand-carry the correct F2F forms to their office.",
-      "rationale": "While intended to speed up the process, scheduling the MA before the HHA is 'In Place' violates the core Confidence Loop, and handling F2F forms is a banned SW-level action."
+      "description": "Call the HHA Intake Coordinator directly to investigate why the nurse missed the appointment and negotiate a new arrival time for the afternoon.",
+      "rationale": "This violates the No-Vendor Rule and uses 'Fixer' verbs (Investigate, Negotiate), overstepping the PN role into vendor coordination."
     }
   ],
-  "case_outcome": "Success_Home_with_First_Visit"
+  "case_outcome": "Failure_Transition_Breakdown"
 }

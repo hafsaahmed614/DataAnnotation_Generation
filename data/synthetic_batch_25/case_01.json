@@ -1,74 +1,72 @@
 {
+  "role_delineation_check": "Social Worker (SW) handles agency selection, HHA referral submission, and resolution of vendor scheduling conflicts. Patient Navigator (PN) audits demographic data in Atlantis, verifies family sentiment, educates on Day 1 expectations, and flags HHA readiness status to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet: Medicare Advantage plan verified. Address confirmed as single-family home. Found DOB discrepancy (1940 vs 1941) and flagged for SW correction.",
-  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with 24/7 family support; LTC was ruled out after patient met ICU step-down milestones.",
-  "stage_1_intake_responses": "Q1: 'No, I haven't heard of you.' Q2: 'I think you're with the insurance company.' Q3: 'The doctor mentioned someone would come to the house.' Q4: 'I'm worried about the stairs and how I'll get home from the curb.' (Escalated mobility concern to SW).",
-  "weekly_facility_update": "Week 2 Check-in: Patient completing IV antibiotic course for pneumonia. PT reports patient is now at a '1-person assist' for transfers. Target D/C set for Friday.",
-  "v_card_and_flyer_status": "V-Card successfully inserted into daughter's phone during bedside education; program flyer delivered and reviewed with family.",
-  "hha_confirmation_status": "In Place. HHA (CenterWell) confirmed SOC for Saturday morning; Nurse Miller assigned; first-visit window 0900-1100 confirmed after initial transport delay resolved.",
-  "stage_3_followup_audit": "Call 1 (SW): Confirmed Friday D/C is firm; HHA has the orders. Call 2 (Family): Verified daughter understands the 0900 HHA arrival and confirmed hospital bed was delivered to the first floor.",
-  "pre_dc_pulse_call_result": "24-hour pulse call completed. Reached daughter; confirmed oxygen concentrator is active at home. Transport van confirmed for 1400 Friday discharge.",
-  "atlantis_final_sync": "Entered D/C date (Friday) and 1st MA visit date (Saturday) into Atlantis system.",
-  "ma_visit_booking": "MA scheduled for Saturday at 1300. Booking held until HHA confirmed 'In Place' status following the transport coordination resolution.",
-  "narrative_summary": "Following a post-ICU pneumonia stay, the patient's transition was initially threatened by a transport vendor cancellation for the Friday discharge. During the Connection Intake, the patient expressed high anxiety regarding the physical move back to her home. By performing the Confidence Audit and verifying HHA 'In Place' status before scheduling the MA, the PN ensured the loop was closed despite the transport friction. The first home visit was successfully completed within the 24-hour window.",
+  "demographic_audit_note": "Audited Atlantis record against facility Face Sheet; verified DOB 05/14/1936 and Medicare Advantage plan. Identified and corrected a transposition error in the patient's home zip code in Atlantis to match the Face Sheet.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW reports patient is progressing with Physical Therapy post-bilateral TKA. HHA referral sent to 'Elite Home Care'. Target discharge window established for upcoming Friday.",
+  "v_card_flyer_status": "V-Card inserted into patient's daughter's phone for Caller ID recognition; Healing Partners program flyer delivered and reviewed at bedside.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge; sentiment score is 'Anxious' due to patient's limited mobility with bilateral knee pain. Verified home is ready for arrival.",
+  "atlantis_final_sync": "Confirmed D/C date of 11/17 and initial visit date of 11/18 entered into Atlantis.",
+  "ma_visit_booking": "MA visit scheduled for 11/18 at 11:00 AM only after SW confirmed via Atlantis that HHA resolved the SOC overlap and assigned a nurse.",
+  "narrative_summary": "Audited Atlantis demographics against the facility face sheet to ensure the HHA referral contained the correct address for the bilateral TKA recovery. Verified family sentiment, documenting high anxiety regarding the patient's gait stability, and flagged this to the SW for a pre-discharge briefing. Observed an HHA_SOC_Overlap alert in the Atlantis portal which threatened the first-visit window; flagged this barrier to the SW and waited for professional resolution before scheduling the MA.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis demographic audit reveals DOB mismatch between facility and payer records.",
+      "event_description": "Atlantis demographic audit reveals zip code mismatch vs Face Sheet.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
       "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Medical transport (wheelchair van) reports no availability for the scheduled Friday 2 PM discharge window.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Transport_Coordination_Failure"
-    },
-    {
-      "event_description": "HHA refuses to confirm Saturday SOC window until Friday transport is re-secured.",
+      "event_description": "Family expresses reluctance to manage bilateral TKA recovery at home due to pain levels.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "HHA portal indicates scheduling conflict preventing Day 1 visit confirmation.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+      "ai_assumed_bottleneck": "HHA_SOC_Overlap"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Connection Intake Q4 surfaces patient fear of stairs and curb-to-bed mobility.",
-      "action_taken": "Escalated specific mobility barriers to SW and PT to ensure home safety eval was prioritized.",
-      "intent_category": "Escalate"
+      "situation": "Atlantis portal shows HHA has not confirmed a nurse for the Saturday SOC due to staffing overlap.",
+      "action_taken": "Flagged the HHA_SOC_Overlap status to the SW in Atlantis and documented the delay.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "Transport vendor cancels Friday pickup, risking a weekend discharge gap.",
-      "action_taken": "Conducted Confidence Audit with SW to confirm alternative transport was secured before notifying HHA.",
-      "intent_category": "Verify"
-    },
-    {
-      "situation": "Daughter expresses confusion about who arrives first on Day 1.",
-      "action_taken": "Educated family on the sequence of HHA nurse arrival followed by the MA visit.",
+      "situation": "Patient's daughter is unsure of what time the HHA nurse will arrive on the first day home.",
+      "action_taken": "Educated the daughter on the standard 4-hour arrival window and what equipment must be bedside.",
       "intent_category": "Educate"
+    },
+    {
+      "situation": "Face Sheet lists a different primary caregiver phone number than the Atlantis queue.",
+      "action_taken": "Verified the correct contact number with the patient and updated the Atlantis record.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to resolve the transport cancellation and update the HHA before attempting to schedule the MA visit.",
-      "rationale": "Respects the SW's domain over logistics while adhering to the HHA-First rule by not scheduling the MA until the new discharge timeline is firm."
+      "description": "Notice the HHA_SOC_Overlap in the portal and wait for the SW to address it during the next morning's multidisciplinary rounds.",
+      "rationale": "Respects the boundary that PNs do not manage vendor logistics; allows the established facility process to resolve the staffing issue."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Perform the Confidence Audit by calling the HHA intake coordinator to identify if the transport delay will cause them to lose the Saturday staffing slot.",
-      "rationale": "Gathers critical 'In Place' data to prevent a wasted MA visit while staying within the PN scope of coordination and verification."
+      "description": "Flag the HHA_SOC_Overlap to the SW via the Atlantis messaging system, document the family's anxiety regarding the potential delay, and verify the MA's availability for a shifted window.",
+      "rationale": "Uses liaison verbs to alert the professional responsible for vendor management while keeping the family educated and the data updated."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the transport company directly to demand a priority slot for the patient and then call the HHA to suggest they use a different nursing agency that has better weekend coverage.",
-      "rationale": "Violates the SW boundary regarding transport/agencies and oversteps into HHA selection, which is a banned action."
+      "description": "Call the HHA Intake Coordinator directly to negotiate a specific 10:00 AM SOC time slot for the patient to ensure the MA visit can proceed as planned.",
+      "rationale": "Violates the No-Vendor Rule and 'Fixer' verb prohibition by attempting to resolve a scheduling conflict directly with a third-party agency."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

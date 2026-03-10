@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility face sheet; found discrepancy in phone number for primary caregiver (spouse). Insurance confirmed as Straight Medicare with active Part B.",
+  "home_vs_ltc_determination": "Home. Social Worker (SW) confirms the patient's goal is to return to his private residence with his wife assisting.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the company. Q2: Thinks we are 'extra help' for the nurses. Q3: SW mentioned home health but patient was groggy. Q4: 'My wife is terrified of my chest incision' \u2014 identified significant Caregiver_Panic regarding sternal precautions.",
+  "weekly_facility_update": "Week 2 Check-in: PT reports patient is meeting stair goals; however, spouse is verbalizing high anxiety during dressing change demos. SW notified of escalating caregiver fear.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into spouse's phone; physical program flyer delivered to patient's bedside table.",
+  "hha_confirmation_status": "In Place. HHA confirmed SOC date for Friday, assigned Nurse Miller, and provided a 2:00 PM - 4:00 PM time window. MA was scheduled only after these details were locked.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday D/C is firm. Call 2 (to Spouse): Conducted Confidence Audit; spouse confirmed she knows the HHA nurse is coming Friday afternoon and has the MA's Saturday morning time slot on her calendar.",
+  "pre_dc_pulse_call_result": "Reached patient and spouse 24 hours prior to D/C. Spouse reported 'last minute cold feet' about the discharge; PN provided de-escalation and re-confirmed the Day 1 support plan.",
+  "atlantis_final_sync": "Discharge date of 10/27 and first visit date of 10/28 successfully entered into Atlantis.",
+  "ma_visit_booking": "MA visit booked for 10/28 at 10:00 AM. Booking occurred only after HHA provided the confirmed RN window to ensure no scheduling overlap.",
+  "narrative_summary": "Patient Arthur Miller was triaged in Atlantis where a demographic error was corrected before the Connection Intake revealed high levels of Caregiver_Panic from his spouse. During the Maintenance phase, the PN focused on educating the family on the Day 1 transition plan to mitigate discharge refusal. Following the HHA-First Rule, the PN waited for the HHA to confirm a specific nurse and time window before scheduling the MA. The Confidence Audit successfully aligned the SW and the family, leading to a verified home transition despite the initial anxiety.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Caregiver phone number in system was for an old work landline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative data entry error"
+    },
+    {
+      "event_description": "Connection Intake Q4: Identified spouse's fear of managing cardiac sternal precautions.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "HHA Intake Coordinator Unavailable: Delay in confirming the SOC nurse assignment.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Operational staffing gap at HHA"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Spouse expressed fear of sternal incision opening during Connection Intake.",
+      "action_taken": "Immediately escalated the caregiver's specific anxiety to the SW for additional education.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA referral sent but no nurse assigned or time window provided.",
+      "action_taken": "Called HHA intake and withheld MA scheduling until the 'In Place' status was confirmed.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Discharge day approaching with family still feeling 'unprepared'.",
+      "action_taken": "Conducted the Confidence Audit call to walk the family through the Day 1 equipment and nurse arrival plan.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN steps back and allows the Social Worker to handle the spouse's requests to delay the discharge, noting the boundary between logistics and clinical readiness.",
+      "rationale": "Respects the SW's role in managing the discharge timeline while maintaining the PN's focus on post-discharge alignment."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN conducts the Connection Intake, identifies the Caregiver_Panic, and performs a Confidence Audit with the spouse to verify she understands exactly who is arriving on Day 1.",
+      "rationale": "Directly addresses the friction within the PN scope and follows the Confidence Loop requirements without overstepping into clinical management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN contacts the HHA and requests they send a specific 'Cardiac Specialist' nurse to the home to reassure the wife, and then schedules the MA for Friday morning to 'get ahead' of the HHA.",
+      "rationale": "Violates the HHA-First Rule by scheduling the MA before HHA confirmation and oversteps by attempting to influence the HHA's clinical staffing decisions."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

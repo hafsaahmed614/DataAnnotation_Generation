@@ -1,74 +1,72 @@
 {
+  "role_delineation_check": "Social Worker (SW) manages the renal dialysis agency referral and HHA selection for home support. Patient Navigator (PN) audits Atlantis demographic accuracy, educates the daughter on the 24-hour post-discharge visit sequence, and flags caregiver sentiment to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified 79yo male patient in Atlantis; insurance confirmed as Straight Medicare. Corrected a typo in the home address (Street vs. Road) by auditing against the facility face sheet to ensure HHA and MA travel to the correct rural location.",
-  "home_vs_ltc_determination": "Social Worker (SW) confirmed the goal is Home with intensive wound care and PT for amputation rehab.",
-  "stage_1_intake_responses": "Q1: No, first time hearing of the company. Q2: Thinks we are providing the wheelchair. Q3: SW mentioned home health but patient was unclear on the start date. Q4: Expressed high anxiety regarding managing stump hygiene and phantom pain alone; PN escalated this to SW for additional counseling.",
-  "weekly_facility_update": "Week 2: Patient successfully completed wheelchair transfer training. SW indicates discharge is targeted for Thursday. PN confirmed HHA referral was sent to 'Elite Home Care'.",
-  "v_card_and_flyer_status": "V-Card inserted into patient's son's smartphone; physical program flyer delivered to patient and placed in his discharge folder.",
-  "hha_confirmation_status": "Initially 'Not In Place' due to Missing HHA Orders at Handoff; HHA intake reported they had the referral but no physician signatures for the wound care protocol. After PN escalation to SW, orders were refaxed. HHA is now 'In Place': SOC set for Friday 10:00 AM, Nurse assigned (RN Miller), 2-hour window confirmed.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date is firm for Thursday afternoon and HHA has all signed orders. Call 2 (to Son): Confirmed son will be at the home for the Day 1 nurse arrival and understands to call the HHA coordinator if the nurse is not there by noon.",
-  "pre_dc_pulse_call_result": "Reached son 24 hours prior to discharge; confirmed the hospital bed was delivered to the home and the son has the physical appointment card for the MA visit.",
-  "atlantis_final_sync": "D/C date of Thursday and 1st MA visit date of Friday entered into Atlantis at 14:00.",
-  "ma_visit_booking": "MA scheduled for Friday at 1:00 PM (3 hours after HHA SOC start window). Booking was held until HHA confirmed RN assignment and SOC window.",
-  "narrative_summary": "In Stage 1, the Connection Intake revealed significant patient anxiety regarding stump care, which was immediately escalated to the SW. During Stage 2 Maintenance, the PN identified a critical HHA readiness gap: the agency lacked signed wound care orders, preventing the 'In Place' status required for MA scheduling. By performing the Deep Dive HHA Barrier action, the PN categorized the delay and facilitated the SW's intervention. Once the HHA confirmed the nurse and time window, the PN completed the Confidence Audit and scheduled the MA, securing a successful service conversion.",
+  "demographic_audit_note": "Audit of Atlantis record against facility Face Sheet revealed a critical error: the primary contact number was listed as an inactive landline. Updated Atlantis with the daughter's (Maria) mobile number and verified Medicare Part B eligibility for home services.",
+  "home_vs_ltc_goal": "Home with HHA and specialized renal support.",
+  "weekly_staff_update": "Week 2: Patient completed fistula placement. SW confirmed HHA 'Renal-Care' is being vetted. Daughter (Maria) expressed significant fear regarding home dialysis monitoring during flyer delivery.",
+  "v_card_flyer_status": "V-Card successfully inserted into Maria\u2019s phone for Caller ID recognition of Healing Partners. Program flyer delivered; Maria confirmed she understands the PN is the liaison, not the clinician.",
+  "pre_dc_pulse_call": "24-hour pulse call completed with Maria. Sentiment: High Anxiety. Maria threatened to refuse discharge due to 'fear of the machine.' PN documented the sentiment readiness gap and flagged it to the SW for immediate intervention.",
+  "atlantis_final_sync": "D/C date of 10/24 and 1st visit date of 10/25 documented in Atlantis after SW confirmed HHA readiness.",
+  "ma_visit_booking": "Medical Assistant (MA) visit scheduled for 10/25 at 11:00 AM, following SW's confirmation that HHA 'Renal-Care' will perform Start of Care at 9:00 AM.",
+  "narrative_summary": "Audited Atlantis demographics to correct the primary caregiver's contact information. Verified the family's sentiment score, which revealed high caregiver panic regarding renal care at home. Educated the family on the 24-hour transition window and flagged the anxiety to the SW to prevent a discharge refusal. Verified HHA acceptance through the Atlantis portal before scheduling the MA visit.",
   "format_1_state_log": [
     {
-      "event_description": "HHA reports referral received but clinical orders for wound care are missing signatures.",
+      "event_description": "Atlantis Data Lag: Primary contact number in queue was disconnected landline; Face Sheet shows daughter's mobile.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3 Days",
-      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
     },
     {
-      "event_description": "PN identifies specific missing document (Stump Care Protocol) and flags to SW.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "event_description": "Caregiver_Panic: Maria expresses inability to manage dialysis equipment and threatens to block discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
     },
     {
-      "event_description": "HHA confirms 'In Place' status after receiving signed orders; MA is scheduled.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "event_description": "HHA_Acceptance_Lag: Renal-Care agency has not updated the Atlantis portal with an assigned nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient expresses fear of managing phantom pain and wound care during Connection Intake Q4.",
-      "action_taken": "Escalated patient anxiety and caregiver concerns to the Social Worker for intervention.",
-      "intent_category": "Escalate"
-    },
-    {
-      "situation": "HHA intake coordinator states they cannot set a SOC date because the wound care orders are incomplete.",
-      "action_taken": "Conducted Deep Dive HHA Barrier check and notified SW of the specific missing signed protocol.",
+      "situation": "Atlantis record contains stale phone data for the primary caregiver.",
+      "action_taken": "Audited Face Sheet and documented the correct mobile number in Atlantis.",
       "intent_category": "Verify"
     },
     {
-      "situation": "Discharge is 24 hours away and HHA has finally confirmed the nurse assignment.",
-      "action_taken": "Conducted the pre-discharge pulse call to the son to confirm home readiness and MA visit time.",
-      "intent_category": "Verify"
+      "situation": "Daughter (Maria) expresses extreme anxiety about managing renal care at home.",
+      "action_taken": "Educated Maria on the Day 1 support timeline and flagged the sentiment score to the SW.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The HHA has not confirmed the 9:00 AM SOC window in the portal.",
+      "action_taken": "Flagged the pending status to the SW in Atlantis and waited for confirmation before booking the MA.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon hearing the HHA is missing orders, the PN logs the delay in Atlantis and waits for the weekly SW meeting to mention the status update.",
-      "rationale": "Respects the SW's role as the primary coordinator of orders but risks a missed discharge window if the SW is unaware of the HHA's specific intake hurdle."
+      "description": "Wait for the formal discharge meeting for the SW to address Maria's concerns about the dialysis machine.",
+      "rationale": "Respects the SW's clinical authority over the discharge plan and avoids redundant communication, though it risks a last-minute refusal."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "PN calls the HHA intake coordinator to identify exactly which orders are missing, then provides the SW with a specific request to refax the signed Stump Care Protocol to the agency.",
-      "rationale": "Acts as a liaison by identifying the specific 'In Place' barrier and giving the SW an actionable task without overstepping into clinical management."
+      "description": "Educate Maria on the specific roles of the HHA nurse versus the MA visit to lower anxiety, then flag the 'High Anxiety' sentiment score to the SW for a care conference.",
+      "rationale": "Uses liaison verbs (Educate, Flag) to support the family and keep the SW informed without crossing into clinical or vendor management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "PN contacts the attending surgeon's office directly, explains the urgency, and requests the surgeon's assistant to fax the signed home health orders directly to the HHA to ensure the MA can be scheduled today.",
-      "rationale": "This is an overstep because the PN is directly managing clinical documentation and physician communication, which is the sole responsibility of the facility SW and clinical team."
+      "description": "Call the HHA intake coordinator at 'Renal-Care' to demand they send a specialized dialysis nurse for the first visit to reassure the daughter.",
+      "rationale": "Violates the No-Vendor Rule and the Verb Filter by attempting to 'Order' or 'Negotiate' staffing with an outside agency."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage Plan; identified and corrected a typo in the primary contact phone number in Atlantis by cross-referencing the facility face sheet. Confirmed home address is within the MA's 30-mile travel radius.",
+  "home_vs_ltc_determination": "Home. SW confirmed the patient has a strong support system and the goal is a return to her ranch-style home with skilled nursing for diabetic wound management.",
+  "stage_1_intake_responses": "Q1: Yes, patient's neighbor used the service. Q2: Thinks we provide the actual wound care. Q3: SW mentioned nursing but not the MA transition visit. Q4: Expressed high anxiety about the frequency of dressing changes; PN escalated this specific concern to the SW to ensure the HHA frequency is clearly defined.",
+  "weekly_facility_update": "Week 2: Wound showing granular tissue; patient cleared by PT for home discharge. SW targets a Friday discharge. PN confirmed with HHA that the referral was received and logged in the Hub.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's smartphone and daughter's phone; program flyer delivered and reviewed at bedside.",
+  "hha_confirmation_status": "Initially 'Not In Place'. HHA intake reported the assigned wound care specialist is out with a sudden illness. PN investigated and found no backup specialist available for the Friday SOC. Following escalation, SW and HHA agreed to a generalist nurse for the Friday bridge visit with the specialist returning Monday. HHA is now 'In Place' (SOC Friday, Nurse: Sarah R., Window: 12-2 PM).",
+  "stage_3_followup_audit": "Call 1 (SW): Confirmed D/C date is firm for Friday morning. Call 2 (Daughter): Confirmed she understands the HHA nurse arrives first for the SOC and the MA will follow within 24 hours to reinforce the care plan.",
+  "pre_dc_pulse_call_result": "Reached patient's daughter 24 hours prior to discharge; confirmed the hospital bed and wound care supplies were delivered to the home. Daughter feels 'confident' with the Day 1 schedule.",
+  "atlantis_final_sync": "Entered D/C date (Friday) and 1st MA visit date (Saturday) into Atlantis. Physical appointment card handed to patient during final bedside visit.",
+  "ma_visit_booking": "MA visit successfully scheduled for Saturday morning. Booking was held until Thursday afternoon when the HHA finally confirmed the bridge nurse assignment, satisfying the HHA-First Rule.",
+  "narrative_summary": "Patient Maria, a 69-year-old with a diabetic foot ulcer, was successfully transitioned home despite a critical staffing gap. During the Confidence Audit, I identified that the HHA's primary specialist was ill, creating a 'Not In Place' status. By categorizing this as a 'Provider Illness' barrier and escalating to the SW, a bridge nurse was secured, allowing me to safely schedule the MA within the 24-hour window without risking a wasted visit. The Connection Intake early in the stay allowed us to address Maria's clinical anxiety through SW intervention, ensuring a stable handoff.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA reports assigned wound nurse is out sick; no immediate backup specialist identified.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Operational (Provider Illness)"
+    },
+    {
+      "event_description": "PN escalates staffing gap to SW; HHA intake confirms a generalist nurse will bridge the Friday/Sunday dressing changes.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Connection Intake Q4 surfaces patient fear of wound infection at home.",
+      "action_taken": "Escalated patient anxiety to the Social Worker.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA coordinator is vague about the start-of-care time window.",
+      "action_taken": "Performed Deep_Dive_HHA_Barrier call to identify specific staffing illness.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "HHA confirms bridge nurse is assigned and window is set.",
+      "action_taken": "Scheduled the MA for the 24-hour post-discharge visit.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon hearing the HHA nurse is sick, the PN waits for the Social Worker to receive the automated agency update and contact the family regarding the potential discharge delay.",
+      "rationale": "This respects the SW's role as the primary coordinator of the discharge timeline but fails to proactively resolve the 'In Place' status required for MA scheduling."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN calls the HHA intake coordinator to confirm the specific barrier (Provider Illness), then informs the SW that the MA cannot be scheduled until a bridge nurse is assigned, providing the SW with the specific info needed to pressure the agency.",
+      "rationale": "This follows the 'HHA-First Rule' and the 'Deep_Dive_HHA_Barrier' protocol, ensuring the MA is only scheduled when the transition is verified."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN contacts a different HHA agency known to have wound specialists available and suggests to the SW that the referral be pulled and redirected to this new agency to avoid a discharge delay.",
+      "rationale": "This violates the SW Boundary and the Banned Actions list by suggesting specific HHA agencies and interfering with the SW's referral management."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

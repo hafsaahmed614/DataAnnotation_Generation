@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Part B coverage for 83yo female; corrected primary phone number in Atlantis to daughter's mobile (POA) and confirmed Scranton residential address matches the facility face sheet.",
+  "home_vs_ltc_determination": "Social Worker confirmed the goal is Home with 24/7 caregiver support provided by daughter.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thinks we are hospital discharge planners. Q3: SW mentioned a nurse would visit for the pneumonia follow-up. Q4: Daughter is extremely anxious about managing the portable oxygen concentrator and nebulizer treatments; escalated this Caregiver Training Gap to the SW immediately.",
+  "weekly_facility_update": "Week 2: Patient transitioned to room air at rest but requires 2L O2 with exertion. SW reports daughter is scheduled for mandatory respiratory therapy (RT) training session this Friday.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into daughter's phone contacts; program flyer delivered and reviewed with patient in-room.",
+  "hha_confirmation_status": "In Place: SOC date set for 10/12; RN Sarah J. assigned; first-visit window confirmed for 0900-1100.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed discharge date is firm for 10/11 and HHA has all orders. Call 2 (to family): Confirmed daughter completed RT training and knows RN Sarah will arrive Friday morning.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to D/C; confirmed hospital bed and O2 concentrator were delivered to the home and she has the V-Card ready for the Day 1 transition.",
+  "atlantis_final_sync": "Entered D/C date of 10/11 and HHA SOC/First Visit date of 10/12 into Atlantis.",
+  "ma_visit_booking": "MA visit scheduled for 10/11 at 15:30 (post-discharge) following HHA 'In Place' confirmation.",
+  "narrative_summary": "During Entry/Triage, the PN identified a critical Caregiver Training Gap via the Connection Intake, escalating the daughter's anxiety regarding respiratory equipment to the SW. Maintenance involved weekly alignment with the facility staff while the daughter underwent specialized training, ensuring the V-card and flyer were delivered. In the Handoff stage, the PN completed the Confidence Audit only after the HHA was confirmed 'In Place', allowing for the successful scheduling of the MA within 24 hours of the patient's return home.",
+  "format_1_state_log": [
+    {
+      "event_description": "Connection Intake surfaces daughter's inability to operate nebulizer.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+4 Days",
+      "ai_assumed_bottleneck": "Caregiver Training Gap"
+    },
+    {
+      "event_description": "DME vendor delivers O2 concentrator but misses the nasal cannulas.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial Connection Intake Q4 reveals daughter's high anxiety regarding equipment.",
+      "action_taken": "Escalated to SW to request a formal RT-led family training session.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA referral sent but no nurse assigned 48 hours before discharge.",
+      "action_taken": "Called HHA intake coordinator to identify barrier (missing O2 orders) and flagged to SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient's daughter is unclear on who arrives first on Day 1.",
+      "action_taken": "Conducted Confidence Audit call to walk daughter through the MA vs. HHA arrival windows.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Strategic Deferral: Wait for the facility's Social Worker to provide the final sign-off on the daughter's competency before updating the Atlantis record.",
+      "rationale": "Respects the SW's authority over clinical discharge readiness and prevents the PN from overstepping into clinical competency assessments."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN Liaison: Conduct the Stage 3 Confidence Audit call to the daughter to verify she understands the Day 1 plan and has the HHA's contact information saved via the V-Card.",
+      "rationale": "Ensures the 'Confidence Loop' is closed by verifying the family is prepared for the transition without performing the clinical training themselves."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Clinical Interference: Offer to personally demonstrate the correct cleaning procedure for the nebulizer and oxygen tubing to the daughter to ensure the discharge date isn't delayed.",
+      "rationale": "Violates the Banned Actions by managing clinical equipment and training, which is the responsibility of the facility staff or the HHA."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

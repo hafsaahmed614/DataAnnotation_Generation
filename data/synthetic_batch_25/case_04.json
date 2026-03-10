@@ -1,66 +1,72 @@
 {
+  "role_delineation_check": "Social Worker (SW) manages HHA selection, DME orders for the prosthetic/wheelchair, and family dispute resolution. Patient Navigator (PN) audits Atlantis demographics, verifies family sentiment, and flags transition barriers to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis record against facility face sheet revealed a zip code mismatch (19082 vs 19083). Insurance verified as Straight Medicare with active Part B coverage.",
-  "home_vs_ltc_determination": "Social Worker confirms the goal is Home with 24/7 family support; patient is not a candidate for LTC at this time.",
-  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thinks we are hospital transport. Q3: Yes, SW explained RN/PT visits. Q4: Very anxious about oxygen tank management at home; PN escalated anxiety to SW for additional RT education before discharge.",
-  "weekly_facility_update": "Week 2: Patient stable on 2L NC; PT reports patient is modified independent with rolling walker. SW targeting Friday discharge.",
-  "v_card_and_flyer_status": "V-Card successfully inserted into daughter's phone; program flyer delivered to patient's bedside folder.",
-  "hha_confirmation_status": "Not In Place. Barrier: Provider Illness. The HHA's designated respiratory-trained nurse is out sick; no alternate nurse available in the zip code until Monday. PN escalated to SW to delay D/C until HHA is 'In Place'.",
-  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date shifted to Monday to ensure HHA coverage. Call 2 (to family): Confirmed they are aware of the new Monday start-of-care window and that oxygen has been delivered to the home.",
-  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to Monday discharge; home readiness confirmed, and family understands the HHA nurse will arrive between 9 AM and 11 AM.",
-  "atlantis_final_sync": "Entered D/C date of 10/23 and first HHA visit date of 10/23 into Atlantis queue.",
-  "ma_visit_booking": "MA scheduled for Monday 10/23 at 2:00 PM, following HHA 'In Place' confirmation for the morning window.",
-  "narrative_summary": "Managed the transition of an 83yo post-ICU pneumonia patient by first identifying respiratory anxieties during the Connection Intake and escalating to the SW. During the Maintenance stage, a provider illness at the HHA created a 3-day coverage gap, which the PN addressed by coordinating a D/C delay with the SW to maintain the Confidence Loop. The transition was secured in Stage 3 after the HHA confirmed 'In Place' status for Monday, allowing for the successful scheduling of the MA visit within the 24-hour window.",
+  "demographic_audit_note": "Audit of Face Sheet against Atlantis queue revealed a discrepancy: Atlantis listed a disconnected landline, while the Face Sheet provided the daughter\u2019s mobile number. Insurance verified as Straight Medicare.",
+  "home_vs_ltc_goal": "Home (per SW assessment, despite son's preference for LTC).",
+  "weekly_staff_update": "Week 2: SW reports patient is progressing with prosthetic training. SW notes high friction between daughter (pro-home) and son (pro-LTC). PN flagged the 'Sentiment_Readiness_Gap' to the SW.",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's smartphone for Caller ID recognition; program flyer delivered to the daughter during bedside visit.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours pre-discharge. She reports being 'Anxious' (Sentiment Score: 2/5) due to her brother's refusal to help with ramp installation. Flagged to SW.",
+  "atlantis_final_sync": "D/C date of 11/14 and first MA visit date of 11/15 documented in Atlantis after SW confirmed HHA acceptance.",
+  "ma_visit_booking": "MA visit scheduled for 11/15 at 11:00 AM. Booking was held until SW confirmed HHA 'Accepted' status via the Atlantis portal.",
+  "narrative_summary": "PN audited patient demographics and corrected the primary contact number in Atlantis to ensure successful reach rates. During the maintenance phase, PN verified a significant sentiment gap between the patient's children and flagged this friction to the SW for a care conference. Once the SW confirmed the HHA was ready and the family disagreement was stabilized, the PN scheduled the first MA visit within the 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis demographic audit reveals zip code error; requested SW update to ensure HHA referral accuracy.",
+      "event_description": "Atlantis demographic audit reveals outdated contact number.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
       "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "HHA intake coordinator reports the assigned respiratory nurse is out with flu; no backup available for Friday.",
-      "clinical_impact": "Worsens",
+      "event_description": "Son demands LTC placement while daughter prepares the home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "HHA portal status remains 'Pending' 48 hours before discharge.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "Provider_Illness"
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient expresses high anxiety regarding home oxygen use during Stage 1 meeting.",
-      "action_taken": "Escalated Q4 intake response to SW to request a respiratory therapy consult prior to discharge.",
-      "intent_category": "Escalate"
+      "situation": "Patient's son expresses 'Caregiver Panic' and wants to cancel the home transition.",
+      "action_taken": "Documented the son's concerns and Flagged the sentiment score to the SW for a family conference.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "HHA is unable to confirm a nurse for the Friday discharge due to staff illness.",
-      "action_taken": "Advised SW that HHA is 'Not In Place' and recommended holding MA scheduling until Monday coverage is verified.",
-      "intent_category": "Verify"
-    },
-    {
-      "situation": "Daughter is confused about the difference between the HHA nurse and the MA.",
-      "action_taken": "Conducted education on the Day 1 plan, explaining the HHA focuses on clinical monitoring while the MA supports the transition loop.",
+      "situation": "Daughter is unsure of who will arrive at the home on Day 1.",
+      "action_taken": "Educated the daughter on the roles of the HHA nurse versus the Healing Partners MA.",
       "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA has not confirmed the start-of-care date in the portal.",
+      "action_taken": "Verified the status in Atlantis and Asked the SW for an update on HHA readiness.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to find a different HHA that has a nurse available for a Friday discharge to avoid delaying the patient's exit.",
-      "rationale": "This respects the SW's role in agency selection and avoids interference, though it may result in a less specialized nurse for the patient's respiratory needs."
+      "description": "Wait for the SW to finalize the family mediation and HHA selection before providing the daughter with the appointment card.",
+      "rationale": "Respects the SW's authority over family dynamics and prevents providing premature scheduling information."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Perform the Confidence Audit by calling the HHA intake coordinator to confirm when the specialist nurse returns, then relaying this 'Not In Place' status to the SW to align the discharge date with safe home coverage.",
-      "rationale": "This follows the HHA-First Rule, ensuring the MA is not scheduled for a failed visit and that the patient has the required skilled specialist in place before leaving the facility."
+      "description": "Verify the daughter's readiness via a pulse call, document the son's refusal to participate as a barrier, and flag the sentiment score to the SW in Atlantis.",
+      "rationale": "Follows the 'Liaison' model by documenting data and flagging barriers without interfering in the mediation itself."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call three alternative HHA agencies in the area to see if they have respiratory nurses available and then present those options to the family to speed up the Friday discharge.",
-      "rationale": "While this seems like helpful advocacy, it violates the SW Boundary by performing agency outreach and selection, which is strictly the Social Worker's responsibility."
+      "description": "Call the HHA intake coordinator to ask if they can provide a social worker to help the family resolve their disagreement so discharge can stay on track.",
+      "rationale": "Violates the No-Vendor Rule by contacting HHA intake and attempts to 'Fix' a family problem that belongs to the facility SW."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

@@ -1,75 +1,73 @@
 {
+  "role_delineation_check": "Social Worker (SW) is responsible for securing an HHA that can accommodate dialysis transportation and handling all vendor intake. Patient Navigator (PN) verifies Atlantis demographic accuracy, educates the family on the 48-72 hour weekend monitoring gap, and flags HHA weekend staffing voids to the SW.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified Humana Medicare Advantage; identified discrepancy in primary phone number (814-555-012 vs 814-555-0123) between Atlantis queue and facility face sheet. Corrected in Atlantis to ensure pulse call connectivity.",
-  "home_vs_ltc_determination": "Initially Home; pivoted to LTC on Day 12 after family voiced inability to manage nocturnal O2 requirements safely.",
-  "stage_1_intake_responses": "Q1: No, never heard of the program. Q2: Assumed we were hospital billing staff. Q3: SW discussed nursing but not the MA visit. Q4: Expressed extreme anxiety about managing oxygen concentrator refills and potential power outages at home; escalated fear of 'suffocating' to SW.",
-  "weekly_facility_update": "Week 1: Patient stabilizing on nebulizers; SW confirms D/C target is Day 14. Week 2: SW reports patient failed 'home safety trial' regarding O2 management; family meeting convened to discuss LTC placement.",
-  "v_card_and_flyer_status": "V-Card inserted into patient's Jitterbug phone; program flyer delivered to daughter (POA) during Week 1 visit.",
-  "hha_confirmation_status": "Not In Place. Transition halted due to LTC_Pivot_Abort. No HHA referral was finalized by SW.",
-  "stage_3_followup_audit": "Call 1 (to SW): SW confirmed the goal shifted to LTC as the patient failed the respiratory safety assessment. Call 2: Not performed to avoid overstepping SW placement process.",
-  "pre_dc_pulse_call_result": "N/A - Discharge to home cancelled.",
-  "atlantis_final_sync": "Patient record updated to Neutral_LTC_Closure on Day 13; D/C date to facility noted.",
-  "ma_visit_booking": "None. Scheduling was withheld pending HHA 'In Place' status, which was never achieved due to the LTC pivot.",
-  "narrative_summary": "During the Entry stage, the PN corrected a demographic data lag and conducted the Connection Intake, which surfaced significant patient anxiety regarding home oxygen safety. As the case moved into Maintenance, education was provided, but the PN remained in close contact with the SW who eventually determined a home discharge was unsafe. Adhering to the LTC Filter, the PN performed a Neutral_LTC_Closure immediately upon the SW's pivot, preventing an overstep into placement or premature MA scheduling.",
+  "demographic_audit_note": "Audited Atlantis demographics against facility Face Sheet; identified a 1-digit error in the patient's primary phone number and a missing 'Apartment B' designation in the address field. Flagged discrepancies to SW for Atlantis update.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: Patient medically stable following renal stabilization. SW confirms Friday discharge target; HHA selection in progress. PN flagged the Friday Discharge Gap to SW as HHA has not confirmed weekend availability.",
+  "v_card_flyer_status": "V-Card successfully inserted into daughter's phone for Caller ID recognition; program flyer delivered and Day 1 expectations discussed.",
+  "pre_dc_pulse_call": "Reached daughter (POA); sentiment score is 'Anxious' due to the 48-hour gap between Friday discharge and Monday HHA start-of-care. Daughter confirmed dialysis transport is arranged by facility.",
+  "atlantis_final_sync": "Friday D/C date and Monday 1st HHA visit date documented in Atlantis. MA bridging visit for Saturday entered into schedule.",
+  "ma_visit_booking": "MA visit scheduled for Saturday (within 24 hours) to monitor fluid status; booking finalized only after SW confirmed HHA 'Acceptance' in the Atlantis portal for a Monday start.",
+  "narrative_summary": "Audited Atlantis records to ensure zero-error data for the HHA referral and verified the patient's renal-appropriate address. Educated the family on the limitations of weekend HHA staffing to manage expectations for the Friday discharge. Flagged the 'Anxious' caregiver sentiment to the SW, resulting in a bridging MA visit being authorized for Saturday to ensure clinical safety during the weekend gap.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis Data Lag identified (incorrect phone number)",
+      "event_description": "Atlantis_Data_Lag: Missing apartment number and incorrect phone in portal.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative"
-    },
-    {
-      "event_description": "Connection Intake Q4 surfaces 'Oxygen Panic' barrier",
-      "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver"
+      "ai_assumed_bottleneck": "PN must audit data before HHA referral is sent to prevent delivery failure."
     },
     {
-      "event_description": "SW confirms LTC transition; home plan aborted",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
+      "event_description": "Friday Discharge Gap: HHA confirms Monday SOC, leaving weekend unmonitored.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Closure)",
-      "ai_assumed_bottleneck": "Eligibility"
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "HHA intake department does not process weekend admissions for renal-complex cases."
+    },
+    {
+      "event_description": "Sentiment_Readiness_Gap: Daughter expresses high anxiety regarding fluid monitoring over the weekend.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver fear of managing renal failure without professional support."
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Atlantis record displays an incomplete phone number for the primary caregiver.",
-      "action_taken": "Audited face sheet and updated Atlantis demographics manually.",
-      "intent_category": "Verify"
+      "situation": "HHA portal shows 'Pending' for Friday start-of-care.",
+      "action_taken": "Flagged the 'HHA_Acceptance_Lag' to the SW in Atlantis and waited for system update.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "Patient expresses high anxiety about power outages affecting oxygen equipment.",
-      "action_taken": "Escalated specific 'O2 fear' to the Social Worker for clinical intervention.",
-      "intent_category": "Escalate"
+      "situation": "Family unsure what to do if the patient gains weight rapidly over the weekend.",
+      "action_taken": "Educated the daughter on the specific Healing Partners contact protocol for the Saturday MA visit.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "SW informs PN that the patient will be transferring to a skilled nursing facility for long-term care.",
-      "action_taken": "Logged Neutral_LTC_Closure in Atlantis and ceased home transition work.",
+      "situation": "Atlantis phone number does not match the Face Sheet.",
+      "action_taken": "Verified the correct contact number with the daughter and documented the discrepancy for the SW.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to finalize the LTC bed assignment before closing the case in Atlantis.",
-      "rationale": "Respects the SW's lead on placement while ensuring the file remains open only as long as the goal is potentially fluid."
+      "description": "Document the HHA's Monday start date in Atlantis and defer to the SW's judgment on whether the Friday discharge remains clinically appropriate for a renal patient.",
+      "rationale": "Respects the SW's authority over discharge safety and vendor readiness while maintaining data accuracy."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Conduct the Connection Intake Q1-Q4 early to identify safety concerns and escalate findings to the SW before discharge planning is set in stone.",
-      "rationale": "Uses the checklist to identify 'Caregiver Panic' early, allowing the SW to make an informed pivot to LTC before resources are wasted."
+      "description": "Educate the family on the 24-hour bridging MA visit, verify the daughter has the V-Card saved for Caller ID, and flag the caregiver's 'Anxious' sentiment score to the SW to request a care conference.",
+      "rationale": "Focuses on family readiness and data verification without crossing into clinical or vendor management."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the daughter to provide a cost-benefit analysis of private-duty home care versus the LTC daily rate to help her decide.",
-      "rationale": "Violates the Banned Actions list regarding cost analysis and interferes with the SW's role in placement counseling."
+      "description": "Call the HHA Intake Coordinator to negotiate a special Saturday nursing visit and contact the dialysis center to confirm the patient's Monday chair time.",
+      "rationale": "Directly violates the No-Vendor Rule and performs 'Fixer' actions that are the responsibility of the SW or clinical staff."
     }
   ],
-  "case_outcome": "Neutral_LTC_Closure"
+  "case_outcome": "Success_Home_with_First_Visit"
 }

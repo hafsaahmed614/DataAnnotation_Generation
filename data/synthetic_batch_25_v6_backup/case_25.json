@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis record for Arthur Vance (86M) revealed a zip code mismatch (19143 vs 19104) on the facility face sheet. Medicare Straight verified as primary; address corrected to ensure MA travel radius is accurate.",
+  "home_vs_ltc_determination": "Social Worker (SW) confirmed the goal is Home with 24/7 family supervision and HHA support; LTC transition was discussed but ruled out by POA (daughter).",
+  "stage_1_intake_responses": "Q1: 'No, I haven't heard of you.' Q2: 'I think you're here to help me walk.' Q3: 'The social worker said a nurse would come to the house.' Q4: 'I am terrified of falling again when my daughter is at work.' (Anxiety regarding fall history escalated to SW for PT home safety priority).",
+  "weekly_facility_update": "Week 2 Check-in: Patient cognitively fluctuated but cleared by PT for ambulation with a walker. SW target discharge is Friday. Daughter (POA) confirmed home modifications (grab bars) are complete.",
+  "v_card_and_flyer_status": "V-Card successfully inserted into daughter's phone during bedside meeting; program flyer delivered to patient and taped to discharge folder.",
+  "hha_confirmation_status": "Not In Place as of Wednesday due to HHA Staffing Shortage in the 19143 zip code. PN performed a Deep Dive and found the HHA intake coordinator had the referral but no nurse was available for a Friday admission. Escalated to SW for alternative agency search. Status updated to 'In Place' on Thursday at 3:45 PM after SW secured coverage and HHA confirmed RN 'Sarah' with a 10:00 AM Friday window.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday 11:00 AM D/C is firm and HHA has assigned a nurse. Call 2 (to daughter): Confirmed daughter understands RN Sarah arrives between 10 AM - 12 PM and MA will follow in the afternoon.",
+  "pre_dc_pulse_call_result": "Reached daughter via phone 24 hours prior to D/C. Home readiness confirmed; daughter expressed relief that a specific nurse name was provided. No new clinical setbacks reported.",
+  "atlantis_final_sync": "D/C date (Friday) and 1st visit date (Friday) entered into Atlantis; HHA agency name and assigned nurse 'Sarah' logged in the coordination notes.",
+  "ma_visit_booking": "MA visit successfully scheduled for Friday at 2:00 PM. Booking was delayed until Thursday evening to ensure the HHA-First Rule was satisfied and a nurse was assigned.",
+  "narrative_summary": "Arthur Vance (86M, Dementia) was successfully transitioned home following a hip fracture and fall-related hospitalization. During the ENTRY/TRIAGE phase, the Connection Intake revealed significant fall anxiety, which prompted a PN escalation to the SW for an urgent home safety evaluation. Despite a critical HHA Staffing Shortage that threatened to delay discharge, the PN maintained the Confidence Loop by performing a deep-dive barrier check and only scheduling the MA once the HHA was confirmed 'In Place' during the HANDOFF stage.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Face sheet zip code (19143) contradicts Atlantis record (19104).",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative data mismatch prevents HHA from verifying service territory."
+    },
+    {
+      "event_description": "HHA Staffing Shortage: Agency reports no RN coverage for the specific rural zip code.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "Operational shortage in specialized geriatric care nursing."
+    },
+    {
+      "event_description": "Pre-DC Pulse Call: Initial attempt to reach daughter (POA) failed; call disconnected twice.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Operational communication gap 24 hours prior to transition."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient (Arthur) expresses high anxiety about falling again in Connection Intake Q4.",
+      "action_taken": "Escalated patient anxiety to the Social Worker to ensure PT orders specifically included a home safety assessment.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA intake coordinator remains silent regarding the Friday start-of-care date.",
+      "action_taken": "Performed a deep-dive call to HHA intake to identify the staffing shortage barrier and informed the SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Daughter (POA) is unsure of what equipment (walker/commode) should be at the home for Day 1.",
+      "action_taken": "Conducted the Confidence Audit call to walk the family through the Day 1 plan and equipment list.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon learning of the HHA staffing shortage, the PN logs the delay in Atlantis and waits for the Social Worker to find a solution or a new agency.",
+      "rationale": "Respects the SW's role as the primary finder of agencies while ensuring the delay is documented for the team."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN calls the HHA intake coordinator to confirm the specific reason for the delay (Staffing Shortage), then escalates this categorized barrier to the SW with a request to pivot HHAs or negotiate coverage.",
+      "rationale": "Maintains the PN role as a liaison who identifies and categorizes barriers to give the SW actionable data without overstepping into agency selection."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN contacts a different HHA agency where they have a personal contact to see if they can staff the case, then provides the SW with the new agency's contact info and tells them to switch the referral.",
+      "rationale": "This oversteps the SW boundary by suggesting/selecting specific agencies and managing the referral process directly."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

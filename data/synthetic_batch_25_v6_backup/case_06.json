@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited demographics: Insurance verified as Medicare Part B + Supplemental. Cross-referenced facility face sheet with Atlantis; corrected apartment number from 4B to 4A to ensure MA/HHA arrival accuracy. DOB 05/14/1952 confirmed.",
+  "home_vs_ltc_determination": "Home. Social Worker confirms patient has a supportive daughter and the goal is a return to her ranch-style residence following ORIF rehab.",
+  "stage_1_intake_responses": "Q1: No, first time hearing the name. Q2: To help with the transition. Q3: SW mentioned a nurse would come. Q4: Extremely worried about having the right walker; her old one is broken. Escalated equipment anxiety to SW.",
+  "weekly_facility_update": "Week 2: Patient meeting PT goals for gait training. SW confirms D/C target is Friday. DME order (hospital bed, front-wheeled walker) sent to vendor.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's smartphone (Contact: Daughter/POA); physical program flyer delivered to bedside.",
+  "hha_confirmation_status": "Not In Place. Barrier: DME_Delivery_Failure. HHA (HomeFront Health) intake coordinator reports that while the hospital bed arrived, the front-wheeled walker was not delivered. HHA will not confirm SOC until the walker is onsite for safety.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date pushed to Monday due to DME error; SW escalated to vendor for Saturday delivery. Call 2 (to Daughter): Explained that HHA nurse Sarah is assigned for Tuesday 10AM and the MA will follow.",
+  "pre_dc_pulse_call_result": "Reached patient 24hrs prior. Confirmed walker is now physically in the home. Patient verbalized understanding of the Day 1 plan and knows to call the HHA if the nurse is delayed.",
+  "atlantis_final_sync": "D/C Date 11/18 and 1st Visit Date 11/19 entered into Atlantis queue.",
+  "ma_visit_booking": "MA visit scheduled for 11/19 @ 1:00 PM. Booking was held until 11/18 @ 9:00 AM when HHA confirmed the walker was verified and Nurse Sarah was locked for the SOC window.",
+  "narrative_summary": "72yo female with hip fracture ORIF transitioned through the lifecycle with a primary goal of Home. During Stage 1 Connection Intake, the patient identified equipment availability as her primary anxiety, which manifested in Stage 3 as a DME_Delivery_Failure when the walker was missing. Following the HHA-First Rule, I withheld MA scheduling and performed a Deep-Dive HHA Barrier check to identify the specific missing item for the SW. Once the Confidence Audit confirmed the walker was onsite and the HHA was 'In Place', the MA was scheduled, resulting in a successful service adoption.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA reports 'Not In Place' due to missing walker at residence.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-7 Days",
+      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+    },
+    {
+      "event_description": "SW confirms vendor re-delivery; PN verifies HHA now has 'In Place' status.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient expresses fear of falling without a new walker during first meeting.",
+      "action_taken": "Conducted Connection Intake and escalated Q4 concern to SW.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "HHA refuses to set SOC date because the DME delivery was incomplete.",
+      "action_taken": "Called HHA intake coordinator to identify the specific missing walker model and relayed to SW.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Discharge day approaching with conflicting reports on equipment arrival.",
+      "action_taken": "Performed Confidence Audit call to daughter to physically confirm walker presence at the home.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Note the DME delay in Atlantis and wait for the Social Worker to provide an updated discharge date and HHA confirmation before taking further action.",
+      "rationale": "This respects the SW's role in logistics but fails to proactively identify the specific barrier (the missing walker) that is keeping the HHA from moving to 'In Place' status."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Call the HHA intake coordinator to confirm exactly why they aren't 'In Place', identify the missing walker as the blocker, and escalate that specific detail to the SW while withholding the MA schedule.",
+      "rationale": "This follows the HHA-First Rule and the Deep_Dive_HHA_Barrier protocol, providing the SW with actionable intel to move the case forward without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the DME vendor directly using the patient's insurance info to track the delivery and then call the HHA to demand they schedule the nurse for Monday morning regardless of the walker status.",
+      "rationale": "This violates the Banned Actions by contacting vendors/insurance and violates the HHA-First Rule by pressuring a SOC before the home is safely equipped."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

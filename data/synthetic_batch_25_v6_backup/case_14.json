@@ -1,0 +1,67 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Medicare Advantage Plan (Blue Cross); cross-referenced facility face sheet with Atlantis and corrected primary phone number for son/POA to ensure pulse call connectivity.",
+  "home_vs_ltc_determination": "Social Worker confirmed goal is Home Discharge with skilled nursing and physical therapy for post-CABG sternal precaution monitoring.",
+  "stage_1_intake_responses": "Q1: Patient has not heard of the company. Q2: Knows we help with the transition but unclear on specifics. Q3: SW mentioned a 'home helper' but no detailed explanation. Q4: Patient is extremely anxious about chest pain management and 'something popping' in his chest; escalated anxiety to SW.",
+  "weekly_facility_update": "Week 2: Patient meeting PT goals; sternal incision shows no signs of infection. SW projects Friday discharge.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's personal smartphone; program flyer with Day 1 expectations hand-delivered to patient's wife.",
+  "hha_confirmation_status": "In Place: HHA (Heartland Home Care) confirmed SOC date for Friday 10/27, assigned Nurse Maria V., and provided a 10:00 AM - 12:00 PM arrival window.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed Friday discharge is locked and Heartland has all clinical orders. Call 2 (to Wife): Verified she knows Nurse Maria is arriving Friday morning and knows to call the HHA office if the window is missed.",
+  "pre_dc_pulse_call_result": "Reached patient/family 24 hours prior to discharge. Home is ready, oxygen concentrator delivered, and sternal precautions understood. No new clinical barriers identified.",
+  "atlantis_final_sync": "Entered Discharge Date (10/27) and first visit date (10/27) into Atlantis tracking module.",
+  "ma_visit_booking": "MA scheduled for Friday 10/27 at 2:30 PM (after HHA 'In Place' confirmation) to ensure the nurse arrives first.",
+  "narrative_summary": "Managed the transition for a post-CABG patient, identifying high anxiety during the Connection Intake which was escalated to the Social Worker. Executed a full Confidence Loop, verifying HHA status as 'In Place' with a confirmed nurse and time window before scheduling the MA. Despite a perfect handoff and confirmed 24-hour pulse call, the HHA nurse failed to arrive for the Day 1 visit, resulting in a transition breakdown.",
+  "format_1_state_log": [
+    {
+      "event_description": "HHA confirmation received for Friday SOC window.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "Day 1 Home No-Show: HHA nurse Maria V. fails to arrive by 12:00 PM.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Staffing/Operational Failure"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient expresses fear of incision reopening during Connection Intake.",
+      "action_taken": "Escalated patient anxiety regarding sternal precautions to the SW and facility nurse.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "Week-of-discharge alignment check required.",
+      "action_taken": "Conducted Confidence Audit calls to both the SW and the patient's wife to verify Day 1 arrival window.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "HHA nurse fails to show for the scheduled 10:00 AM window.",
+      "action_taken": "Called HHA intake coordinator to identify the blocker and flagged the no-show to the SW.",
+      "intent_category": "Escalate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Advise the wife to wait until the end of the day to see if the nurse arrives and then call the HHA's after-hours line if no one shows.",
+      "rationale": "This respects the HHA's internal scheduling autonomy but fails to provide the high-touch coordination required during the critical 24-hour post-discharge window."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Immediately call the HHA intake coordinator to identify why the nurse missed the window, then update the SW and family on the new ETA or agency failure.",
+      "rationale": "This follows the Deep_Dive_HHA_Barrier protocol, transforming a vague no-show into an actionable escalation for the SW while keeping the family informed."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Drive to the patient's home to perform a visual check of the sternal incision and help the patient with their cardiac medications since the nurse is late.",
+      "rationale": "This is a severe clinical overstep; the PN is not permitted to perform clinical assessments or manage medications, regardless of HHA performance."
+    }
+  ],
+  "case_outcome": "Failure_Transition_Breakdown"
+}

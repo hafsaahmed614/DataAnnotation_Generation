@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis record against facility face sheet revealed a discrepancy in the primary contact phone number for the daughter (POA); updated Atlantis to match the correct cell number. Insurance verified as Aetna Medicare Advantage.",
+  "home_vs_ltc_determination": "Social Worker (Kelly) confirms the goal is Home with 24-hour family supervision, despite the daughter's initial request for a 'safe haven' LTC placement.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the company. Q2: Thinks we are providing the transport van. Q3: SW mentioned 'help at home' but no specifics. Q4: Patient is eager, but daughter is fearful of another UTI-induced delirium episode; escalated 'Caregiver_Panic' to SW.",
+  "weekly_facility_update": "Week 2: Patient's UTI has resolved; Parkinson's tremors are at baseline. SW reports daughter is still 'on the fence' about home discharge vs. sub-acute rehab extension.",
+  "v_card_and_flyer_status": "V-Card saved to patient's daughter's phone; program flyer delivered during the family meeting.",
+  "hha_confirmation_status": "Not In Place. Barrier: HHA_Acceptance_Lag. The agency (Visiting Nurses) has the referral but is waiting for the facility to send the updated Parkinson's medication titration schedule before confirming a nurse.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date is firm for Friday; SW is faxing the missing med titration now. Call 2 (to Daughter): Conducted Confidence Audit; daughter now understands the RN arrives Saturday morning and knows to call the HHA office if the nurse is not there by noon.",
+  "pre_dc_pulse_call_result": "Reached daughter 24 hours prior to D/C. She confirmed the raised toilet seat and grab bars are installed. She is anxious but agrees to the Day 1 plan.",
+  "atlantis_final_sync": "Discharge date of 11/22 and first visit date of 11/23 logged into Atlantis.",
+  "ma_visit_booking": "MA scheduled for 11/23 at 1:00 PM. This was only booked after HHA confirmed Nurse 'Janice' was assigned and the 8 AM - 12 PM window was set.",
+  "narrative_summary": "In the Entry/Triage stage, the Connection Intake revealed significant caregiver panic from the daughter, which was immediately escalated to the Social Worker for a family alignment meeting. During Maintenance, the PN focused on educating the family on the difference between HHA services and LTC, utilizing the program flyer to set realistic expectations. The Handoff stage required resolving an HHA acceptance lag regarding medication orders before the Confidence Audit could be completed and the MA scheduled for a successful Day 1 visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "Connection Intake surfaces daughter's threat to refuse discharge due to fear of Parkinson's falls.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family_Disagreement_on_Discharge_Plan"
+    },
+    {
+      "event_description": "HHA refuses to confirm SOC date because facility medication list is missing the new Sinemet dosage.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+    },
+    {
+      "event_description": "PN completes Confidence Audit calls; daughter confirms she is ready for the Saturday morning HHA arrival.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's daughter expresses high anxiety about managing the patient's Parkinson's meds at home.",
+      "action_taken": "PN educated daughter on Day 1 expectations, specifically when the nurse arrives to review the med list.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The HHA has not confirmed a nurse because the facility has not sent the final medication titration.",
+      "action_taken": "PN flagged the specific missing clinical data to the SW to expedite the fax to the HHA.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA confirms nurse 'Janice' is assigned for Saturday morning.",
+      "action_taken": "PN verified HHA 'In Place' status and then scheduled the MA for the 24-hour follow-up window.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon hearing the daughter's refusal to take the patient home, the PN steps back and waits for the Social Worker to finish the weekly utilization review before checking the Atlantis queue for updates.",
+      "rationale": "This respects the SW's domain over discharge planning and family mediation, ensuring the PN doesn't interfere in the clinical/legal decision-making process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN identifies the daughter's fear during the Connection Intake (Q4), escalates the 'Caregiver_Panic' to the SW, and later performs the Confidence Audit to ensure the daughter understands the Day 1 HHA arrival time.",
+      "rationale": "This follows the 3-stage lifecycle by identifying barriers early, escalating to the proper channel (SW), and closing the Confidence Loop via verified touchpoints."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN realizes the HHA is lagging on acceptance, so the PN calls the daughter's insurance company to request a list of alternative agencies that might have better staffing for Parkinson's patients.",
+      "rationale": "This is a violation of the SW Boundary and Banned Actions; the PN must never suggest alternative HHAs or call insurance companies for authorizations."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

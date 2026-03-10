@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue against facility face sheet revealed a critical data lag; Atlantis still listed the patient's 2018 apartment address, while the face sheet shows a new ADA-compliant ranch home. Insurance Medicare MBI had a transposed digit in Atlantis.",
+  "home_vs_ltc_determination": "SW confirms goal is Home for intensive stroke rehab following sub-acute stay.",
+  "stage_1_intake_responses": "Q1: No, first time hearing of the program. Q2: Thinks we are the transport company. Q3: SW mentioned a 'wound nurse' but not the full scope of home health. Q4: Patient is extremely anxious about his left-side weakness and whether the HHA nurse will help with transfers\u2014escalated anxiety and safety concern to SW.",
+  "weekly_facility_update": "Week 2: Patient demonstrating progress in PT with hemi-walker; SW targets discharge for next Thursday. Hub has not yet updated the Atlantis record with the corrected address despite two requests.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's daughter's phone; program flyer delivered to patient and placed in discharge folder.",
+  "hha_confirmation_status": "Not In Place. Barrier: Atlantis_Data_Lag. The HHA intake coordinator flagged that the referral address (stale Atlantis data) is outside their service zip code, while the actual home is within it. PN investigated and found the HHA is holding the referral pending corrected physician orders with the new address.",
+  "stage_3_followup_audit": "Call 1 (to SW): Confirmed D/C date is firm; SW is manually faxing the corrected face sheet and orders to the HHA to bypass the Atlantis lag. Call 2 (to family): Confirmed daughter understands the Day 1 plan and knows to expect the HHA nurse between 12:00 PM and 2:00 PM on Friday.",
+  "pre_dc_pulse_call_result": "Reached patient's daughter 24 hours prior; she confirmed the hospital bed was delivered to the correct (new) address and the home is ready. Re-confirmed HHA first-visit window.",
+  "atlantis_final_sync": "Manually updated D/C date and 1st visit date in Atlantis notes field; demographic correction still pending hub approval.",
+  "ma_visit_booking": "MA scheduled for Saturday morning at 09:00 AM, confirmed only after HHA intake verified a nurse was assigned and the SOC date was locked.",
+  "narrative_summary": "The patient's transition was nearly derailed by an Atlantis_Data_Lag that sent the HHA referral to an incorrect branch based on an old address. During Stage 1, the PN identified the mismatch during the demographic audit and surfaced transfer anxieties during the Connection Intake. By Stage 3, the PN performed the Confidence Audit, identifying that the HHA was 'Not In Place' due to the address error, allowing for a targeted escalation to the SW before the MA was scheduled.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Patient record appears with 5-year-old address and incorrect MBI.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "HHA Referral Mismatch: HHA branch rejects referral based on stale Atlantis zip code.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+    },
+    {
+      "event_description": "Confidence Audit reveals HHA is 'Not In Place' due to missing corrected orders.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial Atlantis entry shows address mismatch against facility face sheet.",
+      "action_taken": "Conducted demographic audit and flagged data lag to the Hub/SW immediately.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient expresses fear about home transfers during first meeting.",
+      "action_taken": "Conducted Connection Intake Q4 and escalated the specific safety concern to the SW.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "HHA intake coordinator has not confirmed SOC date 48 hours before discharge.",
+      "action_taken": "Called HHA intake to identify specific blocker (address mismatch in orders) and escalated to SW.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Atlantis Hub to process the demographic correction before contacting the HHA or the SW, ensuring the system of record is clean before taking action.",
+      "rationale": "Respects the internal data processing workflow and avoids creating manual workarounds for the SW, though it risks a discharge delay."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Perform the Confidence Audit by calling the HHA to identify the specific reason for the 'Not In Place' status, then ask the SW to fax corrected orders manually to the HHA to bypass the Atlantis lag.",
+      "rationale": "Follows the HHA-First rule by investigating the specific barrier and using the SW escalation path to ensure the HHA is ready before scheduling the MA."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Schedule the MA visit immediately based on the projected discharge date to ensure the incentive window is met, then call the HHA and tell them you will personally hand-carry the correct F2F forms to their office.",
+      "rationale": "While intended to speed up the process, scheduling the MA before the HHA is 'In Place' violates the core Confidence Loop, and handling F2F forms is a banned SW-level action."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

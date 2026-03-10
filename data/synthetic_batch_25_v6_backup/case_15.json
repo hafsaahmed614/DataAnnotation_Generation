@@ -1,0 +1,75 @@
+{
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Humana Medicare Advantage; identified discrepancy in primary phone number (814-555-012 vs 814-555-0123) between Atlantis queue and facility face sheet. Corrected in Atlantis to ensure pulse call connectivity.",
+  "home_vs_ltc_determination": "Initially Home; pivoted to LTC on Day 12 after family voiced inability to manage nocturnal O2 requirements safely.",
+  "stage_1_intake_responses": "Q1: No, never heard of the program. Q2: Assumed we were hospital billing staff. Q3: SW discussed nursing but not the MA visit. Q4: Expressed extreme anxiety about managing oxygen concentrator refills and potential power outages at home; escalated fear of 'suffocating' to SW.",
+  "weekly_facility_update": "Week 1: Patient stabilizing on nebulizers; SW confirms D/C target is Day 14. Week 2: SW reports patient failed 'home safety trial' regarding O2 management; family meeting convened to discuss LTC placement.",
+  "v_card_and_flyer_status": "V-Card inserted into patient's Jitterbug phone; program flyer delivered to daughter (POA) during Week 1 visit.",
+  "hha_confirmation_status": "Not In Place. Transition halted due to LTC_Pivot_Abort. No HHA referral was finalized by SW.",
+  "stage_3_followup_audit": "Call 1 (to SW): SW confirmed the goal shifted to LTC as the patient failed the respiratory safety assessment. Call 2: Not performed to avoid overstepping SW placement process.",
+  "pre_dc_pulse_call_result": "N/A - Discharge to home cancelled.",
+  "atlantis_final_sync": "Patient record updated to Neutral_LTC_Closure on Day 13; D/C date to facility noted.",
+  "ma_visit_booking": "None. Scheduling was withheld pending HHA 'In Place' status, which was never achieved due to the LTC pivot.",
+  "narrative_summary": "During the Entry stage, the PN corrected a demographic data lag and conducted the Connection Intake, which surfaced significant patient anxiety regarding home oxygen safety. As the case moved into Maintenance, education was provided, but the PN remained in close contact with the SW who eventually determined a home discharge was unsafe. Adhering to the LTC Filter, the PN performed a Neutral_LTC_Closure immediately upon the SW's pivot, preventing an overstep into placement or premature MA scheduling.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag identified (incorrect phone number)",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
+    },
+    {
+      "event_description": "Connection Intake Q4 surfaces 'Oxygen Panic' barrier",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "SW confirms LTC transition; home plan aborted",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "Eligibility"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis record displays an incomplete phone number for the primary caregiver.",
+      "action_taken": "Audited face sheet and updated Atlantis demographics manually.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Patient expresses high anxiety about power outages affecting oxygen equipment.",
+      "action_taken": "Escalated specific 'O2 fear' to the Social Worker for clinical intervention.",
+      "intent_category": "Escalate"
+    },
+    {
+      "situation": "SW informs PN that the patient will be transferring to a skilled nursing facility for long-term care.",
+      "action_taken": "Logged Neutral_LTC_Closure in Atlantis and ceased home transition work.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to finalize the LTC bed assignment before closing the case in Atlantis.",
+      "rationale": "Respects the SW's lead on placement while ensuring the file remains open only as long as the goal is potentially fluid."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Conduct the Connection Intake Q1-Q4 early to identify safety concerns and escalate findings to the SW before discharge planning is set in stone.",
+      "rationale": "Uses the checklist to identify 'Caregiver Panic' early, allowing the SW to make an informed pivot to LTC before resources are wasted."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the daughter to provide a cost-benefit analysis of private-duty home care versus the LTC daily rate to help her decide.",
+      "rationale": "Violates the Banned Actions list regarding cost analysis and interferes with the SW's role in placement counseling."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}
