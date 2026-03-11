@@ -60,6 +60,18 @@
           ]
         },
         {
+          "category": "Verify_Wound_Qualification_Status",
+          "action_items": [
+            "Audit clinical notes shared by the SW to confirm the patient meets wound care program eligibility",
+            "Document qualification status in Atlantis",
+            "If eligibility is unclear, flag to SW for clinical confirmation"
+          ],
+          "primary_intents": [
+            "Ensure program eligibility is verified early without performing clinical assessment",
+            "Route clinical eligibility questions to the SW"
+          ]
+        },
+        {
           "category": "Verify_Sentiment_Score",
           "action_items": [
             "Ask patient/family: 'How ready do you feel about going home?'",
@@ -119,6 +131,30 @@
           ],
           "primary_intents": [
             "Proactive transition planning"
+          ]
+        },
+        {
+          "category": "Request_Joint_Family_Meeting_via_SW",
+          "action_items": [
+            "Ask the SW to include the PN in a family update call or meeting",
+            "During the meeting, educate family on Day 1 expectations and answer non-clinical questions",
+            "Document meeting outcomes and any new concerns flagged by the family"
+          ],
+          "primary_intents": [
+            "Gain direct access to family sentiment without overstepping SW's role",
+            "Ensure family education happens in a supported, collaborative setting"
+          ]
+        },
+        {
+          "category": "Maintain_Granular_Wait-Status_Timeline",
+          "action_items": [
+            "Keep a running log in Atlantis of each 'waiting' phase (waiting for HHA acceptance, waiting for SW response, waiting for DME delivery)",
+            "Update the log each time a status change occurs or a flag is sent to the SW",
+            "Use the timeline to provide context when escalating delays"
+          ],
+          "primary_intents": [
+            "Create an auditable trail of the PN's waiting periods",
+            "Demonstrate proactive monitoring without vendor contact"
           ]
         },
         {

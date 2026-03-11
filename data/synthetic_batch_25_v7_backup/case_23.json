@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages the HHA agency selection and handles all vendor communication regarding the COPD care plan. The Patient Navigator (PN) verifies the accuracy of demographics in Atlantis, educates the family on the Healing Partners program, and flags any HHA provider gaps to the SW for resolution.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against the facility Face Sheet; corrected the primary phone number for the daughter (POA) and verified the Medicare Part B insurance ID was entered correctly for billing alignment.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 1: Robert is completing his steroid taper and O2 titration. SW confirmed referral was sent to 'Highland Home Health' but noted the intake coordinator is currently out sick, delaying the acceptance timestamp in Atlantis.",
+  "v_card_flyer_status": "V-Card successfully saved to Robert's phone to ensure Caller ID recognition of Healing Partners calls. Program flyer delivered to Robert and his daughter during the bedside education session.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge. Sentiment Score: Anxious. Daughter expressed high concern regarding Robert's ability to manage the portable oxygen concentrator independently. Flagged this anxiety to the SW for a final bedside review.",
+  "atlantis_final_sync": "Discharge date of Oct 26 and First Home Visit date of Oct 27 documented in Atlantis portal.",
+  "ma_visit_booking": "Medical Assistant (MA) scheduled for Oct 27 at 10:30 AM; booking was held until the SW confirmed that Highland Home Health assigned a replacement nurse for the initial assessment.",
+  "narrative_summary": "Verified the accuracy of Robert's contact data in Atlantis to prevent transition communication failures. Documented a delay in HHA acceptance due to the intake coordinator's illness and flagged the coverage gap to the Social Worker. Educated the family on what to expect during the first 24 hours at home and verified that the V-Card was active for future caller recognition. Scheduled the first MA visit only after the SW confirmed a nurse was assigned to bridge the COPD monitoring gap.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Patient address in Atlantis was missing the apartment number found on the facility face sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
+    },
+    {
+      "event_description": "Provider Illness: The HHA intake coordinator is out sick, creating an intake freeze for new COPD referrals.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
+    },
+    {
+      "event_description": "Sentiment Readiness Gap: Daughter verbalized reluctance to take the patient home without a confirmed O2 delivery window.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient address in Atlantis (123 Main St) does not match Face Sheet (123 Main St, Apt 4B).",
+      "action_taken": "Documented the discrepancy in Atlantis and asked the SW to update the HHA referral with the apartment number.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "SW reports HHA intake is delayed because the sole coordinator is out on medical leave.",
+      "action_taken": "Flagged the HHA_Intake_Freeze in Atlantis and documented the expected 3-day delay for the first home visit.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Robert's daughter is anxious about managing the COPD 'flare-up' protocol at home.",
+      "action_taken": "Educated the family on the role of the Healing Partners MA in monitoring vital signs during the first 24 hours.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the SW to resolve the HHA intake freeze or select a different agency that has available staffing.",
+      "rationale": "Respects the SW boundary as the sole individual responsible for agency selection and vendor negotiation."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the HHA acceptance status in the Atlantis portal daily and flag the continued delay to the SW while educating the family on the updated timeline.",
+      "rationale": "Maintains the PN role as a data auditor and family liaison without contacting the HHA vendor directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake office directly to ask if another staff member can process Robert's referral to avoid a discharge delay.",
+      "rationale": "Violates the No-Vendor Rule and attempts to resolve a logistics barrier that belongs to the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

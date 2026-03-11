@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages the HHA referral and selects the backup provider due to agency staffing illness; PN verifies Atlantis demographic accuracy, educates the family on Day 1 expectations, and flags HHA acceptance delays to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Face Sheet against Atlantis revealed a digit transposition in the primary phone number (ending in 55 vs 44) and a missing secondary contact for the daughter/POA; flagged for SW correction.",
+  "home_vs_ltc_goal": "Home with Healing Partners services and HHA support.",
+  "weekly_staff_update": "Week 2: SW reports the primary HHA intake coordinator is out on medical leave, causing a delay in referral processing; PN verified the patient remains clinically stable but sentiment score is declining due to discharge uncertainty.",
+  "v_card_flyer_status": "V-Card successfully inserted into the daughter's phone to ensure Healing Partners Caller ID recognition; program flyer delivered and reviewed to explain the PN role as a liaison.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge; verified she understands the 4-hour window for the first visit, though she expressed high anxiety regarding CHF weight monitoring.",
+  "atlantis_final_sync": "Discharge date of 10/14 and first home visit date of 10/15 documented in Atlantis portal following SW confirmation of HHA nurse assignment.",
+  "ma_visit_booking": "Medical Assistant (MA) scheduled for 10/15 at 10:00 AM; booking delayed until 4:00 PM on 10/13 when SW finally confirmed the HHA had cleared the intake backlog caused by staff illness.",
+  "narrative_summary": "PN audited the demographic data to ensure seamless communication and identified a critical phone number error in Atlantis. During the provider illness gap, the PN maintained family engagement by educating them on the transition process and verifying their sentiment score. Once the SW confirmed HHA readiness, the PN synchronized the first visit data and scheduled the MA to ensure clinical continuity for the patient's CHF management.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis demographic audit reveals incorrect phone number and missing POA contact info.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "HHA intake coordinator illness triggers a freeze on new referral processing.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness"
+    },
+    {
+      "event_description": "Family expresses high anxiety (Sentiment Score: 2/5) regarding managing CHF symptoms at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "HHA portal shows 'Pending' status for 48 hours due to intake staff illness.",
+      "action_taken": "Flagged the HHA Acceptance Lag to the SW in Atlantis and waited for a system update.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Patient's daughter is confused about who will arrive at the home on Day 1.",
+      "action_taken": "Educated the family on the difference between the HHA nurse and the Healing Partners MA.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Face Sheet phone number does not match the patient's current mobile device.",
+      "action_taken": "Verified the correct primary contact number and documented the update for the SW.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the SW to provide an update on the HHA intake coordinator's return or agency pivot before updating the family on the schedule.",
+      "rationale": "Respects the SW's ownership of vendor management and prevents providing unverified information to the family during a staffing crisis."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the HHA acceptance status via the Atlantis portal daily, flag any continued delays to the SW, and educate the family on the importance of the Caller ID V-Card for the upcoming transition.",
+      "rationale": "Maintains data accuracy and family readiness within the PN scope without attempting to fix the HHA's internal staffing issues."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake office directly to inquire about the coordinator's illness and ask if another staff member can process the CHF referral to prevent a discharge delay.",
+      "rationale": "Violates the No-Vendor Rule and uses 'Fixer' logic by attempting to investigate and resolve HHA internal operations."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

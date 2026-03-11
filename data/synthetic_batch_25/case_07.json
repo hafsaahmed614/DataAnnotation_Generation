@@ -1,72 +1,78 @@
 {
-  "role_delineation_check": "Social Worker (SW) is responsible for identifying and scheduling the medical transport vendor for the stretcher discharge. The Patient Navigator (PN) is responsible for auditing Atlantis demographics, educating the family on the Caller ID V-Card, and flagging transport delays to the SW while maintaining the 'Wait' default.",
+  "role_delineation_check": "The Social Worker manages all vendor referrals, agency selection, and transport logistics, while the Patient Navigator audits demographic accuracy in Atlantis, verifies the family's sentiment regarding home readiness, and flags communication silos to the Social Worker for resolution.",
+  "narrative_summary": "69-year-old Evelyn Martinez was recovering from a Stage 3 diabetic foot ulcer and required a structured home transition for intensive wound management. Friction arose when a change in her discharge timeline was discussed in a closed-door facility huddle, leaving the transition plan unverified in the Atlantis system and the family confused about the timing. The Patient Navigator acted as a liaison by flagging the information gap to the Social Worker and educating the daughter on how to recognize the incoming medical support call through the provided Caller ID tool.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis queue against facility Face Sheet revealed a mismatch in the primary phone number (missing one digit) and an outdated Medicare Advantage plan ID; flagged both to SW for correction to ensure HHA referral accuracy.",
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis queue; discovered a discrepancy in the primary phone number suffix and updated the patient's record to ensure the daughter was listed as the primary point of contact for transition updates.",
   "home_vs_ltc_goal": "Home",
-  "weekly_staff_update": "Week 2: SW Sarah confirms patient is meeting PT goals for bilateral TKA; HHA referral accepted by 'Silver Star Home Health' for 10/25 start-of-care.",
-  "v_card_flyer_status": "V-Card successfully inserted into Mr. Bennett's mobile device for Caller ID recognition; program flyer delivered to daughter/POA during bedside visit.",
-  "pre_dc_pulse_call": "24-hour pulse call conducted; daughter expresses high anxiety (Sentiment Score: Anxious) because the facility has not provided a confirmed pickup window for the stretcher transport.",
-  "atlantis_final_sync": "Discharge date of 10/24 and first home visit date of 10/25 successfully entered into Atlantis portal.",
-  "ma_visit_booking": "MA visit scheduled for 10/25 at 11:00 AM, confirmed only after SW Sarah provided the HHA nurse's name and start-of-care window.",
-  "narrative_summary": "Audited patient data in Atlantis to resolve a phone number discrepancy that would have blocked HHA intake. Educated the family on recognizing the Healing Partners Caller ID to ensure high engagement for the post-discharge pulse call. When the stretcher transport failed to arrive on the discharge date, documented the delay in Atlantis and flagged the barrier to the Social Worker, adhering to the 'Wait' default until the transition was re-secured.",
+  "v_card_flyer_status": "Delivered the program flyer to Mrs. Martinez and her daughter during a bedside visit. Assisted the daughter in saving the V-Card to her smartphone contacts to ensure that the Medical Assistant's post-discharge call is recognized as a known medical contact.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call with the daughter; the sentiment score was documented as 'Anxious' due to the daughter's uncertainty about the specific time of the first nursing visit, which was immediately flagged to the Social Worker.",
+  "atlantis_final_sync": "Confirmed the final discharge date in Atlantis and recorded the first home visit window once the Social Worker updated the portal to show the Home Health Agency was 'Accepted' and 'In Place'.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis Data Lag: Phone number in system is missing a digit compared to Face Sheet.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative"
-    },
-    {
-      "event_description": "Sentiment_Readiness_Gap: Daughter reports high anxiety regarding managing bilateral TKA recovery at home.",
+      "event_description": "Patient appears in the Atlantis queue following a referral for diabetic wound care support.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20134 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver"
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     },
     {
-      "event_description": "Transport Coordination Failure: Stretcher van is a no-show for the 10:00 AM discharge window.",
-      "clinical_impact": "Worsens",
+      "event_description": "A facility discharge planning huddle occurs without the Navigator's inclusion, resulting in a sudden shift in the expected discharge date that is not reflected in Atlantis.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Logistical"
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "Navigator identifies the communication gap and asks the Social Worker for a summary of the new transition timeline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Social Worker confirms the Home Health Agency has accepted the case and provides the start-of-care date.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient's phone number in Atlantis is incorrect, preventing HHA from reaching the family.",
-      "action_taken": "Flagged the demographic error to the SW and verified the correct number from the Face Sheet.",
+      "situation": "The Navigator is excluded from a transition huddle where the discharge date was moved up.",
+      "action_taken": "Ask the Social Worker for a summary of the huddle outcomes and update the Atlantis record accordingly.",
       "intent_category": "Verify"
     },
     {
-      "situation": "Family is overwhelmed by the logistics of a bilateral knee recovery.",
-      "action_taken": "Educated the daughter on what to expect during the first 24 hours home, including the MA arrival time.",
-      "intent_category": "Educate"
+      "situation": "The patient's daughter expresses high anxiety about managing the diabetic wound dressing at home.",
+      "action_taken": "Flag the family's sentiment score and training concerns to the Social Worker for a potential bedside teaching session.",
+      "intent_category": "Flag"
     },
     {
-      "situation": "Facility staff reports the transport company is not answering their calls.",
-      "action_taken": "Documented the transport barrier in Atlantis and asked the SW for an updated discharge timeline.",
-      "intent_category": "Flag"
+      "situation": "The Home Health Agency acceptance status is not yet visible in the portal 48 hours before discharge.",
+      "action_taken": "Document the delay in the Atlantis wait-log and ask the Social Worker if the referral has been acknowledged.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Document the transport no-show in the Atlantis case notes and wait for the Social Worker to provide a new discharge date.",
-      "rationale": "Respects the SW boundary and the 'Wait' default, ensuring the PN does not overstep into vendor management."
+      "description": "Wait for the Social Worker to update the Atlantis portal with the huddle notes before taking further action with the family.",
+      "rationale": "Respects the Social Worker's ownership of the discharge timeline and prevents the Navigator from providing potentially conflicting information to the family."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the family's current sentiment after the delay, educate them on why the transport is being rescheduled by the SW, and flag the new timeline to the MA team.",
-      "rationale": "Focuses on family support and internal data synchronization without contacting the transport company directly."
+      "description": "Ask the Social Worker for a brief update on the discharge plan and educate the family on the standard 24-hour window for the first home visit.",
+      "rationale": "Maintains the Navigator's role as a liaison by seeking information through the appropriate channel and managing family expectations without overstepping into logistics."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the transport vendor directly to investigate the delay and negotiate a priority pickup for Mr. Bennett to ensure the MA visit is not missed.",
-      "rationale": "Directly violates the No-Vendor rule and uses 'Fixer' verbs (Investigate, Negotiate), which is an automatic overstep."
+      "description": "Call the Home Health Agency's intake department to confirm if they received the updated discharge date from the facility huddle.",
+      "rationale": "Violates the No-Vendor rule by contacting the HHA directly and bypasses the Social Worker's responsibility for agency communication."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

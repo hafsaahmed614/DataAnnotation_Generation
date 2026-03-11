@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "SW manages the selection and referral to the home health agency (HHA) and handles all vendor communication regarding the Friday discharge logistics. PN verifies the accuracy of the recovery address in Atlantis, educates the family on post-CABG home monitoring expectations, and flags the 'Friday Discharge Gap' to the SW for a potential discharge date adjustment or bridging plan.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Face Sheet against Atlantis revealed a critical mismatch: Atlantis listed the patient's primary residence, but the Face Sheet indicates he will be recovering at his daughter's home in a different zip code. DOB and Medicare Part B insurance details were verified as accurate.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: Patient is meeting PT goals for stair climbing. SW indicates a target discharge for Friday. PN flagged the 'Friday Discharge Gap' taxonomy risk to the SW, noting the HHA's historical lack of weekend admission staffing.",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's phone for Caller ID recognition; program flyer delivered to daughter (POA) during bedside visit.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge. Sentiment Score: Anxious. Daughter expressed high concern about managing the chest incision over the weekend without a nurse present. Flagged sentiment to SW.",
+  "atlantis_final_sync": "Friday discharge date confirmed in Atlantis; 1st visit date entered for Monday following HHA portal confirmation.",
+  "ma_visit_booking": "MA visit scheduled for Monday morning. PN waited for the SW to confirm via the Atlantis portal that the HHA accepted the referral for a Monday Start-of-Care before booking the MA.",
+  "narrative_summary": "Audited Atlantis demographics to ensure the recovery address was updated for proper HHA routing. Educated the family on the 'Friday Discharge Gap' and what to monitor regarding the sternal incision until the Monday visit. Verified HHA acceptance through the Atlantis portal and flagged the caregiver's high anxiety to the SW for a pre-discharge care conference.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis_Data_Lag: Address mismatch found between Face Sheet and Atlantis queue regarding recovery site.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative Data Mismatch"
+    },
+    {
+      "event_description": "Friday_Discharge_Gap: SW confirmed Friday afternoon discharge but HHA does not staff weekend admissions.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Operational HHA Staffing"
+    },
+    {
+      "event_description": "Sentiment_Readiness_Gap: Daughter (POA) expresses extreme anxiety about the 72-hour nursing gap.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver Panic"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's recovery address in Atlantis does not match the Face Sheet address for his daughter's home.",
+      "action_taken": "Flagged the address discrepancy to the SW and documented the correct recovery address in the Atlantis notes.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Daughter is worried about managing her father's cardiac recovery over the weekend without professional help.",
+      "action_taken": "Educated the daughter on the Day 1 expectations and the specific role of the MA visit on Monday.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The HHA has not yet updated the Atlantis portal with an assigned nurse for the Monday visit.",
+      "action_taken": "Verified the portal status daily and waited for HHA acceptance before scheduling the MA.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN sees the HHA status is still 'Pending' on Friday morning. The PN documents the status in Atlantis and waits for the SW to provide an update after their morning rounds.",
+      "rationale": "Respects the 'Wait' default and the SW's role as the primary vendor contact, avoiding unauthorized communication with the HHA."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN verifies the daughter's phone number in Atlantis, conducts the 24-hour pulse call to gauge sentiment, and flags the daughter's high anxiety regarding the weekend gap to the SW.",
+      "rationale": "Focuses on sentiment verification and liaison activities without crossing into clinical or logistical coordination."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN calls the HHA Intake Coordinator directly to negotiate a Saturday 'bridge' visit so the family doesn't feel abandoned over the weekend.",
+      "rationale": "Violates the No-Vendor Rule and uses 'Fixer' verbs (negotiate) to resolve a logistical issue that belongs to the SW."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

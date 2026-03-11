@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) is responsible for securing an HHA that can accommodate dialysis transportation and handling all vendor intake. Patient Navigator (PN) verifies Atlantis demographic accuracy, educates the family on the 48-72 hour weekend monitoring gap, and flags HHA weekend staffing voids to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility Face Sheet; identified a 1-digit error in the patient's primary phone number and a missing 'Apartment B' designation in the address field. Flagged discrepancies to SW for Atlantis update.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: Patient medically stable following renal stabilization. SW confirms Friday discharge target; HHA selection in progress. PN flagged the Friday Discharge Gap to SW as HHA has not confirmed weekend availability.",
+  "v_card_flyer_status": "V-Card successfully inserted into daughter's phone for Caller ID recognition; program flyer delivered and Day 1 expectations discussed.",
+  "pre_dc_pulse_call": "Reached daughter (POA); sentiment score is 'Anxious' due to the 48-hour gap between Friday discharge and Monday HHA start-of-care. Daughter confirmed dialysis transport is arranged by facility.",
+  "atlantis_final_sync": "Friday D/C date and Monday 1st HHA visit date documented in Atlantis. MA bridging visit for Saturday entered into schedule.",
+  "ma_visit_booking": "MA visit scheduled for Saturday (within 24 hours) to monitor fluid status; booking finalized only after SW confirmed HHA 'Acceptance' in the Atlantis portal for a Monday start.",
+  "narrative_summary": "Audited Atlantis records to ensure zero-error data for the HHA referral and verified the patient's renal-appropriate address. Educated the family on the limitations of weekend HHA staffing to manage expectations for the Friday discharge. Flagged the 'Anxious' caregiver sentiment to the SW, resulting in a bridging MA visit being authorized for Saturday to ensure clinical safety during the weekend gap.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis_Data_Lag: Missing apartment number and incorrect phone in portal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "PN must audit data before HHA referral is sent to prevent delivery failure."
+    },
+    {
+      "event_description": "Friday Discharge Gap: HHA confirms Monday SOC, leaving weekend unmonitored.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "HHA intake department does not process weekend admissions for renal-complex cases."
+    },
+    {
+      "event_description": "Sentiment_Readiness_Gap: Daughter expresses high anxiety regarding fluid monitoring over the weekend.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver fear of managing renal failure without professional support."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "HHA portal shows 'Pending' for Friday start-of-care.",
+      "action_taken": "Flagged the 'HHA_Acceptance_Lag' to the SW in Atlantis and waited for system update.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Family unsure what to do if the patient gains weight rapidly over the weekend.",
+      "action_taken": "Educated the daughter on the specific Healing Partners contact protocol for the Saturday MA visit.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Atlantis phone number does not match the Face Sheet.",
+      "action_taken": "Verified the correct contact number with the daughter and documented the discrepancy for the SW.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Document the HHA's Monday start date in Atlantis and defer to the SW's judgment on whether the Friday discharge remains clinically appropriate for a renal patient.",
+      "rationale": "Respects the SW's authority over discharge safety and vendor readiness while maintaining data accuracy."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Educate the family on the 24-hour bridging MA visit, verify the daughter has the V-Card saved for Caller ID, and flag the caregiver's 'Anxious' sentiment score to the SW to request a care conference.",
+      "rationale": "Focuses on family readiness and data verification without crossing into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake Coordinator to negotiate a special Saturday nursing visit and contact the dialysis center to confirm the patient's Monday chair time.",
+      "rationale": "Directly violates the No-Vendor Rule and performs 'Fixer' actions that are the responsibility of the SW or clinical staff."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

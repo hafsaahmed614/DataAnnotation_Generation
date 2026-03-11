@@ -1,0 +1,65 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages the HHA referral and DME procurement for Martha's hip ORIF recovery. The Patient Navigator (PN) audits Atlantis demographics against the facility face sheet, educates Martha on the program, and flags system data lags to the SW for resolution.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis record against Face Sheet revealed critical data lag: Atlantis lists a disconnected landline (555-0102) and an outdated 2021 address. Face Sheet contains a valid mobile number (555-0987) and a current residence. Verified Medicare Part B is active.",
+  "home_vs_ltc_goal": "Home with Home Health Agency (HHA) and Physical Therapy (PT).",
+  "weekly_staff_update": "Week 1: Martha is progressing with PT; weight-bearing as tolerated. SW confirms 'Mercy Home Health' is the preferred agency. Target discharge is Friday.",
+  "v_card_flyer_status": "V-Card successfully saved to Martha's mobile phone for Healing Partners Caller ID; program flyer delivered to daughter.",
+  "pre_dc_pulse_call": "Conducted 24-hour pulse call. Reached Martha on her mobile; sentiment score: 4/5 (Confident). She understands the HHA will arrive Friday and our MA will visit Saturday. Flagged to SW that Atlantis address still reflects the stale data.",
+  "atlantis_final_sync": "D/C Date (10/24) and 1st Visit Date (10/25) documented in Atlantis. Confirmed the SW updated the primary address field in the system.",
+  "ma_visit_booking": "Scheduled MA for 10/25 at 11:00 AM. Booking occurred only after checking the Atlantis portal to verify Mercy HHA accepted the referral and assigned a nurse.",
+  "narrative_summary": "Audited the Atlantis demographic data and identified a significant lag regarding the patient's current address and contact number. Verified Martha's high readiness sentiment and educated the family on the 24-hour post-discharge visit timeline. Flagged the system discrepancies to the Social Worker to ensure the HHA received the correct transition data. Scheduled the first home visit once HHA acceptance was confirmed in the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: System reflects outdated residential address and disconnected phone number.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "System synchronization delay between facility EMR and Atlantis portal."
+    },
+    {
+      "event_description": "Sentiment Verification: Daughter expresses anxiety regarding the timing of the HHA's first visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Caregiver Anxiety"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis demographic fields do not match the facility face sheet.",
+      "action_taken": "Flagged the address and phone discrepancies to the SW in Atlantis and documented correct values in the notes.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Patient is unsure who to expect at the home on Day 1.",
+      "action_taken": "Educated Martha and her daughter on the roles of the HHA nurse versus the Healing Partners MA.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA acceptance status is pending in the portal 24 hours before discharge.",
+      "action_taken": "Verified the pending status in Atlantis and Asked the SW for a status update on the HHA's readiness.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to update the Atlantis record and confirm the HHA is ready before attempting to contact the patient for the pulse call.",
+      "rationale": "This respects the SW's ownership of data management but risks missing the 24-hour window for the mandatory pulse call if the SW is delayed."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the correct contact info on the face sheet, conduct the pulse call to gauge family sentiment, and flag the remaining Atlantis data lag to the SW as a high-priority transition barrier.",
+      "rationale": "The PN uses liaison verbs to move the case forward and verify readiness without overstepping into vendor or data-entry roles."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake Coordinator at Mercy Home Health to provide them with the corrected address and phone number from the face sheet to ensure their nurse doesn't get lost.",
+      "rationale": "This violates the No-Vendor Rule and the SW Boundary; the PN is performing the SW's job of coordinating with the HHA vendor."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

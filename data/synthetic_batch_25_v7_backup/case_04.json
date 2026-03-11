@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages HHA selection, DME orders for the prosthetic/wheelchair, and family dispute resolution. Patient Navigator (PN) audits Atlantis demographics, verifies family sentiment, and flags transition barriers to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Face Sheet against Atlantis queue revealed a discrepancy: Atlantis listed a disconnected landline, while the Face Sheet provided the daughter\u2019s mobile number. Insurance verified as Straight Medicare.",
+  "home_vs_ltc_goal": "Home (per SW assessment, despite son's preference for LTC).",
+  "weekly_staff_update": "Week 2: SW reports patient is progressing with prosthetic training. SW notes high friction between daughter (pro-home) and son (pro-LTC). PN flagged the 'Sentiment_Readiness_Gap' to the SW.",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's smartphone for Caller ID recognition; program flyer delivered to the daughter during bedside visit.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours pre-discharge. She reports being 'Anxious' (Sentiment Score: 2/5) due to her brother's refusal to help with ramp installation. Flagged to SW.",
+  "atlantis_final_sync": "D/C date of 11/14 and first MA visit date of 11/15 documented in Atlantis after SW confirmed HHA acceptance.",
+  "ma_visit_booking": "MA visit scheduled for 11/15 at 11:00 AM. Booking was held until SW confirmed HHA 'Accepted' status via the Atlantis portal.",
+  "narrative_summary": "PN audited patient demographics and corrected the primary contact number in Atlantis to ensure successful reach rates. During the maintenance phase, PN verified a significant sentiment gap between the patient's children and flagged this friction to the SW for a care conference. Once the SW confirmed the HHA was ready and the family disagreement was stabilized, the PN scheduled the first MA visit within the 24-hour window.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis demographic audit reveals outdated contact number.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Son demands LTC placement while daughter prepares the home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "HHA portal status remains 'Pending' 48 hours before discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Lag"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's son expresses 'Caregiver Panic' and wants to cancel the home transition.",
+      "action_taken": "Documented the son's concerns and Flagged the sentiment score to the SW for a family conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Daughter is unsure of who will arrive at the home on Day 1.",
+      "action_taken": "Educated the daughter on the roles of the HHA nurse versus the Healing Partners MA.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA has not confirmed the start-of-care date in the portal.",
+      "action_taken": "Verified the status in Atlantis and Asked the SW for an update on HHA readiness.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the SW to finalize the family mediation and HHA selection before providing the daughter with the appointment card.",
+      "rationale": "Respects the SW's authority over family dynamics and prevents providing premature scheduling information."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the daughter's readiness via a pulse call, document the son's refusal to participate as a barrier, and flag the sentiment score to the SW in Atlantis.",
+      "rationale": "Follows the 'Liaison' model by documenting data and flagging barriers without interfering in the mediation itself."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator to ask if they can provide a social worker to help the family resolve their disagreement so discharge can stay on track.",
+      "rationale": "Violates the No-Vendor Rule by contacting HHA intake and attempts to 'Fix' a family problem that belongs to the facility SW."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

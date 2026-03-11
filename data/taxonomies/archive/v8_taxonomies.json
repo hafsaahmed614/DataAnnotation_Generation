@@ -1,0 +1,445 @@
+{
+  "version": "v8",
+  "name": "The Narrative Liaison",
+  "focus": "Combining V7's safe boundaries with V5's patient-centered storytelling style.",
+  "ranking": "Current/Target",
+  "action_taxonomy": [
+    {
+      "stage": "Stage 1: Patient Intake (Referral & Admission)",
+      "goal": "Establish early alignment and confirm referral logistics",
+      "categories": [
+        {
+          "category": "Eligibility Verification",
+          "action_items": [
+            "Confirm insurance eligibility (Straight Medicare vs. Advantage)",
+            "Verify diagnosis meets home care criteria"
+          ],
+          "primary_intents": [
+            "Ensure qualification before introducing services"
+          ]
+        },
+        {
+          "category": "Data Harvesting",
+          "action_items": [
+            "Gather DOB, phone, address, and POA details",
+            "Check distance for Medical Assistant (MA) travel",
+            "Audit face sheets for address errors (cross-check Atlantis data against facility face sheet before HHA referral)",
+            "Audit Atlantis demographics (verify insurance, address, phone #, and DOB accuracy in Atlantis queue)"
+          ],
+          "primary_intents": [
+            "Readiness for immediate family communication"
+          ]
+        },
+        {
+          "category": "Early Engagement",
+          "action_items": [
+            "Meet patient in-person within first 48 hours",
+            "Shadow the Traditional Provider (TP) to get facility entry"
+          ],
+          "primary_intents": [
+            "Gain trust and prepare patient for transition"
+          ]
+        },
+        {
+          "category": "Strategic Outreach",
+          "action_items": [
+            "Contact Social Worker (SW) and TP immediately upon assignment",
+            "Confirm referral receipt with HHA intake coordinator",
+            "Verify internal 'Hub' receipt (confirm the referral was received and logged in the Hub system)"
+          ],
+          "primary_intents": [
+            "Maintain relationship for early discharge info"
+          ]
+        },
+        {
+          "category": "Confirm_Caller_ID_Readiness",
+          "action_items": [
+            "Verify that the V-Card was successfully inserted into the patient's phone",
+            "Ask patient/family: 'When you see this number, that's us \u2014 Healing Partners'",
+            "Document confirmation in v_card_flyer_status"
+          ],
+          "primary_intents": [
+            "Ensure the patient recognizes Healing Partners calls (Caller ID only)",
+            "The V-Card is NOT for coordinating logistics"
+          ]
+        },
+        {
+          "category": "Verify_Sentiment_Score",
+          "action_items": [
+            "Ask patient/family: 'How ready do you feel about going home?'",
+            "Ask patient/family: 'What concerns do you have about managing at home?'",
+            "Document the family's sentiment (confident, anxious, reluctant)",
+            "If anxious or reluctant, flag to SW for a care conference"
+          ],
+          "primary_intents": [
+            "Gauge family readiness without performing clinical intake",
+            "Route anxiety-driven barriers to the SW for professional intervention"
+          ]
+        },
+        {
+          "category": "Verify_Wound_Qualification_Status",
+          "action_items": [
+            "Audit clinical notes shared by the SW to confirm the patient meets wound care program eligibility",
+            "Document qualification status in Atlantis",
+            "If eligibility is unclear, flag to SW for clinical confirmation"
+          ],
+          "primary_intents": [
+            "Ensure program eligibility is verified early without performing clinical assessment",
+            "Route clinical eligibility questions to the SW"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 2: Patient Maintenance (Inpatient Stay)",
+      "goal": "Track progress, educate family, and escalate barriers to the appropriate professional",
+      "categories": [
+        {
+          "category": "Clinical Monitoring",
+          "action_items": [
+            "Track discharge timeline updates relayed by SW or facility liaison",
+            "Note wound care progress from provider updates shared by the SW"
+          ],
+          "primary_intents": [
+            "Ensure awareness of barriers or changes in progress without accessing clinical systems directly"
+          ]
+        },
+        {
+          "category": "Stakeholder Alignment",
+          "action_items": [
+            "Maintain weekly communication with staff/SW",
+            "Request post-conference summary from SW regarding discharge timeline changes"
+          ],
+          "primary_intents": [
+            "Ensure immediate updates if discharge plans shift"
+          ]
+        },
+        {
+          "category": "Patient Education",
+          "action_items": [
+            "Educate patient/family on program benefits",
+            "Discuss POA awareness of home services",
+            "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
+            "Insert V-Card into patient's phone and deliver program flyer to patient/family"
+          ],
+          "primary_intents": [
+            "Prevent 'missed' discharge or refusal",
+            "Reduce caregiver anxiety by setting concrete expectations"
+          ]
+        },
+        {
+          "category": "Resource Planning",
+          "action_items": [
+            "Learn PCP and HHA preferences well in advance",
+            "Identify family support/training needs"
+          ],
+          "primary_intents": [
+            "Proactive transition planning"
+          ]
+        },
+        {
+          "category": "Boundary Escalation",
+          "action_items": [
+            "Escalate clinical or insurance concerns to the Social Worker rather than attempting resolution directly",
+            "Flag volatile family situations to SW for immediate intervention",
+            "Escalate weekend coverage gaps to the SW (flag Friday discharges with no weekend HHA coverage so SW can adjust the discharge date or arrange bridging)"
+          ],
+          "primary_intents": [
+            "Ensure complex issues are handled by the appropriate professional"
+          ]
+        },
+        {
+          "category": "Request_Joint_Family_Meeting_via_SW",
+          "action_items": [
+            "Ask the SW to include the PN in a family update call or meeting",
+            "During the meeting, educate family on Day 1 expectations and answer non-clinical questions",
+            "Document meeting outcomes and any new concerns flagged by the family"
+          ],
+          "primary_intents": [
+            "Gain direct access to family sentiment without overstepping SW's role",
+            "Ensure family education happens in a supported, collaborative setting"
+          ]
+        },
+        {
+          "category": "Maintain_Granular_Wait-Status_Timeline",
+          "action_items": [
+            "Keep a running log in Atlantis of each 'waiting' phase (waiting for HHA acceptance, waiting for SW response, waiting for DME delivery)",
+            "Update the log each time a status change occurs or a flag is sent to the SW",
+            "Use the timeline to provide context when escalating delays"
+          ],
+          "primary_intents": [
+            "Create an auditable trail of the PN's waiting periods",
+            "Demonstrate proactive monitoring without vendor contact"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 3: Patient Discharge (Transition)",
+      "goal": "Deliver a 'Maximum Reward' handoff and secure service adoption",
+      "categories": [
+        {
+          "category": "Final Coordination",
+          "action_items": [
+            "Verify with SW the confirmed D/C date and selected HHA before coordinating logistics",
+            "Confirm no address/contact changes"
+          ],
+          "primary_intents": [
+            "Ensure alignment with all transition providers"
+          ]
+        },
+        {
+          "category": "HHA/Team Handoff",
+          "action_items": [
+            "Pass contact/address info and first appointment availability to home team",
+            "Verify HHA has confirmed the start-of-care date, assigned nurse name, and expected first-visit time window"
+          ],
+          "primary_intents": [
+            "Prepare home team for continuity of care"
+          ]
+        },
+        {
+          "category": "Patient Confirmation",
+          "action_items": [
+            "Conduct 24-hour pre-discharge pulse call to patient/family to confirm home readiness and first-visit time",
+            "Hand physical appointment card with Care Coordinator info to patient",
+            "Confirm time works for patient/DM",
+            "Schedule the Medical Assistant (MA) for the first visit within 24 hours of discharge"
+          ],
+          "primary_intents": [
+            "Ensure patient feels informed and comfortable"
+          ]
+        },
+        {
+          "category": "Liaison_Reporting_Only",
+          "action_items": [
+            "If HHA is not confirmed ready, flag the status to SW in Atlantis and WAIT",
+            "Do NOT call HHA intake, DME vendors, or transport companies directly",
+            "Document what was flagged and the SW's response",
+            "If SW has not responded, ask SW for an update \u2014 do not attempt to resolve independently"
+          ],
+          "primary_intents": [
+            "Enforce the 'Wait' default \u2014 PN flags, SW resolves",
+            "Prevent the PN from crossing into vendor communication"
+          ]
+        },
+        {
+          "category": "Verify_HHA_Acceptance_via_Portal",
+          "action_items": [
+            "Check Atlantis portal for HHA acceptance status (do NOT call HHA directly)",
+            "If portal shows HHA accepted with SOC date, proceed to schedule MA",
+            "If portal shows pending or no update, flag to SW and WAIT",
+            "Document portal status in ma_visit_booking"
+          ],
+          "primary_intents": [
+            "Verify HHA readiness through system data, not direct vendor contact",
+            "Maintain the No-Vendor Rule while ensuring MA is not scheduled prematurely"
+          ]
+        },
+        {
+          "category": "Schedule De-conflict",
+          "action_items": [
+            "Coordinate with Regional Director (RD) and HHA to prevent same-day 'Double Dipping'"
+          ],
+          "primary_intents": [
+            "Ensure service payment and coverage safety"
+          ]
+        }
+      ]
+    }
+  ],
+  "friction_taxonomy": [
+    {
+      "category": "Bureaucratic",
+      "signal_barrier": "Medicaid CHC Waiver",
+      "expected_delay": "+30\u201345 Days",
+      "logical_dna_rule": "The process is historically slow because the caseworker is required to obtain three separate contractor estimates to determine the company for installation (e.g., wheelchair ramps)."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Provider Illness",
+      "expected_delay": "+3\u20135 Days",
+      "logical_dna_rule": "In regions with only one specialist, illness triggers a care gap; the PN must coordinate with HHA generalist nurses to bridge dressing changes until a specialist is available."
+    },
+    {
+      "category": "Eligibility",
+      "signal_barrier": "Loss of Skilled Need",
+      "expected_delay": "Hard Stop (Ineligibility)",
+      "logical_dna_rule": "To qualify for specialized home wound care, the patient must require at least one other skilled service (RN or PT); losing these services renders them ineligible even if the wound is open."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA_Intake_Freeze",
+      "expected_delay": "+2\u20135 Days",
+      "logical_dna_rule": "The HHA intake department is frozen due to staffing capacity, holiday, weekend, or system outage; no new admissions are being processed regardless of patient readiness."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "DME_Delivery_Failure",
+      "expected_delay": "+3\u20137 Days",
+      "logical_dna_rule": "Durable Medical Equipment (hospital bed, O2 concentrator) was confirmed delivered but the wrong item arrived, or the vendor delivered to the wrong address; the PN must verify equipment at the home before the HHA start-of-care visit."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA Intake Coordinator Unavailable",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "The single HHA intake coordinator is out sick, on PTO, or overwhelmed with referrals; the PN cannot confirm the admission slot or start-of-care date until intake processes the referral."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Caregiver Training Gap",
+      "expected_delay": "+2\u20135 Days",
+      "logical_dna_rule": "The primary caregiver has not been trained on wound care, catheter maintenance, or medication administration; discharge cannot proceed safely until the family demonstrates competency."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Handoff_Data_Mismatch",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "Critical handoff data (medication list, allergy list, or POA contact information) from the facility does not match the HHA's records; the PN must flag discrepancies to both parties before the first home visit."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "Home Safety Assessment Pending",
+      "expected_delay": "+3\u20137 Days",
+      "logical_dna_rule": "The HHA requires a home safety evaluation (grab bars, ramp, clear pathways) before start-of-care; if the home fails inspection, modifications must be arranged before the patient can return."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA Staffing Shortage",
+      "expected_delay": "+3\u201310 Days",
+      "logical_dna_rule": "The HHA does not have a nurse or aide available in the patient's zip code; the PN must find an alternative agency or negotiate coverage with a more distant branch."
+    },
+    {
+      "category": "Administrative",
+      "signal_barrier": "Insurance-HHA Network Mismatch",
+      "expected_delay": "+3\u20135 Days",
+      "logical_dna_rule": "The patient's preferred or nearest HHA is out-of-network for their insurance plan; the PN must identify an in-network agency willing to take the referral or suggest a single-case agreement to the SW."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Family Disagreement on Discharge Plan",
+      "expected_delay": "+2\u20137 Days",
+      "logical_dna_rule": "Family members disagree about whether the patient should go home vs. a facility; the PN must educate and de-escalate while staying within scope (not making clinical recommendations or overriding the family's right to choose)."
+    },
+    {
+      "category": "Logistical",
+      "signal_barrier": "Transport Coordination Failure",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "Medical transport (wheelchair van, stretcher transport) is unavailable or unscheduled for the discharge date; the PN must coordinate with transport vendors and confirm timing with the HHA's first-visit schedule."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Missing HHA Orders at Handoff",
+      "expected_delay": "+2\u20134 Days",
+      "logical_dna_rule": "The physician's home health orders were not faxed, were incomplete, or were sent to the wrong HHA; the PN must flag the missing orders to the SW and verify receipt before start-of-care can be scheduled."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Holiday Coverage Gap",
+      "expected_delay": "+2\u20135 Days",
+      "logical_dna_rule": "HHA operates on reduced holiday staffing; admissions and first visits are suspended over holiday weekends, pushing the start-of-care date out regardless of patient readiness."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Caregiver_Panic",
+      "expected_delay": "+2\u20137 Days",
+      "logical_dna_rule": "The primary caregiver or family member threatens to refuse discharge or demands the patient stay in the facility, driven by fear of managing care at home; the PN must educate and de-escalate while staying within scope (not making clinical promises or overriding the family's right to refuse)."
+    },
+    {
+      "category": "Administrative",
+      "signal_barrier": "Atlantis_Data_Lag",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "The patient's record appears in the Atlantis queue with stale or missing data (wrong address, outdated insurance, missing phone number); the PN must audit the face sheet against Atlantis and request corrections before the HHA can process the referral."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Friday Discharge Gap",
+      "expected_delay": "+2\u20134 Days",
+      "logical_dna_rule": "Patient is discharged on a Friday but the HHA does not staff weekend admissions; the first home visit cannot occur until Monday at earliest, leaving a 48-72 hour gap in post-discharge monitoring."
+    },
+    {
+      "category": "Clinical Handoff",
+      "signal_barrier": "Day 1 Home No-Show",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "The HHA nurse assigned to the first post-discharge home visit does not appear at the scheduled time; the PN must escalate to the HHA intake coordinator and flag the no-show to the SW to determine if the patient is safe."
+    },
+    {
+      "category": "Eligibility",
+      "signal_barrier": "LTC_Pivot_Abort",
+      "expected_delay": "Hard Stop (LTC Closure)",
+      "logical_dna_rule": "The SW determines the patient's goal is Long-Term Care (LTC), not home discharge; the PN must perform a Neutral_LTC_Closure in Atlantis and stop all home transition work. Continuing to pitch home services to an LTC patient is an Overstep."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Pre-DC_Call_Disconnect",
+      "expected_delay": "+1\u20132 Days",
+      "logical_dna_rule": "The PN cannot reach the patient or family during the mandatory 24-hour pre-discharge pulse call; without confirming home readiness and the first-visit time, the discharge proceeds with an unverified transition plan."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA_SOC_Overlap",
+      "expected_delay": "+1\u20133 Days",
+      "logical_dna_rule": "The HHA's start-of-care (SOC) scheduling conflicts with another patient admission or an internal staffing constraint; the first visit cannot be booked in the 24-hour window post-discharge, risking the PN's success metric."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "HHA_Acceptance_Stall",
+      "expected_delay": "+2\u20135 Days",
+      "logical_dna_rule": "The HHA has received the referral but has not yet confirmed acceptance (no SOC date, no assigned nurse, no first-visit window); the PN checks Atlantis portal for status, flags the delay to the SW, and WAITS. The PN does NOT call HHA intake directly."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Sentiment_Readiness_Gap",
+      "expected_delay": "+1\u20134 Days",
+      "logical_dna_rule": "The patient or family expresses anxiety, reluctance, or low confidence about managing care at home; the PN documents the sentiment score and flags it to the SW for a care conference. The PN does NOT perform clinical intake or assessment \u2014 sentiment verification only."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "Family_Training_Gap_Anxiety",
+      "expected_delay": "+2-5 Days",
+      "logical_dna_rule": "The family expresses anxiety specifically because the facility has not provided training on clinical tasks they will need to perform at home (wound dressing changes, catheter care, medication management); the PN documents the anxiety and flags the training gap to the SW for a care conference or bedside teaching session."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Liaison_Communication_Silo",
+      "expected_delay": "+1-3 Days",
+      "logical_dna_rule": "The PN is excluded from a key transition meeting (family conference, discharge planning huddle) and only learns of plan changes after the fact; the PN must request inclusion through the SW and update Atlantis with any new information received."
+    }
+  ],
+  "outcome_taxonomy": [
+    {
+      "state": "Clinically Ready",
+      "primary_exit_trigger": "Surgeon sign-off and identification of skilled need (RN/PT)",
+      "leading_indicator_of_failure": "Patient stabilizes clinically but has no support system or reliable caregiver at home"
+    },
+    {
+      "state": "Env. Blocked",
+      "primary_exit_trigger": "Completion of home modification (e.g., wheelchair ramp or chair lift installation)",
+      "leading_indicator_of_failure": "Waiver estimates are rejected, or the Medicaid approval process is delayed indefinitely"
+    },
+    {
+      "state": "LTC Transition",
+      "primary_exit_trigger": "Day 101 Medicare benefit exhaustion or Social Worker safety pivot",
+      "leading_indicator_of_failure": "Family verbalizes an 'inability to help at home' or demonstrates unwillingness to assist",
+      "v5_outcome_mapping": "Neutral_LTC_Closure \u2014 LTC pivot is a job requirement, NOT a failure. PN logs neutral closure in Atlantis."
+    },
+    {
+      "state": "Hospital Return",
+      "primary_exit_trigger": "Acute medical emergency (e.g., acute CHF or respiratory failure)",
+      "leading_indicator_of_failure": "Evidence of O2 tank mismanagement, cellulitis flare-up, or missed HHA monitoring visits",
+      "v5_outcome_mapping": "Failure_Transition_Breakdown \u2014 The home transition failed; patient returned to acute care."
+    },
+    {
+      "state": "Service Conversion",
+      "primary_exit_trigger": "First home visit completed within 24\u201348 hours of discharge with our services",
+      "leading_indicator_of_failure": "Competitive steering by Social Worker or failure to establish trust during the intake phase",
+      "v5_outcome_mapping": "Success_Home_with_First_Visit \u2014 Patient discharges home with our services AND the first post-discharge home visit is completed."
+    },
+    {
+      "state": "Alternative Agency",
+      "primary_exit_trigger": "Patient or SW selects a different home health agency",
+      "leading_indicator_of_failure": "PN failed to build rapport or HHA could not staff the case in the patient's area",
+      "v5_outcome_mapping": "Neutral_Alternative_Agency \u2014 Patient chose a different agency. This is a job requirement, NOT a failure."
+    }
+  ]
+}

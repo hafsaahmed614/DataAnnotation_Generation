@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) is responsible for selecting the Home Health Agency (HHA), securing the referral, and communicating with the intake coordinator. The Patient Navigator (PN) is responsible for auditing demographic accuracy in Atlantis, educating the family on the program, verifying caregiver sentiment, and flagging any transition barriers to the SW for resolution.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis queue against facility Face Sheet revealed a significant data lag; the Atlantis record listed a disconnected landline, while the Face Sheet provided the daughter's mobile number. The address in Atlantis also omitted the required apartment number '4B'.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW reports patient is meeting 75% of physical therapy goals following stroke rehab. Target discharge set for Friday. PN verified the daughter is the primary caregiver and confirmed her contact information.",
+  "v_card_flyer_status": "V-Card successfully saved to daughter's phone for Caller ID recognition of Healing Partners; program flyer delivered and Day 1 expectations explained at bedside.",
+  "pre_dc_pulse_call": "Reached daughter via 24-hour pulse call. She expressed an 'Anxious' sentiment (Sentiment Score: 2/5) regarding her father's mobility at home without hospital grab bars. PN documented sentiment and flagged the readiness gap to the SW.",
+  "atlantis_final_sync": "Confirmed Friday discharge date and Monday first-visit date entered into Atlantis after SW verified HHA acceptance.",
+  "ma_visit_booking": "MA visit scheduled for Monday at 09:00 AM; booking was delayed until the SW confirmed in the Atlantis portal that the HHA had assigned a nurse for the start-of-care.",
+  "narrative_summary": "Audited and corrected patient demographic data in Atlantis to resolve a critical data lag between systems. Educated the family on the role of the Medical Assistant and verified the daughter's readiness sentiment, which was flagged to the SW due to high anxiety. Verified HHA acceptance through the portal and scheduled the first home visit within the required 24-hour post-discharge window.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis record appears with outdated phone and address info compared to facility face sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Daughter expresses fear of managing her father's post-stroke gait instability.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "HHA referral remains in 'Pending' status in the portal on Thursday afternoon for a Friday discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Friday Discharge Gap"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Stale contact data in Atlantis prevents HHA from reaching the family.",
+      "action_taken": "Flagged the correct mobile number and apartment details to the SW and documented the update in the Atlantis log.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Family is confused about the difference between the HHA nurse and the Healing Partners MA.",
+      "action_taken": "Educated the daughter on the specific roles of each provider during the first 24 hours at home.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA acceptance is not appearing in the portal 18 hours before discharge.",
+      "action_taken": "Flagged the HHA status to the SW in Atlantis and waited for the SW to confirm agency readiness.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon seeing the HHA status as 'Pending' in Atlantis, the PN documents the delay and waits for the SW to provide an update during the next morning's rounds.",
+      "rationale": "Respects the 'Wait' default and the SW's role as the primary vendor contact, avoiding any unauthorized communication with the HHA."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN verifies the HHA acceptance status via the Atlantis portal, conducts the 24-hour pulse call to verify family sentiment, and flags the caregiver's anxiety about mobility to the SW for a potential care conference.",
+      "rationale": "Uses liaison verbs to gather data and educate the family while routing professional concerns to the SW without overstepping into clinical or logistical coordination."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN calls the HHA Intake Coordinator directly to explain the urgency of the stroke rehab case and requests they expedite the nurse assignment so the MA visit can be scheduled for Friday afternoon.",
+      "rationale": "Violates the No-Vendor Rule and the 'Wait' default by attempting to resolve vendor logistics and coordinate the HHA's internal staffing."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

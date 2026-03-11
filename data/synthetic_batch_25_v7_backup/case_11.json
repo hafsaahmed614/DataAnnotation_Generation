@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "SW manages the LTC placement, facility referrals, and clinical safety assessment. PN audits Atlantis demographic data, verifies family sentiment regarding home-care readiness, and documents the Neutral_LTC_Closure once the SW confirms the pivot to long-term care.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Face Sheet against Atlantis queue revealed a DOB discrepancy (05/12/1942 vs 05/21/1942) and a missing secondary contact number for the daughter; flagged data lags to SW.",
+  "home_vs_ltc_goal": "LTC",
+  "weekly_staff_update": "Week 2: SW reports patient's Parkinson's-related tremors and UTI-induced delirium are complicating the home-discharge plan; PT eval suggests high fall risk. Family sentiment is shifting toward LTC.",
+  "v_card_flyer_status": "V-Card successfully inserted into daughter's phone for Caller ID recognition; program flyer delivered to bedside on Day 3.",
+  "pre_dc_pulse_call": "Reached daughter; she expressed high anxiety and stated the family no longer feels comfortable managing the patient's Parkinson's at home. Flagged to SW for safety pivot.",
+  "atlantis_final_sync": "LTC transition date entered into Atlantis; home visit dates cleared per LTC_Pivot_Abort protocol.",
+  "ma_visit_booking": "Not scheduled; SW confirmed the goal is LTC, and PN stopped all home transition work per the LTC Filter rule.",
+  "narrative_summary": "PN audited Atlantis demographics and corrected a DOB error identified on the facility face sheet. During the maintenance phase, the PN verified a 'Reluctant' sentiment score from the daughter, who cited the patient's worsening Parkinson's symptoms as a primary concern. Once the SW officially pivoted the goal to LTC due to safety concerns, the PN performed a Neutral_LTC_Closure in Atlantis and ceased all home-care coordination activities.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: DOB mismatch identified during initial audit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Sentiment Readiness Gap: Daughter expresses fear of managing Parkinson's tremors post-UTI.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "LTC_Pivot_Abort: SW determines home is unsafe; goal changed to facility placement.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis record shows incorrect DOB for the patient compared to SNF records.",
+      "action_taken": "Flagged the discrepancy to the SW in Atlantis and requested a data update.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Family expresses extreme anxiety regarding the patient's gait instability.",
+      "action_taken": "Educated the daughter on the standard transition process while documenting her 'Anxious' sentiment score.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "SW confirms the patient will be transitioning to a permanent LTC bed.",
+      "action_taken": "Documented the Neutral_LTC_Closure in Atlantis and stopped all work.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the SW to finalize the LTC facility selection and then log the closure in Atlantis.",
+      "rationale": "Respects the boundary that the PN does not participate in facility placement or decision-making."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the daughter's specific concerns about home safety and flag her reluctance to the SW for a care conference.",
+      "rationale": "Uses liaison verbs to identify barriers early and routes them to the professional (SW) for resolution."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the intake department of the local LTC facility to check on bed availability for the patient.",
+      "rationale": "Violates the No-Vendor Rule and crosses into the SW's domain of facility placement."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

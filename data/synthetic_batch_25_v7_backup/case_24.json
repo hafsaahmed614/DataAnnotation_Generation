@@ -1,0 +1,65 @@
+{
+  "role_delineation_check": "Social Worker (SW) is responsible for securing HHA acceptance and resolving vendor scheduling conflicts. The Patient Navigator (PN) is responsible for verifying the accuracy of Atlantis demographic data against the Face Sheet, educating the family on the Healing Partners transition model, and flagging HHA scheduling barriers in Atlantis without contacting the agency directly.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis record against facility Face Sheet. Confirmed DOB (08/14/1959) and Medicare Advantage plan. Identified a discrepancy in the primary contact phone number: Face Sheet lists daughter's mobile ending in -8821, while Atlantis listed an inactive landline. Flagged for SW correction.",
+  "home_vs_ltc_goal": "Home with HHA services (RN for COPD monitoring and PT for gait training).",
+  "weekly_staff_update": "Week 1: Patient finishing nebulizer treatment course; SW confirms referral sent to 'Best Care HHA.' PN verified daughter's sentiment score as 'Reluctant' due to previous poor HHA experience. Flagged to SW for care conference support.",
+  "v_card_flyer_status": "V-Card saved to patient's smartphone for Caller ID recognition of Healing Partners; transition flyer delivered to patient during bedside education session.",
+  "pre_dc_pulse_call": "Conducted 24-hour pulse call. Patient confirms home is ready for discharge tomorrow. Daughter (POA) expresses concern that the HHA has not called to provide a time window yet. PN documented sentiment and verified contact info again.",
+  "atlantis_final_sync": "Entered D/C date (Friday) into Atlantis. Portal indicates 'HHA_SOC_Overlap' status, showing the agency cannot staff the first visit within the first 24 hours due to existing admission volume.",
+  "ma_visit_booking": "MA visit not yet scheduled. PN flagged the HHA_SOC_Overlap status to the SW in Atlantis and is waiting for the SW to confirm if the HHA can accommodate or if a different agency is required.",
+  "narrative_summary": "PN performed a demographic audit and corrected a critical contact phone mismatch in the Atlantis queue to ensure successful pre-discharge communication. During the maintenance phase, the PN verified a low family sentiment score regarding previous HHA failures and flagged the need for SW intervention. Upon identifying an HHA_SOC_Overlap in the Atlantis portal that threatens the 24-hour first visit metric, the PN documented the barrier and is currently waiting for SW resolution in accordance with the Wait Default rule.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis primary phone number found to be inactive landline during audit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days (Atlantis_Data_Lag)",
+      "ai_assumed_bottleneck": "Administrative/Data Accuracy"
+    },
+    {
+      "event_description": "HHA portal status update shows scheduling conflict for the requested start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days (HHA_SOC_Overlap)",
+      "ai_assumed_bottleneck": "Operational/Agency Capacity"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis demographic data does not match the facility Face Sheet contact information.",
+      "action_taken": "Documented the discrepancy and Flagged the correct phone number to the SW for system update.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Daughter expresses high anxiety about the HHA's ability to show up on Day 1.",
+      "action_taken": "Educated the family on the MA's role in the transition and Flagged the sentiment score to the SW.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Atlantis portal shows the HHA has a scheduling overlap and cannot visit within 24 hours.",
+      "action_taken": "Flagged the HHA status to the SW and Documented that the MA scheduling is on hold until HHA readiness is confirmed.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the SW to review the Atlantis flag regarding the HHA_SOC_Overlap and decide whether to push the agency or pivot to a new HHA.",
+      "rationale": "Respects the SW's role as the primary vendor contact and adheres to the 'Wait' default when logistics are blocked."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the HHA acceptance status in the Atlantis portal, Educate the daughter on why the first visit time is still pending, and Ask the SW for an updated HHA confirmation status.",
+      "rationale": "Uses Liaison verbs to keep the family informed and the SW prompted without crossing into direct vendor negotiation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake Coordinator directly to explain the COPD urgency and Negotiate a specific time slot for the nurse to visit so the MA can be scheduled.",
+      "rationale": "Violates the No-Vendor Rule and uses 'Fixer' verbs (Negotiate) to bypass the SW's authority over agency communication."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

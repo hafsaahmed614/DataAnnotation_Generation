@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages the HHA referral, selects the agency, and monitors the home safety assessment status. The Patient Navigator (PN) audits Atlantis demographic data, educates the family on diabetic home safety expectations, verifies caregiver sentiment, and flags assessment delays to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against the facility face sheet. Confirmed DOB (08/14/1955) and Medicare Advantage status. Identified a discrepancy in the primary phone number; face sheet lists daughter (POA) at 555-012-3456 while Atlantis had an outdated landline. Flagged for SW update.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW confirmed referral sent to 'CareFirst HHA'. HHA has flagged the case as 'Assessment Pending' due to a required home safety walkthrough for diabetic neuropathy fall risks. D/C date is currently floating.",
+  "v_card_flyer_status": "V-Card inserted into daughter's phone to ensure 'Healing Partners' Caller ID recognition; program flyer delivered to patient during bedside wound education session.",
+  "pre_dc_pulse_call": "Reached daughter 24 hours prior to rescheduled discharge. Daughter confirmed home is ready but expressed high anxiety (Sentiment: Anxious) regarding the HHA's grab bar recommendations. Sentiment flagged to SW.",
+  "atlantis_final_sync": "Entered D/C date of 11/02 and 1st visit date of 11/03 into Atlantis following SW confirmation of HHA readiness.",
+  "ma_visit_booking": "MA scheduled for 11/03 at 09:00 AM. Booking was held until the SW confirmed in Atlantis that the HHA safety assessment was completed and the agency accepted the start-of-care date.",
+  "narrative_summary": "PN audited patient data to ensure the HHA had the correct contact information for the mandatory home safety assessment. Educated the family on how the assessment facilitates safe wound care for diabetic patients with neuropathy. Verified the daughter's anxious sentiment regarding home modifications and flagged the barrier to the SW, who eventually confirmed HHA readiness for the first visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis_Data_Lag: Outdated primary contact number for POA.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA cannot reach the family to schedule the safety assessment due to stale data."
+    },
+    {
+      "event_description": "Home Safety Assessment Pending: HHA requires walkthrough before accepting the referral.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Daughter's work schedule is delaying the HHA technician's access to the home."
+    },
+    {
+      "event_description": "Sentiment_Readiness_Gap: Daughter expresses anxiety about managing diabetic ulcers without grab bars.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Family reluctance to discharge until home modifications are visibly confirmed."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis contains an outdated landline for a patient who is now non-verbal.",
+      "action_taken": "Verified the correct mobile number for the POA from the face sheet and flagged it to the SW for Atlantis correction.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "HHA portal shows 'Assessment Pending' for five consecutive days.",
+      "action_taken": "Asked the SW for a status update on the safety inspection and documented the delay in Atlantis notes.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Daughter is unsure what happens during the first 24 hours of the mother being home.",
+      "action_taken": "Educated the daughter on the Day 1 timeline, including the HHA nurse arrival and the MA wound care visit.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The PN documents that the HHA safety assessment is still pending in the Atlantis portal and waits for the SW to provide a status update during the next weekly meeting.",
+      "rationale": "This respects the SW's role as the primary owner of vendor logistics and prevents the PN from interfering with the HHA's internal assessment protocols."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The PN asks the daughter if she has been contacted by the HHA for the home walkthrough, verifies her availability, and flags the family's readiness to the SW in Atlantis to assist with transition timing.",
+      "rationale": "The PN acts as a liaison by gathering data from the family and reporting it to the SW without contacting the HHA vendor directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The PN calls the CareFirst HHA Intake Coordinator to explain the urgency of the diabetic wound care and requests that they prioritize the safety assessment for tomorrow afternoon.",
+      "rationale": "This violates the No-Vendor Rule and uses 'Fixer' logic by attempting to coordinate and resolve logistical delays directly with the HHA."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

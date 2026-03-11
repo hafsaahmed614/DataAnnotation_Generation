@@ -1,72 +1,78 @@
 {
-  "role_delineation_check": "Social Worker (SW) handles all HHA agency selection, insurance network negotiations, and contracting. Patient Navigator (PN) audits Atlantis demographics against the Face Sheet, verifies family sentiment regarding bilateral TKA recovery, and flags any identified network barriers to the SW for resolution.",
+  "role_delineation_check": "The Social Worker is responsible for all vendor interactions including HHA referral selection and DME procurement, while the Patient Navigator's scope is limited to auditing patient demographics in Atlantis, verifying family sentiment, and flagging logistical delays to the social worker to ensure a smooth transition.",
+  "narrative_summary": "An 81-year-old male recovering from an ischemic stroke faced a significant transition delay when the home health agency required a comprehensive safety assessment of his residence before accepting the referral. During this waiting period, the family expressed rising anxiety regarding the patient's mobility, prompting the Navigator to provide education on post-discharge support and day-one expectations. Once the Social Worker confirmed the home was cleared and the agency was in place, the Navigator facilitated the handoff to ensure a medical assistant was scheduled for the initial home visit within the critical 24-hour window.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Verified DOB (05/12/1936) and primary phone (555-0122) against Northcrest Face Sheet. Audit revealed patient is on a Humana Gold Plus Medicare Advantage plan, which contradicts the 'Straight Medicare' tag in the Atlantis initial queue.",
-  "home_vs_ltc_goal": "Home with 24/7 family support.",
-  "weekly_staff_update": "Week 2: SW confirmed TKA recovery is progressing; however, the preferred HHA is out-of-network for the Humana Advantage plan. PN flagged the mismatch in Atlantis and is waiting for SW to identify an in-network alternative.",
-  "v_card_flyer_status": "V-Card successfully saved to patient's phone for Caller ID recognition. Program flyer delivered to patient's spouse, detailing the Healing Partners introductory process.",
-  "pre_dc_pulse_call": "Reached spouse 24 hours prior to discharge. Sentiment Score: Anxious. Spouse is concerned about managing bilateral knee immobility. PN documented sentiment and flagged the need for a PT-led family training recap to the SW.",
-  "atlantis_final_sync": "Confirmed Discharge Date 11/14 and First Visit Date 11/15 entered into Atlantis after SW confirmed New Hope HHA acceptance.",
-  "ma_visit_booking": "MA visit scheduled for 11/15 at 11:00 AM. Booking was held until the Atlantis portal showed 'Accepted' status from the in-network HHA provider.",
-  "narrative_summary": "Audited patient data and identified a critical insurance-HHA network mismatch that would have delayed care. Educated the family on the transition timeline to manage anxiety surrounding bilateral TKA recovery. Verified the final HHA acceptance via the Atlantis portal before scheduling the Medical Assistant for the first home visit, ensuring no vendor contact occurred.",
+  "demographic_audit_note": "Audited the patient's face sheet against the Atlantis record; verified the date of birth and Medicare Advantage plan details are correct. Identified a discrepancy in the primary phone number listed for the daughter (POA) and documented the corrected contact information in the Atlantis profile for future outreach.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "Successfully inserted the digital V-card into the daughter's smartphone and explained its function as a caller ID tool for the incoming medical assistant call. Delivered the program flyer and emphasized that the 'Healing Partners' identifier would appear on her screen to ensure the transition team's calls are recognized.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call with the patient\u2019s daughter. She reported a sentiment score of 'Anxious' due to the recent home safety modifications, so the concern was flagged to the Social Worker. The daughter confirmed that the patient is ready for discharge and understands the timing of the first home visit.",
+  "atlantis_final_sync": "Confirmed the final discharge date with the Social Worker and verified that the HHA status is 'Accepted' in the portal. Recorded the discharge date and the first medical assistant visit date in Atlantis after receiving confirmation that the agency had assigned a nurse for the start-of-care.",
   "format_1_state_log": [
     {
-      "event_description": "Insurance-HHA Network Mismatch identified during audit",
+      "event_description": "Patient appeared in the Atlantis queue following stroke rehabilitation; initial audit of the demographic face sheet completed.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The home health agency notified the facility that the start-of-care is contingent on a pending home safety assessment to ensure grab bar installation.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "SW must identify an in-network HHA or request a single-case agreement from Humana."
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Home Safety Assessment Pending"
     },
     {
-      "event_description": "Caregiver Sentiment Readiness Gap documented",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20134 Days",
-      "ai_assumed_bottleneck": "Spouse expresses high anxiety over bilateral TKA lifting/transferring; PN flags to SW for care conference."
-    },
-    {
-      "event_description": "HHA Acceptance Lag in Atlantis Portal",
+      "event_description": "Navigator met with the family to verify their readiness sentiment; daughter expressed fear of the patient falling before the HHA nurse arrives.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Unchanged",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "New agency has received referral but not yet updated the SOC date in the portal; PN waits."
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "Social Worker confirmed the home safety assessment was passed and the HHA has officially accepted the case for a Tuesday discharge.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Initial HHA choice is out-of-network for the patient's Humana Advantage plan.",
-      "action_taken": "Flagged the insurance mismatch to the SW in the Atlantis notes.",
+      "situation": "The HHA portal shows the referral is pending a safety assessment, causing a discharge delay.",
+      "action_taken": "Flagged the pending assessment status to the Social Worker in Atlantis and documented the expected delay.",
       "intent_category": "Flag"
     },
     {
-      "situation": "Spouse is fearful of managing the patient's bilateral knee pain at home.",
-      "action_taken": "Educated the spouse on the Day 1 visit schedule and what the MA and HHA nurse will handle.",
+      "situation": "The family is unsure of what happens the moment the patient arrives home from the facility.",
+      "action_taken": "Educated the family on Day 1 expectations, including the timing of the medical assistant visit and the HHA nurse's role.",
       "intent_category": "Educate"
     },
     {
-      "situation": "Atlantis demographics list an outdated address from three years ago.",
-      "action_taken": "Verified the current residential address against the facility Face Sheet and updated Atlantis.",
+      "situation": "The daughter is worried about missing the call from the home team because of unknown numbers.",
+      "action_taken": "Verified the V-card was saved in her contacts and asked her to confirm she saw the 'Healing Partners' caller ID.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Upon discovering the out-of-network status of the HHA, the PN documents the finding in Atlantis and waits for the Social Worker to either secure a single-case agreement or select a new agency.",
-      "rationale": "Respects the No-Vendor Rule by allowing the SW to handle all insurance and agency negotiations without PN interference."
+      "description": "Monitor the Atlantis portal for updates on the home safety assessment and wait for the Social Worker to communicate the final discharge date once the HHA clears the home.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship with the HHA and is responsible for resolving environmental barriers to discharge."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "PN verifies the Humana plan details in the Atlantis portal, flags the network gap to the SW, and educates the family that the discharge date may shift slightly while the SW finalizes an in-network provider.",
-      "rationale": "Uses Liaison verbs to ensure data accuracy and manage family expectations without contacting the insurance company or HHA directly."
+      "description": "Verify the family's understanding of the safety assessment requirements, educate them on the transition timeline, and flag the pending status in Atlantis to ensure the Social Worker is aware of the bottleneck.",
+      "rationale": "The Navigator acts as a liaison by keeping the family informed and the Social Worker alerted to the delay without attempting to fix the logistics directly."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "PN calls the HHA intake coordinator to negotiate a one-time rate for the Humana Advantage patient to ensure the discharge happens on Friday as planned.",
-      "rationale": "Violates the No-Vendor Rule and the Verb Filter by 'negotiating' and 'resolving' a logistics issue directly with a vendor."
+      "description": "Call the HHA's intake department to ask for the specific name of the inspector and negotiate an earlier time for the home safety assessment to prevent a discharge delay.",
+      "rationale": "This violates the No-Vendor rule and the Verb Filter by attempting to 'negotiate' and 'resolve' logistical issues directly with the HHA."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

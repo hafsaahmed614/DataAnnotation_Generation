@@ -1,72 +1,86 @@
 {
-  "role_delineation_check": "Social Worker (SW) manages the clinical discharge plan, mediates the family dispute regarding placement, and selects the HHA agency. The PN audits Atlantis demographic data for accuracy, educates the family on the Healing Partners program benefits, verifies caregiver sentiment, and flags logistical barriers to the SW for resolution.",
+  "role_delineation_check": "In this case, the Social Worker (SW) is responsible for securing the Home Health Agency (HHA) referral and managing the vendor's acceptance, while the Patient Navigator (PN) audits the Atlantis demographic record, educates the family on the Healing Partners program, and flags the caregiver's sentiment and readiness gaps to the clinical team.",
+  "narrative_summary": "Mrs. Evelyn Miller, a 69-year-old patient recovering from a complex diabetic foot ulcer, faced a significant barrier to discharge when her primary caregiver and daughter expressed intense anxiety regarding home wound management. This caregiver panic threatened to derail the transition home, as the family felt unequipped to handle the daily dressing changes and clinical monitoring required. The Patient Navigator acted as a liaison by verifying the family's low sentiment score in Atlantis, educating them on exactly what to expect during the first 24 hours home, and flagging the training gap to the Social Worker to ensure a bedside teaching session was completed before the first home visit.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis record against facility Face Sheet revealed a discrepancy in the primary contact phone number; Atlantis listed the patient's disconnected home line, while the Face Sheet provided the daughter's (POA) mobile number. DOB and Medicare ID verified as accurate.",
-  "home_vs_ltc_goal": "Home",
-  "weekly_staff_update": "Week 2 Check-in: SW reports patient is clinically stable post-pneumonia, but discharge is stalled due to the son demanding SNF placement while the daughter (POA) prefers home care. PN documented the family friction in Atlantis.",
-  "v_card_flyer_status": "V-Card inserted into daughter's phone to ensure Caller ID recognition for 'Healing Partners'; program flyer delivered to daughter at bedside.",
-  "pre_dc_pulse_call": "Conducted 24-hour pulse call to daughter. Daughter confirms she is proceeding with home discharge despite her brother's objections. Sentiment Score: Anxious but committed. Daughter verified the hospital bed was delivered.",
-  "atlantis_final_sync": "D/C date of 11/14 and 1st visit date of 11/15 documented in Atlantis portal.",
-  "ma_visit_booking": "MA scheduled for 11/15 at 11:00 AM following SW confirmation in Atlantis that HHA (Kindred) has accepted the referral and assigned a nurse.",
-  "narrative_summary": "PN audited patient demographics and corrected the POA contact information in Atlantis to ensure seamless communication. PN verified a high level of caregiver anxiety due to internal family disagreement regarding the discharge destination. PN educated the daughter on the Day 1 home visit expectations and flagged the son's ongoing resistance to the SW for a formal care conference. The transition proceeded once the HHA acceptance was verified through the Atlantis portal.",
+  "demographic_audit_note": "Audited the Atlantis referral queue against the facility face sheet; confirmed the patient's DOB and home address in the Heights district. Discovered the primary contact number in Atlantis was missing a digit and updated the record to match the daughter's verified mobile number for post-discharge communication.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "Handed the program flyer to Mrs. Miller and her daughter, walking them through the service benefits. Successfully inserted the V-Card into the daughter\u2019s smartphone, explaining that the 'Healing Partners' Caller ID would allow her to recognize incoming calls from our Medical Assistant team.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the daughter remains anxious but reported feeling more prepared following the nurse's demonstration. Verified the home is ready and the patient expects the first visit tomorrow morning.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date of October 14th and the first home visit date of October 15th in Atlantis; scheduled the Medical Assistant for the initial visit window once the SW confirmed HHA acceptance.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis Data Lag: Address and phone mismatch identified during initial audit.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative"
-    },
-    {
-      "event_description": "Family Disagreement on Discharge Plan: Son insists on LTC while daughter (POA) wants home.",
+      "event_description": "Mrs. Miller appeared in the Atlantis queue for a diabetic wound transition; PN audited the record and found the primary contact phone number was incomplete.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver"
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "HHA_Acceptance_Lag: HHA referral sent but status remained 'Pending' in portal for 48 hours.",
-      "clinical_impact": "Unchanged",
+      "event_description": "During the initial bedside meeting, the patient's daughter verbalized intense fear and 'panic' regarding her ability to properly change the diabetic foot dressings at home.",
+      "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "Operational"
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "PN documented the low sentiment score in Atlantis and flagged the caregiver's training concerns to the Social Worker via the portal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The HHA portal status remained 'Pending' for 48 hours; PN updated the wait-status timeline in Atlantis and waited for SW notification of agency acceptance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "Social Worker confirmed the HHA accepted the case and the family completed bedside training; PN conducted the pulse call and verified the first visit time.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Daughter expresses extreme anxiety about managing her mother's nebulizer treatments at home.",
-      "action_taken": "Educated daughter on the role of the HHA nurse and MA in reinforcing treatment education during the first visit.",
-      "intent_category": "Educate"
-    },
-    {
-      "situation": "Son interrupts PN to demand a list of local nursing homes.",
-      "action_taken": "Flagged the son's demand to the SW and documented the family conflict in the Atlantis sentiment log.",
+      "situation": "The daughter expressed extreme reluctance to take the patient home due to wound care complexity.",
+      "action_taken": "Documented the Sentiment_Readiness_Gap in Atlantis and flagged the anxiety to the Social Worker.",
       "intent_category": "Flag"
     },
     {
-      "situation": "Atlantis portal shows no SOC (Start of Care) date from the HHA 24 hours before discharge.",
-      "action_taken": "Verified status in Atlantis and asked the SW to confirm if the HHA had processed the referral.",
+      "situation": "The family was unclear about who would be visiting the home on the first day after discharge.",
+      "action_taken": "Educated the family on the roles of the HHA nurse versus our Medical Assistant and delivered the program flyer.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The HHA agency had not yet confirmed the start-of-care date in the system 24 hours before planned discharge.",
+      "action_taken": "Verified the portal status and asked the Social Worker for an update on the HHA's readiness.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The PN documents the family's verbal disagreement in Atlantis and waits for the SW to finalize the discharge order before attempting any further patient education.",
-      "rationale": "Respects the SW's role as the primary mediator in family placement disputes and avoids premature coordination."
+      "description": "Log the caregiver's concerns in the Atlantis narrative notes and wait for the Social Worker's scheduled discharge huddle to see if the training gap is addressed.",
+      "rationale": "This respects the SW's role in clinical discharge planning and avoids premature intervention while ensuring the sentiment is documented for the record."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The PN verifies the daughter's (POA) readiness sentiment, educates her on the 'Healing Partners' Caller ID via V-Card, and flags the son's specific concerns about nocturnal monitoring to the SW.",
-      "rationale": "Focuses on sentiment verification and role-appropriate education without contacting vendors or interfering in clinical placement."
+      "description": "Verify the sentiment score with the family, document the 'Caregiver_Panic' barrier in Atlantis, and explicitly flag the need for family wound care training to the Social Worker.",
+      "rationale": "This fulfills the liaison role by identifying a non-clinical barrier (readiness) and routing it to the appropriate professional (SW) for resolution."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The PN calls the HHA Intake Coordinator to explain the family's conflict and asks the HHA to send a 'stronger' nurse to convince the son that home care is the better option.",
-      "rationale": "Violates the No-Vendor Rule and attempts to use the HHA to influence a clinical/placement decision, which is the SW's domain."
+      "description": "Contact the HHA intake coordinator to ask if their nurse can provide extra training visits or call the hospital's wound care clinic to schedule an outpatient teaching session for the daughter.",
+      "rationale": "This oversteps by directly contacting vendors (HHA) and attempting to solve clinical training logistics, which is the sole responsibility of the Social Worker."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

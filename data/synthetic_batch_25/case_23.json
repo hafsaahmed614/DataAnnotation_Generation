@@ -1,72 +1,78 @@
 {
-  "role_delineation_check": "Social Worker (SW) manages the HHA agency selection and handles all vendor communication regarding the COPD care plan. The Patient Navigator (PN) verifies the accuracy of demographics in Atlantis, educates the family on the Healing Partners program, and flags any HHA provider gaps to the SW for resolution.",
+  "role_delineation_check": "The Social Worker is responsible for managing the Medicaid CHC Waiver application, securing the three required contractor estimates for the ramp, and communicating with the HHA; the Patient Navigator is responsible for auditing demographic accuracy in Atlantis, educating the family on the Healing Partners V-Card for caller identification, and flagging family sentiment or logistical stalls to the Social Worker.",
+  "narrative_summary": "At 70 years old, Mr. Miller is recovering from a spinal fusion and requires a walker for mobility, but his home\u2019s steep front steps have created a significant safety barrier to discharge. The transition is currently delayed by the Medicaid CHC Waiver process, which requires a lengthy administrative cycle to approve and install a wheelchair ramp. The Patient Navigator served as the primary liaison by verifying the family's contact data in Atlantis, educating the daughter on how to recognize incoming clinical calls via the V-Card, and flagging the family's increasing anxiety over the 40-day delay to the Social Worker to ensure the home health agency was ready the moment the ramp passed inspection.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited Atlantis demographics against the facility Face Sheet; corrected the primary phone number for the daughter (POA) and verified the Medicare Part B insurance ID was entered correctly for billing alignment.",
-  "home_vs_ltc_goal": "Home",
-  "weekly_staff_update": "Week 1: Robert is completing his steroid taper and O2 titration. SW confirmed referral was sent to 'Highland Home Health' but noted the intake coordinator is currently out sick, delaying the acceptance timestamp in Atlantis.",
-  "v_card_flyer_status": "V-Card successfully saved to Robert's phone to ensure Caller ID recognition of Healing Partners calls. Program flyer delivered to Robert and his daughter during the bedside education session.",
-  "pre_dc_pulse_call": "Reached daughter 24 hours prior to discharge. Sentiment Score: Anxious. Daughter expressed high concern regarding Robert's ability to manage the portable oxygen concentrator independently. Flagged this anxiety to the SW for a final bedside review.",
-  "atlantis_final_sync": "Discharge date of Oct 26 and First Home Visit date of Oct 27 documented in Atlantis portal.",
-  "ma_visit_booking": "Medical Assistant (MA) scheduled for Oct 27 at 10:30 AM; booking was held until the SW confirmed that Highland Home Health assigned a replacement nurse for the initial assessment.",
-  "narrative_summary": "Verified the accuracy of Robert's contact data in Atlantis to prevent transition communication failures. Documented a delay in HHA acceptance due to the intake coordinator's illness and flagged the coverage gap to the Social Worker. Educated the family on what to expect during the first 24 hours at home and verified that the V-Card was active for future caller recognition. Scheduled the first MA visit only after the SW confirmed a nurse was assigned to bridge the COPD monitoring gap.",
+  "demographic_audit_note": "During the initial audit, I identified a discrepancy between the Atlantis record and the facility Face Sheet regarding the primary contact's phone number; I verified the correct number with the Social Worker and updated the Atlantis profile to ensure the home team can reach the daughter post-discharge.",
+  "home_vs_ltc_goal": "Home with environmental modifications (Wheelchair Ramp)",
+  "v_card_flyer_status": "I met with Mr. Miller\u2019s daughter and successfully saved the Healing Partners V-Card into her phone contacts, explaining that this ensures she will recognize the Medical Assistant\u2019s call; I also provided the program flyer to reinforce the expectations for the first 24 hours at home.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call; the daughter confirmed the ramp installation was inspected and passed, though she expressed high anxiety about the HHA's arrival time. I documented a sentiment score of 'Anxious' and flagged the readiness gap to the Social Worker.",
+  "atlantis_final_sync": "Confirmed the HHA status was updated to 'Accepted' in the Atlantis portal by the Social Worker; I then recorded the discharge date and scheduled the Medical Assistant for the first home visit within the 24-hour window.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis Data Lag: Patient address in Atlantis was missing the apartment number found on the facility face sheet.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative"
-    },
-    {
-      "event_description": "Provider Illness: The HHA intake coordinator is out sick, creating an intake freeze for new COPD referrals.",
+      "event_description": "Mr. Miller appears in the Atlantis queue following his spinal fusion, but the initial demographic audit reveals an outdated primary phone number for his daughter.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20135 Days",
-      "ai_assumed_bottleneck": "Operational"
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1-3 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Sentiment Readiness Gap: Daughter verbalized reluctance to take the patient home without a confirmed O2 delivery window.",
+      "event_description": "The physical therapy team determines Mr. Miller cannot safely enter his home without a ramp, triggering the Medicaid CHC Waiver process which requires three separate contractor bids.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20134 Days",
-      "ai_assumed_bottleneck": "Family/Caregiver"
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Medicaid CHC Waiver"
+    },
+    {
+      "event_description": "The second contractor fails to show up for the estimate, leaving the family in a state of limbo regarding the construction start date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+7-10 Days",
+      "ai_assumed_bottleneck": "Bureaucratic"
+    },
+    {
+      "event_description": "The ramp installation is finally completed, but the HHA portal in Atlantis still shows 'Pending Acceptance' for the nursing care referral.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient address in Atlantis (123 Main St) does not match Face Sheet (123 Main St, Apt 4B).",
-      "action_taken": "Documented the discrepancy in Atlantis and asked the SW to update the HHA referral with the apartment number.",
+      "situation": "The Atlantis record contains a zip code that does not match the facility Face Sheet.",
+      "action_taken": "Verify the correct address with the Social Worker and update the Atlantis demographic field.",
       "intent_category": "Verify"
     },
     {
-      "situation": "SW reports HHA intake is delayed because the sole coordinator is out on medical leave.",
-      "action_taken": "Flagged the HHA_Intake_Freeze in Atlantis and documented the expected 3-day delay for the first home visit.",
-      "intent_category": "Flag"
+      "situation": "The family expresses frustration and confusion about why they haven't heard from the home health agency yet.",
+      "action_taken": "Educate the family on the transition timeline and the 'Wait' period required for HHA processing.",
+      "intent_category": "Educate"
     },
     {
-      "situation": "Robert's daughter is anxious about managing the COPD 'flare-up' protocol at home.",
-      "action_taken": "Educated the family on the role of the Healing Partners MA in monitoring vital signs during the first 24 hours.",
-      "intent_category": "Educate"
+      "situation": "The HHA has not confirmed a start-of-care date 48 hours after the ramp was completed.",
+      "action_taken": "Flag the HHA acceptance stall to the Social Worker in Atlantis and wait for a status update.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the SW to resolve the HHA intake freeze or select a different agency that has available staffing.",
-      "rationale": "Respects the SW boundary as the sole individual responsible for agency selection and vendor negotiation."
+      "description": "Monitor the Atlantis portal for the HHA to move from 'Pending' to 'Accepted' status before initiating the pre-discharge pulse call, allowing the Social Worker to handle the agency's delay in processing the ramp completion notice.",
+      "rationale": "This respects the boundary by waiting for system-level confirmation of the Social Worker's logistics work before the PN proceeds with transition tasks."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the HHA acceptance status in the Atlantis portal daily and flag the continued delay to the SW while educating the family on the updated timeline.",
-      "rationale": "Maintains the PN role as a data auditor and family liaison without contacting the HHA vendor directly."
+      "description": "Verify the current family sentiment score regarding the long delay and flag the daughter's specific concerns about wound care management to the Social Worker to request a brief bedside teaching session before discharge.",
+      "rationale": "This uses liaison verbs to identify a barrier (anxiety/training gap) and routes it to the appropriate professional (SW) without contacting vendors."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the HHA intake office directly to ask if another staff member can process Robert's referral to avoid a discharge delay.",
-      "rationale": "Violates the No-Vendor Rule and attempts to resolve a logistics barrier that belongs to the Social Worker."
+      "description": "Call the HHA intake coordinator directly to provide the contractor's ramp completion certificate and negotiate an earlier start-of-care date to prevent further discharge delays.",
+      "rationale": "This is a violation of the No-Vendor Rule and uses Fixer verbs ('negotiate') to bypass the Social Worker's role in agency communication."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

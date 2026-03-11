@@ -41,49 +41,35 @@ N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 
 
-# ── Pydantic Output Schema (V7: Cool Down — Liaison-Only PN) ─────────────────
+# ── Pydantic Output Schema (V8: Narrative Liaison) ───────────────────────────
 
 class RLScenarioOption(BaseModel):
     ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(
         description="Passive=Strategic Deferral; Proactive=Liaison/Education; Overstep=Clinical/Vendor interference."
     )
-    description: str = Field(description="The exact PN action taken.")
-    rationale: str = Field(description="Explain why this respects the SW boundary and avoids vendor contact.")
+    description: str = Field(description="A professional action description.")
+    rationale: str = Field(description="Explanation of why this respects the SW boundary.")
 
 
 class SyntheticCaseOutput(BaseModel):
-    # Cognitive Delineation
-    role_delineation_check: str = Field(description="Statement of SW vs PN boundaries for this specific case.")
+    role_delineation_check: str = Field(description="Internal logic check: Differentiating SW logistics from PN liaison work.")
+    narrative_summary: str = Field(description="A professional 1-paragraph story of the patient's transition from the PN's perspective.")
+    atlantis_entry_confirmed: bool = Field(description="PN confirms patient appears in Atlantis.")
+    demographic_audit_note: str = Field(description="Narrative detail of the data verification process (Phone, Address, DOB).")
+    home_vs_ltc_goal: str = Field(description="The discharge destination confirmed by the SW.")
+    v_card_flyer_status: str = Field(description="Narrative of how the V-card and flyer were used to prepare the family.")
+    pre_dc_pulse_call: str = Field(description="Summary of the sentiment/readiness check 24hrs before discharge.")
+    atlantis_final_sync: str = Field(description="Recording of the D/C date and 1st visit date in Atlantis.")
 
-    # Stage 1: Entry & Triage (Atlantis Workflow)
-    atlantis_entry_confirmed: bool = Field(description="PN confirms patient appeared in Atlantis queue.")
-    demographic_audit_note: str = Field(description="Results of verifying DOB, Insurance, and Phone # accuracy against the Face Sheet.")
-    home_vs_ltc_goal: str = Field(description="The discharge goal provided by the SW.")
-
-    # Stage 2: Maintenance
-    weekly_staff_update: str = Field(description="Brief summary of the weekly check-in with the SW/Staff.")
-    v_card_flyer_status: str = Field(description="Confirmation of V-Card (for Caller ID recognition) and flyer delivery.")
-
-    # Stage 3: Handoff
-    pre_dc_pulse_call: str = Field(description="Result of the check-in call 24hrs before discharge.")
-    atlantis_final_sync: str = Field(description="Documentation of D/C date and 1st visit date in Atlantis.")
-    ma_visit_booking: str = Field(description="Confirmation of MA scheduling (must wait for SW/HHA confirmation).")
-
-    # Content Formats
-    narrative_summary: str = Field(description="A field report focused on data accuracy and family readiness.")
-    format_1_state_log: List[dict] = Field(description="Timeline of transition friction (e.g., data lags, caregiver anxiety).")
-    format_2_triples: List[dict] = Field(description="Situation -> Action -> Intent (Verify/Educate/Flag).")
-    format_3_rl_scenario: List[RLScenarioOption] = Field(description="Dilemmas testing the 'No-Vendor' and 'Wait' rules.")
-
+    format_1_state_log: List[dict] = Field(description="Timeline of narrative events focused on transition friction.")
+    format_2_triples: List[dict] = Field(description="Situation -> Action -> Intent (Using Liaison verbs like Verify/Flag/Educate).")
+    format_3_rl_scenario: List[RLScenarioOption] = Field(description="Dilemmas testing the 'No-Vendor' rule.")
     case_outcome: Literal[
         "Success_Home_with_First_Visit",
         "Neutral_LTC_Closure",
         "Neutral_Alternative_Agency",
         "Failure_Transition_Breakdown",
-    ] = Field(
-        description="Success is triggered ONLY by a completed first home visit post-discharge. "
-        "If the PN oversteps to make it happen, it is an authenticity failure."
-    )
+    ]
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -158,27 +144,29 @@ You MUST strictly output valid JSON conforming to this schema and NO other text:
 === FIELD RULES ===
 
 role_delineation_check:
-1. Must explicitly state the SW vs PN boundary for THIS specific case. Example: "SW handles HHA referral and agency selection. PN verifies Atlantis data, educates family, and flags concerns."
+1. Must explicitly state the SW vs PN boundary for THIS specific case. Example: "The social worker handles referral logistics and agency selection while the navigator verifies demographic data in Atlantis, educates the family on program benefits, and flags concerns."
 
 Stage 1 fields (atlantis_entry_confirmed, demographic_audit_note, home_vs_ltc_goal):
 2. atlantis_entry_confirmed must be true (patient appeared in queue).
-3. demographic_audit_note must describe specific data verified or errors found against the Face Sheet (DOB, Insurance, Phone #).
-4. home_vs_ltc_goal must record the SW's answer to "Is the goal Home or LTC?" If LTC, set case_outcome to "Neutral_LTC_Closure".
+3. demographic_audit_note must be a narrative description of what was verified or what errors were found against the Face Sheet (Phone, Address, DOB).
+4. home_vs_ltc_goal must record the discharge destination confirmed by the SW. If LTC, set case_outcome to "Neutral_LTC_Closure".
 
-Stage 2 fields (weekly_staff_update, v_card_flyer_status):
-5. weekly_staff_update must summarize a specific check-in (e.g., "Week 2: SW confirms D/C target is next Thursday; PT eval pending").
-6. v_card_flyer_status must confirm V-Card insertion (for Caller ID recognition) and flyer delivery. The V-Card is NOT for coordinating logistics.
+Stage 2 fields (v_card_flyer_status):
+5. v_card_flyer_status must be a narrative of how the V-Card and flyer were used to prepare the family. The V-Card is exclusively for Caller ID recognition — NOT for coordinating logistics.
 
-Stage 3 fields (pre_dc_pulse_call, atlantis_final_sync, ma_visit_booking):
-7. pre_dc_pulse_call must describe the outcome of the 24-hour pre-discharge call (reached/not reached, family readiness sentiment).
-8. atlantis_final_sync must confirm the D/C date and 1st visit date were entered into Atlantis.
-9. ma_visit_booking must confirm the MA was scheduled within 24 hours of discharge ONLY AFTER SW confirms HHA readiness. If HHA not confirmed, PN flags to SW and WAITS.
+Stage 3 fields (pre_dc_pulse_call, atlantis_final_sync):
+6. pre_dc_pulse_call must be a narrative summary of the sentiment/readiness check 24hrs before discharge (reached/not reached, family readiness sentiment).
+7. atlantis_final_sync must describe the recording of the D/C date and 1st visit date in Atlantis.
 
 === FORMAT RULES ===
 
+Rules for narrative_summary:
+8. Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT. Start with clinical context (age, condition), describe the friction faced, conclude with how the PN acted as a liaison. Do NOT write a list of PN tasks.
+
 Rules for format_1_state_log (Timeline):
-10. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
-11. Focus on data-accuracy and family-readiness friction. Valid: Atlantis data lags, caregiver anxiety, sentiment readiness gaps, HHA acceptance lags (flagged to SW, not investigated by PN).
+9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
+10. event_description must be a chronological narrative event describing what happened to the patient — NOT a category label or task name.
+11. Focus on transition friction from the patient's perspective: data lags affecting their discharge, family anxiety, HHA acceptance stalls (flagged to SW, not investigated by PN).
 
 Rules for format_2_triples (Situation → Action → Intent):
 12. Each entry must be a dict with keys: situation, action_taken, intent_category (Verify/Educate/Flag).
@@ -196,7 +184,7 @@ Rules for case_outcome:
 17. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
 18. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
 
-19. narrative_summary must be 3-5 sentences focused on data accuracy and family readiness, using Liaison verbs only.
+19. Do NOT include internal jargon in any visible field. The output must read like an actual clinical record.
 20. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
@@ -260,22 +248,36 @@ def main():
     outcome_taxonomy  = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are a Patient Navigator (PN) operating in the Atlantis software environment. "
-        "Your primary role is to ensure the First Home Visit happens by auditing data and supporting the family.\n\n"
+        "You are generating a synthetic patient case from the perspective of a Patient Navigator (PN) "
+        "working in the Atlantis software environment. The output must read like a professional clinical "
+        "record — a 3rd-person story centered on the patient's transition experience.\n\n"
+
+        "=== STORYTELLING RULES ===\n\n"
+
+        "NARRATIVE SUMMARY: Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT'S "
+        "experience. Start with the patient's clinical context (age, condition), describe the friction or barrier "
+        "they faced, and conclude with how the PN acted as a liaison to ensure the first home visit. "
+        "Do NOT write a list of PN tasks.\n\n"
+
+        "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must be a chronological narrative event — "
+        "what happened to the patient at that moment. Do NOT use category labels or task names as descriptions.\n\n"
 
         "=== OPERATIONAL GUARDRAILS ===\n\n"
 
         "THE NO-VENDOR RULE: The PN is strictly forbidden from calling HHA Intake, DME Vendors, "
-        "or Transport companies. The PN only communicates with the Family/Patient and the Social Worker (SW).\n\n"
+        "or Transport companies. All communication must be with the Family/Patient or the Social Worker (SW).\n\n"
 
-        "THE VERB FILTER: PN actions must use 'Liaison' verbs: Verify, Document, Flag, Educate, Ask. "
-        "Banned 'Fixer' verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate.\n\n"
+        "THE VERB FILTER: PN actions must use Liaison verbs: Verify, Document, Flag, Educate, Ask. "
+        "Avoid Fixer verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate.\n\n"
 
-        "THE V-CARD INTENT: The V-Card is inserted into the patient's phone strictly as a Caller ID tool "
-        "so they recognize the Healing Partners call. It is NOT for 'coordinating' logistics.\n\n"
+        "THE V-CARD INTENT: The V-Card is used exclusively as a Caller ID tool "
+        "so patients recognize the incoming Medical Assistant (MA) call. It is NOT for logistics.\n\n"
 
-        "THE 'WAIT' DEFAULT: If the HHA is blocked, DME is missing, or transport is late, the 'Proactive' action "
-        "is to Flag it to the SW in Atlantis and then WAIT. Attempting to solve the logistics yourself is an Overstep.\n\n"
+        "THE 'WAIT' DEFAULT: If a vendor (HHA/DME) is delayed, the PN Flags the delay in Atlantis "
+        "and Waits for the SW to resolve the logistics. Attempting to solve it yourself is an Overstep.\n\n"
+
+        "HHA-FIRST RULE: The PN must not schedule the first home visit until the SW confirms "
+        "the HHA is 'Accepted' and 'In Place'.\n\n"
 
         "SENTIMENT OVER CLINICAL: Do not perform clinical intakes. Instead, Verify the Sentiment Score "
         "(how ready does the family feel?). If they feel anxious, flag it to the SW for a care conference.\n\n"
@@ -287,9 +289,10 @@ def main():
         "against the Face Sheet. PN asks SW: 'Is the goal Home or LTC?' "
         "PN begins role_delineation_check — explicitly stating what is the SW's job vs the PN's job for this case.\n\n"
 
-        "MAINTENANCE: Weekly check-ins with SW/staff. PN inserts V-Card into patient's phone (Caller ID only) "
+        "MAINTENANCE: PN inserts V-Card into patient's phone (Caller ID only) "
         "and delivers flyer. PN educates patient/family on program benefits. "
-        "PN verifies family sentiment (readiness/anxiety level) and flags concerns to SW.\n\n"
+        "PN verifies family sentiment (readiness/anxiety level) and flags concerns to SW. "
+        "PN may request joint family meetings through the SW.\n\n"
 
         "HANDOFF: PN conducts 24-hour pre-discharge pulse call to patient/family. "
         "Enters D/C date and 1st visit date into Atlantis. "
@@ -317,9 +320,15 @@ def main():
         "- Interrupting doctors during rounds\n"
         "- Proving cost analysis of home care vs LTC\n"
         "- Telling families to refuse discharge or go AMA\n"
-        "- Using 'Fixer' verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate\n"
+        "- Using Fixer verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate\n"
         "- Performing clinical intakes or assessments\n"
         "- Scheduling MA before SW confirms HHA readiness\n\n"
+
+        "=== JARGON SCRUBBING ===\n"
+        "Do NOT include internal terms in any visible field. Banned terms: "
+        "'Version 8', 'Cool Down', 'Golden Case', 'Verb Filter', 'No-Vendor Rule', "
+        "'Wait Default', 'HHA-First Rule', 'Narrative Liaison'. "
+        "The output must read like an actual clinical record from a professional Patient Navigator.\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"

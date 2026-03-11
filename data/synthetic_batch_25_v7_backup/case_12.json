@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "The Social Worker (SW) is responsible for securing the HHA agency and arranging medical transport for the patient\u2019s Parkinson\u2019s-related mobility needs. The Patient Navigator (PN) is responsible for auditing demographic accuracy in Atlantis, educating the family on the Healing Partners program, verifying family sentiment, and flagging HHA confirmation delays to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis record against facility Face Sheet. Found DOB discrepancy (Atlantis listed 1942, Face Sheet confirmed 1941) and an outdated landline number. Updated Atlantis with the daughter's (POA) current mobile number and corrected the birth year to ensure HHA referral matches insurance records.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 1: SW reports UTI is responding well to IV antibiotics; PT working on gait training. Week 2: Patient at baseline for Parkinson's; SW sets discharge target for Friday afternoon. PN confirmed daughter is the primary caregiver.",
+  "v_card_flyer_status": "V-Card successfully inserted into daughter's phone contacts to ensure Healing Partners Caller ID recognition; program flyer delivered to patient's bedside and discussed with daughter.",
+  "pre_dc_pulse_call": "Attempted 24-hour pre-discharge pulse call to daughter (POA). Call went to a full voicemail box; no return call received. Home readiness sentiment and first-visit time window remain unverified.",
+  "atlantis_final_sync": "Entered Friday discharge date into Atlantis. 1st visit date remains blank as HHA has not confirmed the start-of-care window in the portal.",
+  "ma_visit_booking": "MA visit not scheduled. PN flagged the 'Pending' HHA status and the failed pulse call to the SW in Atlantis. PN is waiting for SW to confirm HHA readiness before booking the MA.",
+  "narrative_summary": "PN audited demographic data and corrected a birth year error to prevent insurance rejection. Educated the daughter on Parkinson's safety and the role of the Medical Assistant. Due to the pre-discharge call disconnect and the HHA's failure to confirm a start-of-care window by Thursday evening, the PN flagged the transition risk to the SW and maintained the 'Wait' default regarding MA scheduling.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis demographics audit revealed stale landline and incorrect DOB.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "SW confirms Friday discharge; HHA portal shows no assigned nurse.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Friday Discharge Gap"
+    },
+    {
+      "event_description": "24-hour pulse call to POA failed; voicemail box full.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Pre-DC_Call_Disconnect"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Daughter expresses fear regarding father's Parkinson's tremors during home transition.",
+      "action_taken": "Educated daughter on the specific support the MA provides during the first 24 hours.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "HHA intake status remains 'Pending' in Atlantis 18 hours before discharge.",
+      "action_taken": "Flagged the pending status to the SW and requested verification of HHA acceptance.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Face Sheet contains a different phone number than the Atlantis primary contact field.",
+      "action_taken": "Verified the correct contact number with the patient during bedside visit.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "PN documents the failed pulse call and the HHA's 'Pending' status in the Atlantis log. PN waits for the SW to provide an update after the morning multidisciplinary rounds on Friday.",
+      "rationale": "Respects the 'Wait' default and SW boundary when HHA logistics are stalled and the family is unreachable."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "PN asks the SW if there is an alternative contact number for the family and verifies if the HHA has confirmed the start-of-care window in the portal. PN flags the disconnect to the SW as a high risk for a missed first visit.",
+      "rationale": "Uses Liaison verbs (Ask, Verify, Flag) to highlight data gaps without contacting vendors directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "PN calls the HHA Intake Coordinator directly to push for a Friday afternoon start-of-care time, then calls the patient's pharmacy to ensure the Parkinson's medications are ready for pick-up by the daughter.",
+      "rationale": "Violates the No-Vendor rule by contacting HHA Intake and performs 'Fixer' actions regarding medication logistics."
+    }
+  ],
+  "case_outcome": "Failure_Transition_Breakdown"
+}

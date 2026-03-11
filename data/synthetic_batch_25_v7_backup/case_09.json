@@ -1,0 +1,65 @@
+{
+  "role_delineation_check": "Social Worker (SW) is responsible for mediating the sibling dispute regarding LTC vs Home care and selecting the HHA agency. The Patient Navigator (PN) audits Atlantis demographic data, verifies family sentiment readiness, and flags logistical gaps to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility Face Sheet; corrected '1422 West View' to '1422 Westview' and verified Medicare Advantage plan is active. Phone number for Son (POA) confirmed as primary contact.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: Patient clinically stable but daughter is obstructing home plan. SW is aware and scheduling a family meeting. PN delivered flyer to patient.",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's personal smartphone for Caller ID recognition; Healing Partners flyer delivered to the son.",
+  "pre_dc_pulse_call": "Reached son (POA). He is ready for discharge but reports daughter remains reluctant. Sentiment Score: Anxious. Verified that the O2 concentrator is at the home.",
+  "atlantis_final_sync": "Discharge date of 11/20 and first home visit date of 11/21 documented in Atlantis system.",
+  "ma_visit_booking": "MA visit scheduled for 11/21 at 11:00 AM following SW confirmation of HHA (Kindred) acceptance in the Atlantis portal.",
+  "narrative_summary": "Audited patient data to ensure seamless transition despite high family friction. Verified that the son remains committed to the home transition while documenting the daughter's anxiety as a potential barrier. Flagged the sentiment gap to the SW and educated the family on the 24-hour post-discharge visit timeline to reduce reluctance.",
+  "format_1_state_log": [
+    {
+      "event_description": "Family Disagreement on Discharge Plan (Daughter vs Son)",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "Atlantis Data Lag: HHA Acceptance Pending",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Daughter threatens to block discharge, insisting the patient is too weak for home.",
+      "action_taken": "Documented daughter's concerns in Atlantis and flagged the friction to the SW for professional mediation.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Son is unsure what to do if the HHA nurse does not arrive on Day 1.",
+      "action_taken": "Educated the son on the 'Healing Partners' Caller ID and the MA backup protocol.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Atlantis portal shows HHA referral is still 'In Review' 24 hours before discharge.",
+      "action_taken": "Verified the status in the portal and asked the SW for an update on the HHA acceptance.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to finish the family conference before engaging the son regarding the first visit schedule.",
+      "rationale": "Respects the SW's role as the primary mediator for family disputes and prevents conflicting information from being shared."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the daughter's specific concerns about the home environment and flag her 'Reluctant' sentiment score to the SW while educating the son on the MA's clinical monitoring role.",
+      "rationale": "Uses liaison verbs to gather data and educate without overstepping into the SW's domain of conflict resolution."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake Coordinator to explain the family drama and ask them to send their most 'persuasive' nurse to the home to convince the daughter to stay with the program.",
+      "rationale": "Violates the No-Vendor rule and attempts to 'solve' the family friction through direct vendor negotiation."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

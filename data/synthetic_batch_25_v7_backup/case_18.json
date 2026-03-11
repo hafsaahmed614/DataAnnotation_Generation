@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "SW Sarah is responsible for selecting the HHA agency and securing the discharge order. PN verifies the accuracy of the contact data in Atlantis, educates daughter Linda on transition expectations, and flags caregiver readiness concerns to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis demographics against the facility face sheet revealed a discrepancy in the primary contact number; Arthur's landline was listed instead of daughter Linda's mobile. Corrected phone number in Atlantis to ensure pre-discharge pulse call connectivity.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW Sarah confirms PT/OT goals are nearly met; HHA referral sent to 'Elite Home Health'. Arthur's UTI has cleared, but mobility remains limited. PN verified V-Card is in Linda's phone.",
+  "v_card_flyer_status": "Confirmed V-Card successfully inserted into daughter Linda's phone strictly for Healing Partners caller ID recognition; delivered program flyer during bedside educational session.",
+  "pre_dc_pulse_call": "Reached Linda via cell. Sentiment Score: Anxious/Reluctant. Linda expressed panic over managing Arthur's Parkinson's medications and fall risk at home. Educated her on the MA visit timeline and flagged sentiment to SW.",
+  "atlantis_final_sync": "D/C Date: 11/14; 1st Visit Date: 11/15 entered into Atlantis after portal update.",
+  "ma_visit_booking": "MA scheduled for 11/15 at 11:00 AM. Scheduling occurred only after the Atlantis portal showed 'HHA Accepted' and SW Sarah confirmed Elite Home Health had a nurse assigned for the morning SOC.",
+  "narrative_summary": "Audited Atlantis demographics against the facility Face Sheet to ensure Linda, the primary caregiver, was the main point of contact. Conducted a sentiment verification which revealed significant caregiver panic regarding medication management and mobility. Documented these concerns and flagged them to SW Sarah, while educating the family on the 24-hour first-visit window to provide reassurance without overstepping into clinical advice.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis_Data_Lag: Phone number mismatch between Atlantis and SNF Face Sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative data entry error"
+    },
+    {
+      "event_description": "Caregiver_Panic: Daughter Linda expresses inability to manage Parkinson's tremors/meds.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family readiness/Sentiment readiness gap"
+    },
+    {
+      "event_description": "HHA_Acceptance_Lag: Elite Home Health portal status remains 'Pending' for 48 hours.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA intake department staffing capacity"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Linda crying at bedside regarding Arthur's medication schedule.",
+      "action_taken": "Educate Linda on the 'Day 1' expectations and what to expect from the MA visit.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Arthur's Atlantis record shows an old address from three years ago.",
+      "action_taken": "Verify current residence with SW and update Atlantis queue to match the Face Sheet.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Elite Home Health has not confirmed the start-of-care window by 4:00 PM the day before discharge.",
+      "action_taken": "Flag the missing confirmation to SW Sarah in Atlantis and wait for her update.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to notice the caregiver's distress during the discharge meeting before taking any action or documenting the sentiment.",
+      "rationale": "Respects the SW's role as the primary family counselor but risks the discharge being canceled due to unaddressed anxiety."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Educate Linda on the specific timing of the first MA visit and document her 'Anxious' sentiment score in Atlantis, then flag her medication concerns to SW Sarah for a clinical care conference.",
+      "rationale": "Uses Liaison verbs to support the family and keep the SW informed without crossing into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the intake coordinator at Elite Home Health to negotiate a specialized Parkinson's nurse and ask the facility nurse to provide a 1:1 med-management training for Linda.",
+      "rationale": "Violates the No-Vendor Rule and performs clinical coordination, which are strictly the SW's and clinical staff's responsibilities."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

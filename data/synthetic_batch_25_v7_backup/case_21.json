@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "Social Worker (SW) manages the renal dialysis agency referral and HHA selection for home support. Patient Navigator (PN) audits Atlantis demographic accuracy, educates the daughter on the 24-hour post-discharge visit sequence, and flags caregiver sentiment to the SW.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of Atlantis record against facility Face Sheet revealed a critical error: the primary contact number was listed as an inactive landline. Updated Atlantis with the daughter's (Maria) mobile number and verified Medicare Part B eligibility for home services.",
+  "home_vs_ltc_goal": "Home with HHA and specialized renal support.",
+  "weekly_staff_update": "Week 2: Patient completed fistula placement. SW confirmed HHA 'Renal-Care' is being vetted. Daughter (Maria) expressed significant fear regarding home dialysis monitoring during flyer delivery.",
+  "v_card_flyer_status": "V-Card successfully inserted into Maria\u2019s phone for Caller ID recognition of Healing Partners. Program flyer delivered; Maria confirmed she understands the PN is the liaison, not the clinician.",
+  "pre_dc_pulse_call": "24-hour pulse call completed with Maria. Sentiment: High Anxiety. Maria threatened to refuse discharge due to 'fear of the machine.' PN documented the sentiment readiness gap and flagged it to the SW for immediate intervention.",
+  "atlantis_final_sync": "D/C date of 10/24 and 1st visit date of 10/25 documented in Atlantis after SW confirmed HHA readiness.",
+  "ma_visit_booking": "Medical Assistant (MA) visit scheduled for 10/25 at 11:00 AM, following SW's confirmation that HHA 'Renal-Care' will perform Start of Care at 9:00 AM.",
+  "narrative_summary": "Audited Atlantis demographics to correct the primary caregiver's contact information. Verified the family's sentiment score, which revealed high caregiver panic regarding renal care at home. Educated the family on the 24-hour transition window and flagged the anxiety to the SW to prevent a discharge refusal. Verified HHA acceptance through the Atlantis portal before scheduling the MA visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Primary contact number in queue was disconnected landline; Face Sheet shows daughter's mobile.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative"
+    },
+    {
+      "event_description": "Caregiver_Panic: Maria expresses inability to manage dialysis equipment and threatens to block discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "HHA_Acceptance_Lag: Renal-Care agency has not updated the Atlantis portal with an assigned nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Atlantis record contains stale phone data for the primary caregiver.",
+      "action_taken": "Audited Face Sheet and documented the correct mobile number in Atlantis.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Daughter (Maria) expresses extreme anxiety about managing renal care at home.",
+      "action_taken": "Educated Maria on the Day 1 support timeline and flagged the sentiment score to the SW.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The HHA has not confirmed the 9:00 AM SOC window in the portal.",
+      "action_taken": "Flagged the pending status to the SW in Atlantis and waited for confirmation before booking the MA.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the formal discharge meeting for the SW to address Maria's concerns about the dialysis machine.",
+      "rationale": "Respects the SW's clinical authority over the discharge plan and avoids redundant communication, though it risks a last-minute refusal."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Educate Maria on the specific roles of the HHA nurse versus the MA visit to lower anxiety, then flag the 'High Anxiety' sentiment score to the SW for a care conference.",
+      "rationale": "Uses liaison verbs (Educate, Flag) to support the family and keep the SW informed without crossing into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator at 'Renal-Care' to demand they send a specialized dialysis nurse for the first visit to reassure the daughter.",
+      "rationale": "Violates the No-Vendor Rule and the Verb Filter by attempting to 'Order' or 'Negotiate' staffing with an outside agency."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

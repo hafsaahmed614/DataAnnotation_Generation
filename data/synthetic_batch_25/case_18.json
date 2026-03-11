@@ -1,72 +1,78 @@
 {
-  "role_delineation_check": "SW Sarah is responsible for selecting the HHA agency and securing the discharge order. PN verifies the accuracy of the contact data in Atlantis, educates daughter Linda on transition expectations, and flags caregiver readiness concerns to the SW.",
+  "role_delineation_check": "The Social Worker manages the selection of the home health agency and the logistics of respiratory equipment delivery, while the Patient Navigator focuses on auditing demographic data in Atlantis, educating the family on the post-discharge visit schedule, and flagging caregiver anxiety levels to the Social Worker for clinical intervention.",
+  "narrative_summary": "Martha, an 83-year-old recovering from post-ICU pneumonia, faced a significant transition barrier when her primary caregiver expressed paralyzing anxiety regarding the management of home oxygen and nebulizer treatments. This caregiver panic threatened to derail the discharge plan, as the family considered pivoting to a long-term care facility despite Martha's clinical readiness for home. The Patient Navigator acted as a liaison by documenting the family's low sentiment score and flagging the specific training gaps to the Social Worker, which facilitated a bedside education session that secured the family's commitment to a home transition.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audit of Atlantis demographics against the facility face sheet revealed a discrepancy in the primary contact number; Arthur's landline was listed instead of daughter Linda's mobile. Corrected phone number in Atlantis to ensure pre-discharge pulse call connectivity.",
+  "demographic_audit_note": "During the initial audit, a discrepancy was identified between the facility face sheet and the Atlantis record regarding the primary contact's phone number. The Navigator verified the correct number with the Social Worker and updated the Atlantis profile to ensure the 24-hour pulse call would reach the daughter.",
   "home_vs_ltc_goal": "Home",
-  "weekly_staff_update": "Week 2: SW Sarah confirms PT/OT goals are nearly met; HHA referral sent to 'Elite Home Health'. Arthur's UTI has cleared, but mobility remains limited. PN verified V-Card is in Linda's phone.",
-  "v_card_flyer_status": "Confirmed V-Card successfully inserted into daughter Linda's phone strictly for Healing Partners caller ID recognition; delivered program flyer during bedside educational session.",
-  "pre_dc_pulse_call": "Reached Linda via cell. Sentiment Score: Anxious/Reluctant. Linda expressed panic over managing Arthur's Parkinson's medications and fall risk at home. Educated her on the MA visit timeline and flagged sentiment to SW.",
-  "atlantis_final_sync": "D/C Date: 11/14; 1st Visit Date: 11/15 entered into Atlantis after portal update.",
-  "ma_visit_booking": "MA scheduled for 11/15 at 11:00 AM. Scheduling occurred only after the Atlantis portal showed 'HHA Accepted' and SW Sarah confirmed Elite Home Health had a nurse assigned for the morning SOC.",
-  "narrative_summary": "Audited Atlantis demographics against the facility Face Sheet to ensure Linda, the primary caregiver, was the main point of contact. Conducted a sentiment verification which revealed significant caregiver panic regarding medication management and mobility. Documented these concerns and flagged them to SW Sarah, while educating the family on the 24-hour first-visit window to provide reassurance without overstepping into clinical advice.",
+  "v_card_flyer_status": "The Navigator successfully inserted the V-Card into the daughter's smartphone, explaining that the 'Healing Partners' Caller ID would signify the Medical Assistant's arrival window. The program flyer was delivered to the bedside to provide a visual timeline of the first 24 hours at home.",
+  "pre_dc_pulse_call": "The 24-hour pre-discharge pulse call was completed with the daughter. Sentiment has shifted from 'Anxious' to 'Ready' following the respiratory therapy demonstration; the daughter confirmed the home is prepared for Martha's arrival and the oxygen concentrator has been delivered.",
+  "atlantis_final_sync": "The discharge date of October 24th and the initial Medical Assistant visit for October 25th were logged in Atlantis after the portal showed the HHA status as 'Accepted'.",
   "format_1_state_log": [
     {
-      "event_description": "Atlantis_Data_Lag: Phone number mismatch between Atlantis and SNF Face Sheet.",
+      "event_description": "Martha is identified in the Atlantis queue following her step-down from the ICU; the Navigator begins auditing her transition data.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Administrative data entry error"
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Data Verification"
     },
     {
-      "event_description": "Caregiver_Panic: Daughter Linda expresses inability to manage Parkinson's tremors/meds.",
+      "event_description": "During a bedside introduction, Martha's daughter expresses a high level of fear regarding the nebulizer schedule, stating she does not feel safe taking her mother home.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
       "edd_delta": "+2\u20137 Days",
-      "ai_assumed_bottleneck": "Family readiness/Sentiment readiness gap"
+      "ai_assumed_bottleneck": "Caregiver_Panic"
     },
     {
-      "event_description": "HHA_Acceptance_Lag: Elite Home Health portal status remains 'Pending' for 48 hours.",
+      "event_description": "The Navigator flags the caregiver's sentiment score to the Social Worker in Atlantis; the discharge is paused while the Social Worker arranges a clinical teaching session for the family.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The HHA referral remains in a 'Pending' status in the Atlantis portal; the Navigator documents the delay and waits for the Social Worker to confirm agency acceptance.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
+      "service_adoption_impact": "Unchanged",
       "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA intake department staffing capacity"
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Linda crying at bedside regarding Arthur's medication schedule.",
-      "action_taken": "Educate Linda on the 'Day 1' expectations and what to expect from the MA visit.",
+      "situation": "The daughter expresses fear that she will mismanage the oxygen flow rates at home.",
+      "action_taken": "Document the sentiment score in Atlantis and flag the specific caregiver anxiety to the Social Worker.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family is unclear about who will be visiting the home on the first day after discharge.",
+      "action_taken": "Educate the family on the roles of the HHA nurse versus the Medical Assistant and provide the program flyer.",
       "intent_category": "Educate"
     },
     {
-      "situation": "Arthur's Atlantis record shows an old address from three years ago.",
-      "action_taken": "Verify current residence with SW and update Atlantis queue to match the Face Sheet.",
+      "situation": "The HHA acceptance status is not updated in the portal 48 hours before the target discharge.",
+      "action_taken": "Verify the status in the Atlantis portal and ask the Social Worker for a status update on the HHA's readiness.",
       "intent_category": "Verify"
-    },
-    {
-      "situation": "Elite Home Health has not confirmed the start-of-care window by 4:00 PM the day before discharge.",
-      "action_taken": "Flag the missing confirmation to SW Sarah in Atlantis and wait for her update.",
-      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to notice the caregiver's distress during the discharge meeting before taking any action or documenting the sentiment.",
-      "rationale": "Respects the SW's role as the primary family counselor but risks the discharge being canceled due to unaddressed anxiety."
+      "description": "The Navigator notes the daughter's panic and the HHA delay in Atlantis, then waits for the Social Worker to conclude the daily discharge huddle before requesting an update on the transition plan.",
+      "rationale": "This respects the Social Worker's lead on the discharge process and avoids interrupting clinical huddles, adhering to the strategic deferral of logistics."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Educate Linda on the specific timing of the first MA visit and document her 'Anxious' sentiment score in Atlantis, then flag her medication concerns to SW Sarah for a clinical care conference.",
-      "rationale": "Uses Liaison verbs to support the family and keep the SW informed without crossing into clinical or vendor management."
+      "description": "The Navigator verifies the daughter's understanding of the V-Card as a caller ID tool and documents her specific concerns about respiratory equipment in Atlantis to flag for the Social Worker's intervention.",
+      "rationale": "This action stays within the liaison scope by focusing on data verification, family education, and internal flagging without contacting external vendors."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the intake coordinator at Elite Home Health to negotiate a specialized Parkinson's nurse and ask the facility nurse to provide a 1:1 med-management training for Linda.",
-      "rationale": "Violates the No-Vendor Rule and performs clinical coordination, which are strictly the SW's and clinical staff's responsibilities."
+      "description": "The Navigator calls the oxygen supply company to confirm the delivery time and then contacts the HHA intake coordinator to ensure they are sending a nurse with respiratory experience.",
+      "rationale": "This is an overstep because it violates the No-Vendor Rule and involves the Navigator in direct logistics and clinical staffing negotiations which are the sole responsibility of the Social Worker."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

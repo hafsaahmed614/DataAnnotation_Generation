@@ -1,0 +1,73 @@
+{
+  "role_delineation_check": "SW Sarah handles HHA referral selection and DME procurement for the amputation rehab. PN Kristin verifies Atlantis data accuracy, educates the daughter Elena on Healing Partners' role, and flags caregiver training gaps to the SW for professional intervention.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited Atlantis demographics against facility face sheet. Confirmed DOB 05/12/1945 and Medicare coverage. Identified a critical zip code mismatch: Atlantis listed 19104, while face sheet correctly showed 19143. Flagged error to SW to prevent HHA staffing delays.",
+  "home_vs_ltc_goal": "Home",
+  "weekly_staff_update": "Week 2: SW Sarah confirms HHA referral sent to 'CareGivers Inc'. PT reports patient is clinically ready for transfer, but daughter Elena expresses high anxiety during wound care demonstrations. Sentiment Score: 2 (Anxious).",
+  "v_card_flyer_status": "V-Card successfully inserted into patient's iPhone for Healing Partners Caller ID recognition; transition flyer delivered and explained to daughter Elena.",
+  "pre_dc_pulse_call": "Reached Elena 24 hours prior to discharge. She remains reluctant about managing the stump dressing alone. Verified she has the 'CareGivers Inc' phone number and confirmed she understands the MA arrival window.",
+  "atlantis_final_sync": "Confirmed Discharge Date: 10/24; First Home Visit Date: 10/25. Data synced in Atlantis portal.",
+  "ma_visit_booking": "MA visit booked for 10/25 at 09:00 AM. Booking was held until SW Sarah confirmed HHA 'CareGivers Inc' had an assigned nurse and a confirmed Start of Care (SOC) window.",
+  "narrative_summary": "Audited Atlantis demographic data and corrected a zip code discrepancy that would have routed the HHA referral to the wrong county branch. Verified family sentiment and documented a significant caregiver training gap regarding post-amputation stump care. Educated the family on the Day 1 transition workflow and flagged readiness concerns to the SW for a pre-discharge care conference. Secured the first home visit within the 24-hour window following SW confirmation of HHA readiness.",
+  "format_1_state_log": [
+    {
+      "event_description": "Atlantis Data Lag: Zip code mismatch identified during audit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Administrative/Data Accuracy"
+    },
+    {
+      "event_description": "Caregiver Training Gap: Daughter Elena reports she has not been trained on stump wrapping.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "HHA Acceptance Lag: CareGivers Inc has not confirmed the SOC date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Operational"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's daughter expresses fear of managing the amputation site at home.",
+      "action_taken": "Educate the daughter on Day 1 expectations and Flag the sentiment score to the SW.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Atlantis portal shows 'Pending' status for the HHA referral 48 hours before discharge.",
+      "action_taken": "Verify the status in Atlantis and Flag the lack of confirmation to the SW.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Facility face sheet lists a different primary phone number than the Atlantis queue.",
+      "action_taken": "Verify the correct contact number with the family and Document the correction in Atlantis.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the scheduled Thursday multidisciplinary rounds to mention the daughter's anxiety about stump care to the Social Worker.",
+      "rationale": "Respects the facility's existing communication cadence and allows the SW to address it during standard meeting times without immediate escalation."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Document Elena's 'Anxious' sentiment score in Atlantis and Flag the specific caregiver training gap to the SW via an urgent portal message, asking for a nurse-led training session before discharge.",
+      "rationale": "Uses Liaison verbs to identify a barrier to home success and routes it to the appropriate professional (SW) for clinical resolution while maintaining the PN boundary."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake coordinator at 'CareGivers Inc' to request that the assigned nurse bring extra stump-wrapping supplies and spend additional time training the daughter on the first visit.",
+      "rationale": "This violates the No-Vendor rule by contacting the HHA directly and attempts to coordinate clinical training, which is the SW's and HHA's responsibility."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

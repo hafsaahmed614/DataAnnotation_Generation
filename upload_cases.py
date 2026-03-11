@@ -16,8 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25_v7"
-TABLE_NAME = "synthetic_cases_v7"
+BATCH_ID = "synthetic_batch_25_v8"
+TABLE_NAME = "synthetic_cases_v8"
 
 
 def main():
@@ -48,12 +48,10 @@ def main():
             "demographic_audit_note": data.get("demographic_audit_note", ""),
             "home_vs_ltc_goal": data.get("home_vs_ltc_goal", ""),
             # Stage 2
-            "weekly_staff_update": data.get("weekly_staff_update", ""),
             "v_card_flyer_status": data.get("v_card_flyer_status", ""),
             # Stage 3
             "pre_dc_pulse_call": data.get("pre_dc_pulse_call", ""),
             "atlantis_final_sync": data.get("atlantis_final_sync", ""),
-            "ma_visit_booking": data.get("ma_visit_booking", ""),
             # Core content
             "narrative_summary": data.get("narrative_summary", ""),
             "format_1_state_log": data.get("format_1_state_log", []),
