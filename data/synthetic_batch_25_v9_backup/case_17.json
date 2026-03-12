@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The social worker is responsible for the Medicaid CHC waiver application, contractor procurement, and environmental safety sign-off, while the Patient Navigator (PN) audits Atlantis demographic data for accuracy, monitors the 'Waiting' status in the portal, and educates the family on the sequence of the first home visit once the bureaucratic barriers are cleared.",
+  "narrative_summary": "Eleanor, an 83-year-old recovering from post-ICU pneumonia, faced a prolonged stay in sub-acute rehab due to the Medicaid CHC waiver requirement for a wheelchair ramp and bathroom grab bars. The transition was stalled for over five weeks as the social worker navigated the mandatory three-estimate rule for contractors, leaving Eleanor's daughter increasingly anxious about the shifting discharge dates. The PN acted as a stabilizing liaison, maintaining a granular timeline of the waiver process in Atlantis and ensuring the family was prepared for the specific arrival window of the home health nurse once the home was finally cleared for her return.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of the facility face sheet against the Atlantis record revealed a discrepancy in the primary phone number for the POA (Eleanor's daughter); the Atlantis record contained an old landline while the face sheet listed a current mobile. Requested a demographic update in the Atlantis portal to ensure the HHA and MA can reach the family on discharge day. Verified the home address matches the location where the CHC waiver modifications are being installed.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "During an in-person bedside visit, the PN successfully inserted the Healing Partners V-Card into the daughter's smartphone and explained that all future coordination calls would appear with the company's branding. The PN also provided the 'Day 1 at Home' flyer, specifically highlighting that the Medical Assistant visit is a supportive bridge and not a replacement for the HHA nurse.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call to Eleanor's daughter; she confirmed the ramp was completed yesterday and the home is ready. Sentiment_Readiness_Gap identified: the daughter expressed a 8/10 anxiety score regarding Eleanor's supplemental oxygen management at home, which the PN immediately flagged to the SW for a final bedside education session before the ambulance arrives.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date of 11/14 and scheduled the Medical Assistant first visit for the morning of 11/15 in the Atlantis portal. Verified that the HHA has accepted the referral and assigned a nurse for the start-of-care visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "Eleanor completes her antibiotic course for pneumonia but PT determines she cannot safely navigate her front steps without a ramp.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Medicaid CHC Waiver"
+    },
+    {
+      "event_description": "The SW reports that two contractor estimates for the ramp have been received, but the third estimate is delayed because the vendor is unresponsive.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+7 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "Eleanor's daughter expresses high anxiety (Sentiment Score 9) about the delay, fearing Eleanor will lose her physical strength before the ramp is built.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The third estimate is finally approved by the waiver coordinator, and the ramp installation is scheduled for the upcoming Tuesday.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "-10 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "Final home safety inspection passes; SW confirms the discharge for Thursday morning.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The CHC waiver process is stalled due to the 'three-estimate' rule for the wheelchair ramp.",
+      "action_taken": "Maintain_Granular_Wait-Status_Timeline",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Eleanor's daughter is unsure how to differentiate between the HHA nurse and the Healing Partners Medical Assistant.",
+      "action_taken": "Educate",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The daughter expresses fear about managing the portable oxygen concentrator at home.",
+      "action_taken": "Flag",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Atlantis portal for the SW's update regarding the third contractor estimate and defer all family questions about the ramp timeline to the facility's business office.",
+      "rationale": "Respects the boundary that the PN does not handle financial or environmental modifications, leaving the SW as the sole point of contact for the waiver process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify_Sentiment_Score with the family during the delay, document the rising anxiety in Atlantis, and request the SW include the PN in a joint family meeting to explain the post-discharge care sequence.",
+      "rationale": "Provides emotional support and clarity on the program's role without interfering in the bureaucratic process of the waiver."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the Medicaid waiver coordinator and the contractor directly to request an expedited installation date so the patient can discharge before the weekend.",
+      "rationale": "While intended to help the patient, this is an overstep into vendor and bureaucratic management, bypassing the Social Worker's established workflow."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

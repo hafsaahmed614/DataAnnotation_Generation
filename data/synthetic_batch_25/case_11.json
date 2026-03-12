@@ -1,79 +1,79 @@
 {
-  "role_delineation_check": "The Social Worker (SW) is responsible for the clinical safety assessment, caregiver competency evaluation, and final placement determination for long-term care; the Patient Navigator (PN) is restricted to auditing demographic data in Atlantis, educating the family on home-based program benefits while that goal is active, and documenting the SW's final transition plan for a neutral closure.",
-  "narrative_summary": "Arthur, a 65-year-old patient recovering from a severe COPD exacerbation, initially planned to return home with a portable oxygen concentrator and home health support. During the transition planning phase, his primary caregiver expressed significant anxiety regarding his nocturnal oxygen requirements and frequent nebulizer treatments, leading to a high sentiment-readiness gap. The Patient Navigator acted as a liaison by documenting these concerns in Atlantis and flagging them to the Social Worker, who ultimately determined that a transition to Long-Term Care was necessary for Arthur's safety.",
+  "role_delineation_check": "The Social Worker manages the selection of the home health agency and the logistics of the clinical transition, while the Navigator audits the Atlantis portal for data accuracy, educates the family on the program's home-based benefits, and alerts the Social Worker to any gaps in care or shifts in family sentiment.",
+  "narrative_summary": "Martha Reyes, a 69-year-old recovering from a complex debridement of a diabetic foot ulcer, faced a sudden setback when the only specialized wound care nurse in her immediate area was sidelined by an unexpected illness. This staffing gap threatened to delay her return home, causing significant distress for Martha and her daughter who were eager to begin the recovery process outside of the facility. The Navigator supported the family by documenting their concerns in the portal and alerting the Social Worker to the bottleneck, ensuring that a bridge plan was established for her clinical needs during the transition.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the Atlantis demographic screen against the facility face sheet; corrected the primary phone number for Arthur's daughter (POA) and verified the primary residence address in the Harston district was still valid before the transition goal shifted.",
-  "home_vs_ltc_goal": "LTC",
-  "v_card_flyer_status": "During the initial intake, the PN provided the Healing Partners flyer to Arthur and his daughter to explain the benefits of home-based respiratory monitoring. The PN successfully inserted the V-Card into the daughter\u2019s smartphone to ensure the 'Healing Partners' caller ID would be recognized during the pre-discharge phase.",
-  "pre_dc_pulse_call": "Conducted a pulse call 24 hours prior to the scheduled care conference; the daughter reported a Sentiment Score of 9 (Extreme Anxiety) regarding home management of Arthur's COPD, which was immediately documented in Atlantis for the SW's review.",
-  "atlantis_final_sync": "Recorded the Social Worker's decision to pivot to Long-Term Care (LTC) in Atlantis; executed a Neutral_LTC_Closure to finalize the record and cease home-transition activities.",
+  "demographic_audit_note": "During the initial audit, I cross-referenced the facility face sheet with the Atlantis record and identified an error in the primary contact number for Martha's daughter; I updated the portal with the correct phone information to ensure the home health team can reach the family without delay.",
+  "home_vs_ltc_goal": "Home with specialized wound care and physical therapy services.",
+  "v_card_flyer_status": "I met with Martha and her daughter to provide the program flyer and assisted them in saving the Healing Partners contact card into their mobile devices, explaining that this would help them recognize the team's calls for future coordination.",
+  "pre_dc_pulse_call": "I reached the family 24 hours before the scheduled discharge; while they remain anxious about the provider's illness, they confirmed they are ready to proceed with the transition and understand the revised window for the first home visit.",
+  "atlantis_final_sync": "I updated the Atlantis portal to reflect the adjusted discharge date and confirmed that the initial home visit has been tentatively scheduled following the provider's anticipated return.",
   "format_1_state_log": [
     {
-      "event_description": "Arthur is admitted to the sub-acute unit for COPD stabilization; PN confirms his profile appears in the Atlantis queue and initiates the demographic audit.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "0",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
-    },
-    {
-      "event_description": "PN meets with Arthur's daughter to explain home health services; the daughter expresses hesitation about her ability to manage his oxygen equipment at night.",
+      "event_description": "The Navigator reviewed the latest portal updates and noted that the assigned home health agency flagged a delay due to a specialist's illness.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness"
+    },
+    {
+      "event_description": "During a bedside visit, Martha's daughter expressed high anxiety regarding the staffing shortage and questioned if the wound would be properly managed at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "0",
       "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
     },
     {
-      "event_description": "The Social Worker conducts a family meeting and determines that Arthur's clinical needs exceed the family's capacity for home care.",
+      "event_description": "The Navigator alerted the Social Worker to the family's hesitation and the agency's staffing update to facilitate a care conference.",
       "clinical_impact": "Improves",
       "environmental_impact": "Improves",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "Hard Stop (LTC Closure)",
-      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
     },
     {
-      "event_description": "PN receives the LTC transition update from the SW and completes the neutral closure process in Atlantis.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "0",
+      "event_description": "Following the Social Worker's intervention, a backup plan for dressing changes was confirmed, and the family's confidence in the home plan was restored.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "-2",
       "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Daughter expresses high anxiety regarding nocturnal nebulizer treatments during the initial program pitch.",
-      "action_taken": "Documented the family's high anxiety levels in the Atlantis Sentiment Score field and flagged the training gap to the SW.",
+      "situation": "A discrepancy was found between the facility's address for the patient and the data currently in the Atlantis queue.",
+      "action_taken": "Corrected the demographic details in the portal to prevent a missed visit by the home health team.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The home health agency reported that their primary wound care specialist is unavailable for the next several days.",
+      "action_taken": "Highlighted the staffing bottleneck in the Atlantis portal and alerted the Social Worker to the potential care gap.",
       "intent_category": "Flag"
     },
     {
-      "situation": "The facility face sheet lists an incorrect zip code for the patient's home, which could delay HHA routing if the goal remained home.",
-      "action_taken": "Audited the Atlantis record and updated the demographic data to match the confirmed residence address provided by the POA.",
-      "intent_category": "Verify"
-    },
-    {
-      "situation": "The SW informs the PN that the patient will be staying at the facility long-term due to safety concerns.",
-      "action_taken": "Verified the LTC placement status with the SW and performed a Neutral_LTC_Closure in Atlantis.",
-      "intent_category": "Verify"
+      "situation": "The family expressed fear about managing Martha's diabetic ulcer without a nurse present on the first day.",
+      "action_taken": "Educated the daughter on the specific timeline for the first visit and what clinical signs to monitor while waiting for the nurse.",
+      "intent_category": "Educate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to update the final discharge destination in the facility record before changing the status to Neutral_LTC_Closure in Atlantis.",
-      "rationale": "Ensures the PN does not act on premature information and respects the SW's authority over placement decisions."
+      "description": "The Navigator monitors the Atlantis portal for updates regarding the nurse's return and waits for the Social Worker to post a revised discharge date before communicating further with the family.",
+      "rationale": "This approach respects the Social Worker's lead on scheduling and avoids providing the family with potentially conflicting information before a plan is finalized."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the caregiver's sentiment score regarding the shift to LTC and document the daughter's level of relief or concern in Atlantis to provide a complete history of the transition attempt.",
-      "rationale": "Provides an auditable trail of why the home transition failed without the PN interfering in the clinical or placement process."
+      "description": "The Navigator documents the provider's absence in the system, alerts the Social Worker to the family's rising anxiety, and conducts a pulse call to reassure the daughter that the team is working on a coverage solution.",
+      "rationale": "This fulfills the liaison role by identifying the barrier and supporting the family's emotional readiness without interfering in the agency's internal staffing or the Social Worker's logistics."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the facility's admissions director to advocate for a specific LTC bed on the patient's behalf to ensure a smooth handoff from the sub-acute unit.",
-      "rationale": "Directly involves the PN in facility-level placement and logistics, which is a violation of the Atlantis Rule and the LTC Filter."
+      "description": "The Navigator calls the home health agency's intake department to ask for the sick nurse's expected return date and suggests they hire a per-diem wound specialist to cover Martha's first visit.",
+      "rationale": "This is an overstep because it violates the rule against contacting vendors directly and involves the Navigator in the agency's internal operational and staffing decisions."
     }
   ],
-  "case_outcome": "Neutral_LTC_Closure"
+  "case_outcome": "Success_Home_with_First_Visit"
 }

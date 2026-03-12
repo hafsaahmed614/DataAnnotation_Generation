@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical handoff and physician order transmission to the Home Health Agency, while the Patient Navigator verifies the accuracy of the patient's contact data in Atlantis, educates the family on the transition timeline, and flags the absence of confirmed orders to the SW to prevent a discharge delay.",
+  "narrative_summary": "An 82-year-old male with Parkinson's disease and a stabilizing UTI was preparing for discharge to his daughter's home, but the transition stalled when the Home Health Agency reported they had not received the necessary physician orders. The patient\u2019s daughter expressed significant anxiety as the discharge date approached without a confirmed start-of-care window, fearing her father would be left without professional support for his complex medication regimen. The Patient Navigator acted as a supportive liaison by documenting the daughter's concerns, flagging the missing clinical orders to the Social Worker via Atlantis, and maintaining a granular timeline of the delay to ensure the family remained informed until the orders were finally secured.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified a discrepancy in the primary caregiver's phone number (daughter) where two digits were transposed. Updated the Atlantis demographic fields to ensure the Home Health Agency and Medical Assistant have the correct contact information for the first home visit.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Successfully inserted the Healing Partners V-Card into the daughter\u2019s smartphone during an in-person meeting and provided the program flyer. Explained that this ensures the 'Healing Partners' Caller ID will appear for all post-discharge coordination calls, reducing the likelihood of missed communications during the critical first 24 hours.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call with the patient\u2019s daughter. She reported a sentiment score of 4/10 due to high anxiety regarding the missing HHA orders and her father's Parkinson's-related mobility; documented this readiness gap in Atlantis and flagged it to the Social Worker for a final care huddle.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date for Thursday in Atlantis; scheduled the Medical Assistant's first home visit for Friday morning following the Social Worker's confirmation that the HHA had finally received the orders and accepted the case.",
+  "format_1_state_log": [
+    {
+      "event_description": "The patient is medically cleared following UTI treatment, but the daughter expresses fear that his Parkinson's tremors have worsened during the stay.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The HHA portal shows the referral is pending because the physician's home health orders were not included in the initial packet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+    },
+    {
+      "event_description": "PN flags the missing orders to the Social Worker in Atlantis; the SW discovers the fax was sent to the wrong department at the HHA.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "The daughter receives a confirmation call from the HHA after the orders are verified, significantly lowering her reported anxiety.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA portal indicates 'Pending Orders' 48 hours before the target discharge date.",
+      "action_taken": "Flagged the missing order status to the Social Worker in Atlantis and documented the 'waiting' phase.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's daughter is confused about who will be coming to the house on the first day.",
+      "action_taken": "Educated the daughter on the Day 1 timeline, including the roles of the HHA nurse and the Healing Partners Medical Assistant.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis demographic record for the patient lacks the secondary emergency contact listed on the face sheet.",
+      "action_taken": "Verified the face sheet data and updated the secondary contact field in the Atlantis portal.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to return from their rounds to mention that the HHA portal still shows the orders as missing, then document the delay in the Atlantis timeline.",
+      "rationale": "Respects the SW's role as the primary clinical coordinator and avoids unnecessary interruptions during their floor duties."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Document the 'Missing HHA Orders' status in the Atlantis granular wait-status timeline and send a high-priority flag to the Social Worker requesting they verify the order transmission with the HHA intake department.",
+      "rationale": "Maintains the liaison role by providing data-driven alerts to the proper professional without contacting the vendor directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator directly to see if they can start the admission process using the facility's clinical notes while waiting for the formal physician orders to be re-sent.",
+      "rationale": "While intended to speed up the discharge, this crosses the boundary into vendor negotiation and clinical intake, which are banned PN actions."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

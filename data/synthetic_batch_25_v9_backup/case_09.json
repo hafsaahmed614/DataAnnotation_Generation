@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical placement and the transition to long-term care, while the Patient Navigator's role is limited to auditing demographic data in Atlantis, educating the family on the Healing Partners program should they choose home, and performing a neutral closure once the goal shifts to LTC.",
+  "narrative_summary": "Arthur, an 86-year-old with advancing dementia and a recent hip fracture, initially planned to return to his daughter's home following his rehabilitation. However, a significant safety gap emerged during his stay as his cognitive decline led to several nocturnal wandering episodes that the family felt unequipped to manage. Once the Social Worker confirmed the goal had shifted from a home discharge to a permanent memory care placement, the Patient Navigator documented the pivot in Atlantis and performed a neutral closure to respect the facility's long-term care workflow.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; verified Arthur's date of birth as 05/12/1938 and confirmed the daughter's primary contact number. Identified a discrepancy in the home address zip code (19104 vs 19143) and updated the Atlantis demographic screen to ensure any future mailings would reach the correct residence.",
+  "home_vs_ltc_goal": "LTC (Long-Term Care)",
+  "v_card_flyer_status": "Met with Arthur's daughter, Mary, and successfully inserted the Healing Partners V-Card into her mobile device. Provided the program flyer and explained that the V-Card ensures she will recognize the name 'Healing Partners' on her Caller ID, which would be the primary contact if Arthur were to discharge home with our services.",
+  "pre_dc_pulse_call": "Attempted the 24-hour pre-discharge pulse call; reached Mary, who expressed a high level of anxiety (Sentiment Score: 9/10) regarding Arthur's safety. She informed me that the family had just met with the Social Worker to discuss a permanent placement instead of a home return.",
+  "atlantis_final_sync": "Recorded the final status change in Atlantis; marked the case as a Neutral_LTC_Closure following the Social Worker's confirmation that a bed was secured at a memory care facility. No home visits or Medical Assistant appointments were scheduled.",
+  "format_1_state_log": [
+    {
+      "event_description": "Arthur appears in the Atlantis referral queue following his post-operative hip stabilization.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Arthur's daughter expresses extreme hesitation during a bedside visit, citing his recent attempts to leave his room unsupervised at night.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Patient Navigator learns through a brief hallway sync that the Social Worker is now exploring local memory care units due to the family's inability to provide 24/7 supervision.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family is overwhelmed by the clinical requirements of managing dementia-related wandering at home.",
+      "action_taken": "Documented a Sentiment Score of 9 and flagged the family's anxiety to the Social Worker for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The Social Worker's plan for Arthur is unclear in the Atlantis portal while they are in 'placement' mode.",
+      "action_taken": "Verified the current discharge goal by asking the Social Worker directly: 'Is the goal Home or LTC?'",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The Social Worker confirms Arthur will be transferring to a long-term care facility rather than his daughter's home.",
+      "action_taken": "Performed a Neutral_LTC_Closure in Atlantis and ceased all home transition coordination.",
+      "intent_category": "Document"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to complete the final placement paperwork and then close the patient record in Atlantis once the transfer is confirmed.",
+      "rationale": "This respects the SW's domain over LTC placement and ensures the PN does not interfere with a non-home discharge."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the final discharge destination with the Social Worker and document the 'LTC_Pivot_Abort' friction in the Atlantis wait-status timeline before performing a Neutral Closure.",
+      "rationale": "This maintains an accurate audit trail of why the home transition was aborted without overstepping into the placement process."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the intake department of the memory care facility to see if Arthur will require home health services once he is admitted to their long-term care wing.",
+      "rationale": "While this seems like proactive advocacy, it violates the LTC Filter and involves direct vendor/facility contact, which is outside the PN scope."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

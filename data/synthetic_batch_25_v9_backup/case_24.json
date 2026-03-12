@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker manages the selection of the home health agency and the logistics of the referral, while the Patient Navigator audits the Atlantis record for demographic accuracy, educates the family on the post-discharge visit timeline, and flags portal-identified staffing gaps to the clinical team.",
+  "narrative_summary": "Arthur, a 70-year-old recovering from an intensive spinal fusion, faced a daunting transition as his mobility remained severely limited and required professional home support. While he was clinically cleared for discharge, a localized staffing shortage within the contracted home health agency left his return date in limbo and his family increasingly anxious. The Patient Navigator acted as a vital liaison by monitoring the status in Atlantis, educating the family on what to expect during the first 24 hours at home, and ensuring the Social Worker was alerted to the specific lack of a confirmed nurse for Arthur's rural address.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record and identified a discrepancy in the zip code for Arthur\u2019s rural residence; updated the Atlantis profile to ensure the Home Health Agency (HHA) referral reflected the correct service area to avoid further staffing delays.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the Healing Partners flyer to Arthur\u2019s daughter and successfully inserted the V-Card into her mobile phone, explaining that the 'Healing Partners' caller ID would appear when the home team calls to verify his arrival and schedule the first visit.",
+  "pre_dc_pulse_call": "Conducted the pulse call 24 hours prior to the scheduled discharge; the daughter reported a Sentiment Score of 8 (Anxious) due to the lack of a confirmed nurse arrival time, which was immediately documented in Atlantis and flagged to the Social Worker.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date in Atlantis for Friday morning; however, noted in the log that the first visit is projected for Monday due to the identified HHA weekend staffing gap, ensuring the Medical Assistant visit is sequenced correctly.",
+  "format_1_state_log": [
+    {
+      "event_description": "Arthur is clinically cleared for discharge following his spinal fusion but requires specialized nursing for wound management and PT for mobility.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Atlantis portal indicates the referral was sent to the preferred agency, but the status remains 'Pending' with no assigned nurse for Arthur's remote zip code.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Shortage"
+    },
+    {
+      "event_description": "Arthur's daughter expresses fear that his surgical site will not be monitored over the weekend if he discharges on Friday without a confirmed nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker identifies an alternative agency with a nurse available for a Monday start; Arthur's discharge is rescheduled to align with this availability.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Atlantis portal shows the HHA has not confirmed acceptance for Arthur's rural address.",
+      "action_taken": "Flagged the 'HHA_Acceptance_Stall' to the Social Worker via Atlantis and maintained the wait-status timeline.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's daughter is confused about who will be coming to the house and when.",
+      "action_taken": "Educated the family on the Day 1 expectations, including the difference between the HHA nurse and the Healing Partners Medical Assistant.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The facility face sheet lists an old landline number as the primary contact for the patient.",
+      "action_taken": "Verified the daughter's mobile number as the primary contact and updated the Atlantis demographic record.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker's daily morning huddle to see if they have received a phone call back from the home health agency regarding the staffing delay.",
+      "rationale": "This respects the SW's role as the primary communicator with the agency but risks a delay in updating Arthur's family on their discharge timeline."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Monitor the Atlantis portal for a status change to 'Accepted', document the family's anxiety regarding the weekend gap, and flag the lack of a confirmed Start-of-Care date to the Social Worker.",
+      "rationale": "This uses the PN's tools to provide the SW with actionable data and manages family expectations without the PN contacting the HHA directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the Home Health Agency's intake department directly to explain the urgency of Arthur's spinal fusion recovery and negotiate for a nurse to be diverted from a nearby city.",
+      "rationale": "While this might accelerate the process, it is a 'Fixer' action that bypasses the Social Worker and violates the Banned Action rule against direct vendor management."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

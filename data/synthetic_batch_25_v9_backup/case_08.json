@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical referral and direct communication with the HHA intake department to resolve staffing-related delays, while the Patient Navigator audits demographic accuracy in Atlantis, monitors the portal for acceptance status, and educates the family on the transition timeline to mitigate anxiety.",
+  "narrative_summary": "Mrs. Eleanor Vance, a 72-year-old recovering from a hip fracture ORIF, faced a stressful discharge delay when the home health agency's intake coordinator became unexpectedly unavailable. This operational bottleneck left her transition plan in a pending state, causing her daughter to worry about a gap in care once they left the rehab facility. The Patient Navigator acted as a vital liaison by monitoring the Atlantis portal for status changes and providing the family with clear expectations for the first home visit once the coordinator returned. By maintaining a granular wait-status timeline and ensuring the family was prepared for the incoming call, the PN secured a successful handoff and a timely first visit.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis demographics against the facility face sheet; discovered a transposed digit in the patient's primary contact number and updated the recovery address to the daughter's residence in the 19104 zip code to ensure HHA routing accuracy.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Successfully inserted the Healing Partners V-Card into the daughter\u2019s smartphone during a bedside visit and reviewed the program flyer, emphasizing that the 'Healing Partners' caller ID would be used for all post-discharge scheduling.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call with the daughter; sentiment score was a 6 due to the coordinator delay, but moved to an 8 after confirming the HHA had finally accepted the referral and assigned a nurse for the following morning.",
+  "atlantis_final_sync": "Confirmed the discharge date of 10/14 and scheduled the Medical Assistant for the first post-discharge home visit on 10/15, documenting the HHA's confirmed start-of-care window in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient begins post-surgical rehabilitation for a hip ORIF; mobility is restricted to toe-touch weight-bearing with a walker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Social Worker identifies the patient is ready for home discharge and submits a referral to the preferred home health agency.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Atlantis portal shows the referral is pending; the PN learns from the SW that the HHA intake coordinator is out sick, stalling the acceptance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    },
+    {
+      "event_description": "The coordinator returns and confirms the referral in the portal; the PN logs the SOC date and nurse assignment details in the Atlantis timeline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "Patient arrives home via wheelchair van; the first home visit is completed by the Healing Partners team within 24 hours of discharge.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA referral remains in 'Pending' status in the Atlantis portal for 48 hours.",
+      "action_taken": "Flagged the HHA_Acceptance_Stall to the Social Worker and documented the wait-status in the Atlantis log.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter expresses high anxiety regarding the delay and the lack of a confirmed nurse arrival time.",
+      "action_taken": "Educated the family on the Day 1 expectations, including who arrives first and what equipment should be present.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker provides an updated discharge date following the HHA's acceptance.",
+      "action_taken": "Verified the new discharge date and home address in Atlantis to ensure no data lag before scheduling the MA.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Atlantis portal for status changes and wait for the Social Worker to provide an update on the coordinator's return before communicating further with the family.",
+      "rationale": "This respects the SW's role as the primary contact for the HHA and prevents the PN from providing speculative information to the family."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Maintain a granular wait-status timeline in Atlantis, flag the stall to the SW, and conduct a sentiment check with the daughter to address transition anxiety without clinical assessment.",
+      "rationale": "This uses allowed liaison actions to track the delay and manage family expectations through education rather than vendor intervention."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency's main office to explain the urgency of Mrs. Vance's hip recovery and request that a clinical manager process the intake in the coordinator's absence.",
+      "rationale": "This violates the No-Vendor rule and the Banned Action of contacting agency intake directly to manage facility-level logistics."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -41,19 +41,20 @@ N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 
 
-# ── Pydantic Output Schema (V8: Narrative Liaison) ───────────────────────────
+# ── Pydantic Output Schema (V10: Prose-Only Liaison) ─────────────────────────
 
 class RLScenarioOption(BaseModel):
     ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(
         description="Passive=Strategic Deferral; Proactive=Liaison/Education; Overstep=Clinical/Vendor interference."
     )
-    description: str = Field(description="A professional action description.")
-    rationale: str = Field(description="Explanation of why this respects the SW boundary.")
+    description: str = Field(description="A professional action description written in natural prose. No underscores or taxonomy keys.")
+    rationale: str = Field(description="Explanation of why this respects the SW boundary, written in natural prose.")
 
 
 class SyntheticCaseOutput(BaseModel):
+    """Ensure all generated text is free of technical keys, underscores, and computer-like phrasing."""
     role_delineation_check: str = Field(description="Internal logic check: Differentiating SW logistics from PN liaison work.")
-    narrative_summary: str = Field(description="A professional 1-paragraph story of the patient's transition from the PN's perspective.")
+    narrative_summary: str = Field(description="A professional 1-paragraph story of the patient's transition. Must use natural prose — no taxonomy keys or underscores.")
     atlantis_entry_confirmed: bool = Field(description="PN confirms patient appears in Atlantis.")
     demographic_audit_note: str = Field(description="Narrative detail of the data verification process (Phone, Address, DOB).")
     home_vs_ltc_goal: str = Field(description="The discharge destination confirmed by the SW.")
@@ -61,9 +62,9 @@ class SyntheticCaseOutput(BaseModel):
     pre_dc_pulse_call: str = Field(description="Summary of the sentiment/readiness check 24hrs before discharge.")
     atlantis_final_sync: str = Field(description="Recording of the D/C date and 1st visit date in Atlantis.")
 
-    format_1_state_log: List[dict] = Field(description="Timeline of narrative events focused on transition friction.")
-    format_2_triples: List[dict] = Field(description="Situation -> Action -> Intent (Using Liaison verbs like Verify/Flag/Educate).")
-    format_3_rl_scenario: List[RLScenarioOption] = Field(description="Dilemmas testing the 'No-Vendor' rule.")
+    format_1_state_log: List[dict] = Field(description="Timeline of narrative events focused on transition friction. Event descriptions must read like real-time progress notes.")
+    format_2_triples: List[dict] = Field(description="Situation -> Action -> Intent. The action_taken must be written in natural professional prose — no taxonomy keys or underscores.")
+    format_3_rl_scenario: List[RLScenarioOption] = Field(description="Dilemmas testing boundary adherence. All descriptions must use natural prose.")
     case_outcome: Literal[
         "Success_Home_with_First_Visit",
         "Neutral_LTC_Closure",
@@ -161,20 +162,20 @@ Stage 3 fields (pre_dc_pulse_call, atlantis_final_sync):
 === FORMAT RULES ===
 
 Rules for narrative_summary:
-8. Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT. Start with clinical context (age, condition), describe the friction faced, conclude with how the PN acted as a liaison. Do NOT write a list of PN tasks.
+8. Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT. Start with the patient's name and clinical context (age, condition), describe the friction faced, conclude with how the PN acted as a liaison. Do NOT write a list of PN tasks. Do NOT use any taxonomy keys or underscores.
 
 Rules for format_1_state_log (Timeline):
 9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
-10. event_description must be a chronological narrative event describing what happened to the patient — NOT a category label or task name.
-11. Focus on transition friction from the patient's perspective: data lags affecting their discharge, family anxiety, HHA acceptance stalls (flagged to SW, not investigated by PN).
+10. event_description must flow like a real-time progress note. Example: "During a weekly check-in, the daughter expressed concerns about her mother's mobility; the Navigator noted this shift in sentiment for the upcoming discharge planning session."
+11. Focus on transition friction from the patient's perspective. NEVER use taxonomy keys or underscores in event_description.
 
 Rules for format_2_triples (Situation → Action → Intent):
 12. Each entry must be a dict with keys: situation, action_taken, intent_category (Verify/Educate/Flag).
-13. The action_taken must use Liaison verbs ONLY (Verify, Document, Flag, Educate, Ask). NEVER use Fixer verbs (Coordinate, Resolve, Solve, Order, Negotiate, Investigate). The PN never contacts vendors directly.
+13. The action_taken must be written in natural professional prose. Translate the taxonomy action into a sentence. Use varied phrasing — instead of always "flagged," say "alerted the Social Worker," "noted the discrepancy," or "highlighted the bottleneck in Atlantis." NEVER include taxonomy keys or underscores in action_taken or situation.
 
 Rules for format_3_rl_scenario:
 14. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
-15. All descriptions must sound professional and tempting.
+15. All descriptions must be written in natural professional prose. No taxonomy keys or underscores.
    - "Passive" = STRATEGIC DEFERRAL: PN steps back, lets SW handle. Boundary-respecting, not lazy.
    - "Proactive" = LIAISON/EDUCATION: PN verifies data in Atlantis, educates family on Day 1 expectations, checks family sentiment, flags concerns to SW, conducts pulse call. Uses only Liaison verbs. Never contacts vendors.
    - "Overstep" = PN contacts vendors directly (calls HHA intake, DME vendor, transport), uses Fixer verbs, performs clinical intakes, or schedules MA before SW confirms HHA. Must sound like good advocacy to a rookie.
@@ -184,7 +185,8 @@ Rules for case_outcome:
 17. "Failure_Transition_Breakdown" = patient intended to use our services but the visit was missed (incentive lost).
 18. "Neutral_LTC_Closure" / "Neutral_Alternative_Agency" = clean closure in Atlantis, not a success.
 
-19. Do NOT include internal jargon in any visible field. The output must read like an actual clinical record.
+=== PROSE-ONLY CONTENT CHECK ===
+19. EVERY text field must be free of technical keys, underscores, and computer-like phrasing. Taxonomy keys (e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score, Liaison_Reporting_Only) are for internal logic ONLY and must NEVER appear in the output text. Translate them into natural, professional sentences.
 20. Output ONLY the JSON object. Do not include markdown fences, explanation, or commentary.
 """
     return prompt.strip()
@@ -248,54 +250,66 @@ def main():
     outcome_taxonomy  = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are a Patient Navigator (PN) operating in the Atlantis software environment. "
-        "Your goal is to ensure a safe transition home to trigger the First Visit incentive.\n\n"
+        "You are a Patient Navigator (PN) and a master of professional communication. "
+        "You operate in the Atlantis environment. Your role is to bridge the gap between "
+        "the facility and the home by auditing data and supporting families.\n\n"
 
-        "=== OPERATIONAL GUARDRAILS ===\n\n"
+        "=== OPERATIONAL GUARDRAILS (Strictly Enforced) ===\n\n"
 
-        "The Atlantis Rule: All PN workflow originates and is documented in Atlantis. "
-        "The PN NEVER touches facility EMR or handles clinical documentation.\n\n"
+        "The No-Vendor Rule: You never call HHAs, DME, or Transport. "
+        "You only communicate with the Family and the Social Worker.\n\n"
 
-        "The LTC Filter: The PN's first action is always asking the Social Worker (SW): "
-        "'Is the goal Home or LTC?' If LTC, the PN performs a neutral closure in Atlantis "
-        "and stops work to avoid stepping on toes.\n\n"
+        "The 'Wait' Default: When a vendor causes a delay, you document the status "
+        "from the portal and wait for the SW to act.\n\n"
 
-        "The Pitch & Retreat: The PN introduces the program, leaves a card, tells the SW "
-        "the patient is interested, and then waits for the SW to build the case.\n\n"
+        "The Verb Filter: Use the intent of Liaison verbs (Verify, Document, Flag, Educate, Ask) "
+        "to write professional narratives.\n\n"
 
-        "Banned Actions (Automatic Overstep): Suggesting alternative agencies to the SW, "
-        "handling Face-to-Face (F2F) forms, calling insurance for authorizations, "
-        "or managing facility-level medications.\n\n"
+        "HHA-First Rule: Do not discuss specific Medical Assistant (MA) visit times "
+        "until the SW confirms the HHA is 'Accepted' and 'In Place.'\n\n"
 
-        "Success Metric: Success is defined solely by the patient discharging with our services "
-        "and the first home visit post-discharge being successfully completed.\n\n"
+        "=== THE PROSE-ONLY MANDATE ===\n\n"
+
+        "NO UNDERSCORES: Under no circumstances should taxonomy keys with underscores "
+        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score) appear in the narrative_summary, "
+        "action_taken, description, or any other text field. These keys are for internal logic ONLY.\n\n"
+
+        "NATURAL INTEGRATION: Translate every taxonomy action into a professional sentence.\n"
+        "INCORRECT: 'The PN will Verify_Sentiment_Score and document it.'\n"
+        "CORRECT: 'The Navigator assessed the family's readiness and documented their anxiety levels "
+        "in the Atlantis portal.'\n\n"
+
+        "CONTEXTUAL VARIATION: Use synonyms and varied phrasing. Instead of always saying 'Flagged,' "
+        "you can say 'Alerted the Social Worker,' 'Noted the discrepancy for the clinical team,' "
+        "or 'Highlighted the bottleneck in Atlantis.'\n\n"
 
         "=== STORYTELLING RULES ===\n\n"
 
         "NARRATIVE SUMMARY: Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT'S "
-        "experience. Start with the patient's clinical context (age, condition), describe the friction or barrier "
+        "experience. Start with the patient's name and clinical situation, describe the friction or barrier "
         "they faced, and conclude with how the PN acted as a supportive liaison. "
         "Do NOT write a list of PN tasks.\n\n"
 
-        "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must be a chronological narrative event — "
-        "what happened to the patient at that moment. Do NOT use category labels or task names as descriptions.\n\n"
+        "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must flow like a real-time progress note.\n"
+        "Example: 'During a weekly check-in, the daughter expressed concerns about her mother's mobility; "
+        "the Navigator noted this shift in sentiment for the upcoming discharge planning session.'\n\n"
 
-        "=== INTEGRATED V8 TAXONOMY ACTIONS ===\n"
-        "The PN must select from these specific high-fidelity actions where appropriate:\n"
+        "=== TAXONOMY KEYS (Internal Logic Only — Never in Output Text) ===\n\n"
+
+        "Actions (use these concepts but never the literal key names):\n"
         "- Confirm_Caller_ID_Readiness: Insert V-Card so patient recognizes Healing Partners call.\n"
-        "- Verify_Sentiment_Score: Check family anxiety levels (1-10) without clinical interference.\n"
+        "- Verify_Sentiment_Score: Check family anxiety levels without clinical interference.\n"
         "- Liaison_Reporting_Only: Documentation-only mode; writing down the SW's plan in Atlantis.\n"
         "- Verify_HHA_Acceptance_via_Portal: Use digital tools to check status instead of calling vendors.\n"
-        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n"
-        "- Maintain_Granular_Wait-Status_Timeline: Keep a running log in Atlantis of the waiting phase.\n\n"
+        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n\n"
 
-        "=== INTEGRATED V8 TAXONOMY FRICTIONS ===\n"
-        "Cases must feature friction from these categories where appropriate:\n"
+        "Frictions (use these concepts but never the literal key names):\n"
         "- HHA_Acceptance_Stall: Referral sent but agency hasn't responded in the portal.\n"
         "- Sentiment_Readiness_Gap: Family or patient emotional hesitation about going home.\n"
         "- Family_Training_Gap_Anxiety: Anxiety from lack of facility training on clinical tasks.\n"
         "- Liaison_Communication_Silo: PN excluded from a transition meeting.\n"
-        "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n\n"
+        "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n"
+        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"

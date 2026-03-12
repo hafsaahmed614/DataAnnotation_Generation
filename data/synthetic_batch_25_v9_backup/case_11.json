@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker (SW) is responsible for the clinical safety assessment, caregiver competency evaluation, and final placement determination for long-term care; the Patient Navigator (PN) is restricted to auditing demographic data in Atlantis, educating the family on home-based program benefits while that goal is active, and documenting the SW's final transition plan for a neutral closure.",
+  "narrative_summary": "Arthur, a 65-year-old patient recovering from a severe COPD exacerbation, initially planned to return home with a portable oxygen concentrator and home health support. During the transition planning phase, his primary caregiver expressed significant anxiety regarding his nocturnal oxygen requirements and frequent nebulizer treatments, leading to a high sentiment-readiness gap. The Patient Navigator acted as a liaison by documenting these concerns in Atlantis and flagging them to the Social Worker, who ultimately determined that a transition to Long-Term Care was necessary for Arthur's safety.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis demographic screen against the facility face sheet; corrected the primary phone number for Arthur's daughter (POA) and verified the primary residence address in the Harston district was still valid before the transition goal shifted.",
+  "home_vs_ltc_goal": "LTC",
+  "v_card_flyer_status": "During the initial intake, the PN provided the Healing Partners flyer to Arthur and his daughter to explain the benefits of home-based respiratory monitoring. The PN successfully inserted the V-Card into the daughter\u2019s smartphone to ensure the 'Healing Partners' caller ID would be recognized during the pre-discharge phase.",
+  "pre_dc_pulse_call": "Conducted a pulse call 24 hours prior to the scheduled care conference; the daughter reported a Sentiment Score of 9 (Extreme Anxiety) regarding home management of Arthur's COPD, which was immediately documented in Atlantis for the SW's review.",
+  "atlantis_final_sync": "Recorded the Social Worker's decision to pivot to Long-Term Care (LTC) in Atlantis; executed a Neutral_LTC_Closure to finalize the record and cease home-transition activities.",
+  "format_1_state_log": [
+    {
+      "event_description": "Arthur is admitted to the sub-acute unit for COPD stabilization; PN confirms his profile appears in the Atlantis queue and initiates the demographic audit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "PN meets with Arthur's daughter to explain home health services; the daughter expresses hesitation about her ability to manage his oxygen equipment at night.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker conducts a family meeting and determines that Arthur's clinical needs exceed the family's capacity for home care.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
+    },
+    {
+      "event_description": "PN receives the LTC transition update from the SW and completes the neutral closure process in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Daughter expresses high anxiety regarding nocturnal nebulizer treatments during the initial program pitch.",
+      "action_taken": "Documented the family's high anxiety levels in the Atlantis Sentiment Score field and flagged the training gap to the SW.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The facility face sheet lists an incorrect zip code for the patient's home, which could delay HHA routing if the goal remained home.",
+      "action_taken": "Audited the Atlantis record and updated the demographic data to match the confirmed residence address provided by the POA.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The SW informs the PN that the patient will be staying at the facility long-term due to safety concerns.",
+      "action_taken": "Verified the LTC placement status with the SW and performed a Neutral_LTC_Closure in Atlantis.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to update the final discharge destination in the facility record before changing the status to Neutral_LTC_Closure in Atlantis.",
+      "rationale": "Ensures the PN does not act on premature information and respects the SW's authority over placement decisions."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the caregiver's sentiment score regarding the shift to LTC and document the daughter's level of relief or concern in Atlantis to provide a complete history of the transition attempt.",
+      "rationale": "Provides an auditable trail of why the home transition failed without the PN interfering in the clinical or placement process."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Contact the facility's admissions director to advocate for a specific LTC bed on the patient's behalf to ensure a smooth handoff from the sub-acute unit.",
+      "rationale": "Directly involves the PN in facility-level placement and logistics, which is a violation of the Atlantis Rule and the LTC Filter."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}
