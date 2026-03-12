@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for identifying a replacement wound care specialist and securing HHA acceptance, while the Patient Navigator audits demographic data in Atlantis, educates the family on post-discharge expectations, and flags the provider illness gap to the clinical team.",
+  "narrative_summary": "Mrs. Eleanor Vance, a 69-year-old patient recovering from a complex diabetic foot ulcer, faced a significant transition barrier when her assigned regional wound specialist became ill just days before her scheduled discharge. This unexpected gap triggered high levels of anxiety for her daughter, who felt unprepared to manage the specialized dressing changes without professional oversight. The Patient Navigator acted as a liaison by documenting the family\u2019s concerns, flagging the provider illness in Atlantis, and waiting for the Social Worker to confirm that a backup nurse was in place before finalizing the first home visit schedule.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "A demographic audit of the Atlantis queue against the facility face sheet revealed a discrepancy in the primary contact phone number; the face sheet listed a disconnected landline, which was updated to the daughter's mobile number after verification with the patient. Address and date of birth were confirmed as accurate.",
+  "home_vs_ltc_goal": "Home with specialized wound care services",
+  "v_card_flyer_status": "The Healing Partners V-Card was successfully added to the daughter\u2019s smartphone contacts to ensure the incoming Medical Assistant call is recognized as a medical provider. A program flyer was delivered to the bedside, and the navigator explained that this contact is specifically for identifying our team and not for direct logistics coordination.",
+  "pre_dc_pulse_call": "Conducted a 24-hour pre-discharge pulse call with the daughter; sentiment was recorded as 'Anxious' due to the provider illness delay. Verified that the home environment is ready for the arrival of the HHA nurse and confirmed the daughter's availability for the first-visit window.",
+  "atlantis_final_sync": "Recorded the final discharge date and the first home visit date in Atlantis following the Social Worker's confirmation of HHA readiness. The Medical Assistant visit has been scheduled to occur within the 24-hour post-discharge window.",
+  "format_1_state_log": [
+    {
+      "event_description": "Mrs. Vance appeared in the Atlantis queue for transition planning regarding her diabetic foot ulcer.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Initial data audit"
+    },
+    {
+      "event_description": "The Social Worker notified the team that the primary wound care specialist in the patient's zip code is out on medical leave.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness"
+    },
+    {
+      "event_description": "The patient's daughter expressed reluctance to discharge until a specific nurse is assigned for dressing changes.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The navigator flagged the provider gap and family anxiety to the Social Worker and waited for a clinical resolution.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Wait Status"
+    },
+    {
+      "event_description": "Social Worker confirmed via the portal that a backup generalist nurse from the HHA has been assigned to cover the initial visits.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "A discrepancy was found between the face sheet and the Atlantis phone number field.",
+      "action_taken": "Verified the correct mobile contact with the patient's daughter and updated the record.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The wound care specialist's illness created a potential gap in specialized care at home.",
+      "action_taken": "Flagged the provider illness barrier in the Atlantis portal for Social Worker intervention.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family was worried about who would show up on the first day given the provider illness.",
+      "action_taken": "Educated the daughter on the Day 1 expectations and how the backup nurse will bridge the care gap.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon learning of the provider illness, the navigator documents the delay in Atlantis and monitors the Social Worker's progress in the portal without requesting further updates.",
+      "rationale": "This respects the SW's ownership of vendor/provider logistics and avoids unnecessary communication while the clinical team works on a backup."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The navigator verifies the daughter's sentiment score, documents her anxiety regarding the provider gap, and flags this specific concern to the Social Worker to request a joint family update.",
+      "rationale": "This fulfills the liaison role by identifying a family barrier (anxiety) and routing it to the SW for professional management without contacting vendors."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The navigator calls the HHA intake department directly to ask if they have any other wound-certified nurses available to cover Mrs. Vance's zip code so the discharge can stay on track.",
+      "rationale": "This violates the No-Vendor rule and the Verb Filter by attempting to 'solve' or 'negotiate' clinical staffing logistics which are the sole responsibility of the SW."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

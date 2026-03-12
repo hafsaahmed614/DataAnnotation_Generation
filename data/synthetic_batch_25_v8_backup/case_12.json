@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for obtaining physician signatures and transmitting the referral packet to the HHA, while the Navigator's scope is limited to auditing demographic accuracy in Atlantis, verifying the HHA's 'Accepted' status in the portal, and flagging documentation gaps to the SW to prevent an unsafe discharge.",
+  "narrative_summary": "Arthur, a 70-year-old recovering from an intensive spinal fusion, was eager to transition home to start his physical therapy. His discharge plan was compromised when a critical gap in the clinical handoff occurred, leaving the home health agency without the necessary physician orders to begin care. The Patient Navigator identified the stall in the Atlantis portal, flagged the missing documentation to the Social Worker, and provided the family with the education needed to manage the four-day delay until the first home visit could be safely secured.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; confirmed Arthur's date of birth and his rural residence address were accurate. Discovered the primary contact number was for a disconnected landline and updated Atlantis with his daughter's mobile number after verification with the family.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer to Arthur's bedside and assisted his daughter in saving the V-Card into her phone contacts. Explained that this digital card ensures she will recognize the incoming call from our Medical Assistant as a verified medical contact post-discharge.",
+  "pre_dc_pulse_call": "Reached Arthur's daughter 24 hours prior to the revised discharge date; she expressed moderate anxiety (Sentiment Score: 3/5) regarding his mobility. Verified she understood that the first home visit was now confirmed following the resolution of the order delay and that the Medical Assistant would arrive within the 24-hour window.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date and the first home visit window in Atlantis after verifying the HHA status was marked as 'Accepted' and 'In Place' by the Social Worker.",
+  "format_1_state_log": [
+    {
+      "event_description": "Arthur is admitted to the Atlantis queue following spinal fusion; demographics are audited and the Social Worker confirms the plan for a home discharge with skilled nursing.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "During a routine portal audit, the Navigator observes that the HHA has not accepted the referral, noting a status of 'Pending Physician Orders'.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Clinical Handoff"
+    },
+    {
+      "event_description": "The Navigator flags the missing order status to the Social Worker in Atlantis and waits for the documentation gap to be resolved at the facility level.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Administrative"
+    },
+    {
+      "event_description": "The Social Worker confirms the orders have been re-sent; the HHA portal updates to 'Accepted', allowing the Navigator to finalize the first-visit schedule with the family.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The HHA portal shows a 'Pending' status due to missing surgical follow-up orders.",
+      "action_taken": "Flagged the missing order status to the Social Worker in Atlantis and documented the transition delay.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's family is frustrated by the three-day extension of his stay.",
+      "action_taken": "Educated the family on the necessity of having active physician orders to ensure the HHA nurse can provide wound care and PT immediately upon arrival.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker reports the orders are now received by the agency.",
+      "action_taken": "Verified the HHA 'Accepted' status in the Atlantis portal before scheduling the Medical Assistant for the post-discharge visit.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Atlantis portal daily for a status change to 'Accepted' and wait for the Social Worker to provide an updated discharge date.",
+      "rationale": "This respects the boundary that the SW owns the timeline and vendor communication, ensuring the PN does not interfere with the clinical handoff process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the 'Pending' status in the portal, flag the specific missing documentation to the SW, and conduct a pulse call to Arthur's family to educate them on why the delay is necessary for their safety.",
+      "rationale": "This uses liaison verbs to keep the team informed and the family prepared without contacting the HHA or physician directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator to find out exactly which physician signatures are missing and then contact the surgeon's medical assistant to request an urgent fax to the agency.",
+      "rationale": "This uses 'Fixer' behavior and violates the No-Vendor Rule by contacting both the HHA and the physician's office directly to resolve a logistical barrier."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

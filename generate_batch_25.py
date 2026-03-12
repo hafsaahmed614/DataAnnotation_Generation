@@ -123,87 +123,54 @@ def main():
     outcome_taxonomy = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
-        "You are generating a synthetic patient case from the perspective of a Patient Navigator (PN) "
-        "working in the Atlantis software environment. The output must read like a professional clinical "
-        "record — a 3rd-person story centered on the patient's transition experience.\n\n"
+        "You are a Patient Navigator (PN) operating in the Atlantis software environment. "
+        "Your goal is to ensure a safe transition home to trigger the First Visit incentive.\n\n"
+
+        "=== OPERATIONAL GUARDRAILS ===\n\n"
+
+        "The Atlantis Rule: All PN workflow originates and is documented in Atlantis. "
+        "The PN NEVER touches facility EMR or handles clinical documentation.\n\n"
+
+        "The LTC Filter: The PN's first action is always asking the Social Worker (SW): "
+        "'Is the goal Home or LTC?' If LTC, the PN performs a neutral closure in Atlantis "
+        "and stops work to avoid stepping on toes.\n\n"
+
+        "The Pitch & Retreat: The PN introduces the program, leaves a card, tells the SW "
+        "the patient is interested, and then waits for the SW to build the case.\n\n"
+
+        "Banned Actions (Automatic Overstep): Suggesting alternative agencies to the SW, "
+        "handling Face-to-Face (F2F) forms, calling insurance for authorizations, "
+        "or managing facility-level medications.\n\n"
+
+        "Success Metric: Success is defined solely by the patient discharging with our services "
+        "and the first home visit post-discharge being successfully completed.\n\n"
 
         "=== STORYTELLING RULES ===\n\n"
 
         "NARRATIVE SUMMARY: Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT'S "
         "experience. Start with the patient's clinical context (age, condition), describe the friction or barrier "
-        "they faced, and conclude with how the PN acted as a liaison to ensure the first home visit. "
+        "they faced, and conclude with how the PN acted as a supportive liaison. "
         "Do NOT write a list of PN tasks.\n\n"
 
         "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must be a chronological narrative event — "
         "what happened to the patient at that moment. Do NOT use category labels or task names as descriptions.\n\n"
 
-        "=== OPERATIONAL GUARDRAILS ===\n\n"
+        "=== INTEGRATED V8 TAXONOMY ACTIONS ===\n"
+        "The PN must select from these specific high-fidelity actions where appropriate:\n"
+        "- Confirm_Caller_ID_Readiness: Insert V-Card so patient recognizes Healing Partners call.\n"
+        "- Verify_Sentiment_Score: Check family anxiety levels (1-10) without clinical interference.\n"
+        "- Liaison_Reporting_Only: Documentation-only mode; writing down the SW's plan in Atlantis.\n"
+        "- Verify_HHA_Acceptance_via_Portal: Use digital tools to check status instead of calling vendors.\n"
+        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n"
+        "- Maintain_Granular_Wait-Status_Timeline: Keep a running log in Atlantis of the waiting phase.\n\n"
 
-        "THE NO-VENDOR RULE: The PN is strictly forbidden from calling HHA Intake, DME Vendors, "
-        "or Transport companies. All communication must be with the Family/Patient or the Social Worker (SW).\n\n"
-
-        "THE VERB FILTER: PN actions must use Liaison verbs: Verify, Document, Flag, Educate, Ask. "
-        "Avoid Fixer verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate.\n\n"
-
-        "THE V-CARD INTENT: The V-Card is used exclusively as a Caller ID tool "
-        "so patients recognize the incoming Medical Assistant (MA) call. It is NOT for logistics.\n\n"
-
-        "THE 'WAIT' DEFAULT: If a vendor (HHA/DME) is delayed, the PN Flags the delay in Atlantis "
-        "and Waits for the SW to resolve the logistics. Attempting to solve it yourself is an Overstep.\n\n"
-
-        "HHA-FIRST RULE: The PN must not schedule the first home visit until the SW confirms "
-        "the HHA is 'Accepted' and 'In Place'.\n\n"
-
-        "SENTIMENT OVER CLINICAL: Do not perform clinical intakes. Instead, Verify the Sentiment Score "
-        "(how ready does the family feel?). If they feel anxious, flag it to the SW for a care conference.\n\n"
-
-        "=== THE 3-STAGE LIFECYCLE ===\n"
-        "Every case MUST move through these stages (Address them by the stage name, not by the stage number):\n\n"
-
-        "ENTRY/TRIAGE: Patient appears in Atlantis queue. PN audits demographics (DOB, Insurance, Phone #) "
-        "against the Face Sheet. PN asks SW: 'Is the goal Home or LTC?' "
-        "PN begins role_delineation_check — explicitly stating what is the SW's job vs the PN's job for this case.\n\n"
-
-        "MAINTENANCE: PN inserts V-Card into patient's phone (Caller ID only) "
-        "and delivers flyer. PN educates patient/family on program benefits. "
-        "PN verifies family sentiment (readiness/anxiety level) and flags concerns to SW. "
-        "PN may request joint family meetings through the SW.\n\n"
-
-        "HANDOFF: PN conducts 24-hour pre-discharge pulse call to patient/family. "
-        "Enters D/C date and 1st visit date into Atlantis. "
-        "Hands physical appointment card to patient. "
-        "Schedules the MA for the first visit within 24 hours of discharge — but ONLY after SW confirms HHA is ready. "
-        "If HHA is not confirmed, PN flags it to SW and WAITS.\n\n"
-
-        "=== THE LTC FILTER ===\n"
-        "If the SW determines the goal is Long-Term Care (LTC), the PN performs a Neutral_LTC_Closure in Atlantis "
-        "and stops all work. Continuing to pitch home care to an LTC patient is an Overstep.\n\n"
-
-        "=== THE SW BOUNDARY ===\n"
-        "The Social Worker (SW) sends referrals, finds agencies, and handles all vendor communication. "
-        "The PN NEVER contacts HHA Intake, DME vendors, transport companies, or insurance companies directly.\n\n"
-
-        "=== BANNED ACTIONS (AUTOMATIC OVERSTEP) ===\n"
-        "- Calling HHA Intake coordinators directly\n"
-        "- Calling DME vendors or transport companies\n"
-        "- Suggesting specific HHA agencies to the SW\n"
-        "- Handling F2F (Face-to-Face) forms\n"
-        "- Managing facility medications\n"
-        "- Touching the facility EMR or clinical documentation\n"
-        "- Calling insurance companies for authorization\n"
-        "- Leading or calling facility team meetings\n"
-        "- Interrupting doctors during rounds\n"
-        "- Proving cost analysis of home care vs LTC\n"
-        "- Telling families to refuse discharge or go AMA\n"
-        "- Using Fixer verbs: Coordinate, Resolve, Solve, Order, Negotiate, Investigate\n"
-        "- Performing clinical intakes or assessments\n"
-        "- Scheduling MA before SW confirms HHA readiness\n\n"
-
-        "=== JARGON SCRUBBING ===\n"
-        "Do NOT include internal terms in any visible field. Banned terms: "
-        "'Version 8', 'Cool Down', 'Golden Case', 'Verb Filter', 'No-Vendor Rule', "
-        "'Wait Default', 'HHA-First Rule', 'Narrative Liaison'. "
-        "The output must read like an actual clinical record from a professional Patient Navigator.\n\n"
+        "=== INTEGRATED V8 TAXONOMY FRICTIONS ===\n"
+        "Cases must feature friction from these categories where appropriate:\n"
+        "- HHA_Acceptance_Stall: Referral sent but agency hasn't responded in the portal.\n"
+        "- Sentiment_Readiness_Gap: Family or patient emotional hesitation about going home.\n"
+        "- Family_Training_Gap_Anxiety: Anxiety from lack of facility training on clinical tasks.\n"
+        "- Liaison_Communication_Silo: PN excluded from a transition meeting.\n"
+        "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"
@@ -211,8 +178,7 @@ def main():
         "PATIENT CHOICE: Some cases must feature friction driven by patient or family decisions.\n\n"
 
         "BANNED TROPES: 'F2F / Face-to-Face signatures', 'burned-out Social Worker', "
-        "'100-day financial cliff', 'Private pay to LTC', 'Black Hole', "
-        "'PN calls HHA intake directly', 'PN coordinates with DME vendor'."
+        "'100-day financial cliff', 'Private pay to LTC', 'Black Hole'."
     )
 
     # Build 25 unique (patient, friction) combos — 8 patient-choice, 17 other

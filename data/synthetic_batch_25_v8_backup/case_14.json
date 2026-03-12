@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "In this case, the Social Worker is responsible for identifying the home health agency and managing all vendor communications regarding dialysis support, while the Navigator's role is strictly limited to auditing Atlantis demographics, educating the family on the transition process, and flagging sentiment-based barriers back to the Social Worker.",
+  "narrative_summary": "Mrs. Eleanor Vance, a 77-year-old patient transitioning home after a renal failure exacerbation, experienced significant anxiety when a critical discharge planning huddle occurred without the Patient Navigator\u2019s involvement. This communication silo left the family with conflicting information regarding the timing of her home health services, creating a sense of unpreparedness for her return. By verifying the family's hesitant sentiment and flagging the information gap to the Social Worker, the Navigator facilitated a clearer understanding of the first-visit schedule, ensuring Mrs. Vance felt supported for her first day back at home.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified that the primary contact number for the patient's daughter was transposed. Corrected the phone number in Atlantis to ensure the Medical Assistant can reach the family for the first home visit.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Successfully inserted the V-Card into the daughter\u2019s mobile device to ensure the 'Healing Partners' Caller ID is recognized. Delivered the program flyer and explained that this number is exclusively for identifying the incoming Medical Assistant call.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call; the daughter expressed a sentiment score of 'Anxious' due to not being briefed on the final HHA selection. Verified that the home environment is physically ready but flagged the daughter's lack of confidence to the Social Worker.",
+  "atlantis_final_sync": "Recorded the discharge date of 10/24 and the first home visit date of 10/25 in Atlantis after receiving confirmation from the Social Worker that the HHA had accepted the referral.",
+  "format_1_state_log": [
+    {
+      "event_description": "Mrs. Vance is added to the Atlantis queue following a renal stabilization period.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "A discharge planning meeting is held by the facility team; the Navigator is not notified or invited, leading to a lack of data on the selected HHA.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "The family expresses confusion to the Navigator about who will be providing home nursing care, as they were not given a clear agency name during the siloed meeting.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's family is unaware of the specific agency assigned for home care following a siloed facility meeting.",
+      "action_taken": "Flagged the communication gap to the Social Worker and requested an update on the HHA status.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter expresses high anxiety regarding the management of renal care at home.",
+      "action_taken": "Verified the sentiment score in Atlantis and documented the family's specific concerns for the Social Worker.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family is uncertain about the sequence of events on the first day of discharge.",
+      "action_taken": "Educated the daughter on Day 1 expectations, including the timeframe for the Medical Assistant's arrival.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Document the communication gap in Atlantis and wait for the Social Worker to provide the updated discharge plan and agency details in the next morning huddle.",
+      "rationale": "This respects the boundary of the Social Worker as the owner of the discharge plan and avoids redundant or conflicting communication with the family."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the family's current readiness sentiment, document their confusion regarding the agency, and flag the need for a status update to the Social Worker via the Atlantis portal.",
+      "rationale": "This acts as a liaison to surface family anxiety caused by the communication silo while keeping the resolution in the hands of the Social Worker."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the facility's internal intake coordinator to find out which HHA was selected during the meeting and then contact that HHA to confirm they have the renal orders ready.",
+      "rationale": "This violates the No-Vendor rule and the Verb Filter by attempting to investigate and solve logistics that are strictly the responsibility of the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

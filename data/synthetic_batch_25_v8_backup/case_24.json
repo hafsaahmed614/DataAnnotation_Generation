@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for identifying the home health agency and ensuring the facility provides hands-on caregiver training, while the Patient Navigator verifies the accuracy of the Atlantis record, educates the family on the program's post-discharge support, and flags caregiver anxiety levels to the Social Worker for intervention.",
+  "narrative_summary": "Elena, a 69-year-old patient recovering from a complex diabetic foot ulcer, faced a significant transition barrier when her daughter expressed profound anxiety regarding her lack of training for at-home dressing changes. While Elena was clinically cleared for discharge, the family's fear of mismanagement threatened to stall the transition or lead to an LTC pivot. The Patient Navigator acted as a liaison by verifying the family's low sentiment score, flagging the specific training gap to the Social Worker, and ensuring that the first home visit was only scheduled once the HHA acceptance was confirmed in the portal.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis entry against the facility face sheet; discovered the patient's primary contact number was missing a digit and the zip code was listed for the facility rather than the home address. Corrected the data in Atlantis to ensure the HHA referral reached the correct regional branch and the MA could locate the residence.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer to Elena and her daughter at the bedside and verified that the V-Card was successfully saved in the daughter's smartphone. Explained that this ensures the 'Healing Partners' Caller ID will appear when the Medical Assistant calls to confirm the arrival window for the first home visit.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call; the daughter remains reachable but expressed a sentiment score of 'Anxious' because the facility's wound care nurse has not yet performed a bedside teaching session. Documented this readiness gap and verified the daughter understands the MA will arrive within 24 hours of discharge to support the transition.",
+  "atlantis_final_sync": "Confirmed the discharge date for tomorrow afternoon and verified the HHA 'Anew' has moved to 'Accepted' status in the Atlantis portal. Scheduled the Medical Assistant for the initial home visit for the following morning, ensuring no overlap with the HHA's expected start-of-care window.",
+  "format_1_state_log": [
+    {
+      "event_description": "Elena is identified in the Atlantis queue with incomplete demographic data, delaying the initial audit against the facility face sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "During a bedside meeting, Elena's daughter reports she has not been shown how to manage the diabetic wound dressings, leading to a high anxiety sentiment score.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family_Training_Gap_Anxiety"
+    },
+    {
+      "event_description": "The HHA referral appears pending in the portal without an assigned nurse, creating an unknown window for the first home visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "The Social Worker confirms the HHA has accepted the case and schedules a bedside teaching session for the daughter to resolve the training barrier.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter is hesitant to agree to home discharge due to fear of the diabetic wound.",
+      "action_taken": "Educate the family on the Day 1 expectations, including how the MA and HHA nurse will collaborate to support them.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The facility has not yet provided the required hands-on wound care training to the primary caregiver.",
+      "action_taken": "Flag the caregiver training gap and the resulting high-anxiety sentiment score to the Social Worker.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The HHA acceptance status is not yet visible in the Atlantis portal 24 hours before discharge.",
+      "action_taken": "Verify the portal status and ask the Social Worker for an update on the agency's confirmation.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to finish the discharge huddle to receive the confirmed HHA agency name and start-of-care date before updating Atlantis.",
+      "rationale": "This respects the boundary that the Social Worker owns all vendor communication and agency selection, preventing the PN from interfering in the referral process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the daughter's sentiment score after her bedside training session and flag to the Social Worker if she still feels unready for the transition.",
+      "rationale": "This focuses on the PN's role as a liaison for family readiness and sentiment without crossing into clinical instruction or vendor logistics."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator directly to ensure they have the latest wound care orders and to ask if they can send a nurse who specializes in diabetic ulcers.",
+      "rationale": "This violates the No-Vendor Rule and the Verb Filter by attempting to 'coordinate' and 'negotiate' directly with the HHA, which is the Social Worker's responsibility."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

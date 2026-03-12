@@ -1,78 +1,86 @@
 {
-  "role_delineation_check": "The Social Worker is responsible for identifying the home health agency and managing all vendor communications regarding the intake coordinator's absence, while the Patient Navigator's role is limited to auditing demographic data in Atlantis, educating the family on the transition process, and flagging the HHA acceptance delay to the Social Worker.",
-  "narrative_summary": "A 72-year-old female recovering from an ORIF procedure for a hip fracture was medically cleared for discharge, but the transition was delayed when the home health agency's intake coordinator became unavailable due to an illness. This administrative gap left the family anxious about the timing of post-surgical physical therapy and nursing support at home. The Patient Navigator acted as a liaison by educating the family on the transition timeline and flagging the HHA stall to the Social Worker to ensure the home visit was not scheduled prematurely. Through consistent documentation in Atlantis and coordination with the Social Worker, the Navigator confirmed the agency's eventual acceptance before securing the first home visit.",
+  "role_delineation_check": "The social worker is responsible for the Medicaid CHC waiver application, contractor procurement, and environmental safety sign-off, while the Patient Navigator (PN) audits Atlantis demographic data for accuracy, monitors the 'Waiting' status in the portal, and educates the family on the sequence of the first home visit once the bureaucratic barriers are cleared.",
+  "narrative_summary": "Eleanor, an 83-year-old recovering from post-ICU pneumonia, faced a prolonged stay in sub-acute rehab due to the Medicaid CHC waiver requirement for a wheelchair ramp and bathroom grab bars. The transition was stalled for over five weeks as the social worker navigated the mandatory three-estimate rule for contractors, leaving Eleanor's daughter increasingly anxious about the shifting discharge dates. The PN acted as a stabilizing liaison, maintaining a granular timeline of the waiver process in Atlantis and ensuring the family was prepared for the specific arrival window of the home health nurse once the home was finally cleared for her return.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; discovered the patient's primary contact number was missing one digit. Verified the correct phone number and updated the patient profile in Atlantis to ensure the home team can reach the family for the pulse call.",
+  "demographic_audit_note": "Audit of the facility face sheet against the Atlantis record revealed a discrepancy in the primary phone number for the POA (Eleanor's daughter); the Atlantis record contained an old landline while the face sheet listed a current mobile. Requested a demographic update in the Atlantis portal to ensure the HHA and MA can reach the family on discharge day. Verified the home address matches the location where the CHC waiver modifications are being installed.",
   "home_vs_ltc_goal": "Home",
-  "v_card_flyer_status": "Delivered the program flyer and successfully inserted the V-Card into the daughter's smartphone. Explained that the Caller ID will show 'Healing Partners' for all post-discharge monitoring calls to ensure the family recognizes the medical assistant's outreach.",
-  "pre_dc_pulse_call": "Conducted the 24-hour pulse call with the daughter; the family's sentiment is currently 'Anxious' due to the uncertainty surrounding the HHA intake coordinator's return. Confirmed the home is prepared with the necessary DME, but the family is reluctant to discharge without a confirmed nursing visit time.",
-  "atlantis_final_sync": "Recorded the discharge date of 10/24 and the first medical assistant visit date of 10/25 in Atlantis after the Social Worker confirmed the HHA had finally processed the referral.",
+  "v_card_flyer_status": "During an in-person bedside visit, the PN successfully inserted the Healing Partners V-Card into the daughter's smartphone and explained that all future coordination calls would appear with the company's branding. The PN also provided the 'Day 1 at Home' flyer, specifically highlighting that the Medical Assistant visit is a supportive bridge and not a replacement for the HHA nurse.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call to Eleanor's daughter; she confirmed the ramp was completed yesterday and the home is ready. Sentiment_Readiness_Gap identified: the daughter expressed a 8/10 anxiety score regarding Eleanor's supplemental oxygen management at home, which the PN immediately flagged to the SW for a final bedside education session before the ambulance arrives.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date of 11/14 and scheduled the Medical Assistant first visit for the morning of 11/15 in the Atlantis portal. Verified that the HHA has accepted the referral and assigned a nurse for the start-of-care visit.",
   "format_1_state_log": [
     {
-      "event_description": "Patient's profile appears in Atlantis queue following ORIF surgery for a hip fracture.",
+      "event_description": "Eleanor completes her antibiotic course for pneumonia but PT determines she cannot safely navigate her front steps without a ramp.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+30\u201345 Days",
+      "ai_assumed_bottleneck": "Medicaid CHC Waiver"
+    },
+    {
+      "event_description": "The SW reports that two contractor estimates for the ramp have been received, but the third estimate is delayed because the vendor is unresponsive.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
-    },
-    {
-      "event_description": "The home health agency's intake coordinator is reported as out sick, leaving the referral in a 'Pending' status without an assigned nurse.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3 Days",
-      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+      "edd_delta": "+7 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
     },
     {
-      "event_description": "The family expresses significant concern regarding the lack of a confirmed physical therapy schedule for the patient's hip recovery.",
+      "event_description": "Eleanor's daughter expresses high anxiety (Sentiment Score 9) about the delay, fearing Eleanor will lose her physical strength before the ramp is built.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "0 Days",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "None",
       "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
     },
     {
-      "event_description": "Social Worker confirms a backup coordinator at the agency has accepted the case and provided a start-of-care window.",
-      "clinical_impact": "Improves",
+      "event_description": "The third estimate is finally approved by the waiver coordinator, and the ramp installation is scheduled for the upcoming Tuesday.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
+      "edd_delta": "-10 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "Final home safety inspection passes; SW confirms the discharge for Thursday morning.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
       "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient's phone number on the face sheet is inconsistent with the family's verbal report.",
-      "action_taken": "Verified the correct contact information with the daughter and documented the update in Atlantis.",
+      "situation": "The CHC waiver process is stalled due to the 'three-estimate' rule for the wheelchair ramp.",
+      "action_taken": "Maintain_Granular_Wait-Status_Timeline",
       "intent_category": "Verify"
     },
     {
-      "situation": "The HHA intake coordinator is unavailable, stalling the confirmation of the first home visit.",
-      "action_taken": "Flagged the HHA acceptance stall to the Social Worker in Atlantis and waited for a status update.",
-      "intent_category": "Flag"
+      "situation": "Eleanor's daughter is unsure how to differentiate between the HHA nurse and the Healing Partners Medical Assistant.",
+      "action_taken": "Educate",
+      "intent_category": "Educate"
     },
     {
-      "situation": "The family is confused about why a medical assistant is visiting in addition to a home health nurse.",
-      "action_taken": "Educated the family on the program benefits and the specific role of the medical assistant in post-surgical monitoring.",
-      "intent_category": "Educate"
+      "situation": "The daughter expresses fear about managing the portable oxygen concentrator at home.",
+      "action_taken": "Flag",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait for the Social Worker to update the Atlantis portal with the HHA's acceptance status without further prompting, acknowledging that the coordinator's illness is outside of the Navigator's control.",
-      "rationale": "This respects the professional boundary by allowing the Social Worker to handle all agency-side logistics while the Navigator remains in a supportive, observational role."
+      "description": "Monitor the Atlantis portal for the SW's update regarding the third contractor estimate and defer all family questions about the ramp timeline to the facility's business office.",
+      "rationale": "Respects the boundary that the PN does not handle financial or environmental modifications, leaving the SW as the sole point of contact for the waiver process."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the family's current sentiment score in light of the delay, flag the rising anxiety to the Social Worker, and educate the family on the 'Wait' status to maintain trust in the transition process.",
-      "rationale": "The Navigator acts as a liaison between the family's concerns and the Social Worker's logistics, ensuring the patient remains engaged without overstepping into vendor management."
+      "description": "Verify_Sentiment_Score with the family during the delay, document the rising anxiety in Atlantis, and request the SW include the PN in a joint family meeting to explain the post-discharge care sequence.",
+      "rationale": "Provides emotional support and clarity on the program's role without interfering in the bureaucratic process of the waiver."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the home health agency's main office to speak with a supervisor or a different intake staff member to expedite the acceptance of the hip fracture case so the MA visit can be scheduled immediately.",
-      "rationale": "While intended to help the patient, this violates the No-Vendor Rule and the Verb Filter by attempting to 'solve' a logistical problem that belongs to the Social Worker."
+      "description": "Call the Medicaid waiver coordinator and the contractor directly to request an expedited installation date so the patient can discharge before the weekend.",
+      "rationale": "While intended to help the patient, this is an overstep into vendor and bureaucratic management, bypassing the Social Worker's established workflow."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

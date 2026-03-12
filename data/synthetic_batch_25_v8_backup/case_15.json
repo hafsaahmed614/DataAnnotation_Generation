@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for selecting the home health agency and securing the oxygen equipment delivery, whereas the Patient Navigator audits the demographic accuracy in Atlantis, monitors the family\u2019s sentiment regarding the transition, and flags training gaps to the clinical team without contacting vendors.",
+  "narrative_summary": "Mr. Elias Thorne, a 65-year-old recovering from a COPD exacerbation, faced a significant discharge barrier when his daughter expressed paralyzing anxiety over managing his new continuous oxygen and nebulizer treatments at home. While the clinical team felt he was ready for discharge, the daughter\u2019s lack of confidence in operating the equipment created a high risk for service refusal. The Patient Navigator acted as a liaison by documenting the family's low sentiment score in Atlantis and flagging the specific training gap to the Social Worker, which prompted a bedside education session that secured the family's commitment to the home transition plan.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified that the patient's primary phone number was listed as a disconnected landline. Obtained the daughter's mobile number and updated the contact field in Atlantis to ensure the 24-hour pulse call could be completed.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer to Mr. Thorne and his daughter; verified the V-Card was saved in the daughter's smartphone to ensure the 'Healing Partners' caller ID is recognized when the Medical Assistant calls for the first home visit.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the daughter confirmed home readiness but voiced continued concern regarding the nebulizer schedule. Sentiment score was documented as 'Anxious' and flagged to the Social Worker for final clinical reassurance.",
+  "atlantis_final_sync": "Recorded the discharge date of 10/14 and the first MA visit date of 10/15 in Atlantis after the Social Worker confirmed the HHA was 'In Place' and the oxygen vendor had delivered the concentrator.",
+  "format_1_state_log": [
+    {
+      "event_description": "Mr. Thorne appeared in the Atlantis queue following his stabilization for COPD, but his record lacked a verified primary caregiver contact.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "The daughter expressed fear that she would not be able to clear the nebulizer tubes correctly, leading to a delay in her signing the home health consent forms.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family_Training_Gap_Anxiety"
+    },
+    {
+      "event_description": "The Atlantis portal showed the selected HHA had received the referral but had not yet assigned a specific nurse for the start-of-care visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "Following a bedside training session flagged by the Navigator, the daughter confirmed she felt ready to proceed with the discharge scheduled for the following afternoon.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter vocalized high anxiety about managing the oxygen concentrator without supervised practice.",
+      "action_taken": "Documented the sentiment score in Atlantis and flagged the training gap to the Social Worker.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The HHA acceptance status remained 'Pending' in the Atlantis portal 48 hours before the expected discharge.",
+      "action_taken": "Verified the portal status and asked the Social Worker for an update on the agency's readiness.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family was unaware of the specific timing for the first post-discharge clinical visit.",
+      "action_taken": "Educated the family on the 24-hour visit window and the role of the Medical Assistant.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Monitor the Atlantis portal for the HHA's acceptance and wait for the Social Worker to confirm the oxygen equipment has been delivered to the home.",
+      "rationale": "This respects the professional boundary by allowing the Social Worker to handle vendor logistics while the Navigator remains in a supportive, observational role."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the family's readiness via a sentiment check, document the anxiety regarding oxygen management in Atlantis, and flag the need for a bedside demonstration to the Social Worker.",
+      "rationale": "This uses liaison verbs to identify a transition barrier and routes it to the correct clinical professional without the Navigator performing a clinical assessment."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the oxygen vendor directly to confirm the delivery time and offer to walk the daughter through the equipment setup over the phone to save the Social Worker time.",
+      "rationale": "This violates the No-Vendor Rule and involves the Navigator in clinical training and logistics, which is outside their professional scope."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

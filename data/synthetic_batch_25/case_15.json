@@ -1,79 +1,79 @@
 {
-  "role_delineation_check": "The Social Worker is responsible for selecting the home health agency and securing the oxygen equipment delivery, whereas the Patient Navigator audits the demographic accuracy in Atlantis, monitors the family\u2019s sentiment regarding the transition, and flags training gaps to the clinical team without contacting vendors.",
-  "narrative_summary": "Mr. Elias Thorne, a 65-year-old recovering from a COPD exacerbation, faced a significant discharge barrier when his daughter expressed paralyzing anxiety over managing his new continuous oxygen and nebulizer treatments at home. While the clinical team felt he was ready for discharge, the daughter\u2019s lack of confidence in operating the equipment created a high risk for service refusal. The Patient Navigator acted as a liaison by documenting the family's low sentiment score in Atlantis and flagging the specific training gap to the Social Worker, which prompted a bedside education session that secured the family's commitment to the home transition plan.",
+  "role_delineation_check": "The Social Worker (SW) manages the clinical discharge destination and placement logistics, while the Patient Navigator (PN) is restricted to auditing demographic data in Atlantis, educating the family on the Healing Partners program, and monitoring transition readiness through sentiment verification without contacting external placement agencies.",
+  "narrative_summary": "Mrs. Eleanor Vance, a 78-year-old female admitted for Congestive Heart Failure (CHF) management, initially planned to return to her two-story home with the support of her daughter. However, as her physical therapy progress plateaued and her caregiver's anxiety regarding complex medication titration increased, the feasibility of a safe home transition became uncertain. Recognizing these barriers, the Social Worker transitioned the discharge goal from home health to long-term care (LTC) placement, prompting the Patient Navigator to facilitate a neutral closure of the case in Atlantis to ensure no interference with the facility's new placement plan.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified that the patient's primary phone number was listed as a disconnected landline. Obtained the daughter's mobile number and updated the contact field in Atlantis to ensure the 24-hour pulse call could be completed.",
-  "home_vs_ltc_goal": "Home",
-  "v_card_flyer_status": "Delivered the program flyer to Mr. Thorne and his daughter; verified the V-Card was saved in the daughter's smartphone to ensure the 'Healing Partners' caller ID is recognized when the Medical Assistant calls for the first home visit.",
-  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the daughter confirmed home readiness but voiced continued concern regarding the nebulizer schedule. Sentiment score was documented as 'Anxious' and flagged to the Social Worker for final clinical reassurance.",
-  "atlantis_final_sync": "Recorded the discharge date of 10/14 and the first MA visit date of 10/15 in Atlantis after the Social Worker confirmed the HHA was 'In Place' and the oxygen vendor had delivered the concentrator.",
+  "demographic_audit_note": "Audit of the facility face sheet against the Atlantis record revealed a discrepancy in the primary contact phone number; the daughter's mobile was listed as the primary in the facility record while a disconnected landline remained in Atlantis. The address was confirmed as a private residence in a suburban zip code, and the date of birth was verified as 05/12/1945.",
+  "home_vs_ltc_goal": "Long-Term Care (LTC)",
+  "v_card_flyer_status": "During the initial bedside introduction, the PN successfully shared the program flyer and assisted the daughter in saving the Healing Partners V-Card to her smartphone to ensure future caller ID recognition. The daughter expressed high initial interest, though she noted significant fear regarding her ability to manage her mother's daily weights and diuretic schedule.",
+  "pre_dc_pulse_call": "A 24-hour pre-discharge pulse call was attempted but resulted in a discussion with the daughter who informed the PN that the family had reached a breaking point. She stated they were no longer pursuing a home discharge, as the Social Worker was now evaluating local skilled nursing facilities for permanent placement.",
+  "atlantis_final_sync": "Upon receiving verbal confirmation from the Social Worker that the goal had officially shifted to LTC, the PN documented the outcome in Atlantis and performed a Neutral_LTC_Closure, terminating all transition-to-home activities as per the LTC Filter protocol.",
   "format_1_state_log": [
     {
-      "event_description": "Mr. Thorne appeared in the Atlantis queue following his stabilization for COPD, but his record lacked a verified primary caregiver contact.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
-    },
-    {
-      "event_description": "The daughter expressed fear that she would not be able to clear the nebulizer tubes correctly, leading to a delay in her signing the home health consent forms.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "Family_Training_Gap_Anxiety"
-    },
-    {
-      "event_description": "The Atlantis portal showed the selected HHA had received the referral but had not yet assigned a specific nurse for the start-of-care visit.",
+      "event_description": "Patient was admitted to the sub-acute unit following a CHF exacerbation, and the PN completed the initial Atlantis demographic audit.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Unchanged",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
     },
     {
-      "event_description": "Following a bedside training session flagged by the Navigator, the daughter confirmed she felt ready to proceed with the discharge scheduled for the following afternoon.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "event_description": "The PN conducted a sentiment check with the daughter, who reported a 9/10 anxiety level regarding home management of CHF symptoms.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker convened a family meeting where it was determined that the patient's mobility deficits made the home environment unsafe even with HHA support.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "The Social Worker officially informed the PN that the discharge goal is now LTC placement rather than home health.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC_Pivot_Abort"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The daughter vocalized high anxiety about managing the oxygen concentrator without supervised practice.",
-      "action_taken": "Documented the sentiment score in Atlantis and flagged the training gap to the Social Worker.",
-      "intent_category": "Flag"
-    },
-    {
-      "situation": "The HHA acceptance status remained 'Pending' in the Atlantis portal 48 hours before the expected discharge.",
-      "action_taken": "Verified the portal status and asked the Social Worker for an update on the agency's readiness.",
+      "situation": "Initial Atlantis record contained an outdated landline for the patient's primary contact.",
+      "action_taken": "Documented the updated mobile number from the facility face sheet into Atlantis to ensure outreach readiness.",
       "intent_category": "Verify"
     },
     {
-      "situation": "The family was unaware of the specific timing for the first post-discharge clinical visit.",
-      "action_taken": "Educated the family on the 24-hour visit window and the role of the Medical Assistant.",
-      "intent_category": "Educate"
+      "situation": "The daughter expressed extreme hesitation about her ability to manage her mother's CHF medications.",
+      "action_taken": "Flagged the high sentiment anxiety score to the Social Worker via the Atlantis portal for a potential care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The Social Worker confirmed the transition plan changed from a home discharge to a permanent LTC placement.",
+      "action_taken": "Logged a Neutral_LTC_Closure in Atlantis and ceased all home transition coordination to respect facility boundaries.",
+      "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Monitor the Atlantis portal for the HHA's acceptance and wait for the Social Worker to confirm the oxygen equipment has been delivered to the home.",
-      "rationale": "This respects the professional boundary by allowing the Social Worker to handle vendor logistics while the Navigator remains in a supportive, observational role."
+      "description": "Upon hearing the daughter's concerns, the PN waits for the Social Worker to finish the weekly utilization review to see if the discharge destination changes naturally in the facility's plan.",
+      "rationale": "This follows the 'Pitch & Retreat' rule, allowing the SW to lead the case-building process without PN interference in clinical decision-making."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the family's readiness via a sentiment check, document the anxiety regarding oxygen management in Atlantis, and flag the need for a bedside demonstration to the Social Worker.",
-      "rationale": "This uses liaison verbs to identify a transition barrier and routes it to the correct clinical professional without the Navigator performing a clinical assessment."
+      "description": "The PN documents the daughter's 9/10 anxiety score in Atlantis and asks the Social Worker, 'Is the goal still Home or has it shifted to LTC?'",
+      "rationale": "This utilizes the 'LTC Filter' and 'Verify_Sentiment_Score' actions to provide the SW with data while clarifying the PN's own scope of work."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the oxygen vendor directly to confirm the delivery time and offer to walk the daughter through the equipment setup over the phone to save the Social Worker time.",
-      "rationale": "This violates the No-Vendor Rule and involves the Navigator in clinical training and logistics, which is outside their professional scope."
+      "description": "The PN calls a local Home Health Agency intake coordinator to ask if they can provide a private-duty aide for 24 hours a day to convince the family to stay with a home discharge plan.",
+      "rationale": "This violates the 'No-Vendor' rule and the 'Banned Actions' by attempting to resolve a placement barrier through direct vendor negotiation and clinical workarounds."
     }
   ],
-  "case_outcome": "Success_Home_with_First_Visit"
+  "case_outcome": "Neutral_LTC_Closure"
 }

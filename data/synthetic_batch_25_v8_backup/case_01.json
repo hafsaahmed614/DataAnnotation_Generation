@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The social worker is responsible for all vendor communication, including HHA agency selection and addressing DME delivery failures, while the navigator focuses on auditing demographic accuracy in Atlantis, educating the family on what to expect during the first 24 hours at home, and flagging caregiver sentiment concerns to the clinical team.",
+  "narrative_summary": "Mrs. Evelyn Reed, an 83-year-old patient recovering from post-ICU pneumonia, was eager to return home but her daughter expressed high anxiety regarding the management of her supplemental oxygen. While the transition initially proceeded according to the plan, the home health agency nurse failed to appear for the scheduled Day 1 assessment, leaving the family in a state of panic without professional guidance. The navigator acted as a liaison by documenting the family's distress and immediately flagging the service gap to the Social Worker, ensuring the family felt heard while awaiting the Social Worker's resolution with the agency.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis referral against the facility face sheet; identified a discrepancy in the primary contact phone number for the patient's daughter (POA) and updated the record to ensure the home team could reach the family post-discharge.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer to the patient's daughter and successfully saved the V-Card into her smartphone to ensure she would recognize the incoming call from the Medical Assistant as a trusted medical contact.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the family confirmed the home was ready for Mrs. Reed's return, though the daughter remained 'very anxious' about the oxygen concentrator settings, which was flagged to the Social Worker for a final bedside teaching session.",
+  "atlantis_final_sync": "Recorded the discharge date of 11/14 and the first visit date of 11/15 in Atlantis after the Social Worker confirmed the HHA had accepted the referral and provided a morning arrival window.",
+  "format_1_state_log": [
+    {
+      "event_description": "Mrs. Reed appears in the Atlantis triage queue for post-ICU pneumonia recovery; initial audit reveals the home zip code in the system is outdated compared to the current face sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "The daughter reports high anxiety during the sentiment check, stating she does not feel prepared to monitor her mother's respiratory status alone; PN flags the sentiment score to the SW.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The patient is discharged to home with confirmed oxygen delivery, but the HHA portal shows a conflicting status regarding the assigned nurse for the following morning.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "On the morning of the scheduled first visit, the daughter calls the PN stating the HHA nurse is two hours late and has not answered the phone; the PN flags the no-show in Atlantis.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Day 1 Home No-Show"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial Atlantis record for Mrs. Reed contained the wrong primary phone number for the POA.",
+      "action_taken": "Documented the correct contact information from the facility face sheet into the Atlantis profile.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The patient's daughter expresses significant fear about managing pneumonia recovery at home.",
+      "action_taken": "Flagged the caregiver's high anxiety levels to the Social Worker to request a joint family meeting.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The HHA nurse fails to arrive at the patient's home for the first scheduled post-discharge visit.",
+      "action_taken": "Flagged the HHA no-show status to the Social Worker in Atlantis and waited for a response regarding the new arrival time.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to review the daily HHA status report to identify the no-show before making any updates to the Atlantis record.",
+      "rationale": "This respects the boundary by allowing the SW to lead the investigation, but risks a delay in addressing the family's immediate distress."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the no-show status with the daughter, document the family's concerns in Atlantis, and flag the urgent service gap to the Social Worker for immediate resolution with the agency.",
+      "rationale": "This provides the SW with the necessary data to resolve the logistics while the PN remains within the liaison scope, focusing on documentation and internal communication."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA Intake Coordinator directly to demand a reason for the nurse's absence and attempt to schedule an alternative nurse for the afternoon.",
+      "rationale": "This violates the No-Vendor rule and crosses into the Social Worker's responsibility for managing agency relationships and logistics."
+    }
+  ],
+  "case_outcome": "Failure_Transition_Breakdown"
+}

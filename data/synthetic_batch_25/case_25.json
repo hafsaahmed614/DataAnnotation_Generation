@@ -1,78 +1,86 @@
 {
-  "role_delineation_check": "In this case, the Social Worker is responsible for selecting the home health agency and troubleshooting the agency's weekend staffing failures, while the Patient Navigator focuses on auditing demographic accuracy in Atlantis, educating the family on the transition timeline, and flagging the service gap to the Social Worker once the no-show was confirmed by the family.",
-  "narrative_summary": "Mr. Bennett, an 81-year-old recovering from an ischemic stroke, was eager to return home but his daughter expressed significant anxiety regarding his mobility and medication schedule. Although the transition was set for a Friday with an agency confirmed in the Atlantis portal, the home health nurse failed to arrive for the scheduled Saturday morning start-of-care visit. The Patient Navigator identified the no-show during a follow-up check, immediately flagged the vacancy to the Social Worker in Atlantis, and provided the family with educational support on their emergency protocols while waiting for the Social Worker to resolve the agency's staffing gap.",
+  "role_delineation_check": "The Social Worker manages the clinical referral and coordinates with the home health agency (HHA) regarding staffing, while the Patient Navigator (PN) identifies demographic errors in Atlantis, educates the family on the expected timeline for the first visit, and flags the service gap to the Social Worker when a no-show occurs.",
+  "narrative_summary": "Elena, a 68-year-old female recovering from a severe multiple sclerosis flare, was eager to return home but faced significant gait instability and fatigue. The transition was complicated by the patient's anxiety regarding her mobility and a breakdown in the home health agency's scheduling. When the assigned nurse failed to appear for the first post-discharge visit, the Patient Navigator served as a vital liaison by documenting the gap and alerting the hospital team to ensure Elena remained safe at home.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified and corrected a transposed digit in the daughter's primary contact number and verified the home address matches the Medicare ZIP code for the assigned home health branch.",
+  "demographic_audit_note": "During the initial audit, I cross-referenced the facility face sheet with the Atlantis record and identified an error in the patient's primary phone number; the Atlantis queue listed an old landline instead of the daughter's mobile number, which I updated to ensure the HHA could reach the family.",
   "home_vs_ltc_goal": "Home",
-  "v_card_flyer_status": "Successfully inserted the digital V-Card into the daughter\u2019s smartphone to ensure the Medical Assistant's call is recognized as a medical contact; delivered the program flyer and highlighted the 'Who to Expect' section to prepare the family for the weekend transition.",
-  "pre_dc_pulse_call": "Conducted 24-hour pre-discharge call; daughter reported a sentiment score of 2/5 (Anxious), specifically citing the Friday discharge and the potential for a weekend without professional support. Flagged this sentiment to the Social Worker.",
-  "atlantis_final_sync": "Confirmed the Friday discharge date in Atlantis and logged the first scheduled home visit for Saturday morning based on the agency's 'Accepted' status in the portal.",
+  "v_card_flyer_status": "I successfully inserted the Healing Partners V-Card into the daughter's smartphone to ensure she would recognize the Caller ID for the first visit confirmation. I also provided the 'Day 1 Expectations' flyer, specifically highlighting the 24-hour window for the home health nurse's arrival.",
+  "pre_dc_pulse_call": "Reached the daughter 24 hours prior to discharge; the sentiment score was 3/10 (High Anxiety) due to concerns about Elena's ability to navigate the stairs. I documented this sentiment and flagged the need for the physical therapy evaluation to the SW.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date of Friday and the scheduled HHA start-of-care window for Saturday morning in the Atlantis transition log.",
   "format_1_state_log": [
     {
-      "event_description": "Mr. Bennett appears in the Atlantis queue for stroke rehabilitation follow-up; PN audits the record and identifies a Friday discharge plan.",
+      "event_description": "The Social Worker confirmed Elena's goal is to return home with daughter's support; PN introduced the program and left a business card.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
-      "edd_delta": "+0 Days",
+      "edd_delta": "0 Days",
       "ai_assumed_bottleneck": "None"
     },
     {
-      "event_description": "Family expresses high anxiety during the sentiment check regarding the ability to manage stroke-related transfers over a holiday weekend.",
+      "event_description": "PN checked the Atlantis portal and noted the HHA referral was accepted, but no specific nurse had been assigned for the weekend visit yet.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Worsens",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2-4 Days",
-      "ai_assumed_bottleneck": "Friday Discharge Gap"
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
     },
     {
-      "event_description": "The home health agency confirms acceptance in the Atlantis portal; PN documents the status and schedules the Medical Assistant for a Saturday follow-up.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "+0 Days",
-      "ai_assumed_bottleneck": "None"
-    },
-    {
-      "event_description": "The daughter contacts the PN on Saturday morning reporting that the home health nurse has not arrived for the 0900 start-of-care window.",
+      "event_description": "Elena was discharged home on Friday afternoon; the daughter reported that the transport arrived late, increasing the patient's fatigue level.",
       "clinical_impact": "Worsens",
-      "environmental_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Transport Coordination Failure"
+    },
+    {
+      "event_description": "Saturday morning passed without the HHA nurse arriving; the daughter called the PN reporting that no one had contacted them for the start-of-care visit.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1-3 Days",
+      "edd_delta": "+1\u20133 Days",
       "ai_assumed_bottleneck": "Day 1 Home No-Show"
+    },
+    {
+      "event_description": "PN documented the no-show in Atlantis and sent an urgent flag to the Social Worker to alert the hospital team that the home transition plan had stalled.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "Patient's daughter expresses fear about the 48-hour gap between Friday discharge and Monday office hours.",
-      "action_taken": "Educated the family on the 24-hour availability of the Medical Assistant and the role of the start-of-care nurse.",
+      "situation": "The Atlantis portal shows the HHA referral as 'Pending' only 18 hours before the scheduled discharge.",
+      "action_taken": "Flagged the HHA_Acceptance_Stall to the Social Worker in Atlantis and updated the granular wait-status timeline.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter expresses fear that the MS flare will worsen without immediate nursing supervision at home.",
+      "action_taken": "Educated the family on the Day 1 timeline and verified their sentiment score in Atlantis to inform the SW.",
       "intent_category": "Educate"
     },
     {
-      "situation": "The home health agency shows as 'Pending' in the portal 12 hours before the scheduled discharge.",
-      "action_taken": "Flagged the pending status to the Social Worker in Atlantis and waited for the portal to update to 'Accepted'.",
-      "intent_category": "Flag"
-    },
-    {
-      "situation": "The family reports the home health nurse is a no-show on the first morning home.",
-      "action_taken": "Documented the no-show in the Atlantis timeline and flagged the urgency to the Social Worker for vendor escalation.",
+      "situation": "Patient reports that the HHA nurse failed to show up for the Saturday morning appointment.",
+      "action_taken": "Documented the service gap in Atlantis as Liaison_Reporting_Only and requested the SW contact the agency for a status update.",
       "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Wait until the Social Worker returns to the facility on Monday morning to address the agency no-show, as vendor communication is outside the Navigator's scope of work.",
-      "rationale": "This respects the strict boundary that only the Social Worker can communicate with the HHA intake or management teams."
+      "description": "Wait until the next business day to see if the HHA updates the portal with a new visit time before notifying the facility staff.",
+      "rationale": "This follows the 'Wait' default but fails to address the immediate safety risk of a patient with MS instability left without monitoring."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the no-show with the family, document the discrepancy in Atlantis, and educate the family on how to use the agency's after-hours clinical line while flagging the gap to the Social Worker's queue.",
-      "rationale": "This provides necessary family support and maintains an auditable trail in Atlantis without violating the No-Vendor Rule."
+      "description": "Document the reported no-show in Atlantis, notify the Social Worker immediately of the service breakdown, and re-educate the family on the facility's after-hours contact protocol.",
+      "rationale": "This adheres to the Liaison_Reporting_Only role by alerting the professional responsible for the vendor relationship while supporting the family's immediate needs."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Call the home health agency's weekend on-call coordinator directly to investigate the nurse's location and negotiate an immediate arrival time for the patient.",
-      "rationale": "While this appears to solve the immediate crisis, it is an overstep because the Navigator is strictly forbidden from calling HHA intake or coordinating vendor logistics."
+      "description": "Call the Home Health Agency's weekend on-call manager directly to demand a replacement nurse and threaten to escalate to the insurance company if a visit isn't completed by noon.",
+      "rationale": "This violates the Banned Action of contacting vendors directly and attempts to manage facility-level clinical logistics."
     }
   ],
   "case_outcome": "Failure_Transition_Breakdown"

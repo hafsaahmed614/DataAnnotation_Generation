@@ -1,86 +1,78 @@
 {
-  "role_delineation_check": "The Social Worker is responsible for all vendor logistics, including the selection of the Home Health Agency and the procurement of Durable Medical Equipment, while the Patient Navigator's role is strictly limited to auditing demographics in Atlantis, educating the family on the transition process, and flagging equipment delays to the clinical team.",
-  "narrative_summary": "An 88-year-old male recovering from bilateral total knee arthroplasty faced a significant discharge barrier when the required hospital bed was not delivered to his residence as scheduled. The patient's family expressed mounting anxiety regarding his ability to safely transition home without the necessary equipment for elevation and mobility. The Patient Navigator acted as a vital liaison by documenting the equipment gap in Atlantis and flagging the safety concern to the Social Worker, ensuring the transition plan remained on hold until the family confirmed the bed was in place.",
+  "role_delineation_check": "The Social Worker is responsible for securing the surgeon's signatures and faxing the clinical orders to the Home Health Agency, while the Patient Navigator identifies the documentation gap through the Atlantis portal, flags the specific missing requirement to the Social Worker, and manages family expectations regarding the start-of-care delay.",
+  "narrative_summary": "A 70-year-old male recovering from an extensive spinal fusion faced an unexpected barrier to his home transition when his clinical orders failed to reach the selected home health agency. Although he was physically stable and eager to begin his rehabilitation, the missing documentation created a scheduling gap that left his family anxious about managing his mobility alone. The Patient Navigator served as a vital liaison by identifying the stall in the Atlantis portal, alerting the social worker to the specific missing faxes, and keeping the family informed until the transition was secured.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the facility face sheet against the Atlantis entry; confirmed the patient's date of birth and primary phone number were accurate, but flagged an error in the zip code for the discharge address which was corrected in the system to ensure the HHA referral reached the correct local branch.",
-  "home_vs_ltc_goal": "Home with 24-hour caregiver support provided by family.",
-  "v_card_flyer_status": "Delivered the program flyer to the patient's daughter and verified that the V-Card was successfully saved in her mobile device to ensure the incoming Medical Assistant call is recognized as a clinical contact.",
-  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the family reported high anxiety (Sentiment Score: 2/5) because the hospital bed had still not arrived. Flagged this anxiety and the equipment failure to the Social Worker in Atlantis and advised the family to wait for the Social Worker's update before finalizing transport.",
-  "atlantis_final_sync": "Recorded the confirmed discharge date and the first home visit date in Atlantis following the Social Worker's confirmation that the HHA was 'In Place' and the equipment had been delivered.",
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified that the patient's primary phone number was listed as a disconnected landline. Updated the record in Atlantis with the son's mobile number as the primary contact and verified the home address for the Medical Assistant's travel route.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Successfully inserted the V-Card into the patient's and his son's smartphones to ensure they recognize the 'Healing Partners' caller ID. Handed the program flyer to the son, emphasizing that this number would be used for the 24-hour pulse call and first-visit confirmation.",
+  "pre_dc_pulse_call": "Reached the son 24 hours prior to the anticipated discharge; sentiment score was a 3 (high anxiety) because the HHA had not yet called to confirm a nurse arrival time due to the missing paperwork. Reassured the family that the SW was working on the orders and verified that the home was prepared with the necessary walker and raised toilet seat.",
+  "atlantis_final_sync": "Recorded the official discharge date of October 14th in Atlantis. Scheduled the first Medical Assistant visit for the morning of October 15th, following the HHA's confirmation that the orders were finally received and the nurse was assigned.",
   "format_1_state_log": [
     {
-      "event_description": "Patient appeared in the Atlantis queue following a bilateral knee replacement; PN performed the initial demographic audit against the facility records.",
+      "event_description": "The neurosurgeon cleared the patient for discharge following a successful spinal fusion, but the HHA portal flagged the referral as 'Incomplete - Missing Physician Orders'.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "N/A",
-      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
-    },
-    {
-      "event_description": "PN met with the patient's daughter to explain the post-discharge visit schedule and delivered the Caller ID V-Card tool.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "N/A",
-      "ai_assumed_bottleneck": "None"
-    },
-    {
-      "event_description": "The family notified the PN that the DME vendor delivered a standard walker instead of the ordered hospital bed required for recovery.",
-      "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "DME_Delivery_Failure"
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
     },
     {
-      "event_description": "PN flagged the equipment discrepancy to the Social Worker and documented the family's refusal to discharge until the bed was present.",
+      "event_description": "The patient's son expressed frustration during a bedside visit, stating that the facility told him everything was sent, yet the HHA claimed they had no record of the wound care instructions.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "N/A",
-      "ai_assumed_bottleneck": "Family_Caregiver_Panic"
+      "service_adoption_impact": "Negative",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
     },
     {
-      "event_description": "Social Worker confirmed the correct bed was delivered; PN verified HHA acceptance in the portal and scheduled the first Medical Assistant visit.",
+      "event_description": "The Social Worker confirmed that the orders were sitting in the surgeon's 'outbox' and had not been faxed to the intake department of the agency.",
       "clinical_impact": "Improves",
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
-      "edd_delta": "N/A",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Bureaucratic"
+    },
+    {
+      "event_description": "The patient arrived home via wheelchair van, and the Medical Assistant completed the first incentive-triggering visit within 18 hours of discharge.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
       "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The patient's family is confused about which agency is providing the hospital bed.",
-      "action_taken": "Educated the family on the role of the Social Worker in DME procurement and advised them to direct logistics questions to the facility SW.",
-      "intent_category": "Educate"
-    },
-    {
-      "situation": "The HHA portal shows the referral is still 'Pending' 24 hours before the scheduled discharge.",
-      "action_taken": "Flagged the HHA acceptance stall to the Social Worker in Atlantis and waited for a status update.",
+      "situation": "The Atlantis portal shows the HHA status as 'Pending' despite the patient being medically cleared for discharge.",
+      "action_taken": "Flagged the 'Missing HHA Orders' status to the Social Worker and documented the delay in the Atlantis wait-status timeline.",
       "intent_category": "Flag"
     },
     {
-      "situation": "The patient expresses concern about how the Medical Assistant will access the home for the first visit.",
-      "action_taken": "Verified the home entry instructions with the daughter and documented the gate code in the Atlantis visit notes.",
+      "situation": "The family is confused by contradictory information from the facility and the HHA regarding the discharge date.",
+      "action_taken": "Educated the family on the requirement for signed surgeon orders before the HHA can legally begin services at home.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The patient's contact information in the facility system is outdated.",
+      "action_taken": "Verified the correct phone number and address during a bedside meeting and audited the Atlantis demographics for accuracy.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "Document the DME delivery failure in the Atlantis transition log and wait for the Social Worker to provide a new delivery confirmation from the vendor.",
-      "rationale": "This respects the professional boundary by allowing the Social Worker to handle vendor-specific logistics while keeping the clinical record updated."
+      "description": "Wait for the Social Worker to finish their daily rounds and check the fax confirmation log before updating the family on the discharge status.",
+      "rationale": "This respects the SW's ownership of the clinical documentation process and avoids premature updates that could be contradicted by the facility's internal logs."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "Verify the family's readiness sentiment following the equipment delay and flag the specific safety concerns to the Social Worker to determine if the discharge date needs to be adjusted.",
-      "rationale": "The PN acts as a liaison by identifying the family's anxiety and relaying it to the decision-maker (SW) without interfering in the vendor's operations."
+      "description": "Check the Atlantis portal for HHA acceptance status, flag the missing order delay to the Social Worker via the internal dashboard, and conduct a sentiment check with the family to address their anxiety about the scheduling gap.",
+      "rationale": "The PN uses liaison tools (Portal, Atlantis, Education) to identify the barrier and support the family without interfering in the vendor or clinical workflow."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "Contact the DME vendor's intake department directly to investigate the cause of the delivery error and negotiate an expedited drop-off time for the hospital bed.",
-      "rationale": "This is an overstep because it violates the No-Vendor Rule and uses 'Fixer' verbs to resolve a logistical issue that belongs to the Social Worker."
+      "description": "Call the neurosurgeon's office directly to request that they immediately fax the home health orders to the HHA so the patient doesn't miss their discharge window.",
+      "rationale": "While this appears to be strong advocacy to ensure a successful transition, it violates the rule against contacting medical providers or handling clinical documentation, which is strictly the Social Worker's domain."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

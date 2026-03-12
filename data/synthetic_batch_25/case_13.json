@@ -1,78 +1,86 @@
 {
-  "role_delineation_check": "The Social Worker is responsible for managing the referral to the Home Health Agency and coordinating the scheduling of the required home safety assessment with the vendor; the Patient Navigator's role is strictly to audit demographic accuracy in Atlantis, educate the family on the Healing Partners program to ensure caller ID recognition via the V-Card, and flag the pending assessment status to the Social Worker when it delays the transition.",
-  "narrative_summary": "Mr. Harrison, a 79-year-old recovering from a right below-the-knee amputation, was clinically ready for discharge but faced a transition barrier due to a pending home safety assessment required for his wheelchair mobility. The discharge plan stalled as the Home Health Agency could not confirm a start-of-care date without the environmental check, leading to increased anxiety for his daughter. The Patient Navigator acted as a liaison by documenting the family's concerns, educating them on the transition process, and flagging the logistical delay in Atlantis to the Social Worker to ensure the first home visit remained a priority once the barrier was cleared.",
+  "role_delineation_check": "The Social Worker manages the family mediation, discharge destination decision, and HHA selection, while the Patient Navigator verifies demographic accuracy in Atlantis, monitors HHA acceptance via the portal, and flags caregiver anxiety levels to the Social Worker to trigger necessary care conferences.",
+  "narrative_summary": "Arthur, an 88-year-old recovering from bilateral total knee arthroplasty, faced a discharge standstill when his local daughter expressed severe anxiety about his ability to navigate his home safely. While Arthur was clinically stable and eager to return to his familiar environment, his daughter\u2019s fear of managing his mobility needs created a significant sentiment gap that threatened to pivot the case to long-term care. The Patient Navigator acted as a liaison by documenting these concerns in Atlantis, providing the family with clear expectations for the first day of home services, and flagging the training gap to the Social Worker to ensure a supported transition.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "Audited the Atlantis referral queue against the facility face sheet. Discovered a discrepancy in the primary contact number for the patient's daughter; updated Atlantis with the correct mobile number to ensure the Medical Assistant can reach the family for the first home visit. Verified the discharge address is consistent with the location requested for the home safety evaluation.",
+  "demographic_audit_note": "Audited the Atlantis referral against the facility face sheet; found the primary phone number was listed as Arthur\u2019s disconnected landline and updated it to his daughter\u2019s mobile number. Verified the discharge address matches the current residence in the zip code service area for the preferred HHA.",
   "home_vs_ltc_goal": "Home",
-  "v_card_flyer_status": "Delivered the program flyer to the patient's bedside. Successfully verified that the V-Card was saved in the daughter's phone, explaining that this will identify the incoming Medical Assistant call as 'Healing Partners' to prevent missed communications during the critical 24-hour post-discharge window.",
-  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call with the daughter. The family's sentiment score was documented as 'Anxious' because they had not yet received a window for the safety assessment; this sentiment and the training gap regarding wheelchair transfers were flagged to the Social Worker for intervention.",
-  "atlantis_final_sync": "Following the Social Worker's confirmation that the HHA had accepted the case after the safety assessment was completed, the discharge date and the first Medical Assistant visit were recorded in Atlantis. A physical appointment card was handed to Mr. Harrison prior to his transport home.",
+  "v_card_flyer_status": "Inserted the Healing Partners V-Card into Arthur\u2019s and his daughter\u2019s phones to ensure the 'First Visit' coordination call is recognized. Delivered the program flyer to the daughter, specifically highlighting the 24-hour window for the Medical Assistant's arrival to alleviate her concerns about being left alone without support.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call to the daughter; sentiment score improved from 3 to 7 after she confirmed the SW had arranged a physical therapy teaching session. Verified that the home is ready for Arthur\u2019s arrival and the daughter is aware of the Saturday morning first-visit window.",
+  "atlantis_final_sync": "Recorded the confirmed Friday discharge date in Atlantis; verified HHA acceptance via the portal and scheduled the Medical Assistant for the first home visit within the 24-hour incentive window.",
   "format_1_state_log": [
     {
-      "event_description": "Mr. Harrison appears in the Atlantis queue following a right BKA; initial audit reveals a 'Pending' status for the Home Health Agency referral.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Unchanged",
-      "edd_delta": "None",
-      "ai_assumed_bottleneck": "Initial Intake"
-    },
-    {
-      "event_description": "The Home Health Agency notifies the Social Worker that a home safety assessment is required before they can accept the referral, creating a logistical pause.",
+      "event_description": "Arthur\u2019s daughter expresses intense fear during a bedside visit, stating she will refuse to take him home if he cannot walk independently with the walker.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+3\u20137 Days",
-      "ai_assumed_bottleneck": "Home Safety Assessment Pending"
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
     },
     {
-      "event_description": "The patient's daughter expresses confusion to the Patient Navigator regarding why the discharge is delayed when the surgical site is healing well.",
+      "event_description": "A review of the Atlantis record reveals Arthur's out-of-state son is listed as the only POA, but the local daughter is the primary caregiver, requiring a manual demographic update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "The HHA portal shows the referral was received three days ago, but the agency has not yet assigned a nurse or confirmed a start-of-care date.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Negative",
-      "edd_delta": "None",
-      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
     },
     {
-      "event_description": "The Social Worker confirms via Atlantis that the safety assessment was successful and the HHA has moved to 'Accepted' status with a confirmed start-of-care date.",
-      "clinical_impact": "Improves",
+      "event_description": "The Social Worker facilitates a joint family meeting where the PN explains the Day 1 expectations, reducing the daughter's anxiety regarding the gap between discharge and the first nurse visit.",
+      "clinical_impact": "Unchanged",
       "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
-      "edd_delta": "None",
-      "ai_assumed_bottleneck": "None"
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "The HHA confirms acceptance for a Friday discharge but notes they cannot perform the intake visit until Monday, leaving a 72-hour monitoring gap.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20134 Days",
+      "ai_assumed_bottleneck": "Friday_Discharge_Gap"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The daughter is unaware of why the transition is delayed.",
-      "action_taken": "Educated the family on the standard requirement for a home safety assessment for amputation recovery.",
+      "situation": "Arthur's daughter is unsure if she can safely assist him with his bilateral knee precautions at home.",
+      "action_taken": "Educated the daughter on the specific sequence of the first home visit, including the MA's role in environment safety checks.",
       "intent_category": "Educate"
     },
     {
-      "situation": "Atlantis shows the HHA status as 'Pending' for three consecutive days.",
-      "action_taken": "Flagged the HHA acceptance stall to the Social Worker and documented the delay in the Atlantis timeline.",
+      "situation": "The HHA portal has remained in 'Pending' status for 48 hours despite the discharge date approaching.",
+      "action_taken": "Flagged the HHA_Acceptance_Stall to the Social Worker in Atlantis and maintained the granular wait-status timeline.",
       "intent_category": "Flag"
     },
     {
-      "situation": "The daughter expresses high anxiety about managing the wheelchair at home.",
-      "action_taken": "Verified the family's sentiment score and documented the need for a joint meeting through the Social Worker.",
+      "situation": "The daughter's anxiety about Arthur's mobility is increasing as the discharge date is set.",
+      "action_taken": "Verified the daughter's sentiment score and documented the 'Caregiver Panic' in Arthur's Atlantis profile for the SW to review.",
       "intent_category": "Verify"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The Patient Navigator observes the 'Pending' status in the Atlantis portal and waits for the Social Worker to provide an update during the next morning's huddle.",
-      "rationale": "This respects the boundary by allowing the Social Worker to manage the vendor communication without interference, following the 'Wait' default."
+      "description": "The PN documents the HHA's lack of response in the Atlantis portal and waits for the Social Worker to follow up with the agency during the morning huddle.",
+      "rationale": "This respects the SW's role as the primary contact for vendors and avoids overstepping into agency management."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The Patient Navigator verifies the family's current readiness sentiment, educates them on the necessity of the safety assessment for their protection, and flags the persistent 'Pending' status to the Social Worker to see if the discharge date needs adjustment.",
-      "rationale": "This uses liaison verbs to support the family and keep the Social Worker informed of the barrier without contacting the HHA directly."
+      "description": "The PN verifies Arthur\u2019s sentiment score with his daughter, updates Atlantis with her new mobile number, and asks the SW to include the PN in the next family discharge planning call.",
+      "rationale": "This uses liaison-only actions to gather data and educate the family without contacting vendors or making clinical recommendations."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The Patient Navigator calls the Home Health Agency intake coordinator to ask for the results of the safety assessment and requests they expedite the start-of-care date so the Medical Assistant can be scheduled.",
-      "rationale": "This violates the No-Vendor Rule and the Verb Filter by attempting to coordinate logistics and investigate vendor delays directly."
+      "description": "The PN calls the HHA intake department to explain that the family is anxious and asks if they can move the nurse's start-of-care visit to Saturday instead of Monday.",
+      "rationale": "Directly contacting the HHA to negotiate scheduling or clinical visits is a violation of the No-Vendor Rule and interferes with the SW's coordination."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

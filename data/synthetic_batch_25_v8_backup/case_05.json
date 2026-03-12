@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages all vendor relationships, including home health agency selection and resolving scheduling failures, while the Patient Navigator audits demographic data in Atlantis, educates the family on post-discharge expectations, and flags any service gaps to the Social Worker for resolution.",
+  "narrative_summary": "78-year-old Martha Bennett, recovering from a congestive heart failure exacerbation, faced a critical transition hurdle when her assigned home health agency failed to arrive for the scheduled start-of-care visit. The resulting confusion left her family uncertain about managing her complex medication regimen and considering a return to the hospital. The Patient Navigator verified the family's rising anxiety, flagged the no-show to the Social Worker for immediate resolution, and ensured the first Medical Assistant visit was rescheduled once the home health provider confirmed their arrival.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the facility face sheet against the Atlantis record; identified a discrepancy where the primary contact phone number was transposed. Verified the correct number with the patient's daughter and updated the Atlantis demographic fields to ensure the home team has accurate contact information.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer to the patient and successfully inserted the V-Card into her daughter's phone. Educated the family that the V-Card is a Caller ID tool so they recognize incoming calls from the Medical Assistant, ensuring they do not ignore the transition check-in.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pre-discharge pulse call; the daughter expressed a sentiment score of 'Anxious' regarding the new diuretic schedule. Verified that the family had received their discharge paperwork and reminded them of the first-visit window for the following day.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date and the initial Medical Assistant visit window in Atlantis after the Social Worker verified the home health agency was 'In Place'.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient appears in Atlantis queue for CHF transition support; PN begins audit of clinical history and demographic data.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "During a bedside visit, the patient's daughter expresses high anxiety about managing the scale and daily weight logs at home.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The home health agency nurse fails to arrive for the scheduled Day 1 start-of-care visit; the daughter calls the PN in a state of distress.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Day 1 Home No-Show"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient's phone number in Atlantis does not match the facility face sheet.",
+      "action_taken": "Audit face sheet and document the corrected contact information in Atlantis.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Family expresses fear about identifying worsening CHF symptoms at home.",
+      "action_taken": "Educate the family on the program benefits and the role of the Medical Assistant in monitoring vital signs.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The home health agency did not show up for the first visit.",
+      "action_taken": "Flag the HHA no-show to the Social Worker and document the family's anxiety level in Atlantis.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Document the reported home health no-show in the Atlantis timeline and wait for the Social Worker to post an update regarding the rescheduled agency visit.",
+      "rationale": "This respects the SW boundary by allowing the professional responsible for vendor management to handle the logistics without interference."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Flag the HHA no-show to the Social Worker in Atlantis and immediately call the family to verify their safety and educate them on using the V-Card contact for non-clinical support while the SW resolves the schedule.",
+      "rationale": "This acts as a liaison by keeping the family engaged and the SW informed without the PN contacting the vendor directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the Home Health Agency intake coordinator to investigate why the nurse missed the appointment and negotiate a new arrival time to ensure the Medical Assistant visit can proceed.",
+      "rationale": "This violates the No-Vendor rule and the Fixer verb constraint by attempting to solve a logistical issue that belongs to the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

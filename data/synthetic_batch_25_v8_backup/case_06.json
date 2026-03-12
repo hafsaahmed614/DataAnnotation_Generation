@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for identifying the home health agency, securing insurance authorization, and managing all vendor-facing logistics, while the Patient Navigator's role is strictly to verify Atlantis demographic data, educate the patient on the post-discharge visit schedule, and flag communication barriers or family anxiety to the Social Worker.",
+  "narrative_summary": "Arthur, a 65-year-old patient recovering from a COPD exacerbation, was nearing discharge but faced a significant transition risk when the Patient Navigator was unable to reach his daughter for the mandatory 24-hour pre-discharge pulse call. This communication disconnect created a fog of uncertainty regarding the family's readiness to manage his nebulizer treatments at home. The Patient Navigator documented the disconnect in Atlantis and flagged the situation to the Social Worker, who successfully re-established contact and confirmed the home health agency was in place, allowing the Navigator to finalize the first home visit schedule.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit, I cross-referenced the Atlantis record against the facility Face Sheet and identified a transposition error in the patient's DOB (listed as 1958 instead of 1959). I also verified that the primary contact number in the system belonged to the patient's landline, while the daughter's mobile number was the preferred contact for the transition; I documented these corrections in Atlantis to ensure the Home Health Agency has accurate data for their intake process.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "I delivered the program flyer to the patient's bedside and explained the role of the Medical Assistant during the first 24 hours at home. I verified that the patient's daughter successfully saved the V-Card into her contacts, ensuring that future calls from our clinical team are recognized on her Caller ID as 'Healing Partners' rather than an unknown number.",
+  "pre_dc_pulse_call": "Attempted the 24-hour pre-discharge pulse call to the daughter's mobile number on three separate occasions, but the calls went straight to voicemail. I documented the 'Pre-DC_Call_Disconnect' in Atlantis and flagged the lack of sentiment verification to the Social Worker, as I could not confirm if the family felt ready for the transition or if the scheduled delivery of the home oxygen concentrator had been verified by the household.",
+  "atlantis_final_sync": "After the Social Worker confirmed via the portal that the HHA was 'Accepted' and the home oxygen was delivered, I entered the confirmed discharge date of 10/26 and the first MA visit date of 10/27 into Atlantis. I handed the physical appointment card to the patient, clearly noting the time window for the Medical Assistant's arrival.",
+  "format_1_state_log": [
+    {
+      "event_description": "The patient appeared in the Atlantis queue with a confirmed COPD exacerbation diagnosis and a discharge goal of home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "N/A"
+    },
+    {
+      "event_description": "The Patient Navigator identified a DOB discrepancy and an outdated primary contact number during the demographic audit against the facility face sheet.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Atlantis_Data_Lag"
+    },
+    {
+      "event_description": "Multiple attempts to reach the family for the mandatory 24-hour pre-discharge pulse call were unsuccessful, resulting in a disconnected transition plan.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Pre-DC_Call_Disconnect"
+    },
+    {
+      "event_description": "The Social Worker re-established contact with the daughter and confirmed the HHA was accepted and ready for the start-of-care visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "N/A"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Initial demographic data in Atlantis did not match the facility face sheet for the patient's date of birth and primary phone number.",
+      "action_taken": "Verified the face sheet details and documented the corrections in the Atlantis patient profile.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The patient's daughter was unreachable for the 24-hour pulse call, leaving the home readiness sentiment unknown.",
+      "action_taken": "Flagged the communication disconnect to the Social Worker and requested they verify home readiness before proceeding.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family expressed confusion during a bedside meeting about how the MA visit differs from the HHA nurse's visit.",
+      "action_taken": "Educated the patient and family on the specific program benefits and the timing of the first 24-hour MA visit.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to return from their unit rounds to provide an update on the daughter's availability and the HHA's acceptance status in the portal.",
+      "rationale": "This respects the boundary of the Social Worker's role in managing family communication and vendor status without the PN attempting to intervene in the disconnect."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Document the failed call attempts in Atlantis, flag the 'Pre-DC_Call_Disconnect' to the Social Worker, and ask the Social Worker to verify if the family still intends to follow the home discharge plan.",
+      "rationale": "This uses liaison verbs (Document, Flag, Ask) to alert the appropriate professional to a barrier while maintaining the PN's role as a transition monitor."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the HHA intake coordinator directly to see if they have a secondary contact number for the daughter or if they have already successfully scheduled the start-of-care visit.",
+      "rationale": "This is an overstep because it violates the No-Vendor Rule and attempts to resolve a communication gap by contacting the HHA directly instead of working through the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

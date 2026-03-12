@@ -16,8 +16,8 @@ from supabase import create_client
 load_dotenv()
 
 SYNTHETIC_DIR = "./data/synthetic_batch_25"
-BATCH_ID = "synthetic_batch_25_v8"
-TABLE_NAME = "synthetic_cases_v8"
+BATCH_ID = "synthetic_batch_25_v9"
+TABLE_NAME = "synthetic_cases_v9"
 
 
 def main():

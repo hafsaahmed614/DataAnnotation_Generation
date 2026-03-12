@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The social worker is responsible for all vendor outreach, agency selection, and clinical discharge planning, while the patient navigator focuses on auditing Atlantis demographic data, educating the family on the transition process, and flagging sentiment concerns or information gaps to the social worker.",
+  "narrative_summary": "An 88-year-old male recovering from a bilateral total knee arthroplasty faced a fragmented transition when the facility discharge huddle proceeded without the navigator's involvement. This communication silo left the navigator unaware of an updated discharge timeline, causing significant family anxiety regarding the timing of home support. By flagging the information gap to the social worker and reinforcing the home care schedule with the family, the navigator successfully bridged the communication void and ensured the first home visit occurred as planned.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified DOB and address against the facility face sheet; identified and corrected a typo in the primary caregiver's mobile number in the Atlantis queue to ensure transition communication was not interrupted.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "Delivered the program flyer and facilitated the insertion of the digital V-card into the patient's phone to ensure all future calls from the medical assistant are recognized via Caller ID.",
+  "pre_dc_pulse_call": "Conducted a pulse call 24 hours prior to discharge; the patient's spouse expressed anxiety about managing bilateral mobility, which was documented as a 'Reluctant' sentiment score and flagged to the social worker.",
+  "atlantis_final_sync": "Synchronized the finalized discharge date and the confirmed first home visit time in the Atlantis portal following social worker confirmation of agency readiness.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient appears in Atlantis queue following bilateral TKA; navigator audits demographics against the face sheet and corrects a contact number discrepancy.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "Data Entry Error"
+    },
+    {
+      "event_description": "Navigator visits the bedside to deliver the program flyer and explain Day 1 expectations, but learns from the family that a discharge meeting occurred earlier that morning without navigator notification.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "Navigator flags the information gap to the social worker in Atlantis, requesting an update on the discharge timeline and the selected home health agency status.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "Internal Communication Lag"
+    },
+    {
+      "event_description": "Social worker confirms the home health agency has accepted the case for the following day; navigator verifies the portal status and prepares for the pre-discharge call.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "Navigator completes the 24-hour pulse call to confirm home readiness and provides the patient with a physical appointment card for the first medical assistant visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The navigator is excluded from the interdisciplinary discharge huddle where the TKA recovery plan was finalized.",
+      "action_taken": "Flagged the communication silo to the social worker and requested a summary of the transition timeline.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's family expresses concern about the timing of the first home nursing visit due to the patient's limited mobility.",
+      "action_taken": "Educated the family on the 24-hour post-discharge visit window and what to expect during the arrival of the medical assistant.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal shows a pending status for the home health agency acceptance despite the imminent discharge.",
+      "action_taken": "Verified the acceptance status with the social worker and documented the pending window in the transition log.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the social worker to update the discharge notes in Atlantis and defer all family education until the official plan is documented in the system.",
+      "rationale": "This respects the social worker's role as the primary source of truth for the discharge plan and avoids providing the family with potentially conflicting information."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Ask the social worker for a brief summary of the huddle outcomes and verify the family's readiness sentiment through a bedside liaison visit.",
+      "rationale": "This allows the navigator to maintain situational awareness and address family anxiety without overstepping into the logistical or clinical domain of the social worker."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency's intake coordinator to confirm they have the updated discharge date and ask for the name of the nurse assigned to the bilateral TKA case.",
+      "rationale": "While this might seem like proactive coordination, it directly violates the No-Vendor Rule and bypasses the social worker's responsibility for agency communication."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

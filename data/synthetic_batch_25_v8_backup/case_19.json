@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for identifying the home health agency and managing the referral logistics for the holiday weekend, while the Patient Navigator focuses on auditing patient data in Atlantis, educating the family on the Healing Partners caller ID, and flagging caregiver sentiment to the Social Worker for intervention.",
+  "narrative_summary": "A 69-year-old female recovering from a diabetic foot ulcer faced a significant transition barrier when her discharge was scheduled for the Friday afternoon preceding a major holiday weekend. The reduced holiday staffing at the local home health agency created a 72-hour gap where no professional wound care was initially available, causing the family high levels of anxiety. The Patient Navigator acted as a liaison by documenting the family's concerns and flagging the coverage gap to the Social Worker, eventually ensuring that the first home visit was locked for the Monday holiday to prevent a clinical setback.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audit of the facility face sheet against the Atlantis queue revealed a mismatch in the primary contact's phone number; the daughter's mobile was listed correctly on the face sheet but was missing a digit in Atlantis. Verified the patient's date of birth and confirmed the home address is within the service radius for the Medical Assistant.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "The V-Card was successfully inserted into the daughter's smartphone to ensure the Healing Partners caller ID is recognized for the post-discharge follow-up. A program flyer was delivered to the bedside, and the daughter was educated on the 'Day 1' expectations, specifically what to do if the home health nurse is delayed during the holiday.",
+  "pre_dc_pulse_call": "Conducted the 24-hour pulse call with the patient's daughter. Sentiment score is currently 'Anxious' due to the three-day holiday weekend; the daughter expressed concern about her ability to manage the diabetic wound dressing without professional oversight until Monday.",
+  "atlantis_final_sync": "Recorded the discharge date of Friday and the confirmed first Medical Assistant visit for Monday in Atlantis. The delay in the first visit was flagged to the Social Worker due to the HHA holiday staffing constraint.",
+  "format_1_state_log": [
+    {
+      "event_description": "Patient appears in Atlantis queue for transition planning following diabetic wound stabilization.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Initial Data Audit"
+    },
+    {
+      "event_description": "Social Worker confirms discharge is set for Friday afternoon, immediately preceding the holiday weekend.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    },
+    {
+      "event_description": "The home health agency portal shows the referral as 'Pending' with no nurse assigned for the weekend window.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "The family verbalizes fear of managing the diabetic ulcer over the long weekend without a professional visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker confirms the home health agency has accepted the case for a Monday morning start-of-care.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Patient is discharging on a Friday with a 72-hour gap before the home health agency can perform the start-of-care visit.",
+      "action_taken": "Flagged the holiday coverage gap to the Social Worker in Atlantis and requested a status update on the HHA's holiday schedule.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter expresses high anxiety regarding the lack of professional support over the holiday weekend.",
+      "action_taken": "Documented the 'Anxious' sentiment score in Atlantis and educated the family on the specific time the Medical Assistant would arrive on Monday.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The home health agency's acceptance status is not visible in the portal two hours before the patient's scheduled departure.",
+      "action_taken": "Verified the status with the Social Worker and waited for the facility to confirm the agency's commitment before providing the appointment card.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to provide an update on the home health agency's weekend staffing availability after the holiday weekend begins.",
+      "rationale": "This respects the boundary that the Social Worker owns all vendor and agency communication, ensuring the Navigator does not overstep into logistics."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Audit the Atlantis portal for HHA acceptance and flag the 'Anxious' family sentiment to the Social Worker to see if a bedside dressing change training session can be provided before discharge.",
+      "rationale": "This uses liaison verbs to address the family's anxiety and verify system data without contacting the HHA or performing clinical work."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency's intake coordinator directly to negotiate a Saturday morning visit and offer to fax the face sheet again to speed up the process.",
+      "rationale": "This is an overstep because it violates the No-Vendor rule and uses 'Fixer' verbs like negotiate, which interferes with the Social Worker's role."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}
