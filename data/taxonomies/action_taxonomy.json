@@ -83,6 +83,18 @@
             "Gauge family readiness without performing clinical intake",
             "Route anxiety-driven barriers to the SW for professional intervention"
           ]
+        },
+        {
+          "category": "Document_Sentiment_Only_Escalation",
+          "action_items": [
+            "Log family anxiety about medications, wound care, or home safety in Atlantis without attempting to solve the clinical issue",
+            "Escalate the documented sentiment to the SW for clinical follow-up",
+            "Do NOT provide clinical reassurance, medication guidance, or wound care instructions"
+          ],
+          "primary_intents": [
+            "Capture family concerns as data for the clinical team",
+            "Maintain the boundary between documenting sentiment and providing clinical advice"
+          ]
         }
       ]
     },
@@ -166,6 +178,30 @@
           ],
           "primary_intents": [
             "Ensure complex issues are handled by the appropriate professional"
+          ]
+        },
+        {
+          "category": "Manual_SW_Status_Inquiry",
+          "action_items": [
+            "Verbally ask the SW for an update on HHA acceptance, discharge date, or referral status because the information is not available in Atlantis",
+            "Document the SW's verbal response in Atlantis",
+            "If the SW is unavailable, log the attempt and wait — do NOT seek the information from vendors or facility systems"
+          ],
+          "primary_intents": [
+            "Obtain transition updates through human inquiry, not system assumptions",
+            "Reinforce that Atlantis is a PN documentation tool, not a live clinical feed"
+          ]
+        },
+        {
+          "category": "Clarify_MA_Scope_Focus",
+          "action_items": [
+            "When educating the family, focus exclusively on the Medical Assistant (MA) visit and the 24-hour post-discharge window",
+            "If the family asks about HHA nurse schedules, medication management, or clinical dressings, defer to the SW or facility nursing staff",
+            "Document the deferral and the family's question for the SW's awareness"
+          ],
+          "primary_intents": [
+            "Keep PN education within the MA scope boundary",
+            "Prevent the PN from inadvertently providing clinical guidance disguised as education"
           ]
         }
       ]

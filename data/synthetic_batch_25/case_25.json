@@ -1,78 +1,70 @@
 {
-  "role_delineation_check": "The Social Worker manages the clinical referral process and agency selection, while the Navigator audits the demographic and transition data in Atlantis, educates the family on the transition timeline, and highlights any data discrepancies to the clinical team.",
-  "narrative_summary": "Arthur Miller is a 70-year-old gentleman recovering from an intensive spinal fusion surgery who is eager to return home but remains deeply concerned about his post-operative medication schedule. A significant barrier emerged during the transition process when the medication and allergy data in the digital portal failed to align with the facility's physical discharge orders, creating a dangerous information gap for the incoming home health team. The Navigator identified these conflicting records during a routine data audit and immediately alerted the Social Worker to ensure the home health agency received the correct clinical directives before Arthur's arrival at home.",
+  "role_delineation_check": "In this case, the social worker is responsible for the clinical transition plan and the logistics of medical transport, while the navigator focuses on auditing patient demographics in Atlantis, educating the family on the upcoming medical assistant visit, and alerting the social worker to transport-related delays that could impact the first home visit.",
+  "narrative_summary": "Martha Jenkins, a 78-year-old patient recovering from a congestive heart failure exacerbation, faced a significant barrier when her scheduled medical transport failed to arrive on the day of her discharge. This logistical breakdown left Martha and her daughter in a state of uncertainty at the facility, fearing that the transition home would fall apart. The navigator acted as a vital liaison by documenting the family's rising anxiety, alerting the social worker to the transportation bottleneck, and ensuring that the home support team remained informed of the shifting timeline to prevent a lapse in care upon her arrival.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "I performed a side-by-side audit of the facility face sheet against the Atlantis record and confirmed Arthur's primary residence and contact number are accurate. I noted a discrepancy in the emergency contact's secondary phone number and updated the portal to ensure the home health agency can reach his son without delay.",
-  "home_vs_ltc_goal": "Home with Home Health Services",
-  "v_card_flyer_status": "During a bedside visit, I assisted Arthur in saving the Healing Partners contact card to his smartphone to ensure he recognizes our outreach. I also provided a printed flyer to his son, explaining that our medical assistant will visit within 24 hours of his return home to support his recovery.",
-  "pre_dc_pulse_call": "I reached Arthur's son 24 hours before the scheduled discharge; the family is feeling anxious due to the conflicting medication lists they received, but they remain committed to the home transition plan.",
-  "atlantis_final_sync": "The discharge date has been finalized in Atlantis, and the first home visit is now synchronized with the home health agency's confirmed arrival window.",
+  "demographic_audit_note": "I performed a comprehensive audit of Martha\u2019s record in the Atlantis portal and cross-referenced it with the facility face sheet, discovering that the primary contact number for her daughter was off by one digit. I updated the contact information in the portal to ensure the home team could successfully reach the family for the first visit.",
+  "home_vs_ltc_goal": "Home with family support",
+  "v_card_flyer_status": "I assisted Martha\u2019s daughter in saving the Healing Partners digital contact card to her phone to ensure she would recognize our calls as the primary monitoring team and provided her with the program flyer to explain the specific support available during the first twenty-four hours at home.",
+  "pre_dc_pulse_call": "I conducted the twenty-four-hour pulse call and spoke with Martha\u2019s daughter, who was visibly frustrated by the transport delay but confirmed that the home was prepared and she remained committed to the first home visit once the transport issue was resolved.",
+  "atlantis_final_sync": "I recorded the updated discharge date and the confirmed first home visit window in Atlantis after the social worker provided a verbal update that a second transport company had been secured.",
   "format_1_state_log": [
     {
-      "event_description": "During a review of the transition portal, I noticed that the patient's allergy to Penicillin was missing from the digital referral sent to the home health agency.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
+      "event_description": "The navigator noticed that no discharge date or transport confirmation had been entered into the Atlantis transition plan and reached out to the social worker for a status update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
       "edd_delta": "+1\u20133 Days",
-      "ai_assumed_bottleneck": "Clinical data discrepancy between facility records and the home health intake portal."
+      "ai_assumed_bottleneck": "Lack of transport confirmation in the portal"
     },
     {
-      "event_description": "I alerted the Social Worker to the missing allergy information and documented the specific mismatch in the Atlantis communication log.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "Waiting for Social Worker to re-send corrected clinical orders to the agency."
-    },
-    {
-      "event_description": "Arthur's son expressed confusion over the pain management plan because the portal showed a different frequency than the bedside nurse's instructions.",
+      "event_description": "The navigator was informed by the family that the transport van was a no-show; the navigator documented the family's high anxiety levels and alerted the social worker to the breakdown in the transition plan.",
       "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20132 Days",
-      "ai_assumed_bottleneck": "Family anxiety driven by inconsistent clinical communication."
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Transport vendor failure"
     },
     {
-      "event_description": "The Social Worker confirmed that the updated medication and allergy lists were successfully uploaded and accepted by the home health agency portal.",
+      "event_description": "Following a verbal update from the social worker that a new transport window was set for the following morning, the navigator updated the Atlantis portal and confirmed the family's availability for the first visit.",
       "clinical_impact": "Improves",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
+      "edd_delta": "0",
       "ai_assumed_bottleneck": "None"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The home health agency's digital record for the patient showed an outdated medication list from a previous admission.",
-      "action_taken": "Highlighted the clinical data mismatch in the Atlantis portal and notified the Social Worker of the need for an updated fax to the agency.",
-      "intent_category": "Flag"
-    },
-    {
-      "situation": "Arthur was unsure if the home health nurse would be aware of his recent spinal fusion precautions.",
-      "action_taken": "Educated the patient on how his surgical notes are transmitted to the home team and verified that his mobility restrictions were documented in the transition summary.",
+      "situation": "The family expressed confusion regarding when the home health nurse would arrive to manage Martha's medications.",
+      "action_taken": "The navigator clarified that their focus is on the medical assistant's visit and deferred all specific medication and nursing schedule questions to the social worker.",
       "intent_category": "Educate"
     },
     {
-      "situation": "The patient's phone number in Atlantis was missing the final digit, preventing the home health agency from making the initial contact.",
-      "action_taken": "Verified the correct contact information against the facility's latest records and corrected the demographic field in the portal.",
+      "situation": "The Atlantis portal showed a pending status for the home health referral without an assigned agency.",
+      "action_taken": "The navigator verbally asked the social worker for the name of the accepted agency to ensure the internal records were accurate before discharge.",
       "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter expressed significant fear that Martha would have another heart failure episode if the transport delay lasted overnight.",
+      "action_taken": "The navigator documented the family's concerns regarding the delay and alerted the social worker to the need for a clinical reassurance call.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The Navigator notes that the home health agency has not yet updated the portal with a confirmed start-of-care date despite the corrected data being sent. The Navigator documents this waiting period in the Atlantis timeline and monitors the portal for the Social Worker's next update.",
-      "rationale": "This follows the wait default and allows the Social Worker to manage the vendor relationship while maintaining an auditable trail of the delay."
+      "description": "The navigator notes that the transport van has not arrived by the scheduled time and waits for the social worker to post an update to the transition plan in Atlantis.",
+      "rationale": "This respects the social worker's ownership of vendor logistics and prevents the navigator from interfering in a situation they cannot directly control."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The Navigator identifies that the medication dosages in the portal do not match the discharge summary. They create a detailed note in Atlantis outlining the specific discrepancies and ask the Social Worker to confirm which list the home health agency should follow before the patient leaves the facility.",
-      "rationale": "This acts as a data audit and liaison support without the Navigator attempting to make clinical decisions or contacting the agency directly."
+      "description": "The navigator asks the social worker for a verbal update on the transport status, documents the family's anxiety in the portal, and educates the daughter on what to expect during the first twenty-four hours once Martha is home.",
+      "rationale": "This allows the navigator to support the family and keep the portal data current without overstepping into vendor management or clinical decision-making."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The Navigator calls the home health agency's intake department to explain the medication errors and verbally provides the correct dosages to the intake coordinator to speed up the admission process.",
-      "rationale": "This violates the no-vendor rule and involves the Navigator in communicating clinical orders directly to a provider, which is outside their professional scope."
+      "description": "The navigator calls the medical transport company directly to find out why the van is late and attempts to schedule a new pickup time to ensure the discharge happens today.",
+      "rationale": "This violates the no-vendor rule and interferes with the social worker's established relationship and responsibility for coordinating facility-to-home transport."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

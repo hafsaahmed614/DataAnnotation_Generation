@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for faxing the physician's orders and confirming agency acceptance, whereas the Navigator audits the Atlantis portal for documentation gaps, educates the family on transition expectations, and flags administrative bottlenecks.",
+  "narrative_summary": "Arthur, a 79-year-old gentleman recovering from a lower limb amputation, was eager to return home to his familiar surroundings. However, his transition was delayed when the home health agency noted they had not received the necessary clinical orders from the facility. The Navigator identified this documentation gap in the portal and alerted the Social Worker while providing Arthur\u2019s family with clear guidance on the next steps for his home care.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Arthur's primary residence and his daughter's contact number against the facility face sheet; noted a digit transposition in the phone number within the Atlantis portal and requested a correction to ensure the home team could reach the family.",
+  "home_vs_ltc_goal": "Home with specialized wound and physical therapy services",
+  "v_card_flyer_status": "The Navigator assisted Arthur\u2019s daughter in saving the Healing Partners contact card to her phone to ensure she would recognize incoming coordination calls and provided a physical flyer detailing the first-day expectations for the home nursing visit.",
+  "pre_dc_pulse_call": "Conducted a check-in call with the family twenty-four hours prior to the anticipated discharge; the daughter expressed significant anxiety regarding the lack of a confirmed start-of-care time due to the missing orders.",
+  "atlantis_final_sync": "Logged the updated discharge date and noted that the first home visit would be scheduled once the Social Worker confirmed the agency had received all required documentation.",
+  "format_1_state_log": [
+    {
+      "event_description": "Arthur began his rehabilitation journey following surgery; the Navigator audited his records and confirmed that his contact information was correctly staged for the home team.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "During a portal audit, the Navigator observed that the home health agency had not yet confirmed the referral due to missing physician orders; this discrepancy was immediately highlighted for the Social Worker's attention.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2-4 Days",
+      "ai_assumed_bottleneck": "Missing physician orders at the agency"
+    },
+    {
+      "event_description": "The Social Worker confirmed that the orders were re-sent to the provider; the Navigator updated the internal timeline and continued to monitor the portal for an acceptance status.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The home health agency portal showed a pending status because the clinical orders were missing.",
+      "action_taken": "Noted the documentation gap in the Atlantis portal and notified the Social Worker to facilitate the transfer of the required paperwork.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family expressed confusion about why the discharge was being held up by paperwork.",
+      "action_taken": "Explained the transition process to the family and reassured them that the clinical team was working to finalize the home care schedule.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The discharge date was moved back by two days to allow for the orders to be processed.",
+      "action_taken": "Updated the tracking log in Atlantis to reflect the new timeline and maintained a wait status for agency confirmation.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator documents the missing order status in the portal and waits for the Social Worker to confirm receipt of the faxed documents before updating the family.",
+      "rationale": "This approach respects the Social Worker's ownership of vendor communication and clinical document transmission while maintaining an accurate record."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator identifies the missing orders in the system, alerts the Social Worker to the bottleneck, and conducts a call with the family to explain how these requirements ensure a safe start of care at home.",
+      "rationale": "This facilitates the transition by acting as a bridge between the facility and the home while strictly adhering to the no-vendor contact rule."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency intake department directly to ask if they can start the care based on verbal orders while they wait for the facility to fax the signed paperwork.",
+      "rationale": "This violates the rule against direct vendor contact and attempts to bypass official clinical and administrative protocols."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

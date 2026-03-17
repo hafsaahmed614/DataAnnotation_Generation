@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for coordinating with the home health agency and the inspector for the home walkthrough, while the Navigator audits the Atlantis demographics, educates the family on the safety requirements, and flags the pending status to ensure the transition plan remains visible to the clinical team.",
+  "narrative_summary": "Arthur Vance, a 79-year-old gentleman recovering from a lower-limb amputation, has reached his physical therapy milestones and is eager to return to his long-term residence. His transition is currently paused while the home health agency completes a mandatory safety assessment to ensure his home environment can safely accommodate his new mobility equipment. The Navigator acted as a supportive liaison by explaining the necessity of this inspection to Arthur\u2019s family and documenting their readiness levels in the Atlantis portal to keep the Social Worker informed of the delay.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator audited the Atlantis record against the facility face sheet and corrected a digit in the primary caregiver's phone number while verifying that the discharge address matches the location where the safety assessment is scheduled.",
+  "home_vs_ltc_goal": "Home with specialized wound care and physical therapy services.",
+  "v_card_flyer_status": "The Navigator assisted Arthur\u2019s son in saving the Healing Partners digital contact card to ensure future check-ins are recognized and provided a physical flyer outlining what to expect during the first week of home care.",
+  "pre_dc_pulse_call": "During the 24-hour readiness call, the family confirmed they were waiting for the final safety clearance; the Navigator documented their high level of engagement and their desire to proceed as soon as the home health agency provides the green light.",
+  "atlantis_final_sync": "The Navigator recorded the confirmed discharge date in Atlantis following the safety clearance and noted the coordinated time for the first home clinical visit.",
+  "format_1_state_log": [
+    {
+      "event_description": "The home health agency updated the portal indicating that the referral is on hold pending a formal home safety evaluation and wheelchair clearance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Logistical"
+    },
+    {
+      "event_description": "During a progress check, Arthur's son expressed frustration that the home assessment was not scheduled yet; the Navigator documented this shift in family sentiment for the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Family/Caregiver"
+    },
+    {
+      "event_description": "The Navigator observed in the Atlantis portal that the safety assessment was completed and the agency has now moved the referral to an accepted status.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Operational"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The home health agency required a safety inspection before Arthur could be discharged from the facility.",
+      "action_taken": "The Navigator alerted the Social Worker to the pending requirement and updated the tracking log in Atlantis to reflect the waiting period.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur\u2019s family was confused about why the discharge was delayed for a home walkthrough.",
+      "action_taken": "The Navigator explained how the safety assessment prevents readmissions by ensuring the home is ready for a wheelchair and mobility aids.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The contact information for the secondary caregiver was missing from the referral portal.",
+      "action_taken": "The Navigator verified the correct phone number with the facility staff and updated the demographic field in Atlantis.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator monitors the Atlantis portal for updates on the safety assessment and waits for the Social Worker to confirm the inspection date with the agency.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship and logistical coordination with the home health agency."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator meets with the family to verify their readiness, explains the importance of the safety evaluation, and flags the pending portal status to the Social Worker to ensure the delay is tracked.",
+      "rationale": "This focuses on data auditing, family education, and liaison reporting without contacting external vendors."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department to ask for the inspector's name and then calls the inspector directly to see if the walkthrough can be moved to an earlier time.",
+      "rationale": "This violates the no-vendor rule and interferes with the logistical duties of the facility Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

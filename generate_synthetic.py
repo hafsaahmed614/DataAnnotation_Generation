@@ -41,7 +41,7 @@ N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 
 
-# ── Pydantic Output Schema (V10: Prose-Only Liaison) ─────────────────────────
+# ── Pydantic Output Schema (V11: Manual Inquiry + MA-Only Scope) ──────────────
 
 class RLScenarioOption(BaseModel):
     ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(
@@ -166,8 +166,8 @@ Rules for narrative_summary:
 
 Rules for format_1_state_log (Timeline):
 9. Each entry must be a dict with keys: event_description, clinical_impact (Improves/Worsens/Unchanged), environmental_impact (Improves/Worsens/Unchanged), service_adoption_impact (Positive/Negative/Unchanged), edd_delta (from Friction Taxonomy), ai_assumed_bottleneck.
-10. event_description must flow like a real-time progress note. Example: "During a weekly check-in, the daughter expressed concerns about her mother's mobility; the Navigator noted this shift in sentiment for the upcoming discharge planning session."
-11. Focus on transition friction from the patient's perspective. NEVER use taxonomy keys or underscores in event_description.
+10. event_description must flow like a real-time progress note. Example: "The Navigator noticed that no update had been posted to the transition plan in Atlantis for 48 hours and checked in with the Social Worker to see if the discharge goal had shifted."
+11. Focus on transition friction from the patient's perspective. The PN obtains updates by ASKING the SW, not by reading system statuses. NEVER use taxonomy keys or underscores in event_description.
 
 Rules for format_2_triples (Situation → Action → Intent):
 12. Each entry must be a dict with keys: situation, action_taken, intent_category (Verify/Educate/Flag).
@@ -176,9 +176,9 @@ Rules for format_2_triples (Situation → Action → Intent):
 Rules for format_3_rl_scenario:
 14. MUST contain exactly THREE options: one Passive, one Proactive, one Overstep.
 15. All descriptions must be written in natural professional prose. No taxonomy keys or underscores.
-   - "Passive" = STRATEGIC DEFERRAL: PN steps back, lets SW handle. Boundary-respecting, not lazy.
-   - "Proactive" = LIAISON/EDUCATION: PN verifies data in Atlantis, educates family on Day 1 expectations, checks family sentiment, flags concerns to SW, conducts pulse call. Uses only Liaison verbs. Never contacts vendors.
-   - "Overstep" = PN contacts vendors directly (calls HHA intake, DME vendor, transport), uses Fixer verbs, performs clinical intakes, or schedules MA before SW confirms HHA. Must sound like good advocacy to a rookie.
+   - "Passive" = STRATEGIC DEFERRAL: PN steps back, waits for SW. Boundary-respecting, not lazy.
+   - "Proactive" = MANUAL INQUIRY / MA-SPECIFIC EDUCATION: PN verbally asks SW for status update, educates family on MA visit and 24-hour window, checks family sentiment, flags concerns to SW, conducts pulse call. Defers HHA logistics to SW. Uses only Liaison verbs. Never contacts vendors.
+   - "Overstep" = PN contacts vendors directly (calls HHA intake, DME vendor, transport), uses Fixer verbs, performs clinical intakes, handles medication questions, or schedules MA before SW confirms HHA. Must sound like good advocacy to a rookie.
 
 Rules for case_outcome:
 16. "Success_Home_with_First_Visit" = patient discharges home AND first home visit completed. Success is triggered ONLY by a completed first visit. If the PN oversteps to make it happen, it is an authenticity failure.
@@ -259,8 +259,8 @@ def main():
         "The No-Vendor Rule: You never call HHAs, DME, or Transport. "
         "You only communicate with the Family and the Social Worker.\n\n"
 
-        "The 'Wait' Default: When a vendor causes a delay, you document the status "
-        "from the portal and wait for the SW to act.\n\n"
+        "The 'Wait' Default: When an update is missing, the PN flags the 'Information Silo' "
+        "and waits for the SW to provide a verbal update.\n\n"
 
         "The Verb Filter: Use the intent of Liaison verbs (Verify, Document, Flag, Educate, Ask) "
         "to write professional narratives.\n\n"
@@ -268,11 +268,33 @@ def main():
         "HHA-First Rule: Do not discuss specific Medical Assistant (MA) visit times "
         "until the SW confirms the HHA is 'Accepted' and 'In Place.'\n\n"
 
+        "=== THE 'MANUAL INQUIRY' MANDATE (Fixing the Atlantis Illusion) ===\n\n"
+
+        "No Crystal Ball: The PN cannot see live HHA notes, SW clinical notes, or 'Pending' "
+        "referral details in Atlantis. Atlantis is for PN documentation ONLY.\n\n"
+
+        "Information Trigger: If the PN needs an update, they must ASK the Social Worker (SW) "
+        "or hear it from the family. The PN never 'notices a status change' in a system they "
+        "cannot access.\n\n"
+
+        "The 'Lack of Update' Signal: Instead of 'noticing a pending status,' the PN should "
+        "'notice that no discharge date has been entered in Atlantis yet' and then reach out "
+        "to the SW for a verbal update.\n\n"
+
+        "=== THE 'MA-ONLY' EDUCATION RULE (Fixing Scope Creep) ===\n\n"
+
+        "Strict Focus: When the PN educates the family, they must focus 100% on the Medical "
+        "Assistant (MA) visit and the 24-hour post-discharge window.\n\n"
+
+        "HHA Deferral: The PN must explicitly defer questions about HHA nurse schedules, "
+        "medication lists, or surgical dressings to the SW or the facility nursing staff.\n\n"
+
         "=== THE PROSE-ONLY MANDATE ===\n\n"
 
         "NO UNDERSCORES: Under no circumstances should taxonomy keys with underscores "
-        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score) appear in the narrative_summary, "
-        "action_taken, description, or any other text field. These keys are for internal logic ONLY.\n\n"
+        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score, Portal_Information_Silo) appear in the "
+        "narrative_summary, action_taken, description, or any other text field. These keys are for "
+        "internal logic ONLY.\n\n"
 
         "NATURAL INTEGRATION: Translate every taxonomy action into a professional sentence.\n"
         "INCORRECT: 'The PN will Verify_Sentiment_Score and document it.'\n"
@@ -291,8 +313,8 @@ def main():
         "Do NOT write a list of PN tasks.\n\n"
 
         "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must flow like a real-time progress note.\n"
-        "Example: 'During a weekly check-in, the daughter expressed concerns about her mother's mobility; "
-        "the Navigator noted this shift in sentiment for the upcoming discharge planning session.'\n\n"
+        "Example: 'The Navigator noticed that no update had been posted to the transition plan in Atlantis "
+        "for 48 hours and checked in with the Social Worker to see if the discharge goal had shifted.'\n\n"
 
         "=== TAXONOMY KEYS (Internal Logic Only — Never in Output Text) ===\n\n"
 
@@ -301,7 +323,10 @@ def main():
         "- Verify_Sentiment_Score: Check family anxiety levels without clinical interference.\n"
         "- Liaison_Reporting_Only: Documentation-only mode; writing down the SW's plan in Atlantis.\n"
         "- Verify_HHA_Acceptance_via_Portal: Use digital tools to check status instead of calling vendors.\n"
-        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n\n"
+        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n"
+        "- Manual_SW_Status_Inquiry: Verbally asking the SW for an update because the info is not in Atlantis.\n"
+        "- Clarify_MA_Scope_Focus: Limiting education to the MA role and deferring HHA logistics to the SW.\n"
+        "- Document_Sentiment_Only_Escalation: Logging family anxiety about meds/safety without trying to solve it.\n\n"
 
         "Frictions (use these concepts but never the literal key names):\n"
         "- HHA_Acceptance_Stall: Referral sent but agency hasn't responded in the portal.\n"
@@ -309,7 +334,10 @@ def main():
         "- Family_Training_Gap_Anxiety: Anxiety from lack of facility training on clinical tasks.\n"
         "- Liaison_Communication_Silo: PN excluded from a transition meeting.\n"
         "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n"
-        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n\n"
+        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n"
+        "- Portal_Information_Silo: Atlantis doesn't show clinical/HHA notes; PN is 'in the dark.'\n"
+        "- MA_vs_HHA_Role_Confusion: Family expects the PN to know HHA logistics, requiring a role-reset.\n"
+        "- Facility_Communication_Blackout: SW is unavailable for an update, leaving PN with stale data.\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker is responsible for the formal discharge plan and selecting the home health agency, while the navigator audits the demographic data in the Atlantis system, provides education to the family on the transition process, and alerts the social worker to any emotional barriers or readiness gaps.",
+  "narrative_summary": "Margaret, a 72-year-old recovering from a hip fracture repair, was eager to return home until her daughter became overwhelmed by the prospect of managing her mother's post-surgical care. This emotional hesitation created a significant barrier, as the daughter expressed fear regarding wound care and mobility assistance. The Navigator served as a supportive liaison by documenting these concerns and facilitating a discussion with the social worker to ensure the family received the necessary education before the transition.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator reviewed the facility face sheet against the Atlantis records, confirming the correct primary contact number for the daughter and identifying a minor discrepancy in the home address suffix which was corrected in the portal.",
+  "home_vs_ltc_goal": "Home with home health services",
+  "v_card_flyer_status": "The Navigator helped the daughter save the Healing Partners contact information as a digital contact to ensure future calls were recognized and provided a program flyer outlining the non-clinical support available during the first week at home.",
+  "pre_dc_pulse_call": "During the 24-hour pre-discharge check, the daughter was reached but remained highly anxious; the Navigator documented this sentiment and confirmed that while the home was ready, the family's confidence remained low.",
+  "atlantis_final_sync": "The discharge date was finalized in Atlantis for Friday, and the first home visit was tentatively logged pending the social worker's final confirmation of the agency's start-of-care window.",
+  "format_1_state_log": [
+    {
+      "event_description": "During a bedside introduction, the daughter expressed significant distress and threatened to refuse the discharge, stating she was not prepared to handle her mother's mobility needs.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver emotional readiness"
+    },
+    {
+      "event_description": "The Navigator checked the Atlantis portal and noted that the home health agency had not yet confirmed the referral, creating a mismatch with the social worker's verbal update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Agency acceptance delay"
+    },
+    {
+      "event_description": "Following a joint meeting with the social worker, the daughter's concerns were addressed through a bedside teaching session, though she remains cautious about the transition.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The primary caregiver expressed panic regarding her ability to manage surgical site care at home.",
+      "action_taken": "Documented the family's anxiety levels in Atlantis and alerted the social worker to the need for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The home health agency status remained listed as pending in the digital dashboard despite the approaching discharge date.",
+      "action_taken": "Monitored the portal for acceptance status and noted the delay for the clinical team's review while waiting for the social worker to coordinate.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family was unsure of what to expect during the first twenty-four hours after leaving the facility.",
+      "action_taken": "Explained the sequence of events for the first day at home to the patient and daughter to reduce their uncertainty and set clear expectations.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Defer the discussion of the daughter's anxiety to the scheduled multi-disciplinary huddle, allowing the social worker to lead the emotional intervention.",
+      "rationale": "This respects the social worker's role as the primary lead for family counseling and discharge planning while the navigator remains in a supportive, observational role."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verify the family's specific concerns regarding home safety, document the sentiment in the portal, and ask the social worker to include the Navigator in a family education session.",
+      "rationale": "This follows the liaison model by gathering necessary data and requesting collaborative involvement without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency's intake department directly to demand a specific nurse who is experienced with hip fractures to reassure the daughter and secure a visit time.",
+      "rationale": "This violates the no-vendor rule and attempts to manage agency staffing, which is outside the navigator's scope and interferes with the social worker's coordination."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

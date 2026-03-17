@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker coordinates the multidisciplinary discharge plan and facilitates family conferences, while the Navigator audits demographic accuracy in the Atlantis portal, prepares the family for home-based expectations, and flags communication gaps to ensure service continuity.",
+  "narrative_summary": "Arthur Miller, a 79-year-old recovering from a right below-knee amputation, was making steady progress in his prosthetic training until a sudden shift in his discharge timeline occurred during a meeting where the Navigator was not present. Because of this information silo, Arthur and his family were left without a clear understanding of how his home nursing visits would align with his new exit date. The Navigator identified the discrepancy in the Atlantis portal and alerted the Social Worker to ensure Arthur\u2019s transition home remained synchronized and supported.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis portal against the facility face sheet and discovered the primary contact number was listed as Arthur\u2019s landline rather than his daughter's mobile phone; corrected the entry to ensure the home health agency and the medical assistant can reach the caregiver on the day of transition.",
+  "home_vs_ltc_goal": "Home with HHA",
+  "v_card_flyer_status": "Provided the program flyer to Arthur\u2019s daughter and assisted her in saving the Healing Partners contact information to her phone to ensure she recognizes incoming calls regarding her father\u2019s care coordination.",
+  "pre_dc_pulse_call": "Conducted the 24-hour check-in with the daughter, who expressed high anxiety because she was unaware of the specific time window for the first nursing visit; documented this sentiment and requested a status update from the Social Worker regarding agency confirmation.",
+  "atlantis_final_sync": "Logged the updated discharge date and noted that the first home visit is pending confirmation of the home health agency's arrival window in the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "While reviewing the daily census, the Navigator noticed the patient's discharge date had been moved up by 48 hours, though no summary of the family meeting was yet available in the portal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Information silo between the clinical team and the Navigator regarding the family's decision."
+    },
+    {
+      "event_description": "The Navigator reached out to the Social Worker to request a summary of the transition plan and to ensure the family's concerns about the amputation site were shared with the incoming nursing team.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "During a bedside visit, the patient's daughter shared that she felt overwhelmed by the sudden change in plans; the Navigator documented this shift in readiness and alerted the Social Worker to the need for a brief education session.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Caregiver sentiment readiness gap following the uncoordinated meeting."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Navigator was not included in the family conference where the discharge date was finalized.",
+      "action_taken": "Highlighted the communication gap to the Social Worker and requested a summary of the new timeline to update the Atlantis portal.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's daughter expressed confusion about what would happen on the first day at home.",
+      "action_taken": "Educated the family on what to expect during the first home health visit, including the arrival of equipment and the nurse's initial assessment.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The home health agency status remained pending in the portal despite the accelerated discharge date.",
+      "action_taken": "Verified the pending status in Atlantis and alerted the Social Worker to the lack of agency acceptance as the new date approached.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator will wait for the Social Worker to upload the formal meeting minutes and update the discharge date in the system before contacting the family.",
+      "rationale": "This respects the Social Worker's role as the primary facilitator of the discharge plan and ensures the Navigator does not act on incomplete or unofficial information."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator will document the identified timeline discrepancy in Atlantis and ask the Social Worker for a brief update to ensure the family is supported and the home health agency is confirmed.",
+      "rationale": "This allows the Navigator to act as a supportive liaison by flagging the communication silo while remaining within the defined scope of documentation and family support."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator will call the home health agency directly to confirm they can accommodate the new discharge date and then call the medical assistant to schedule the first home visit.",
+      "rationale": "This oversteps the boundary by contacting vendors directly and scheduling clinical visits before the Social Worker has confirmed the agency is in place, violating the no-vendor and HHA-first rules."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

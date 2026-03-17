@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages family mediation and finalizes the discharge destination while the Navigator audits demographic accuracy in Atlantis, monitors family sentiment, and flags conflicting care goals to the clinical team.",
+  "narrative_summary": "Martha, a 77-year-old managing advanced renal failure, faced a significant hurdle in her transition home when her two daughters reached an impasse regarding her safety and care level. While her eldest daughter advocated for a return to her familiar home environment with supportive services, her youngest felt a long-term care facility was the only viable option. The Navigator acted as a supportive liaison by documenting these conflicting perspectives in the Atlantis portal and alerting the Social Worker to the need for a formal family conference to resolve the disagreement.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit of the facility face sheet against the Atlantis record, I identified a discrepancy in the primary contact phone number and updated the home address to ensure the home health team has accurate routing information for the upcoming transition.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "I provided the family with the program flyer and ensured the digital contact card was saved on both daughters' phones so they would recognize incoming support calls as Healing Partners rather than unknown solicitations.",
+  "pre_dc_pulse_call": "During the twenty-four-hour outreach, the family expressed continued hesitation; while the home health agency was confirmed, the daughters remained split on the final move, which I documented as an anxious sentiment score in the portal.",
+  "atlantis_final_sync": "I recorded the confirmed discharge date and synchronized the first visit window in Atlantis once the Social Worker verified the family's consensus to proceed with the home care plan.",
+  "format_1_state_log": [
+    {
+      "event_description": "During a bedside visit, Martha's youngest daughter expressed significant fear regarding managing dialysis-related complications at home, while the eldest daughter insisted on a home discharge.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "The Navigator audited the Atlantis portal and noted that while a referral was sent, the home health agency had not yet updated the acceptance status or assigned a nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "A joint meeting was held with the Social Worker where the Navigator explained the Day 1 support structure, which helped ease the youngest daughter's concerns about medical oversight at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughters are providing conflicting instructions to the facility staff regarding the discharge destination.",
+      "action_taken": "Documented the conflicting family sentiment in the Atlantis portal and alerted the Social Worker to the need for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family is unclear about the difference between the home health nurse and the medical assistant's roles.",
+      "action_taken": "Educated the family on the sequence of home visits and the specific support each professional provides during the first forty-eight hours.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The facility face sheet contains an outdated primary insurance ID that does not match the Atlantis record.",
+      "action_taken": "Verified the correct insurance information with the Social Worker and updated the patient profile in the portal to prevent a billing delay.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes the family disagreement in the portal and waits for the Social Worker to provide a final decision on the discharge destination before making any further updates to the transition plan.",
+      "rationale": "This respects the Social Worker's authority over discharge planning and prevents the Navigator from interfering in sensitive family mediation."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator audits the patient's demographics, verifies that the home health agency has received the referral via the portal, and asks the Social Worker to be included in the next family update to explain program benefits.",
+      "rationale": "This aligns with the liaison role by ensuring data integrity and providing education without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department to demand they accept the case quickly and then calls the daughters individually to convince the skeptical sister that a home discharge is the best clinical option.",
+      "rationale": "This violates the No-Vendor Rule by contacting the agency directly and exceeds the professional scope by attempting to influence a clinical placement decision."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

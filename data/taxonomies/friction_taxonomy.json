@@ -155,6 +155,24 @@
       "signal_barrier": "Liaison_Communication_Silo",
       "expected_delay": "+1–3 Days",
       "logical_dna_rule": "The PN is excluded from a key transition meeting (family conference, discharge planning huddle) and only learns of plan changes after the fact; the PN must request inclusion through the SW and update Atlantis with any new information received."
+    },
+    {
+      "category": "Informational",
+      "signal_barrier": "Portal_Information_Silo",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "Atlantis does not display live HHA notes, SW clinical notes, or referral status details; the PN is 'in the dark' and must verbally ask the SW for an update rather than assuming information from the portal."
+    },
+    {
+      "category": "Family/Caregiver",
+      "signal_barrier": "MA_vs_HHA_Role_Confusion",
+      "expected_delay": "+1–2 Days",
+      "logical_dna_rule": "The family expects the PN to know and explain HHA nurse schedules, medication logistics, or clinical dressing protocols; the PN must reset expectations by clarifying that their scope is limited to the MA visit and defer HHA questions to the SW or facility nursing staff."
+    },
+    {
+      "category": "Operational",
+      "signal_barrier": "Facility_Communication_Blackout",
+      "expected_delay": "+1–3 Days",
+      "logical_dna_rule": "The SW is unavailable for an update (PTO, not responding, pulled into another case), leaving the PN with stale or missing data in Atlantis; the PN documents the communication gap and waits rather than seeking information from vendors or facility systems directly."
     }
   ]
 }

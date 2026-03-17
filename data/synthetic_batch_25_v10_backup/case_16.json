@@ -1,0 +1,66 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical transition plan and facility placement, while the Navigator audits demographic data in Atlantis, monitors for eligibility changes, and flags family anxiety to the clinical team.",
+  "narrative_summary": "Arthur Bennett, an 86-year-old patient with dementia and a history of recurrent falls, faced a sudden barrier to his home transition when his physical therapy progress plateaued. This clinical shift meant he no longer met the strict requirements for skilled home health services, leaving his family overwhelmed by the prospect of managing his care independently. The Navigator identified this change in the Atlantis portal and worked closely with the Social Worker to ensure the family was supported during the pivot to a long-term care plan.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Arthur's residential address and his daughter's contact information against the facility face sheet; the Navigator updated a digit transposition in the primary phone number within the Atlantis portal to ensure the family remained reachable.",
+  "home_vs_ltc_goal": "Long-Term Care",
+  "v_card_flyer_status": "The Navigator provided the program flyer to Arthur's daughter and assisted her in saving the Healing Partners digital contact card to her phone, explaining that this would help her identify future support calls during the transition process.",
+  "pre_dc_pulse_call": "During the 24-hour check-in, the daughter expressed significant distress over the loss of home health coverage; the Navigator documented this sentiment and immediately alerted the Social Worker for a follow-up consultation.",
+  "atlantis_final_sync": "Recorded the transition to a long-term care setting in Atlantis and updated the referral status to reflect the clinical pivot away from home health services.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator reviewed the initial referral in Atlantis and confirmed that Arthur's demographic data was correctly imported from the facility records.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "N/A",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "During a review of the weekly progress notes, the Navigator observed that Arthur had reached his maximum goals for physical therapy, potentially affecting his eligibility for home health.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Loss of skilled need"
+    },
+    {
+      "event_description": "The Navigator alerted the Social Worker to the clinical plateau and requested an update on the discharge destination based on the new eligibility status.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (Ineligibility)",
+      "ai_assumed_bottleneck": "Administrative pivot to long term care"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Arthur's recovery progress has slowed, leading to a loss of eligibility for skilled nursing services at home.",
+      "action_taken": "Noted the clinical plateau in the Atlantis system and alerted the Social Worker to the shift in the patient's status.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family is uncertain about how to proceed now that home health is no longer an option.",
+      "action_taken": "Educated the family on the program requirements while referring specific clinical questions to the facility nursing team.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator monitors the Atlantis portal for the Social Worker to confirm the new discharge location before updating the patient's record.",
+      "rationale": "This respects the Social Worker's authority over the final clinical and placement decisions when a patient's goals change."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator identifies the eligibility gap in the clinical notes, flags the concern to the Social Worker, and checks the family's readiness for a potential change in the care plan.",
+      "rationale": "This ensures the Social Worker is aware of the bottleneck while the Navigator stays within the liaison role by documenting family sentiment."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator contacts a local home health agency intake department to argue for a nursing exception to keep the home discharge plan active.",
+      "rationale": "This violates the No-Vendor Rule and oversteps into clinical advocacy, which is outside the Navigator's scope."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for mediating the family dispute and making the final determination on discharge safety, while the Navigator audits demographic accuracy in the Atlantis portal, educates the family on the mechanics of home-based support, and flags emotional barriers to the clinical team.",
+  "narrative_summary": "Margaret, an 83-year-old recovering from post-ICU pneumonia, found her transition stalled not by her clinical progress, but by a deep disagreement between her children regarding her safety at home. While her daughter advocated for a return to her familiar environment, her son remained fearful that her respiratory needs were too complex for a residential setting. The Navigator stepped in to provide clear education on how home health services bridge this gap, while simultaneously alerting the Social Worker to the family's emotional impasse to ensure a formal care conference could be convened.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial record review, the Navigator cross-referenced the facility face sheet with the Atlantis queue and identified an incorrect zip code for Margaret's primary residence. This was updated in the system to ensure the referral would be routed to an agency within her actual service area, and the daughter's primary mobile number was verified as the best point of contact.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "The Navigator met with the daughter at the bedside to provide the program flyer and assisted her in saving the Healing Partners contact card into her phone. This ensures that all future transition coordination calls are recognized as a trusted source rather than being ignored as unknown solicitations.",
+  "pre_dc_pulse_call": "A 24-hour readiness check was performed via telephone; the daughter confirmed the home is prepared, though she noted her brother is still hesitant. The Navigator documented this continued family anxiety in the portal for the home health agency's awareness during the initial visit.",
+  "atlantis_final_sync": "The Navigator recorded the confirmed discharge date in Atlantis and noted that the home health agency has accepted the referral, though the specific window for the first nursing visit remains pending in the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "Upon reviewing the initial referral in Atlantis, the Navigator noted Margaret's history of ICU stays and alerted the Social Worker that her son had expressed significant fear about her being alone at night.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "The Navigator provided the daughter with a detailed walkthrough of the first 48 hours at home, explaining when the nurse would arrive and how the equipment would be managed to reduce the family's perceived burden.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Caregiver Training Gap"
+    },
+    {
+      "event_description": "During a follow-up, the son requested the patient be moved to a long-term care wing; the Navigator documented this shift in family sentiment in Atlantis and asked the Social Worker to provide a formal update on the transition plan.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The son expressed concern that he does not know how to operate the oxygen concentrator Margaret will need at home.",
+      "action_taken": "The Navigator highlighted this specific training deficit to the Social Worker and requested that a bedside demonstration be scheduled for the family before the discharge date.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter was unsure about which home health agency was being utilized for the transition.",
+      "action_taken": "The Navigator verified the agency name in the Atlantis portal and educated the daughter on how to contact their intake department through the Social Worker if she had specific scheduling preferences.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family members were receiving conflicting information about the discharge date from different facility staff.",
+      "action_taken": "The Navigator monitored the Social Worker's updates in Atlantis and provided the family with the most current timeline as documented by the lead clinician.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator will document the family's conflicting views in the Atlantis portal and wait for the Social Worker to conclude the family mediation session before attempting further education.",
+      "rationale": "This respects the Social Worker's primary role in conflict resolution and prevents the Navigator from being caught in the middle of a family dispute before a destination is finalized."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator will meet with both siblings to explain the scope of home health services and flag the son's specific safety concerns to the Social Worker to facilitate a targeted care conference.",
+      "rationale": "This provides necessary education to the family to help them make an informed decision while ensuring the Social Worker is alerted to the specific barriers preventing a smooth transition."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator will call the home health agency intake coordinator to ask for a clinical nurse to call the son and explain that his mother is safe to go home under their supervision.",
+      "rationale": "This violates the no-vendor rule by contacting the agency directly and inappropriately attempts to use a third-party vendor to influence a family's clinical decision-making process."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

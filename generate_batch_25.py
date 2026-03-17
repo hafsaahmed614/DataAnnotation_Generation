@@ -62,6 +62,10 @@ FRICTIONS = [
     # V8 additions
     "Family_Training_Gap_Anxiety",
     "Liaison_Communication_Silo",
+    # V11 additions
+    "Portal_Information_Silo",
+    "MA_vs_HHA_Role_Confusion",
+    "Facility_Communication_Blackout",
 ]
 
 # Patient-choice frictions (used to enforce ~30% patient/family-driven cases)
@@ -71,6 +75,7 @@ PATIENT_CHOICE_FRICTIONS = [
     "Caregiver Training Gap",
     "LTC_Pivot_Abort",
     "Family_Training_Gap_Anxiety",
+    "MA_vs_HHA_Role_Confusion",
 ]
 
 
@@ -132,8 +137,8 @@ def main():
         "The No-Vendor Rule: You never call HHAs, DME, or Transport. "
         "You only communicate with the Family and the Social Worker.\n\n"
 
-        "The 'Wait' Default: When a vendor causes a delay, you document the status "
-        "from the portal and wait for the SW to act.\n\n"
+        "The 'Wait' Default: When an update is missing, the PN flags the 'Information Silo' "
+        "and waits for the SW to provide a verbal update.\n\n"
 
         "The Verb Filter: Use the intent of Liaison verbs (Verify, Document, Flag, Educate, Ask) "
         "to write professional narratives.\n\n"
@@ -141,11 +146,33 @@ def main():
         "HHA-First Rule: Do not discuss specific Medical Assistant (MA) visit times "
         "until the SW confirms the HHA is 'Accepted' and 'In Place.'\n\n"
 
+        "=== THE 'MANUAL INQUIRY' MANDATE (Fixing the Atlantis Illusion) ===\n\n"
+
+        "No Crystal Ball: The PN cannot see live HHA notes, SW clinical notes, or 'Pending' "
+        "referral details in Atlantis. Atlantis is for PN documentation ONLY.\n\n"
+
+        "Information Trigger: If the PN needs an update, they must ASK the Social Worker (SW) "
+        "or hear it from the family. The PN never 'notices a status change' in a system they "
+        "cannot access.\n\n"
+
+        "The 'Lack of Update' Signal: Instead of 'noticing a pending status,' the PN should "
+        "'notice that no discharge date has been entered in Atlantis yet' and then reach out "
+        "to the SW for a verbal update.\n\n"
+
+        "=== THE 'MA-ONLY' EDUCATION RULE (Fixing Scope Creep) ===\n\n"
+
+        "Strict Focus: When the PN educates the family, they must focus 100% on the Medical "
+        "Assistant (MA) visit and the 24-hour post-discharge window.\n\n"
+
+        "HHA Deferral: The PN must explicitly defer questions about HHA nurse schedules, "
+        "medication lists, or surgical dressings to the SW or the facility nursing staff.\n\n"
+
         "=== THE PROSE-ONLY MANDATE ===\n\n"
 
         "NO UNDERSCORES: Under no circumstances should taxonomy keys with underscores "
-        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score) appear in the narrative_summary, "
-        "action_taken, description, or any other text field. These keys are for internal logic ONLY.\n\n"
+        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score, Portal_Information_Silo) appear in the "
+        "narrative_summary, action_taken, description, or any other text field. These keys are for "
+        "internal logic ONLY.\n\n"
 
         "NATURAL INTEGRATION: Translate every taxonomy action into a professional sentence.\n"
         "INCORRECT: 'The PN will Verify_Sentiment_Score and document it.'\n"
@@ -164,8 +191,8 @@ def main():
         "Do NOT write a list of PN tasks.\n\n"
 
         "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must flow like a real-time progress note.\n"
-        "Example: 'During a weekly check-in, the daughter expressed concerns about her mother's mobility; "
-        "the Navigator noted this shift in sentiment for the upcoming discharge planning session.'\n\n"
+        "Example: 'The Navigator noticed that no update had been posted to the transition plan in Atlantis "
+        "for 48 hours and checked in with the Social Worker to see if the discharge goal had shifted.'\n\n"
 
         "=== TAXONOMY KEYS (Internal Logic Only — Never in Output Text) ===\n\n"
 
@@ -174,7 +201,10 @@ def main():
         "- Verify_Sentiment_Score: Check family anxiety levels without clinical interference.\n"
         "- Liaison_Reporting_Only: Documentation-only mode; writing down the SW's plan in Atlantis.\n"
         "- Verify_HHA_Acceptance_via_Portal: Use digital tools to check status instead of calling vendors.\n"
-        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n\n"
+        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n"
+        "- Manual_SW_Status_Inquiry: Verbally asking the SW for an update because the info is not in Atlantis.\n"
+        "- Clarify_MA_Scope_Focus: Limiting education to the MA role and deferring HHA logistics to the SW.\n"
+        "- Document_Sentiment_Only_Escalation: Logging family anxiety about meds/safety without trying to solve it.\n\n"
 
         "Frictions (use these concepts but never the literal key names):\n"
         "- HHA_Acceptance_Stall: Referral sent but agency hasn't responded in the portal.\n"
@@ -182,7 +212,10 @@ def main():
         "- Family_Training_Gap_Anxiety: Anxiety from lack of facility training on clinical tasks.\n"
         "- Liaison_Communication_Silo: PN excluded from a transition meeting.\n"
         "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n"
-        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n\n"
+        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n"
+        "- Portal_Information_Silo: Atlantis doesn't show clinical/HHA notes; PN is 'in the dark.'\n"
+        "- MA_vs_HHA_Role_Confusion: Family expects the PN to know HHA logistics, requiring a role-reset.\n"
+        "- Facility_Communication_Blackout: SW is unavailable for an update, leaving PN with stale data.\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"
