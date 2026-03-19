@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for the clinical assessment of the patient's long-term safety and the selection of a skilled nursing facility, while the Navigator audits demographic data in Atlantis, documents family sentiment, and executes the neutral closure process once the home-based plan is discontinued.",
+  "narrative_summary": "Eleanor Vance, a 77-year-old patient recovering from a renal failure crisis, initially intended to return home to manage her dialysis schedule with family support. As her discharge date approached, the Navigator noted significant family anxiety regarding the logistical demands of three-times-weekly transport and overnight monitoring needs. Following a care conference where the family opted for a facility-based setting, the Navigator facilitated the communication transition by alerting the Social Worker to the family's final decision and closing the home-transition file in Atlantis.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the Atlantis face sheet against the facility records; discovered the patient's primary phone number was listed with a transposed digit and updated the portal to ensure the Social Worker had the correct contact for the daughter.",
+  "home_vs_ltc_goal": "Long-Term Care (LTC)",
+  "v_card_flyer_status": "Provided the program flyer to the patient's daughter and verified the V-Card was saved in her contacts to ensure she recognized the Navigator's outreach during the early coordination phase.",
+  "pre_dc_pulse_call": "Conducted a check-in call 24 hours prior to the expected transition; the daughter confirmed that the family had decided against a home discharge and was working with the Social Worker on a facility placement.",
+  "atlantis_final_sync": "Updated the Atlantis portal to reflect the shift in the discharge plan and recorded a neutral closure as the patient is no longer pursuing a home-based transition with our services.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no home health agency had been assigned in Atlantis and reached out to the Social Worker for a verbal status update on the referral.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Information regarding the transition plan was not yet entered into the digital record."
+    },
+    {
+      "event_description": "During a brief meeting at the bedside, the family expressed high levels of distress regarding the patient's dialysis transportation needs and their inability to provide 24-hour supervision.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Family sentiment indicates a lack of readiness for a home-based care model."
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the patient's goal has officially shifted to long-term care placement, and the Navigator proceeded to document the closure in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "The transition to home is no longer clinically or logistically appropriate per the family's request."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family is confused about whether the Navigator or the facility nurse handles the dialysis schedule.",
+      "action_taken": "Clarified that the Navigator's focus is limited to the medical assistant visit and deferred all clinical scheduling questions to the Social Worker.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The family expresses fear about the patient falling while they are at work.",
+      "action_taken": "Documented the family's anxiety levels in Atlantis and alerted the Social Worker to the need for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The Social Worker is unavailable to provide a status update on the HHA referral.",
+      "action_taken": "Noted the communication gap in the Atlantis timeline and waited for the Social Worker's return rather than contacting the agency directly.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator observes a heated discussion between the family and the nursing staff about facility placement and decides to wait for the Social Worker to provide a formal update on the discharge destination.",
+      "rationale": "This respects the Social Worker's role as the primary lead for clinical placement and prevents the Navigator from interfering in a sensitive family dispute."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the discharge plan and, upon learning of the pivot to long-term care, updates the Atlantis record to reflect the neutral closure.",
+      "rationale": "This demonstrates proactive monitoring through human inquiry while adhering to the rule of using Atlantis for documentation only."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls several local long-term care facilities to check on bed availability for Eleanor to help the Social Worker speed up the placement process.",
+      "rationale": "This violates the No-Vendor Rule and oversteps into the Social Worker's professional responsibility for facility placement."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for selecting the home health agency and managing the clinical discharge huddle, while the Navigator audits demographic data in Atlantis, monitors for information gaps, and educates the family specifically on the 24-hour post-discharge window and Medical Assistant visit.",
+  "narrative_summary": "Arthur Vance, a 70-year-old recovering from complex spinal fusion surgery, found his transition plan stalled when the Navigator was inadvertently excluded from the facility\u2019s multidisciplinary huddle. This lack of direct communication meant that while the clinical team had finalized a discharge date, the transition portal remained outdated, leaving the family in a state of flux regarding their home care schedule. The Navigator bridged this gap by seeking a verbal update from the Social Worker and subsequently providing the family with a clear timeline for the initial home support visit.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit, the Navigator compared the facility face sheet to the Atlantis record and identified a discrepancy in the primary phone number provided for Arthur's daughter; the correction was documented in the portal to ensure the home health agency could make contact.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "The Navigator successfully assisted Arthur's daughter in saving the program's contact information as a digital contact card to ensure all future coordination calls from the home team would be recognized and answered promptly.",
+  "pre_dc_pulse_call": "A pulse call was completed 24 hours before the scheduled discharge; the family expressed high anxiety regarding the spinal precautions, which the Navigator noted for the clinical team while clarifying the specific timing of the first home visit.",
+  "atlantis_final_sync": "Following verbal confirmation from the Social Worker that the home health agency had accepted the case, the Navigator recorded the discharge date and the scheduled first visit time in the Atlantis portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no update had been posted to the transition plan in Atlantis for 72 hours and checked in with the Social Worker to see if the discharge goal had shifted.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Information Silo"
+    },
+    {
+      "event_description": "Upon speaking with the Social Worker, the Navigator learned a discharge huddle had occurred without their presence; a verbal summary of the plan was requested to update the documentation in Atlantis.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Internal Team Alignment"
+    },
+    {
+      "event_description": "The Navigator observed that the home health agency status remained pending in the portal despite the imminent discharge and alerted the Social Worker to the lack of a confirmed start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Agency Confirmation Delay"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Navigator was not invited to the weekly utilization review where Arthur's discharge date was moved up.",
+      "action_taken": "The Navigator reached out to the Social Worker for a verbal summary of the new timeline and updated the Atlantis record accordingly.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Arthur's daughter asked for a detailed explanation of how to adjust his spinal brace and manage his pain medication schedule.",
+      "action_taken": "The Navigator explained the scope of the upcoming home visits and deferred the specific clinical questions to the facility nursing supervisor.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal did not show a confirmed nurse assignment for the day of discharge.",
+      "action_taken": "The Navigator highlighted the bottleneck to the Social Worker and waited for a verbal confirmation before proceeding with the family pulse call.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the Social Worker has not updated the discharge huddle notes in Atlantis and chooses to wait for the next scheduled facility walk-through to see if the status changes naturally.",
+      "rationale": "This respects the Social Worker's ownership of the clinical timeline and avoids unnecessary pestering when the Navigator does not have an immediate task to perform."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator notices the lack of a confirmed discharge date in the portal and asks the Social Worker for a verbal update; once a date is provided, the Navigator contacts the family to educate them on what to expect during the first 24 hours at home.",
+      "rationale": "This follows the manual inquiry mandate and keeps education strictly focused on the transition window without contacting outside vendors."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator sees the home health agency is still listed as pending in Atlantis and calls the agency's intake department directly to see if they have a nurse available for Arthur's zip code.",
+      "rationale": "This violates the No-Vendor Rule and attempts to perform a coordination task that belongs to the Social Worker or the facility's internal referral team."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

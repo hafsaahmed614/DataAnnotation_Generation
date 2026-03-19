@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "In this cardiac recovery case, the Social Worker is responsible for securing an agency that can accommodate holiday staffing limitations, while the Navigator audits Arthur's demographic data in Atlantis, monitors for a confirmed start of care date via the portal, and prepares the family for the medical assistant's visit to bridge the long weekend gap.",
+  "narrative_summary": "Arthur Vance, a 75-year-old recovering from a coronary bypass, faced a precarious transition when his discharge was scheduled just before a major holiday weekend. The home health agency initially struggled to guarantee a nurse for the holiday, creating a potential three-day monitoring gap that caused significant anxiety for Arthur and his wife. The Navigator acted as a vital liaison by alerting the Social Worker to the family's concerns and ensuring that the medical assistant was scheduled for an early Saturday check-in to maintain safety until the full nursing team was available.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit of the Atlantis record, I compared the digital entry against the hospital face sheet and discovered the patient's primary phone number was missing a digit. I corrected the contact information in the portal to ensure the home team could reach the family during the holiday transition.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "I provided the program flyer to Arthur's wife and assisted her in saving our digital contact card on her phone so she would recognize the Healing Partners caller ID during the busy holiday weekend.",
+  "pre_dc_pulse_call": "I conducted a pulse call with Arthur's wife 24 hours prior to discharge; while she was eager to have him home, she expressed high anxiety about the holiday gap, which I documented and relayed to the hospital team for additional reassurance.",
+  "atlantis_final_sync": "I updated the portal to reflect the confirmed Friday afternoon discharge and successfully logged the initial medical assistant visit for Saturday morning to provide holiday coverage.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no firm discharge date had been entered in Atlantis as the holiday approached and asked the Social Worker for a verbal forecast to update the family.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1-2 Days",
+      "ai_assumed_bottleneck": "Information Silo"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the preferred agency was experiencing a holiday staffing shortage, potentially delaying the first home visit until Tuesday.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-5 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    },
+    {
+      "event_description": "The Navigator documented the family's rising anxiety regarding the three-day gap in care and flagged the sentiment to the Social Worker to request a care conference.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Caregiver Panic"
+    },
+    {
+      "event_description": "After the Social Worker confirmed agency acceptance in the portal, the Navigator verified the start of care date and scheduled the medical assistant for a Saturday morning visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family was confused about why a medical assistant was visiting instead of the agency nurse on Saturday.",
+      "action_taken": "Explained that the medical assistant provides an immediate safety check while the holiday nursing schedule is finalized.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal did not show if the home health agency had accepted the holiday referral.",
+      "action_taken": "Asked the Social Worker for a verbal update on the agency's response to the referral.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Arthur's wife requested help with managing his new cardiac medications over the weekend.",
+      "action_taken": "Alerted the Social Worker to the family's need for a bedside medication review before they left the facility.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Notice that the agency has not confirmed the referral in Atlantis and wait for the Social Worker to provide an update during the next multidisciplinary huddle.",
+      "rationale": "This respects the professional boundary by allowing the Social Worker to manage vendor performance while the Navigator remains in a documentation role."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verbally inquire with the Social Worker about the agency's holiday staffing status and document the family's anxiety levels in Atlantis to support a safer transition plan.",
+      "rationale": "This demonstrates active liaison work by gathering missing information through the correct channels and flagging sentiment without contacting vendors."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency intake department directly to see if they can find a nurse willing to work the holiday shift so Arthur can go home on schedule.",
+      "rationale": "This violates the no-vendor rule and interferes with the Social Worker's role in managing the facility's relationship with the home health agency."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

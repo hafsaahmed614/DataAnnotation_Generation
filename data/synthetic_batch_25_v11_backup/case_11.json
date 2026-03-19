@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the home health agency referral and confirming their weekend intake capacity, whereas the Navigator audits Arthur's demographics in Atlantis, monitors for a lack of updates in the transition plan, and flags the family's anxiety regarding the weekend care gap to the clinical team.",
+  "narrative_summary": "Arthur Vance, a 75-year-old recovering from cardiac bypass surgery, faced a significant barrier when his discharge was scheduled for a Friday afternoon. Because the selected home health agency does not process new admissions over the weekend, Arthur and his family were left in an information silo regarding who would monitor his surgical site before Monday. The Navigator supported the family by documenting their high anxiety levels in Atlantis and manually inquiring with the Social Worker to ensure a Medical Assistant visit was prioritized to bridge the weekend gap.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I audited the hospital face sheet against the Atlantis record and corrected a digit in Arthur's primary phone number to ensure the coordination team can reach the family post-discharge. The home address was verified for Medical Assistant travel distance within the suburban region.",
+  "home_vs_ltc_goal": "Home with Skilled Nursing and Physical Therapy",
+  "v_card_flyer_status": "I assisted Arthur's son in saving the Healing Partners contact information on his mobile device and explained that this ensures the family will recognize incoming calls from the transition team as Arthur settles back at home.",
+  "pre_dc_pulse_call": "During the pulse call, the family expressed significant hesitation about the Friday discharge time, noting they felt unprepared to manage Arthur's recovery without a nurse present on Saturday or Sunday. This sentiment was documented and shared with the Social Worker immediately.",
+  "atlantis_final_sync": "The Friday discharge date was logged in Atlantis, and I noted that the first home visit will be scheduled once the Social Worker provides verbal confirmation that the home health agency has moved from a pending status to an accepted status.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no discharge date had been entered into the Atlantis portal yet and reached out to the Social Worker for a verbal update on the transition timeline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "Information Silo"
+    },
+    {
+      "event_description": "The Social Worker confirmed a Friday discharge, but the Navigator noted that the home health agency had not yet updated their acceptance in the portal, creating a potential weekend monitoring gap.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2-4 Days",
+      "ai_assumed_bottleneck": "Friday Discharge Gap"
+    },
+    {
+      "event_description": "The Navigator documented the family's reluctance to discharge without a weekend safety check and flagged the lack of an assigned home health nurse to the Social Worker for further intervention.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "Sentiment Readiness Gap"
+    },
+    {
+      "event_description": "After the Social Worker confirmed the agency was in place but would not visit until Monday, the Navigator updated the Atlantis record to reflect that the first support visit would be handled by the Medical Assistant on Saturday morning.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed fear about managing Arthur's cardiac medications and chest incision over the weekend.",
+      "action_taken": "Logged the family's anxiety levels in the Atlantis portal and alerted the Social Worker that a clinical teaching session was needed before the Friday exit.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's daughter asked for the specific time the home health nurse would arrive on Saturday.",
+      "action_taken": "Explained that the home health agency manages their own nursing schedule and deferred the specific timing question to the facility nursing staff while focusing the conversation on the Medical Assistant's role.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal did not show whether the home health referral had been accepted by the local agency.",
+      "action_taken": "Verbally asked the Social Worker for a status update on the referral because the digital transition plan was not showing live updates.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes the Friday discharge date and the stagnant referral status in Atlantis and chooses to wait for the Social Worker to provide a verbal update before contacting the family again.",
+      "rationale": "This respects the boundary that the Social Worker owns the referral process and prevents the Navigator from providing premature or unverified information to the family."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator verbally confirms the Friday timeline with the Social Worker, identifies the weekend care gap, and educates the family on the Saturday Medical Assistant visit while deferring all clinical and medication questions to the hospital nurses.",
+      "rationale": "This follows the manual inquiry mandate and focuses education strictly on the Medical Assistant scope without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department to ask if a nurse can be sent on Saturday and provides Arthur's daughter with clinical advice on how to clean the surgical incision if it starts to drain over the weekend.",
+      "rationale": "This violates the No-Vendor Rule and crosses the clinical boundary by providing medical instructions and attempting to influence the agency's staffing schedule."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the selection of the home health agency and coordinates the clinical transition, while the Navigator audits demographic accuracy in Atlantis, monitors the progress of the referral through human inquiry with the Social Worker, and prepares the family for the initial visit scope.",
+  "narrative_summary": "Arthur Bennett, an 86-year-old gentleman with a history of dementia and recent falls, was nearing his transition home after rehabilitation for a hip injury. The discharge process stalled when the home health agency's intake coordinator became unavailable, leaving the transition plan in a state of uncertainty. The Navigator supported the family by clarifying the role of the medical assistant and alerting the Social Worker to the information gap in the Atlantis portal. By maintaining close communication with the facility team, the Navigator ensured that Arthur\u2019s family remained informed despite the administrative bottleneck.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I verified the primary residence and the contact information for the patient's daughter, who serves as the primary caregiver. I identified a discrepancy in the zip code between the facility face sheet and the Atlantis entry, which I corrected to ensure accurate service routing for the home team.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "I provided the program flyer to the daughter and assisted her in saving the Healing Partners contact information to her phone. I explained that this would help her identify our calls as the transition progresses, ensuring she recognizes our outreach regarding the medical assistant's visit.",
+  "pre_dc_pulse_call": "I spoke with the daughter 24 hours prior to the anticipated discharge. She expressed significant anxiety about managing her father's dementia-related wandering at home; I documented this sentiment and relayed the concerns to the Social Worker for further clinical support.",
+  "atlantis_final_sync": "I logged the confirmed discharge date provided verbally by the Social Worker and noted that the first home visit would be finalized once the home health agency confirms their start-of-care window in the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no home health agency had been confirmed in Atlantis and reached out to the Social Worker to ask for a status update on the referral.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the agency's intake coordinator was out of the office, which was preventing the confirmation of the start-of-care date.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Portal Information Silo"
+    },
+    {
+      "event_description": "The Navigator met with the family to discuss the 24-hour post-discharge window and clarified that the medical assistant would focus on transition support while the agency nurse would handle the clinical assessment.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "MA vs HHA Role Confusion"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Atlantis portal did not show an updated discharge date for Arthur, despite the clinical team discussing a Friday exit.",
+      "action_taken": "I alerted the Social Worker to the missing data in Atlantis and requested a verbal confirmation of the planned discharge timeline.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's daughter asked for details regarding the specific timing of the home health nurse's medication review.",
+      "action_taken": "I explained that my focus is on the medical assistant's visit and directed her clinical scheduling questions to the facility nursing staff.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Navigator identified that the home health agency had not yet accepted the referral in the digital portal.",
+      "action_taken": "I documented the delay in the Atlantis timeline and waited for the Social Worker to resolve the coordination issue with the agency.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notices the home health referral is still pending and waits for the Social Worker to provide an update during the next scheduled facility meeting.",
+      "rationale": "This respects the boundary that the Social Worker is the primary point of contact for vendor logistics and ensures the Navigator does not act on stale information."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a status update on the home health agency's availability and simultaneously educates the family on the medical assistant's role during the first 24 hours at home.",
+      "rationale": "This maintains the flow of information through the proper channels while proactively preparing the family for the services within the Navigator's scope."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake office directly to find out why the referral hasn't been accepted and then calls the daughter to confirm the start-of-care date.",
+      "rationale": "This violates the no-vendor rule and oversteps the Social Worker's authority by attempting to manage agency logistics and provide unverified updates to the family."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

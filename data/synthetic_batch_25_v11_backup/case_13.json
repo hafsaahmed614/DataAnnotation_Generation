@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the clinical discharge plan and coordinating with the Home Health Agency, while the Patient Navigator audits demographic data in Atlantis, provides education on the Medical Assistant visit, and flags communication gaps like the missed pulse call to the clinical team.",
+  "narrative_summary": "Elena Rodriguez, a 69-year-old patient recovering from a diabetic foot ulcer, was scheduled for a transition home to begin specialized wound care. A significant barrier arose when her daughter, the primary caregiver, could not be reached for the mandatory 24-hour pre-discharge readiness check, leaving the home transition plan unverified. The Navigator alerted the Social Worker to this communication gap and waited for a verbal update on the family's status before proceeding with the final transition steps.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator audited the facility face sheet against the Atlantis record and identified a discrepancy in the primary caregiver's contact number; the corrected information was documented in the portal to ensure future outreach hits the correct destination.",
+  "home_vs_ltc_goal": "Home with specialized diabetic wound care and nursing support.",
+  "v_card_flyer_status": "During a bedside visit, the Navigator successfully shared the program flyer with Elena and verified that the Healing Partners contact card was saved in her daughter's phone to ensure the family recognizes the caller ID for the post-discharge follow-up.",
+  "pre_dc_pulse_call": "Attempted the pre-discharge pulse call multiple times within the 24-hour window but was unable to reach the family to confirm home readiness; the disconnect was flagged to the Social Worker to determine if the discharge timeline required adjustment.",
+  "atlantis_final_sync": "Recorded the final discharge date in Atlantis once the Social Worker verbally confirmed the family was ready, and noted that the first home visit was scheduled only after the Home Health Agency was marked as in place.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no discharge date had been entered into the Atlantis portal and reached out to the Social Worker to ask for a verbal update on the transition timeline.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Information Silo"
+    },
+    {
+      "event_description": "The Navigator attempted the mandatory 24-hour pre-discharge call to the daughter but the call went to voicemail; the Navigator documented the disconnect in Atlantis and alerted the Social Worker.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Pre-DC Call Disconnect"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the family's phone was temporarily out of service but the discharge is still proceeding as Elena's son will now be the primary contact.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed confusion regarding how the home health nurse would coordinate with the diabetic wound care specialist.",
+      "action_taken": "The Navigator deferred the clinical coordination questions to the facility nursing staff and noted the family's concern for the Social Worker's follow-up.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "Atlantis did not show a confirmed acceptance from the preferred home health agency 48 hours before the target discharge.",
+      "action_taken": "The Navigator verbally asked the Social Worker for a status update on the referral acceptance rather than contacting the agency directly.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The primary caregiver was unreachable for the final readiness check prior to Elena leaving the facility.",
+      "action_taken": "The Navigator highlighted the communication bottleneck in the Atlantis portal and waited for the clinical team to verify the home plan.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator documented the unanswered pulse call in the Atlantis timeline and waited for the Social Worker to provide a status update during the morning discharge huddle.",
+      "rationale": "This respects the wait-default rule by allowing the Social Worker to handle the communication barrier while keeping the portal updated with the current information gap."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator alerted the Social Worker to the caregiver disconnect and requested a joint meeting with the patient's son to verify home readiness and explain the 24-hour visit window for the Medical Assistant.",
+      "rationale": "This addresses the friction through manual inquiry with the Social Worker and focuses education strictly on the within-scope Medical Assistant visit."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator contacted the Home Health Agency's intake department to see if they had an alternative phone number for the family and then called the diabetic supply vendor to confirm the delivery time.",
+      "rationale": "This violates the no-vendor rule and the manual inquiry mandate by bypassing the Social Worker and contacting external partners directly."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

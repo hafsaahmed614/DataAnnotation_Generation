@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for coordinating with the medical equipment vendor and resolving the delivery error, while the Navigator focuses on auditing the Atlantis record for demographic accuracy, gauging family sentiment regarding the delay, and educating the household on the specific scope of the medical assistant's first visit.",
+  "narrative_summary": "Arthur Miller, a 65-year-old recovering from a severe COPD exacerbation, faced a critical barrier to his transition when his prescribed home oxygen equipment was delivered to the wrong address. This logistical failure created significant respiratory safety concerns and heightened his daughter's anxiety about managing his care at home without the necessary support. The Navigator acted as a vital liaison by identifying the lack of equipment confirmation in the portal, alerting the Social Worker to the family's distress, and providing clear education on the support provided during the first 24 hours home once the equipment was secured.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator performed a cross-check between the facility face sheet and the Atlantis portal, identifying an error in the secondary contact phone number and a misspelling of the street name; these corrections were documented in the portal to ensure the home team has accurate navigation data.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "The Navigator provided the program flyer to the patient and successfully assisted his daughter in saving the Healing Partners digital contact card, explaining that this would ensure our outreach is recognized as a supportive resource rather than an unknown caller.",
+  "pre_dc_pulse_call": "During the 24-hour pre-discharge check, the Navigator spoke with the patient's daughter who expressed extreme frustration over the equipment delay; the Navigator documented this high anxiety and informed her that the medical assistant visit would be confirmed once the Social Worker verified the oxygen was in place.",
+  "atlantis_final_sync": "The Navigator recorded the revised discharge date and the scheduled medical assistant visit in Atlantis, ensuring the timeline reflected the three-day delay caused by the equipment delivery failure.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no discharge date had been entered in the portal and reached out to the Social Worker to inquire about the status of the transition plan.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Information gap between facility and portal data"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the oxygen concentrator was delivered to the wrong residence and the vendor was working to redirect the shipment.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u20137 Days",
+      "ai_assumed_bottleneck": "Logistical equipment failure"
+    },
+    {
+      "event_description": "The Navigator met with the family to assess their readiness and documented their significant anxiety regarding the lack of oxygen equipment at the home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Caregiver distress due to resource gap"
+    },
+    {
+      "event_description": "After the Social Worker verbally confirmed that the replacement equipment was successfully delivered, the Navigator proceeded to schedule the medical assistant for the first home visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family is confused about when the oxygen will arrive and who is responsible for tracking it.",
+      "action_taken": "Clarified that the Social Worker is managing the vendor logistics and focused the conversation on the medical assistant's role in checking the equipment during the first home visit.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal shows a pending status for the equipment without any specific details on the delivery error.",
+      "action_taken": "Verbally requested a status update from the Social Worker regarding the equipment delay and documented the findings in the portal.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter expressed concern that the patient would run out of portable tanks before the concentrator was set up.",
+      "action_taken": "Highlighted the family's safety concern to the Social Worker to ensure the clinical team could address the oxygen supply before discharge.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes the equipment delay in the Atlantis portal and informs the family that they are waiting for the Social Worker to provide a confirmed delivery time before the transition can proceed.",
+      "rationale": "This respects the boundary that the Social Worker owns vendor communication and prevents the Navigator from interfering in logistical resolutions."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator verbally asks the Social Worker for an update on the equipment, documents the family's specific anxiety levels in the portal, and explains to the family how the medical assistant will support them once the equipment is confirmed.",
+      "rationale": "This focuses on manual inquiry and family education within the Navigator's scope while deferring the technical logistics to the appropriate facility staff."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the medical equipment company directly to track the oxygen delivery and promises the family that the equipment will arrive by 5:00 PM to ensure the discharge stays on schedule.",
+      "rationale": "This violates the no-vendor rule and involves making logistical promises that the Navigator cannot control, potentially creating liability and bypassing the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

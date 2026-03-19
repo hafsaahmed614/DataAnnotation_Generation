@@ -83,18 +83,6 @@
             "Gauge family readiness without performing clinical intake",
             "Route anxiety-driven barriers to the SW for professional intervention"
           ]
-        },
-        {
-          "category": "Document_Sentiment_Only_Escalation",
-          "action_items": [
-            "Log family anxiety about medications, wound care, or home safety in Atlantis without attempting to solve the clinical issue",
-            "Escalate the documented sentiment to the SW for clinical follow-up",
-            "Do NOT provide clinical reassurance, medication guidance, or wound care instructions"
-          ],
-          "primary_intents": [
-            "Capture family concerns as data for the clinical team",
-            "Maintain the boundary between documenting sentiment and providing clinical advice"
-          ]
         }
       ]
     },
@@ -125,9 +113,9 @@
         {
           "category": "Patient Education",
           "action_items": [
-            "Educate patient/family on program benefits",
+            "Educate patient/family on Healing Partners program benefits",
             "Discuss POA awareness of home services",
-            "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
+            "Walk family through Day 1 expectations: who the MA is, what they do, and the 24-hour post-discharge window",
             "Insert V-Card into patient's phone and deliver program flyer to patient/family"
           ],
           "primary_intents": [
@@ -149,7 +137,7 @@
           "category": "Request_Joint_Family_Meeting_via_SW",
           "action_items": [
             "Ask the SW to include the PN in a family update call or meeting",
-            "During the meeting, educate family on Day 1 expectations and answer non-clinical questions",
+            "During the meeting, educate family on Day 1 MA expectations and answer non-clinical questions",
             "Document meeting outcomes and any new concerns flagged by the family"
           ],
           "primary_intents": [
@@ -160,8 +148,8 @@
         {
           "category": "Maintain_Granular_Wait-Status_Timeline",
           "action_items": [
-            "Keep a running log in Atlantis of each 'waiting' phase (waiting for HHA acceptance, waiting for SW response, waiting for DME delivery)",
-            "Update the log each time a status change occurs or a flag is sent to the SW",
+            "Keep a running log in Atlantis of each 'waiting' phase (waiting for SW to confirm HHA acceptance, waiting for SW response, waiting for D/C date)",
+            "Update the log each time the SW provides an update or a flag is sent",
             "Use the timeline to provide context when escalating delays"
           ],
           "primary_intents": [
@@ -178,30 +166,6 @@
           ],
           "primary_intents": [
             "Ensure complex issues are handled by the appropriate professional"
-          ]
-        },
-        {
-          "category": "Manual_SW_Status_Inquiry",
-          "action_items": [
-            "Verbally ask the SW for an update on HHA acceptance, discharge date, or referral status because the information is not available in Atlantis",
-            "Document the SW's verbal response in Atlantis",
-            "If the SW is unavailable, log the attempt and wait — do NOT seek the information from vendors or facility systems"
-          ],
-          "primary_intents": [
-            "Obtain transition updates through human inquiry, not system assumptions",
-            "Reinforce that Atlantis is a PN documentation tool, not a live clinical feed"
-          ]
-        },
-        {
-          "category": "Clarify_MA_Scope_Focus",
-          "action_items": [
-            "When educating the family, focus exclusively on the Medical Assistant (MA) visit and the 24-hour post-discharge window",
-            "If the family asks about HHA nurse schedules, medication management, or clinical dressings, defer to the SW or facility nursing staff",
-            "Document the deferral and the family's question for the SW's awareness"
-          ],
-          "primary_intents": [
-            "Keep PN education within the MA scope boundary",
-            "Prevent the PN from inadvertently providing clinical guidance disguised as education"
           ]
         }
       ]
@@ -245,27 +209,14 @@
         {
           "category": "Liaison_Reporting_Only",
           "action_items": [
-            "If HHA is not confirmed ready, flag the status to SW in Atlantis and WAIT",
+            "If HHA is not confirmed ready, document the gap in Atlantis and WAIT for the SW to provide an update",
             "Do NOT call HHA intake, DME vendors, or transport companies directly",
             "Document what was flagged and the SW's response",
             "If SW has not responded, ask SW for an update — do not attempt to resolve independently"
           ],
           "primary_intents": [
-            "Enforce the 'Wait' default — PN flags, SW resolves",
+            "Enforce the 'Wait' default — PN documents and flags, SW resolves",
             "Prevent the PN from crossing into vendor communication"
-          ]
-        },
-        {
-          "category": "Verify_HHA_Acceptance_via_Portal",
-          "action_items": [
-            "Check Atlantis portal for HHA acceptance status (do NOT call HHA directly)",
-            "If portal shows HHA accepted with SOC date, proceed to schedule MA",
-            "If portal shows pending or no update, flag to SW and WAIT",
-            "Document portal status in ma_visit_booking"
-          ],
-          "primary_intents": [
-            "Verify HHA readiness through system data, not direct vendor contact",
-            "Maintain the No-Vendor Rule while ensuring MA is not scheduled prematurely"
           ]
         },
         {

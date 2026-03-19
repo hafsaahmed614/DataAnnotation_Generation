@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "In this case, the social worker is responsible for the clinical transition plan and the logistics of medical transport, while the navigator focuses on auditing patient demographics in Atlantis, educating the family on the upcoming medical assistant visit, and alerting the social worker to transport-related delays that could impact the first home visit.",
+  "narrative_summary": "Martha Jenkins, a 78-year-old patient recovering from a congestive heart failure exacerbation, faced a significant barrier when her scheduled medical transport failed to arrive on the day of her discharge. This logistical breakdown left Martha and her daughter in a state of uncertainty at the facility, fearing that the transition home would fall apart. The navigator acted as a vital liaison by documenting the family's rising anxiety, alerting the social worker to the transportation bottleneck, and ensuring that the home support team remained informed of the shifting timeline to prevent a lapse in care upon her arrival.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a comprehensive audit of Martha\u2019s record in the Atlantis portal and cross-referenced it with the facility face sheet, discovering that the primary contact number for her daughter was off by one digit. I updated the contact information in the portal to ensure the home team could successfully reach the family for the first visit.",
+  "home_vs_ltc_goal": "Home with family support",
+  "v_card_flyer_status": "I assisted Martha\u2019s daughter in saving the Healing Partners digital contact card to her phone to ensure she would recognize our calls as the primary monitoring team and provided her with the program flyer to explain the specific support available during the first twenty-four hours at home.",
+  "pre_dc_pulse_call": "I conducted the twenty-four-hour pulse call and spoke with Martha\u2019s daughter, who was visibly frustrated by the transport delay but confirmed that the home was prepared and she remained committed to the first home visit once the transport issue was resolved.",
+  "atlantis_final_sync": "I recorded the updated discharge date and the confirmed first home visit window in Atlantis after the social worker provided a verbal update that a second transport company had been secured.",
+  "format_1_state_log": [
+    {
+      "event_description": "The navigator noticed that no discharge date or transport confirmation had been entered into the Atlantis transition plan and reached out to the social worker for a status update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Lack of transport confirmation in the portal"
+    },
+    {
+      "event_description": "The navigator was informed by the family that the transport van was a no-show; the navigator documented the family's high anxiety levels and alerted the social worker to the breakdown in the transition plan.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Transport vendor failure"
+    },
+    {
+      "event_description": "Following a verbal update from the social worker that a new transport window was set for the following morning, the navigator updated the Atlantis portal and confirmed the family's availability for the first visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed confusion regarding when the home health nurse would arrive to manage Martha's medications.",
+      "action_taken": "The navigator clarified that their focus is on the medical assistant's visit and deferred all specific medication and nursing schedule questions to the social worker.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis portal showed a pending status for the home health referral without an assigned agency.",
+      "action_taken": "The navigator verbally asked the social worker for the name of the accepted agency to ensure the internal records were accurate before discharge.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter expressed significant fear that Martha would have another heart failure episode if the transport delay lasted overnight.",
+      "action_taken": "The navigator documented the family's concerns regarding the delay and alerted the social worker to the need for a clinical reassurance call.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The navigator notes that the transport van has not arrived by the scheduled time and waits for the social worker to post an update to the transition plan in Atlantis.",
+      "rationale": "This respects the social worker's ownership of vendor logistics and prevents the navigator from interfering in a situation they cannot directly control."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The navigator asks the social worker for a verbal update on the transport status, documents the family's anxiety in the portal, and educates the daughter on what to expect during the first twenty-four hours once Martha is home.",
+      "rationale": "This allows the navigator to support the family and keep the portal data current without overstepping into vendor management or clinical decision-making."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The navigator calls the medical transport company directly to find out why the van is late and attempts to schedule a new pickup time to ensure the discharge happens today.",
+      "rationale": "This violates the no-vendor rule and interferes with the social worker's established relationship and responsibility for coordinating facility-to-home transport."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

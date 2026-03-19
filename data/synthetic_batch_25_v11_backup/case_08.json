@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for coordinating the home health referral and ensuring the clinical staff provides bedside training for the family. The Patient Navigator audits the Atlantis portal for demographic accuracy, educates the family on the 24-hour post-discharge support window, and alerts the Social Worker if family anxiety regarding their caregiving abilities threatens the transition timeline.",
+  "narrative_summary": "Eleanor, a 69-year-old managing chronic diabetic foot ulcers, was nearing her transition home but felt unprepared to handle the complex care required. Her daughter shared that while they wanted to leave the facility, they had not yet been shown how to manage the specialized wound dressings, creating a significant emotional barrier to the discharge. The Navigator identified this anxiety, documented the family's concerns in the Atlantis portal, and alerted the Social Worker to ensure a training session was completed. Through this advocacy, the family felt empowered to take Eleanor home, and the transition was successfully completed with the first home visit occurring the following morning.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Cross-referenced Eleanor's residential address and primary caregiver contact details in Atlantis against the facility face sheet. The Navigator discovered a discrepancy in the primary phone number and alerted the Social Worker to update the record, ensuring the home health team could reach the family immediately upon discharge.",
+  "home_vs_ltc_goal": "Home with specialized home health services.",
+  "v_card_flyer_status": "The Navigator provided the program flyer to Eleanor's daughter and assisted her in saving the Healing Partners contact information as a V-Card. This step was taken to ensure the family would recognize the caller ID for the 24-hour pulse call and the medical assistant's arrival notification, preventing missed communications.",
+  "pre_dc_pulse_call": "Reached the daughter 24 hours prior to the scheduled transition. She confirmed the home was prepared and shared that the bedside training provided by the facility nurses had greatly reduced her anxiety about managing the diabetic ulcers.",
+  "atlantis_final_sync": "Confirmed the final discharge date with the Social Worker and recorded the first visit window in Atlantis after the home health agency's acceptance was verified through the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no discharge date had been entered in Atlantis yet and reached out to the Social Worker to check if the diabetic wound progress met the criteria for a transition plan.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Portal Information Gap"
+    },
+    {
+      "event_description": "During a bedside check-in, the daughter expressed high anxiety, noting that she felt unable to take Eleanor home because she had not yet been trained on how to apply the specialized diabetic dressings.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family Training Gap"
+    },
+    {
+      "event_description": "The Navigator documented the family's concerns in the portal and alerted the Social Worker to the training barrier, requesting that a bedside demonstration be confirmed before the transition date was finalized.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20132 Days",
+      "ai_assumed_bottleneck": "Internal Communication Gap"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family was confused about the difference between the home health nurse and the medical assistant visit.",
+      "action_taken": "Clarified that the medical assistant focuses on the initial 24-hour home safety check and deferred specific nursing schedule questions to the facility nursing staff.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis record did not show if a home health agency had accepted the referral.",
+      "action_taken": "Checked the portal for an acceptance status and, finding no update, asked the Social Worker for a verbal status on the agency selection.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter mentioned the facility staff seemed too busy to show her the wound care steps.",
+      "action_taken": "Alerted the Social Worker to the family's perceived lack of support to ensure a teaching session was prioritized before the weekend.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator noted the family's concerns in the Atlantis portal and waited for the Social Worker to address the training needs during the next scheduled care conference.",
+      "rationale": "This respects the Social Worker's authority over the clinical training schedule but risks a last-minute discharge delay if the concern is not proactively highlighted."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator verbally informed the Social Worker of the family's specific fears regarding wound care and requested that a bedside teaching session be confirmed before the discharge date was finalized.",
+      "rationale": "This acts as a liaison by surfacing family sentiment while correctly leaving clinical instruction to the qualified facility staff."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator offered to bring in a sample dressing kit and show the daughter how to perform the change themselves to keep the discharge on schedule.",
+      "rationale": "This crosses into clinical instruction, which is outside the Navigator's scope and creates significant liability for the program."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

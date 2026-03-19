@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical discharge plan and coordinates with external home health agencies, while the Navigator audits demographic data in Atlantis, provides education on the initial home visit window, and monitors for communication gaps.",
+  "narrative_summary": "Eleanor Vance, a sixty-nine-year-old managing a complex diabetic foot wound, faced significant uncertainty regarding her transition home when her facility social worker became unavailable for several days. Without a confirmed discharge date or agency acceptance in the system, Eleanor and her daughter expressed growing concern about the lack of a clear plan for her follow-up care. The Navigator identified this information gap and proactively sought a verbal update from the clinical team to ensure Eleanor\u2019s transition remained on track without overstepping into vendor management.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Audited the face sheet against the Atlantis record and identified a typo in the primary contact phone number for Eleanor\u2019s daughter; corrected the entry in the portal to ensure the home team could reach the family upon discharge.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "Provided the program flyer to Eleanor at the bedside and assisted her in saving the Healing Partners contact information as a digital contact card so she would recognize the coordination calls.",
+  "pre_dc_pulse_call": "Conducted the pulse call and reached Eleanor's daughter, who expressed high anxiety regarding the lack of a confirmed arrival time for the home nurse; the Navigator documented this sentiment and deferred specific scheduling to the facility nursing lead.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date in the Atlantis portal and noted that the first home visit would be finalized once the social worker confirmed the agency was in place.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that no discharge date or home health agency selection had been entered into Atlantis for five days and attempted to locate the Social Worker for a verbal update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Portal Information Silo"
+    },
+    {
+      "event_description": "The Navigator was informed that the Social Worker was out of the facility unexpectedly and that no other staff had access to the referral status in the portal.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Facility Communication Blackout"
+    },
+    {
+      "event_description": "After the Social Worker returned, the Navigator obtained the verbal confirmation that the referral had been accepted and documented the new timeline in the Atlantis portal.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The transition plan in Atlantis remained empty for several days despite the patient approaching her clinical goals.",
+      "action_taken": "The Navigator highlighted the bottleneck in Atlantis and monitored the record for updates while waiting for a clinical response.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Eleanor's daughter asked if the home nurse would be able to change the specific silver alginate dressing used in the facility.",
+      "action_taken": "The Navigator focused the conversation on the initial post-discharge visit and advised the family to discuss dressing protocols with the facility nursing staff.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker was unavailable to provide a status on the home health agency selection.",
+      "action_taken": "The Navigator alerted the clinical team to the communication gap and waited for the Social Worker to provide a verbal update rather than calling agencies directly.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to return from their absence before providing any further updates to the family regarding the home health transition.",
+      "rationale": "This respects the professional boundary by ensuring only the designated clinical lead provides official status updates on the discharge plan."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Verbally ask the unit nurse manager for the most recent discharge goal and document the family's anxiety levels in Atlantis to ensure the Social Worker can address them immediately upon return.",
+      "rationale": "This allows the Navigator to gather necessary information through internal inquiry and support the family without circumventing the Social Worker's authority."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency intake department to see if they have received Eleanor's referral so that the family can be given a tentative start date for services.",
+      "rationale": "This violates the rule against direct vendor contact and attempts to manage logistics that are the sole responsibility of the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

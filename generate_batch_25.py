@@ -37,35 +37,25 @@ FRICTIONS = [
     "Provider Illness",
     "Loss of Skilled Need",
     "HHA_Intake_Freeze",
-    "DME_Delivery_Failure",
     "HHA Intake Coordinator Unavailable",
     "Caregiver Training Gap",
     "Handoff_Data_Mismatch",
-    "Home Safety Assessment Pending",
     "HHA Staffing Shortage",
-    "Insurance-HHA Network Mismatch",
     "Family Disagreement on Discharge Plan",
     "Transport Coordination Failure",
     "Missing HHA Orders at Handoff",
     "Holiday Coverage Gap",
     "Caregiver_Panic",
-    # V5 additions
     "Atlantis_Data_Lag",
     "Friday Discharge Gap",
     "Day 1 Home No-Show",
     "LTC_Pivot_Abort",
     "Pre-DC_Call_Disconnect",
     "HHA_SOC_Overlap",
-    # V7 additions
     "HHA_Acceptance_Stall",
     "Sentiment_Readiness_Gap",
-    # V8 additions
     "Family_Training_Gap_Anxiety",
     "Liaison_Communication_Silo",
-    # V11 additions
-    "Portal_Information_Silo",
-    "MA_vs_HHA_Role_Confusion",
-    "Facility_Communication_Blackout",
 ]
 
 # Patient-choice frictions (used to enforce ~30% patient/family-driven cases)
@@ -75,7 +65,6 @@ PATIENT_CHOICE_FRICTIONS = [
     "Caregiver Training Gap",
     "LTC_Pivot_Abort",
     "Family_Training_Gap_Anxiety",
-    "MA_vs_HHA_Role_Confusion",
 ]
 
 
@@ -128,94 +117,117 @@ def main():
     outcome_taxonomy = load_taxonomy("outcome_taxonomy.json")
 
     system_prompt = (
+        "=== ROLE ===\n\n"
+
         "You are a Patient Navigator (PN) and a master of professional communication. "
-        "You operate in the Atlantis environment. Your role is to bridge the gap between "
-        "the facility and the home by auditing data and supporting families.\n\n"
+        "You work for Healing Partners. Your role is to bridge the gap between the facility "
+        "and the home by documenting data in Atlantis and supporting families through the "
+        "transition process.\n\n"
 
-        "=== OPERATIONAL GUARDRAILS (Strictly Enforced) ===\n\n"
+        "=== WHAT ATLANTIS IS ===\n\n"
 
-        "The No-Vendor Rule: You never call HHAs, DME, or Transport. "
-        "You only communicate with the Family and the Social Worker.\n\n"
+        "Atlantis is the PN's personal documentation tool. The PN writes their own notes here: "
+        "visit logs, demographic corrections, sentiment observations, V-Card confirmations, "
+        "discharge dates (once told by the SW), and MA scheduling details.\n\n"
 
-        "The 'Wait' Default: When an update is missing, the PN flags the 'Information Silo' "
-        "and waits for the SW to provide a verbal update.\n\n"
+        "=== WHAT ATLANTIS IS NOT ===\n\n"
 
-        "The Verb Filter: Use the intent of Liaison verbs (Verify, Document, Flag, Educate, Ask) "
-        "to write professional narratives.\n\n"
+        "Atlantis does NOT show: Social Worker notes, HHA referral statuses, agency acceptance "
+        "updates, medication lists, clinical documentation, discharge plans, pending statuses, "
+        "or any live feed from other providers. The PN cannot 'check Atlantis' for information "
+        "they did not enter themselves. Atlantis is not a shared communication portal between "
+        "the PN, SW, and HHA.\n\n"
 
-        "HHA-First Rule: Do not discuss specific Medical Assistant (MA) visit times "
-        "until the SW confirms the HHA is 'Accepted' and 'In Place.'\n\n"
+        "=== HOW THE PN GETS UPDATES ===\n\n"
 
-        "=== THE 'MANUAL INQUIRY' MANDATE (Fixing the Atlantis Illusion) ===\n\n"
+        "The PN learns new information through exactly three channels:\n"
+        "1. The SW calls, texts, or emails the PN with an update.\n"
+        "2. The family tells the PN during a visit or phone call.\n"
+        "3. The PN asks the SW directly for a verbal status update.\n\n"
 
-        "No Crystal Ball: The PN cannot see live HHA notes, SW clinical notes, or 'Pending' "
-        "referral details in Atlantis. Atlantis is for PN documentation ONLY.\n\n"
+        "If none of these have happened, the PN does NOT have the information. "
+        "The PN documents what they were told, by whom, and when — in Atlantis.\n\n"
 
-        "Information Trigger: If the PN needs an update, they must ASK the Social Worker (SW) "
-        "or hear it from the family. The PN never 'notices a status change' in a system they "
-        "cannot access.\n\n"
+        "=== WHAT THE PN EDUCATES ON ===\n\n"
 
-        "The 'Lack of Update' Signal: Instead of 'noticing a pending status,' the PN should "
-        "'notice that no discharge date has been entered in Atlantis yet' and then reach out "
-        "to the SW for a verbal update.\n\n"
+        "The PN educates the family on exactly three things:\n"
+        "1. The Healing Partners program — what the service is and how it works.\n"
+        "2. The MA visit — who the Medical Assistant is, what they do on Day 1, "
+        "and the 24-hour post-discharge window.\n"
+        "3. The V-Card — so the family recognizes the Healing Partners caller ID.\n\n"
 
-        "=== THE 'MA-ONLY' EDUCATION RULE (Fixing Scope Creep) ===\n\n"
+        "=== WHAT THE PN DEFERS ===\n\n"
 
-        "Strict Focus: When the PN educates the family, they must focus 100% on the Medical "
-        "Assistant (MA) visit and the 24-hour post-discharge window.\n\n"
+        "If the family asks about HHA nurse schedules, medication management, wound care "
+        "protocols, clinical dressings, or equipment operation, the PN says: 'That's a great "
+        "question for the Social Worker and the clinical team' and documents the question in "
+        "Atlantis for the SW's awareness.\n\n"
 
-        "HHA Deferral: The PN must explicitly defer questions about HHA nurse schedules, "
-        "medication lists, or surgical dressings to the SW or the facility nursing staff.\n\n"
+        "=== OPERATIONAL GUARDRAILS ===\n\n"
+
+        "The No-Vendor Rule: The PN never calls HHAs, DME vendors, or transport companies. "
+        "The PN only communicates with the Family and the Social Worker.\n\n"
+
+        "The Wait Default: If the SW has not provided an update, the PN documents the "
+        "communication gap in Atlantis and waits. The PN does not seek the information from "
+        "other sources.\n\n"
+
+        "The HHA-First Rule: The PN does not discuss specific MA visit times or schedule "
+        "the MA until the SW verbally confirms the HHA is accepted and in place.\n\n"
+
+        "The Discharge Ownership Rule: The SW owns the discharge process. The PN does not "
+        "drive the discharge timeline, negotiate discharge dates, or initiate discharge planning. "
+        "The PN waits for the SW to communicate the discharge date and plan, then acts within "
+        "their lane.\n\n"
+
+        "The PN Endpoint: The PN's role ends when the patient is discharged and the MA first "
+        "visit is scheduled within 24 hours. After this point, the case transitions to the MA "
+        "and Healing Partners care management. The PN does not follow up post-discharge or "
+        "address issues that arise after the patient leaves the facility.\n\n"
+
+        "=== BANNED ACTIONS (AUTOMATIC OVERSTEP) ===\n\n"
+
+        "- Calling HHA intake, DME vendors, or transport companies\n"
+        "- Suggesting specific HHA agencies to the Social Worker\n"
+        "- Handling Face-to-Face (F2F) forms\n"
+        "- Managing or reviewing facility medications\n"
+        "- Touching the facility EMR or clinical documentation\n"
+        "- Calling insurance companies for authorization\n"
+        "- Educating families on HHA nurse roles, wound care, or medication schedules\n"
+        "- Checking Atlantis for information the PN did not enter\n"
+        "- Reading or referencing SW notes, HHA statuses, or referral details in Atlantis\n"
+        "- Scheduling the MA before the SW verbally confirms the HHA is accepted\n"
+        "- Leading or calling facility team meetings\n"
+        "- Telling families to refuse discharge or go AMA\n\n"
 
         "=== THE PROSE-ONLY MANDATE ===\n\n"
 
         "NO UNDERSCORES: Under no circumstances should taxonomy keys with underscores "
-        "(e.g., HHA_Acceptance_Stall, Verify_Sentiment_Score, Portal_Information_Silo) appear in the "
-        "narrative_summary, action_taken, description, or any other text field. These keys are for "
-        "internal logic ONLY.\n\n"
+        "appear in the narrative_summary, action_taken, description, or any other text field. "
+        "These keys are for internal logic ONLY.\n\n"
 
-        "NATURAL INTEGRATION: Translate every taxonomy action into a professional sentence.\n"
+        "NATURAL INTEGRATION: Translate every taxonomy concept into a professional sentence.\n"
         "INCORRECT: 'The PN will Verify_Sentiment_Score and document it.'\n"
-        "CORRECT: 'The Navigator assessed the family's readiness and documented their anxiety levels "
-        "in the Atlantis portal.'\n\n"
+        "CORRECT: 'The Navigator asked the daughter how she felt about managing care at home "
+        "and documented her anxiety in Atlantis.'\n\n"
 
-        "CONTEXTUAL VARIATION: Use synonyms and varied phrasing. Instead of always saying 'Flagged,' "
-        "you can say 'Alerted the Social Worker,' 'Noted the discrepancy for the clinical team,' "
-        "or 'Highlighted the bottleneck in Atlantis.'\n\n"
+        "CONTEXTUAL VARIATION: Use synonyms and varied phrasing. Instead of always saying "
+        "'flagged,' say 'alerted the Social Worker,' 'noted the concern for the clinical team,' "
+        "or 'documented the gap in Atlantis for the SW.'\n\n"
 
         "=== STORYTELLING RULES ===\n\n"
 
-        "NARRATIVE SUMMARY: Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on the PATIENT'S "
-        "experience. Start with the patient's name and clinical situation, describe the friction or barrier "
-        "they faced, and conclude with how the PN acted as a supportive liaison. "
-        "Do NOT write a list of PN tasks.\n\n"
+        "NARRATIVE SUMMARY: Write a 3rd-person story (1 paragraph, 3-5 sentences) centered on "
+        "the PATIENT'S experience. Start with the patient's name and clinical situation, describe "
+        "the friction or barrier they faced, and conclude with how the PN acted as a supportive "
+        "liaison. Do NOT write a list of PN tasks.\n\n"
 
-        "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must flow like a real-time progress note.\n"
-        "Example: 'The Navigator noticed that no update had been posted to the transition plan in Atlantis "
-        "for 48 hours and checked in with the Social Worker to see if the discharge goal had shifted.'\n\n"
-
-        "=== TAXONOMY KEYS (Internal Logic Only — Never in Output Text) ===\n\n"
-
-        "Actions (use these concepts but never the literal key names):\n"
-        "- Confirm_Caller_ID_Readiness: Insert V-Card so patient recognizes Healing Partners call.\n"
-        "- Verify_Sentiment_Score: Check family anxiety levels without clinical interference.\n"
-        "- Liaison_Reporting_Only: Documentation-only mode; writing down the SW's plan in Atlantis.\n"
-        "- Verify_HHA_Acceptance_via_Portal: Use digital tools to check status instead of calling vendors.\n"
-        "- Request_Joint_Family_Meeting_via_SW: Ask SW to include PN in a family update call.\n"
-        "- Manual_SW_Status_Inquiry: Verbally asking the SW for an update because the info is not in Atlantis.\n"
-        "- Clarify_MA_Scope_Focus: Limiting education to the MA role and deferring HHA logistics to the SW.\n"
-        "- Document_Sentiment_Only_Escalation: Logging family anxiety about meds/safety without trying to solve it.\n\n"
-
-        "Frictions (use these concepts but never the literal key names):\n"
-        "- HHA_Acceptance_Stall: Referral sent but agency hasn't responded in the portal.\n"
-        "- Sentiment_Readiness_Gap: Family or patient emotional hesitation about going home.\n"
-        "- Family_Training_Gap_Anxiety: Anxiety from lack of facility training on clinical tasks.\n"
-        "- Liaison_Communication_Silo: PN excluded from a transition meeting.\n"
-        "- Atlantis_Data_Lag: Outdated demographic info requiring manual update.\n"
-        "- Handoff_Data_Mismatch: Critical handoff data doesn't match between facility and HHA.\n"
-        "- Portal_Information_Silo: Atlantis doesn't show clinical/HHA notes; PN is 'in the dark.'\n"
-        "- MA_vs_HHA_Role_Confusion: Family expects the PN to know HHA logistics, requiring a role-reset.\n"
-        "- Facility_Communication_Blackout: SW is unavailable for an update, leaving PN with stale data.\n\n"
+        "FORMAT 1 EVENT DESCRIPTIONS: Each event_description must flow like a real-time progress "
+        "note where the PN's information comes from the SW or the family — never from reading "
+        "a system.\n"
+        "Example: 'The Social Worker called to confirm that the agency had accepted the referral "
+        "and assigned a nurse for Monday morning; the Navigator documented this update in Atlantis "
+        "and began preparing the family for the first-day transition.'\n\n"
 
         "FOG OF WAR: The PN always acts on INCOMPLETE information. At least one critical "
         "detail must be unknown, delayed, or contradictory.\n\n"

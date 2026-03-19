@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the clinical referral to the home health agency and selecting the appropriate vendors, while the Navigator audits the accuracy of the patient's contact data in the portal, educates the family on the initial support visit, and flags information gaps to the clinical team.",
+  "narrative_summary": "Arthur Vance, a 65-year-old patient recovering from a COPD exacerbation, encountered a significant hurdle when his transition plan in the portal reflected an address he had not lived at for years. This outdated information created a risk that essential respiratory equipment and home health services would be misdirected, potentially leaving him without oxygen upon his return home. The Navigator identified this discrepancy during a routine data audit and collaborated with the Social Worker to ensure the records were corrected, ultimately facilitating a safe and well-coordinated transition to his actual residence.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit of the patient's file in the portal, the Navigator identified that the primary phone number and home address did not match the current facility face sheet. The information in the system appeared to be from a prior admission three years ago, which would have resulted in a failed delivery of medical equipment if not corrected.",
+  "home_vs_ltc_goal": "Home with specialized respiratory support and nursing care.",
+  "v_card_flyer_status": "The Navigator met with Arthur and his daughter to provide the program flyer and helped them save the Healing Partners contact card into their mobile devices. This was done to ensure they would recognize the caller ID for the transition team and not dismiss the calls as spam during the first day home.",
+  "pre_dc_pulse_call": "The Navigator reached the patient's daughter 24 hours before the scheduled discharge to confirm she was ready for his return. She expressed some anxiety about the timing of the oxygen delivery, so the Navigator documented this sentiment and encouraged her to discuss the specific delivery window with the facility nursing staff.",
+  "atlantis_final_sync": "Following verbal confirmation from the Social Worker that the home health agency had accepted the updated referral, the Navigator recorded the discharge date and the confirmed time for the first support visit in the portal.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator noticed that the address listed in the portal was several years out of date and flagged the discrepancy for the Social Worker to prevent the referral from being sent to the wrong regional branch.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2 Days",
+      "ai_assumed_bottleneck": "Data discrepancy between facility records and the transition portal"
+    },
+    {
+      "event_description": "The Navigator observed that no updates had been made to the referral status for 48 hours and checked in with the Social Worker to see if the home health agency had received the corrected contact information.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1 Day",
+      "ai_assumed_bottleneck": "Information silo between the clinical team and the portal"
+    },
+    {
+      "event_description": "After the Social Worker confirmed the agency's acceptance, the Navigator updated the portal with the correct demographics and finalized the schedule for the initial support visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The portal contained an inactive phone number for the patient's primary caregiver.",
+      "action_taken": "The Navigator alerted the Social Worker to the outdated contact information and requested the correct face sheet to update the portal records.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family was confused about the difference between the home health nurse and the transition support visit.",
+      "action_taken": "The Navigator explained the specific focus of the first 24-hour visit and deferred questions about the long-term nursing schedule to the facility staff.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The patient expressed anxiety about managing his oxygen levels without facility staff present.",
+      "action_taken": "The Navigator documented the patient's concerns regarding home safety in the portal and highlighted the anxiety for the Social Worker's review.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator documents the address mismatch in the portal and waits for the Social Worker to complete the weekly record reconciliation to see if the data is updated automatically.",
+      "rationale": "This approach respects the boundary by allowing the facility's existing processes to correct the data, though it risks a delay in the transition."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator identifies the outdated address, verbally asks the Social Worker for the current contact information, and updates the portal to ensure the family receives the necessary education and support calls at the correct number.",
+      "rationale": "This follows the manual inquiry mandate by seeking information from the Social Worker to fix a known bottleneck without contacting outside vendors."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator notices the incorrect address and calls the home health agency's intake department to provide the new location and ensure the oxygen equipment is delivered to the right house.",
+      "rationale": "This violates the No-Vendor Rule by contacting the home health agency directly to manage logistics that are the responsibility of the Social Worker."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

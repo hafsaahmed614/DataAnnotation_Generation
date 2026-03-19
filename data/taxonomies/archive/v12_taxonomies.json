@@ -1,8 +1,8 @@
 {
-  "version": "v11",
-  "name": "Manual Inquiry + MA-Only Scope",
-  "focus": "Fixes Atlantis Illusion (PN cannot see live HHA/SW notes) and Scope Creep (education limited to MA visit). 3 new actions, 3 new frictions.",
-  "ranking": "Superseded by V12",
+  "version": "v12",
+  "name": "Data-Driven Optimal Taxonomy",
+  "focus": "Derived from analysis of 22 high-scoring cases (4+ from both navigators) across V5 and V10. Removed Verify_HHA_Acceptance_via_Portal (Atlantis Illusion), 3 low-scoring frictions, and V11 additions. Added Discharge Ownership Rule and PN Endpoint.",
+  "ranking": "Current/Target",
   "action_taxonomy": [
     {
       "stage": "Stage 1: Patient Intake (Referral & Admission)",
@@ -87,18 +87,6 @@
             "Gauge family readiness without performing clinical intake",
             "Route anxiety-driven barriers to the SW for professional intervention"
           ]
-        },
-        {
-          "category": "Document_Sentiment_Only_Escalation",
-          "action_items": [
-            "Log family anxiety about medications, wound care, or home safety in Atlantis without attempting to solve the clinical issue",
-            "Escalate the documented sentiment to the SW for clinical follow-up",
-            "Do NOT provide clinical reassurance, medication guidance, or wound care instructions"
-          ],
-          "primary_intents": [
-            "Capture family concerns as data for the clinical team",
-            "Maintain the boundary between documenting sentiment and providing clinical advice"
-          ]
         }
       ]
     },
@@ -129,9 +117,9 @@
         {
           "category": "Patient Education",
           "action_items": [
-            "Educate patient/family on program benefits",
+            "Educate patient/family on Healing Partners program benefits",
             "Discuss POA awareness of home services",
-            "Walk family through Day 1 expectations at home: who arrives, what equipment should be present, and what to do if the HHA nurse is late",
+            "Walk family through Day 1 expectations: who the MA is, what they do, and the 24-hour post-discharge window",
             "Insert V-Card into patient's phone and deliver program flyer to patient/family"
           ],
           "primary_intents": [
@@ -153,7 +141,7 @@
           "category": "Request_Joint_Family_Meeting_via_SW",
           "action_items": [
             "Ask the SW to include the PN in a family update call or meeting",
-            "During the meeting, educate family on Day 1 expectations and answer non-clinical questions",
+            "During the meeting, educate family on Day 1 MA expectations and answer non-clinical questions",
             "Document meeting outcomes and any new concerns flagged by the family"
           ],
           "primary_intents": [
@@ -164,8 +152,8 @@
         {
           "category": "Maintain_Granular_Wait-Status_Timeline",
           "action_items": [
-            "Keep a running log in Atlantis of each 'waiting' phase (waiting for HHA acceptance, waiting for SW response, waiting for DME delivery)",
-            "Update the log each time a status change occurs or a flag is sent to the SW",
+            "Keep a running log in Atlantis of each 'waiting' phase (waiting for SW to confirm HHA acceptance, waiting for SW response, waiting for D/C date)",
+            "Update the log each time the SW provides an update or a flag is sent",
             "Use the timeline to provide context when escalating delays"
           ],
           "primary_intents": [
@@ -182,30 +170,6 @@
           ],
           "primary_intents": [
             "Ensure complex issues are handled by the appropriate professional"
-          ]
-        },
-        {
-          "category": "Manual_SW_Status_Inquiry",
-          "action_items": [
-            "Verbally ask the SW for an update on HHA acceptance, discharge date, or referral status because the information is not available in Atlantis",
-            "Document the SW's verbal response in Atlantis",
-            "If the SW is unavailable, log the attempt and wait — do NOT seek the information from vendors or facility systems"
-          ],
-          "primary_intents": [
-            "Obtain transition updates through human inquiry, not system assumptions",
-            "Reinforce that Atlantis is a PN documentation tool, not a live clinical feed"
-          ]
-        },
-        {
-          "category": "Clarify_MA_Scope_Focus",
-          "action_items": [
-            "When educating the family, focus exclusively on the Medical Assistant (MA) visit and the 24-hour post-discharge window",
-            "If the family asks about HHA nurse schedules, medication management, or clinical dressings, defer to the SW or facility nursing staff",
-            "Document the deferral and the family's question for the SW's awareness"
-          ],
-          "primary_intents": [
-            "Keep PN education within the MA scope boundary",
-            "Prevent the PN from inadvertently providing clinical guidance disguised as education"
           ]
         }
       ]
@@ -249,27 +213,14 @@
         {
           "category": "Liaison_Reporting_Only",
           "action_items": [
-            "If HHA is not confirmed ready, flag the status to SW in Atlantis and WAIT",
+            "If HHA is not confirmed ready, document the gap in Atlantis and WAIT for the SW to provide an update",
             "Do NOT call HHA intake, DME vendors, or transport companies directly",
             "Document what was flagged and the SW's response",
             "If SW has not responded, ask SW for an update — do not attempt to resolve independently"
           ],
           "primary_intents": [
-            "Enforce the 'Wait' default — PN flags, SW resolves",
+            "Enforce the 'Wait' default — PN documents and flags, SW resolves",
             "Prevent the PN from crossing into vendor communication"
-          ]
-        },
-        {
-          "category": "Verify_HHA_Acceptance_via_Portal",
-          "action_items": [
-            "Check Atlantis portal for HHA acceptance status (do NOT call HHA directly)",
-            "If portal shows HHA accepted with SOC date, proceed to schedule MA",
-            "If portal shows pending or no update, flag to SW and WAIT",
-            "Document portal status in ma_visit_booking"
-          ],
-          "primary_intents": [
-            "Verify HHA readiness through system data, not direct vendor contact",
-            "Maintain the No-Vendor Rule while ensuring MA is not scheduled prematurely"
           ]
         },
         {
@@ -310,12 +261,6 @@
       "logical_dna_rule": "The HHA intake department is frozen due to staffing capacity, holiday, weekend, or system outage; no new admissions are being processed regardless of patient readiness."
     },
     {
-      "category": "Logistical",
-      "signal_barrier": "DME_Delivery_Failure",
-      "expected_delay": "+3–7 Days",
-      "logical_dna_rule": "Durable Medical Equipment (hospital bed, O2 concentrator) was confirmed delivered but the wrong item arrived, or the vendor delivered to the wrong address; the PN must verify equipment at the home before the HHA start-of-care visit."
-    },
-    {
       "category": "Operational",
       "signal_barrier": "HHA Intake Coordinator Unavailable",
       "expected_delay": "+1–3 Days",
@@ -334,22 +279,10 @@
       "logical_dna_rule": "Critical handoff data (medication list, allergy list, or POA contact information) from the facility does not match the HHA's records; the PN must flag discrepancies to both parties before the first home visit."
     },
     {
-      "category": "Logistical",
-      "signal_barrier": "Home Safety Assessment Pending",
-      "expected_delay": "+3–7 Days",
-      "logical_dna_rule": "The HHA requires a home safety evaluation (grab bars, ramp, clear pathways) before start-of-care; if the home fails inspection, modifications must be arranged before the patient can return."
-    },
-    {
       "category": "Operational",
       "signal_barrier": "HHA Staffing Shortage",
       "expected_delay": "+3–10 Days",
       "logical_dna_rule": "The HHA does not have a nurse or aide available in the patient's zip code; the PN must find an alternative agency or negotiate coverage with a more distant branch."
-    },
-    {
-      "category": "Administrative",
-      "signal_barrier": "Insurance-HHA Network Mismatch",
-      "expected_delay": "+3–5 Days",
-      "logical_dna_rule": "The patient's preferred or nearest HHA is out-of-network for their insurance plan; the PN must identify an in-network agency willing to take the referral or suggest a single-case agreement to the SW."
     },
     {
       "category": "Family/Caregiver",
@@ -421,13 +354,13 @@
       "category": "Operational",
       "signal_barrier": "HHA_Acceptance_Stall",
       "expected_delay": "+2–5 Days",
-      "logical_dna_rule": "The HHA has received the referral but has not yet confirmed acceptance (no SOC date, no assigned nurse, no first-visit window); the PN checks Atlantis portal for status, flags the delay to the SW, and WAITS. The PN does NOT call HHA intake directly."
+      "logical_dna_rule": "The HHA has received the referral but has not yet confirmed acceptance (no SOC date, no assigned nurse, no first-visit window); the PN asks the SW for a verbal status update, documents the response in Atlantis, and WAITS. The PN does NOT call HHA intake directly or check any portal for this information."
     },
     {
       "category": "Family/Caregiver",
       "signal_barrier": "Sentiment_Readiness_Gap",
       "expected_delay": "+1–4 Days",
-      "logical_dna_rule": "The patient or family expresses anxiety, reluctance, or low confidence about managing care at home; the PN documents the sentiment score and flags it to the SW for a care conference. The PN does NOT perform clinical intake or assessment — sentiment verification only."
+      "logical_dna_rule": "The patient or family expresses anxiety, reluctance, or low confidence about managing care at home; the PN documents the sentiment and flags it to the SW for a care conference. The PN does NOT perform clinical intake or assessment — sentiment documentation only."
     },
     {
       "category": "Family/Caregiver",
@@ -440,24 +373,6 @@
       "signal_barrier": "Liaison_Communication_Silo",
       "expected_delay": "+1–3 Days",
       "logical_dna_rule": "The PN is excluded from a key transition meeting (family conference, discharge planning huddle) and only learns of plan changes after the fact; the PN must request inclusion through the SW and update Atlantis with any new information received."
-    },
-    {
-      "category": "Informational",
-      "signal_barrier": "Portal_Information_Silo",
-      "expected_delay": "+1–3 Days",
-      "logical_dna_rule": "Atlantis does not display live HHA notes, SW clinical notes, or referral status details; the PN is 'in the dark' and must verbally ask the SW for an update rather than assuming information from the portal."
-    },
-    {
-      "category": "Family/Caregiver",
-      "signal_barrier": "MA_vs_HHA_Role_Confusion",
-      "expected_delay": "+1–2 Days",
-      "logical_dna_rule": "The family expects the PN to know and explain HHA nurse schedules, medication logistics, or clinical dressing protocols; the PN must reset expectations by clarifying that their scope is limited to the MA visit and defer HHA questions to the SW or facility nursing staff."
-    },
-    {
-      "category": "Operational",
-      "signal_barrier": "Facility_Communication_Blackout",
-      "expected_delay": "+1–3 Days",
-      "logical_dna_rule": "The SW is unavailable for an update (PTO, not responding, pulled into another case), leaving the PN with stale or missing data in Atlantis; the PN documents the communication gap and waits rather than seeking information from vendors or facility systems directly."
     }
   ],
   "outcome_taxonomy": [
