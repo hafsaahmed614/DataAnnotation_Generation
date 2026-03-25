@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the clinical training schedule and coordinating the home health agency referral, while the Navigator focuses on auditing demographic data in Atlantis, educating the daughter on the Healing Partners program, and flagging the caregiver's anxiety regarding physical transfers to the clinical team.",
+  "narrative_summary": "Arthur is an 86-year-old gentleman with advanced dementia and a history of frequent falls who is currently preparing to transition back to his daughter's care. His daughter, Susan, expressed deep concern during a bedside visit because she has not yet been shown how to safely assist her father with mobility or manage his wandering behaviors at home. The Navigator documented this training gap in Atlantis and alerted the Social Worker, ensuring that the facility provided the necessary family education to prevent a transition breakdown.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator reviewed the facility face sheet against the Atlantis record and discovered that the primary phone number listed for the daughter was missing a digit; the Navigator corrected the contact information in Atlantis to ensure the home team could reach her upon discharge.",
+  "home_vs_ltc_goal": "Home with daughter and 24-hour supervision.",
+  "v_card_flyer_status": "The Navigator successfully helped Susan save the Healing Partners contact information as a V-Card on her smartphone and provided a physical flyer, explaining that this would allow her to recognize the team's caller ID for the initial post-discharge coordination.",
+  "pre_dc_pulse_call": "During the twenty-four-hour pulse call, Susan confirmed that she had completed the bedside training with the physical therapy team and felt much more confident; she verified she was ready for the medical assistant to arrive the day after Arthur returns home.",
+  "atlantis_final_sync": "The Navigator recorded the confirmed discharge date provided by the Social Worker and documented the scheduled time for the Medical Assistant's first home visit in the Atlantis system.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur's daughter, who shared that she felt completely unprepared to handle his dementia-related behaviors at home; the Navigator documented this high level of anxiety in Atlantis for the Social Worker's immediate review.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Caregiver Training Gap"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the discharge would be delayed by three days to allow the nursing staff to conduct formal caregiver training sessions with the family; the Navigator updated the transition timeline in Atlantis accordingly.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3 Days",
+      "ai_assumed_bottleneck": "Caregiver Training Gap"
+    },
+    {
+      "event_description": "The Social Worker verbally confirmed that a home health agency had finally accepted the case and assigned a nurse for the start of care; the Navigator documented the agency name in Atlantis and began the final education phase with the daughter.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter expressed significant fear about managing her father's fall risk without help.",
+      "action_taken": "The Navigator asked the daughter to rate her readiness for the transition and documented her specific concerns about physical transfers in Atlantis.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The facility had not yet scheduled the required family teaching for dementia care.",
+      "action_taken": "The Navigator alerted the Social Worker to the family's request for education to ensure the discharge was not rushed before the caregiver felt safe.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family was confused about the difference between the home health nurse and the Healing Partners team.",
+      "action_taken": "The Navigator explained the specific role of the Medical Assistant and the twenty-four-hour window for the first home visit.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes in Atlantis that the Social Worker has not yet provided an update on the caregiver training schedule and chooses to wait for the next scheduled check-in with the facility staff.",
+      "rationale": "This respects the Social Worker's ownership of the clinical training process and avoids unnecessary pressure while maintaining an accurate log of the waiting period."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a status update on the family's training progress and confirms with the daughter that she has the V-Card saved so she can receive the scheduling call for the medical assistant.",
+      "rationale": "This action stays within the Navigator's lane by gathering information and ensuring the family is prepared for communication without interfering in clinical instruction."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator notices the daughter's struggle with the wheelchair and provides a brief demonstration on safe locking and pivoting techniques to help move the patient.",
+      "rationale": "This is an overstep because it involves providing clinical instruction and physical therapy education, which must be performed by licensed facility staff to ensure safety and liability standards."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

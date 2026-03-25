@@ -41,7 +41,7 @@ N_FEW_SHOT_EXAMPLES    = 2
 BATCH_SIZE             = int(os.environ.get("BATCH_SIZE", 1))
 
 
-# ── Pydantic Output Schema (V12: Data-Driven Optimal Taxonomy) ────────────────
+# ── Pydantic Output Schema (V13: Evaluation-Refined Taxonomy) ─────────────────
 
 class RLScenarioOption(BaseModel):
     ai_intended_category: Literal["Passive", "Proactive", "Overstep"] = Field(
@@ -269,7 +269,8 @@ def main():
         "updates, medication lists, clinical documentation, discharge plans, pending statuses, "
         "or any live feed from other providers. The PN cannot 'check Atlantis' for information "
         "they did not enter themselves. Atlantis is not a shared communication portal between "
-        "the PN, SW, and HHA.\n\n"
+        "the PN, SW, and HHA. The SW cannot see what the PN writes in Atlantis. Documenting "
+        "something in Atlantis does NOT notify the SW.\n\n"
 
         "=== HOW THE PN GETS UPDATES ===\n\n"
 
@@ -279,7 +280,9 @@ def main():
         "3. The PN asks the SW directly for a verbal status update.\n\n"
 
         "If none of these have happened, the PN does NOT have the information. "
-        "The PN documents what they were told, by whom, and when — in Atlantis.\n\n"
+        "The PN documents what they were told, by whom, and when — in Atlantis. "
+        "To communicate something to the SW, the PN calls, texts, or emails the SW directly. "
+        "Writing it in Atlantis is for the PN's own records only.\n\n"
 
         "=== WHAT THE PN EDUCATES ON ===\n\n"
 
@@ -294,7 +297,12 @@ def main():
         "If the family asks about HHA nurse schedules, medication management, wound care "
         "protocols, clinical dressings, or equipment operation, the PN says: 'That's a great "
         "question for the Social Worker and the clinical team' and documents the question in "
-        "Atlantis for the SW's awareness.\n\n"
+        "Atlantis for their own records.\n\n"
+
+        "If the family has anxiety, training concerns, or conflicts about the discharge plan, "
+        "the PN refers them to speak with the Social Worker directly. The PN does not relay "
+        "family concerns to the SW on the family's behalf — the family communicates directly "
+        "with the SW for clinical or discharge issues.\n\n"
 
         "=== OPERATIONAL GUARDRAILS ===\n\n"
 
@@ -310,13 +318,17 @@ def main():
 
         "The Discharge Ownership Rule: The SW owns the discharge process. The PN does not "
         "drive the discharge timeline, negotiate discharge dates, or initiate discharge planning. "
-        "The PN waits for the SW to communicate the discharge date and plan, then acts within "
-        "their lane.\n\n"
+        "The PN does not know about or get involved in HHA orders, medication lists, or clinical "
+        "documentation flowing between the facility and the HHA. The PN waits for the SW to "
+        "communicate the discharge date and plan, then acts within their lane.\n\n"
 
         "The PN Endpoint: The PN's role ends when the patient is discharged and the MA first "
         "visit is scheduled within 24 hours. After this point, the case transitions to the MA "
         "and Healing Partners care management. The PN does not follow up post-discharge or "
-        "address issues that arise after the patient leaves the facility.\n\n"
+        "address issues that arise after the patient leaves the facility. After discharge, the "
+        "family contacts the HHA or the SW with any issues — not the PN. If the family calls "
+        "the PN post-discharge, the PN directs them to the appropriate contact and does not "
+        "attempt to resolve the issue.\n\n"
 
         "=== BANNED ACTIONS (AUTOMATIC OVERSTEP) ===\n\n"
 
@@ -331,7 +343,12 @@ def main():
         "- Reading or referencing SW notes, HHA statuses, or referral details in Atlantis\n"
         "- Scheduling the MA before the SW verbally confirms the HHA is accepted\n"
         "- Leading or calling facility team meetings\n"
-        "- Telling families to refuse discharge or go AMA\n\n"
+        "- Telling families to refuse discharge or go AMA\n"
+        "- Assessing or scoring family readiness levels (this is the SW's role)\n"
+        "- Requesting the SW schedule training sessions, care conferences, or family meetings on the PN's behalf\n"
+        "- Relaying family concerns to the SW — the family speaks to the SW directly\n"
+        "- Flagging missing HHA orders or clinical documentation (the PN does not know about these)\n"
+        "- Any involvement after the patient is discharged and the MA visit is scheduled\n\n"
 
         "=== THE PROSE-ONLY MANDATE ===\n\n"
 

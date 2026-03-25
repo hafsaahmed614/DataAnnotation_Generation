@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical transition, agency selection, and final placement decisions, while the Navigator focuses on verifying demographic data in Atlantis, documenting the family's readiness for home care, and providing education on the Healing Partners program until a transition plan is finalized.",
+  "narrative_summary": "Arthur Vance, an 81-year-old recovering from a severe stroke, initially aimed to return home with his daughter\u2019s assistance following his rehabilitation stay. However, as his physical therapy progress slowed, his daughter shared her growing concerns about his safety and her own ability to manage his complex needs without professional oversight. After a care conference where these concerns were addressed, the Social Worker informed the Navigator that the family had decided on a long-term care placement instead of a home discharge. The Navigator documented this pivot in Atlantis and closed the file, ensuring the transition to permanent placement was the primary focus for the facility team.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator audited the facility face sheet against the Atlantis record and identified a discrepancy in the primary contact's phone number. The daughter's mobile number was corrected in Atlantis to ensure future outreach would be successful, and the home address was verified for accuracy.",
+  "home_vs_ltc_goal": "Long-Term Care (LTC)",
+  "v_card_flyer_status": "During an initial bedside visit, the Navigator assisted Arthur's daughter in saving the Healing Partners V-Card to her phone so she would recognize the caller ID. A program flyer was provided to explain the role of the Medical Assistant and the 24-hour post-discharge support window while home was still the primary goal.",
+  "pre_dc_pulse_call": "The Navigator spoke with Arthur's daughter 48 hours prior to the planned transition; the daughter expressed significant reluctance and high anxiety about Arthur's inability to walk unassisted. This sentiment was documented in Atlantis and flagged to the Social Worker, which contributed to the eventual decision to pivot to long-term care.",
+  "atlantis_final_sync": "Following verbal confirmation from the Social Worker that Arthur would be staying at the facility for long-term care, the Navigator updated Atlantis to reflect the change in plan and closed the case as a neutral transition.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur and his daughter to introduce the program; the daughter noted that while they hoped for a home discharge, Arthur's mobility was not improving as quickly as expected.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Patient recovery speed"
+    },
+    {
+      "event_description": "The Navigator asked the Social Worker for an update on the discharge timeline; the Social Worker indicated that the therapy team was currently re-evaluating Arthur's safety for home discharge due to a plateau in his stroke rehab.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2-7 Days",
+      "ai_assumed_bottleneck": "Clinical readiness"
+    },
+    {
+      "event_description": "The Social Worker notified the Navigator that the family had formally requested a transition to long-term care because the daughter could not provide the 24-hour supervision Arthur now requires.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "Caregiver capacity"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter expresses fear that Arthur will fall if he returns home under her care.",
+      "action_taken": "The Navigator documented the family's anxiety regarding home safety in Atlantis and alerted the Social Worker to the need for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The Navigator needs to ensure the daughter recognizes Healing Partners calls during the planning phase.",
+      "action_taken": "The Navigator verified that the V-Card was successfully installed on the daughter's phone and explained its purpose for caller identification.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker confirms the patient will no longer be discharging to a home setting.",
+      "action_taken": "The Navigator performed a neutral closure in Atlantis and ceased all home transition coordination activities.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the Social Worker has not responded to an email regarding the home health referral status. The Navigator documents the silence in Atlantis and waits for the next scheduled facility check-in to ask for a verbal update.",
+      "rationale": "This respects the Social Worker's ownership of the referral process and avoids unnecessary pestering while maintaining a clear audit trail of the communication gap."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker if a family meeting has been scheduled to discuss the daughter's concerns. Upon learning a meeting is set, the Navigator requests to attend specifically to answer questions about the Medical Assistant's first-day visit requirements.",
+      "rationale": "This allows the Navigator to stay aligned with the clinical team and provide program-specific education in a collaborative environment without overstepping into clinical decision-making."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls a local skilled nursing facility to ask about bed availability for Arthur after hearing the daughter's concerns, then provides the list of available beds to the daughter.",
+      "rationale": "This is an overstep because the Social Worker owns the placement and discharge planning process; the Navigator should never contact alternative facilities or drive the placement search."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

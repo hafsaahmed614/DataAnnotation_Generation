@@ -70,19 +70,6 @@
             "Ensure program eligibility is verified early without performing clinical assessment",
             "Route clinical eligibility questions to the SW"
           ]
-        },
-        {
-          "category": "Verify_Sentiment_Score",
-          "action_items": [
-            "Ask patient/family: 'How ready do you feel about going home?'",
-            "Ask patient/family: 'What concerns do you have about managing at home?'",
-            "Document the family's sentiment (confident, anxious, reluctant)",
-            "If anxious or reluctant, flag to SW for a care conference"
-          ],
-          "primary_intents": [
-            "Gauge family readiness without performing clinical intake",
-            "Route anxiety-driven barriers to the SW for professional intervention"
-          ]
         }
       ]
     },
@@ -131,18 +118,6 @@
           ],
           "primary_intents": [
             "Proactive transition planning"
-          ]
-        },
-        {
-          "category": "Request_Joint_Family_Meeting_via_SW",
-          "action_items": [
-            "Ask the SW to include the PN in a family update call or meeting",
-            "During the meeting, educate family on Day 1 MA expectations and answer non-clinical questions",
-            "Document meeting outcomes and any new concerns flagged by the family"
-          ],
-          "primary_intents": [
-            "Gain direct access to family sentiment without overstepping SW's role",
-            "Ensure family education happens in a supported, collaborative setting"
           ]
         },
         {

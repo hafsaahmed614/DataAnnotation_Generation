@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the selection of the home health agency and the logistics of the transport van, while the Navigator audits the patient's contact information in Atlantis, explains the Healing Partners program to the daughter, and flags the transport delay for the clinical team's awareness.",
+  "narrative_summary": "Elena Vance, a 68-year-old managing a significant Multiple sclerosis flare, was working toward returning home after intensive physical therapy. Although her clinical markers improved, her transition was stalled when the scheduled wheelchair transport failed to confirm a pickup time for her discharge afternoon. The Navigator supported Elena\u2019s daughter through the frustration of the delay, documenting the scheduling gap in Atlantis and ensuring the home health team remained informed of the shifting timeline.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Elena's primary residence address and her daughter\u2019s mobile number against the facility face sheet; corrected a typo in the zip code within the Atlantis queue to ensure the Medical Assistant's travel distance was calculated accurately.",
+  "home_vs_ltc_goal": "Home with Home Health",
+  "v_card_flyer_status": "Provided the Healing Partners flyer to Elena and her daughter; successfully helped the daughter save the V-Card into her contacts so she would recognize the Healing Partners caller ID for the post-discharge follow-up.",
+  "pre_dc_pulse_call": "Reached the daughter 24 hours prior to the original discharge date; she expressed high anxiety regarding the lack of a confirmed transport time but remained committed to the home transition.",
+  "atlantis_final_sync": "Logged the revised discharge date provided by the Social Worker and noted that the Medical Assistant visit would be scheduled once the transport arrival at home was confirmed.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that Elena was stable and ready for a home transition next Tuesday; the Navigator met with the family to explain the Medical Assistant's role in the first 24 hours.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "During a morning check-in, the Social Worker mentioned that the contracted transport company had no record of the wheelchair van request for Tuesday, potentially delaying the move; the Navigator documented this logistical gap in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Transport Coordination Failure"
+    },
+    {
+      "event_description": "The daughter called the Navigator expressing frustration that her mother might be stuck at the facility another night; the Navigator explained that the Social Worker was working on a backup transport solution and documented the family's rising anxiety in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Daughter is unsure why a Healing Partners staff member is calling.",
+      "action_taken": "The Navigator explained the program benefits and ensured the V-Card was saved in the daughter's phone.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The wheelchair van remains unconfirmed two hours before the planned discharge.",
+      "action_taken": "The Navigator alerted the Social Worker to the family's concern and recorded the delay in the Atlantis timeline.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The facility face sheet lists an old landline that is no longer in service.",
+      "action_taken": "The Navigator updated the contact information in Atlantis after the daughter provided her current cell phone number.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator noted that the transport status was still unconfirmed in the afternoon; since the Social Worker was in a meeting, the Navigator documented the communication gap in Atlantis and waited for a return call before updating the family.",
+      "rationale": "This respects the Social Worker's ownership of vendor logistics and follows the wait default protocol."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "After hearing from the daughter about her concerns, the Navigator asked the Social Worker for a verbal status update on the transport van and then educated the family on what to expect during the Medical Assistant's visit the following day.",
+      "rationale": "This stays within the lane of liaison communication and family education without contacting the transport company directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "To help the process move faster, the Navigator called the medical transport company directly to confirm the pickup time and then advised the daughter on how to administer Elena's MS medications once she arrived home.",
+      "rationale": "This violates the No-Vendor Rule and the ban on clinical medication education."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

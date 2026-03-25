@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for the clinical handoff and ensuring the surgeon's post-operative orders reach the home health agency, while the Navigator's role is restricted to auditing demographic data in Atlantis, educating the family on the medical assistant's first-day visit, and flagging communication gaps regarding the missing paperwork to the Social Worker.",
+  "narrative_summary": "Arthur Vance, a 70-year-old patient recovering from an intensive spinal fusion, was eager to return home to begin his rehabilitation in a familiar environment. However, his transition was stalled when the selected home health agency reported they had not received the specific post-surgical orders required to initiate his care plan. The Navigator acted as a supportive liaison by documenting the document coordination gap in Atlantis and ensuring Arthur\u2019s family understood the 24-hour medical assistant visit window once the Social Worker resolved the clerical delay.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator performed a thorough audit of the facility face sheet against the Atlantis record; it was discovered that Arthur's primary contact number was missing a digit, which was promptly corrected in the system to ensure the home health team could reach the family upon discharge.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "The Navigator met with Arthur and his daughter to provide the program flyer and assisted them in saving the Healing Partners V-Card into their mobile contacts so they would recognize the caller ID for all future coordination calls.",
+  "pre_dc_pulse_call": "During the 24-hour pre-discharge call, Arthur's daughter expressed significant anxiety about managing his mobility after the spinal surgery; the Navigator documented this sentiment in Atlantis and alerted the Social Worker that the family felt unready due to the lack of home health confirmation.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed the orders were received and the discharge was finalized for Thursday, the Navigator recorded the discharge date and the scheduled Friday medical assistant visit in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur at the bedside to introduce the Healing Partners program and explain how the medical assistant supports the first 24 hours at home; Arthur expressed interest but noted he had not yet heard from a home health nurse.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Initial Education"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that while an agency was selected, the surgeon's specific spinal fusion orders had not yet arrived at the facility; the Navigator documented this administrative delay in Atlantis and informed the family that the timeline was pending paperwork.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2-4 Days",
+      "ai_assumed_bottleneck": "Missing HHA Orders at Handoff"
+    },
+    {
+      "event_description": "After a two-day silence, the Navigator asked the Social Worker for an update; the Social Worker confirmed the orders were finally located and sent to the agency. The Navigator then began the process of confirming the home transition with the family.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Internal Communication Lag"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The home health agency cannot confirm a start-of-care date because the physician's orders are missing from the referral packet.",
+      "action_taken": "The Navigator documented the specific missing documentation in Atlantis and alerted the Social Worker to the bottleneck.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's daughter is confused about who will be coming to the house on the first day after the spinal fusion surgery.",
+      "action_taken": "The Navigator provided a detailed explanation of the medical assistant's role and the specific 24-hour window for the first visit.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis record for Arthur shows a different primary address than what is listed on his current surgical face sheet.",
+      "action_taken": "The Navigator updated the residency information in Atlantis to ensure the home health agency and medical assistant have the correct destination.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes in Atlantis that the Social Worker has not yet provided a resolution for the missing orders and chooses to wait for the next morning's briefing to request an update.",
+      "rationale": "This respects the Social Worker's ownership of the clinical documentation process and adheres to the wait default when information is pending from the facility."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the missing orders and simultaneously educates the family on how to use the V-Card to identify the Healing Partners team when they call to schedule.",
+      "rationale": "This remains within the Navigator's lane by facilitating communication with the Social Worker and providing program-specific education to the family without interfering in vendor logistics."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the surgeon's office directly to demand they re-fax the spinal fusion orders to the home health agency to ensure the discharge happens on schedule.",
+      "rationale": "This violates the no-vendor rule and the boundary regarding clinical documentation, as the Navigator is not authorized to contact outside providers or manage physician orders."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,8 +1,8 @@
 {
-  "version": "v12",
-  "name": "Data-Driven Optimal Taxonomy",
-  "focus": "Derived from analysis of 22 high-scoring cases (4+ from both navigators) across V5 and V10. Removed Verify_HHA_Acceptance_via_Portal (Atlantis Illusion), 3 low-scoring frictions, and V11 additions. Added Discharge Ownership Rule and PN Endpoint.",
-  "ranking": "Superseded by V13",
+  "version": "v13",
+  "name": "Evaluation-Refined Taxonomy",
+  "focus": "Removed Verify_Sentiment_Score and Request_Joint_Family_Meeting_via_SW (PN intermediary pattern). Removed Missing HHA Orders at Handoff and Handoff_Data_Mismatch (PN not involved in clinical documentation). SW cannot see Atlantis. Post-discharge family contacts HHA/SW, not PN.",
+  "ranking": "Current/Target",
   "action_taxonomy": [
     {
       "stage": "Stage 1: Patient Intake (Referral & Admission)",
@@ -74,19 +74,6 @@
             "Ensure program eligibility is verified early without performing clinical assessment",
             "Route clinical eligibility questions to the SW"
           ]
-        },
-        {
-          "category": "Verify_Sentiment_Score",
-          "action_items": [
-            "Ask patient/family: 'How ready do you feel about going home?'",
-            "Ask patient/family: 'What concerns do you have about managing at home?'",
-            "Document the family's sentiment (confident, anxious, reluctant)",
-            "If anxious or reluctant, flag to SW for a care conference"
-          ],
-          "primary_intents": [
-            "Gauge family readiness without performing clinical intake",
-            "Route anxiety-driven barriers to the SW for professional intervention"
-          ]
         }
       ]
     },
@@ -135,18 +122,6 @@
           ],
           "primary_intents": [
             "Proactive transition planning"
-          ]
-        },
-        {
-          "category": "Request_Joint_Family_Meeting_via_SW",
-          "action_items": [
-            "Ask the SW to include the PN in a family update call or meeting",
-            "During the meeting, educate family on Day 1 MA expectations and answer non-clinical questions",
-            "Document meeting outcomes and any new concerns flagged by the family"
-          ],
-          "primary_intents": [
-            "Gain direct access to family sentiment without overstepping SW's role",
-            "Ensure family education happens in a supported, collaborative setting"
           ]
         },
         {
@@ -273,12 +248,6 @@
       "logical_dna_rule": "The primary caregiver has not been trained on wound care, catheter maintenance, or medication administration; discharge cannot proceed safely until the family demonstrates competency."
     },
     {
-      "category": "Clinical Handoff",
-      "signal_barrier": "Handoff_Data_Mismatch",
-      "expected_delay": "+1–3 Days",
-      "logical_dna_rule": "Critical handoff data (medication list, allergy list, or POA contact information) from the facility does not match the HHA's records; the PN must flag discrepancies to both parties before the first home visit."
-    },
-    {
       "category": "Operational",
       "signal_barrier": "HHA Staffing Shortage",
       "expected_delay": "+3–10 Days",
@@ -295,12 +264,6 @@
       "signal_barrier": "Transport Coordination Failure",
       "expected_delay": "+1–3 Days",
       "logical_dna_rule": "Medical transport (wheelchair van, stretcher transport) is unavailable or unscheduled for the discharge date; the PN must coordinate with transport vendors and confirm timing with the HHA's first-visit schedule."
-    },
-    {
-      "category": "Clinical Handoff",
-      "signal_barrier": "Missing HHA Orders at Handoff",
-      "expected_delay": "+2–4 Days",
-      "logical_dna_rule": "The physician's home health orders were not faxed, were incomplete, or were sent to the wrong HHA; the PN must flag the missing orders to the SW and verify receipt before start-of-care can be scheduled."
     },
     {
       "category": "Operational",

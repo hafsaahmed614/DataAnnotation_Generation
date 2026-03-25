@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for selecting the Home Health Agency and ensuring the referral is processed, while the Navigator audits the patient's contact information in Atlantis, explains the role of the Medical Assistant during the first 24 hours at home, and alerts the Social Worker when the family reports a gap in scheduled services.",
+  "narrative_summary": "Margaret Evans, a 78-year-old struggling with congestive heart failure, was eager to return to her quiet apartment after weeks of rehabilitation for fluid management. Despite her daughter\u2019s meticulous preparation, the transition hit a major snag when the home health nurse failed to arrive for the scheduled opening visit on the first day. The Navigator stepped in to support the family\u2019s anxiety, documenting the service gap in Atlantis and immediately alerting the Social Worker to ensure Margaret\u2019s safety and clinical continuity were not compromised.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator performed a thorough review of the facility face sheet against the Atlantis record, identifying an error in the primary phone number provided for Margaret's daughter; this was corrected in the system to ensure the home team could reach the primary caregiver without delay.",
+  "home_vs_ltc_goal": "Home with specialized home health services for heart failure management.",
+  "v_card_flyer_status": "During a bedside visit, the Navigator successfully assisted the patient in saving the Healing Partners V-Card to her mobile device and provided a program flyer, ensuring she would recognize the caller ID for all future follow-up communications.",
+  "pre_dc_pulse_call": "The Navigator reached the daughter 24 hours prior to discharge; while she expressed significant anxiety about managing her mother's daily weights, she felt reassured after the Navigator detailed the timing and purpose of the Medical Assistant's upcoming visit.",
+  "atlantis_final_sync": "The Navigator updated Atlantis with the confirmed discharge date and logged the first Medical Assistant visit as tentatively scheduled for the day after discharge, pending the home health agency's arrival.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the referral for home health had been accepted by a local agency and a nurse was assigned for the day of discharge; the Navigator documented this update in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Navigator met with the patient to discuss the transition plan and explain how the Medical Assistant supports the family during the first 24 hours at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "On the first morning home, the daughter called the Navigator to report that the home health nurse had not arrived as scheduled and was not answering their calls.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Day 1 Home No-Show"
+    },
+    {
+      "event_description": "The Navigator documented the missed visit in Atlantis and immediately notified the Social Worker, requesting an update on the agency's status to ensure Margaret remained safe at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter expressed high anxiety about managing heart failure symptoms without professional eyes in the home.",
+      "action_taken": "The Navigator explained the specific role of the Medical Assistant and how their visit within the first 24 hours would provide a layer of support for the family.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The home health nurse failed to show up for the initial assessment on the first day of discharge.",
+      "action_taken": "The Navigator alerted the Social Worker to the service gap and documented the family's concerns in Atlantis for immediate clinical awareness.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's contact information in the facility record was missing the apartment number.",
+      "action_taken": "The Navigator verified the correct address with the family and updated the Atlantis demographic record to prevent a delivery or visit failure.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes the daughter's report of the missed nursing visit in Atlantis, records the date and time of the call, and waits for the Social Worker's scheduled morning update to discuss the matter.",
+      "rationale": "This respects the operational guardrail of the wait default, ensuring the Navigator does not act on incomplete information or step into the Social Worker's role of managing agency performance."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator calls the Social Worker to verbally report that the family is currently without their scheduled nursing support and asks for an update on whether the agency has provided a new arrival window.",
+      "rationale": "This action stays within the Navigator's lane by acting as a liaison between the family's reported experience and the Social Worker's logistical oversight without contacting the vendor directly."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department to demand an explanation for the no-show and attempts to reschedule the nurse's visit to ensure the Medical Assistant's visit is not delayed.",
+      "rationale": "This violates the no-vendor rule and the discharge ownership rule by attempting to negotiate nurse schedules and directly contacting the home health agency."
+    }
+  ],
+  "case_outcome": "Failure_Transition_Breakdown"
+}

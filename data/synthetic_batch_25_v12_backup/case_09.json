@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for coordinating the specialized renal nursing referrals and scheduling the family training sessions, while the Patient Navigator focuses on auditing demographic accuracy in Atlantis, educating the daughter on the transition program, and flagging caregiver anxiety to the clinical team.",
+  "narrative_summary": "Martha, a 77-year-old patient recovering from complications of renal failure, was eager to return home but faced a significant hurdle when her daughter expressed paralyzing anxiety about managing her mother's fluid restrictions and specialized care. Although Martha was clinically stable, the lack of a formal teaching session at the facility left the family feeling unprepared and resistant to the discharge timeline. The Navigator acted as a vital liaison by documenting these emotional barriers in Atlantis and alerting the Social Worker to ensure the family received the necessary training before the transition occurred.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a side-by-side audit of the facility face sheet against the Atlantis record and discovered that Martha's primary contact number was missing a digit; I corrected the phone number and verified the home address to ensure the home health team would have no issues reaching the family post-discharge.",
+  "home_vs_ltc_goal": "Home with Home Health and Healing Partners support",
+  "v_card_flyer_status": "I sat with Martha's daughter and helped her save the Healing Partners V-Card into her phone contacts so she would recognize our caller ID; I also provided a program flyer and explained how the Medical Assistant would support them during the first twenty-four hours at home.",
+  "pre_dc_pulse_call": "I reached the daughter twenty-four hours prior to discharge; she reported that while the facility finally provided a training session, she still felt nervous, though she confirmed she was ready to receive the Medical Assistant the following day.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed that the home health agency had accepted the case and assigned a nurse, I recorded the confirmed discharge date in Atlantis and scheduled the Medical Assistant's first visit to occur the following afternoon.",
+  "format_1_state_log": [
+    {
+      "event_description": "The daughter informed me during a bedside visit that she did not feel comfortable managing Martha's renal care without a demonstration from the staff; I documented this anxiety in Atlantis and notified the Social Worker that the family was requesting a teach-back session.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family Training Gap Anxiety"
+    },
+    {
+      "event_description": "The Social Worker mentioned that the primary renal nurse was out on unexpected leave, which delayed the scheduled family training; I updated the wait-status log in Atlantis and informed the daughter that the Social Worker was working on a backup plan for the education.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+3\u20135 Days",
+      "ai_assumed_bottleneck": "Provider Illness"
+    },
+    {
+      "event_description": "The Social Worker confirmed that the training session was completed by the charge nurse and that an agency had officially accepted the referral; I documented the agency confirmation in Atlantis and began the final transition education with the family.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter was visibly upset and stated she might refuse the discharge because she didn't know how to handle the renal equipment.",
+      "action_taken": "I documented the daughter's reluctance and specific fears in Atlantis and alerted the Social Worker to the need for a care conference.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family was confused about who would be calling them once they arrived home.",
+      "action_taken": "I explained the Healing Partners program and ensured the V-Card was saved in their phone to facilitate caller ID recognition.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The patient's insurance information in Atlantis appeared to be from a previous admission and did not match the current face sheet.",
+      "action_taken": "I updated the insurance details in the Atlantis queue to match the verified facility documentation.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notices that the Social Worker has not yet provided an update on the family training session and chooses to document the ongoing delay in the Atlantis wait-status log before checking back the next morning.",
+      "rationale": "This respects the Social Worker's ownership of the clinical training process and ensures the Navigator does not overstep into facility operations."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update regarding the family's training and subsequently meets with the daughter to review the Medical Assistant's role in the 24-hour post-discharge window.",
+      "rationale": "This action stays within the Navigator's lane by gathering information from the Social Worker and focusing family education on the transition program rather than clinical care."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator notices the daughter's confusion regarding the renal diet and fluid restrictions and provides a printed guide on renal nutrition while calling the home health agency intake office to see if they can send a nurse earlier.",
+      "rationale": "This is an overstep because it involves providing clinical education and contacting an outside vendor, both of which are strictly prohibited."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

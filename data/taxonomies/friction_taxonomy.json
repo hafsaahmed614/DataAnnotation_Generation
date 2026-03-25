@@ -37,12 +37,6 @@
       "logical_dna_rule": "The primary caregiver has not been trained on wound care, catheter maintenance, or medication administration; discharge cannot proceed safely until the family demonstrates competency."
     },
     {
-      "category": "Clinical Handoff",
-      "signal_barrier": "Handoff_Data_Mismatch",
-      "expected_delay": "+1–3 Days",
-      "logical_dna_rule": "Critical handoff data (medication list, allergy list, or POA contact information) from the facility does not match the HHA's records; the PN must flag discrepancies to both parties before the first home visit."
-    },
-    {
       "category": "Operational",
       "signal_barrier": "HHA Staffing Shortage",
       "expected_delay": "+3–10 Days",
@@ -59,12 +53,6 @@
       "signal_barrier": "Transport Coordination Failure",
       "expected_delay": "+1–3 Days",
       "logical_dna_rule": "Medical transport (wheelchair van, stretcher transport) is unavailable or unscheduled for the discharge date; the PN must coordinate with transport vendors and confirm timing with the HHA's first-visit schedule."
-    },
-    {
-      "category": "Clinical Handoff",
-      "signal_barrier": "Missing HHA Orders at Handoff",
-      "expected_delay": "+2–4 Days",
-      "logical_dna_rule": "The physician's home health orders were not faxed, were incomplete, or were sent to the wrong HHA; the PN must flag the missing orders to the SW and verify receipt before start-of-care can be scheduled."
     },
     {
       "category": "Operational",
