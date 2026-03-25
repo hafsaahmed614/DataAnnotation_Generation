@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for facilitating the family care conference and making the final clinical determination for a long-term care pivot, whereas the Navigator's role is restricted to documenting the family's transition anxiety in Atlantis, verifying demographic accuracy, and performing a neutral closure once the home-based goal is abandoned.",
+  "narrative_summary": "Arthur Vance, an 86-year-old gentleman with advancing dementia and a history of repeated falls, was initially planned for a home discharge following his rehabilitation for a hip fracture. During a bedside visit, his daughter expressed overwhelming fear regarding her father's cognitive decline and the risk of him wandering at night without professional supervision. After the Social Worker coordinated a family meeting to discuss these safety concerns, the plan was officially changed from a home transition to a permanent placement in the facility's long-term care wing. The Navigator supported the process by documenting the family's shifting sentiment in Atlantis and finalized the case as a neutral closure once the home health referral was discontinued.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator audited the facility face sheet against the Atlantis record and found that the patient's primary residence was listed as his daughter's address, but the zip code was missing the final digit; this was corrected in the system to ensure the Medical Assistant travel radius was properly calculated before the plan shifted.",
+  "home_vs_ltc_goal": "The Social Worker confirmed that the discharge goal has changed to permanent Long-Term Care due to the patient's safety needs and dementia progression.",
+  "v_card_flyer_status": "The Navigator provided the daughter with a program flyer and successfully helped her save the Healing Partners contact card to her phone, explaining that this would allow her to recognize the program's caller identification if they needed to coordinate future services.",
+  "pre_dc_pulse_call": "During a final touchpoint, the daughter confirmed that the family had reached a consensus with the Social Worker to transition Arthur to long-term care, noting that their anxiety regarding home safety had reached a breaking point.",
+  "atlantis_final_sync": "The Navigator documented the final decision in Atlantis, recording the shift to long-term care and noting that the case is closed with no home visits or medical assistant scheduling required.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur and his daughter to discuss the transition program; the daughter was visibly shaken and shared that she did not feel capable of managing her father's dementia symptoms at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2-7 Days",
+      "ai_assumed_bottleneck": "Significant caregiver panic regarding the patient's cognitive safety at home."
+    },
+    {
+      "event_description": "The Navigator asked the Social Worker for an update on the discharge planning status after the family expressed interest in permanent placement; the Social Worker confirmed a care conference was pending to discuss the pivot.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+1-3 Days",
+      "ai_assumed_bottleneck": "Waiting for the social worker to finalize the care conference results."
+    },
+    {
+      "event_description": "The Social Worker notified the Navigator that the family has officially opted for long-term care instead of returning home; the Navigator documented the update and performed a neutral closure in Atlantis.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "The transition to long-term care has been finalized, ending the home health referral process."
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The patient's daughter expresses high levels of anxiety about managing Arthur's wandering behaviors and fall risks at home.",
+      "action_taken": "The Navigator documented the daughter's safety concerns and high anxiety levels in Atlantis to ensure a clear record of the family's sentiment.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family asks if the Healing Partners program can provide a full-time live-in aide to prevent falls.",
+      "action_taken": "The Navigator explained the program's focus on transitional medical assistant visits and directed the family to the Social Worker for questions regarding long-term private duty care.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Navigator noticed a discrepancy between the patient's phone number on the face sheet and the Atlantis record.",
+      "action_taken": "The Navigator verified the correct contact number with the daughter and updated the patient profile in Atlantis.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator noted in Atlantis that the Social Worker had not yet shared the final outcome of the family care conference and chose to wait for a direct verbal update before taking any further action.",
+      "rationale": "This respects the Social Worker's ownership of the discharge plan and avoids making assumptions about the patient's destination before it is officially confirmed."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asked the Social Worker for a status update on the discharge destination and updated the Atlantis timeline to reflect that the family was currently being evaluated for a long-term care pivot.",
+      "rationale": "This allows the Navigator to maintain an accurate record of the transition barriers while ensuring they are receiving information through the correct professional channels."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator contacted the facility's business office to ask about the daily rate for a long-term care bed so they could provide financial options to the family during their next visit.",
+      "rationale": "This is an overstep because the Navigator is interfering with facility financial and placement logistics, which are the exclusive responsibility of the Social Worker and the administrative team."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

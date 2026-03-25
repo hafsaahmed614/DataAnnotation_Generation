@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for the clinical discharge plan, selecting the home health agency, and coordinating the transition meetings, while the Navigator focuses on verifying Robert's demographic data in Atlantis, educating his family on the Healing Partners program, and flagging any communication gaps to the Social Worker to ensure a smooth handoff.",
+  "narrative_summary": "Robert Miller, a 70-year-old recovering from complex spinal fusion surgery, faced a period of uncertainty when a critical facility discharge huddle took place without the Navigator's participation. This communication gap left Robert and his wife confused about the timeline for his return home and when his supportive services would begin. After receiving a verbal update from the Social Worker, the Navigator acted as a liaison by documenting the new timeline in Atlantis and clarifying the role of the Medical Assistant to help Robert feel more secure about his first twenty-four hours post-discharge.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a thorough audit of the facility face sheet against the Atlantis record for Robert and discovered that his home address had an incorrect zip code and his primary phone number was missing a digit. I corrected these details in Atlantis to ensure the home health agency and our internal team could reach him without delay.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "I sat with Robert and his wife to insert the Healing Partners V-Card into their mobile contacts and provided the program flyer, explaining that this digital identification ensures they will recognize our team's calls during his recovery.",
+  "pre_dc_pulse_call": "I spoke with Robert's wife twenty-four hours before his scheduled departure; while she voiced some concern about managing his mobility after the spinal surgery, she confirmed they were ready for the transition and understood the timing of the first home visit.",
+  "atlantis_final_sync": "Following verbal confirmation from the Social Worker that the home health agency had accepted the case, I recorded the final discharge date and the scheduled time for the Medical Assistant's first visit in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator learned that a discharge planning meeting occurred earlier in the morning without their inclusion; the Navigator contacted the Social Worker to request a verbal summary of the updated timeline and documented the communication gap in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "Liaison_Communication_Silo"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the referral was sent to the home health agency but acceptance was still pending; the Navigator documented this waiting period in Atlantis and advised the family that the schedule would be finalized once the agency confirmed staffing.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "The Social Worker confirmed via phone that the agency had assigned a nurse for the day after discharge; the Navigator updated Robert's record in Atlantis and conducted the final education session with the family regarding the Medical Assistant's arrival.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Robert's wife is unsure of who will be visiting the home on the first day after surgery.",
+      "action_taken": "The Navigator explained the specific role of the Medical Assistant and the timeline for the first visit to reduce her anxiety.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Navigator was excluded from the facility's weekly utilization review meeting.",
+      "action_taken": "The Navigator requested a direct update from the Social Worker regarding the discharge date and noted the missing information in Atlantis.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's contact information in the facility record does not match the information in Atlantis.",
+      "action_taken": "The Navigator audited the demographic data and updated the record in Atlantis to ensure accurate communication.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "After realizing a transition meeting took place without them, the Navigator notes the communication gap in Atlantis and waits for the Social Worker to reach out with the updated plan during their next scheduled touchpoint.",
+      "rationale": "This respects the Social Worker's ownership of the discharge process and avoids interrupting the clinical team while still maintaining a record of the information delay."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the discharge timeline and then meets with Robert's family to explain the Healing Partners program and verify their contact information in Atlantis.",
+      "rationale": "This allows the Navigator to gather necessary information through the proper channels and perform their education role without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department to ask why they haven't accepted Robert's referral and then attempts to explain the post-operative wound care schedule to Robert's wife.",
+      "rationale": "Calling the agency directly violates the no-vendor rule, and providing clinical education on wound care interferes with the roles of the Social Worker and the nursing team."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

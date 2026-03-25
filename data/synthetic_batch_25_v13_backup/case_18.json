@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the home health agency referral and securing an intake date, while the Navigator focuses on verifying Arthur's home address and contact details in Atlantis, educating his wife on the first-day medical assistant visit, and documenting any communication delays for internal record-keeping.",
+  "narrative_summary": "Arthur Bennett, an 82-year-old managing Parkinson's disease, was nearing discharge after treatment for a complicated urinary tract infection. His transition was delayed when the home health agency failed to confirm their ability to staff his case, leaving his wife increasingly anxious about managing his mobility needs alone. The Navigator stepped in to provide clarity on the Healing Partners program and ensured the Social Worker was alerted to the family's growing concerns while documenting the scheduling bottleneck in Atlantis to ensure a smooth handoff once a nurse was assigned.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Arthur's primary residence against the facility face sheet; corrected a typo in the zip code and confirmed his wife's mobile number is the best point of contact for the medical assistant's arrival. All data was updated in the Atlantis queue to ensure the home team has the correct coordinates.",
+  "home_vs_ltc_goal": "Home with home health services",
+  "v_card_flyer_status": "The Navigator provided the Healing Partners flyer to Arthur's wife and successfully saved the digital V-Card into her phone. This was done to ensure she would recognize the incoming caller ID for the medical assistant's scheduling call and not mistake it for a telemarketer.",
+  "pre_dc_pulse_call": "A pulse call was conducted 24 hours prior to the anticipated discharge. Arthur's wife expressed high anxiety because the home health agency had not yet confirmed a start of care date; the Navigator documented this sentiment in Atlantis and informed the Social Worker of the family's distress.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed that the agency had accepted the case, the Navigator recorded the final discharge date and the scheduled first-visit window for the medical assistant in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the referral was sent to the home health agency, but no confirmation has been received yet; the Navigator documented this initial waiting period in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+    },
+    {
+      "event_description": "During a bedside visit, Arthur's wife shared that she is worried about managing his Parkinson's tremors without professional help; the Navigator explained the Healing Partners program benefits and documented her concerns in Atlantis for the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker called to confirm the agency finally accepted the referral and assigned a nurse for a Tuesday admission; the Navigator updated the status in Atlantis and began coordinating the medical assistant's visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The home health agency had not responded to the initial referral for over 48 hours.",
+      "action_taken": "The Navigator requested a verbal status update from the Social Worker and noted the agency stall in the Atlantis transition log.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "Arthur's wife asked how the home health nurse would handle his medication for Parkinson's.",
+      "action_taken": "The Navigator explained that clinical medication management is a question for the Social Worker and the nursing team, then documented the question in Atlantis.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker provided the confirmed discharge date and the name of the assigned home health agency.",
+      "action_taken": "The Navigator updated the final transition details in Atlantis and scheduled the medical assistant for a visit within the 24-hour post-discharge window.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Wait for the Social Worker to provide an update on the agency acceptance and document the date of the last inquiry in Atlantis to maintain an audit trail of the delay.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship with the home health agency and prevents the Navigator from interfering in vendor logistics."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "Ask the Social Worker for a verbal update on the referral status and conduct a pulse call to the family to explain the medical assistant's role in the first 24 hours at home.",
+      "rationale": "This keeps the transition moving within the Navigator's scope by gathering information from the appropriate internal source and educating the family on the program they represent."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Call the home health agency's intake department directly to inquire about their staffing levels and provide the family with the nurse's expected arrival time based on that call.",
+      "rationale": "This violates the no-vendor rule and places the Navigator in a position of coordinating clinical logistics that belong to the Social Worker and the agency."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

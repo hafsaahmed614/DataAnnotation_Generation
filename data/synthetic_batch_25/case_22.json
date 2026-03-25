@@ -1,33 +1,33 @@
 {
-  "role_delineation_check": "The Social Worker is responsible for managing the home health agency referral and negotiating the start-of-care date around the holiday staffing shortage, while the Navigator focuses on verifying Arthur's demographic data in Atlantis, educating the family on the Medical Assistant's role, and flagging the holiday-related scheduling gap for the clinical team's awareness.",
-  "narrative_summary": "Arthur Miller, a 75-year-old patient recovering from cardiac bypass surgery, encountered a transition barrier when his discharge timeline coincided with a major holiday weekend. The social worker informed the Navigator that the selected home health agency was operating on a reduced schedule and could not perform an intake until the following Tuesday, creating a three-day gap in post-discharge monitoring. The Navigator acted as a supportive liaison by documenting this delay in Atlantis and spending time with Arthur's daughter to explain how the Healing Partners program would bridge the care gap once the holiday concluded. By maintaining a close feedback loop with the social worker, the Navigator successfully confirmed the first visit window and ensured Arthur returned home with a clear plan for his recovery.",
+  "role_delineation_check": "The Social Worker is responsible for the clinical discharge plan and selecting the home health agency, while the Navigator focuses on verifying Martha\u2019s demographic data, educating her on the transition program, and flagging any communication barriers that arise during the final 24 hours.",
+  "narrative_summary": "Martha Vance, a 74-year-old recovering from the debilitating effects of chemotherapy, faced a moment of uncertainty as her discharge date approached and her primary caregiver became unreachable. The Navigator identified a critical communication gap when the mandatory pre-discharge check-in call went unanswered, potentially leaving the home transition uncoordinated. By documenting this silence in Atlantis and coordinating directly with the Social Worker, the Navigator ensured that the transition plan remained intact and that Martha would have the necessary support upon her return home.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "The Navigator cross-referenced the facility face sheet against the Atlantis record and discovered that Arthur's primary contact number was listed incorrectly; the Navigator updated the phone number in Atlantis and confirmed the correct home address to ensure the home team would have accurate logistics for the first visit.",
-  "home_vs_ltc_goal": "Home with home health services",
-  "v_card_flyer_status": "The Navigator provided Arthur and his daughter with the program flyer and assisted the daughter in saving the Healing Partners V-Card to her mobile phone so she would recognize the caller ID for all future coordination calls.",
-  "pre_dc_pulse_call": "During the 24-hour pulse call, the daughter expressed significant anxiety regarding the holiday weekend gap in nursing care; the Navigator documented this sentiment in Atlantis and encouraged the daughter to discuss her specific clinical concerns directly with the social worker.",
-  "atlantis_final_sync": "Once the social worker verbally confirmed that the home health agency had accepted the case for a Tuesday start-of-care, the Navigator recorded the discharge date and the scheduled first visit for the Medical Assistant in the Atlantis system.",
+  "demographic_audit_note": "I performed a thorough audit of the facility face sheet against the record in Atlantis and identified that the primary contact number for Martha\u2019s daughter was missing the final digit. I corrected the phone number and verified that the home address matched the patient's current residence to prevent any delays in the Medical Assistant's arrival.",
+  "home_vs_ltc_goal": "Home",
+  "v_card_flyer_status": "During a bedside visit, I helped Martha save the Healing Partners contact information as a V-Card in her smartphone and provided her with a physical flyer. I explained that this would ensure she and her daughter could recognize our team\u2019s calls, distinguishing them from unknown numbers or telemarketers during the transition period.",
+  "pre_dc_pulse_call": "I attempted the required pulse call to the family twenty-four hours before the scheduled discharge to confirm they were ready for the transition. Despite multiple attempts, the call went to voicemail each time, so I was unable to confirm the specific time for the first home visit or gauge the daughter's current anxiety level.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed that the home health agency was set for a Tuesday start, I recorded the official discharge date in Atlantis. I then scheduled the Medical Assistant\u2019s first visit for Wednesday morning, ensuring it fell within the required window, and updated the transition log with the confirmed details.",
   "format_1_state_log": [
     {
-      "event_description": "The Social Worker notified the Navigator that the home health agency is currently on a holiday intake freeze, which will delay the start of home services until after the long weekend; the Navigator documented this delay in the Atlantis timeline.",
-      "clinical_impact": "Worsens",
-      "environmental_impact": "Unchanged",
-      "service_adoption_impact": "Negative",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "Holiday Coverage Gap"
-    },
-    {
-      "event_description": "The Navigator met with the patient's daughter to explain the Healing Partners program and the specific support the Medical Assistant provides during the first 24 hours after discharge, helping to manage expectations during the holiday delay.",
+      "event_description": "The Social Worker notified me that the home health agency had finally accepted Martha's referral and assigned a nurse; I immediately documented this confirmation in Atlantis.",
       "clinical_impact": "Unchanged",
-      "environmental_impact": "Unchanged",
+      "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
-      "edd_delta": "0 Days",
-      "ai_assumed_bottleneck": "None"
+      "edd_delta": "+2-5 Days",
+      "ai_assumed_bottleneck": "HHA Acceptance Stall"
     },
     {
-      "event_description": "The Social Worker provided a verbal update that the agency has assigned a nurse for Tuesday morning; the Navigator documented the confirmed start-of-care date in Atlantis and alerted the home team to finalize the Medical Assistant's schedule.",
-      "clinical_impact": "Improves",
-      "environmental_impact": "Unchanged",
+      "event_description": "I attempted to reach Martha's daughter for the pre-discharge check-in but received no response after three attempts, which I noted as a potential barrier in the transition log.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1-2 Days",
+      "ai_assumed_bottleneck": "Pre-Discharge Call Disconnect"
+    },
+    {
+      "event_description": "I asked the Social Worker for an update on the family's status, and they confirmed the daughter was busy with the final home preparations; I updated Atlantis to reflect that the discharge was still proceeding.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
       "service_adoption_impact": "Positive",
       "edd_delta": "0 Days",
       "ai_assumed_bottleneck": "None"
@@ -35,36 +35,36 @@
   ],
   "format_2_triples": [
     {
-      "situation": "The home health agency was unavailable for intake over the holiday weekend.",
-      "action_taken": "Noted the communication gap in Atlantis and alerted the Social Worker to the family's concern about the care delay.",
-      "intent_category": "Flag"
+      "situation": "The patient's zip code in the system did not match the one provided on the facility's official face sheet.",
+      "action_taken": "I updated the demographic information in Atlantis to ensure the home team had the correct location for the initial visit.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The family was unsure about the difference between the home health nurse and the Healing Partners team.",
-      "action_taken": "Educated the daughter on the specific 24-hour post-discharge window and the role of the Medical Assistant.",
+      "situation": "Martha expressed confusion about how the Medical Assistant would support her differently than the home health nurse.",
+      "action_taken": "I explained that the Medical Assistant focuses on the first day of the transition to help bridge the gap while the nurse handles the clinical assessment.",
       "intent_category": "Educate"
     },
     {
-      "situation": "The patient's address in the system was missing the apartment number.",
-      "action_taken": "Updated the demographic records in Atlantis after reviewing the facility's official face sheet.",
-      "intent_category": "Verify"
+      "situation": "The daughter was unreachable during the final twenty-four hours before Martha was set to leave the facility.",
+      "action_taken": "I informed the Social Worker of the communication gap so they could verify the family's arrival time for the discharge.",
+      "intent_category": "Flag"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "The Navigator notes that the Social Worker has not yet provided a confirmed start-of-care date due to the holiday weekend; the Navigator documents the waiting status and the date in Atlantis and waits for the next verbal update from the facility team.",
-      "rationale": "This respects the boundary that the Social Worker owns the discharge timeline and the relationship with the home health agency, preventing the Navigator from interfering in vendor logistics."
+      "description": "The Navigator notes the lack of response from the daughter in Atlantis and waits for the Social Worker to provide an update on whether the discharge time has changed.",
+      "rationale": "This respects the boundary that the Social Worker owns the discharge timeline and handles family communication regarding the schedule, while the Navigator simply documents the status for their own records."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The Navigator asks the Social Worker for a verbal status update regarding the agency's holiday schedule and simultaneously conducts a pulse call to the family to confirm they are comfortable with the plan, documenting the daughter's anxiety in Atlantis for the Social Worker's review.",
-      "rationale": "This allows the Navigator to gather necessary information and support the family's emotional readiness without crossing into clinical or vendor management."
+      "description": "After failing to reach the daughter by phone, the Navigator speaks with the Social Worker to confirm the family's latest status and ensures the program flyer is in Martha's discharge packet.",
+      "rationale": "The Navigator is acting within their lane by seeking a status update from the Social Worker and providing program education to the patient without overstepping into clinical or vendor coordination."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The Navigator calls the home health agency's intake department directly to see if they can make an exception for a Saturday admission and then explains to the family how to change Arthur's post-operative surgical dressings during the holiday gap.",
-      "rationale": "This is an overstep because it violates the No-Vendor Rule and involves the Navigator in clinical education, which is the responsibility of the facility nurses and the home health agency."
+      "description": "The Navigator calls the home health agency's scheduling department to see if they have confirmed a time for the nurse's visit so the Navigator can tell the daughter when to be home.",
+      "rationale": "This is an overstep because the Navigator is directly contacting a vendor and attempting to coordinate nursing schedules, which is the responsibility of the Social Worker and the agency."
     }
   ],
   "case_outcome": "Success_Home_with_First_Visit"

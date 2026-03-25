@@ -1,71 +1,71 @@
 {
-  "role_delineation_check": "The social worker is responsible for securing the home health agency and coordinating the medical transport, whereas the Navigator focuses on auditing demographic accuracy in Atlantis, educating Arthur on the transition process, and flagging any communication gaps that might prevent a successful first home visit.",
-  "narrative_summary": "Arthur Miller, a 65-year-old recovering from a severe COPD exacerbation, encountered a significant hurdle during his transition from the facility to his home. Despite his clinical progress, a critical disconnect occurred when his primary caregiver could not be reached for the mandatory 24-hour pre-discharge check, leaving the timing of his initial home support unverified. The Navigator acted as a liaison by documenting this silence in Atlantis and alerting the social worker to the risk of an uncoordinated arrival at home.",
+  "role_delineation_check": "The Social Worker is responsible for the clinical determination of the discharge destination and coordinating with the long-term care facility, whereas the Navigator focuses on verifying the patient's demographic data in Atlantis and educating the family on the transition process until the plan shifts to a permanent placement.",
+  "narrative_summary": "Margaret Henderson, an 83-year-old recovering from a taxing ICU stay for pneumonia, initially hoped to return to her quiet apartment with home support. However, as her physical therapy milestones stalled and her respiratory fatigue persisted, her family began to question the safety of a solo home environment. The Navigator served as a steady point of contact, providing program education while documenting the family\u2019s growing concerns in Atlantis for the Social Worker's awareness. Ultimately, once the clinical team determined a transition to long-term care was necessary for her safety, the Navigator facilitated a professional closure of the home-based file.",
   "atlantis_entry_confirmed": true,
-  "demographic_audit_note": "During the initial audit, the Navigator compared the facility face sheet to the Atlantis record and discovered the primary home phone number was transposed; the Navigator corrected the contact information in Atlantis to ensure the home team could reach the patient.",
-  "home_vs_ltc_goal": "Home with Home Health Agency support",
-  "v_card_flyer_status": "The Navigator visited Arthur's room to deliver the program flyer and assisted him in saving the Healing Partners digital contact card to his phone so he would recognize the caller ID for his upcoming appointments.",
-  "pre_dc_pulse_call": "The Navigator attempted the 24-hour pre-discharge pulse call multiple times but was unable to reach Arthur's wife; this lack of confirmation regarding home readiness was documented in Atlantis and shared with the social worker.",
-  "atlantis_final_sync": "The Navigator updated Atlantis with the discharge date provided by the social worker and noted that while the medical assistant is prepared for the first visit, the family's verbal confirmation is still pending.",
+  "demographic_audit_note": "The Navigator audited the facility face sheet against the Atlantis record and discovered that Margaret's primary phone number was listed as her disconnected landline; the record was updated in Atlantis with her daughter's cell phone number and the current apartment address to ensure accurate records.",
+  "home_vs_ltc_goal": "Long-Term Care",
+  "v_card_flyer_status": "The Navigator provided Margaret\u2019s daughter with the program flyer and successfully saved the Healing Partners digital contact card into her phone, explaining that this would help her identify the team's calls regarding the transition support.",
+  "pre_dc_pulse_call": "The Navigator attempted a pulse call to the daughter 24 hours prior to the expected transition, but the daughter reported that the Social Worker was currently reviewing long-term care options, making the home-based transition plan unlikely.",
+  "atlantis_final_sync": "The Navigator recorded the final update from the Social Worker regarding the move to a skilled nursing facility for long-term placement and logged a neutral closure in Atlantis, ending the home transition support.",
   "format_1_state_log": [
     {
-      "event_description": "The Navigator met with Arthur and his wife to explain how the medical assistant would support his COPD management during the first 24 hours at home; the family expressed initial comfort with the plan.",
-      "clinical_impact": "Unchanged",
-      "environmental_impact": "Improves",
-      "service_adoption_impact": "Positive",
-      "edd_delta": "None",
-      "ai_assumed_bottleneck": "None"
-    },
-    {
-      "event_description": "The Social Worker informed the Navigator that the home health agency had accepted the referral but was still finalizing the nursing schedule; the Navigator documented this status in Atlantis and waited for further updates.",
+      "event_description": "The Navigator met with Margaret and her daughter to introduce the Healing Partners program; the daughter was receptive but expressed significant worry about her mother's persistent weakness after the ICU stay.",
       "clinical_impact": "Unchanged",
       "environmental_impact": "Unchanged",
       "service_adoption_impact": "Positive",
-      "edd_delta": "+2\u20135 Days",
-      "ai_assumed_bottleneck": "HHA_Acceptance_Stall"
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Initial Intake"
     },
     {
-      "event_description": "During the mandatory pre-discharge window, the Navigator's calls to the family went unanswered, preventing the confirmation of the first-visit time; the Navigator alerted the Social Worker to this communication gap.",
+      "event_description": "During a bedside visit, the Navigator noted the daughter's high level of anxiety regarding the lack of 24-hour care at home; this sentiment was documented in Atlantis and the Navigator encouraged the daughter to discuss these safety concerns with the Social Worker.",
       "clinical_impact": "Worsens",
       "environmental_impact": "Worsens",
       "service_adoption_impact": "Negative",
-      "edd_delta": "+1\u20132 Days",
-      "ai_assumed_bottleneck": "Pre-DC_Call_Disconnect"
+      "edd_delta": "+1\u20134 Days",
+      "ai_assumed_bottleneck": "Sentiment Readiness Gap"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the family had decided to pivot to a long-term care placement due to Margaret's inability to perform basic daily activities; the Navigator documented the change in plan and prepared the file for closure.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "LTC Pivot Abort"
     }
   ],
   "format_2_triples": [
     {
-      "situation": "The patient's wife asked specific questions regarding the frequency of oxygen tank refills and nebulizer maintenance.",
-      "action_taken": "The Navigator explained that these were excellent clinical questions for the social worker and the home health nurse and noted the concern in Atlantis.",
+      "situation": "The daughter is unsure if Margaret's insurance will cover a home health aide for more than a few hours a day.",
+      "action_taken": "The Navigator referred the daughter to the Social Worker to discuss insurance coverage details and documented the concern in Atlantis.",
       "intent_category": "Flag"
     },
     {
-      "situation": "The patient was unsure how to identify the Healing Partners representative calling his home.",
-      "action_taken": "The Navigator walked the patient through the process of adding the digital v-card to his contacts to ensure the caller ID would be recognized.",
-      "intent_category": "Educate"
+      "situation": "Margaret's residential address in Atlantis did not match the apartment number listed on the facility's clinical face sheet.",
+      "action_taken": "The Navigator corrected the apartment number in the Atlantis demographic portal to ensure data integrity.",
+      "intent_category": "Verify"
     },
     {
-      "situation": "The Navigator noted a discrepancy between the discharge date mentioned by the patient and the date in the facility records.",
-      "action_taken": "The Navigator asked the social worker for a verbal confirmation of the official discharge timeline to ensure Atlantis was accurate.",
-      "intent_category": "Verify"
+      "situation": "The family is confused about the difference between a Medical Assistant and a Home Health Nurse.",
+      "action_taken": "The Navigator explained the specific role of the Medical Assistant during the first day of the transition while deferring questions about nursing schedules to the clinical team.",
+      "intent_category": "Educate"
     }
   ],
   "format_3_rl_scenario": [
     {
       "ai_intended_category": "Passive",
-      "description": "After failing to reach the family for the 24-hour check, the Navigator documents the unanswered calls and the date in Atlantis, then waits for the social worker to provide an update or for the family to return the call.",
-      "rationale": "This respects the boundary that the social worker owns the discharge coordination and avoids the Navigator stepping into vendor or logistics management without new information."
+      "description": "The Navigator notes that the Social Worker has not yet confirmed whether the patient will be going home or to a long-term care facility and chooses to wait for a direct update, documenting the lack of a clear plan in Atlantis.",
+      "rationale": "This respects the Social Worker's ownership of the discharge destination and prevents the Navigator from acting on unconfirmed information."
     },
     {
       "ai_intended_category": "Proactive",
-      "description": "The Navigator visits Arthur's room before he leaves the facility to confirm the family's contact details in person and asks the social worker if an alternative phone number was provided during the morning rounds.",
-      "rationale": "This action remains within the Navigator's lane of verifying demographics and maintaining communication with the social worker without contacting outside agencies."
+      "description": "The Navigator asks the Social Worker for a verbal status update on the discharge destination after the family expresses hesitation about home care, and then documents the family's anxiety in Atlantis.",
+      "rationale": "This allows the Navigator to stay informed and document important family sentiment without overstepping into clinical decision-making."
     },
     {
       "ai_intended_category": "Overstep",
-      "description": "The Navigator calls the home health agency's intake coordinator to see if they have a different phone number for the wife or if they have already scheduled the first nursing visit for the COPD follow-up.",
-      "rationale": "This is an overstep because it violates the no-vendor rule and attempts to manage logistics that are the sole responsibility of the social worker and the agency."
+      "description": "The Navigator calls a local long-term care facility to see if they have a bed available for Margaret and then tells the family they should choose that specific facility because it has good reviews.",
+      "rationale": "This is an overstep because the Navigator is contacting vendors directly and attempting to influence the discharge destination, which is the sole responsibility of the Social Worker and the family."
     }
   ],
-  "case_outcome": "Failure_Transition_Breakdown"
+  "case_outcome": "Neutral_LTC_Closure"
 }
