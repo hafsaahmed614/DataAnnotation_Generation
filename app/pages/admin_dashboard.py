@@ -40,12 +40,12 @@ def render():
         .execute()
     )
     sessions = (
-        client.table("evaluation_sessions_v14")
+        client.table("evaluation_sessions_v15")
         .select("navigator_id, status")
         .execute()
     )
     total_cases_resp = (
-        client.table("synthetic_cases_v14")
+        client.table("synthetic_cases_v15")
         .select("id", count="exact")
         .execute()
     )
@@ -75,7 +75,7 @@ def render():
     st.header("Synthetic Cases")
 
     cases = (
-        client.table("synthetic_cases_v14")
+        client.table("synthetic_cases_v15")
         .select("label, batch_id, narrative_summary, case_outcome, created_at")
         .order("label")
         .execute()
