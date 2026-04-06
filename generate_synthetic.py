@@ -192,7 +192,7 @@ Rules for case_outcome:
     return prompt.strip()
 
 
-def validate_and_save(raw_text: str, run_index: int) -> SyntheticCaseOutput | None:
+def validate_and_save(raw_text: str, run_index: int) -> Optional[SyntheticCaseOutput]:
     """Parse raw LLM JSON response, validate with Pydantic, and persist to disk."""
     # Strip any accidental markdown fences
     cleaned = raw_text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker is responsible for managing the clinical discharge plan, coordinating with the home health agency, and addressing the family's requests for extended stay, while the navigator focuses on verifying Arthur's demographic data in Atlantis, educating the family on the Healing Partners program, and flagging caregiver anxiety to the social worker.",
+  "narrative_summary": "Arthur Miller is a 75-year-old gentleman recovering from cardiac bypass surgery who is clinically ready to return home, but his transition is currently stalled by his wife's intense fear of managing his post-operative care. Martha expressed significant panic regarding his chest incision and new medication regimen, leading her to question if they can safely leave the facility. The Navigator acted as a liaison by documenting Martha's distress in Atlantis, alerting the Social Worker to the need for a family meeting, and providing education on how the Medical Assistant supports the family during the critical first day back at home.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Arthur's home address and primary contact number against the facility face sheet; I corrected a digit in his phone number within Atlantis to ensure the home team can reach the family without delay.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "Helped Martha save the Healing Partners digital contact card on her smartphone so she can identify our calls and provided the program flyer to help her understand the role of the Medical Assistant during the first visit.",
+  "pre_dc_pulse_call": "Reached Martha twenty-four hours before the scheduled discharge; she remains very nervous but feels more supported knowing the Medical Assistant will be there on Friday morning to help with the transition.",
+  "atlantis_final_sync": "Recorded the confirmed discharge date for Thursday and the scheduled first visit for the Medical Assistant on Friday morning in the Atlantis log.",
+  "format_1_state_log": [
+    {
+      "event_description": "During an initial visit, Arthur's wife became tearful and stated she did not feel prepared to handle her husband's recovery at home; I documented this sentiment in Atlantis and informed her that I would notify the Social Worker of her concerns.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver Panic"
+    },
+    {
+      "event_description": "The Social Worker informed me that the discharge is being delayed because Martha is requesting a care conference to discuss her fears; I updated the wait status in Atlantis and noted that the home health agency referral is still pending acceptance.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA Acceptance Stall"
+    },
+    {
+      "event_description": "The Social Worker called to confirm that the agency has accepted the case and Arthur is set to leave on Thursday; I documented the update in Atlantis and met with Martha to walk through exactly what the Medical Assistant will do during the first home visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "Martha expressed high anxiety about managing Arthur's cardiac recovery on her own.",
+      "action_taken": "Alerted the Social Worker to the family's distress and documented the sentiment in Atlantis for tracking.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family was confused about how the Healing Partners service differs from the nursing agency.",
+      "action_taken": "Educated the wife on the specific role of the Medical Assistant and the twenty-four hour post-discharge support window.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The facility face sheet had a typo in the patient's primary phone number.",
+      "action_taken": "Updated the demographic record in Atlantis to ensure the transition team has the correct contact information.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the Social Worker has not yet provided a confirmed discharge date due to the family's hesitation and chooses to document the current communication gap in Atlantis while waiting for a formal update.",
+      "rationale": "This respects the Social Worker's ownership of the discharge timeline and ensures the Navigator does not push a transition before the family is ready."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the home health referral and spends time with Arthur's wife to explain the first-day support provided by the Medical Assistant to help reduce her anxiety.",
+      "rationale": "This remains within the Navigator's lane by gathering information from the Social Worker and focusing on family education and sentiment documentation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency intake coordinator to ask if they can send a nurse earlier than scheduled to help calm Martha and offers to explain Arthur's medication list to the family.",
+      "rationale": "This is an overstep because the Navigator is contacting a vendor directly and attempting to provide clinical education on medications, which is the responsibility of the Social Worker and the clinical team."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

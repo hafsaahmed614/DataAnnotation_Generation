@@ -1,0 +1,79 @@
+{
+  "role_delineation_check": "In this case, the social worker is responsible for navigating the agency's administrative hold and final selection of the provider, while the navigator focuses on auditing Arthur's contact information in Atlantis, educating the family on the medical assistant's role, and flagging the intake delay for internal tracking.",
+  "narrative_summary": "Arthur, a 70-year-old recovering from a complex spinal fusion, was eager to return home to his quiet suburban residence, but his transition was stalled when the local home health agency implemented a temporary freeze on all new intake due to a sudden system outage. The Navigator acted as a supportive liaison by confirming Arthur's contact details and explaining the role of the Medical Assistant to his wife, ensuring they felt prepared despite the administrative delay. By maintaining close communication with the Social Worker and documenting the intake bottleneck in Atlantis, the Navigator helped manage the family's expectations until the agency could finally process the referral and clear the way for home care.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a thorough audit of the facility face sheet against the Atlantis record and identified a missing digit in Arthur's primary mobile number; I corrected the phone number and verified the home address with his wife to ensure the home team has accurate contact data.",
+  "home_vs_ltc_goal": "Home with skilled nursing and physical therapy",
+  "v_card_flyer_status": "I visited Arthur at the bedside to present the program flyer and assisted him in saving the Healing Partners digital contact card to his phone so he would recognize our caller identification during the transition.",
+  "pre_dc_pulse_call": "I reached Arthur's wife twenty-four hours before the rescheduled discharge; she expressed some anxiety about the delay but confirmed they were fully prepared for the first home visit once the agency freeze was resolved.",
+  "atlantis_final_sync": "After the Social Worker confirmed the agency had accepted the referral, I logged the final discharge date and the scheduled medical assistant visit for the following afternoon in the Atlantis system.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur at the bedside to verify his home address and primary contact number, documenting these details in Atlantis to ensure the transition team had accurate data for the home referral.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Initial Data Verification"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the selected home health agency has stopped all new admissions for several days due to a staffing crisis in their intake department; the Navigator recorded this delay in Atlantis and noted the potential shift in the discharge timeline.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA Intake Freeze"
+    },
+    {
+      "event_description": "During a follow-up visit, the Navigator walked Arthur's wife through the first-day expectations for the medical assistant visit and verified the digital contact card was saved on her phone to prevent missed calls.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Family Education"
+    },
+    {
+      "event_description": "The Social Worker called to confirm the agency freeze was lifted and the referral was officially accepted; the Navigator then documented the update in Atlantis and prepared to schedule the medical assistant's initial home visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Resolution of Intake Hold"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Navigator noticed the patient's phone number on the facility face sheet was incomplete.",
+      "action_taken": "Requested the correct mobile number from the wife and updated the demographic record in Atlantis to prevent communication failures.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The Social Worker reported a temporary hold on all new home health referrals at the primary agency.",
+      "action_taken": "Noted the administrative bottleneck and the expected timeline delay in the Atlantis log while waiting for the Social Worker to provide a resolution.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family expressed concern regarding the role of the medical assistant compared to the home health nurse.",
+      "action_taken": "Explained the purpose of the twenty-four hour safety check and the specific tasks the medical assistant performs to support the transition home.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Social Worker has not provided an update on the agency's intake status for forty-eight hours, so the Navigator documents the lack of information in Atlantis and waits for a formal update before contacting the family.",
+      "rationale": "This respects the operational boundary that the Social Worker owns the relationship with the outside agency and the Navigator must wait for official confirmation before taking further action."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the intake freeze and reviews the Healing Partners program benefits with Arthur's wife to ensure she feels supported during the delay.",
+      "rationale": "The Navigator is seeking information from the correct internal source while fulfilling their duty to prepare the family through education within their defined role."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake coordinator directly to ask when the freeze will be lifted and then promises the family that the first visit will occur as soon as the patient arrives home.",
+      "rationale": "This involves the Navigator contacting a third-party vendor and making scheduling promises to the family, both of which violate the program's strict operational guardrails."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

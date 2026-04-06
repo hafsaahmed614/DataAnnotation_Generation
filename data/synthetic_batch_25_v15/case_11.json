@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the home health agency referral process and clinical coordination, while the Navigator focuses on verifying demographic accuracy in Atlantis, educating the family on the transition program, and flagging caregiver sentiment to the facility team.",
+  "narrative_summary": "Martha Jenkins, a 78-year-old woman recovering from a congestive heart failure exacerbation, faced a significant discharge delay when the local home health agencies reported a severe nursing shortage in her rural area. Her daughter became increasingly anxious about monitoring her mother's daily weights and fluid restrictions without professional guidance at home. The Navigator acted as a supportive liaison by documenting the family's concerns in Atlantis and providing clear education on how the Healing Partners program would support them once a home health provider was finally secured.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a thorough audit of the facility face sheet against the Atlantis record and identified a discrepancy in the patient's primary phone number; I corrected the contact information in Atlantis to ensure the home care team could reach the daughter immediately upon discharge.",
+  "home_vs_ltc_goal": "Home with Home Health Agency services",
+  "v_card_flyer_status": "I met with Martha and her daughter at the bedside to introduce the Healing Partners program and successfully saved our digital contact card into the daughter's smartphone. I also provided a program flyer and explained that they should look for our specific caller ID for all post-discharge coordination calls.",
+  "pre_dc_pulse_call": "During the twenty-four-hour pre-discharge call, the daughter expressed relief that a nurse was finally assigned but remained nervous about the transition; I documented her readiness sentiment in Atlantis and confirmed they were prepared for the first visit.",
+  "atlantis_final_sync": "Following verbal confirmation from the Social Worker regarding the agency's acceptance, I recorded the confirmed discharge date and the scheduled first visit window in Atlantis to transition the case to the home team.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed me that three different agencies have declined the referral due to a lack of available nursing staff in the patient's zip code; I documented this staffing bottleneck in Atlantis and noted the expected delay.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3\u201310 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Shortage"
+    },
+    {
+      "event_description": "Martha's daughter contacted me to express her fear that her mother would be sent home without any support for her heart condition; I listened to her concerns and advised her to speak directly with the Social Worker regarding her request for a care conference.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver Panic"
+    },
+    {
+      "event_description": "The Social Worker called to provide an update that a distant agency branch has agreed to cover the case starting Monday; I updated the wait-status log in Atlantis and prepared to conduct the final program education with the family.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The Social Worker has not provided an update on the agency referral for several days.",
+      "action_taken": "I documented the continued lack of information in Atlantis and waited for the Social Worker to reach out with a status change.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The family is confused about when the Medical Assistant will arrive at the home.",
+      "action_taken": "I explained the twenty-four-hour post-discharge window for the first visit and clarified the role of the Medical Assistant on day one.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The patient's daughter asked for a specific time for the home health nurse's arrival.",
+      "action_taken": "I informed the daughter that the nursing schedule is managed by the home health agency and suggested she ask the Social Worker for the agency's contact information.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes in Atlantis that the Social Worker is still searching for an available nursing agency and chooses to wait for a verbal update before initiating any further family education regarding the schedule.",
+      "rationale": "This respects the wait default by documenting the communication gap in Atlantis without attempting to bypass the Social Worker's ownership of the referral process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a status update on the home health referral and shares that the daughter is feeling overwhelmed, ensuring the clinical team is aware of the family's anxiety.",
+      "rationale": "This follows the liaison model by gathering information from the Social Worker and flagging family sentiment without overstepping into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the intake department at a nearby home health agency to advocate for Martha's case and then tells the daughter that a nurse will definitely be there by Monday afternoon.",
+      "rationale": "This violates the no-vendor rule by contacting the agency directly and makes a clinical scheduling promise that the Navigator does not have the authority to guarantee."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,87 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for managing the home health agency referral process and securing a nurse for the patient's rural territory, while the Navigator focuses on auditing the patient's demographic data in Atlantis, educating the family on the Healing Partners program, and flagging the patient's emotional readiness and transition barriers for the clinical team.",
+  "narrative_summary": "Evelyn, a 74-year-old patient recovering from intensive chemotherapy for stage III breast cancer, was medically cleared for discharge but faced a significant delay due to a lack of available home health nurses in her rural county. This staffing shortage created a bottleneck that kept her in the facility longer than expected, leading to increased fatigue and frustration for both Evelyn and her daughter. The Navigator supported the transition by maintaining clear communication with the Social Worker, documenting Evelyn's emotional state in Atlantis, and ensuring the family understood how the Healing Partners program would bridge the gap once a provider was secured.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator audited the Atlantis record against the facility face sheet and discovered that the patient's home address was listed with an incorrect zip code; the Navigator updated Atlantis with the correct information to ensure the home health referral would be routed to the appropriate local branch.",
+  "home_vs_ltc_goal": "Home with skilled nursing and physical therapy support.",
+  "v_card_flyer_status": "The Navigator met with Evelyn's daughter at the bedside to provide the program flyer and assisted her in saving the V-Card to her phone contacts, ensuring she would recognize the caller ID for all future Healing Partners coordination calls.",
+  "pre_dc_pulse_call": "The Navigator conducted the 24-hour pulse call; while the daughter confirmed the home was ready, she expressed significant anxiety about the fact that no home health agency had confirmed a nurse yet, which the Navigator documented in Atlantis.",
+  "atlantis_final_sync": "After the Social Worker verbally confirmed that an agency had accepted the case for a Friday discharge, the Navigator recorded the discharge date and the scheduled Medical Assistant visit for Saturday morning in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met Evelyn and her daughter to introduce the Healing Partners program; the Social Worker noted that finding a home health agency might be difficult due to recent staffing shortages in the patient's rural zip code.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+3-10 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Shortage"
+    },
+    {
+      "event_description": "The Social Worker reported that three different agencies declined the referral because they do not have a nurse available in the rural territory; the Navigator documented this update in Atlantis and waited for further instructions.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-10 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Shortage"
+    },
+    {
+      "event_description": "Evelyn's daughter expressed frustration that the discharge is stalled; the Navigator documented this sentiment in Atlantis and advised the daughter to speak directly with the Social Worker regarding the timeline concerns.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+3-10 Days",
+      "ai_assumed_bottleneck": "HHA Staffing Shortage"
+    },
+    {
+      "event_description": "The Social Worker called the Navigator to confirm that a regional agency finally accepted the case and assigned a nurse for a Friday afternoon start; the Navigator logged this confirmation in Atlantis.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    },
+    {
+      "event_description": "The Navigator completed the 24-hour pulse call to confirm Evelyn was home safely and scheduled the Medical Assistant to perform the first visit within the 24-hour window.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The patient's demographic record in Atlantis contained an incorrect zip code compared to the hospital face sheet.",
+      "action_taken": "The Navigator corrected the zip code in Atlantis to ensure the home health agency referral was directed to the correct service area.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The Social Worker was unable to find an available home health agency for several days due to a lack of rural nursing staff.",
+      "action_taken": "The Navigator documented the ongoing staffing barrier in Atlantis and maintained daily verbal contact with the Social Worker for updates.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's daughter was confused about what the Medical Assistant would do during the first visit home.",
+      "action_taken": "The Navigator explained the role of the Medical Assistant on the first day and confirmed the 24-hour post-discharge visit window.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the Social Worker has not provided a new agency update for two days, documents the continued lack of a confirmed home health provider in Atlantis, and waits for the Social Worker's next scheduled update.",
+      "rationale": "This respects the boundary that the Social Worker owns the referral process and the Navigator should not independently seek information from vendors or the hospital system."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the nursing search and then meets with the family to document their concerns about the delay in Atlantis while educating them on the Healing Partners program benefits.",
+      "rationale": "This follows the proper channels by communicating directly with the Social Worker and focusing on the Navigator's role of family education and sentiment documentation."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls several local home health agencies to see if they have any nursing staff available in the patient's zip code to help speed up the discharge process for the family.",
+      "rationale": "This violates the no-vendor rule and oversteps into the Social Worker's clinical and administrative responsibility for securing a home health provider."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for finalizing the discharge date and securing the home health agency, while the Navigator focuses on auditing patient demographics in Atlantis, educating the family on the transition program, and documenting the caregiver's anxiety for the clinical team's awareness.",
+  "narrative_summary": "Arthur Vance, an 88-year-old recovering from bilateral knee replacement surgery, was eager to return home, but his daughter and primary caregiver experienced a significant wave of panic regarding his mobility and pain management. This emotional barrier threatened to stall the transition as the daughter expressed a desire to keep him in the facility indefinitely out of fear. The Navigator acted as a supportive liaison by clarifying the role of the Medical Assistant in the first 24 hours and documenting the family's distress in Atlantis so the Social Worker could facilitate a formal care conference.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial review, the Navigator compared the facility face sheet to the Atlantis record and identified an error in the patient's primary phone number. The Navigator corrected the contact information in Atlantis to ensure the home health agency and Medical Assistant would be able to reach the family upon discharge.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "The Navigator met with Arthur\u2019s daughter to provide the program flyer and assisted her in saving the Healing Partners V-Card to her mobile phone to ensure she would recognize the caller ID for all future coordination calls.",
+  "pre_dc_pulse_call": "The Navigator completed the 24-hour pulse call with the daughter, who confirmed that the home was prepared for Arthur's arrival; while she remained anxious, she expressed relief knowing a visit was scheduled for the following day.",
+  "atlantis_final_sync": "The Navigator updated Atlantis with the confirmed Friday discharge date and successfully scheduled the Medical Assistant for the initial home visit on Saturday morning.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Navigator met with Arthur's daughter, who became tearful and expressed that she did not feel ready to handle her father's physical needs at home; the Navigator documented this caregiver anxiety in Atlantis and advised the daughter to share these specific concerns with the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver Panic"
+    },
+    {
+      "event_description": "The Social Worker informed the Navigator that the home health referral was still pending agency acceptance; the Navigator documented the waiting status in Atlantis and maintained the current education plan with the family without contacting any outside vendors.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "HHA Acceptance Stall"
+    },
+    {
+      "event_description": "The Social Worker confirmed via email that the home health agency had accepted the case and assigned a nurse for the weekend; the Navigator recorded the update in Atlantis and proceeded to schedule the Medical Assistant for the first post-discharge visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter expressed deep fear about managing Arthur's bilateral knee dressings and mobility at home.",
+      "action_taken": "The Navigator documented the caregiver's sentiment in Atlantis and suggested she discuss her training needs directly with the Social Worker.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's address in the Atlantis system did not match the current residence listed on the facility's documentation.",
+      "action_taken": "The Navigator updated the residency details in Atlantis to match the verified face sheet provided by the facility.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family asked for a detailed explanation of what would happen during the first day back at home.",
+      "action_taken": "The Navigator explained the role of the Medical Assistant and the 24-hour visit window to help set clear expectations for the transition.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notices that the Social Worker has not yet provided an update on the home health agency status and chooses to document the communication gap in Atlantis while waiting for a response.",
+      "rationale": "This respects the Social Worker's ownership of the referral process and adheres to the rule that the Navigator does not contact agencies or seek information outside of the approved channels."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal update on the discharge timeline and uses that information to update the family on when they can expect the first Medical Assistant visit.",
+      "rationale": "This action remains within the Navigator's lane by facilitating communication through the Social Worker and focusing on family education regarding the program's services."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake coordinator to confirm if they have a nurse available for the weekend to help ease the daughter's anxiety about the discharge date.",
+      "rationale": "This is a violation of the no-vendor rule and interferes with the Social Worker's clinical coordination responsibilities, creating a risk of conflicting information."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker is responsible for the clinical discharge plan and negotiating the start-of-care date with the home health agency, while the navigator manages demographic verification in Atlantis, provides program education to the family, and monitors for scheduling gaps to alert the social worker.",
+  "narrative_summary": "Arthur Vance, an 82-year-old gentleman managing Parkinson's disease and a recent urinary tract infection, faced a stressful transition when his preferred home health agency hit a scheduling bottleneck that threatened his first-day support. Despite the family's growing concern about managing his mobility at home without immediate professional help, the Navigator focused on clarifying the Healing Partners program and the specific role of the Medical Assistant to ease their anxiety. By maintaining a close communication loop with the Social Worker and documenting each update in Atlantis, the Navigator ensured that once the agency resolved their staffing conflict, the first home visit was secured within the critical twenty-four-hour window.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a thorough audit of the facility face sheet against the Atlantis record and discovered that the patient's primary phone number was listed incorrectly; I updated the record in Atlantis with the verified contact number provided by his daughter to ensure no communication gaps occurred during the transition.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "I met with Mr. Vance's daughter at the bedside to provide the Healing Partners program flyer and successfully saved our digital contact card into her phone so she would recognize our caller ID during the post-discharge follow-up.",
+  "pre_dc_pulse_call": "I spoke with the patient's daughter 24 hours prior to his scheduled departure; while she felt prepared for his return, she expressed significant anxiety about the home health agency's arrival window, which I documented in Atlantis and shared with the home team.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed that the home health agency had resolved their staffing conflict and accepted the case, I recorded the final discharge date and the scheduled Medical Assistant visit in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed me that the referral was sent to the preferred home health agency, but the agency has not yet confirmed a start-of-care date due to a high volume of weekend admissions; I documented this waiting period in Atlantis.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA_SOC_Overlap"
+    },
+    {
+      "event_description": "During a bedside visit, the patient's daughter shared her fear that the lack of an immediate nursing visit would lead to a medication error at home; I directed her to discuss these clinical concerns with the Social Worker and noted her sentiment in my records.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker provided a verbal update that the agency had cleared their scheduling backlog and assigned a nurse for Saturday morning; I updated the transition timeline in Atlantis and began the final coordination for our team's first visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed confusion about who would be visiting the home on the first day after discharge.",
+      "action_taken": "I educated the daughter on the specific role of the Medical Assistant and the importance of the twenty-four-hour monitoring window.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The home health agency was unable to confirm an admission time due to internal staffing constraints.",
+      "action_taken": "I documented the communication gap in Atlantis and waited for the Social Worker to provide a resolution regarding the agency's availability.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The patient's daughter was highly anxious about managing her father's Parkinson's symptoms without immediate professional support.",
+      "action_taken": "I alerted the Social Worker to the family's distress so they could provide direct clinical reassurance and training before the patient left the facility.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator noted in Atlantis that the Social Worker had not yet received a confirmation from the home health agency regarding the start-of-care time and chose to wait for a verbal update before attempting to schedule the Medical Assistant.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship and communication with the home health agency, ensuring the Navigator does not interfere with the vendor's intake process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "After learning from the daughter that she felt overwhelmed, the Navigator asked the Social Worker for a status update on the referral and subsequently provided the family with clear expectations regarding the first-day visit from the Medical Assistant.",
+      "rationale": "The Navigator acts as a liaison by gathering information from the Social Worker and educating the family on the Healing Partners program without crossing into clinical or vendor management."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "Concerned about the delay in the patient's home care, the Navigator called the home health agency's intake coordinator directly to request an earlier admission window and then explained the patient's Parkinson's medication schedule to the daughter.",
+      "rationale": "This is an overstep because the Navigator is prohibited from contacting home health vendors directly and must never provide education on clinical topics like medication management."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

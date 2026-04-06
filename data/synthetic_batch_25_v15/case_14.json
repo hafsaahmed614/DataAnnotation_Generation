@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical discharge timeline and coordinates with the home health agency, while the Navigator focuses on auditing demographic data in Atlantis, educating the family on the Healing Partners program, and flagging transition barriers like holiday staffing gaps for the clinical team.",
+  "narrative_summary": "Arthur Miller, an 88-year-old gentleman recovering from bilateral knee replacement surgery, encountered a stressful delay when his Friday discharge date overlapped with a holiday weekend. Because the home health agency was not accepting new admissions until the following Tuesday, his family felt overwhelmed by the prospect of managing his mobility needs and surgical dressings alone for three days. The Navigator acted as a vital bridge by documenting the family's apprehension in Atlantis and requesting a status update from the Social Worker to ensure the transition plan remained safe and supported.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a side-by-side audit of the facility face sheet against the Atlantis record and discovered that the patient's primary phone number was missing a digit; I updated the contact information in Atlantis to ensure the care team can reach the family for the first visit.",
+  "home_vs_ltc_goal": "The Social Worker has confirmed the goal is a safe discharge to his private residence with skilled nursing and physical therapy support.",
+  "v_card_flyer_status": "I sat with Mr. Miller and his daughter to explain the Healing Partners program and successfully saved our digital contact card into his daughter's phone so she will recognize our calls during the transition period.",
+  "pre_dc_pulse_call": "I reached the patient's daughter 24 hours prior to discharge; while she is eager to have him home, she remains highly anxious about the three-day gap in professional care caused by the holiday weekend. I documented this sentiment in Atlantis for the Social Worker's awareness.",
+  "atlantis_final_sync": "I have recorded the Friday discharge date in Atlantis and noted that the first Medical Assistant visit is tentatively scheduled for Tuesday afternoon to align with the home health agency's holiday schedule.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed me that Arthur is clinically ready for discharge this Friday; however, I noted in Atlantis that the home health agency has not yet confirmed the referral acceptance due to the upcoming holiday weekend.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    },
+    {
+      "event_description": "During a bedside visit, the patient's daughter told me the home health agency won't send a nurse until Tuesday morning; I documented this gap in Atlantis and sent a message to the Social Worker to confirm if this timeline is acceptable for the discharge plan.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    },
+    {
+      "event_description": "The Social Worker provided a verbal update confirming that the agency is indeed closed for the holiday and will start care Tuesday; I updated the wait-status timeline in Atlantis and began educating the family on what to expect during the Medical Assistant's first visit.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Holiday Coverage Gap"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The patient's contact information in Atlantis was incomplete compared to the facility records.",
+      "action_taken": "I updated the demographics in the Atlantis queue to ensure the home team has the correct phone number for coordination.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The family expressed significant worry about managing surgical wounds over the long holiday weekend without help.",
+      "action_taken": "I documented the family's anxiety in Atlantis and alerted the Social Worker to the potential for a care gap.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter was unclear on who would be visiting the home after her father leaves the facility.",
+      "action_taken": "I explained the role of the Medical Assistant and the typical 24-hour window for the first visit following the start of home health services.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notices that the Social Worker has not yet provided a confirmed start-of-care date for the holiday weekend, so they document the communication gap in Atlantis and wait for the Social Worker's scheduled morning rounds to ask for an update.",
+      "rationale": "This respects the operational guardrail of waiting for the Social Worker to drive the discharge timeline while maintaining an auditable trail of the delay in Atlantis."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal status update on the home health agency's holiday availability and then conducts a pulse call to the daughter to discuss the 24-hour window for the Medical Assistant's visit.",
+      "rationale": "This stays within the Navigator's lane by facilitating communication and education without attempting to contact outside vendors or influence clinical decisions."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department directly to see if they can find a nurse willing to work on Saturday so the patient doesn't have to wait until Tuesday for his first visit.",
+      "rationale": "This is a direct violation of the No-Vendor Rule and interferes with the Social Worker's ownership of the referral and discharge process."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

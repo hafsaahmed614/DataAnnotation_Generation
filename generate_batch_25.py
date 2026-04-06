@@ -11,7 +11,7 @@ from generate_synthetic import (
 )
 import chromadb
 
-OUTPUT_DIR = "./data/synthetic_batch_25"
+OUTPUT_DIR = "./data/synthetic_batch_25_v15"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 PATIENTS = [

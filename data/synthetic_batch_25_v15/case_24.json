@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical coordination between the dialysis center and the home health agency, while the Navigator audits the patient's demographic data in Atlantis, educates the family on the role of the Medical Assistant, and flags family anxiety regarding scheduling delays to the clinical team.",
+  "narrative_summary": "Beatrice Miller, a 77-year-old transitioning home after stabilization for renal failure, faced a sudden delay when the primary intake coordinator at her chosen home health agency fell ill. This unexpected staffing gap left Beatrice and her daughter in a state of uncertainty regarding when the first nursing visit would occur, threatening to stall the entire discharge process. The Navigator acted as a vital liaison by documenting the family's concerns in Atlantis and maintaining close communication with the Social Worker to ensure the transition plan remained on track once a backup coordinator was identified.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial audit, the Navigator discovered that the facility face sheet listed an outdated landline number for Beatrice; the Navigator verified the daughter's current mobile number and updated the contact information in Atlantis to ensure the home team could reach the family.",
+  "home_vs_ltc_goal": "Home with specialized renal nursing support",
+  "v_card_flyer_status": "The Navigator successfully helped Beatrice's daughter save the Healing Partners digital contact card to her phone and provided a physical flyer, explaining that the Medical Assistant would be calling from that recognized number within twenty-four hours of Beatrice arriving home.",
+  "pre_dc_pulse_call": "The Navigator conducted a pulse call twenty-four hours before the scheduled discharge; while Beatrice's daughter confirmed the home was prepared, she expressed significant frustration about the lack of a specific arrival window for the home health nurse.",
+  "atlantis_final_sync": "Once the Social Worker verbally confirmed that the backup coordinator had assigned a nurse, the Navigator recorded the final discharge date and scheduled the Medical Assistant for the initial home visit in Atlantis.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the referral was sent to the agency, but the intake coordinator is out sick, and no one has processed the admission yet; the Navigator documented this administrative delay in Atlantis and waited for further updates.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    },
+    {
+      "event_description": "During a bedside visit, Beatrice's daughter shared that she was considering postponing the discharge because she didn't want her mother home without a confirmed nurse visit; the Navigator noted this anxiety and immediately alerted the Social Worker to the family's hesitation.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Caregiver_Panic"
+    },
+    {
+      "event_description": "The Social Worker called to report that a backup coordinator at the agency had finally reviewed the file and assigned a nurse for Tuesday morning; the Navigator recorded this confirmation in Atlantis and began final preparations with the family.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family is unsure how the Medical Assistant's role differs from the home health nurse.",
+      "action_taken": "The Navigator explained that the Medical Assistant focuses on the first twenty-four hours of the transition to ensure the home is safe and the family is comfortable.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Social Worker has not provided an update on the agency acceptance for over forty-eight hours.",
+      "action_taken": "The Navigator documented the ongoing communication gap in the Atlantis timeline and requested a verbal status update from the Social Worker.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "Beatrice's daughter expressed fear about managing dialysis-related medications at home.",
+      "action_taken": "The Navigator noted the daughter's concern in Atlantis and directed her to speak with the Social Worker and the clinical nursing staff for specific training.",
+      "intent_category": "Flag"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the home health agency has not yet confirmed the start of care due to the coordinator's illness and chooses to wait for the Social Worker to provide the update, documenting the delay in Atlantis.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship with the vendor and prevents the Navigator from interfering in the referral process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal update on whether a backup coordinator has been assigned and simultaneously conducts a pulse call to confirm Beatrice's daughter has the correct contact information for the home team.",
+      "rationale": "This allows the Navigator to stay informed and keep the family prepared without crossing into vendor management or clinical decision-making."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake department directly to see if another staff member can approve Beatrice's referral while the regular coordinator is out sick.",
+      "rationale": "This violates the no-vendor rule and bypasses the Social Worker's role as the primary point of contact for the agency."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

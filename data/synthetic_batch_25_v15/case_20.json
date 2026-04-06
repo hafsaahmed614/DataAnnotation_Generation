@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker is responsible for managing the home health agency referral and resolving the intake coordinator's absence, while the navigator focuses on auditing demographic accuracy in Atlantis, educating the family on the transition process, and flagging sentiment concerns to the clinical team.",
+  "narrative_summary": "Martha Vance, a 77-year-old recovering from a renal failure crisis, faced a stressful transition when her discharge was stalled because the home health agency's intake coordinator was unavailable to process her referral. This administrative bottleneck left Martha and her daughter feeling uncertain about the safety of returning home for dialysis management. The Navigator supported the family by clarifying the role of the medical assistant and documenting their concerns in Atlantis, eventually coordinating the first home visit once the social worker confirmed the agency was ready.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "During the initial file review, the Navigator noted that the address in the facility face sheet listed a secondary apartment number that was missing from the Atlantis record; this was corrected in Atlantis after the daughter confirmed the correct mailing address for medical supplies.",
+  "home_vs_ltc_goal": "Home with specialized renal home health services.",
+  "v_card_flyer_status": "The Navigator successfully helped Martha's daughter save the Healing Partners contact information as a V-Card in her smartphone, explaining that this would ensure she recognizes the caller ID for the first-day follow-up call.",
+  "pre_dc_pulse_call": "The Navigator reached Martha's daughter twenty-four hours prior to the scheduled discharge; the daughter expressed high anxiety regarding the delay but confirmed that the home was prepared for the equipment delivery.",
+  "atlantis_final_sync": "The Navigator recorded the confirmed discharge date and the scheduled medical assistant visit for the following morning in the Atlantis tracking system.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the referral was sent to the preferred agency, but the intake coordinator is out sick, leaving the admission status unconfirmed; the Navigator documented this administrative delay in Atlantis and waited for further updates.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+1\u20133 Days",
+      "ai_assumed_bottleneck": "HHA Intake Coordinator Unavailable"
+    },
+    {
+      "event_description": "During a bedside visit, the daughter shared her frustration regarding the lack of a confirmed start date; the Navigator explained the Healing Partners program benefits and directed the daughter to the Social Worker for specific updates on the agency's staffing issues.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Sentiment_Readiness_Gap"
+    },
+    {
+      "event_description": "The Social Worker called to report that a backup coordinator at the agency finally processed the paperwork and confirmed a Monday admission; the Navigator updated the timeline in Atlantis and began the scheduling process for the medical assistant's first visit.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed confusion about whether the medical assistant would be performing dialysis.",
+      "action_taken": "The Navigator clarified that the medical assistant provides transition support and monitoring while the home health nurse handles clinical treatments.",
+      "intent": "Educate"
+    },
+    {
+      "situation": "The Social Worker had not provided an update on the agency acceptance for over forty-eight hours.",
+      "action_taken": "The Navigator noted the communication gap in the Atlantis log and requested a verbal status update from the Social Worker during morning rounds.",
+      "intent": "Verify"
+    },
+    {
+      "situation": "Martha's daughter mentioned she was worried about missing the call from the home health team.",
+      "action_taken": "The Navigator verified the daughter's primary phone number in Atlantis and ensured the V-Card was correctly installed on her device.",
+      "intent": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes in Atlantis that the Social Worker is still waiting for a response from the agency intake office and chooses to wait for the Social Worker's next scheduled update before taking further action.",
+      "rationale": "This respects the boundary that the Social Worker owns the relationship with the vendor and prevents the Navigator from interfering in the referral process."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a verbal update on the intake coordinator's status and simultaneously educates the family on what to expect during the medical assistant's first home visit.",
+      "rationale": "This allows the Navigator to stay informed and keep the family engaged without crossing into vendor management or clinical territory."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator looks up the phone number for the home health agency's intake department and calls them directly to ask if another coordinator can approve Martha's referral so the discharge can proceed.",
+      "rationale": "This violates the No-Vendor Rule and bypasses the Social Worker's authority over the discharge planning and agency coordination."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The social worker is responsible for mediating the family conflict regarding the discharge timeline and selecting the home health agency, while the navigator focuses on auditing patient demographics in Atlantis, educating the family on the Healing Partners program, and flagging transition barriers to the clinical team.",
+  "narrative_summary": "Arthur Miller, an 88-year-old gentleman recovering from bilateral knee replacement surgery, was eager to return home, but his transition was delayed by a significant disagreement between his wife and daughter regarding his safety. While his wife felt prepared to care for him, his daughter expressed deep concerns about his mobility and insisted on a longer stay in the facility. The Navigator acted as a liaison by documenting these conflicting sentiments in Atlantis and referring the family to the Social Worker for a formal care conference, while ensuring all home health logistics were ready for his eventual discharge.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "The Navigator performed a cross-check of the facility face sheet against the Atlantis record and identified that the patient's primary contact number was missing a digit; the Navigator obtained the correct mobile number from the daughter and updated the profile to ensure seamless communication.",
+  "home_vs_ltc_goal": "Home with Home Health Services",
+  "v_card_flyer_status": "The Navigator provided the Healing Partners program flyer to the wife and successfully saved the V-Card into her mobile phone to ensure she would recognize the caller ID for all future coordination calls.",
+  "pre_dc_pulse_call": "A pulse call was conducted 24 hours before the rescheduled discharge; the wife confirmed that the family reached a consensus and was ready for Arthur's return, though she remained slightly anxious about the first day back.",
+  "atlantis_final_sync": "The final discharge date was recorded in Atlantis along with the confirmed window for the first Medical Assistant visit, which is scheduled to occur within 24 hours of the patient's arrival home.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the initial discharge date was being postponed because the daughter formally contested the plan, citing concerns about her father's ability to navigate the stairs at home.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2-7 Days",
+      "ai_assumed_bottleneck": "Family Disagreement on Discharge Plan"
+    },
+    {
+      "event_description": "During a bedside visit, the patient's wife asked the Navigator if the home health nurse would be there to meet them at the door; the Navigator explained the transition process and documented the wife's anxiety in Atlantis for the Social Worker to address.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "None",
+      "ai_assumed_bottleneck": "Sentiment Readiness Gap"
+    },
+    {
+      "event_description": "The Social Worker called to confirm that the family had reached an agreement following a care conference and that a home health agency had finally accepted the referral for a Friday discharge; the Navigator updated the transition log in Atlantis and began final preparations.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "+2-5 Days",
+      "ai_assumed_bottleneck": "HHA Acceptance Stall"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter expressed significant fear regarding Arthur's fall risk during a hallway conversation.",
+      "action_taken": "The Navigator documented the daughter's specific concerns in Atlantis and advised her to discuss the clinical safety plan directly with the Social Worker and PT team.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The wife was unsure how to identify calls from the Healing Partners team once they left the facility.",
+      "action_taken": "The Navigator walked the wife through the process of saving the V-Card into her contacts so the Healing Partners name would appear on her screen.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The Atlantis record for Arthur showed an outdated home address from a previous admission.",
+      "action_taken": "The Navigator verified the current residence with the wife and updated the demographic field in Atlantis to prevent a dispatch error for the Medical Assistant.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notes that the Social Worker is currently in a closed-door mediation session with the family and chooses to wait for a verbal update before documenting the next steps in Arthur's transition timeline.",
+      "rationale": "This respects the Social Worker's role as the lead on discharge planning and family disputes, ensuring the Navigator does not interfere in sensitive negotiations."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for the name of the confirmed home health agency and then meets with the wife to explain that a Medical Assistant will visit within 24 hours of discharge to support the transition.",
+      "rationale": "This stays within the Navigator's lane of gathering confirmed information from the Social Worker and educating the family on the specific Healing Partners service model."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency intake office to ask if they can send a physical therapist on the same day as discharge to help convince the daughter that the home plan is safe.",
+      "rationale": "This violates the no-vendor rule and involves the Navigator in clinical scheduling and discharge negotiations, which are strictly the domain of the Social Worker and the agency."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}

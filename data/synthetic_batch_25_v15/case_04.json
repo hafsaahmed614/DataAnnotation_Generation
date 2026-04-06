@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker is responsible for the clinical assessment of the patient's safety and the final determination of the discharge destination, while the Navigator's role is limited to auditing demographic data in Atlantis, providing program education to the family, and documenting the transition status based on verbal updates from the Social Worker.",
+  "narrative_summary": "Elena Vance, a 68-year-old woman recovering from a severe Multiple Sclerosis flare, faced significant mobility challenges that complicated her initial plan to return home. Although her daughter was eager to provide support, Elena's physical therapy progress plateaued, leading the clinical team to question the safety of a residential discharge. After the Social Worker determined that Elena required the around-the-clock supervision of a long-term care facility, the Navigator acted as a supportive liaison by documenting the pivot in Atlantis and ensuring the family understood the shift in service focus. This coordination allowed for a clean transition to the long-term care wing without the confusion of unneeded home health preparations.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "I performed a thorough audit of the face sheet against the Atlantis record and discovered that the patient's primary phone number was listed incorrectly; I updated the contact information for Elena's daughter in Atlantis to ensure all future communications reach the correct party.",
+  "home_vs_ltc_goal": "Long-Term Care (LTC)",
+  "v_card_flyer_status": "The Navigator successfully helped Elena's daughter save the Healing Partners contact information as a V-Card on her smartphone and provided the program flyer to ensure the family recognized the caller ID during the early planning stages.",
+  "pre_dc_pulse_call": "During the 24-hour pulse call, the daughter confirmed she had reached a final agreement with the Social Worker to move Elena into a long-term care setting, expressing relief that her mother would have professional support for her Multiple Sclerosis symptoms.",
+  "atlantis_final_sync": "The Navigator recorded the final discharge date in Atlantis and noted that the case would be closed as a neutral transition to long-term care, with no home visits or Medical Assistant scheduling required.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that Elena's mobility has not improved as expected, suggesting that a home discharge might be unsafe; the Navigator documented this clinical hurdle in Atlantis and maintained a waiting status.",
+      "clinical_impact": "Worsens",
+      "environmental_impact": "Unchanged",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Clinical stability plateau and caregiver safety concerns"
+    },
+    {
+      "event_description": "The daughter shared with the Navigator that she is feeling overwhelmed by the prospect of managing her mother's Multiple Sclerosis at home; the Navigator noted this anxiety in Atlantis and directed the daughter to discuss these fears with the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20137 Days",
+      "ai_assumed_bottleneck": "Caregiver panic and reluctance to proceed with home plan"
+    },
+    {
+      "event_description": "The Social Worker provided a verbal update confirming that the family and clinical team have officially pivoted to a long-term care plan; the Navigator documented the change in goal and prepared to close the case in Atlantis.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Unchanged",
+      "edd_delta": "Hard Stop (LTC Closure)",
+      "ai_assumed_bottleneck": "Finalized change in discharge destination"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The family expressed high levels of stress regarding the physical demands of home care.",
+      "action_taken": "The Navigator documented the family's anxiety in Atlantis and prompted them to speak directly with the Social Worker regarding a potential change in the discharge plan.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The patient's contact information in the system did not match the current family phone number.",
+      "action_taken": "The Navigator updated the demographic fields in Atlantis after verifying the correct details with the daughter during a bedside visit.",
+      "intent_category": "Verify"
+    },
+    {
+      "situation": "The daughter asked how the home transition program works while the discharge plan was still being debated.",
+      "action_taken": "The Navigator explained the role of the Medical Assistant and the 24-hour visit window while clarifying that these services only apply if the Social Worker confirms a home discharge.",
+      "intent_category": "Educate"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "Upon hearing rumors that the patient might stay for long-term care, the Navigator chooses to wait for a direct verbal update from the Social Worker before making any changes to the record in Atlantis.",
+      "rationale": "This respects the Social Worker's ownership of the discharge timeline and prevents the entry of unverified information into the Navigator's documentation tool."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator asks the Social Worker for a status update on the discharge destination and documents the family's concerns about home safety in Atlantis for the clinical team to review.",
+      "rationale": "This allows the Navigator to stay informed and provide relevant updates to the record without overstepping into clinical decision-making or vendor coordination."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls a nearby assisted living facility to inquire about bed availability and pricing on behalf of the daughter to help move the discharge process along more quickly.",
+      "rationale": "This is an overstep because it involves contacting outside vendors and performing logistical tasks that are strictly the responsibility of the Social Worker."
+    }
+  ],
+  "case_outcome": "Neutral_LTC_Closure"
+}

@@ -1,0 +1,71 @@
+{
+  "role_delineation_check": "The Social Worker manages the clinical discharge plan and coordinates specialized training for the family, while the Navigator audits demographic data in Atlantis, educates the family on the Healing Partners program, and flags emotional barriers to the clinical team.",
+  "narrative_summary": "Margaret, a 78-year-old patient recovering from a congestive heart failure flare-up, was clinically cleared for discharge, but her daughter was overwhelmed by the prospect of managing her mother\u2019s daily weight logs and symptom monitoring at home. This anxiety created a significant bottleneck as the daughter felt the facility had not yet provided a formal hands-on training session for these daily tasks. The Navigator documented this distress in Atlantis and alerted the Social Worker to the family's hesitation, ensuring a teaching session was prioritized before the transition. By bridging this communication gap, the Navigator helped the family feel supported, ultimately leading to a successful first visit at home within the required window.",
+  "atlantis_entry_confirmed": true,
+  "demographic_audit_note": "Verified Margaret's primary residence and the daughter's contact information against the facility face sheet; corrected a digit in the primary phone number within the Atlantis queue to ensure the home health agency could reach the family upon discharge.",
+  "home_vs_ltc_goal": "Home with family caregiver support",
+  "v_card_flyer_status": "Provided the Healing Partners program flyer to the daughter and successfully added the digital V-Card to her mobile phone contacts to ensure she would recognize the team's caller ID during the transition period.",
+  "pre_dc_pulse_call": "Conducted the pulse call 24 hours before the scheduled discharge; the daughter confirmed that the home was prepared but expressed final nerves about the morning routine, which was noted in the patient's record for the Social Worker's awareness.",
+  "atlantis_final_sync": "Recorded the confirmed Thursday discharge date and the scheduled Medical Assistant visit for Friday morning in Atlantis after receiving a verbal confirmation from the Social Worker that the home health agency had accepted the case.",
+  "format_1_state_log": [
+    {
+      "event_description": "The Social Worker informed the Navigator that the discharge was being delayed because the daughter requested more time to learn how to monitor her mother\u2019s heart symptoms; the Navigator documented the training gap in Atlantis and waited for a timeline update.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Worsens",
+      "service_adoption_impact": "Negative",
+      "edd_delta": "+2\u20135 Days",
+      "ai_assumed_bottleneck": "Family Training Gap Anxiety"
+    },
+    {
+      "event_description": "During a bedside visit, the daughter expressed deep fear about making a mistake with her mother's care; the Navigator explained how the Healing Partners program supports the first day home and flagged the daughter's high anxiety level to the Social Worker.",
+      "clinical_impact": "Unchanged",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "Sentiment Readiness Gap"
+    },
+    {
+      "event_description": "The Social Worker called to confirm that the bedside teaching was completed and a home health agency had been secured; the Navigator recorded this verbal update in Atlantis and proceeded to coordinate the Medical Assistant's arrival time.",
+      "clinical_impact": "Improves",
+      "environmental_impact": "Improves",
+      "service_adoption_impact": "Positive",
+      "edd_delta": "0 Days",
+      "ai_assumed_bottleneck": "None"
+    }
+  ],
+  "format_2_triples": [
+    {
+      "situation": "The daughter is worried she will not recognize signs of fluid retention in her mother.",
+      "action_taken": "Documented the daughter's specific concerns in Atlantis and notified the Social Worker that the family was requesting a clinical walkthrough.",
+      "intent_category": "Flag"
+    },
+    {
+      "situation": "The daughter asks if the Medical Assistant will be the one to adjust her mother's heart medications.",
+      "action_taken": "Explained that medication management is a clinical task for the home health nurse and the Social Worker, while the Medical Assistant provides a transition wellness check.",
+      "intent_category": "Educate"
+    },
+    {
+      "situation": "The patient's address in the facility system did not match the information provided by the daughter.",
+      "action_taken": "Audited the demographics in Atlantis and updated the record to reflect the correct discharge destination for the transition team.",
+      "intent_category": "Verify"
+    }
+  ],
+  "format_3_rl_scenario": [
+    {
+      "ai_intended_category": "Passive",
+      "description": "The Navigator notices that the Social Worker has not yet provided an update on whether the home health agency has accepted the referral and chooses to document the pending status in Atlantis while waiting for a response.",
+      "rationale": "This respects the Social Worker's ownership of the referral process and avoids unauthorized contact with outside agencies."
+    },
+    {
+      "ai_intended_category": "Proactive",
+      "description": "The Navigator meets with the family to explain the Healing Partners program benefits and asks the Social Worker for a verbal update on the scheduled family training session.",
+      "rationale": "This allows the Navigator to support the family's emotional readiness and keep their own records updated without overstepping into clinical coordination."
+    },
+    {
+      "ai_intended_category": "Overstep",
+      "description": "The Navigator calls the home health agency's intake coordinator directly to see if their nurse can arrive early to perform a teach-back session with the daughter at the facility.",
+      "rationale": "This violates the rule against contacting vendors and interferes with the Social Worker's responsibility to manage agency communication and clinical training."
+    }
+  ],
+  "case_outcome": "Success_Home_with_First_Visit"
+}
