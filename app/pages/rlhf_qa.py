@@ -4,7 +4,7 @@ Page E: RLHF Q&A — Human Review of Qwen Taxonomy Auditor
 Navigators review Qwen's auto-generated evaluations for Format 2 (tactical
 triples) and Format 3 (RL scenarios), then submit Agree/Disagree feedback
 plus optional corrections and notes. Feedback is persisted to Supabase
-(f2_RLHF_feedback / f3_RLHF_feedback).
+(f2_rlhf_feedback / f3_rlhf_feedback).
 
 The question bank is loaded from static CSVs in data/rlhf/. Those CSVs are
 read-only — all human input is written to Supabase.
@@ -25,6 +25,17 @@ F3_CSV_PATH = os.path.join("data", "rlhf", "f3_RLHF_backend.csv")
 CATEGORY_OPTIONS = ["Passive", "Proactive", "Overstep"]
 
 
+def _batch_display_name(batch_id: str) -> str:
+    """Convert a batch_id like 'synthetic_batch_25_v11' or 'synthetic_batch_25' into 'Batch 11' / 'Batch 1'."""
+    if not batch_id:
+        return "Batch ?"
+    m = re.search(r"_v(\d+)$", batch_id)
+    if m:
+        return f"Batch {m.group(1)}"
+    # Base table with no version suffix is v1
+    return "Batch 1"
+
+
 # ── Data loading ─────────────────────────────────────────────────────────────
 
 @st.cache_data
@@ -43,8 +54,12 @@ def _build_case_index(f2_df: pd.DataFrame, f3_df: pd.DataFrame):
     unique = combined.drop_duplicates(subset=["case_id"]).reset_index(drop=True)
 
     def sort_key(row):
-        m = re.search(r"(\d+)", str(row.get("case_label", "")))
-        return (str(row.get("batch_id", "")), int(m.group(1)) if m else 0)
+        batch_id = str(row.get("batch_id", ""))
+        bm = re.search(r"_v(\d+)$", batch_id)
+        batch_num = int(bm.group(1)) if bm else 1
+        cm = re.search(r"(\d+)", str(row.get("case_label", "")))
+        case_num = int(cm.group(1)) if cm else 0
+        return (batch_num, case_num)
 
     unique["__sort"] = unique.apply(sort_key, axis=1)
     unique = unique.sort_values("__sort").drop(columns="__sort").reset_index(drop=True)
@@ -57,14 +72,14 @@ def _fetch_existing_feedback(client, navigator_id: str, case_id: str):
     Returns two dicts keyed by question/scenario index.
     """
     f2_resp = (
-        client.table("f2_RLHF_feedback")
+        client.table("f2_rlhf_feedback")
         .select("*")
         .eq("navigator_id", navigator_id)
         .eq("case_id", case_id)
         .execute()
     )
     f3_resp = (
-        client.table("f3_RLHF_feedback")
+        client.table("f3_rlhf_feedback")
         .select("*")
         .eq("navigator_id", navigator_id)
         .eq("case_id", case_id)
@@ -120,12 +135,12 @@ def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3
         })
 
     if f2_rows:
-        client.table("f2_RLHF_feedback").upsert(
+        client.table("f2_rlhf_feedback").upsert(
             f2_rows,
             on_conflict="navigator_id,case_id,f2_question_index",
         ).execute()
     if f3_rows:
-        client.table("f3_RLHF_feedback").upsert(
+        client.table("f3_rlhf_feedback").upsert(
             f3_rows,
             on_conflict="navigator_id,case_id,f3_scenario_index",
         ).execute()
@@ -329,7 +344,7 @@ def render():
         st.subheader("RLHF Case Selector")
 
         case_labels = [
-            f"{row['batch_id']} — {row['case_label']}"
+            f"{_batch_display_name(row['batch_id'])} — {row['case_label']}"
             for _, row in case_index.iterrows()
         ]
         selected_label = st.selectbox(
@@ -349,7 +364,7 @@ def render():
     case_id = case_row["case_id"]
 
     # ── Global case context ──────────────────────────────────────────────────
-    st.header(f"{case_row['case_label']}  ·  `{case_row['batch_id']}`")
+    st.header(f"{case_row['case_label']}  ·  {_batch_display_name(case_row['batch_id'])}")
     with st.container(border=True):
         st.markdown("**Narrative Summary**")
         st.write(case_row.get("narrative_summary", ""))
