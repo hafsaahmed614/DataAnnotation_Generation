@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 from app.auth import is_authenticated, get_role, sign_out
-from app.pages import login, admin_dashboard, pn_dashboard, annotation
+from app.pages import login, admin_dashboard, pn_dashboard, annotation, rlhf_qa
 
 
 def render_sidebar():
@@ -40,6 +40,11 @@ def render_sidebar():
         if st.button("My Cases", use_container_width=True):
             st.session_state["current_page"] = "pn_dashboard"
             st.rerun()
+
+        if is_authenticated():
+            if st.button("RLHF Q&A", use_container_width=True):
+                st.session_state["current_page"] = "rlhf_qa"
+                st.rerun()
 
         if st.session_state.get("current_session_id"):
             if st.button("Current Evaluation", use_container_width=True):
@@ -83,6 +88,9 @@ def main():
     elif page == "annotation":
         if not _require_auth("navigator"):
             annotation.render()
+    elif page == "rlhf_qa":
+        if not _require_auth("navigator"):
+            rlhf_qa.render()
     else:
         login.render()
 

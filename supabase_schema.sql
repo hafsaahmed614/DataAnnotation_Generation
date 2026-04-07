@@ -2056,3 +2056,73 @@ CREATE POLICY "Navigators manage own f3 evals v15"
     ON eval_format_3_boundaries_v15 FOR ALL
     USING (EXISTS (SELECT 1 FROM evaluation_sessions_v15 WHERE evaluation_sessions_v15.id = eval_format_3_boundaries_v15.session_id AND evaluation_sessions_v15.navigator_id = auth.uid()))
     WITH CHECK (EXISTS (SELECT 1 FROM evaluation_sessions_v15 WHERE evaluation_sessions_v15.id = eval_format_3_boundaries_v15.session_id AND evaluation_sessions_v15.navigator_id = auth.uid()));
+
+
+-- ============================================================================
+-- RLHF FEEDBACK TABLES (Qwen Taxonomy Auditor — Human Review)
+-- ============================================================================
+-- These tables store human navigator feedback on Qwen's auto-generated
+-- evaluations for Format 2 (tactical triples) and Format 3 (RL scenarios).
+-- The static CSVs in data/rlhf/ are the source of questions; navigators
+-- annotate them via the RLHF Q&A page in Streamlit.
+
+CREATE TABLE IF NOT EXISTS f2_RLHF_feedback (
+    id                       UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    navigator_id             UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+    navigator_name           TEXT,
+    case_id                  UUID NOT NULL,
+    batch_id                 TEXT,
+    case_label               TEXT,
+    f2_question_index        INT NOT NULL,
+    human_agree_score        TEXT CHECK (human_agree_score IN ('Agree', 'Disagree')),
+    human_agree_rationale    TEXT,
+    human_corrected_score    INT CHECK (human_corrected_score BETWEEN 1 AND 5),
+    human_notes              TEXT,
+    created_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
+    UNIQUE (navigator_id, case_id, f2_question_index)
+);
+
+CREATE TABLE IF NOT EXISTS f3_RLHF_feedback (
+    id                       UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    navigator_id             UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+    navigator_name           TEXT,
+    case_id                  UUID NOT NULL,
+    batch_id                 TEXT,
+    case_label               TEXT,
+    f3_scenario_index        INT NOT NULL,
+    human_agree_category     TEXT CHECK (human_agree_category IN ('Agree', 'Disagree')),
+    human_agree_rationale    TEXT,
+    human_corrected_category TEXT CHECK (human_corrected_category IN ('Passive', 'Proactive', 'Overstep')),
+    human_notes              TEXT,
+    created_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
+    UNIQUE (navigator_id, case_id, f3_scenario_index)
+);
+
+-- ============================================================================
+-- RLHF FEEDBACK RLS POLICIES
+-- ============================================================================
+
+ALTER TABLE f2_RLHF_feedback ENABLE ROW LEVEL SECURITY;
+ALTER TABLE f3_RLHF_feedback ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Admins full access on f2_RLHF_feedback" ON f2_RLHF_feedback;
+CREATE POLICY "Admins full access on f2_RLHF_feedback"
+    ON f2_RLHF_feedback FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own f2_RLHF_feedback" ON f2_RLHF_feedback;
+CREATE POLICY "Navigators manage own f2_RLHF_feedback"
+    ON f2_RLHF_feedback FOR ALL
+    USING (navigator_id = auth.uid())
+    WITH CHECK (navigator_id = auth.uid());
+
+DROP POLICY IF EXISTS "Admins full access on f3_RLHF_feedback" ON f3_RLHF_feedback;
+CREATE POLICY "Admins full access on f3_RLHF_feedback"
+    ON f3_RLHF_feedback FOR ALL USING (public.is_admin());
+
+DROP POLICY IF EXISTS "Navigators manage own f3_RLHF_feedback" ON f3_RLHF_feedback;
+CREATE POLICY "Navigators manage own f3_RLHF_feedback"
+    ON f3_RLHF_feedback FOR ALL
+    USING (navigator_id = auth.uid())
+    WITH CHECK (navigator_id = auth.uid());
