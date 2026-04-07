@@ -2059,7 +2059,7 @@ CREATE POLICY "Navigators manage own f3 evals v15"
 
 
 -- ============================================================================
--- RLHF FEEDBACK TABLES (Qwen Taxonomy Auditor — Human Review)
+--I  RLHF FEEDBACK TABLES (Qwen Taxonomy Auditor — Human Review)
 -- ============================================================================
 -- These tables store human navigator feedback on Qwen's auto-generated
 -- evaluations for Format 2 (tactical triples) and Format 3 (RL scenarios).
