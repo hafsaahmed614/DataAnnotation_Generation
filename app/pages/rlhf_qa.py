@@ -363,7 +363,11 @@ def render():
         st.divider()
         st.subheader("RLHF Case Selector")
 
-        st.markdown("**Legend:** ✅ Completed  ·  ⏳ In Progress")
+        st.markdown(
+            "**Legend**  \n"
+            "✅ &nbsp; Completed  \n"
+            "⏳ &nbsp; In Progress"
+        )
 
         case_labels = [
             f"{_progress_symbol(row['case_id'], f2_saved_counts, f3_saved_counts, f2_expected_counts, f3_expected_counts)}"
