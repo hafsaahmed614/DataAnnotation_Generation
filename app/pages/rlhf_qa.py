@@ -418,10 +418,10 @@ def render():
     st.divider()
     if st.button("Save Annotations", use_container_width=True, type="primary"):
         try:
-            n_f2, n_f3 = _save_feedback(
+            _save_feedback(
                 client, user_id, navigator_name, case_row, f2_inputs, f3_inputs
             )
-            st.success(f"Saved {n_f2} F2 + {n_f3} F3 annotations.")
+            st.toast("Annotation Saved", icon="✅")
             st.rerun()
         except Exception as e:
             st.error(f"Save failed: {e}")
