@@ -240,7 +240,7 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
             )
 
             rationale = st.text_area(
-                "Which parts of Qwen's rationale do you agree or disagree with? Feel free to share your own reasoning.",
+                "I agree or disagree with Qwen's score because:",
                 value=prior.get("human_agree_or_disagree_rationale") or "",
                 key=f"f2_rationale_{case_id}_{idx}",
                 height=120,
@@ -300,7 +300,7 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
             )
 
             rationale = st.text_area(
-                "Which parts of Qwen's rationale do you agree or disagree with? Feel free to share your own reasoning.",
+                "I agree or disagree with Qwen's category because:",
                 value=prior.get("human_agree_or_disagree_rationale") or "",
                 key=f"f3_rationale_{case_id}_{idx}",
                 height=120,
