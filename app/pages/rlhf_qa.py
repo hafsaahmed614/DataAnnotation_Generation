@@ -112,7 +112,6 @@ def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3
             "human_agree_score": inp.get("human_agree_score"),
             "human_agree_rationale": inp.get("human_agree_rationale") or None,
             "human_corrected_score": inp.get("human_corrected_score"),
-            "human_notes": inp.get("human_notes") or None,
             "updated_at": "now()",
         })
 
@@ -130,7 +129,6 @@ def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3
             "human_agree_category": inp.get("human_agree_category"),
             "human_agree_rationale": inp.get("human_agree_rationale") or None,
             "human_corrected_category": inp.get("human_corrected_category"),
-            "human_notes": inp.get("human_notes") or None,
             "updated_at": "now()",
         })
 
@@ -213,7 +211,6 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
                 "human_agree_score": agree,
                 "human_agree_rationale": rationale,
                 "human_corrected_score": corrected_score,
-                "human_notes": None,
             }
 
     return inputs
@@ -277,7 +274,6 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
                 "human_agree_category": agree,
                 "human_agree_rationale": rationale,
                 "human_corrected_category": corrected_category,
-                "human_notes": None,
             }
 
     return inputs

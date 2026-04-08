@@ -2077,7 +2077,6 @@ CREATE TABLE IF NOT EXISTS f2_RLHF_feedback (
     human_agree_score        TEXT CHECK (human_agree_score IN ('Agree', 'Disagree')),
     human_agree_rationale    TEXT,
     human_corrected_score    INT CHECK (human_corrected_score BETWEEN 1 AND 5),
-    human_notes              TEXT,
     created_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
     UNIQUE (navigator_id, case_id, f2_question_index)
@@ -2094,7 +2093,6 @@ CREATE TABLE IF NOT EXISTS f3_RLHF_feedback (
     human_agree_category     TEXT CHECK (human_agree_category IN ('Agree', 'Disagree')),
     human_agree_rationale    TEXT,
     human_corrected_category TEXT CHECK (human_corrected_category IN ('Passive', 'Proactive', 'Overstep')),
-    human_notes              TEXT,
     created_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at               TIMESTAMPTZ NOT NULL DEFAULT now(),
     UNIQUE (navigator_id, case_id, f3_scenario_index)
