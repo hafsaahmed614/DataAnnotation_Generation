@@ -110,7 +110,7 @@ def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3
             "case_label": case_label,
             "f2_question_index": int(idx),
             "human_agree_score": inp.get("human_agree_score"),
-            "human_agree_rationale": inp.get("human_agree_rationale") or None,
+            "human_agree_or_disagree_rationale": inp.get("human_agree_or_disagree_rationale") or None,
             "human_corrected_score": inp.get("human_corrected_score"),
             "updated_at": "now()",
         })
@@ -127,7 +127,7 @@ def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3
             "case_label": case_label,
             "f3_scenario_index": int(idx),
             "human_agree_category": inp.get("human_agree_category"),
-            "human_agree_rationale": inp.get("human_agree_rationale") or None,
+            "human_agree_or_disagree_rationale": inp.get("human_agree_or_disagree_rationale") or None,
             "human_corrected_category": inp.get("human_corrected_category"),
             "updated_at": "now()",
         })
@@ -192,7 +192,7 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
 
             rationale = st.text_area(
                 "Which parts of Qwen's rationale do you agree or disagree with? Feel free to share your own reasoning.",
-                value=prior.get("human_agree_rationale") or "",
+                value=prior.get("human_agree_or_disagree_rationale") or "",
                 key=f"f2_rationale_{case_id}_{idx}",
                 height=120,
             )
@@ -209,7 +209,7 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
 
             inputs[idx] = {
                 "human_agree_score": agree,
-                "human_agree_rationale": rationale,
+                "human_agree_or_disagree_rationale": rationale,
                 "human_corrected_score": corrected_score,
             }
 
@@ -252,7 +252,7 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
 
             rationale = st.text_area(
                 "Which parts of Qwen's rationale do you agree or disagree with? Feel free to share your own reasoning.",
-                value=prior.get("human_agree_rationale") or "",
+                value=prior.get("human_agree_or_disagree_rationale") or "",
                 key=f"f3_rationale_{case_id}_{idx}",
                 height=120,
             )
@@ -272,7 +272,7 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
 
             inputs[idx] = {
                 "human_agree_category": agree,
-                "human_agree_rationale": rationale,
+                "human_agree_or_disagree_rationale": rationale,
                 "human_corrected_category": corrected_category,
             }
 
