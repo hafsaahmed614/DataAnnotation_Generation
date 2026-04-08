@@ -286,7 +286,7 @@ def render():
     user_id = get_user_id()
     navigator_name = st.session_state.get("full_name", "Navigator")
 
-    st.title("RLHF Q&A — Qwen Auditor Review")
+    st.title("RLHF — Qwen Auditor Review")
     st.caption("Review Qwen's automated scoring of Format 2 and Format 3 outputs and provide your feedback.")
 
     # Load CSVs
