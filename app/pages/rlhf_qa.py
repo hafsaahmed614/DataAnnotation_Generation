@@ -90,6 +90,55 @@ def _fetch_existing_feedback(client, navigator_id: str, case_id: str):
     return f2_by_idx, f3_by_idx
 
 
+def _fetch_navigator_progress(client, navigator_id: str):
+    """Fetch all of a navigator's saved RLHF rows in two queries.
+
+    Returns two dicts: {case_id: count_of_saved_rows} for F2 and F3.
+    """
+    f2_counts = {}
+    f3_counts = {}
+
+    f2_resp = (
+        client.table("f2_rlhf_feedback")
+        .select("case_id")
+        .eq("navigator_id", navigator_id)
+        .execute()
+    )
+    for row in (f2_resp.data or []):
+        cid = row.get("case_id")
+        f2_counts[cid] = f2_counts.get(cid, 0) + 1
+
+    f3_resp = (
+        client.table("f3_rlhf_feedback")
+        .select("case_id")
+        .eq("navigator_id", navigator_id)
+        .execute()
+    )
+    for row in (f3_resp.data or []):
+        cid = row.get("case_id")
+        f3_counts[cid] = f3_counts.get(cid, 0) + 1
+
+    return f2_counts, f3_counts
+
+
+def _compute_expected_counts(f2_df: pd.DataFrame, f3_df: pd.DataFrame):
+    """Return two dicts: {case_id: total_questions} for F2 and F3 from the CSVs."""
+    f2_expected = f2_df.groupby("case_id").size().to_dict()
+    f3_expected = f3_df.groupby("case_id").size().to_dict()
+    return f2_expected, f3_expected
+
+
+def _progress_symbol(case_id, f2_saved, f3_saved, f2_expected, f3_expected) -> str:
+    """Return ✅ if fully complete, ⏳ if partially complete, '' otherwise."""
+    saved = f2_saved.get(case_id, 0) + f3_saved.get(case_id, 0)
+    if saved == 0:
+        return ""
+    expected = f2_expected.get(case_id, 0) + f3_expected.get(case_id, 0)
+    if saved >= expected and expected > 0:
+        return "✅ "
+    return "⏳ "
+
+
 # ── Save logic ───────────────────────────────────────────────────────────────
 
 def _save_feedback(client, navigator_id, navigator_name, case_row, f2_inputs, f3_inputs):
@@ -305,12 +354,19 @@ def render():
     if "rlhf_case_idx" not in st.session_state:
         st.session_state["rlhf_case_idx"] = 0
 
+    # ── Compute progress for this navigator ──────────────────────────────────
+    f2_saved_counts, f3_saved_counts = _fetch_navigator_progress(client, user_id)
+    f2_expected_counts, f3_expected_counts = _compute_expected_counts(f2_df, f3_df)
+
     # ── Sidebar case selector ────────────────────────────────────────────────
     with st.sidebar:
         st.divider()
         st.subheader("RLHF Case Selector")
 
+        st.markdown("**Legend:** ✅ Completed  ·  ⏳ In Progress")
+
         case_labels = [
+            f"{_progress_symbol(row['case_id'], f2_saved_counts, f3_saved_counts, f2_expected_counts, f3_expected_counts)}"
             f"{_batch_display_name(row['batch_id'])} — {row['case_label']}"
             for _, row in case_index.iterrows()
         ]
@@ -354,28 +410,14 @@ def render():
     f2_inputs = _render_f2_section(f2_rows, f2_prior, case_id)
     f3_inputs = _render_f3_section(f3_rows, f3_prior, case_id)
 
-    # ── Save & Next ──────────────────────────────────────────────────────────
+    # ── Save ─────────────────────────────────────────────────────────────────
     st.divider()
-    col_save, col_next = st.columns([1, 1])
-
-    with col_save:
-        if st.button("Save Annotations", use_container_width=True, type="primary"):
-            try:
-                n_f2, n_f3 = _save_feedback(
-                    client, user_id, navigator_name, case_row, f2_inputs, f3_inputs
-                )
-                st.success(f"Saved {n_f2} F2 + {n_f3} F3 annotations.")
-            except Exception as e:
-                st.error(f"Save failed: {e}")
-
-    with col_next:
-        if st.button("Save & Next Case", use_container_width=True):
-            try:
-                _save_feedback(
-                    client, user_id, navigator_name, case_row, f2_inputs, f3_inputs
-                )
-                next_idx = (st.session_state["rlhf_case_idx"] + 1) % len(case_index)
-                st.session_state["rlhf_case_idx"] = next_idx
-                st.rerun()
-            except Exception as e:
-                st.error(f"Save failed: {e}")
+    if st.button("Save Annotations", use_container_width=True, type="primary"):
+        try:
+            n_f2, n_f3 = _save_feedback(
+                client, user_id, navigator_name, case_row, f2_inputs, f3_inputs
+            )
+            st.success(f"Saved {n_f2} F2 + {n_f3} F3 annotations.")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Save failed: {e}")
