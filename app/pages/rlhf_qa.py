@@ -193,14 +193,13 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
             )
 
             rationale = st.text_area(
-                "Your rationale (why you agree or disagree):",
+                "Where do you agree or disagree with Qwen's rationale? You can also share your own reasoning.",
                 value=prior.get("human_agree_rationale") or "",
                 key=f"f2_rationale_{case_id}_{idx}",
-                height=80,
+                height=120,
             )
 
             corrected_score = None
-            notes = ""
             if agree == "Disagree":
                 default_corrected = prior.get("human_corrected_score") or qwen_score or 3
                 corrected_score = st.slider(
@@ -209,26 +208,12 @@ def _render_f2_section(f2_rows: pd.DataFrame, prefilled: dict, case_id: str):
                     value=int(default_corrected),
                     key=f"f2_corrected_{case_id}_{idx}",
                 )
-                notes = st.text_area(
-                    "Additional notes:",
-                    value=prior.get("human_notes") or "",
-                    key=f"f2_notes_{case_id}_{idx}",
-                    height=80,
-                )
-            else:
-                # Still allow notes even on Agree
-                notes = st.text_area(
-                    "Additional notes (optional):",
-                    value=prior.get("human_notes") or "",
-                    key=f"f2_notes_{case_id}_{idx}",
-                    height=60,
-                )
 
             inputs[idx] = {
                 "human_agree_score": agree,
                 "human_agree_rationale": rationale,
                 "human_corrected_score": corrected_score,
-                "human_notes": notes,
+                "human_notes": None,
             }
 
     return inputs
@@ -269,14 +254,13 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
             )
 
             rationale = st.text_area(
-                "Your rationale (why you agree or disagree):",
+                "Where do you agree or disagree with Qwen's rationale? You can also share your own reasoning.",
                 value=prior.get("human_agree_rationale") or "",
                 key=f"f3_rationale_{case_id}_{idx}",
-                height=80,
+                height=120,
             )
 
             corrected_category = None
-            notes = ""
             if agree == "Disagree":
                 qwen_cat = row.get("qwen_category", "Passive")
                 default_corrected = prior.get("human_corrected_category") or qwen_cat
@@ -288,25 +272,12 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
                     index=cat_idx,
                     key=f"f3_corrected_{case_id}_{idx}",
                 )
-                notes = st.text_area(
-                    "Additional notes:",
-                    value=prior.get("human_notes") or "",
-                    key=f"f3_notes_{case_id}_{idx}",
-                    height=80,
-                )
-            else:
-                notes = st.text_area(
-                    "Additional notes (optional):",
-                    value=prior.get("human_notes") or "",
-                    key=f"f3_notes_{case_id}_{idx}",
-                    height=60,
-                )
 
             inputs[idx] = {
                 "human_agree_category": agree,
                 "human_agree_rationale": rationale,
                 "human_corrected_category": corrected_category,
-                "human_notes": notes,
+                "human_notes": None,
             }
 
     return inputs
