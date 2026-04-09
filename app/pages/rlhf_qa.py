@@ -15,7 +15,7 @@ import re
 import pandas as pd
 import streamlit as st
 
-from app.supabase_client import get_authenticated_client, get_service_client
+from app.supabase_client import get_service_client
 from app.auth import get_user_id
 
 
@@ -66,20 +66,24 @@ def _build_case_index(f2_df: pd.DataFrame, f3_df: pd.DataFrame):
     return unique
 
 
-def _fetch_existing_feedback(client, navigator_id: str, case_id: str):
+def _fetch_existing_feedback(navigator_id: str, case_id: str):
     """Fetch any previously saved RLHF feedback rows for this navigator + case.
+
+    Uses the service client so reads never depend on the user's JWT freshness.
+    Row-level scoping is enforced by the explicit .eq('navigator_id', ...) filter.
 
     Returns two dicts keyed by question/scenario index.
     """
+    svc = get_service_client()
     f2_resp = (
-        client.table("f2_rlhf_feedback")
+        svc.table("f2_rlhf_feedback")
         .select("*")
         .eq("navigator_id", navigator_id)
         .eq("case_id", case_id)
         .execute()
     )
     f3_resp = (
-        client.table("f3_rlhf_feedback")
+        svc.table("f3_rlhf_feedback")
         .select("*")
         .eq("navigator_id", navigator_id)
         .eq("case_id", case_id)
@@ -90,16 +94,20 @@ def _fetch_existing_feedback(client, navigator_id: str, case_id: str):
     return f2_by_idx, f3_by_idx
 
 
-def _fetch_navigator_progress(client, navigator_id: str):
+def _fetch_navigator_progress(navigator_id: str):
     """Fetch all of a navigator's saved RLHF rows in two queries.
+
+    Uses the service client so reads never depend on the user's JWT freshness.
+    Row-level scoping is enforced by the explicit .eq('navigator_id', ...) filter.
 
     Returns two dicts: {case_id: count_of_saved_rows} for F2 and F3.
     """
+    svc = get_service_client()
     f2_counts = {}
     f3_counts = {}
 
     f2_resp = (
-        client.table("f2_rlhf_feedback")
+        svc.table("f2_rlhf_feedback")
         .select("case_id")
         .eq("navigator_id", navigator_id)
         .execute()
@@ -109,7 +117,7 @@ def _fetch_navigator_progress(client, navigator_id: str):
         f2_counts[cid] = f2_counts.get(cid, 0) + 1
 
     f3_resp = (
-        client.table("f3_rlhf_feedback")
+        svc.table("f3_rlhf_feedback")
         .select("case_id")
         .eq("navigator_id", navigator_id)
         .execute()
@@ -141,8 +149,8 @@ def _progress_symbol(case_id, f2_saved, f3_saved, f2_expected, f3_expected) -> s
 
 # ── Save logic ───────────────────────────────────────────────────────────────
 
-def _save_feedback(navigator_id, navigator_name, case_row, f2_inputs, f3_inputs):
-    """Upsert all collected F2 + F3 feedback rows to Supabase.
+def _save_f2_feedback(navigator_id, navigator_name, case_row, f2_inputs):
+    """Upsert Format 2 feedback rows to Supabase.
 
     Uses the service role client so saves don't depend on the user's auth
     token freshness — prevents work loss if the JWT has expired mid-session.
@@ -169,6 +177,22 @@ def _save_feedback(navigator_id, navigator_name, case_row, f2_inputs, f3_inputs)
             "updated_at": "now()",
         })
 
+    if f2_rows:
+        svc.table("f2_rlhf_feedback").upsert(
+            f2_rows,
+            on_conflict="navigator_id,case_id,f2_question_index",
+        ).execute()
+
+    return len(f2_rows)
+
+
+def _save_f3_feedback(navigator_id, navigator_name, case_row, f3_inputs):
+    """Upsert Format 3 feedback rows to Supabase (service role client)."""
+    svc = get_service_client()
+    case_id = case_row["case_id"]
+    batch_id = case_row.get("batch_id", "")
+    case_label = case_row.get("case_label", "")
+
     f3_rows = []
     for idx, inp in f3_inputs.items():
         if inp.get("human_agree_category") is None:
@@ -186,18 +210,13 @@ def _save_feedback(navigator_id, navigator_name, case_row, f2_inputs, f3_inputs)
             "updated_at": "now()",
         })
 
-    if f2_rows:
-        svc.table("f2_rlhf_feedback").upsert(
-            f2_rows,
-            on_conflict="navigator_id,case_id,f2_question_index",
-        ).execute()
     if f3_rows:
         svc.table("f3_rlhf_feedback").upsert(
             f3_rows,
             on_conflict="navigator_id,case_id,f3_scenario_index",
         ).execute()
 
-    return len(f2_rows), len(f3_rows)
+    return len(f3_rows)
 
 
 # ── UI rendering ─────────────────────────────────────────────────────────────
@@ -336,7 +355,6 @@ def _render_f3_section(f3_rows: pd.DataFrame, prefilled: dict, case_id: str):
 # ── Main render ──────────────────────────────────────────────────────────────
 
 def render():
-    client = get_authenticated_client()
     user_id = get_user_id()
     navigator_name = st.session_state.get("full_name", "Navigator")
 
@@ -360,7 +378,7 @@ def render():
         st.session_state["rlhf_case_idx"] = 0
 
     # ── Compute progress for this navigator ──────────────────────────────────
-    f2_saved_counts, f3_saved_counts = _fetch_navigator_progress(client, user_id)
+    f2_saved_counts, f3_saved_counts = _fetch_navigator_progress(user_id)
     f2_expected_counts, f3_expected_counts = _compute_expected_counts(f2_df, f3_df)
 
     # ── Sidebar case selector ────────────────────────────────────────────────
@@ -402,7 +420,7 @@ def render():
         st.write(case_row.get("narrative_summary", ""))
 
     # ── Pull existing feedback for prefill ───────────────────────────────────
-    f2_prior, f3_prior = _fetch_existing_feedback(client, user_id, case_id)
+    f2_prior, f3_prior = _fetch_existing_feedback(user_id, case_id)
 
     # ── Filter rows for this case ────────────────────────────────────────────
     f2_rows = (
@@ -416,38 +434,60 @@ def render():
         .reset_index(drop=True)
     )
 
+    # ── Format 2 section + save button ───────────────────────────────────────
     f2_inputs = _render_f2_section(f2_rows, f2_prior, case_id)
+
+    if len(f2_rows) > 0:
+        if st.button("Save Format 2 Annotations", use_container_width=True, type="primary", key="save_f2_btn"):
+            try:
+                _save_f2_feedback(user_id, navigator_name, case_row, f2_inputs)
+
+                # Check if full case is now complete (F2 complete AND existing F3 already complete)
+                f2_answered = sum(
+                    1 for inp in f2_inputs.values()
+                    if inp.get("human_agree_score") is not None
+                )
+                f3_prior_count = len(f3_prior)
+                fully_complete = (
+                    f2_answered >= len(f2_rows) and
+                    f3_prior_count >= len(f3_rows) and
+                    (len(f2_rows) + len(f3_rows)) > 0
+                )
+
+                if fully_complete:
+                    st.toast("Case Annotations Saved", icon="✅")
+                else:
+                    st.toast("Format 2 Annotations Saved", icon="✅")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Save failed — your inputs are still on screen, please try again. ({e})")
+
+    st.divider()
+
+    # ── Format 3 section + save button ───────────────────────────────────────
     f3_inputs = _render_f3_section(f3_rows, f3_prior, case_id)
 
-    # ── Save ─────────────────────────────────────────────────────────────────
-    st.divider()
-    if st.button("Save Annotations", use_container_width=True, type="primary"):
-        try:
-            _save_feedback(
-                user_id, navigator_name, case_row, f2_inputs, f3_inputs
-            )
+    if len(f3_rows) > 0:
+        if st.button("Save Format 3 Annotations", use_container_width=True, type="primary", key="save_f3_btn"):
+            try:
+                _save_f3_feedback(user_id, navigator_name, case_row, f3_inputs)
 
-            # Determine if the case is now fully complete after this save
-            f2_total_for_case = len(f2_rows)
-            f3_total_for_case = len(f3_rows)
-            f2_answered = sum(
-                1 for inp in f2_inputs.values()
-                if inp.get("human_agree_score") is not None
-            )
-            f3_answered = sum(
-                1 for inp in f3_inputs.values()
-                if inp.get("human_agree_category") is not None
-            )
-            fully_complete = (
-                f2_answered >= f2_total_for_case and
-                f3_answered >= f3_total_for_case and
-                (f2_total_for_case + f3_total_for_case) > 0
-            )
+                # Check if full case is now complete (F3 complete AND existing F2 already complete)
+                f3_answered = sum(
+                    1 for inp in f3_inputs.values()
+                    if inp.get("human_agree_category") is not None
+                )
+                f2_prior_count = len(f2_prior)
+                fully_complete = (
+                    f3_answered >= len(f3_rows) and
+                    f2_prior_count >= len(f2_rows) and
+                    (len(f2_rows) + len(f3_rows)) > 0
+                )
 
-            if fully_complete:
-                st.toast("Case Annotations Saved", icon="✅")
-            else:
-                st.toast("Annotations Saved", icon="✅")
-            st.rerun()
-        except Exception as e:
-            st.error(f"Save failed — your inputs are still on screen, please try again. ({e})")
+                if fully_complete:
+                    st.toast("Case Annotations Saved", icon="✅")
+                else:
+                    st.toast("Format 3 Annotations Saved", icon="✅")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Save failed — your inputs are still on screen, please try again. ({e})")
