@@ -334,7 +334,7 @@ These four rules are non-negotiable across the entire generated corpus. Any Form
 | **No-Vendor Rule** | The PN never calls HHAs, DME vendors, or transport companies. The PN only communicates with the Family and the Social Worker. |
 | **Wait Default** | If the SW has not provided an update, the PN documents the communication gap and waits. The PN does not seek the information from other sources. |
 | **Discharge Ownership** | The SW owns the discharge process. The PN does not drive the discharge timeline, negotiate dates, or initiate discharge planning. The PN does not get involved in HHA orders, medication lists, or clinical documentation. |
-| **PN Endpoint** | The PN's role ends when the patient is discharged AND the MA first visit is scheduled within 24 hours. After this, the case transitions to the MA and Healing Partners care management. |
+| **PN Endpoint** | The PN's role ends when the patient is discharged AND the MA first visit is scheduled within 24 hours. After this, the case transitions to the MA and One Health Partners care management. |
 
 For a different navigator vertical, the *content* of these four rules will change — but the *pattern* is what to mimic. Define 3–5 hard "this is automatically out-of-role" rules early, derive them from real Rank-2 cases (not from imagination), and use them as the spine of every downstream evaluation.
 
@@ -389,7 +389,7 @@ Saves are split by section (Format 2 / Format 3) and triggered with explicit but
 
 ## Reproducibility Notes — Pattern for Another Navigator Vertical
 
-The role we trained on is specific to Healing Partners' Patient Navigators in skilled-nursing-facility transitions. The *pattern* is generalizable. To redo this for a different navigator vertical:
+The role we trained on is specific to One Health Partners' Patient Navigators in skilled-nursing-facility transitions. The *pattern* is generalizable. To redo this for a different navigator vertical:
 
 1. **Start with one navigator, not a panel.** Stage 0 (interviews and role definition) should happen with a single deeply-engaged navigator before any artifact is shown to the wider group. Get the role's vocabulary, volume, and constraint structure from one person's mouth *before* writing any prompt — let an AI ask them clarifying questions and record where the AI guesses wrong. Only once the meta-prompts and role frame are validated should the rest of the panel be onboarded (typically at Stage 1, the Action Items list, or Stage 2, the seed-case authoring). This sequence avoids negotiating role boundaries by committee, and gives the later joiners a stable frame to react to rather than build from scratch.
 2. **Ask each navigator for a phased Action Items list.** This is the seed of the Action Taxonomy. Skip this stage and the AI will hallucinate the verbs.
