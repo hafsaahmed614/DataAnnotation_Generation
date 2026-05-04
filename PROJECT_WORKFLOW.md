@@ -1,5 +1,5 @@
 # PROJECT WORKFLOW
-## Healing Partners Patient Navigator Chatbot — End-to-End Process
+## One Health Partners Patient Navigator Data Annotation Project — End-to-End Process
 
 **Audience**: Internal stakeholder evaluating whether to repeat this process for a different patient-navigator setting.
 **Scope**: The human and AI workflow only. No code, schemas, or repo layout — those live in `MASTER_PROJECT_HISTORY.md`.
@@ -98,31 +98,33 @@
 
 ---
 
-## The Four Patient Navigators
+## The Patient Navigators — Onboarding Chronology
 
-The project ran with four veteran navigators from Healing Partners. Their participation tapered as the work moved from human-intensive seed-case authoring into AI-assisted scaling and review:
+The project did **not** start with all four navigators in the room. It started with **one** — Kristin — and grew from there as the artifacts produced with her became concrete enough to onboard the others.
 
-| Navigator | Stages 0–7 | Stage 8–9 (Qwen review) |
+| Navigator | Joined at | Active through |
 |---|---|---|
-| **Kristin Tarsia** | Active through synthetic batch 2 | — |
-| **Lyndsey Pikus** | Active through synthetic batch 14 (deepest set, Cases 1–7 in seeds) | — |
-| **Mark Reilly** | Active through synthetic batch 2 | — |
-| **Melissa Pasquarelli** | Active through synthetic batch 14 | One PN finished Qwen RLHF review |
+| **Kristin** | Stage 0 — sole participant in the initial interviews; the role definition, daily-work mapping, and insurance-landscape conversation all happened with her | Synthetic batch 2 |
+| **Lyndsey** | Stage 1 / Stage 2 — joined when the other three were brought on to author Action Items lists and add their own seed cases | Synthetic batch 14 (deepest set, Cases 1–7 in seeds) |
+| **Mark** | Stage 1 / Stage 2 — joined alongside Lyndsey and Melissa for case authoring | Synthetic batch 2 |
+| **Melissa** | Stage 1 / Stage 2 — joined alongside Lyndsey and Mark for case authoring | Synthetic batch 14; finished the Qwen RLHF review (Stage 11) as the final remaining PN |
 
-The "4 → 2 → 1" attrition pattern is worth naming up front: data-annotation projects in clinical settings rarely keep their full panel for the duration. The pipeline was designed so that the *highest-information* stages (seed case authoring, the v1→v2 prompt iteration, and the Atlantis-Illusion-breaking v10 critiques) had the most navigator coverage.
+The "1 → 4 → 2 → 1" trajectory is worth naming up front: data-annotation projects in clinical settings rarely keep their full panel, and they often *don't start with one* either. Beginning with a single deeply-engaged navigator (Kristin) before scaling to a panel let us pressure-test the role definition and the meta-prompts in a low-stakes setting before the other three saw any of it. The pipeline was also designed so that the *highest-information* stages — seed-case authoring, the v1→v2 prompt iteration, and the Atlantis-Illusion-breaking v10 critiques — had the most navigator coverage, even as the panel later contracted.
 
 ---
 
-## STAGE 0 — Initial PN Interviews
+## STAGE 0 — Initial PN Interviews (with Kristin only)
 
-Before any artifact existed, we held semi-structured conversations with each navigator. The goals:
+Before any artifact existed, we held semi-structured conversations with **Kristin** — the project's first navigator. Lyndsey, Mark, and Melissa were not involved at this stage; they were brought on later, once the role definition and meta-prompts produced with Kristin were concrete enough to hand to a wider panel.
+
+The goals of these initial conversations:
 
 - **Understand the role.** What does a PN do, and — more importantly — what are they *not allowed* to do?
-- **Get volume context.** How many discharges does each PN handle? What is the median caseload at any given moment?
+- **Get volume context.** How many discharges does Kristin handle? What is her median caseload at any given moment?
 - **Map the insurance landscape.** Medicare vs. Managed Medicare Advantage vs. Medicaid vs. CHC waiver. Which plans cause which kinds of friction?
-- **Surface the daily texture.** We asked each PN to describe their daily work to ChatGPT and to *let ChatGPT ask them clarifying questions* until the gaps were filled. This was deliberate — we wanted the AI's blind spots about the role to be exposed early, in a low-stakes setting, before they could leak into production prompts.
+- **Surface the daily texture.** We asked Kristin to describe her daily work to ChatGPT and to *let ChatGPT ask her clarifying questions* until the gaps were filled. This was deliberate — we wanted the AI's blind spots about the role to be exposed early, in a low-stakes setting with the most engaged navigator, before they could leak into production prompts seen by the rest of the panel.
 
-The output of Stage 0 was not a deliverable file; it was shared mental model. From this point forward, every prompt we wrote could reference "the role we agreed on in the interviews" rather than guessing.
+The output of Stage 0 was not a deliverable file; it was a shared mental model — between Kristin and the team — of the PN role, its constraints, and the questions worth asking. From this point forward, every prompt we wrote could reference "the role we agreed on in the interviews" rather than guessing. When Lyndsey, Mark, and Melissa joined at Stage 1, they were onboarded against this already-validated frame rather than asked to negotiate it from scratch.
 
 ---
 
@@ -389,7 +391,7 @@ Saves are split by section (Format 2 / Format 3) and triggered with explicit but
 
 The role we trained on is specific to Healing Partners' Patient Navigators in skilled-nursing-facility transitions. The *pattern* is generalizable. To redo this for a different navigator vertical:
 
-1. **Hold Stage-0 interviews first.** Get the role's vocabulary, volume, and constraint structure from the navigators' own mouths *before* writing any prompt. Let an AI ask them clarifying questions; record where the AI guesses wrong.
+1. **Start with one navigator, not a panel.** Stage 0 (interviews and role definition) should happen with a single deeply-engaged navigator before any artifact is shown to the wider group. Get the role's vocabulary, volume, and constraint structure from one person's mouth *before* writing any prompt — let an AI ask them clarifying questions and record where the AI guesses wrong. Only once the meta-prompts and role frame are validated should the rest of the panel be onboarded (typically at Stage 1, the Action Items list, or Stage 2, the seed-case authoring). This sequence avoids negotiating role boundaries by committee, and gives the later joiners a stable frame to react to rather than build from scratch.
 2. **Ask each navigator for a phased Action Items list.** This is the seed of the Action Taxonomy. Skip this stage and the AI will hallucinate the verbs.
 3. **Build a two-part annotation app.** Part A is a fast scene-setter (clinical state + friction + stage). Part B extracts the *tactical layer* with AI-generated follow-ups designed to distinguish the navigator's role from adjacent roles. The meta-prompts that produce Parts A and B are the leverage points — they encode the role boundary.
 4. **Run AI-generated audit questions on each seed case** and have the navigators rank them 0/1. This surfaces which classes of question are role-relevant and which are noise.
